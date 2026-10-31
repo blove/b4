@@ -998,6 +998,7 @@ async fn always_completes_and_reuses_after_reopen(
     let catalog = make_catalog(&store, calls.clone());
     let catalog_weak = Arc::downgrade(&catalog);
     let server = Server::start(host(store.clone(), catalog.clone())).await;
+    let before_reused = server.host.shutdown_handle().status();
     let reused_response = server
         .request(
             "POST",
@@ -1016,7 +1017,7 @@ async fn always_completes_and_reuses_after_reopen(
     let after_pending = server.host.shutdown_handle().status();
     if after_pending.faulted {
         eprintln!(
-            "reuse response={:?} after_reused={after_reused:?} pending={:?} after_pending={after_pending:?}",
+            "reuse before_reused={before_reused:?} response={:?} after_reused={after_reused:?} pending={:?} after_pending={after_pending:?}",
             reused_response, pending_after
         );
     }
