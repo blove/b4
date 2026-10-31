@@ -312,6 +312,11 @@ impl Server {
         };
         drop(shutdown);
         drop(self.host);
+        if quiet != (ShutdownOutcome::Quiescent { faulted }) || !sent || !joined {
+            eprintln!(
+                "retire quiet={quiet:?} sent={sent} joined={joined} expected_faulted={faulted}"
+            );
+        }
         quiet == ShutdownOutcome::Quiescent { faulted } && sent && joined
     }
     async fn request(&self, method: &str, path: &str, body: Value) -> (u16, String) {
