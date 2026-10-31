@@ -1069,7 +1069,10 @@ async fn always_completes_and_reuses_after_reopen(
     assert!(fresh && descriptor_valid && first_waited && pending_matches);
     assert_eq!(resume.0, 200, "Always HTTP resume: {}", resume.1);
     assert_eq!(resume.1.matches("event: done").count(), 1);
-    assert!(first_drained && second_drained && released1 && released2);
+    assert!(
+        first_drained && second_drained && released1 && released2,
+        "first_drained={first_drained} second_drained={second_drained} released1={released1} released2={released2}"
+    );
     assert!(original_shape, "original authority table shape");
     assert!(provenance, "original authority provenance");
     assert!(original_valid, "original kernel/raw/callback oracle");
