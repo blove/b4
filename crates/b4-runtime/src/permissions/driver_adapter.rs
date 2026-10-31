@@ -503,9 +503,6 @@ where
     })();
     // Initial is already caller-owned. On refusal move it without any new copy.
     if let Err(error) = checked {
-        if std::env::var_os("B4_WORKER_DIAGNOSTIC").is_some() {
-            eprintln!("permission driver initial refusal={}", error.code());
-        }
         return Err(PermissionUseDriverFailure {
             driver: DriverFailure::new(DriverError::Host(error)),
             slot: Box::new(DriverSlot {
@@ -570,34 +567,10 @@ where
     };
     match result {
         Ok(stored) => Ok(stored),
-        Err(driver) => {
-            if std::env::var_os("B4_WORKER_DIAGNOSTIC").is_some() {
-                let classes: Vec<_> = driver
-                    .errors
-                    .iter()
-                    .map(|error| match error {
-                        DriverError::Host(error) => error.code(),
-                        DriverError::Runtime(_) => "runtime",
-                        DriverError::Config(_) => "config",
-                        DriverError::CallbackUncertain => "callback_uncertain",
-                        DriverError::CallbackPanic => "callback_panic",
-                        DriverError::CoordinatorPanic => "coordinator_panic",
-                        DriverError::SpawnFailed => "spawn_failed",
-                        DriverError::InvalidPreparedEffect => "invalid_prepared_effect",
-                        DriverError::OutcomeLimit => "outcome_limit",
-                        DriverError::ExecutionStopped => "execution_stopped",
-                        DriverError::OrphanedAttempts => "orphaned_attempts",
-                        DriverError::RecoveryBlocked => "recovery_blocked",
-                        DriverError::ChannelClosed => "channel_closed",
-                    })
-                    .collect();
-                eprintln!("permission driver failure classes={classes:?}");
-            }
-            Err(PermissionUseDriverFailure {
-                driver,
-                slot: Box::new(slot),
-            })
-        }
+        Err(driver) => Err(PermissionUseDriverFailure {
+            driver,
+            slot: Box::new(slot),
+        }),
     }
 }
 

@@ -550,18 +550,6 @@ fn spawn_owned<S: Store + 'static>(
             Ok(Ok(None)) => {}
             Ok(Err(e)) => {
                 let admission_error = ready_tx.is_some();
-                if std::env::var_os("B4_WORKER_DIAGNOSTIC").is_some() {
-                    eprintln!(
-                        "worker error operation={operation:?} admission_error={admission_error} error={}",
-                        match &e {
-                            WorkerError::Runtime(error) => format!("runtime: {error:?}"),
-                            WorkerError::Approval(error) => format!("approval: {error:?}"),
-                            WorkerError::Rejected(code) => format!("rejected: {code}"),
-                            WorkerError::InvalidApplicationInput => "invalid_application_input".into(),
-                            WorkerError::Draining => "draining".into(),
-                        }
-                    );
-                }
                 let benign = match &e {
                     WorkerError::Rejected(_)
                     | WorkerError::InvalidApplicationInput

@@ -312,11 +312,6 @@ impl Server {
         };
         drop(shutdown);
         drop(self.host);
-        if quiet != (ShutdownOutcome::Quiescent { faulted }) || !sent || !joined {
-            eprintln!(
-                "retire quiet={quiet:?} sent={sent} joined={joined} expected_faulted={faulted}"
-            );
-        }
         quiet == ShutdownOutcome::Quiescent { faulted } && sent && joined
     }
     async fn request(&self, method: &str, path: &str, body: Value) -> (u16, String) {
@@ -998,7 +993,6 @@ async fn always_completes_and_reuses_after_reopen(
     let catalog = make_catalog(&store, calls.clone());
     let catalog_weak = Arc::downgrade(&catalog);
     let server = Server::start(host(store.clone(), catalog.clone())).await;
-    let before_reused = server.host.shutdown_handle().status();
     let reused_response = server
         .request(
             "POST",
@@ -1006,7 +1000,6 @@ async fn always_completes_and_reuses_after_reopen(
             json!({"route":ROUTE,"input":reused_input["input"]}),
         )
         .await;
-    let after_reused = server.host.shutdown_handle().status();
     let pending_after = server
         .request(
             "GET",
@@ -1014,13 +1007,6 @@ async fn always_completes_and_reuses_after_reopen(
             Value::Null,
         )
         .await;
-    let after_pending = server.host.shutdown_handle().status();
-    if after_pending.faulted {
-        eprintln!(
-            "reuse before_reused={before_reused:?} response={:?} after_reused={after_reused:?} pending={:?} after_pending={after_pending:?}",
-            reused_response, pending_after
-        );
-    }
     let second_drained = server.retire().await;
     let reused = capture(&store, &directory, &thread, &original);
     let all_calls = calls.lock().unwrap().clone();
@@ -1083,10 +1069,7 @@ async fn always_completes_and_reuses_after_reopen(
     assert!(fresh && descriptor_valid && first_waited && pending_matches);
     assert_eq!(resume.0, 200, "Always HTTP resume: {}", resume.1);
     assert_eq!(resume.1.matches("event: done").count(), 1);
-    assert!(
-        first_drained && second_drained && released1 && released2,
-        "first_drained={first_drained} second_drained={second_drained} released1={released1} released2={released2}"
-    );
+    assert!(first_drained && second_drained && released1 && released2);
     assert!(original_shape, "original authority table shape");
     assert!(provenance, "original authority provenance");
     assert!(original_valid, "original kernel/raw/callback oracle");

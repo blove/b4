@@ -38,16 +38,7 @@ pub(crate) fn error(status: StatusCode, code: &'static str) -> Response {
         json!({"error":{"kind":"request_error","message":code,"details":{"code":code}}}),
     )
 }
-#[track_caller]
 pub(crate) fn unavailable<S>(shared: &Shared<S>) -> Response {
-    let location = std::panic::Location::caller();
-    if std::env::var_os("B4_WORKER_DIAGNOSTIC").is_some() {
-        eprintln!(
-            "host_unready caller={}:{}",
-            location.file(),
-            location.line()
-        );
-    }
     shared.fault.store(true, Ordering::Release);
     error(StatusCode::SERVICE_UNAVAILABLE, "host_unready")
 }

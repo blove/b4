@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-24.04-arm, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
@@ -24,11 +24,6 @@ jobs:
         run: cargo fmt --all -- --check
       - name: Lint
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
-      - name: Diagnose hosted HTTP approval reuse
-        if: runner.os == 'Linux'
-        env:
-          B4_WORKER_DIAGNOSTIC: "1"
-        run: cargo test -p b4-http --test permission_approvals --locked -- --nocapture
       - name: Test
         run: cargo test --workspace --locked
       - name: Run native foundation scenarios

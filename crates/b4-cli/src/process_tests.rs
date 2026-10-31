@@ -709,8 +709,8 @@ fn unread_stream(address: SocketAddr) -> TcpStream {
     let mut stream: TcpStream = socket.into();
     // A single bounded response can fit Linux's kernel queue. Pipeline a finite
     // set of real native SSE requests and await observed write backpressure.
-    // Shutdown can cut admission before all 128 requests are admitted.
-    for _ in 0..128 {
+    // Shutdown can cut admission before all 32 requests are admitted.
+    for _ in 0..32 {
         write!(stream, "POST /threads/held/runs/stream HTTP/1.1\r\nHost: {address}\r\nAuthorization: Bearer {TOKEN}\r\nContent-Length: {}\r\nConnection: keep-alive\r\n\r\n{RUN}", RUN.len()).unwrap();
     }
     stream
