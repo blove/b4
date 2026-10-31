@@ -1005,6 +1005,7 @@ async fn always_completes_and_reuses_after_reopen(
             json!({"route":ROUTE,"input":reused_input["input"]}),
         )
         .await;
+    let after_reused = server.host.shutdown_handle().status();
     let pending_after = server
         .request(
             "GET",
@@ -1012,6 +1013,13 @@ async fn always_completes_and_reuses_after_reopen(
             Value::Null,
         )
         .await;
+    let after_pending = server.host.shutdown_handle().status();
+    if after_pending.faulted {
+        eprintln!(
+            "reuse response={:?} after_reused={after_reused:?} pending={:?} after_pending={after_pending:?}",
+            reused_response, pending_after
+        );
+    }
     let second_drained = server.retire().await;
     let reused = capture(&store, &directory, &thread, &original);
     let all_calls = calls.lock().unwrap().clone();
