@@ -1,0 +1,2062 @@
+{
+  "receipt_version": 1,
+  "profile": "local_linux_arm64_nonroot_loopback_container",
+  "evidence_class": "scoped_native_and_actual_container_verification",
+  "verified_at_utc": "2026-10-02T07:42:18.200288+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "platform": "macos",
+      "name": "fmt",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-macos-fmt-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "platform": "macos",
+      "name": "clippy",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-macos-clippy-final.log",
+      "sha256": "45f75b19e5718ce74d75d27dc949e2b0cc21908a1e53dca4d31c24e03ebe8e09"
+    },
+    {
+      "platform": "macos",
+      "name": "workspace-tests",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-macos-workspace-tests-final.log",
+      "sha256": "b41d4d69c71cef6277a491d9a19bbf3e1af9638cf45b3091a446ddb5adb3a6c8"
+    },
+    {
+      "platform": "macos",
+      "name": "release-build",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-macos-release-build-final.log",
+      "sha256": "2d2a3eb8ffcab05591596381b2522912667e515a5751deb9708f98c1cd438338"
+    },
+    {
+      "platform": "macos",
+      "name": "release-qualification",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-macos-release-qualification-final.log",
+      "sha256": "4fa5aa79a7d97bdb46ed792c3cd0e38d15d5d47cae4450160b018faa3bd50273"
+    },
+    {
+      "platform": "linux",
+      "name": "identity",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-linux-identity-final.log",
+      "sha256": "3c1eb84292bac694755f4f60b928bdfcd365a4d62888ed85187116e65b3816e9"
+    },
+    {
+      "platform": "linux",
+      "name": "source-integrity",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-linux-source-integrity-final.log",
+      "sha256": "b7e6b45b52ad31bd82f5771f59895523b5eb4d82f94ea1a4e3f8fd613614e25a"
+    },
+    {
+      "platform": "linux",
+      "name": "fmt",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-linux-fmt-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "platform": "linux",
+      "name": "clippy",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-linux-clippy-final.log",
+      "sha256": "bd68c5d75a133ea20e656b68344b276728dd74a4094f6b5d24dfd6489594664c"
+    },
+    {
+      "platform": "linux",
+      "name": "workspace-tests",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-linux-workspace-tests-final.log",
+      "sha256": "9452d1e71ee2e75f6fc95d87cdfa5f399aefd8d517d694cf86ae8aa4a77372c9"
+    },
+    {
+      "platform": "linux",
+      "name": "release-qualification",
+      "exit_code": 0,
+      "log": "/private/tmp/b4-container-linux-release-qualification-final.log",
+      "sha256": "caed8fd665e6a3397c96647722dfb88faf0cbc2fb5658625d5fb2859810ad3da"
+    },
+    {
+      "name": "python-current56",
+      "exit_code": 0,
+      "count": 56,
+      "path": "/private/tmp/b4-container-python-current56.log",
+      "sha256": "8b1cf5b8d5e2a11386561691f3c1f58a95cd312fcc5688f56d7a3d6ad8c94e98",
+      "size_bytes": 9864
+    },
+    {
+      "name": "node-final",
+      "exit_code": 0,
+      "count": 50,
+      "path": "/private/tmp/b4-container-node-final.log",
+      "sha256": "ac93299b4b77560b6c0bbf6323177179a6a1b13f5bc3d8b3aa1da02006bce615",
+      "size_bytes": 4670
+    },
+    {
+      "name": "contracts-final",
+      "exit_code": 0,
+      "count": 294,
+      "path": "/private/tmp/b4-container-contracts-final.log",
+      "sha256": "aa6846f9b7e02984b4b557df44e1939c836c37356a7811590002d2d24a960cb0",
+      "size_bytes": 986
+    },
+    {
+      "name": "actual_shipped_container_lifecycle",
+      "exit_code": 0,
+      "count": 13,
+      "path": "/private/tmp/b4-linux-container-runtime-qualification-pass.json",
+      "sha256": "332d6c5cba2a322a4c29a3965b3c1c597c4a5626118120a0aa1cb81e066c45f6",
+      "size_bytes": 11516
+    }
+  ],
+  "workspace_counts": {
+    "macos": {
+      "counts": {
+        "cli": 45,
+        "contract": 41,
+        "http": 251,
+        "kernel": 44,
+        "runtime": 149,
+        "sqlite": 149,
+        "testkit": 17
+      },
+      "passed": 696,
+      "failed": 0,
+      "ignored": 3,
+      "counting_scope": "Pair ordered Cargo headers with ordered top-level stdout summaries; Docker may interleave the streams. Exclude filtered child summaries. Release12 repeats same12 CLI cases."
+    },
+    "linux": {
+      "counts": {
+        "cli": 45,
+        "contract": 41,
+        "http": 251,
+        "kernel": 44,
+        "runtime": 149,
+        "sqlite": 149,
+        "testkit": 17
+      },
+      "passed": 696,
+      "failed": 0,
+      "ignored": 3,
+      "counting_scope": "Pair ordered Cargo headers with ordered top-level stdout summaries; Docker may interleave the streams. Exclude filtered child summaries. Release12 repeats same12 CLI cases."
+    }
+  },
+  "new_rust_tests": 0,
+  "new_python_tests": 43,
+  "python_total": 56,
+  "retained_node_checks": 50,
+  "actual_docker_cases": 13,
+  "operational_receipt": {
+    "cases": {
+      "case_browser_bearer_capability_guards": true,
+      "case_fresh_volume_initialization": true,
+      "case_hidden_nonempty_initializer_refusal": true,
+      "case_live_owner_exclusion_and_coherent_rows": true,
+      "case_native_order_and_required_park": true,
+      "case_nonroot_native_runtime_identity": true,
+      "case_private_parent_preflight": true,
+      "case_public_commands_and_readonly_config": true,
+      "case_public_probes_and_docker_health": true,
+      "case_readonly_prior_owner_parked_projection": true,
+      "case_same_volume_epoch_only_restart": true,
+      "case_sigint_positive_retirement_and_reusable_volume": true,
+      "case_sigterm_positive_retirement": true
+    },
+    "limitations": [
+      "Local Linux arm64 only; no host ingress, deployment or Docker daemon secret isolation.",
+      "Logical SQLite rows only; no WAL/SHM byte preservation or forced-stop retirement claim.",
+      "Provider-free native demo; no automatic adoption, full operations, M0/CP or broad core parity."
+    ],
+    "logical_rows_only": true,
+    "metadata": {
+      "architecture": "arm64",
+      "cleanup_completed": true,
+      "data_mode": "0700",
+      "executable_sha256": "28b544c4e0ea70ad1269fa27fcd5b821ed1191f3498770ca619a4ad756858559",
+      "file_mode": "0600",
+      "gid": 10001,
+      "libraries": [
+        {
+          "name": "linux-vdso.so.1",
+          "path": null
+        },
+        {
+          "name": "libgcc_s.so.1",
+          "path": "/lib/aarch64-linux-gnu/libgcc_s.so.1"
+        },
+        {
+          "name": "libm.so.6",
+          "path": "/lib/aarch64-linux-gnu/libm.so.6"
+        },
+        {
+          "name": "libc.so.6",
+          "path": "/lib/aarch64-linux-gnu/libc.so.6"
+        },
+        {
+          "name": "ld-linux-aarch64.so.1",
+          "path": "/lib/ld-linux-aarch64.so.1"
+        }
+      ],
+      "os": "linux",
+      "package_verification": {
+        "expected_missing_by_category": {
+          "apt_lists": 1,
+          "documentation": 416,
+          "info": 9,
+          "lintian": 35,
+          "locale": 1862,
+          "manuals": 1290
+        },
+        "expected_missing_count": 3613,
+        "nonmissing_discrepancy_count": 0,
+        "pristine_packages_claimed": false,
+        "status": "slim_expected_omissions_only",
+        "unexpected_missing_count": 0
+      },
+      "packages": [
+        {
+          "name": "adduser",
+          "version": "3.134"
+        },
+        {
+          "name": "apt",
+          "version": "2.6.1"
+        },
+        {
+          "name": "base-files",
+          "version": "12.4+deb12u15"
+        },
+        {
+          "name": "base-passwd",
+          "version": "3.6.1"
+        },
+        {
+          "name": "bash",
+          "version": "5.2.15-2+b13"
+        },
+        {
+          "name": "bsdutils",
+          "version": "1:2.38.1-5+deb12u3"
+        },
+        {
+          "name": "coreutils",
+          "version": "9.1-1"
+        },
+        {
+          "name": "curl",
+          "version": "7.88.1-10+deb12u15"
+        },
+        {
+          "name": "dash",
+          "version": "0.5.12-2"
+        },
+        {
+          "name": "debconf",
+          "version": "1.5.82"
+        },
+        {
+          "name": "debian-archive-keyring",
+          "version": "2023.3+deb12u2"
+        },
+        {
+          "name": "debianutils",
+          "version": "5.7-0.5~deb12u1"
+        },
+        {
+          "name": "diffutils",
+          "version": "1:3.8-4"
+        },
+        {
+          "name": "dpkg",
+          "version": "1.21.23"
+        },
+        {
+          "name": "e2fsprogs",
+          "version": "1.47.0-2+b2"
+        },
+        {
+          "name": "findutils",
+          "version": "4.9.0-4"
+        },
+        {
+          "name": "gcc-12-base:arm64",
+          "version": "12.2.0-14+deb12u1"
+        },
+        {
+          "name": "gpgv",
+          "version": "2.2.40-1.1+deb12u2"
+        },
+        {
+          "name": "grep",
+          "version": "3.8-5"
+        },
+        {
+          "name": "gzip",
+          "version": "1.12-1"
+        },
+        {
+          "name": "hostname",
+          "version": "3.23+nmu1"
+        },
+        {
+          "name": "init-system-helpers",
+          "version": "1.65.2+deb12u1"
+        },
+        {
+          "name": "libacl1:arm64",
+          "version": "2.3.1-3"
+        },
+        {
+          "name": "libapt-pkg6.0:arm64",
+          "version": "2.6.1"
+        },
+        {
+          "name": "libattr1:arm64",
+          "version": "1:2.5.1-4"
+        },
+        {
+          "name": "libaudit-common",
+          "version": "1:3.0.9-1"
+        },
+        {
+          "name": "libaudit1:arm64",
+          "version": "1:3.0.9-1"
+        },
+        {
+          "name": "libblkid1:arm64",
+          "version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "libbrotli1:arm64",
+          "version": "1.0.9-2+b6"
+        },
+        {
+          "name": "libbz2-1.0:arm64",
+          "version": "1.0.8-5+b1"
+        },
+        {
+          "name": "libc-bin",
+          "version": "2.36-9+deb12u14"
+        },
+        {
+          "name": "libc6:arm64",
+          "version": "2.36-9+deb12u14"
+        },
+        {
+          "name": "libcap-ng0:arm64",
+          "version": "0.8.3-1+b3"
+        },
+        {
+          "name": "libcap2:arm64",
+          "version": "1:2.66-4+deb12u3+b1"
+        },
+        {
+          "name": "libcom-err2:arm64",
+          "version": "1.47.0-2+b2"
+        },
+        {
+          "name": "libcrypt1:arm64",
+          "version": "1:4.4.33-2"
+        },
+        {
+          "name": "libcurl4:arm64",
+          "version": "7.88.1-10+deb12u15"
+        },
+        {
+          "name": "libdb5.3:arm64",
+          "version": "5.3.28+dfsg2-1"
+        },
+        {
+          "name": "libdebconfclient0:arm64",
+          "version": "0.270"
+        },
+        {
+          "name": "libext2fs2:arm64",
+          "version": "1.47.0-2+b2"
+        },
+        {
+          "name": "libffi8:arm64",
+          "version": "3.4.4-1"
+        },
+        {
+          "name": "libgcc-s1:arm64",
+          "version": "12.2.0-14+deb12u1"
+        },
+        {
+          "name": "libgcrypt20:arm64",
+          "version": "1.10.1-3+deb12u1"
+        },
+        {
+          "name": "libgmp10:arm64",
+          "version": "2:6.2.1+dfsg1-1.1"
+        },
+        {
+          "name": "libgnutls30:arm64",
+          "version": "3.7.9-2+deb12u7"
+        },
+        {
+          "name": "libgpg-error0:arm64",
+          "version": "1.46-1"
+        },
+        {
+          "name": "libgssapi-krb5-2:arm64",
+          "version": "1.20.1-2+deb12u5"
+        },
+        {
+          "name": "libhogweed6:arm64",
+          "version": "3.8.1-2"
+        },
+        {
+          "name": "libidn2-0:arm64",
+          "version": "2.3.3-1+b1"
+        },
+        {
+          "name": "libk5crypto3:arm64",
+          "version": "1.20.1-2+deb12u5"
+        },
+        {
+          "name": "libkeyutils1:arm64",
+          "version": "1.6.3-2"
+        },
+        {
+          "name": "libkrb5-3:arm64",
+          "version": "1.20.1-2+deb12u5"
+        },
+        {
+          "name": "libkrb5support0:arm64",
+          "version": "1.20.1-2+deb12u5"
+        },
+        {
+          "name": "libldap-2.5-0:arm64",
+          "version": "2.5.13+dfsg-5"
+        },
+        {
+          "name": "liblz4-1:arm64",
+          "version": "1.9.4-1"
+        },
+        {
+          "name": "liblzma5:arm64",
+          "version": "5.4.1-1+deb12u2"
+        },
+        {
+          "name": "libmd0:arm64",
+          "version": "1.0.4-2"
+        },
+        {
+          "name": "libmount1:arm64",
+          "version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "libnettle8:arm64",
+          "version": "3.8.1-2"
+        },
+        {
+          "name": "libnghttp2-14:arm64",
+          "version": "1.52.0-1+deb12u3"
+        },
+        {
+          "name": "libp11-kit0:arm64",
+          "version": "0.24.1-2"
+        },
+        {
+          "name": "libpam-modules:arm64",
+          "version": "1.5.2-6+deb12u2"
+        },
+        {
+          "name": "libpam-modules-bin",
+          "version": "1.5.2-6+deb12u2"
+        },
+        {
+          "name": "libpam-runtime",
+          "version": "1.5.2-6+deb12u2"
+        },
+        {
+          "name": "libpam0g:arm64",
+          "version": "1.5.2-6+deb12u2"
+        },
+        {
+          "name": "libpcre2-8-0:arm64",
+          "version": "10.42-1+deb12u1"
+        },
+        {
+          "name": "libpsl5:arm64",
+          "version": "0.21.2-1"
+        },
+        {
+          "name": "librtmp1:arm64",
+          "version": "2.4+20151223.gitfa8646d.1-2+b2"
+        },
+        {
+          "name": "libsasl2-2:arm64",
+          "version": "2.1.28+dfsg-10"
+        },
+        {
+          "name": "libsasl2-modules-db:arm64",
+          "version": "2.1.28+dfsg-10"
+        },
+        {
+          "name": "libseccomp2:arm64",
+          "version": "2.5.4-1+deb12u1"
+        },
+        {
+          "name": "libselinux1:arm64",
+          "version": "3.4-1+b6"
+        },
+        {
+          "name": "libsemanage-common",
+          "version": "3.4-1"
+        },
+        {
+          "name": "libsemanage2:arm64",
+          "version": "3.4-1+b5"
+        },
+        {
+          "name": "libsepol2:arm64",
+          "version": "3.4-2.1"
+        },
+        {
+          "name": "libsmartcols1:arm64",
+          "version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "libss2:arm64",
+          "version": "1.47.0-2+b2"
+        },
+        {
+          "name": "libssh2-1:arm64",
+          "version": "1.10.0-3+deb12u1"
+        },
+        {
+          "name": "libssl3:arm64",
+          "version": "3.0.22-1~deb12u1"
+        },
+        {
+          "name": "libstdc++6:arm64",
+          "version": "12.2.0-14+deb12u1"
+        },
+        {
+          "name": "libsystemd0:arm64",
+          "version": "252.39-1~deb12u2"
+        },
+        {
+          "name": "libtasn1-6:arm64",
+          "version": "4.19.0-2+deb12u1"
+        },
+        {
+          "name": "libtinfo6:arm64",
+          "version": "6.4-4"
+        },
+        {
+          "name": "libudev1:arm64",
+          "version": "252.39-1~deb12u2"
+        },
+        {
+          "name": "libunistring2:arm64",
+          "version": "1.0-2"
+        },
+        {
+          "name": "libuuid1:arm64",
+          "version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "libxxhash0:arm64",
+          "version": "0.8.1-1"
+        },
+        {
+          "name": "libzstd1:arm64",
+          "version": "1.5.4+dfsg2-5"
+        },
+        {
+          "name": "login",
+          "version": "1:4.13+dfsg1-1+deb12u2"
+        },
+        {
+          "name": "logsave",
+          "version": "1.47.0-2+b2"
+        },
+        {
+          "name": "mawk",
+          "version": "1.3.4.20200120-3.1"
+        },
+        {
+          "name": "mount",
+          "version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "ncurses-base",
+          "version": "6.4-4"
+        },
+        {
+          "name": "ncurses-bin",
+          "version": "6.4-4"
+        },
+        {
+          "name": "passwd",
+          "version": "1:4.13+dfsg1-1+deb12u2"
+        },
+        {
+          "name": "perl-base",
+          "version": "5.36.0-7+deb12u3"
+        },
+        {
+          "name": "sed",
+          "version": "4.9-1+deb12u1"
+        },
+        {
+          "name": "sysvinit-utils",
+          "version": "3.06-4"
+        },
+        {
+          "name": "tar",
+          "version": "1.34+dfsg-1.2+deb12u1"
+        },
+        {
+          "name": "tzdata",
+          "version": "2026b-0+deb12u1"
+        },
+        {
+          "name": "usr-is-merged",
+          "version": "37~deb12u1"
+        },
+        {
+          "name": "util-linux",
+          "version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "util-linux-extra",
+          "version": "2.38.1-5+deb12u3"
+        },
+        {
+          "name": "zlib1g:arm64",
+          "version": "1:1.2.13.dfsg-1"
+        }
+      ],
+      "parent_mode": "0700",
+      "qualification_image_id": "sha256:31178cb179026d602dd0c2fc268ef133be78575cc712e7f6f614992a31eaf9ee",
+      "runtime_image_id": "sha256:bebd867554e43d9abe00403274e5fef7571b418d7f65267fb8335ca2bab8f019",
+      "uid": 10001,
+      "volume_driver": "local",
+      "volume_nocopy": true
+    },
+    "passed": true,
+    "profile": "local_linux_arm64_nonroot_loopback_container",
+    "raw_authority_recorded": false,
+    "snapshot_digests_recorded": false,
+    "tokens_recorded": false
+  },
+  "counting_scope": "Same696 unique Rust entries run on macOS and Linux; same12 release cases repeated on each platform. Python43 new plus13 retained; Docker13 actual operations are separate from unit tests and broad release scenarios.",
+  "final_images": {
+    "runtime": "sha256:bebd867554e43d9abe00403274e5fef7571b418d7f65267fb8335ca2bab8f019",
+    "qualification": "sha256:31178cb179026d602dd0c2fc268ef133be78575cc712e7f6f614992a31eaf9ee"
+  },
+  "pinned_bases": {
+    "rust": {
+      "index": "sha256:5b9332190bb3b9ece73b810cd1f1e9f06343b294ce184bcb067f0747d7d333ea",
+      "child_manifest": "sha256:c4aff1f5fe1b20c1a2652776235f4d81ee041a722045b771634361ff4c933ba3",
+      "config_image_id": "sha256:c8e01f3885cea6eadd44529e2663699b11cfc2be22a0a55d92c88e4366d237f6"
+    },
+    "debian": {
+      "index": "sha256:3783cc01769c7b2b1b83a5c5ad96c815348e28ed7da68e2e3687004faa906251",
+      "child_manifest": "sha256:0c8bbb8e987a035fe1d9704eb2e571b7e9a836e1caa46345290674b45b69e417",
+      "config_image_id": "sha256:813cd0370d827a30abbef1cf99f88217f87fda9612dd5241c9015ba182d32428"
+    }
+  },
+  "packaging_history": {
+    "evidence": {
+      "path": "/private/tmp/b4-container-packaging-evidence-audit.json",
+      "sha256": "34a75a4bfad1483a84ada8b2f05601a763e994bf3dd4445cc994bd61f3aec08e",
+      "size_bytes": 51086
+    },
+    "scope": "Initial pre-fixture images and initializer evidence; final image IDs above supersede these initial runtime/qualification IDs."
+  },
+  "qualification_inventory": {
+    "uid": 10001,
+    "gid": 10001,
+    "os": "Linux",
+    "architecture": "aarch64",
+    "python": "3.11.2",
+    "sqlite3": "3.40.1",
+    "files": {
+      "/opt/b4/container_snapshot.py": {
+        "sha256": "bcb6d238f1ec684763f38802d254837ac2e131568c34ae190fee18a0e3a7e50a",
+        "mode": "0o555",
+        "uid": 0,
+        "gid": 0
+      },
+      "/opt/b4/container_initialize_volume.sh": {
+        "sha256": "58fbc19ccd6cc78cc7c169d443e0fefb684d08a75ee7988170bf35c1fe4b720e",
+        "mode": "0o555",
+        "uid": 0,
+        "gid": 0
+      },
+      "/workspace/target/release/b4run": {
+        "sha256": "28b544c4e0ea70ad1269fa27fcd5b821ed1191f3498770ca619a4ad756858559",
+        "mode": "0o755",
+        "uid": 10001,
+        "gid": 10001
+      }
+    },
+    "image_id": "sha256:31178cb179026d602dd0c2fc268ef133be78575cc712e7f6f614992a31eaf9ee",
+    "package_verification": {
+      "status": "slim_expected_omissions_only",
+      "expected_missing_count": 4506,
+      "expected_missing_by_category": {
+        "documentation": 532,
+        "locale": 2080,
+        "manuals": 1833,
+        "info": 10,
+        "lintian": 50,
+        "apt_lists": 1
+      },
+      "unexpected_missing_count": 0,
+      "nonmissing_discrepancy_count": 0,
+      "pristine_packages_claimed": false
+    }
+  },
+  "macos_release": {
+    "path": "target/release/b4run",
+    "sha256": "a48b784f6f1fbd77aaa781c16b2f2bdb6db6ab49a30d966a690d8437f95a3060",
+    "target": "aarch64-apple-darwin",
+    "format": "Mach-O arm64"
+  },
+  "linux_release": {
+    "sha256": "28b544c4e0ea70ad1269fa27fcd5b821ed1191f3498770ca619a4ad756858559",
+    "target": "aarch64-unknown-linux-gnu",
+    "format": "ELF64 AArch64",
+    "rustc": "1.93.1",
+    "cargo": "1.93.1"
+  },
+  "test_only_source_exceptions": [
+    {
+      "path": "crates/b4-cli/src/process.rs",
+      "before_sha256": "a4f97f74f92a0061cebc7f5fc6031a8f65e9c721483fc951d53fe6d795abce98",
+      "after_sha256": "0a788cc032880a4b9581ac351bccb73b6c0f1a6445ae544f82fed95b4f4da3e9"
+    },
+    {
+      "path": "crates/b4-cli/src/process_tests.rs",
+      "before_sha256": "269f084aee50dfe97f630298b87db927e9ad3f9051dba37c87626e42ab8da089",
+      "after_sha256": "a06f7d9229fd7e42789697887b3ebc29bb06afa85f17bbfbbcfd5d035ef21d96"
+    }
+  ],
+  "release_checksum_mechanism": {
+    "evidence": {
+      "path": "/private/tmp/b4-release-source-location-probe.json",
+      "sha256": "b50d0bf0e6f4bce0b7a2ac4e1434689be895df7edc5d8a03a046e027a31f46bb",
+      "size_bytes": 7280
+    },
+    "independent_audit": {
+      "path": "/private/tmp/b4-container-release-location-root-audit.json",
+      "sha256": "008142e89231d95ad40bda30302c08b3a00629358da08a7d8b22335ad5143168",
+      "size_bytes": 455
+    },
+    "scope": "Compiler Location records move by12 lines. Private macOS A/B/C reproduce old/new/restored hashes; decoded Linux executable/other allocated sections unchanged except13 source-location line fields and derived build identity. No byte-identity or panic-source-location-identity claim; no padding applied to production."
+  },
+  "named_test_inventory": {
+    "requirements": 20,
+    "new_python_unit_entries": 43,
+    "actual_docker_cases": 13,
+    "requalified_existing_rust_entries": 3,
+    "unique_named_functions": 59,
+    "counting_scope": "59 mapped functions are43 new Python units plus13 actual Docker cases plus3 existing Rust entries; unrelated to56 broad pending release scenarios.",
+    "entries": [
+      {
+        "file": "crates/b4-cli/src/process_tests.rs",
+        "name": "lost_actual_outer_server_witness_retains_executor_and_owner_after_quiescence"
+      },
+      {
+        "file": "crates/b4-cli/src/process_tests.rs",
+        "name": "opaque_outer_server_panic_is_retained_without_payload_drop_or_owner_release"
+      },
+      {
+        "file": "crates/b4-cli/src/process_tests.rs",
+        "name": "quiescent_unread_sse_retains_transport_and_rate_limits_waits_until_peer_close"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_browser_bearer_capability_guards"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_fresh_volume_initialization"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_hidden_nonempty_initializer_refusal"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_live_owner_exclusion_and_coherent_rows"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_native_order_and_required_park"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_nonroot_native_runtime_identity"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_private_parent_preflight"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_public_commands_and_readonly_config"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_public_probes_and_docker_health"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_readonly_prior_owner_parked_projection"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_same_volume_epoch_only_restart"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_sigint_positive_retirement_and_reusable_volume"
+      },
+      {
+        "file": "scripts/qualify_linux_container.py",
+        "name": "case_sigterm_positive_retirement"
+      },
+      {
+        "file": "scripts/test_container_initialize_volume.py",
+        "name": "test_empty_child_directory_is_nonempty"
+      },
+      {
+        "file": "scripts/test_container_initialize_volume.py",
+        "name": "test_hidden_existing_file_refused_without_changes"
+      },
+      {
+        "file": "scripts/test_container_initialize_volume.py",
+        "name": "test_missing_root_refused_without_creation"
+      },
+      {
+        "file": "scripts/test_container_initialize_volume.py",
+        "name": "test_nonroot_empty_root_refused_without_mutation"
+      },
+      {
+        "file": "scripts/test_container_initialize_volume.py",
+        "name": "test_nonroot_existing_private_modes_preserved"
+      },
+      {
+        "file": "scripts/test_container_initialize_volume.py",
+        "name": "test_nonroot_newline_only_child_preserved"
+      },
+      {
+        "file": "scripts/test_container_initialize_volume.py",
+        "name": "test_regular_root_refused_without_changes"
+      },
+      {
+        "file": "scripts/test_container_initialize_volume.py",
+        "name": "test_symlink_root_refused_without_target_changes"
+      },
+      {
+        "file": "scripts/test_container_initialize_volume.py",
+        "name": "test_visible_existing_file_refused_without_changes"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_canonical_cells_preserve_types_boundaries_and_raw_json"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_created_container_refuses_projected_nonroot_private_working_directory"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_created_containers_explicitly_use_fixed_root_working_directory"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_curl_authority_is_only_in_private_stdin_and_quoted_losslessly"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_foreign_labels_nonlocal_options_or_names_are_refused"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_foreign_volume_is_refused_before_container_creation"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_inspect_is_explicit_allowlist_and_never_collects_environment"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_inspection_and_runner_failures_never_echo_raw_private_data"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_live_resource_cannot_count_as_complete_before_cleanup"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_live_wal_snapshot_sees_uncheckpointed_commits"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_missing_database_is_not_created"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_package_verification_accepts_only_known_slim_missing_categories"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_package_verification_empty_reports_no_discrepancies_without_pristine_claim"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_package_verification_rejects_unexpected_missing_or_nonmissing_reports"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_parent_preflight_accepts_only_exact_private_owned_directory"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_positive_retirement_requires_actual_clean_exit_stopped_and_not_oom"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_public_receipt_refuses_private_or_unknown_metadata"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_public_receipt_refuses_private_values_inside_allowed_fields"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_public_snapshot_summary_contains_counts_without_authority_or_digest"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_readonly_and_query_only_reject_actual_writes"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_readonly_observer_preserves_all_rows_and_epoch"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_readonly_parked_attachment_accepts_exact_sse_header_and_preserves_all_guards"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_reopen_changes_only_metadata_epoch_by_exactly_one"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_reopen_preserves_original_execution_owner_and_authority"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_reopen_refuses_any_additional_row_or_raw_json_change"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_run_records_live_resource_failure_before_forced_cleanup"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_snapshot_process_failures_suppress_source_path_and_private_payload"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_stopped_mode_reads_clean_wal_header_without_creating_sidecars"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_stopped_mode_refuses_every_existing_sidecar"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_stopped_source_requires_all_exited_writers_and_no_open_observers"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_unknown_create_outcome_recovers_only_exact_owned_identity"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_valid_owned_local_volume_and_nocopy_mount_are_accepted"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_writer_commit_between_table_reads_cannot_split_snapshot"
+      },
+      {
+        "file": "scripts/test_qualify_linux_container.py",
+        "name": "test_wrong_mount_nocopy_readonly_or_host_access_is_refused"
+      }
+    ]
+  },
+  "scoped_evidence": [
+    {
+      "path": "/private/tmp/b4-container-packaging-evidence-audit.json",
+      "sha256": "34a75a4bfad1483a84ada8b2f05601a763e994bf3dd4445cc994bd61f3aec08e",
+      "size_bytes": 51086
+    },
+    {
+      "path": "/private/tmp/b4-container-operational-independent-audit.json",
+      "sha256": "710b30de7d9e0105c0a18bd6017e6e1749142f41e6d05377db905b80ea97c59b",
+      "size_bytes": 1722
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-host-red.log",
+      "sha256": "3e1e91cb7aced84ffbb0bb8742686fe5875a9809e783122a76c5dc2d7a3c9289",
+      "size_bytes": 6398
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-host-green.log",
+      "sha256": "d041de1238c0ff86f970a1ff7932c08b9ea56782fc94936eb6589c72421feaf7",
+      "size_bytes": 107
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-linux-red.log",
+      "sha256": "f6e51dd83a6fff0b90d7fac745e030e19505f4c4eb1e6d69f29d08078792fae1",
+      "size_bytes": 1076
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-linux-green.log",
+      "sha256": "7454c5df0469a4c247990d729d4d15b3c5ceee7113195220beb12faac8dcec21",
+      "size_bytes": 1131
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-root-spec.log",
+      "sha256": "1fa3ed861023a10c8f1162219bed42907e107c1ab662a45f1865cb5e62ad4af5",
+      "size_bytes": 107
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-host-quality.log",
+      "sha256": "813f35d53c1760c61558da4e0f33ce6913e048fa988b136d000a337a8a7fb0e8",
+      "size_bytes": 618
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-driver-red.log",
+      "sha256": "0755c80054f9216421f8ad1d417ac831855728329f84ede01b5781f83df8a636",
+      "size_bytes": 11620
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-driver-boundary-red.log",
+      "sha256": "e32325acdd070544893f36304b240e36d173fa2694f7af8f5fecf5550755a921",
+      "size_bytes": 6230
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-package-classification-red.log",
+      "sha256": "55b6afc7345bcd2a61b2e9bafc33e8d515bbfa414573160c8938246dba013b55",
+      "size_bytes": 6579
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-package-classification-green.log",
+      "sha256": "b05ead46e8f430efde73e25291bd6bbbcd5100b5e8f0f2849ce1cb6247d0db2a",
+      "size_bytes": 5073
+    },
+    {
+      "path": "/private/tmp/b4-container-snapshot-root-spec.log",
+      "sha256": "693b480f3d7694732bf29dee62cc858b41fe0d587697f6ae782b2f790cb7ef34",
+      "size_bytes": 122
+    },
+    {
+      "path": "/private/tmp/b4-container-snapshot-quality.log",
+      "sha256": "6c0e4344daf1da9bcc793d6c3f105c00c3ac800366201d40ba8b99ad45b08238",
+      "size_bytes": 2371
+    },
+    {
+      "path": "/private/tmp/b4-container-runtime-qualification-optional-field-failure.log",
+      "sha256": "3006d3a38e04329b6e92bdce3e3286d1cbefc58c896bbdda0e0032a83ea41fdd",
+      "size_bytes": 28
+    },
+    {
+      "path": "/private/tmp/b4-container-image-template-qualification-diagnostic.log",
+      "sha256": "8920ebf649cf1057bdb112c30b0f896cae0da50c7dd636e15176aaec19f08028",
+      "size_bytes": 131
+    },
+    {
+      "path": "/private/tmp/b4-container-optional-projection-green.json",
+      "sha256": "97a600e780e5798f9af88777464d5f423dc49c8a5221aaefd68a34ba0fa3c617",
+      "size_bytes": 1611
+    },
+    {
+      "path": "/private/tmp/b4-container-driver-optional-root-spec.json",
+      "sha256": "549cd7c24a5fc48876867d4f6f22aa661152dfadbbda8dedb62affdd45f05c3c",
+      "size_bytes": 733
+    },
+    {
+      "path": "/private/tmp/b4-container-driver-optional-quality.json",
+      "sha256": "2ee19d24ea52801ea7e7dd9322b594fbf21915cbd783b89c9285ab0fbd7df8f6",
+      "size_bytes": 3559
+    },
+    {
+      "path": "/private/tmp/b4-container-auxiliary-pid1-red.json",
+      "sha256": "d2eb5c2fa7fc1fe3bd73485648beb12e8cd598a1dea4a796c96c186e8a8233f8",
+      "size_bytes": 222
+    },
+    {
+      "path": "/private/tmp/b4-container-auxiliary-pid1-green.json",
+      "sha256": "e9dd428ffa153bd7b677129f68c478c9c96c0f121465304f99f4ad7c754abfb9",
+      "size_bytes": 511
+    },
+    {
+      "path": "/private/tmp/b4-container-empty-mount-red.json",
+      "sha256": "931491b4b729ae9380ce99297ab08026bf00865c75ef88c7727cbefc0061be36",
+      "size_bytes": 260
+    },
+    {
+      "path": "/private/tmp/b4-container-empty-mount-green.json",
+      "sha256": "c67448f0f542e566e41c6b4508f2ff475d07319432c9383ed5458ea1ba028575",
+      "size_bytes": 194
+    },
+    {
+      "path": "/private/tmp/b4-container-driver-aux-mount-root-spec.json",
+      "sha256": "bda3d0639593654d1d52a6645713f95326072e592ea72fe68870f923da528e7c",
+      "size_bytes": 760
+    },
+    {
+      "path": "/private/tmp/b4-container-driver-final-quality.json",
+      "sha256": "19e1b90e508f5a834a1f710d292d6e052a835359aa71bcb35bcc882afd70fc5f",
+      "size_bytes": 5137
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-runtime-qualification-aux-pid1-failure.json",
+      "sha256": "8af744c73574cbf5e748830351b3c8f4b76cb35b71b28133a69be6f1e26616bf",
+      "size_bytes": 10752
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-runtime-qualification-fresh-init-failure.json",
+      "sha256": "900aac7103391ed23ef78b404dd934a4d69414c0d89ac60768ceeee8c9c15a7d",
+      "size_bytes": 10811
+    },
+    {
+      "path": "/private/tmp/b4-container-runtime-qualification-fresh-init-failure.log",
+      "sha256": "9f38919e4c3c86d4b7885008244cd2f6273743d9cdc78dd4eed1972803bee739",
+      "size_bytes": 33
+    },
+    {
+      "path": "/private/tmp/b4-container-linux-workspace-tests-initial-failure.log",
+      "sha256": "37ce048ed8fda8c1b63637fb9ef23f78aa91c4d27d681750b8a997ee2bec1178",
+      "size_bytes": 6251
+    },
+    {
+      "path": "/private/tmp/b4-linux-transport-fixture-diagnostic.json",
+      "sha256": "e946f4b7b77c323b40135250de0293018fde0e584998c197f6cf4849d7cf1203",
+      "size_bytes": 5295
+    },
+    {
+      "path": "/private/tmp/b4-linux-fixture-repair-freeze.json",
+      "sha256": "75f7d5a666fc16bc6917ee77cd6a97305115ad7f3ba5362778179a466a42dd6d",
+      "size_bytes": 1964
+    },
+    {
+      "path": "/private/tmp/b4-linux-fixture-permanent-host-quality.json",
+      "sha256": "01f9194a0a2e67e9b0b00dd9a6b692157aa94a181e1e752178f85b8daf69d874",
+      "size_bytes": 1753
+    },
+    {
+      "path": "/private/tmp/b4-release-source-location-probe.json",
+      "sha256": "b50d0bf0e6f4bce0b7a2ac4e1434689be895df7edc5d8a03a046e027a31f46bb",
+      "size_bytes": 7280
+    },
+    {
+      "path": "/private/tmp/b4-container-release-location-root-audit.json",
+      "sha256": "008142e89231d95ad40bda30302c08b3a00629358da08a7d8b22335ad5143168",
+      "size_bytes": 455
+    },
+    {
+      "path": "/private/tmp/b4-container-qualification-fixture-final-build.log",
+      "sha256": "dace8b10f2bafebad6b4dfdb5c038cd7c4fae6e2c4c60e35a8ac4b0fcf1da8a3",
+      "size_bytes": 18009
+    },
+    {
+      "path": "/private/tmp/b4-container-runtime-fixture-final-build.log",
+      "sha256": "72a572355a82a5a827df37b8118ce38a07e6e7f2658efa4a22d0bc9432e03cc9",
+      "size_bytes": 3253
+    },
+    {
+      "path": "/private/tmp/b4-container-qualification-fixture-final-inventory.json",
+      "sha256": "590e813e1d11dd79a735dce360004969b8485e1a4b57adbff00644c40dd5f62c",
+      "size_bytes": 1209
+    },
+    {
+      "path": "/private/tmp/b4-container-qualification-fixture-final-packages.log",
+      "sha256": "38a02d2d335e53e9a4a9fc909e25aea8ed8d09f4c17b3a33a13c0a161e584855",
+      "size_bytes": 3973
+    },
+    {
+      "path": "/private/tmp/b4-container-qualification-fixture-final-package-verification.log",
+      "sha256": "e044199dfc6595e6a9cdcee8955fa5c06e01fa69ac366781225ab2edcc6bf8be",
+      "size_bytes": 212270
+    },
+    {
+      "path": "/private/tmp/b4-container-docs-host-review.json",
+      "sha256": "c60ec0792712e4d9edd8c97afed85730668d2368a1a875eabb584c76eded023c",
+      "size_bytes": 3526
+    },
+    {
+      "path": "/private/tmp/b4-container-docs-final-review.json",
+      "sha256": "b3370b31def63f479ff6bd1fd88286454a81afd93c339bce480929c42a57ccfd",
+      "size_bytes": 7048
+    },
+    {
+      "path": "/private/tmp/b4-container-source-test-cleanup.json",
+      "sha256": "07939b9fb1d0f8bdd181248777b6fd4d405afb9bed6ac6ca214a85717a41f6de",
+      "size_bytes": 1195
+    },
+    {
+      "path": "/private/tmp/b4-container-runtime-qualification-operational-pass.log",
+      "sha256": "b762b82530570a9d4c55cee0600e0b97185a51cb5b7d28a6da572659bcc80c8a",
+      "size_bytes": 34
+    },
+    {
+      "path": "/private/tmp/b4-container-driver-cwd-root-spec.json",
+      "sha256": "47ad098f5fbc9ea7aa095a1ecb1f388cd01fa99c046b12380f99ddb699054dc7",
+      "size_bytes": 640
+    },
+    {
+      "path": "/private/tmp/b4-container-driver-cwd-quality.json",
+      "sha256": "139edd30f9ff276a8568464aefdade8dd1c388e8ebaff83a4be3c40b4c20b9eb",
+      "size_bytes": 4751
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-cwd-red.json",
+      "sha256": "60ae4fbdff4cda96567d3f186a9f85e75e89688767dc01462ca9a763c5040bf0",
+      "size_bytes": 446
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-cwd-green.json",
+      "sha256": "5ed8cad54a615bcc4733bba8ce7b9c215fcdb65139501fb4f658d874052f61b5",
+      "size_bytes": 411
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-cwd-red.log",
+      "sha256": "6020c04e77588807f91ddd8be4632a4e4cd6d4decb4d38971743d3eb895030ca",
+      "size_bytes": 32
+    },
+    {
+      "path": "/private/tmp/b4-container-initializer-cwd-green.log",
+      "sha256": "401b92af1462ba2184e6c4da91b45b2f41fca536602823479952d1ea6d5189ad",
+      "size_bytes": 32
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-working-directory-unit-red.log",
+      "sha256": "3ec2cba2beb782fd041196ae791cc085608d0cb30898a9a343aae64a5a6d628c",
+      "size_bytes": 7158
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-working-directory-unit-green.log",
+      "sha256": "212db9182dfd9610c9a15617ae2c3bcbe0fcdd7e024953a0d3634dc35a571550",
+      "size_bytes": 5429
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-runtime-qualification-parked-attachment-failure.json",
+      "sha256": "f38da42e774f675723a1268ddc0f818ae301ad24ef45ec8cabad521ff4f9cb9a",
+      "size_bytes": 11449
+    },
+    {
+      "path": "/private/tmp/b4-container-runtime-qualification-parked-attachment-failure.log",
+      "sha256": "53979d6a949961a15c6f0529386ebd912b8196166fc1188af6f90e75c9b914f3",
+      "size_bytes": 38
+    },
+    {
+      "path": "/private/tmp/b4-container-parked-header-red.json",
+      "sha256": "b853392a878c51d1144587c6bca0b789a999d9c9e8c816b9502abc1f53ea3447",
+      "size_bytes": 424
+    },
+    {
+      "path": "/private/tmp/b4-container-parked-header-red.log",
+      "sha256": "3fb2b18ac030c5e47c01ee54aff0494147b27910ab4637682cff493c920098c2",
+      "size_bytes": 30
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-parked-header-unit-red.log",
+      "sha256": "a00bdb6b95364c29cb8f3cb36239c891efbfc262a7b87a8ba4e4424e0b4e7cba",
+      "size_bytes": 6403
+    },
+    {
+      "path": "/private/tmp/b4-linux-container-parked-header-unit-green.log",
+      "sha256": "f471f1192730b7003276f3afee298987e19b62256cb88da6b1ad4d6d6bf803e4",
+      "size_bytes": 5628
+    },
+    {
+      "path": "/private/tmp/b4-container-driver-header-root-spec.json",
+      "sha256": "71e531cb6b83f46a7be9b50a9bb53a0abea51f47be0e6fa2e33882ad32e73dcb",
+      "size_bytes": 752
+    },
+    {
+      "path": "/private/tmp/b4-container-driver-header-quality.json",
+      "sha256": "40bc51268bbe2c411182bb266dd1e3f6444693175a025f16c2cd9becddb61c3c",
+      "size_bytes": 4870
+    }
+  ],
+  "prior_native_receipt": {
+    "path": "conformance/expected/native-process-launcher-verification.json",
+    "sha256": "3242f9c103fab1a263914b329671c5ee480e6ea333f84aca9db82c4e9219031e"
+  },
+  "prior_evidence_policy": "Historical receipts and pinned reference captures unchanged. Only two existing cfg(test) fixture files change in this increment; no production control-flow, dependencies, SQL, or protocol changes. Live documentation/source evolves separately.",
+  "prior_crate_files_unchanged": 153,
+  "protected_prior_hashes": {
+    "conformance/expected/authenticated-http-verification.json": "ea6c0a9863828049ca8878e9e2c222db0417911017fc8816b78b3fa71bec664f",
+    "conformance/expected/bounded-run-attachment-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/bounded-run-attachment-attachment-http-example.json": "6b9664835a972c6718e4ae0f80e2fbfdc90878ad84fe96a703d3753fd43a1624",
+    "conformance/expected/bounded-run-attachment-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/bounded-run-attachment-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/bounded-run-attachment-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/bounded-run-attachment-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/bounded-run-attachment-reference-comparison.json": "3699756d8e4508b08f6828242de398a3629fe2ac49f4e1a8838b763969f23af9",
+    "conformance/expected/bounded-run-attachment-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/bounded-run-attachment-sqlite-demo.json": "117ddd687e687d78dcf1803e947802468d6c7ac279ef9d68311730cabaf138b6",
+    "conformance/expected/bounded-run-attachment-verification.json": "08e68966eed667623d1b48a1a49d4921f83b3a4a52bac2703ecb35249fceadf8",
+    "conformance/expected/durable-approval-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/durable-approval-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/durable-approval-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/durable-approval-reference-comparison.json": "6382458320c8bcb175ede0f6bc9b2ed03162f1c6ad1e5494e4d32175a0c528f2",
+    "conformance/expected/durable-approval-sqlite-demo.json": "2bce11fb5335f8f4b0c82045bf55fedfe05599408ae761e9ea4eb7a54c457365",
+    "conformance/expected/durable-approval-verification.json": "30507ee230de7d1938da968cff94793d5fbf6e1b78dcd966f604586eb1311d2d",
+    "conformance/expected/fenced-thread-deletion-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/fenced-thread-deletion-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/fenced-thread-deletion-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/fenced-thread-deletion-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/fenced-thread-deletion-reference-comparison.json": "0c9db96f705618253d6ba7d4e86506dc42c1458ae00eeb29bb70bc752f3ab2fc",
+    "conformance/expected/fenced-thread-deletion-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/fenced-thread-deletion-sqlite-demo.json": "75cf4d74b125b2546a4178a185a75abbdb77b72939d2cb1f050e1dd44077a7aa",
+    "conformance/expected/fenced-thread-deletion-verification.json": "9bf3394371077fed2957e8799ea2a2c1887ec6e03f078e57a7b1cbaab608ab02",
+    "conformance/expected/foundation-scenarios.json": "3d95e196ab79d16f0bed4122e8c7bf2eb3c3f4a5efb365be22c80307c8f680a6",
+    "conformance/expected/foundation-verification.json": "424777196e276f7b3a8a66d1122451b684c6cb04505c7e5afce673a8d665fe30",
+    "conformance/expected/http-approval-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/http-approval-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/http-approval-foundation-scenarios.json": "3a49a59439f3eef0a28851b35d955f0c7398b8fdc5817df07e63b9f1699267b8",
+    "conformance/expected/http-approval-reference-comparison.json": "999a42ab7f4bc3b59c69abb1a6aafeda0b66aa87cc111fe9a127ec242bef9b0e",
+    "conformance/expected/http-approval-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/http-approval-sqlite-demo.json": "7c8c25fb82dbeaf5d77fe422d96ce7f67c1e12f3f2730f8a4ec47d916e1746ea",
+    "conformance/expected/http-approval-verification.json": "1f319a6128e5cf49ce4348d8d993d71213e58790964202f32f60fe2a8cc9bcd6",
+    "conformance/expected/http-example-verification.json": "7719d6d6d9599de0f987052cd8f8abe53b8d164f48604cf5e720a28cfdec8de4",
+    "conformance/expected/http-foundation-scenarios.json": "3a49a59439f3eef0a28851b35d955f0c7398b8fdc5817df07e63b9f1699267b8",
+    "conformance/expected/http-sqlite-demo.json": "b84b89addfcb8cda97c7f8b1da2449dc00c01042eb2be98fe57d7839e7370e78",
+    "conformance/expected/lifecycle-reference-verification.json": "ced7854835d4dcfbb0cb6b8ac2e830c1d37075c03eb24be8d6219243f1107613",
+    "conformance/expected/local-reference-verification.json": "5b82ce6369e646fe932e1397f5fad66e3d774a60523a2c71e7806b796f11f499",
+    "conformance/expected/owned-run-cancellation-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/owned-run-cancellation-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/owned-run-cancellation-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/owned-run-cancellation-foundation-scenarios.json": "3a49a59439f3eef0a28851b35d955f0c7398b8fdc5817df07e63b9f1699267b8",
+    "conformance/expected/owned-run-cancellation-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/owned-run-cancellation-reference-comparison.json": "79c9efdafe6571e586654173e6654140f6cae011abb5a7b50bed2c852a654a53",
+    "conformance/expected/owned-run-cancellation-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/owned-run-cancellation-sqlite-demo.json": "fb1fc8087b1f5dbcf183bd7eebaa482c14520f77da19efdbd7804aeecc1f5b92",
+    "conformance/expected/owned-run-cancellation-verification.json": "2659a9b1d0ac4beaf7b3b11d89b3d6aee2b920176e6381e7571885f467f65e15",
+    "conformance/expected/selected-reference-comparison.json": "51268cf053053025f0b020d8ffc5432aa96d85fc83745970387b646f8e685394",
+    "conformance/expected/settled-failure-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/settled-failure-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/settled-failure-reference-comparison.json": "fa84f0eae80d09b32fb63ba3d6ca5f1ebda8f5d6f4d65c49ef80cda7a25a4a60",
+    "conformance/expected/settled-failure-sqlite-demo.json": "38f89bb8743c75f84c1d4ca8dcca38b095ef444654ff52e60f30147c1c881574",
+    "conformance/expected/settled-failure-verification.json": "b07c0bbf1a1b93994c8ab83f68f217724505a05c98458851a42e9b6233accd56",
+    "conformance/expected/shared-execution-driver-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/shared-execution-driver-attachment-http-example.json": "6b9664835a972c6718e4ae0f80e2fbfdc90878ad84fe96a703d3753fd43a1624",
+    "conformance/expected/shared-execution-driver-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/shared-execution-driver-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/shared-execution-driver-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/shared-execution-driver-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/shared-execution-driver-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/shared-execution-driver-sqlite-demo.json": "437391ddb14d58eafa725f097bae34c0346b702e6ffc8fe2d388b91abf81c3d7",
+    "conformance/expected/shared-execution-driver-verification.json": "47dacfa3c4f8500872824327199161fa0bfc4e12aa18b80cf0cbeb454d392c11",
+    "conformance/expected/transactional-runtime-demo.json": "513677577823a153716770c8c21d1fb07f0682a8bd1b8ba518149dfbcf13fb89",
+    "conformance/expected/transactional-runtime-verification.json": "19085781e58d18c755003bd00d5188ad7efa09ca0bfccf5aea1d1c9cd981eba7",
+    "conformance/expected/trusted-restart-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/trusted-restart-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/trusted-restart-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/trusted-restart-foundation-scenarios.json": "3a49a59439f3eef0a28851b35d955f0c7398b8fdc5817df07e63b9f1699267b8",
+    "conformance/expected/trusted-restart-reference-comparison.json": "b48491179c4fa2f670bca6726c9e670a0e5121b8c548a2d5f2dc68ba95c81fb4",
+    "conformance/expected/trusted-restart-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/trusted-restart-sqlite-demo.json": "450567a91fac700bbc6004ed6feffa2eb75d9c3c97b1fd25b0ed3be8852c7178",
+    "conformance/expected/trusted-restart-verification.json": "b10d61f4067682e6b27277dfaaa0eb0c68ab5a5bc87afc9058456f6ab59fcf84",
+    "conformance/reference/README.md": "2242624fa8e36435fa99a46a3833351fff2877b070b6fdc71aec12a361e262c4",
+    "conformance/reference/fixture/README.md": "8e29cff612d64e111c606290d79a724f61c703a3ec5fa38c633f8bfca117468a",
+    "conformance/reference/fixture/app/b4.config.ts": "fc00d19bc94e10c24f07bd9be1c2bb24d4978856963c5a68745338ecbf131dfc",
+    "conformance/reference/fixture/app/package.json": "7ed855976dff6a243c843b768d8c71bfaf066408c96a00876796e8c3d3476111",
+    "conformance/reference/fixture/app/src/app/empty/index.ts": "20f2432d8aadc21ec0937fa460bb522192454c8acc72dff373a94661c20520d5",
+    "conformance/reference/fixture/app/src/app/fail/index.ts": "67fe6e578e55b71e8e4344beaf38009b742851d7bc492a9262395538e7a98864",
+    "conformance/reference/fixture/app/src/app/false/index.ts": "7d731a9ab61746736ddd4e2a6f9ad133d1928bd0b98990257ccebf980cb3ba53",
+    "conformance/reference/fixture/app/src/app/probe/index.ts": "2b06650062c288eb1aa12ece586e85ef31e28104ccd2aca474e0a4699a880627",
+    "conformance/reference/fixture/app/src/app/validate/index.ts": "54d5cfc9105db1e14b0cb6bbcc36ae4924aa7db3900d836186030cffcfa80669",
+    "conformance/reference/fixture/app/src/app/void/index.ts": "f01d30338cf59b878cc8ec98b493f10695b6be1add6f280088c547ce6eaa6b2d",
+    "conformance/reference/fixture/app/src/app/zero/index.ts": "5400a414258596585c755e024f8517e3db8f2b2cabb4d03201858eaf1fac9131",
+    "conformance/reference/fixture/capture.mjs": "98bea197db65894632757fe87e7662d431687e39127e006efc6eb65c40481c04",
+    "conformance/reference/fixture/capture.test.mjs": "93ea404fb6116629e3d91a68e47bc30a8cf0b8d5ce5af2b8af8f864ac1a03bca",
+    "conformance/reference/fixture/cases.json": "48224462e5f0f1400ef126e17c276f1092f56b80ce055613f136e2f2fbf40d0a",
+    "conformance/reference/fixture/compare-recordings.mjs": "405ad762e3c76f2b172e4b193314ac2e0df958fc8d96ce3861f26e94c74a1436",
+    "conformance/reference/fixture/compare-recordings.test.mjs": "cc32a0174a035fd29abbf9e650cc5f7889be67e2d9de72bfb8eab2c92ed1a295",
+    "conformance/reference/fixture/harness.mjs": "06be8adba6c5889b95f50304055a8977f1afedd3e798114ef9ed6adc98f8e6a9",
+    "conformance/reference/fixture/harness.test.mjs": "576ac400552264cf33e7963876707a34ea96ccd573eb02f9e9af92e7f18a753b",
+    "conformance/reference/fixture/runtime-artifacts.mjs": "32d9140ad5372f2cded62f5ea19641d2e4989406f19d932eaccefd70f1d474c3",
+    "conformance/reference/fixture/runtime-artifacts.test.mjs": "4977dc1918a552963127e185ed44a277737163861ecd162c44884a44194734ba",
+    "conformance/reference/grant-fixture/README.md": "4c95b605a81690ea6ea921c504762e8226cc16fc7f8b49f5285fc4f6fc074681",
+    "conformance/reference/grant-fixture/app/b4.config.ts": "a9ff8c44dedbe368e0d274b0098a97c911633b2b906f5769948e3771b32da9c0",
+    "conformance/reference/grant-fixture/app/package.json": "fe1dafda48fc20c87d46d0bdf12e57fa01850c8dc23279780b35f6fc6f8245eb",
+    "conformance/reference/grant-fixture/app/src/app/park/index.ts": "a828b28a48e7d83309f704d3d2370ea8980d3ceeaf9d0ae38dc48ac93c0a33bb",
+    "conformance/reference/grant-fixture/app/src/app/park/tools/deployProd.ts": "76e8dbb3ea9acc75d722202fbc973f0bb1c69647e33f08849c90068b0625209b",
+    "conformance/reference/grant-fixture/capture.mjs": "320e2c09e5cc85d0ec899ff7700d6e2da4763138b50f0eb7ea4facb71b6f8af4",
+    "conformance/reference/grant-fixture/projection.mjs": "1f0d841e667f39d50fe038de84995c454c4abe1ce753122d80cca344ad77af57",
+    "conformance/reference/grant-fixture/projection.test.mjs": "2b9f8b6d65854fecc80aaf243f3eb66cfc94afb4919437c7742f240bc508d81e",
+    "conformance/reference/lifecycle-fixture/README.md": "43b6a87709eabfd685c67be96e5c5459e273877ddfa979a9b0c7d2c9fa013c13",
+    "conformance/reference/lifecycle-fixture/app/b4.config.ts": "a9ff8c44dedbe368e0d274b0098a97c911633b2b906f5769948e3771b32da9c0",
+    "conformance/reference/lifecycle-fixture/app/package.json": "b0ff31107b87603e7adc0a15fb5fc02ecdf53336ae617ee6db4013049c7ad36b",
+    "conformance/reference/lifecycle-fixture/app/src/app/held/index.ts": "a3251f84a6bcda8b68deaf087c1c8119ae57ac0f1d1ddaefad52ca460f7e5980",
+    "conformance/reference/lifecycle-fixture/app/src/app/immediate/index.ts": "0623b8e0abcdac8f67b36e9c67835bf0db574c9d9193925e0b0609008fe7fa9b",
+    "conformance/reference/lifecycle-fixture/app/src/app/park/index.ts": "f8daa1b9a25660eef72734936b13c71a9748fbd749a4823ea7bc27c8d2941143",
+    "conformance/reference/lifecycle-fixture/app/src/app/park/tools/localDecision.ts": "e9d43c3fd22c29676b0845d14520b12843fc61d41db74d6af555feaa0f508a15",
+    "conformance/reference/lifecycle-fixture/capture.mjs": "7ad47319080c3fdc44de0965af2618b8b64a96fefc170ff43fd94fb3653dbc3e",
+    "conformance/reference/lifecycle-fixture/projection.mjs": "3008c8045c7059c634bf2ff795236bd9e47c776e5d9cdfbe458bdb0e0eb43c21",
+    "conformance/reference/lifecycle-fixture/projection.test.mjs": "5bd6174ee0f78c1cc7194a247bb3c52709be966e8db0182a463e95b1cafcf015",
+    "conformance/reference/manifest.json": "2c621766b2aabc12e3e3fabeba4802fc912bc2dbfffbad3d9b40b44415c9f494",
+    "conformance/reference/recordings/2026-09-30-workflows/README.md": "b09712a7f556700938199a991f2f3f472de9707e35c687769aa470ffd8b080cc",
+    "conformance/reference/recordings/2026-09-30-workflows/build-provenance.json": "073678cf496ab24f55f32b4b26c0ca5bda1f73c52b66e0056279e9d472c56dd1",
+    "conformance/reference/recordings/2026-09-30-workflows/repeat/workflow-observations.json": "ec59969faffce44425b1e553f26d318ef772deff2b0e072fb79b48ab9a911ef8",
+    "conformance/reference/recordings/2026-09-30-workflows/runtime-artifacts.json": "b2e22d96e88e8a45e31890af1a5387a00686196c7c831a8e0c0d305f9d12820c",
+    "conformance/reference/recordings/2026-09-30-workflows/workflow-observations.json": "2485bb8a5404c2cd0af3e28a898de1afcc432b0fdee733919143ef72d1a08a16",
+    "conformance/reference/recordings/2026-09-30-workflows/workflow-repeatability.json": "f303ba4c0a9bb4a88389b6623add6352dfac636188f86462a61d802a099cd88a",
+    "conformance/reference/recordings/2026-10-01-grants/README.md": "26c905989b72b09ed915e53fde9af78d0e23a537e6a7f335d6a2793bbf29e46a",
+    "conformance/reference/recordings/2026-10-01-grants/build-provenance.json": "31ed6674ebe98b31dffddffc5ccb777ad2120d0ead7ca7140ffb441ff2f38423",
+    "conformance/reference/recordings/2026-10-01-grants/build.log": "eaa98f50b7cc5799238e3a441f52f7bb2b9cdf7a35325847f0fbf7cc5c557923",
+    "conformance/reference/recordings/2026-10-01-grants/grant-observations.json": "d65a81878bcf0a88b12e746f92a0baa62beaafc7b2f8a0c358293c80e433e8a0",
+    "conformance/reference/recordings/2026-10-01-grants/grant-repeatability.json": "0bee5f17aa7693315a4a62c49aa2e1bb3711c0a0713032e751c1e0220621617c",
+    "conformance/reference/recordings/2026-10-01-grants/install.log": "d557a5e1b2385c7e8827972e582c198216a6ef23c9dff4cf44a089027d9f44e2",
+    "conformance/reference/recordings/2026-10-01-grants/repeat/grant-observations.json": "3f6ccea87a5baa63405256348939b6ce9c5fe71e1678315a5f420a1d3fe7ef03",
+    "conformance/reference/recordings/2026-10-01-grants/repeat/runtime-artifacts.json": "5833cacf0a42555df64baebb8356e7f87f82c2ff805effb95ecbacf273209674",
+    "conformance/reference/recordings/2026-10-01-grants/runtime-artifacts.json": "999605f0112627bf28484e8cdaabb2f4d913760ea17e40e2d6b99ed3991b95c7",
+    "conformance/reference/recordings/2026-10-01-lifecycle/README.md": "f1c7cd8925b15920bcabcc7f753623fcfa7dd8d5cea86e2b4be2e6ada999c9f6",
+    "conformance/reference/recordings/2026-10-01-lifecycle/build-provenance.json": "212fc71313a7c24751befcfd5aa602f4d74d740423709f4012449b9edaa71d08",
+    "conformance/reference/recordings/2026-10-01-lifecycle/capture.log": "5981bc709711ebd1d417cc133d8870a331524855138b9f8b5e65dee73ff92047",
+    "conformance/reference/recordings/2026-10-01-lifecycle/lifecycle-observations.json": "e1c45cc4f935c29875e82494870189de4ec8e69dd21b0e7b5fe11660bdc03818",
+    "conformance/reference/recordings/2026-10-01-lifecycle/lifecycle-repeatability.json": "ebf5d78734e566296dbbeca75ff036fbeed998faf4529c19f6f450919f51029a",
+    "conformance/reference/recordings/2026-10-01-lifecycle/repeat/capture.log": "c2658fe3c480bcf5325f339ead778f04ba516847198e9d439ce840c24fcd09fa",
+    "conformance/reference/recordings/2026-10-01-lifecycle/repeat/lifecycle-observations.json": "ed28a82a75406fc5721ec26dd26652ac98eedd7e66b84f7eca18801708e0d592",
+    "conformance/reference/recordings/2026-10-01-lifecycle/repeat/runtime-artifacts.json": "52c858197b3523c7b832427058e94512c48315e9bf916a75b0771b456dd8dd1d",
+    "conformance/reference/recordings/2026-10-01-lifecycle/runtime-artifacts.json": "0bd61e4ff3b999e45f1892e6983272db50c1aff93164bf17d79e49b25fbb1fba",
+    "conformance/reference/source/LICENSE": "d805df508e4812d412205f18341737067429f46dc353e9a8ce7e14402a2f5455",
+    "conformance/reference/source/apps/web/content/docs/approval-grants.mdx": "4d484ecc56748bb2497a0a80dfd07e764d07f9dac2cdcc23188d88c896849d5f",
+    "conformance/reference/source/apps/web/content/docs/dev-server/agent-protocol.mdx": "48a7ba3ab7ae06ed481a5f22899f3e3fabbd139afb85d0cde4984c057002f421",
+    "conformance/reference/source/package.json": "9f965f5b995cd43350a5793948d74a61cf1acc4454f3ba41b557d0a286a11e45",
+    "conformance/reference/source/packages/cli/package.json": "f9eae129b26f012c72406691f3cfcff98ab15feb8d3d2ebfc86efbde106de630",
+    "conformance/reference/source/packages/cli/src/lib/dev/approval-grants.ts": "8a85e2828bd59fdeeb2403c62895ce318c4d01ec126a029dcaf52f7aa5d295a5",
+    "conformance/reference/source/packages/cli/src/lib/dev/live-turn-hub.ts": "545875fee37254c264f503e5991a1269ee90fc324807436d5015dcc3262aef27",
+    "conformance/reference/source/packages/cli/src/lib/dev/pending-interrupts.ts": "bc24097388b0a30855ddfb71306d2add5ef64cfae6b63d81f47fa182c8bd5f5f",
+    "conformance/reference/source/packages/cli/src/lib/dev/runtime-fetch-core.ts": "ddb883fdc04825246b774ae27e342cb34ab7362afb6f228147445646c1a3ab72",
+    "conformance/reference/source/packages/cli/src/lib/dev/server-errors.ts": "113b8f7f0d637268da78ac1ad913123c4118de204475e568285d2adefb558504",
+    "conformance/reference/source/packages/cli/src/lib/runtime/stream-types.ts": "1a2aac2e0f1f14d1f58f1346b1d8595d1c4806d5df32556895cd611438728851",
+    "conformance/reference/source/packages/cli/test/ap-attach-endpoint.test.ts": "3c77f297b5002f89b07b0b5d2eb7441945098354806052ef3cc681b69008d9d8",
+    "conformance/reference/source/packages/cli/test/resume-endpoint.test.ts": "9921d4ca6dcb45fbcd05a65737009c71265eca03e42b36267f69aa790912a251",
+    "conformance/reference/source/packages/cli/test/runs-wait-output.test.ts": "bba686cbfc9a2f363444461b24dbb9fda3e90c5aa22adbf041b3560629f61fba",
+    "conformance/reference/source/packages/cli/test/runtime-fetch-handler.test.ts": "fac6eaf7b9ba3993deb493488ac6a75320b97df828af8afe6845fbdab3b334b1",
+    "conformance/reference/source/packages/cli/test/stream-message-identity.test.ts": "792b5adcabb1f3a1551eef0f98bb5cb386ebfbf458f8c75abfb82e11651d2a71",
+    "conformance/reference/source/packages/cli/test/stream-types.test.ts": "cdbc2391b9163e910591c621bef9b1a59d39ddec24b0c1fe566b4a7a488d896e",
+    "conformance/reference/source/packages/sdk/src/interrupt-grants.ts": "523b8b569e0b4bd9ad7a2c96c3dce0d07da2281396e16f51bf012d7dfebb172d",
+    "conformance/reference/source/packages/sqlite-storage/src/threads/store.ts": "a6aa541c79987e18a1b1eaf263abb21273f289a83c12e9200afefec14462657b",
+    "conformance/reference/source/pnpm-lock.yaml": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0",
+    "conformance/reference/source/pnpm-workspace.yaml": "3809d90a40b2520861494b3202a8687515f98a86b83a9c644351d7f553471920",
+    "conformance/reference/source/test/runtime/run-agent-protocol.test.ts": "c171555cdcfdf9b7df14f89749320f389924cff7be00f2d109062ab21c258ec9",
+    "conformance/reference/source/test/runtime/vitest.config.ts": "cb681e9f44b9f6d620b773902368250330f33da2220384f6733f3455bba8291a",
+    "conformance/scenarios/parallel_approval_snapshot_round_trip.json": "38733c781cecfcaca0a5c650d5bb4856498cb9f179726b0dde39d2ef700bf438",
+    "conformance/scenarios/uncertain_unsafe_effect.json": "bd937763d5c93cf256eabf94cafd0d664c7a7f8a07a49e9f5ac97a5b4fd2bb3b",
+    "crates/b4-sqlite/src/migration-v2.sql": "3eb9bcd8f2cc054cbdf63d0ad1629ecf233dbd3039194921532d363b7b6345c2",
+    "crates/b4-sqlite/src/migration-v3.sql": "b1d751695f865003d2c7346925c3e49ba64ee41efd95a11b7326669b871519d0",
+    "crates/b4-sqlite/src/schema-v1.sql": "b047cd8e987202224e35a825e8003a7167ac48cc1d7736634772abccddd5957b",
+    "crates/b4-sqlite/src/schema-v2.sql": "61f7f0a50b9cdfa886e26a2371281a203abdc46574e9be8bd48b843fc0c910f2",
+    "crates/b4-sqlite/src/schema.sql": "98dd75f10f1560859f13742a0059f4e0c4f9f8fdcf7a701c731e0a49837353c6",
+    "conformance/expected/native-application-registry-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/native-application-registry-attachment-http-example.json": "6b9664835a972c6718e4ae0f80e2fbfdc90878ad84fe96a703d3753fd43a1624",
+    "conformance/expected/native-application-registry-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/native-application-registry-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/native-application-registry-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/native-application-registry-native-http-example.json": "761c6255c16ba95d3f0b679f52064e46371349ca2bcc1ebd8eed52218e2fff83",
+    "conformance/expected/native-application-registry-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/native-application-registry-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/native-application-registry-sqlite-demo.json": "dde70ddbf21b51ae0c56af3a53e0a123e069d7a586de57cb3c1a443b631fcaee",
+    "conformance/expected/native-application-registry-verification.json": "8bf5409b5e1b831066e62d99a6fbcdab651d6a823eb1db344b5bc276269fb7b1",
+    "conformance/expected/supervised-admission-drain-attachment-http-example.json": "05fb6ef3b62316fe4d25cb8f7173abbcfad3a11e829c03c9cf57e623342b67b2",
+    "conformance/expected/supervised-admission-drain-approval-http-example.json": "1e52fe34fb7e93b0fe9480200265cbce3b80cd77970730fa16dee1ec8cb5c6c0",
+    "conformance/expected/supervised-admission-drain-retained-http-example.json": "2d65793446264fe2152e57e8dc2c4cff057e78b5440ef1089226d214d6a44449",
+    "conformance/expected/supervised-admission-drain-native-http-example.json": "ea3d7edd48b7d851b70db1e25f78223f95460cc4c721e4525752072d2244293c",
+    "conformance/expected/supervised-admission-drain-verification.json": "7d975001f0a1f084a65c98bb8cc42a7e95442e2f1dd6ad7282f9b78a28bfc79b",
+    "conformance/expected/supervised-admission-drain-sqlite-demo.json": "71fd1a6fe4c24c88ac1f541f45ecbcc7ccec3b0eb2374ece8a9dec50a0dbe954",
+    "conformance/expected/supervised-admission-drain-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/supervised-admission-drain-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/supervised-admission-drain-cancellation-http-example.json": "63acf215dff6e183b87d90c93d6d4d63b7930adf9668a265fb7f3d8c32c1005e",
+    "conformance/expected/supervised-admission-drain-foundation-scenarios.json": "ec77d65959b69e71daf25440064e152ea88eb3c40469c32065d730ccd502bce3",
+    "conformance/expected/sqlite-safe-backup-approval-http-example.json": "1e52fe34fb7e93b0fe9480200265cbce3b80cd77970730fa16dee1ec8cb5c6c0",
+    "conformance/expected/sqlite-safe-backup-attachment-http-example.json": "05fb6ef3b62316fe4d25cb8f7173abbcfad3a11e829c03c9cf57e623342b67b2",
+    "conformance/expected/sqlite-safe-backup-cancellation-http-example.json": "63acf215dff6e183b87d90c93d6d4d63b7930adf9668a265fb7f3d8c32c1005e",
+    "conformance/expected/sqlite-safe-backup-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/sqlite-safe-backup-foundation-scenarios.json": "ec77d65959b69e71daf25440064e152ea88eb3c40469c32065d730ccd502bce3",
+    "conformance/expected/sqlite-safe-backup-native-http-example.json": "ea3d7edd48b7d851b70db1e25f78223f95460cc4c721e4525752072d2244293c",
+    "conformance/expected/sqlite-safe-backup-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/sqlite-safe-backup-retained-http-example.json": "2d65793446264fe2152e57e8dc2c4cff057e78b5440ef1089226d214d6a44449",
+    "conformance/expected/sqlite-safe-backup-sqlite-demo.json": "c843cff25dd05987358d4288d851fd7f721e50539ab2dfa8489b9edc84c01f45",
+    "conformance/expected/sqlite-safe-backup-verification.json": "968c4ac234beb3d78f2790dad872e2813842b472caed022afa05638cd7222707",
+    "conformance/expected/native-process-launcher-sqlite-demo.json": "75abefce4130572c6ef77fc97d578818d0d67f4ba70f78b7e966626d8e50ac09",
+    "conformance/expected/native-process-launcher-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/native-process-launcher-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/native-process-launcher-attachment-http-example.json": "6b9664835a972c6718e4ae0f80e2fbfdc90878ad84fe96a703d3753fd43a1624",
+    "conformance/expected/native-process-launcher-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/native-process-launcher-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/native-process-launcher-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/native-process-launcher-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/native-process-launcher-verification.json": "3242f9c103fab1a263914b329671c5ee480e6ea333f84aca9db82c4e9219031e",
+    "conformance/expected/native-process-launcher-native-http-example.json": "bf49dfea81518ec92c67bb00af1aa093908d0aaa3fd3874e800e4c7609bbea31",
+    "Cargo.toml": "afaa92ab63fa9f65f9b9db2bfbc8fae9796a8ff4632ca70442a6752275b44cff",
+    "Cargo.lock": "7de4e086c4c1a69e17b44e4e470a0afdd748aae6cc8761559df7caf4db086d52"
+  },
+  "artifact_hashes": {
+    ".dockerignore": "92d85a5555c90cbcb635d30ead13bdba988762f04b22e81b04a901563b9b86be",
+    ".gitignore": "0d8416306c9e9a946f0a435f40afd81f7ebb5e56e1a470ada34bfdc78b6ebab6",
+    "Cargo.lock": "7de4e086c4c1a69e17b44e4e470a0afdd748aae6cc8761559df7caf4db086d52",
+    "Cargo.toml": "afaa92ab63fa9f65f9b9db2bfbc8fae9796a8ff4632ca70442a6752275b44cff",
+    "Dockerfile": "75afb1c4025c6cb97262ca6a400c66b904840cb662599fb353a7808915716430",
+    "README.md": "d73920ab3b3d2350968b21b6673dd7210feb11c53fee178d4f2e1aadefb88e5c",
+    "requirements-dev.txt": "37caf5bff910fbd7dda44433b92df25fbfd989aea829e9bc4ce37e70df1f1782",
+    "rust-toolchain.toml": "162713004a236937311e636866219dc019297684304d082e2fc31eb23c91ebcf",
+    "crates/b4-http/Cargo.toml": "52e3600e158f13d4b3ceb0c11012927820691709c699caee37c3cf9c5612fe28",
+    "crates/b4-http/tests/approval_tcp.rs": "b434838d61d77d18e1456d6519431391bce567c8b5cfa9fda5e1a64918a77b3d",
+    "crates/b4-http/tests/approvals.rs": "f5147d8be62d8dcd1f95c7cd7b8f5b4af67c29c083ac93ca88a62775b8231170",
+    "crates/b4-http/tests/attachment.rs": "6c5d1f92b0fadb3baad51c934fd25e1ee71e836f5c645a889a336f14228ae5ca",
+    "crates/b4-http/tests/attachment_tcp.rs": "54e00173ab1f594006a35bd9682f558bc0283235c3ef997da5d1bfd417a78567",
+    "crates/b4-http/tests/cancellation.rs": "0ff495e96dba62819a8851b0cfb207c0c08f77891d653db249ccf1957e33119d",
+    "crates/b4-http/tests/cancellation_tcp.rs": "efe67a9cf95120079bca6208852da52e05271ab06d5de368869d76af940334d9",
+    "crates/b4-http/tests/capabilities_api.rs": "6ceb7aa9d10fe1670e088f1729537255236120b02ebb986f78ef27cac4a34917",
+    "crates/b4-http/tests/capabilities_tcp.rs": "43f23f532904ff6e5877dc7fa48b7d536c1507e7aa0749d72f26e114aea4ebcc",
+    "crates/b4-http/tests/deletion.rs": "d49caad1d76051d901927b37713e5774211b3ccd6f17a857ce1d811739220476",
+    "crates/b4-http/tests/deletion_tcp.rs": "5bb3efc0b577d69b381e6e89f7cd8af8c644bd8cf96cbe5fb965978bf1661d7d",
+    "crates/b4-http/tests/grant_reference.rs": "8cf7c009b3e4f76ae33a6dccf3d35ca071cb47321f078fe0d5080c02dc3aee3c",
+    "crates/b4-http/tests/http.rs": "f73ca5e859816468eb73d9daaf9710666b6ac04cefb7d23420576207a874c28f",
+    "crates/b4-http/tests/native_application.rs": "5714788adfb179f9c045fc2d1012ce6d17edbb9d4c144767b27af852f7ad0f04",
+    "crates/b4-http/tests/native_crash.rs": "1e49441bca6534e585fc54c7da6c8be34bc153aee235fbd40b1c4c7e551e8618",
+    "crates/b4-http/tests/native_tcp.rs": "2ada91f8fe475a07bf14b82120540d652aee68bb8cefd029da74394a87be7168",
+    "crates/b4-http/tests/parallel.rs": "ba6f4bab7e2b2d3b4c380d4a6c65b2ce4c95965837161b897955793c4621ffdb",
+    "crates/b4-http/tests/parallel_tcp.rs": "a8b26d8a085ed022ef6bb9735881cb839bd07b8a98603b9055129aecfc625057",
+    "crates/b4-http/tests/parser.rs": "46582ed8e4c89e032e469c66e949a386d06ea7caaa7c027d3129b5e3bfe1c143",
+    "crates/b4-http/tests/recovery.rs": "944c51a6c27217f40d747b36c3335602a12715b8210627edf9c056ae8dd512c3",
+    "crates/b4-http/tests/recovery_tcp.rs": "57abe3509907168d9c2190bcd5030f35e1c4c6c113db28311883f73b2538ae6a",
+    "crates/b4-http/tests/reference.rs": "fdfa40b727171ab2a75210a962f54b505bec674734a4a62dc63e6fec4167157e",
+    "crates/b4-http/tests/shutdown.rs": "e14b9a416de4eb5f1f1df6499cb130b4b3a01424607c156b3dc60b40a6ce73b1",
+    "crates/b4-http/tests/shutdown_tcp.rs": "136d50e0195b62000f2d58bb4764e9874d9b21ec1cc3bbc8ab49a04e88ef0bf1",
+    "crates/b4-http/tests/tcp.rs": "3f7faf04e8c1d4f84443fb59523be6486bdffe12556dcd39f1ef9f2ecdc5a426",
+    "crates/b4-http/tests/shutdown_support/store.rs": "60b5f15ce6d6ebebe82e81032463f47ffb99a5ae4b6e31753fd94245179dde27",
+    "crates/b4-http/tests/native_application/support.rs": "c920729e5547babc52deb1d5866c11530bed0eaa6a412d9a651996ddf85f01e3",
+    "crates/b4-http/tests/native_support/mod.rs": "d44bbe4f3679c8eb09b1c12ea1b32ee41af36144bd5253bc256ee3e040cbc38c",
+    "crates/b4-http/tests/native_support/store.rs": "cc17d7d26337ebeacb4c8114b17d7247d5f4334994921a98f3d8b2015b9391f7",
+    "crates/b4-http/examples/recover_approvals.rs": "2998d573977bc02c055814209dd0e4c8f59fd6846ca245566bdaa727c6825d41",
+    "crates/b4-http/examples/serve.rs": "acadab85d03d315a9133159a55f54f355d8c62c55e225f9f210d9c59e8411a2c",
+    "crates/b4-http/examples/serve_approvals.rs": "c6372870b7cb8d9f1293d656934f5588c626c90ea3370aba507161a76afbd162",
+    "crates/b4-http/examples/serve_native.rs": "a48a96cf40713225d4afb9af441ba9ce4f117c234aa4e28e3f9b314ab84e1cdf",
+    "crates/b4-http/src/application.rs": "f8b00b56005d7457d347c7fdc87585df2322f000a9d9238cf477c819afe681f8",
+    "crates/b4-http/src/approval.rs": "d755c95a95e7d1d59f36622d5b5a673521ff11b8733dea2aefd306e6120f2e9d",
+    "crates/b4-http/src/attachment.rs": "6296b3a3f9abd011d1f9342b9275044e11b2dce604e3a160b68b81065f7f9d8c",
+    "crates/b4-http/src/cancellation.rs": "7c51b436b165ef094bcf291438eb829d2c3c23a9852dc4285efba56bba4e6b68",
+    "crates/b4-http/src/capabilities.rs": "4959f84e9756b371eeb9f595ca6cde1c2fc403d42513ffefa0601c0c70ec151c",
+    "crates/b4-http/src/claim.rs": "56a5abd84d481d9b778a9d7e5af89c3640cc60728e984ee6c0558bd895b2b60a",
+    "crates/b4-http/src/control.rs": "2290fd9e68d78f4f27752c584e301a222db5439fd71179b24dddc6b282627613",
+    "crates/b4-http/src/deletion.rs": "5fc437a79e35bec1326d7d32f491e522f540312a7839e5bf9dafdbb012e8e76c",
+    "crates/b4-http/src/host.rs": "18700758303e4c9a21318e90de21ca6b7be9508cadf3fb72dccad146b052f477",
+    "crates/b4-http/src/lib.rs": "b0b1e3bf57090e13c59da469716184cbf0088ac167c91b899c0e4ea1419d62a6",
+    "crates/b4-http/src/lifecycle.rs": "f15208d31553191724837ec887210769cacf544919662559bc1f58415f90d0f0",
+    "crates/b4-http/src/parser.rs": "17d1de5f5a59cf82ce020328f6f6a7e2ac814c3589a149ae24bfacc9c50d163b",
+    "crates/b4-http/src/recovery.rs": "c809a03762b2b9d0de5d9c145571c49c43735d9c8fbc615668fb417b98034143",
+    "crates/b4-http/src/route.rs": "536c265d4c19a89ba366f0f278eded8af492192be662d2bd78ab6057b68a8a92",
+    "crates/b4-http/src/supervisor.rs": "0440e3337bca60f25de51f3445be33d958d41a23c9a4eb7b40eab83cc758a357",
+    "crates/b4-http/src/transport.rs": "794cdd66fb9157c70e96b4614b3bfc463a817081b25d4f62efb8530417c2dcad",
+    "crates/b4-http/src/viewer.rs": "fc7efe02e52094c7b75a1ea690255c5545cf9b7bc9caf7591ade1be1bdd89d74",
+    "crates/b4-http/src/worker.rs": "390e2116ae40d77dac90132cba2e7b9c1ff71ccaf490f346ed5a734104e234fc",
+    "crates/b4-cli/Cargo.toml": "14f9ef521759101fd799608966bff405527a36088ed34e903741edf63d33c794",
+    "crates/b4-cli/tests/cli.rs": "c79b6e087794ac3b79edc023ad389bf5d0f1a9d1421c5021abef1670ee81a5c4",
+    "crates/b4-cli/tests/cli_support/mod.rs": "c0c23b89e1e71cd8fb0191e75708509f1cf6bb5ff8285825580f9ad106672e72",
+    "crates/b4-cli/src/config.rs": "6977efe6be4f81c2762d5fab2d43fb37e74355d6ea650d87c37afc12586a8257",
+    "crates/b4-cli/src/demo.rs": "d0e4f750366ea98dcd06ab29a2851a551601c2079045c54f70ae558d47a952c5",
+    "crates/b4-cli/src/lib.rs": "ddfa8d614e32e4887820bcbcae1d5dad039afb182a48092032ce240b956cc537",
+    "crates/b4-cli/src/main.rs": "bff8a396bb5fb2fbf3f08a85c196b1113cf46f44542e3a4e3431a5a5417dae29",
+    "crates/b4-cli/src/process.rs": "0a788cc032880a4b9581ac351bccb73b6c0f1a6445ae544f82fed95b4f4da3e9",
+    "crates/b4-cli/src/process_tests.rs": "a06f7d9229fd7e42789697887b3ebc29bb06afa85f17bbfbbcfd5d035ef21d96",
+    "crates/b4-cli/src/storage.rs": "dbed3859fd5a74ca93d3840039c872529c20b6adb1279d2fbb0045b9843731a7",
+    "crates/b4-kernel/Cargo.toml": "7281b7b876db2676fe994a77451103d9f21ff26e3c004524a4058f6eb959d2aa",
+    "crates/b4-kernel/tests/cancellation.rs": "08953d326c6bb518cf4a4473ddb9b4f5a489e33568f045c0f55c17f35274c609",
+    "crates/b4-kernel/tests/failures.rs": "e9d0738fabd9688f208482381088060de967159290b75f6475457bcaf64ba5c5",
+    "crates/b4-kernel/tests/lifecycle.rs": "0a0c422683643ac2e94f8b64d6bd1ba63dd5ba185b2fe0e268732c795865f232",
+    "crates/b4-kernel/src/lib.rs": "1bac66b72ec20061719a0d430d1617028b31a5cc6b1ec45591ba384e07a60081",
+    "crates/b4-kernel/src/reducer.rs": "70212447dace5a4feca99f5e99ac16c642084c98c9795131e00d69f0c0ad3986",
+    "crates/b4-kernel/src/transition.rs": "821ca31f6dbb8b44a80e8778c8356bd85fe8711b472059420f46b8735f2c7383",
+    "crates/b4-kernel/src/validation.rs": "6be87902ab43c3fa3bc897ffc8aa0f19b5045a9e69919a8d85925665d929537c",
+    "crates/b4-contract/Cargo.toml": "28bb5d7634080e4a8438c1bb5dff9215975b2bca6a864aa68147fc7245f18246",
+    "crates/b4-contract/tests/capabilities.rs": "ba398f382d34483965a1a578d54ccd5ff8bb657048095fddcb3d5b6d07471c9b",
+    "crates/b4-contract/tests/capabilities_v2.rs": "8d79782f99db89e807060b821c62e74270815b784091d13e77f1b99619adfc68",
+    "crates/b4-contract/tests/contracts.rs": "e22f6ff862fc7b1e569500c117c0e450256ab038685605c53b558bfb2f81c21b",
+    "crates/b4-contract/tests/examples.rs": "7ec360820f53bc0179c8ef1abf347bf29905d59ee342519f07cf609ef0928e81",
+    "crates/b4-contract/tests/wire.rs": "effb1f8625e8950d9ea5ec0740563740698e088e9f7836187733ff04f0b4ff6b",
+    "crates/b4-contract/src/capabilities.rs": "ee6c91243e1c7f8d861753453c1e619bd3b2b2e5ff8df809ea71bde870b7c8fe",
+    "crates/b4-contract/src/capabilities_v2.rs": "7da1d4a815faaa20675eb88707e06578842900b2116c377fbbd573dac807600a",
+    "crates/b4-contract/src/ids.rs": "7afd8799466f4e69804b2d803244504307a2105e920edbc810a53eaffc9c36b3",
+    "crates/b4-contract/src/lib.rs": "66c3b508983a416103825dbc19033f7a70e90bd9b46eaa0d44d85f30953c886b",
+    "crates/b4-contract/src/model.rs": "b27b37136896f8d44de45ffd8ff6c37ac67adba431d384a12cd3e011ada2ce12",
+    "crates/b4-contract/src/wire.rs": "0ac6df850d9303a3b990ed8fe38c2e02c118ebc1f1e41769706d7457e8ca20c0",
+    "crates/b4-sqlite/Cargo.toml": "a6344acb01a0f439dfdb1bc2964bbe73959371e30c4bd1f49208c80c3218bf7e",
+    "crates/b4-sqlite/tests/approval_migration.rs": "7822fcaa65f7e3e6f49a5785df9d37b39786181874953f1db966c9b3daa13fdc",
+    "crates/b4-sqlite/tests/approval_recovery.rs": "2f37f22bdbb2f0b7cf50d2bd9bb16c4e3d9d0c5658bd0ba5d177650689de20bc",
+    "crates/b4-sqlite/tests/approvals.rs": "6535c507ad308627f9b173284b2adf1c2a17e87fef17dfb9cb42aba057f13f69",
+    "crates/b4-sqlite/tests/attachment_pending.rs": "bc7732bc3d7b9006dd440e125db0903284b511b17d3ce1f419eea2da393d212d",
+    "crates/b4-sqlite/tests/backup.rs": "faea3c3fedf46e2f195246af5545ea292281de36503e4bfad14f1655ca5e5f9e",
+    "crates/b4-sqlite/tests/backup_restore.rs": "299552c61f6c5cdfae517040dfd92c86825db105f0475a233f4992d402daa1c7",
+    "crates/b4-sqlite/tests/cancellation.rs": "aa9996146eebccbf6bc2156258a73b72313d23025918999b397d79e22c53ab66",
+    "crates/b4-sqlite/tests/context.rs": "c8f1656c31316e37077bc551e1a3e0028b2971fb399c6dec90df3e085b2dbb1f",
+    "crates/b4-sqlite/tests/deletion.rs": "4c7a788c3ff5c8e546779362a3129e67dbb9f38b53f2450fcdffac6e3d875170",
+    "crates/b4-sqlite/tests/driver_crash.rs": "709da04c970c33d1aed030f967093d1149264f58a866726e67a9692d503e15cb",
+    "crates/b4-sqlite/tests/failures.rs": "e8ec3089c73a60ec3b6c91a50ec71ddb67bdb9356663254a3796533de131d282",
+    "crates/b4-sqlite/tests/persistence.rs": "d0b55b0139c76d55738e97b2b09d1b06c19182bec202492d23ce58d071e8eb2a",
+    "crates/b4-sqlite/tests/runtime.rs": "604f771766edf5473fa3b23c5796771bf2d2ae98aa93611cb4942ba172d429ec",
+    "crates/b4-sqlite/tests/store_capabilities.rs": "e2b18a5d7a0fce5b0858e46ede89e503691c9c3f670cdd97ac26448f25f41692",
+    "crates/b4-sqlite/tests/backup_support/mod.rs": "87dccaa5aa81edcde1e067ea9e90534a358972d5c71be4413645aee965218957",
+    "crates/b4-sqlite/examples/approvals.rs": "ec84140740a47e6042763cb652f16426636693281aacbad952df00a9c61ed2ca",
+    "crates/b4-sqlite/examples/scripted.rs": "e47cb73e2677c41dd0fbb060a24282054100c906f60ca1ff2c5412d1f6b590fe",
+    "crates/b4-sqlite/src/backup.rs": "fe09b7f207018542dfcf5d656ca020ad2c0f13e9218f687afcd03c190a470fbc",
+    "crates/b4-sqlite/src/lib.rs": "05c2f43e68d4963c035ff67feed90aaef87a490c03b520f9314dc2ac35026b20",
+    "crates/b4-sqlite/src/migration-v2.sql": "3eb9bcd8f2cc054cbdf63d0ad1629ecf233dbd3039194921532d363b7b6345c2",
+    "crates/b4-sqlite/src/migration-v3.sql": "b1d751695f865003d2c7346925c3e49ba64ee41efd95a11b7326669b871519d0",
+    "crates/b4-sqlite/src/schema-v1.sql": "b047cd8e987202224e35a825e8003a7167ac48cc1d7736634772abccddd5957b",
+    "crates/b4-sqlite/src/schema-v2.sql": "61f7f0a50b9cdfa886e26a2371281a203abdc46574e9be8bd48b843fc0c910f2",
+    "crates/b4-sqlite/src/schema.sql": "98dd75f10f1560859f13742a0059f4e0c4f9f8fdcf7a701c731e0a49837353c6",
+    "crates/b4-testkit/Cargo.toml": "f5cd6a66528025c4f03a59b905c3b6a565d8b24589d8088612483bf723b493fc",
+    "crates/b4-testkit/tests/cli.rs": "d8b00c1e2c9844bd2a1ef12e226a747c5e215fa8454f2f47dcc2ee4eb1ff0efa",
+    "crates/b4-testkit/tests/foundation.rs": "988a68ca621984082ad944d76db705c5311eeb588ae805bba94a532373a34b11",
+    "crates/b4-testkit/src/driver.rs": "f3882cef97fef0ab9b95dc4d7cbc0650c9d40ccb86da57d139f6db3b6233b195",
+    "crates/b4-testkit/src/lib.rs": "442114fb835c5c117a6875460ec1319ded21c4422ef964596ecb4dd95d29db45",
+    "crates/b4-testkit/src/scenario.rs": "2a2393aef4a99e4f55252a55a7243c26e9851e0f89dd1f79b1434788296ea815",
+    "crates/b4-testkit/src/scripted.rs": "eeb6e7ccc2e84c9311abaa041606452469563f9d63c9e45029ae9f7862175446",
+    "crates/b4-testkit/src/bin/b4-conformance.rs": "f7ea0c370efe2c2b5fecb14d0168d27841794d15a53e80dca93bf8318f81ed82",
+    "crates/b4-runtime/Cargo.toml": "262e1796aacd1094b61a53ef4213b9ab12814bdce266e64dc1c4864bc8be2ba9",
+    "crates/b4-runtime/tests/application.rs": "cde9738966f03c11536630d61c7dfdff5a4134d618da11b6cff8de8f72b861ca",
+    "crates/b4-runtime/tests/approval.rs": "27f7222cee3142f1fefc00b9c91625e3fa65cf03060a92867d4b6dc8e468c00e",
+    "crates/b4-runtime/tests/approval_recovery.rs": "3fed955852f7d085e1f9b5a630c70241d9a0df0fafd8985e2426ac28c15c5f46",
+    "crates/b4-runtime/tests/attachment_pending.rs": "170d4e004421599483240463447eee3ff8cd99e7541cf6e7f291e3221ddac18b",
+    "crates/b4-runtime/tests/cancellation.rs": "f52b698ff95f79b39cf38196e9b20febc830d11cd5922fd867bc0508fde26334",
+    "crates/b4-runtime/tests/deletion.rs": "d844fb62a7e3634425c3da7201f17c61957265227ba20feccaefe6c9665a600b",
+    "crates/b4-runtime/tests/driver.rs": "608f55833d1139cc0a3b752d3f2ec24e58f4c485413050392e8cf01f4ffe644d",
+    "crates/b4-runtime/tests/driver_faults.rs": "4e729822f51a054e4ae49093144105d748e2e41f80a27205f458b81b977cf8c6",
+    "crates/b4-runtime/tests/driver_prepared_evidence.rs": "9ec377bc1642ea79cfbd23b1b802eba059cc45113d419e99e57cf63a50003796",
+    "crates/b4-runtime/tests/driver_rejected_claim.rs": "34fb69076e40b59b592980a2ee622e4f2f518e8e7ff13497e864aeccb9841f40",
+    "crates/b4-runtime/tests/driver_repair.rs": "6d860d2c2a7ab7e1f3dc43951d97349c0cce1eb33762b3860a5cc67cb94470dc",
+    "crates/b4-runtime/tests/failure.rs": "f43428508bfcd11c1a22b80ee5c7c24bf3e0730cad0adee4f458ea5399ecc385",
+    "crates/b4-runtime/tests/preparation.rs": "bab4441e3e8f6c92fa189a0768f206b2b9df40b3a50e4e046fbd93a8cb3c606f",
+    "crates/b4-runtime/tests/runtime.rs": "0bc8c8042a48cad226121f1c0d90498c06e56fee16bc6b50745c7633a8082c77",
+    "crates/b4-runtime/tests/store.rs": "a084f829c3f0727e12b21235c4a19c4b63a8c02b428e6c439217fcc9cda078ba",
+    "crates/b4-runtime/tests/store_capabilities.rs": "6af1e9824bafda2f7f51d211cdc0b9593cfa50e8b89d34fc27911759a40ffc6e",
+    "crates/b4-runtime/tests/attachment_pending/support.rs": "414d250d09948f3b45f057af21b84ff70662a7e854864e80ae5390c525ef98e9",
+    "crates/b4-runtime/tests/driver/fault_store.rs": "b892a903fb35f0318548921388745a8d394f3a3b4a41deac300d621a31c305b6",
+    "crates/b4-runtime/tests/driver/support.rs": "1cb5ad663debe076399978bb85deb281cb2f2c9475fb10a7474b19c8b49e7d5c",
+    "crates/b4-runtime/tests/support/failures.rs": "fb05ea87be1f65079b499cda968be82473154e39da1b34b0e5734e45fae44f7d",
+    "crates/b4-runtime/tests/support/mod.rs": "8862e3567c78e75df4f620e38f03a574bde1c30e65cb742f6d41cde6d0780935",
+    "crates/b4-runtime/src/lib.rs": "f9561f5ac530a6d3ac32a2baee3f566e047b46407233944d1a4818bd7a05b6e7",
+    "crates/b4-runtime/src/memory.rs": "37f5893230d064043be34587ce8a1e8d1752f292302c50aed65826dda2671690",
+    "crates/b4-runtime/src/runtime.rs": "9bcc3fd341db6b3c1ac487d45b4da73be6fd627bdd473aff28bfbcec05f96669",
+    "crates/b4-runtime/src/store.rs": "f97deb357c82a696c1104bec2e95b180085e7fcc35124076f0154e3fcfb31f5d",
+    "crates/b4-runtime/src/driver/capacity.rs": "5518509d5e4285317ab451aabefa45d7ad73771a9cc9f8deb7e5d14942dafe3f",
+    "crates/b4-runtime/src/driver/completion.rs": "a42e58c9fa9694a8d32ef8ee20051d4f0fe16fce0635cb7a3e067267b854c6b3",
+    "crates/b4-runtime/src/driver/coordinator.rs": "cd8f74e379ca4923e42aa02e7868319c4480bf62fbd97369eee713e2033449c6",
+    "crates/b4-runtime/src/driver/identity.rs": "a48037eb1421caaa684e8d79ab7c7097a9cc8f0f4e6235a3841730ece27b9204",
+    "crates/b4-runtime/src/driver/mod.rs": "8021b531f0fd3995acb4f1c15dc9e96ab81937c1b3137602c1949983c76780e5",
+    "crates/b4-runtime/src/driver/model.rs": "fd6b57979fbdcc4ba9bf4ff980db81f07542782a74c738efbaf815c43bf46382",
+    "crates/b4-runtime/src/driver/outcome.rs": "7536ad384f68c2f6a85e96c6688b52e9cdc3b20856cc77fae9b6e642f7c21df4",
+    "crates/b4-runtime/src/application/mod.rs": "2dabe014403930d2c71db0fd7fb51a89014f2e096a09363ec5741465648ca0c6",
+    "crates/b4-runtime/src/application/model.rs": "ae52aea56a9a250c3d4583bc88fed33f45f3a1b3c3f8abf4734787d13a18d122",
+    "crates/b4-runtime/src/application/registry.rs": "6d52029d8b2224e3004a850cf1dcfb3604b278dfe41681307992ddd65473b1e9",
+    "crates/b4-runtime/src/application/validation.rs": "b7ebd59600b02fda6cc4729f6d60329f1a938c6acc0f40fec99d09fa4ace66c3",
+    "crates/b4-runtime/src/approval/mod.rs": "6bcb83b1c5984007b26551223afb6b5b045b7825ab9d3141bc8fb6fef9c4d93a",
+    "crates/b4-runtime/src/approval/model.rs": "42ffc5a5c9109c13c01240b877ee51a7b554c26890ea41fa182a424531f3d001",
+    "crates/b4-runtime/src/approval/service.rs": "39a85b995ca0515a09d0db1f63df6696d497f8a450a9d799548435c1ee5699cb",
+    "crates/b4-runtime/src/approval/validation.rs": "031c01141f5fdff56fdff1f9ccef33966c20ed4382f43ab265699ea75b5e5d67",
+    "contracts/agent-protocol/openapi.yaml": "a24d6a382d85f8c5195aec468f1ed0d45e67f80232a918cf30a0dfb9edcec939",
+    "contracts/agent-protocol/schemas/cancel-response.json": "7cef4df9f8575758799932530dddba67223735f446882f857cf56b8211cd1dd4",
+    "contracts/agent-protocol/schemas/capabilities-v2.json": "af5a2f6976fc040516d16703ee05865115299600d35efdcca8f985896c1bdb4e",
+    "contracts/agent-protocol/schemas/capabilities.json": "6ed1168d6636e13a972a0630de17cea3eb83680e44d331f5842f4c905a61e295",
+    "contracts/agent-protocol/schemas/create-thread-request.json": "dad1ab45e19537b0e7a4c8d5493070ceaab8bab1b112e2fa37bb89879032200b",
+    "contracts/agent-protocol/schemas/error.json": "54bf80e265152d7ad54e7b77ce8f75cbb91637abfa9e2f211d8d1c236c0dbc1b",
+    "contracts/agent-protocol/schemas/grant.json": "e1804c502fe54a630c55e63e685b30af12616d202149c96e0c3182205f500b86",
+    "contracts/agent-protocol/schemas/internal-execution-snapshot.json": "c214a6a12ce33474a64ef30203da6a1f769db953dddfa7ba0ab6b3e6dd4f489e",
+    "contracts/agent-protocol/schemas/opaque-id.json": "0bbb5449a3da1531cf490cfa2a3d983afb480e2ccb7063ecd507097c12c30f06",
+    "contracts/agent-protocol/schemas/pending-interrupts.json": "d6051a473cd84d2ef9583de7263d8246c50c433930d014c285f501a100f85ea7",
+    "contracts/agent-protocol/schemas/resume-request.json": "f8c43b6ba1e47f4d50f5629c024d9d37a46d642b3eab10790b90370757f92af2",
+    "contracts/agent-protocol/schemas/route-key.json": "45c9a359d8b6c614076861e6b828ec80eec7d1e410ce2c8c7caf4bac0a02cc22",
+    "contracts/agent-protocol/schemas/run-request.json": "45f6c919e14639d188392bf7e337de4eced5d42a191717157963f57cc2d32a5e",
+    "contracts/agent-protocol/schemas/sse-chunk.json": "c131d2f52cb3f112784c50d3b3837f7ab923e44d46ec8987325fe1aba86f4f19",
+    "contracts/agent-protocol/schemas/sse-detached.json": "5e2a90a64361d7ed7a592b64201395f1b4b7ed0e898774915e87bb577caae456",
+    "contracts/agent-protocol/schemas/sse-done.json": "dcc6cb3fa501bdf9451a82ae944537a3bfca06792a5115505fe29f0e7e554dda",
+    "contracts/agent-protocol/schemas/sse-state.json": "6502480ad6ad5ea0ece9964305608e3ab38d16c7c0ab8b86b7cf42c9dc068856",
+    "contracts/agent-protocol/schemas/sse-tool-call.json": "8327faa4fc3ed0500685d80c2e0f0ba83ca8df942acc24d861f58cc72eca1444",
+    "contracts/agent-protocol/schemas/sse-tool-result.json": "524bb0ae842d3242d80db0cc2f662b277fa0b8be40fc4974117f547305ce5aad",
+    "contracts/agent-protocol/schemas/state.json": "73be53ca986ecfd3ab480d18f466c210ebcdc530f4ee2b67dcdc18f58d93de3c",
+    "contracts/agent-protocol/schemas/thread.json": "c3b3b6f77e298467fcdbabb4b7a57ac40cbaccf48cf9f5acb07af4a7518f1c80",
+    "contracts/agent-protocol/examples/capabilities-native.json": "c665265eaff0d39f0c9ef9f26c72a7cb3c15f1ec2529137bddba53f16c2ccc37",
+    "contracts/agent-protocol/examples/capabilities-scripted.json": "568cbb4d8e4005c17d91ad47c3b731123aa29bb1cd1d714480cd5f3081521ae3",
+    "contracts/agent-protocol/examples/capabilities-v2-native.json": "51d2442253fa320088f59bff890aa0405e8e023ca384b7be2cc4e261a70ac652",
+    "contracts/agent-protocol/examples/capabilities-v2-scripted.json": "6b054539b3ab795dcabdbbc79a3f24bc0d4194f4a880f187c3c336d08d5d414d",
+    "contracts/agent-protocol/examples/error.json": "e64a79fdf9d9f636dfedc41d3ee429ff3466780aed8f19d568f64518fca1726f",
+    "contracts/agent-protocol/examples/internal-execution-snapshot.json": "6a77616c578cf7695eb9c3418c5b0c60d99d8c32cf7d74fa1074a15268f5e420",
+    "contracts/agent-protocol/examples/manifest.json": "6848be73eef53ecea1c4afd46253df3f3d498ae38b067b12cd951c8eb2fe125f",
+    "contracts/agent-protocol/examples/pending-interrupts.json": "80192ed223587bbc410c3e220c5b8a1cab3d40c5e5b053610edaf83ef1dcbd63",
+    "contracts/agent-protocol/examples/resume-cancelled.json": "e26051d2d7719fd8584504c28f61e355c947e7ad6daf6668d6197b6e763b18b1",
+    "contracts/agent-protocol/examples/resume-resolved.json": "a1a2b315157fc02d5b2a716647d7f2771be55883e56dc359f9430e11b92d734c",
+    "contracts/agent-protocol/examples/run-array-input.json": "052a3daf9fc73826228c6fe579205e6ce708a42afa36959b6e347986c8cd2ff6",
+    "contracts/agent-protocol/examples/run-null-input.json": "3200488099a629504436f23d3ef80af41a2431cd782df4cbd83f03b439c7f934",
+    "contracts/agent-protocol/examples/run-omitted-input.json": "99905837fd9f27ca815d80be2c4435f0b7bfdc4a388b5f3e378e982479d5559a",
+    "contracts/agent-protocol/examples/sse-chunk.json": "a792a519fffe7ed9e2f1fb1e98e8105fc6549d2a7956a9bcbbc9eaa42304cd60",
+    "contracts/agent-protocol/examples/sse-detached-capacity.json": "ed30270fbd932edb0d3d47511af1c081d50ea0ed5e72f5d1e8aedfdb4098cf57",
+    "contracts/agent-protocol/examples/sse-detached-overflow.json": "fd9e508791f1295f9d4078048b2e1ab06e402ba26cf1862163522075b4d8851a",
+    "contracts/agent-protocol/examples/sse-done-null.json": "ee8c0c19698bd0bfc74991677d82dd37b509a6a33b0abf3fefc735b21b4a77fb",
+    "contracts/agent-protocol/examples/sse-done.json": "f8056eb7ba7a085eb89def380e5303dddd040b2571a357bcf88aa53c21306fbe",
+    "contracts/agent-protocol/examples/sse-state-inactive.json": "af82b8d5f9ff67f131d2d97f5b1b28ebb16a0e4bed5dac711c2f26012a88b804",
+    "contracts/agent-protocol/examples/sse-state-live.json": "74ed4b0bad194521e6ba61c449b6721d3095cb4b68d62f49dc44a82cbf508f13",
+    "contracts/agent-protocol/examples/sse-state-truncated.json": "88dfc07ec9930585c0cc84b9ee0b5d7e5939b070e00f706a241c09edca952c2d",
+    "contracts/agent-protocol/examples/sse-tool-call.json": "d8381dcd057e8f075006101addaa3fb83d08ea691d9a54eb58c6bb82b12b6bec",
+    "contracts/agent-protocol/examples/sse-tool-result.json": "68fe4b3328711dd63dbd515b8b778117efda8f874782348237089291c7c8b9be",
+    "contracts/agent-protocol/examples/thread.json": "99d5d8d79825a5ed41b83fe91621caed7456883aa0bd365d1cd5b4ccd52d2a5b",
+    "spec/runtime/0001-agent-protocol-core.md": "d4bcef07913f283e296f13ecd4402804e4fe14db098dace96fc68393070dc9f3",
+    "spec/runtime/bounded-run-attachment-design.md": "3f792006a42848fe51625fefbcdf279d5bd0cfe3a8a4bad332de33750b17a476",
+    "spec/runtime/compatibility.md": "9dbe43216c3244e1fd6b47811d7c26f70d5587388a93120c25600264f7f6adc6",
+    "spec/runtime/durable-approval-design.md": "5b0872fff9aa5340b3ebf66a06d38c9becc139f338eb935d225ab2c76c8cdf88",
+    "spec/runtime/fenced-thread-deletion-design.md": "4961383c007a8e72cb72b15224734f8f21ab3e0d9929f2d4ed0b85e6c28ff3df",
+    "spec/runtime/foundation-design.md": "5b4a3fe91436f5aef655afa24919210ab6bca125522e433fedae1845c57e4c68",
+    "spec/runtime/http-approval-design.md": "d43992225694725f897170b095145a0880728f52079a7c07db5d53ca2fe9ea1b",
+    "spec/runtime/http-subset-design.md": "1219f2b5559f69546b2b014ef02a185a428b1dd6c3f53004ba067ed68ecc528e",
+    "spec/runtime/lifecycle-reference-design.md": "34db840852d4f1fc757e52a11c7ed4060c9d45b2edebc59db2d10df6957f89d2",
+    "spec/runtime/linux-container-qualification-design.md": "04903455251b4566726565342d39c6e586c0d833c5494cae522d5cf8859926d4",
+    "spec/runtime/linux-container-qualification.md": "0570bb4b4ecd9e0cd918d3c6f414243017f50f5997d279c1d94e478d93eb9f20",
+    "spec/runtime/native-application-registry-design.md": "c6905b15da8b07ed9dc3cb9bf01996a78022ff04cd222e1fd9eaf2997c37f74a",
+    "spec/runtime/native-process-launcher-design.md": "031fc0d7ad7a1d837e42d9ce3c740cf632ebbec0ecf2ad74014c83973bfbda5b",
+    "spec/runtime/owned-run-cancellation-design.md": "4aad506117ca69ebc3b1280efda4c8f064b69cc72e937c6688bd1140de802206",
+    "spec/runtime/requirements.yaml": "cc53bd1df14eb1d3b6ae7cf9dea1a535885b4260b5cae286940206816a808008",
+    "spec/runtime/security-boundaries.md": "f7164452c0c390e781cbf8ece9237dd9eb6bd4891cb4c647c1f66480b829d9d2",
+    "spec/runtime/settled-failure-design.md": "7f6702b0210687ee73ff98eedc99b1ab0c435018bef65e4d22d488dad9ca0aa6",
+    "spec/runtime/shared-execution-driver-design.md": "93dc88e2352248712174cd5ba0cfba59578d0416a8d62fdc312668cbde035728",
+    "spec/runtime/sqlite-safe-backup-design.md": "6e5a5a4444d75566973f367f3f19fdf26da90b3654370ba3679ae61abcaa123e",
+    "spec/runtime/state-machines.md": "0f87c0d5dba085d3a266506e1d9b9f48a27a771c5f397eef5b079b6a1de20159",
+    "spec/runtime/storage-contract.md": "0e47abd1002249991a9ce54007268f50c5fb19893f825a84ad9110d83454b49d",
+    "spec/runtime/supervised-admission-drain-design.md": "e732d9a4de0d3beee9d4e5b010f66285406ff1e44221225b3249495f518eed29",
+    "spec/runtime/transactional-runtime-design.md": "618925a8dae09b05d99d28c4d3e2cd2df8df523a7e56c53128a503a03f1acc06",
+    "spec/runtime/trusted-restart-continuation-design.md": "af1af34f89f0904fffdc32fa423008b3cb67c59e2fec4865656b2907015edb42",
+    "spec/runtime/decisions/0001-foundation-scope.md": "fd3fb0515ce3197164889fd38decc7ccc77f150318f829d9a53473789c0c7338",
+    "spec/runtime/decisions/0002-strict-native-wire-draft.md": "56debd8838367e713a4147ee5e704137388da5de6029e45d0636bd00c9ad2472",
+    "spec/runtime/decisions/0003-pure-transitions-and-commit-boundary.md": "d97a3499c4f94f10d03e636e682b44e6a119d6ca97bcbead79d1be1dffe810f2",
+    "spec/runtime/decisions/0004-fail-closed-effect-recovery.md": "ea2e373e6d78de7d88f446cd2783b9fef037b612b8d0e011667e286f8f41178f",
+    "spec/runtime/decisions/0005-transactional-snapshot-store.md": "f56219d9112234c4d57630a841bc8d51ae7ee6f3dbad1dd7a15a7ccf074aa1ed",
+    "spec/runtime/decisions/0006-authenticated-scripted-http.md": "d91af953e12a02b095633b136473a0928cae464ee6b921e9bb71cce1bcb57319",
+    "spec/runtime/decisions/0007-settled-application-failures.md": "00122ccd7fcd16c223bec1d5fa8e10b647d99fc183d41bbfc7f770ff37c62d57",
+    "spec/runtime/decisions/0008-durable-required-grants.md": "8c4ed8cc944af29892b9c27f2e50ecc108865323c84e912c6881e4916c79505c",
+    "spec/runtime/decisions/0009-authenticated-http-approvals.md": "26a55553d6061b9a8f53d8da7117becfc386ec040a22e42e8f55744a823ff5c9",
+    "spec/runtime/decisions/0010-trusted-known-id-recovery.md": "eb19e8923e3ea08b854ef540f1d2124be1af63c8533ef7e07ce64c1810cb9d31",
+    "spec/runtime/decisions/0011-fenced-thread-deletion.md": "8287acf29104b1d7c2e446465e200f29b0c16c892a5deb9c61047ddd84f5f9ce",
+    "spec/runtime/decisions/0012-owned-run-cancellation.md": "4929b3d6d69338fbc36c17a4308f0ad1f2ac619132c700b2622619920ab154c3",
+    "spec/runtime/decisions/0013-bounded-run-attachment.md": "afd6627d19e700abfec759e46aec046f1614f08b9c1207409a1dfcacb7ba624f",
+    "spec/runtime/decisions/0014-shared-bounded-execution-driver.md": "50549e87ed735cdc2c0fe843a660c14d3a3c09711f3cafbfff89ba8fe77e9d3d",
+    "spec/runtime/decisions/0015-immutable-native-application-registry.md": "5a1b2f45058120986b6583c933ff39fbd2c39de2f9cb63ed786711c467103804",
+    "spec/runtime/decisions/0016-supervised-admission-drain.md": "94492d24bf3695d4859f1056a49141c0c90e888c4e91a0f2c7bb4cacec724dc1",
+    "spec/runtime/decisions/0017-sqlite-safe-backup.md": "917bf330548fa7f966c86c44231016e5f898105e511cca0000610f1178555d6f",
+    "spec/runtime/decisions/0018-native-process-launcher.md": "c62b80a1911cf7cd9dc299eee05b2702a068c70dd7020788bfa53d027b540888",
+    "spec/runtime/decisions/0019-linux-container-qualification.md": "ab93262d1506e723e2d80a740f521fdb8338b1445e308fbfbb63cdd25c58dd69",
+    "docs/superpowers/plans/2026-09-30-authenticated-http.md": "8262aebcc969eead55c23cc68631a13ff050ea7ade9c56fe271fffd08fb34136",
+    "docs/superpowers/plans/2026-09-30-rust-foundation.md": "5b0462e10d5b7830b259338f3427c6195bc20a25440a685b3dda62e0180b4e35",
+    "docs/superpowers/plans/2026-09-30-transactional-runtime.md": "c435944a94346b7f0308bb6c1f43779acdf55ab33edf278dcf2e987999073f2c",
+    "docs/superpowers/plans/2026-10-01-bounded-run-attachment.md": "28fe9d192f62a444e377c5b4cd2a46b9e3b0667b0b068f77f79b79f9fb3d5f79",
+    "docs/superpowers/plans/2026-10-01-durable-approvals.md": "fc4cd192eca1759de68a7756bf78ffcb9af9fe602d5031dc927697c6ca5af1b4",
+    "docs/superpowers/plans/2026-10-01-fenced-thread-deletion.md": "f9a36947fbd50c089dfa7bb3c0642f4f6d3a38a567efd76d04b5c82285ab15a8",
+    "docs/superpowers/plans/2026-10-01-http-approvals.md": "f7633508ef4336b488708811a7b15f5cd0b6930a230cff0d8879fbc2f6d777ea",
+    "docs/superpowers/plans/2026-10-01-lifecycle-reference.md": "6150087d51c43db44718fa8cfa426c41414f90f5dd3ce5328aca6d0f8c5f6cb7",
+    "docs/superpowers/plans/2026-10-01-linux-container-qualification.md": "a4e040a414ab96234ff42760cbe15d381156193c2a44f6585473df5f8ee34858",
+    "docs/superpowers/plans/2026-10-01-native-application-registry.md": "f36e99bf9a2d315b1b60cfcc4cb5ebcf34706e659f5d06041f0c65d20f72eda7",
+    "docs/superpowers/plans/2026-10-01-native-process-launcher.md": "d41567da46cb55fcf3cc12939e4c2926edade5acdd9f81990e93c4e3c0b9550f",
+    "docs/superpowers/plans/2026-10-01-owned-run-cancellation.md": "a6c060f1b52bde515cd2c859f22959eb99e51f1d070146d42aed3599a130da99",
+    "docs/superpowers/plans/2026-10-01-settled-failures.md": "200bdfcadb6020fe1f0e0a1e4e68ff4bfb1cf2884e363d89c61ef87753574ae6",
+    "docs/superpowers/plans/2026-10-01-shared-execution-driver.md": "a029d0a3dd7f0e592c6c6de27a96030a755627a3874f53b63659ddeb35689612",
+    "docs/superpowers/plans/2026-10-01-sqlite-safe-backup.md": "8bf5d6915d60906f44fbbd4c35470d662217dfbd889ca60eac8c4e2e9994a4b4",
+    "docs/superpowers/plans/2026-10-01-supervised-admission-drain.md": "ec6d01d45e7d8330d0cb8b7353163ade13584af444ad9c4393eeada41a622dbb",
+    "docs/superpowers/plans/2026-10-01-trusted-restart-continuation.md": "7ab11cd12fb355fb2fe90a503e9a155570be6b864df061306400ca4fbb52ba25",
+    "scripts/check_approval_example.py": "6d786e0e5d5ada1e75cae6e9db8193cb3d11bda90ed4dde16899e95cfc91d21e",
+    "scripts/check_attach_http_example.py": "08d8a1b32e8e3bb35f39e5f437ce884d31463e633e528c2a184b06336b4cdbcb",
+    "scripts/check_cancel_http_example.py": "fbabde49f9364d288b95e48a9ce6c68c9c7ca94f563a119f051cdf6d86a9f9ae",
+    "scripts/check_contracts.py": "43abe17a4f3b7d206a37b4ec0dccf593b81712fd947161ede102562f82c449d8",
+    "scripts/check_grant_recordings.mjs": "6f1676a00bc7070dd731fc46b053c89dc6fdd8a368a445423033e5076fa422d1",
+    "scripts/check_grant_recordings.test.mjs": "35ee26a59227d555507339dc42c2588f9fe6c5d48fec07371395ed35e8a43a1b",
+    "scripts/check_http_approval_example.py": "2726bb0429f33e001e01daa2b9ad22fc72f765c92abdd0e1a05ddada2d2a128f",
+    "scripts/check_http_example.py": "0a7c4f621ec18c09a3920e990314d6b72a8034dc0fd30bef7a6ba4b77f4dd3dd",
+    "scripts/check_lifecycle_recordings.mjs": "a5be89d2efa3ee11f59550fc29bf8cf680a6b096e9a38d1885522809ebe07237",
+    "scripts/check_lifecycle_recordings.test.mjs": "929d52b7173ef27b763c80022bced6feaa1a917b167aba7a6a1ebb698b5130bb",
+    "scripts/check_native_http_example.py": "483135314dd424ed3a536ba54999642005515b12d5e083a3d931e35e9ecf0d5d",
+    "scripts/check_recovery_example.py": "80fa75d05e27ad8c2745dc3b1b088457f78a20e66758894f81b7bc22d44f156a",
+    "scripts/container_initialize_volume.sh": "58fbc19ccd6cc78cc7c169d443e0fefb684d08a75ee7988170bf35c1fe4b720e",
+    "scripts/container_snapshot.py": "bcb6d238f1ec684763f38802d254837ac2e131568c34ae190fee18a0e3a7e50a",
+    "scripts/qualify_linux_container.py": "40f19a40b6d72c32047e6a66887cedf8ccae3d01161903ab785c064b7be1fae9",
+    "scripts/test_check_approval_example.py": "5b2a47d1d9392e31766a8ade53260a7e8805abb3937b183afb7e86e9eff62ccb",
+    "scripts/test_check_attach_example.py": "cfc6e039c57e1d95fa61692b839e9962b6bb85f4bd050b6a184c2f20ff0f68fe",
+    "scripts/test_check_contracts.py": "000b054ded67c43159c28b1b854c632b2bec52cbe4e5eb245fd012c522b399b7",
+    "scripts/test_check_native_example.py": "6b5bc24a3bfe8265ccb71ad6a8a47ec64382a9ff65bfed3decb6786720e5e93a",
+    "scripts/test_container_initialize_volume.py": "300e443af7746d603dc411ea3fffc37782a31ab4dcd5b383e68ff037976a133f",
+    "scripts/test_qualify_linux_container.py": "2aabe662cf0be81dde87478cecc51f65c91a8f3e352c8edac947c3a007fdbf8a",
+    ".github/workflows/rust.yml": "886a53259461d79bd8b597d9a39cbf6c133170c15886a42854a17c3b43f6d3f3",
+    "conformance/expected/authenticated-http-verification.json": "ea6c0a9863828049ca8878e9e2c222db0417911017fc8816b78b3fa71bec664f",
+    "conformance/expected/bounded-run-attachment-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/bounded-run-attachment-attachment-http-example.json": "6b9664835a972c6718e4ae0f80e2fbfdc90878ad84fe96a703d3753fd43a1624",
+    "conformance/expected/bounded-run-attachment-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/bounded-run-attachment-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/bounded-run-attachment-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/bounded-run-attachment-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/bounded-run-attachment-reference-comparison.json": "3699756d8e4508b08f6828242de398a3629fe2ac49f4e1a8838b763969f23af9",
+    "conformance/expected/bounded-run-attachment-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/bounded-run-attachment-sqlite-demo.json": "117ddd687e687d78dcf1803e947802468d6c7ac279ef9d68311730cabaf138b6",
+    "conformance/expected/bounded-run-attachment-verification.json": "08e68966eed667623d1b48a1a49d4921f83b3a4a52bac2703ecb35249fceadf8",
+    "conformance/expected/durable-approval-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/durable-approval-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/durable-approval-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/durable-approval-reference-comparison.json": "6382458320c8bcb175ede0f6bc9b2ed03162f1c6ad1e5494e4d32175a0c528f2",
+    "conformance/expected/durable-approval-sqlite-demo.json": "2bce11fb5335f8f4b0c82045bf55fedfe05599408ae761e9ea4eb7a54c457365",
+    "conformance/expected/durable-approval-verification.json": "30507ee230de7d1938da968cff94793d5fbf6e1b78dcd966f604586eb1311d2d",
+    "conformance/expected/fenced-thread-deletion-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/fenced-thread-deletion-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/fenced-thread-deletion-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/fenced-thread-deletion-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/fenced-thread-deletion-reference-comparison.json": "0c9db96f705618253d6ba7d4e86506dc42c1458ae00eeb29bb70bc752f3ab2fc",
+    "conformance/expected/fenced-thread-deletion-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/fenced-thread-deletion-sqlite-demo.json": "75cf4d74b125b2546a4178a185a75abbdb77b72939d2cb1f050e1dd44077a7aa",
+    "conformance/expected/fenced-thread-deletion-verification.json": "9bf3394371077fed2957e8799ea2a2c1887ec6e03f078e57a7b1cbaab608ab02",
+    "conformance/expected/foundation-scenarios.json": "3d95e196ab79d16f0bed4122e8c7bf2eb3c3f4a5efb365be22c80307c8f680a6",
+    "conformance/expected/foundation-verification.json": "424777196e276f7b3a8a66d1122451b684c6cb04505c7e5afce673a8d665fe30",
+    "conformance/expected/http-approval-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/http-approval-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/http-approval-foundation-scenarios.json": "3a49a59439f3eef0a28851b35d955f0c7398b8fdc5817df07e63b9f1699267b8",
+    "conformance/expected/http-approval-reference-comparison.json": "999a42ab7f4bc3b59c69abb1a6aafeda0b66aa87cc111fe9a127ec242bef9b0e",
+    "conformance/expected/http-approval-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/http-approval-sqlite-demo.json": "7c8c25fb82dbeaf5d77fe422d96ce7f67c1e12f3f2730f8a4ec47d916e1746ea",
+    "conformance/expected/http-approval-verification.json": "1f319a6128e5cf49ce4348d8d993d71213e58790964202f32f60fe2a8cc9bcd6",
+    "conformance/expected/http-example-verification.json": "7719d6d6d9599de0f987052cd8f8abe53b8d164f48604cf5e720a28cfdec8de4",
+    "conformance/expected/http-foundation-scenarios.json": "3a49a59439f3eef0a28851b35d955f0c7398b8fdc5817df07e63b9f1699267b8",
+    "conformance/expected/http-sqlite-demo.json": "b84b89addfcb8cda97c7f8b1da2449dc00c01042eb2be98fe57d7839e7370e78",
+    "conformance/expected/lifecycle-reference-verification.json": "ced7854835d4dcfbb0cb6b8ac2e830c1d37075c03eb24be8d6219243f1107613",
+    "conformance/expected/local-reference-verification.json": "5b82ce6369e646fe932e1397f5fad66e3d774a60523a2c71e7806b796f11f499",
+    "conformance/expected/native-application-registry-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/native-application-registry-attachment-http-example.json": "6b9664835a972c6718e4ae0f80e2fbfdc90878ad84fe96a703d3753fd43a1624",
+    "conformance/expected/native-application-registry-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/native-application-registry-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/native-application-registry-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/native-application-registry-native-http-example.json": "761c6255c16ba95d3f0b679f52064e46371349ca2bcc1ebd8eed52218e2fff83",
+    "conformance/expected/native-application-registry-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/native-application-registry-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/native-application-registry-sqlite-demo.json": "dde70ddbf21b51ae0c56af3a53e0a123e069d7a586de57cb3c1a443b631fcaee",
+    "conformance/expected/native-application-registry-verification.json": "8bf5409b5e1b831066e62d99a6fbcdab651d6a823eb1db344b5bc276269fb7b1",
+    "conformance/expected/native-process-launcher-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/native-process-launcher-attachment-http-example.json": "6b9664835a972c6718e4ae0f80e2fbfdc90878ad84fe96a703d3753fd43a1624",
+    "conformance/expected/native-process-launcher-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/native-process-launcher-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/native-process-launcher-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/native-process-launcher-native-http-example.json": "bf49dfea81518ec92c67bb00af1aa093908d0aaa3fd3874e800e4c7609bbea31",
+    "conformance/expected/native-process-launcher-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/native-process-launcher-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/native-process-launcher-sqlite-demo.json": "75abefce4130572c6ef77fc97d578818d0d67f4ba70f78b7e966626d8e50ac09",
+    "conformance/expected/native-process-launcher-verification.json": "3242f9c103fab1a263914b329671c5ee480e6ea333f84aca9db82c4e9219031e",
+    "conformance/expected/owned-run-cancellation-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/owned-run-cancellation-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/owned-run-cancellation-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/owned-run-cancellation-foundation-scenarios.json": "3a49a59439f3eef0a28851b35d955f0c7398b8fdc5817df07e63b9f1699267b8",
+    "conformance/expected/owned-run-cancellation-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/owned-run-cancellation-reference-comparison.json": "79c9efdafe6571e586654173e6654140f6cae011abb5a7b50bed2c852a654a53",
+    "conformance/expected/owned-run-cancellation-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/owned-run-cancellation-sqlite-demo.json": "fb1fc8087b1f5dbcf183bd7eebaa482c14520f77da19efdbd7804aeecc1f5b92",
+    "conformance/expected/owned-run-cancellation-verification.json": "2659a9b1d0ac4beaf7b3b11d89b3d6aee2b920176e6381e7571885f467f65e15",
+    "conformance/expected/selected-reference-comparison.json": "51268cf053053025f0b020d8ffc5432aa96d85fc83745970387b646f8e685394",
+    "conformance/expected/settled-failure-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/settled-failure-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/settled-failure-reference-comparison.json": "fa84f0eae80d09b32fb63ba3d6ca5f1ebda8f5d6f4d65c49ef80cda7a25a4a60",
+    "conformance/expected/settled-failure-sqlite-demo.json": "38f89bb8743c75f84c1d4ca8dcca38b095ef444654ff52e60f30147c1c881574",
+    "conformance/expected/settled-failure-verification.json": "b07c0bbf1a1b93994c8ab83f68f217724505a05c98458851a42e9b6233accd56",
+    "conformance/expected/shared-execution-driver-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/shared-execution-driver-attachment-http-example.json": "6b9664835a972c6718e4ae0f80e2fbfdc90878ad84fe96a703d3753fd43a1624",
+    "conformance/expected/shared-execution-driver-cancellation-http-example.json": "6a3c1b5f69f8b27dae4ab629cd7e31b4bc24fe17c1502301e936fcf5fd68d744",
+    "conformance/expected/shared-execution-driver-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/shared-execution-driver-foundation-scenarios.json": "34a56596f7e25446bab298e398287ba1abc594a242a7792cddd5dba1c658ef65",
+    "conformance/expected/shared-execution-driver-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/shared-execution-driver-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/shared-execution-driver-sqlite-demo.json": "437391ddb14d58eafa725f097bae34c0346b702e6ffc8fe2d388b91abf81c3d7",
+    "conformance/expected/shared-execution-driver-verification.json": "47dacfa3c4f8500872824327199161fa0bfc4e12aa18b80cf0cbeb454d392c11",
+    "conformance/expected/sqlite-safe-backup-approval-http-example.json": "1e52fe34fb7e93b0fe9480200265cbce3b80cd77970730fa16dee1ec8cb5c6c0",
+    "conformance/expected/sqlite-safe-backup-attachment-http-example.json": "05fb6ef3b62316fe4d25cb8f7173abbcfad3a11e829c03c9cf57e623342b67b2",
+    "conformance/expected/sqlite-safe-backup-cancellation-http-example.json": "63acf215dff6e183b87d90c93d6d4d63b7930adf9668a265fb7f3d8c32c1005e",
+    "conformance/expected/sqlite-safe-backup-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/sqlite-safe-backup-foundation-scenarios.json": "ec77d65959b69e71daf25440064e152ea88eb3c40469c32065d730ccd502bce3",
+    "conformance/expected/sqlite-safe-backup-native-http-example.json": "ea3d7edd48b7d851b70db1e25f78223f95460cc4c721e4525752072d2244293c",
+    "conformance/expected/sqlite-safe-backup-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/sqlite-safe-backup-retained-http-example.json": "2d65793446264fe2152e57e8dc2c4cff057e78b5440ef1089226d214d6a44449",
+    "conformance/expected/sqlite-safe-backup-sqlite-demo.json": "c843cff25dd05987358d4288d851fd7f721e50539ab2dfa8489b9edc84c01f45",
+    "conformance/expected/sqlite-safe-backup-verification.json": "968c4ac234beb3d78f2790dad872e2813842b472caed022afa05638cd7222707",
+    "conformance/expected/supervised-admission-drain-approval-http-example.json": "1e52fe34fb7e93b0fe9480200265cbce3b80cd77970730fa16dee1ec8cb5c6c0",
+    "conformance/expected/supervised-admission-drain-attachment-http-example.json": "05fb6ef3b62316fe4d25cb8f7173abbcfad3a11e829c03c9cf57e623342b67b2",
+    "conformance/expected/supervised-admission-drain-cancellation-http-example.json": "63acf215dff6e183b87d90c93d6d4d63b7930adf9668a265fb7f3d8c32c1005e",
+    "conformance/expected/supervised-admission-drain-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/supervised-admission-drain-foundation-scenarios.json": "ec77d65959b69e71daf25440064e152ea88eb3c40469c32065d730ccd502bce3",
+    "conformance/expected/supervised-admission-drain-native-http-example.json": "ea3d7edd48b7d851b70db1e25f78223f95460cc4c721e4525752072d2244293c",
+    "conformance/expected/supervised-admission-drain-recovery-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/supervised-admission-drain-retained-http-example.json": "2d65793446264fe2152e57e8dc2c4cff057e78b5440ef1089226d214d6a44449",
+    "conformance/expected/supervised-admission-drain-sqlite-demo.json": "71fd1a6fe4c24c88ac1f541f45ecbcc7ccec3b0eb2374ece8a9dec50a0dbe954",
+    "conformance/expected/supervised-admission-drain-verification.json": "7d975001f0a1f084a65c98bb8cc42a7e95442e2f1dd6ad7282f9b78a28bfc79b",
+    "conformance/expected/transactional-runtime-demo.json": "513677577823a153716770c8c21d1fb07f0682a8bd1b8ba518149dfbcf13fb89",
+    "conformance/expected/transactional-runtime-verification.json": "19085781e58d18c755003bd00d5188ad7efa09ca0bfccf5aea1d1c9cd981eba7",
+    "conformance/expected/trusted-restart-approval-http-example.json": "cd3c95a198f9fffb7ae5f1953dcd1ef0c9e2c1f7cd2f839a1f3f421c050a0b3e",
+    "conformance/expected/trusted-restart-embedded-example.json": "08f4c94eb644aa49297dcf79d720c3c4707511853a5d7c9ef7892331f864cae0",
+    "conformance/expected/trusted-restart-example.json": "27cd44ae430d89bb0d956ac81908f826a79de064ea9c8089d5d799ab4b8446f7",
+    "conformance/expected/trusted-restart-foundation-scenarios.json": "3a49a59439f3eef0a28851b35d955f0c7398b8fdc5817df07e63b9f1699267b8",
+    "conformance/expected/trusted-restart-reference-comparison.json": "b48491179c4fa2f670bca6726c9e670a0e5121b8c548a2d5f2dc68ba95c81fb4",
+    "conformance/expected/trusted-restart-retained-http-example.json": "6e77439dcf7439c625ad21cc406cee056fcd482d427cd1ce5421156826945294",
+    "conformance/expected/trusted-restart-sqlite-demo.json": "450567a91fac700bbc6004ed6feffa2eb75d9c3c97b1fd25b0ed3be8852c7178",
+    "conformance/expected/trusted-restart-verification.json": "b10d61f4067682e6b27277dfaaa0eb0c68ab5a5bc87afc9058456f6ab59fcf84",
+    "conformance/scenarios/parallel_approval_snapshot_round_trip.json": "38733c781cecfcaca0a5c650d5bb4856498cb9f179726b0dde39d2ef700bf438",
+    "conformance/scenarios/uncertain_unsafe_effect.json": "bd937763d5c93cf256eabf94cafd0d664c7a7f8a07a49e9f5ac97a5b4fd2bb3b",
+    "conformance/reference/README.md": "2242624fa8e36435fa99a46a3833351fff2877b070b6fdc71aec12a361e262c4",
+    "conformance/reference/manifest.json": "2c621766b2aabc12e3e3fabeba4802fc912bc2dbfffbad3d9b40b44415c9f494",
+    "conformance/reference/recordings/2026-10-01-lifecycle/README.md": "f1c7cd8925b15920bcabcc7f753623fcfa7dd8d5cea86e2b4be2e6ada999c9f6",
+    "conformance/reference/recordings/2026-10-01-lifecycle/build-provenance.json": "212fc71313a7c24751befcfd5aa602f4d74d740423709f4012449b9edaa71d08",
+    "conformance/reference/recordings/2026-10-01-lifecycle/capture.log": "5981bc709711ebd1d417cc133d8870a331524855138b9f8b5e65dee73ff92047",
+    "conformance/reference/recordings/2026-10-01-lifecycle/lifecycle-observations.json": "e1c45cc4f935c29875e82494870189de4ec8e69dd21b0e7b5fe11660bdc03818",
+    "conformance/reference/recordings/2026-10-01-lifecycle/lifecycle-repeatability.json": "ebf5d78734e566296dbbeca75ff036fbeed998faf4529c19f6f450919f51029a",
+    "conformance/reference/recordings/2026-10-01-lifecycle/runtime-artifacts.json": "0bd61e4ff3b999e45f1892e6983272db50c1aff93164bf17d79e49b25fbb1fba",
+    "conformance/reference/recordings/2026-10-01-lifecycle/repeat/capture.log": "c2658fe3c480bcf5325f339ead778f04ba516847198e9d439ce840c24fcd09fa",
+    "conformance/reference/recordings/2026-10-01-lifecycle/repeat/lifecycle-observations.json": "ed28a82a75406fc5721ec26dd26652ac98eedd7e66b84f7eca18801708e0d592",
+    "conformance/reference/recordings/2026-10-01-lifecycle/repeat/runtime-artifacts.json": "52c858197b3523c7b832427058e94512c48315e9bf916a75b0771b456dd8dd1d",
+    "conformance/reference/recordings/2026-10-01-grants/README.md": "26c905989b72b09ed915e53fde9af78d0e23a537e6a7f335d6a2793bbf29e46a",
+    "conformance/reference/recordings/2026-10-01-grants/build-provenance.json": "31ed6674ebe98b31dffddffc5ccb777ad2120d0ead7ca7140ffb441ff2f38423",
+    "conformance/reference/recordings/2026-10-01-grants/build.log": "eaa98f50b7cc5799238e3a441f52f7bb2b9cdf7a35325847f0fbf7cc5c557923",
+    "conformance/reference/recordings/2026-10-01-grants/grant-observations.json": "d65a81878bcf0a88b12e746f92a0baa62beaafc7b2f8a0c358293c80e433e8a0",
+    "conformance/reference/recordings/2026-10-01-grants/grant-repeatability.json": "0bee5f17aa7693315a4a62c49aa2e1bb3711c0a0713032e751c1e0220621617c",
+    "conformance/reference/recordings/2026-10-01-grants/install.log": "d557a5e1b2385c7e8827972e582c198216a6ef23c9dff4cf44a089027d9f44e2",
+    "conformance/reference/recordings/2026-10-01-grants/runtime-artifacts.json": "999605f0112627bf28484e8cdaabb2f4d913760ea17e40e2d6b99ed3991b95c7",
+    "conformance/reference/recordings/2026-10-01-grants/repeat/grant-observations.json": "3f6ccea87a5baa63405256348939b6ce9c5fe71e1678315a5f420a1d3fe7ef03",
+    "conformance/reference/recordings/2026-10-01-grants/repeat/runtime-artifacts.json": "5833cacf0a42555df64baebb8356e7f87f82c2ff805effb95ecbacf273209674",
+    "conformance/reference/recordings/2026-09-30-workflows/README.md": "b09712a7f556700938199a991f2f3f472de9707e35c687769aa470ffd8b080cc",
+    "conformance/reference/recordings/2026-09-30-workflows/build-provenance.json": "073678cf496ab24f55f32b4b26c0ca5bda1f73c52b66e0056279e9d472c56dd1",
+    "conformance/reference/recordings/2026-09-30-workflows/runtime-artifacts.json": "b2e22d96e88e8a45e31890af1a5387a00686196c7c831a8e0c0d305f9d12820c",
+    "conformance/reference/recordings/2026-09-30-workflows/workflow-observations.json": "2485bb8a5404c2cd0af3e28a898de1afcc432b0fdee733919143ef72d1a08a16",
+    "conformance/reference/recordings/2026-09-30-workflows/workflow-repeatability.json": "f303ba4c0a9bb4a88389b6623add6352dfac636188f86462a61d802a099cd88a",
+    "conformance/reference/recordings/2026-09-30-workflows/repeat/workflow-observations.json": "ec59969faffce44425b1e553f26d318ef772deff2b0e072fb79b48ab9a911ef8",
+    "conformance/reference/fixture/README.md": "8e29cff612d64e111c606290d79a724f61c703a3ec5fa38c633f8bfca117468a",
+    "conformance/reference/fixture/capture.mjs": "98bea197db65894632757fe87e7662d431687e39127e006efc6eb65c40481c04",
+    "conformance/reference/fixture/capture.test.mjs": "93ea404fb6116629e3d91a68e47bc30a8cf0b8d5ce5af2b8af8f864ac1a03bca",
+    "conformance/reference/fixture/cases.json": "48224462e5f0f1400ef126e17c276f1092f56b80ce055613f136e2f2fbf40d0a",
+    "conformance/reference/fixture/compare-recordings.mjs": "405ad762e3c76f2b172e4b193314ac2e0df958fc8d96ce3861f26e94c74a1436",
+    "conformance/reference/fixture/compare-recordings.test.mjs": "cc32a0174a035fd29abbf9e650cc5f7889be67e2d9de72bfb8eab2c92ed1a295",
+    "conformance/reference/fixture/harness.mjs": "06be8adba6c5889b95f50304055a8977f1afedd3e798114ef9ed6adc98f8e6a9",
+    "conformance/reference/fixture/harness.test.mjs": "576ac400552264cf33e7963876707a34ea96ccd573eb02f9e9af92e7f18a753b",
+    "conformance/reference/fixture/runtime-artifacts.mjs": "32d9140ad5372f2cded62f5ea19641d2e4989406f19d932eaccefd70f1d474c3",
+    "conformance/reference/fixture/runtime-artifacts.test.mjs": "4977dc1918a552963127e185ed44a277737163861ecd162c44884a44194734ba",
+    "conformance/reference/fixture/app/b4.config.ts": "fc00d19bc94e10c24f07bd9be1c2bb24d4978856963c5a68745338ecbf131dfc",
+    "conformance/reference/fixture/app/package.json": "7ed855976dff6a243c843b768d8c71bfaf066408c96a00876796e8c3d3476111",
+    "conformance/reference/fixture/app/src/app/validate/index.ts": "54d5cfc9105db1e14b0cb6bbcc36ae4924aa7db3900d836186030cffcfa80669",
+    "conformance/reference/fixture/app/src/app/empty/index.ts": "20f2432d8aadc21ec0937fa460bb522192454c8acc72dff373a94661c20520d5",
+    "conformance/reference/fixture/app/src/app/fail/index.ts": "67fe6e578e55b71e8e4344beaf38009b742851d7bc492a9262395538e7a98864",
+    "conformance/reference/fixture/app/src/app/zero/index.ts": "5400a414258596585c755e024f8517e3db8f2b2cabb4d03201858eaf1fac9131",
+    "conformance/reference/fixture/app/src/app/void/index.ts": "f01d30338cf59b878cc8ec98b493f10695b6be1add6f280088c547ce6eaa6b2d",
+    "conformance/reference/fixture/app/src/app/false/index.ts": "7d731a9ab61746736ddd4e2a6f9ad133d1928bd0b98990257ccebf980cb3ba53",
+    "conformance/reference/fixture/app/src/app/probe/index.ts": "2b06650062c288eb1aa12ece586e85ef31e28104ccd2aca474e0a4699a880627",
+    "conformance/reference/source/LICENSE": "d805df508e4812d412205f18341737067429f46dc353e9a8ce7e14402a2f5455",
+    "conformance/reference/source/package.json": "9f965f5b995cd43350a5793948d74a61cf1acc4454f3ba41b557d0a286a11e45",
+    "conformance/reference/source/pnpm-lock.yaml": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0",
+    "conformance/reference/source/pnpm-workspace.yaml": "3809d90a40b2520861494b3202a8687515f98a86b83a9c644351d7f553471920",
+    "conformance/reference/source/test/runtime/run-agent-protocol.test.ts": "c171555cdcfdf9b7df14f89749320f389924cff7be00f2d109062ab21c258ec9",
+    "conformance/reference/source/test/runtime/vitest.config.ts": "cb681e9f44b9f6d620b773902368250330f33da2220384f6733f3455bba8291a",
+    "conformance/reference/source/packages/cli/package.json": "f9eae129b26f012c72406691f3cfcff98ab15feb8d3d2ebfc86efbde106de630",
+    "conformance/reference/source/packages/cli/test/ap-attach-endpoint.test.ts": "3c77f297b5002f89b07b0b5d2eb7441945098354806052ef3cc681b69008d9d8",
+    "conformance/reference/source/packages/cli/test/resume-endpoint.test.ts": "9921d4ca6dcb45fbcd05a65737009c71265eca03e42b36267f69aa790912a251",
+    "conformance/reference/source/packages/cli/test/runs-wait-output.test.ts": "bba686cbfc9a2f363444461b24dbb9fda3e90c5aa22adbf041b3560629f61fba",
+    "conformance/reference/source/packages/cli/test/runtime-fetch-handler.test.ts": "fac6eaf7b9ba3993deb493488ac6a75320b97df828af8afe6845fbdab3b334b1",
+    "conformance/reference/source/packages/cli/test/stream-message-identity.test.ts": "792b5adcabb1f3a1551eef0f98bb5cb386ebfbf458f8c75abfb82e11651d2a71",
+    "conformance/reference/source/packages/cli/test/stream-types.test.ts": "cdbc2391b9163e910591c621bef9b1a59d39ddec24b0c1fe566b4a7a488d896e",
+    "conformance/reference/source/packages/cli/src/lib/runtime/stream-types.ts": "1a2aac2e0f1f14d1f58f1346b1d8595d1c4806d5df32556895cd611438728851",
+    "conformance/reference/source/packages/cli/src/lib/dev/approval-grants.ts": "8a85e2828bd59fdeeb2403c62895ce318c4d01ec126a029dcaf52f7aa5d295a5",
+    "conformance/reference/source/packages/cli/src/lib/dev/live-turn-hub.ts": "545875fee37254c264f503e5991a1269ee90fc324807436d5015dcc3262aef27",
+    "conformance/reference/source/packages/cli/src/lib/dev/pending-interrupts.ts": "bc24097388b0a30855ddfb71306d2add5ef64cfae6b63d81f47fa182c8bd5f5f",
+    "conformance/reference/source/packages/cli/src/lib/dev/runtime-fetch-core.ts": "ddb883fdc04825246b774ae27e342cb34ab7362afb6f228147445646c1a3ab72",
+    "conformance/reference/source/packages/cli/src/lib/dev/server-errors.ts": "113b8f7f0d637268da78ac1ad913123c4118de204475e568285d2adefb558504",
+    "conformance/reference/source/packages/sqlite-storage/src/threads/store.ts": "a6aa541c79987e18a1b1eaf263abb21273f289a83c12e9200afefec14462657b",
+    "conformance/reference/source/packages/sdk/src/interrupt-grants.ts": "523b8b569e0b4bd9ad7a2c96c3dce0d07da2281396e16f51bf012d7dfebb172d",
+    "conformance/reference/source/apps/web/content/docs/approval-grants.mdx": "4d484ecc56748bb2497a0a80dfd07e764d07f9dac2cdcc23188d88c896849d5f",
+    "conformance/reference/source/apps/web/content/docs/dev-server/agent-protocol.mdx": "48a7ba3ab7ae06ed481a5f22899f3e3fabbd139afb85d0cde4984c057002f421",
+    "conformance/reference/grant-fixture/README.md": "4c95b605a81690ea6ea921c504762e8226cc16fc7f8b49f5285fc4f6fc074681",
+    "conformance/reference/grant-fixture/capture.mjs": "320e2c09e5cc85d0ec899ff7700d6e2da4763138b50f0eb7ea4facb71b6f8af4",
+    "conformance/reference/grant-fixture/projection.mjs": "1f0d841e667f39d50fe038de84995c454c4abe1ce753122d80cca344ad77af57",
+    "conformance/reference/grant-fixture/projection.test.mjs": "2b9f8b6d65854fecc80aaf243f3eb66cfc94afb4919437c7742f240bc508d81e",
+    "conformance/reference/grant-fixture/app/b4.config.ts": "a9ff8c44dedbe368e0d274b0098a97c911633b2b906f5769948e3771b32da9c0",
+    "conformance/reference/grant-fixture/app/package.json": "fe1dafda48fc20c87d46d0bdf12e57fa01850c8dc23279780b35f6fc6f8245eb",
+    "conformance/reference/grant-fixture/app/src/app/park/index.ts": "a828b28a48e7d83309f704d3d2370ea8980d3ceeaf9d0ae38dc48ac93c0a33bb",
+    "conformance/reference/grant-fixture/app/src/app/park/tools/deployProd.ts": "76e8dbb3ea9acc75d722202fbc973f0bb1c69647e33f08849c90068b0625209b",
+    "conformance/reference/lifecycle-fixture/README.md": "43b6a87709eabfd685c67be96e5c5459e273877ddfa979a9b0c7d2c9fa013c13",
+    "conformance/reference/lifecycle-fixture/capture.mjs": "7ad47319080c3fdc44de0965af2618b8b64a96fefc170ff43fd94fb3653dbc3e",
+    "conformance/reference/lifecycle-fixture/projection.mjs": "3008c8045c7059c634bf2ff795236bd9e47c776e5d9cdfbe458bdb0e0eb43c21",
+    "conformance/reference/lifecycle-fixture/projection.test.mjs": "5bd6174ee0f78c1cc7194a247bb3c52709be966e8db0182a463e95b1cafcf015",
+    "conformance/reference/lifecycle-fixture/app/b4.config.ts": "a9ff8c44dedbe368e0d274b0098a97c911633b2b906f5769948e3771b32da9c0",
+    "conformance/reference/lifecycle-fixture/app/package.json": "b0ff31107b87603e7adc0a15fb5fc02ecdf53336ae617ee6db4013049c7ad36b",
+    "conformance/reference/lifecycle-fixture/app/src/app/park/index.ts": "f8daa1b9a25660eef72734936b13c71a9748fbd749a4823ea7bc27c8d2941143",
+    "conformance/reference/lifecycle-fixture/app/src/app/park/tools/localDecision.ts": "e9d43c3fd22c29676b0845d14520b12843fc61d41db74d6af555feaa0f508a15",
+    "conformance/reference/lifecycle-fixture/app/src/app/immediate/index.ts": "0623b8e0abcdac8f67b36e9c67835bf0db574c9d9193925e0b0609008fe7fa9b",
+    "conformance/reference/lifecycle-fixture/app/src/app/held/index.ts": "a3251f84a6bcda8b68deaf087c1c8119ae57ac0f1d1ddaefad52ca460f7e5980"
+  },
+  "reference_scope": {
+    "new_reference_capture": false,
+    "workflow_retained_requests_each": 62,
+    "grant_retained_requests_each": 39,
+    "lifecycle_retained_requests_each": 77,
+    "new_upstream_build": false,
+    "retained_selected_http_reference_tests": 6,
+    "actual_reference_transport": "in_process_fetch",
+    "native_transport": "actual_loopback_tcp_and_unix_sigkill",
+    "scope": "Retained workflow/grant/lifecycle observations unchanged; no new TypeScript execution, capture or container wire-parity claim."
+  },
+  "scope": {
+    "public_core_operations": 10,
+    "additional_native_operational_endpoints": 1,
+    "sqlite_schema_version": 3,
+    "capability_descriptor_version": 2,
+    "graceful_shutdown": false,
+    "supervised_admission_drain": true,
+    "linux_container_qualified": true,
+    "UID_GID": 10001,
+    "inner_loopback_only": true,
+    "persistent_volume": "explicit local named nocopy volume",
+    "initializer": "separate qualification-only UID0 with CHOWN, verified fresh empty owned volume; never existing repair",
+    "physical_retirement": "Actual main Rust PID1 SIGTERM/SIGINT, exit0/stopped/notOOM; registered-worker/transport ownership additionally tested by Linux process suites",
+    "logical_storage": "Six-table coherent read-only transactions; exact private rows except exactly one metadata epoch advance per reopen; no WAL/SHM byte preservation claim",
+    "authority": "Existing original execution owner/prompt/grant/expiry/acceptance preserved; prior-owner parked GET/SSE read-only, ordinary unfinished projection remains501; no adoption",
+    "runtime_tools": "Native release binary plus bounded curl and libraries; no Node/Cargo/compiler/Python/test helpers",
+    "snapshot_tool": "qualification-only helper, not shipped operator inspection",
+    "M0": "open",
+    "CP_001_through_009": "partial",
+    "CP_010": "unresolved",
+    "M5": "partial",
+    "all_56_broad_release_scenarios": "pending",
+    "core_profile_release": false,
+    "offline_inspection": false,
+    "production_restore_installer": false,
+    "full_operations_qualification": false,
+    "automatic_recovery_scan": false,
+    "public_ingress": false,
+    "deployment": false,
+    "image_publication": false
+  },
+  "limitations": [
+    "Local Linux arm64/Docker Desktop profile only; other architectures, orchestrators, network filesystems, deployment and host ingress remain open.",
+    "Trusted local Docker daemon and stable filesystem paths assumed; runtime environment secrets are visible to daemon administrators.",
+    "Pinned base indices do not freeze apt additions. Installed versions/image IDs recorded; expected slim omissions classified, not pristine-package/security audit or reproducible-build proof.",
+    "Driver bounded commands and forced diagnostic cleanup are failure/cleanup evidence only. Idle source-test PID1 sleep containers require SIGKILL cleanup after tests; this is not main-runtime positive retirement.",
+    "Complete graceful shutdown, bounded drain/diagnostic latency, broad crash/recovery/power-loss matrix, offline inspection and full core release remain open.",
+    "Initial actual Linux test fixture and Docker adapter failures preserved separately; neither failed runs nor mock boundary tests are counted as passing actual lifecycle cases."
+  ]
+}

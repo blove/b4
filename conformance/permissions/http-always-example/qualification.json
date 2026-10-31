@@ -1,0 +1,146 @@
+{
+  "record_version": 1,
+  "profile": "runnable_http_always_example",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "native_source_descriptor_sha256": "e954f6f3d0c10f0c6aa8c78225793008fe238eafaa93e09666ab06c2f777ab45",
+  "source_files": [
+    {
+      "path": "crates/b4-http/examples/serve_permission_reuse.rs",
+      "bytes": 17046,
+      "sha256": "4f97e374f257ebab84b3814b1f202f02ddbfd388b644728b31656c23fcaf70de"
+    },
+    {
+      "path": "scripts/check_http_always_example.py",
+      "bytes": 19498,
+      "sha256": "869cb84fd899c51adc6074d169dd7187c72d402b4ddca75e4c3c75f1e8b4985a"
+    }
+  ],
+  "unchanged_checker_helper": {
+    "path": "scripts/check_permission_reuse_example.py",
+    "sha256": "aa13064421f88d2ea8c8c51f2a962d9fd67f39c6a38005e1797407561f0be063"
+  },
+  "built_example": {
+    "sha256": "ffbe469902454dcd2d5682dd30c091a73e4b4318b5d62151fbf2ce5eb98a7fe5",
+    "bytes": 21803560,
+    "path": "/Users/blove/repos/b4/.b4-work/normal-application/build-target/debug/examples/serve_permission_reuse"
+  },
+  "checks": {
+    "build-example": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "build",
+        "-p",
+        "b4-http",
+        "--example",
+        "serve_permission_reuse",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 8.105,
+      "log_sha256": "c0943aadb55993c32ba095b379b35bf9d6e17fa0211295d693fb2ac058800ce5",
+      "source_unchanged": true,
+      "private_run": "build-example-1792543507173979000"
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.806,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "private_run": "format-check-1792543507171764000"
+    },
+    "example-lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "-p",
+        "b4-http",
+        "--example",
+        "serve_permission_reuse",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 1.716,
+      "log_sha256": "ac5093508255d481745079d5b5e497d26a82c21b53a2f21d88bc068bc15c1b07",
+      "source_unchanged": true,
+      "private_run": "example-lint-1792543526776260000"
+    },
+    "http-always-example": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_http_always_example.py",
+        "--example",
+        "/Users/blove/repos/b4/.b4-work/http-always-example/build-target/debug/examples/serve_permission_reuse"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 0.968,
+      "log_sha256": "1cd884bb02e0bf3e5ba17537d989b389397fa452f57a7008a0e6af73dc5bbc7c",
+      "source_unchanged": true,
+      "private_run": "http-always-example-1792543528848884000"
+    },
+    "existing-example": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_permission_reuse_example.py",
+        "--example",
+        "/Users/blove/repos/b4/.b4-work/http-always-example/build-target/debug/examples/serve_permission_reuse"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 0.566,
+      "log_sha256": "c53a61631328d93f522250865915718db784fb8156e1faea91760d32f9fc6431",
+      "source_unchanged": true,
+      "private_run": "example-acceptance-1792543529802283000"
+    }
+  },
+  "observed": {
+    "new_mode": "serve-approvals",
+    "original": "owner1 HTTP-created thread, Waiting2, actual pending-token Always, Complete5 with real task result and no Use",
+    "restarted": "owner2 fresh Complete4 and linked Use without replacement approval",
+    "new_normal_shutdowns": 2,
+    "new_integrity": "ok",
+    "new_temporary_directory_removed": true,
+    "existing_mode": "seed Cancelled4, owners1/2/3, two Complete4 Uses and two normal server shutdowns",
+    "process_evidence": "one committed original attempt/result; no callback instrumentation claim"
+  },
+  "fresh_full_workspace": false,
+  "unchanged_runtime_qualification": "../http-always/qualification.json",
+  "historical_runtime_full_workspace": {
+    "passed": 1567,
+    "failed": 0,
+    "ignored": 11
+  },
+  "scope": {
+    "production_libraries_unchanged": true,
+    "contracts_dependencies_locks_unchanged": true,
+    "existing_checker_unchanged": true,
+    "unix_local_process_only": true,
+    "metadata_is_runtime_evidence": false,
+    "git_writes": false
+  }
+}

@@ -1,0 +1,625 @@
+{
+  "adoption": {
+    "independent_actual_review": {
+      "bytes": 5415,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-callback-unified-gagicaxt/Independent-unified-actual-public-adoption-quality.json",
+      "sha256": "46a7638adc42dbd3bacda33993dc54e630c65529140ac382a640250b26120de2"
+    },
+    "receipt": {
+      "bytes": 1866,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-callback-unified-gagicaxt/adoption-receipt.json",
+      "sha256": "64f89e66dd857e0e2924fd1aef0bce2ca75c03f08933135c959ea02c0a1d177e"
+    },
+    "selected_code_bodies_exactly_match_candidate": true
+  },
+  "broad_profile_qualified": false,
+  "commands": {
+    "Depth65": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_callback::permission_use_renewed_permit_retains_excessively_nested_result",
+        "--",
+        "--exact",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1023,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Depth65.log",
+        "sha256": "c828c53fcbba7e2bd5adba7d9dcc255ac8b794e2f4ab0ad87ea186d9f83712eb"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2189,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Depth65-receipt.json",
+        "sha256": "066821c1e82971bdb928c45098c51f528eae78e78148950bdddf1c77ab35a369"
+      },
+      "timed_out": false
+    },
+    "Failed": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_callback::permission_use_renewed_permit_retains_finite_failed_result",
+        "--",
+        "--exact",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1010,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Failed.log",
+        "sha256": "4b00e38421248c2e28084a161bd1d74c4420385dde2e362cc44728a22716897a"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2179,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Failed-receipt.json",
+        "sha256": "fd39dada793dba0dd55b4403869a5981769589dcea9de2f179219584bd1725fa"
+      },
+      "timed_out": false
+    },
+    "FirstRefusal": {
+      "production_source": false,
+      "receipt": {
+        "bytes": 2231,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-first-refusal-fvguazbg/native-FirstRefusal-receipt.json",
+        "sha256": "44654e9eb3829360250d93da404915419e621c11a94fc110a442921ba7665993"
+      },
+      "review": {
+        "bytes": 4629,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-finalbody-FirstRefusal-actual-accepted-wnp0repn.json",
+        "sha256": "85b5b6e1363d5ce30734f48603440b1c71ca95dfa4b52a3eb71e58d1b100dc9f"
+      }
+    },
+    "Held": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_callback::permission_use_renewed_permit_keeps_owners_alive_while_callback_is_held",
+        "--",
+        "--exact",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1120,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Held.log",
+        "sha256": "6df5d25eb0f54606332897c0b3252ca7c4e28f35eba1afb58b3d0badf497f34a"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2182,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Held-receipt.json",
+        "sha256": "cb7a971ff7f6065e1db60bad2a4f8ef49818f1a587f00a4ad634317a3971d3e6"
+      },
+      "timed_out": false
+    },
+    "KnownU8": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_callback::permission_use_renewed_permit_retains_known_u8_panic",
+        "--",
+        "--exact",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1005,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-KnownU8.log",
+        "sha256": "0b09e51f3dc13147a22c15ed6cc8255338b049bbe557bc6867b6586a01815922"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2178,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-KnownU8-receipt.json",
+        "sha256": "c462ecf38ab6346b522e199e147a438a092648d76a3626bbe56f7a0c8f851e02"
+      },
+      "timed_out": false
+    },
+    "Oversize65537": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_callback::permission_use_renewed_permit_retains_oversized_encoded_result",
+        "--",
+        "--exact",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1022,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Oversize65537.log",
+        "sha256": "d8c0a62c89304b677cab41dec71a3251ae94907d02840db9366e4aa07c0f19e2"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2218,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Oversize65537-receipt.json",
+        "sha256": "11170cd5f6cc8e6b7d459c0a49ddd54e6eb809c2352c764b2944beb573f0d45d"
+      },
+      "timed_out": false
+    },
+    "Pure6": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-runtime",
+        "--lib",
+        "permissions::validation::use_callback_budget_controls::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1304,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Pure6.log",
+        "sha256": "8ef3af7dc32f40f6ab78f0a6a0bcfb78f08976b0e61645a43a2fd5518b4ba470"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 1972,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Pure6-receipt.json",
+        "sha256": "135407ecbb2cd14102c35f47beecbe4d9e581673e08b2d037faadd0f72fa1104"
+      },
+      "timed_out": false
+    },
+    "Success": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_callback::permission_use_renewed_permit_invokes_exact_native_once",
+        "--",
+        "--exact",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1007,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Success.log",
+        "sha256": "efad7097e12e38dfd12c23052c3b269ede9c10594e7490213dd5f1398d84093e"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2181,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Success-receipt.json",
+        "sha256": "404679e52d4bb7eab5c50f32b002c51b14c4ea0a5c1b3126155805c8942bb1b1"
+      },
+      "timed_out": false
+    },
+    "Uncertain": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_callback::permission_use_renewed_permit_retains_finite_uncertainty",
+        "--",
+        "--exact",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1010,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Uncertain.log",
+        "sha256": "d3070e525a93b3eea72a90020e2951b66982a93269466edc2c8bcc91c750eecf"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2192,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Uncertain-receipt.json",
+        "sha256": "092a91adc0d21b373b3f14344c64b4dbc7580e1de0112d29a741850670242b62"
+      },
+      "timed_out": false
+    },
+    "Void": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_callback::permission_use_renewed_permit_retains_void_output_mismatch",
+        "--",
+        "--exact",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1016,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Void.log",
+        "sha256": "4c6490eca5d492e47a03e00edf6e43f1d3d2eefcb46ed9814d5eee073cad21bd"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2169,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/native-Void-receipt.json",
+        "sha256": "0dde02cadfbcc6ba81c0282ecde488f23123aac3165fada41d5bc88a9d06a0d0"
+      },
+      "timed_out": false
+    },
+    "budget": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-runtime",
+        "--lib",
+        "use_renewal_production_budget_controls",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1321,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/compatibility-budget.log",
+        "sha256": "106489289f04e31cd4bcf64f10baad7825c6ece3e22a5c3d8dd97140fa6bdc47"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2082,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/compatibility-budget-receipt.json",
+        "sha256": "94ab6c3e87689d9084a4cf41ee0cd94ec05ac13ca31520bf6d6f88b50126bda0"
+      },
+      "timed_out": false
+    },
+    "clippy": {
+      "command": [
+        "cargo",
+        "clippy",
+        "--locked",
+        "--offline",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 489,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/static-clippy.log",
+        "sha256": "8188b0cbb634b312b3abf3dc57cddd5cb499413ff87adf0ca65102b8124b92d3"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 1795,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/static-clippy-receipt.json",
+        "sha256": "d10f26de576fef4334ddd649f9096d4caf834a0d741fc12a7c6ed38ad932c924"
+      },
+      "timed_out": false
+    },
+    "fmt": {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 0,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/static-fmt.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 1710,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/static-fmt-receipt.json",
+        "sha256": "d699de0f1374af0e93417ed2469e1d3207a6bc6eed0d58c49101f7f1747da275"
+      },
+      "timed_out": false
+    },
+    "no-run": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--workspace",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 18036,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/static-no-run.log",
+        "sha256": "733296417fa933937b6177518dd192ff1803b7cc2bc7641edb4cb581b50d78bc"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 1754,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/static-no-run-receipt.json",
+        "sha256": "6f8712d09e9a06e4b9a97190d646e4cff44e38e67cc3141f9db932581ccdb7c7"
+      },
+      "timed_out": false
+    },
+    "package-no-run": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 446,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/static-package-no-run.log",
+        "sha256": "ab6d2ea941d02f68782b9217253bf955714ed70fa7c46b2c9520fc62eb702d8c"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 1844,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/static-package-no-run-receipt.json",
+        "sha256": "c1a120d3cee4d72396d9007a8b4e2802a4b37322b47a45c759e08fa325c900f5"
+      },
+      "timed_out": false
+    },
+    "renewals": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_renewal::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 5967,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/compatibility-renewals.log",
+        "sha256": "fd449e534a48f96ae42aa05cf5642be879b16464aebc0d755e23cedc2d5184a4"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2104,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/compatibility-renewals-receipt.json",
+        "sha256": "165bccfbef0d31c077e7e26ca851830a492567072c2a7c57a25d1c5f823b330a"
+      },
+      "timed_out": false
+    },
+    "workspace": {
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--workspace"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 154036,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/compatibility-loopback-workspace.log",
+        "sha256": "17a8df5f5e8d1684ef126e29e62bf70e424d3cd3858ffac7cb0290fff0313ba6"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2017,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-callback-unified-gagicaxt/compatibility-loopback-workspace-receipt.json",
+        "sha256": "1a235a5b2856fb6b88c7f624ae66a65e9d29e48b9d0fa46f7d4ba2821a362391"
+      },
+      "timed_out": false
+    }
+  },
+  "evidence_storage": "Absolute external paths bind immutable local evidence. These files are not bundled in this repository; selected_public_sources permits current source verification without that evidence.",
+  "limits": {
+    "callback_logical_bytes": 8589934592,
+    "callback_logical_nodes": 67108864,
+    "five_purchase_bytes": 1302996228,
+    "five_purchase_nodes": 10178609,
+    "six_purchase_bytes": 4700156900,
+    "six_purchase_nodes": 36712857
+  },
+  "preserved_environment_failure": {
+    "bytes": 1973,
+    "mode": "0o600",
+    "path": "/private/tmp/b4-root-callback-unified-gagicaxt/compatibility-workspace-receipt.json",
+    "sha256": "728a8b6f7bc75d197bc45e6d3335a1d17db1038a5cc692006596f758d356b82e"
+  },
+  "qualified_on": "2026-10-09",
+  "remaining": [
+    "durable outcome settlement",
+    "Driver adapter",
+    "cooperative cancellation",
+    "human and legacy renewal",
+    "recovery",
+    "broad durable permission capability"
+  ],
+  "reviews": {
+    "compatibility": {
+      "bytes": 15709,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-callback-unified-gagicaxt/Independent-unified-compatibility-actual-result-quality.json",
+      "sha256": "4f66cd26307034056beafc591672656b3f6050647460dbed30339e2fb4953f40"
+    },
+    "eight_actual": {
+      "bytes": 20285,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-callback-unified-gagicaxt/Independent-unified-eight-actual-result-quality.json",
+      "sha256": "095e87829ba57d5fc244e42e1be8eb49b543e634deef44763a1715e7edc6034f"
+    },
+    "known_current_image": {
+      "bytes": 55999,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-unified-known-u8-current-image-reviewed-u21qwtqw/quality.json",
+      "sha256": "3aae473fc3bd1c897f8e492b759360ca0a87468143678f8c097124832e51387b"
+    },
+    "pure_controls": {
+      "bytes": 4024,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-unified-Pure6-actual-accepted-8vlghywv.json",
+      "sha256": "59fa25e21516d7090d55fd75e239ec08ef21bf45e362da6d776e937d29588183"
+    },
+    "target_binding": {
+      "bytes": 9713,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-callback-unified-gagicaxt/Root-current-target-binding-v1.json",
+      "sha256": "c93f676319e5f264f3eb9c53c8c69e5106a41ef67b34f64db17e5d148252b47e"
+    }
+  },
+  "scope": "Eight finite local macOS arm64 NewUse callback cases; six pure controls; separate reduced-capacity first-entry refusal control.",
+  "selected_public_sources": {
+    "crates/b4-runtime/src/permissions/catalog.rs": {
+      "bytes": 20563,
+      "mode": "0o644",
+      "path": "/Users/blove/repos/b4/crates/b4-runtime/src/permissions/catalog.rs",
+      "sha256": "f321974257d6f0f1fa02c59edb0090695dedd330ad572c84291111a83a156eef"
+    },
+    "crates/b4-runtime/src/permissions/mod.rs": {
+      "bytes": 5557,
+      "mode": "0o644",
+      "path": "/Users/blove/repos/b4/crates/b4-runtime/src/permissions/mod.rs",
+      "sha256": "6f27039a9371c8def465c3297762a7b48bee73cb2482dd9fdea7689b0edaa1a2"
+    },
+    "crates/b4-runtime/src/permissions/runtime_mutation.rs": {
+      "bytes": 429405,
+      "mode": "0o644",
+      "path": "/Users/blove/repos/b4/crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "sha256": "f993f999fbe4e138c5f846fe9f4e04d044dc3695262ce53b72da8c2498989a0c"
+    },
+    "crates/b4-runtime/src/permissions/runtime_use_callback.rs": {
+      "bytes": 15778,
+      "mode": "0o644",
+      "path": "/Users/blove/repos/b4/crates/b4-runtime/src/permissions/runtime_use_callback.rs",
+      "sha256": "4dc01b5926238b85bbbb89803f5df4ab9707c0a1f32d3eb8551c54b15579eb62"
+    },
+    "crates/b4-runtime/src/permissions/runtime_use_renewal.rs": {
+      "bytes": 66499,
+      "mode": "0o644",
+      "path": "/Users/blove/repos/b4/crates/b4-runtime/src/permissions/runtime_use_renewal.rs",
+      "sha256": "8d0af96774ed68a743b2b349085ee312698b04828c791fc0e67d0c085375dce5"
+    },
+    "crates/b4-runtime/src/permissions/validation.rs": {
+      "bytes": 717186,
+      "mode": "0o644",
+      "path": "/Users/blove/repos/b4/crates/b4-runtime/src/permissions/validation.rs",
+      "sha256": "bc6b037bf17ae5aaa05f0f660ced135185e5c957b2d4c050295e3b2be9cbeb7e"
+    },
+    "crates/b4-sqlite/tests/persistent_permissions.rs": {
+      "bytes": 240918,
+      "mode": "0o644",
+      "path": "/Users/blove/repos/b4/crates/b4-sqlite/tests/persistent_permissions.rs",
+      "sha256": "4a54ec56830242019073588a9760e517829541a616acff2d148892fa4f3ab02b"
+    },
+    "crates/b4-sqlite/tests/persistent_permissions/use_callback.rs": {
+      "bytes": 479979,
+      "mode": "0o644",
+      "path": "/Users/blove/repos/b4/crates/b4-sqlite/tests/persistent_permissions/use_callback.rs",
+      "sha256": "a2e9c129e35971f46f3a8c12e0370495a092fb41ed96953c13482dda57a34eea"
+    }
+  },
+  "source": {
+    "bytes": 533313,
+    "mode": "0o600",
+    "path": "/private/tmp/b4-root-callback-unified-gagicaxt/source-packet.json",
+    "sha256": "b7527ef0629202c70533c304c09b9f035674534a59b37d88f6d770bf4961cae9"
+  },
+  "workspace_totals_note": "All 130 reported summaries succeeded. 1461 reported passes include nested child fixture results and are not unique-test totals. The earlier restricted-environment listener failure is preserved separately."
+}

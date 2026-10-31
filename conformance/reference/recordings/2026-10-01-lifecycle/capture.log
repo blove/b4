@@ -1,0 +1,11 @@
+B4.run: thread access policy bound from the runtime options
+B4.run: thread access policy bound from the runtime options
+B4.run: thread access policy bound from the runtime options
+B4.run: no thread access policy (all thread endpoints are open)
+{
+  "path": "/Users/blove/repos/b4/conformance/reference/recordings/2026-10-01-lifecycle/lifecycle-observations.json",
+  "sha256": "e1c45cc4f935c29875e82494870189de4ec8e69dd21b0e7b5fe11660bdc03818",
+  "cases": 77,
+  "fixture_revision": "02ffc63f5b852f2525c68b2f45720b9afabb95715b1d4d813163e0700e75715a",
+  "assertions": 11
+}

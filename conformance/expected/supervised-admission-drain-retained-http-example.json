@@ -1,0 +1,42 @@
+{
+  "backend": "sqlite",
+  "checks": [
+    "missing_token_configuration_rejected",
+    "unauthenticated_401",
+    "origin_403",
+    "unexpected_host_403",
+    "ready_200",
+    "metadata_persisted",
+    "probe_false_preserved",
+    "void_done_empty_object",
+    "expected_failure_wait_500",
+    "expected_failure_stream_done",
+    "expected_failure_keeps_readiness_healthy",
+    "successor_after_failed_run",
+    "failed_thread_idle",
+    "pending_no_store",
+    "thread_and_state_preserved_after_process_restart"
+  ],
+  "failure_stream_utf8": "event: done\ndata: {\"output\":{\"error\":\"fixture execution failure\"}}\n\n",
+  "failure_wait_output": {
+    "error": {
+      "kind": "execution_error",
+      "message": "fixture execution failure"
+    }
+  },
+  "limitations": [
+    "Settled scripted execution restart only; no unfinished-run automatic recovery or crash qualification."
+  ],
+  "passed": true,
+  "profile": "authenticated_scripted_http_example",
+  "reopened_metadata": {
+    "note": "persisted-example"
+  },
+  "tokens_recorded": false,
+  "transport": "real_loopback_tcp",
+  "void_stream_utf8": "event: done\ndata: {}\n\n",
+  "wait_output": {
+    "input": false,
+    "kind": "boolean"
+  }
+}

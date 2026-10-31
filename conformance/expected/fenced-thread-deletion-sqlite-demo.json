@@ -1,0 +1,102 @@
+{
+  "execution": {
+    "snapshot": {
+      "attempt_history": [
+        "attempt-deletion-demo"
+      ],
+      "attempts_used": 1,
+      "batch_index": 1,
+      "definition": {
+        "batches": [
+          [
+            {
+              "effect_id": "effect-deletion-demo",
+              "id": "fixture",
+              "recovery": "pure",
+              "requires_approval": false
+            }
+          ]
+        ],
+        "max_attempts": 1,
+        "revision": "fixture-v1",
+        "route": "/scripted#agent"
+      },
+      "execution_id": "deletion-demo",
+      "failure": null,
+      "output": {
+        "message": "B4run committed this scripted effect through SQLite."
+      },
+      "owner_generation": 1,
+      "revision": 3,
+      "schema_version": 1,
+      "status": "completed",
+      "tasks": [
+        {
+          "approved": false,
+          "attempt_id": "attempt-deletion-demo",
+          "input": {},
+          "interrupt": null,
+          "result": {
+            "output": {
+              "effect_id": "effect-deletion-demo"
+            },
+            "writes": [
+              {
+                "field": "message",
+                "type": "replace",
+                "value": "B4run committed this scripted effect through SQLite."
+              }
+            ]
+          },
+          "spec": {
+            "effect_id": "effect-deletion-demo",
+            "id": "fixture",
+            "recovery": "pure",
+            "requires_approval": false
+          },
+          "status": "succeeded"
+        }
+      ],
+      "turn_history": [
+        "turn-deletion-demo"
+      ],
+      "turn_id": "turn-deletion-demo",
+      "updated_at_ms": 1790885302631,
+      "values": {
+        "message": "B4run committed this scripted effect through SQLite."
+      }
+    },
+    "thread_id": "thread-deletion-demo"
+  },
+  "journal": [
+    {
+      "execution_id": "deletion-demo",
+      "owner_generation": 1,
+      "revision": 0,
+      "status": "accepted",
+      "updated_at_ms": 1790885302628
+    },
+    {
+      "execution_id": "deletion-demo",
+      "owner_generation": 1,
+      "revision": 1,
+      "status": "running",
+      "updated_at_ms": 1790885302630
+    },
+    {
+      "execution_id": "deletion-demo",
+      "owner_generation": 1,
+      "revision": 2,
+      "status": "running",
+      "updated_at_ms": 1790885302630
+    },
+    {
+      "execution_id": "deletion-demo",
+      "owner_generation": 1,
+      "revision": 3,
+      "status": "completed",
+      "updated_at_ms": 1790885302631
+    }
+  ],
+  "scope": "native scripted SQLite example; no HTTP or provider"
+}

@@ -1,0 +1,384 @@
+{
+  "record_version": 1,
+  "profile": "http_permission_ready_cancellation",
+  "status": "qualified",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "native_source_descriptor_sha256": "3d18953700be91379608b52a6bc0531e1966631c91a46a594f8ed22b8ad5af63",
+  "native_source_file_count": 1038,
+  "source_files": [
+    {
+      "path": "contracts/agent-protocol/examples/capabilities-v6-permission-ready-cancellation.json",
+      "bytes": 2590,
+      "sha256": "7f800b32d62a8b08d512f9d6187ebb6620d0593927d2188ffd753eaf861fd9fe"
+    },
+    {
+      "path": "contracts/agent-protocol/schemas/capabilities-v6.json",
+      "bytes": 4646,
+      "sha256": "6111f8a258405af49c140afb9129ba93f227f36712a43016789b74bedf28145e"
+    },
+    {
+      "path": "crates/b4-contract/src/capabilities_v6.rs",
+      "bytes": 9355,
+      "sha256": "a9750e59ead71c226d5e66a861355009d6fa22df4e128171d38df5a17b4d3ad8"
+    },
+    {
+      "path": "crates/b4-contract/src/lib.rs",
+      "bytes": 688,
+      "sha256": "f7a02c0272d15b2713ad37c8f13b947ff5f2dc6071255af6982e2a97b913a500"
+    },
+    {
+      "path": "crates/b4-contract/tests/capabilities_v6.rs",
+      "bytes": 12500,
+      "sha256": "72801a07a94e734c1456de991f7e13870e4814cd63c60cd56476c9196883af38"
+    },
+    {
+      "path": "crates/b4-http/src/cancellation.rs",
+      "bytes": 12939,
+      "sha256": "c7f3f708b2f0e4a74c5c8d42f9b8805e1211d43397d46596e65d861d6bba2c60"
+    },
+    {
+      "path": "crates/b4-http/src/capabilities.rs",
+      "bytes": 10728,
+      "sha256": "884ff62f50b0bd72e89f79f8fb6a4939946bb5c1002d07b7a4c2b1d56a89b613"
+    },
+    {
+      "path": "crates/b4-http/src/control.rs",
+      "bytes": 18822,
+      "sha256": "47ad313a7a4e7354b64150074414679d95838fdb38c01b7d5cefa5f2a5fc1650"
+    },
+    {
+      "path": "crates/b4-http/src/host.rs",
+      "bytes": 15189,
+      "sha256": "ca8deacfbbd2a10e43598d4689b53a2e8b76b4bde74cdaa0931da06cedf68878"
+    },
+    {
+      "path": "crates/b4-http/src/permission_cancellation.rs",
+      "bytes": 9629,
+      "sha256": "fe08afe39aec4e4691e0b3b4fdf2667a73fe42bc4ec4c339d1d81ce183ca6ce9"
+    },
+    {
+      "path": "crates/b4-http/src/permissions.rs",
+      "bytes": 26258,
+      "sha256": "f09469d3f0c2386645f87079620997754af9599e82d2c11dd8d5368bc1b4a4f6"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_entered_support/store.rs",
+      "bytes": 19052,
+      "sha256": "7ba6f2a73a79dacfe00e945641b42ac81d6c06a2779830752ef115d1d0788c34"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_ready_cancellation.rs",
+      "bytes": 22042,
+      "sha256": "244e419ca477467e5b5e4ed33e7abb97b65df1e0bfd226e4d16b98f33ffcd812"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter.rs",
+      "bytes": 46076,
+      "sha256": "0783085f9be3841e85def8e68f9155a905d5a1da06235eeb3bad5382197a7a62"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 8919,
+      "sha256": "4341278f29626b729d27d6e01f89ab6f083c3dfaeb17677759fafc72ae95a823"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/model.rs",
+      "bytes": 32489,
+      "sha256": "e2453d2b70cca7a0fdbf1785ea512b5c8a2171e6155e8aa106503cb74507b83c"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/ready_confirmation.rs",
+      "bytes": 3060,
+      "sha256": "b539bc5989e2451824a345d590f747182eb7a76daf080c09e64ca4011585b507"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "bytes": 455892,
+      "sha256": "7c4e6524d42da4fc61965450ff11cd8652a71b6b5a1bf2dd4a0461e810a3344e"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/use_ready_cancellation.rs",
+      "bytes": 11356,
+      "sha256": "9fed2189d250a51964cb03fe92de1a9e60b509b3087f9d9f1ce2d89deaea57ea"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 764044,
+      "sha256": "58118aeb75a490a2b0fca85ac3a16d10aeeb9bd0b680edec42e571f0e0e087de"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/mod.rs",
+      "bytes": 95073,
+      "sha256": "abf978369d2c6155468557c4638d006bc69a68224e09ee056ebee04988e20c2a"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/permission_ready_cancellation_reconciliation.rs",
+      "bytes": 31016,
+      "sha256": "1b46ef595845fc8c4d0ce9d4049bc5c894a7dd557bf8c400b4f656051fdf0ad7"
+    },
+    {
+      "path": "scripts/check_contracts.py",
+      "bytes": 71175,
+      "sha256": "79a0fa34fb9017b2952de61ed2f8d636d5fa8fc0167e31c3d99392cc47fb38c8"
+    }
+  ],
+  "checks": {
+    "capabilities-v6-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-contract",
+        "--test",
+        "capabilities_v6",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 3.305,
+      "log_sha256": "67dc6dd0652331ad8de77b2a79a2878c23fca3682a9fcbb2c672426dd255906d",
+      "private_run": "capabilities-v6-tests-1792562748622488000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "ready-reconciliation-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_ready_cancellation_reconciliation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 0.407,
+      "log_sha256": "cb86c61ae0b5756e1d90866eba5a9b2439c521ed04c98d5b4d4267606a17085d",
+      "private_run": "ready-reconciliation-tests-1792562752062440000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "http-ready-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_ready_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 7.588,
+      "log_sha256": "47c8d76631883fa6a34ba1429fcd31cd05317772881f993822bc94081ee25c9c",
+      "private_run": "http-ready-tests-1792562752594836000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "http-entered-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_entered_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 7.01,
+      "log_sha256": "931cc2a1abc56f80afa00c0a0afbf66116d9baef6c6c1996c2e25b9239a8482f",
+      "private_run": "http-entered-tests-1792562760308329000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 3.024,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "private_run": "format-check-1792562673649160000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 54.246,
+      "log_sha256": "61e2bcc69288f0e2c7ac9633ad3647bbac63244d773adefdc5161eca75f65858",
+      "private_run": "lint-1792562673451020000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 113.21,
+      "log_sha256": "02bc97a513757e9ffd738c1dc42f31b00fcd99f5e203ec31247b8577495adb18",
+      "private_run": "compile-1792562774655288000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 521.526,
+      "log_sha256": "8426be9f85df4aaf5ef187865ccc808d3c5b58785a0390e0fef6fd9b6e53e563",
+      "private_run": "workspace-tests-1792562894381556000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "metadata": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 4.483,
+      "log_sha256": "53f51fb2d54c5a63c7c3015d1318305dc25c7f900a04e8374fe77fca4cf899e3",
+      "private_run": "metadata-1792562697423971000",
+      "source_unchanged": true,
+      "metadata_only": true
+    }
+  },
+  "focused": {
+    "capabilities-v6-tests": {
+      "counts": {
+        "passed": 6,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "ready-reconciliation-tests": {
+      "counts": {
+        "passed": 4,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "http-ready-tests": {
+      "counts": {
+        "passed": 7,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "http-entered-tests": {
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    }
+  },
+  "http_scenarios": 5,
+  "included_fixture_controls": 2,
+  "full_workspace": {
+    "counts": {
+      "passed": 1629,
+      "failed": 0,
+      "ignored": 11
+    },
+    "summary_executions": 148
+  },
+  "scope": {
+    "explicit_opt_in_host": true,
+    "original_always_and_saved_new_use": true,
+    "registered_ready_owner_required": true,
+    "runtime_confirmation_from_actual_writer_only": true,
+    "own_store_full_resource_and_epoch_checked": true,
+    "ready_management_account": {
+      "bytes_per_typed_attempt": 25165824,
+      "nodes_per_typed_attempt": 65536,
+      "conflict_attempts_max": 8,
+      "reset_or_refund_within_account": false
+    },
+    "ready_publication_without_native_signal": true,
+    "entered_cancellation_preserved": true,
+    "actual_ack_success_failure_settlement": true,
+    "owned_until_actual_quiescence": true,
+    "generic_permission_store_fallback": false,
+    "original_and_new_use_ready_cancellation": true,
+    "dispatched_unentered_cancellation": false,
+    "unregistered_preparing_retirement": false,
+    "recovery_or_deletion": false,
+    "broad_durable_permissions": false,
+    "automatic_callback_replay_or_receipt_retry": false,
+    "old_http_v1_through_v5_unchanged": true,
+    "dependencies_and_locks_unchanged": true,
+    "maximum_size_qualification": false,
+    "cross_platform_qualification": false,
+    "metadata_is_runtime_evidence": false,
+    "reported_counts_include_child_executions": true,
+    "git_writes": false
+  }
+}

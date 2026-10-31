@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capabilities-v8.json",
+  "title": "B4 narrow durable settled permission-thread deletion capability descriptor v8",
+  "x-schema-id": "urn:b4:agent-protocol:native:capabilities-v8",
+  "x-implementation-status": "authored-contract",
+  "x-compatibility-status": "authored-native-operational-contract",
+  "description": "Opt-in settled permission-thread deletion retaining the validated V7 assembly. This metadata does not prove execution or promise broad fenced deletion, recovery or broader Always permissions. Metadata is not execution evidence.",
+  "type": "object",
+  "properties": {
+    "descriptor_version": {
+      "type": "integer",
+      "const": 8
+    },
+    "target_profile": {
+      "$ref": "capabilities-v7.json#/properties/target_profile"
+    },
+    "profile_status": {
+      "$ref": "capabilities-v7.json#/properties/profile_status"
+    },
+    "core_profile_frozen": {
+      "$ref": "capabilities-v7.json#/properties/core_profile_frozen"
+    },
+    "runtime_version": {
+      "$ref": "capabilities-v7.json#/properties/runtime_version"
+    },
+    "application": {
+      "$ref": "capabilities-v7.json#/properties/application"
+    },
+    "execution": {
+      "$ref": "capabilities-v7.json#/properties/execution"
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "live_attach": {
+          "const": true
+        },
+        "required_once_deny": {
+          "const": true
+        },
+        "trusted_known_id_recovery": {
+          "const": false
+        },
+        "fenced_cancellation": {
+          "const": false
+        },
+        "fenced_deletion": {
+          "const": false
+        },
+        "automatic_recovery_scan": {
+          "const": false
+        },
+        "always_permissions": {
+          "const": false
+        },
+        "durable_event_replay": {
+          "const": false
+        },
+        "native_live_chunks": {
+          "const": false
+        },
+        "built_in_model_providers": {
+          "const": false
+        },
+        "memory_candidates": {
+          "const": false
+        },
+        "managed_workspaces": {
+          "const": false
+        },
+        "ag_ui": {
+          "const": false
+        },
+        "dynamic_graphs": {
+          "const": false
+        },
+        "graceful_shutdown": {
+          "const": false
+        },
+        "turn_deadline": {
+          "const": false
+        },
+        "native_callback_sandbox": {
+          "const": false
+        },
+        "supervised_admission_drain": {
+          "const": true
+        },
+        "durable_permission_reuse": {
+          "const": true
+        },
+        "durable_permission_creation": {
+          "const": true
+        },
+        "durable_permission_entered_cancellation": {
+          "const": true
+        },
+        "durable_permission_ready_cancellation": {
+          "const": true
+        },
+        "durable_permission_withheld_cancellation": {
+          "const": true
+        },
+        "durable_permission_settled_thread_deletion": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "required": [
+        "live_attach",
+        "required_once_deny",
+        "trusted_known_id_recovery",
+        "fenced_cancellation",
+        "fenced_deletion",
+        "automatic_recovery_scan",
+        "always_permissions",
+        "durable_event_replay",
+        "native_live_chunks",
+        "built_in_model_providers",
+        "memory_candidates",
+        "managed_workspaces",
+        "ag_ui",
+        "dynamic_graphs",
+        "graceful_shutdown",
+        "turn_deadline",
+        "native_callback_sandbox",
+        "supervised_admission_drain",
+        "durable_permission_reuse",
+        "durable_permission_creation",
+        "durable_permission_entered_cancellation",
+        "durable_permission_ready_cancellation",
+        "durable_permission_withheld_cancellation",
+        "durable_permission_settled_thread_deletion"
+      ],
+      "additionalProperties": false
+    },
+    "store": {
+      "$ref": "capabilities-v7.json#/properties/store"
+    },
+    "readiness": {
+      "$ref": "capabilities-v7.json#/properties/readiness"
+    },
+    "limits": {
+      "$ref": "capabilities-v7.json#/properties/limits"
+    },
+    "controls": {
+      "$ref": "capabilities-v7.json#/properties/controls"
+    }
+  },
+  "required": [
+    "descriptor_version",
+    "target_profile",
+    "profile_status",
+    "core_profile_frozen",
+    "runtime_version",
+    "application",
+    "execution",
+    "features",
+    "store",
+    "readiness",
+    "limits",
+    "controls"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,188 @@
+{
+  "record_version": 1,
+  "profile": "original_always_uuid_ready_cancellation",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "source_descriptor_sha256": "09725aa2da484ca06df1dc4d7ab01ab45b4163021a40cd78205eccf73b97024f",
+  "code_source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 7755,
+      "sha256": "a9f00a44f6014005dadc3aa608ccd4e3d2d08d85e68dc567dec1a3b3a96ce52b"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "bytes": 445707,
+      "sha256": "a60f1c5f6348823d20473e2b0a1cbae728c7f2b10e34bfda5c4ae6bad0958128"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 747600,
+      "sha256": "5007a0ef41faaa5381aab78d93c847a58ae6949cbcc0009245559cbe14445be1"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_always_ids.rs",
+      "bytes": 34550,
+      "sha256": "b8d1767787f91a94552b018fbd75b4267743fe0b8a3a6baa40ce062232b1db0d"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_ready_cancel.rs",
+      "bytes": 26382,
+      "sha256": "f554f11bb0d1dda567c8b2d5a4038b00c22957fa7ee3ddf3d08ff9a4dd9da9a1"
+    }
+  ],
+  "checks": {
+    "format": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.14,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.678,
+      "log_sha256": "037c12b56c277335b8bee9d8087316f8e1f0ae13433ae0f42feeeba9ccae1ff1",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.539,
+      "log_sha256": "870330560eb7f3e72c286f29fdd1c5c6ace669c9df33f46ad459bdbdfb037172",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "cancellation_cases": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--locked",
+        "--offline",
+        "use_driver::original_always_ids::original_ready_cancel::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.336,
+      "log_sha256": "799a0bd2425b7815c99103112faf4c7ceab4fc8b668a87d85c1051879b459496",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "workspace": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 150.843,
+      "log_sha256": "4d3b9de12ccaf2fedf973390c1796c9ddfda30eca3cb590cf8a35ffa446ab8fa",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    }
+  },
+  "observed_cancellation_cases": 3,
+  "supported_scope": {
+    "genuine_original_always_uuid_ready3": true,
+    "exact_kernel_cancelled4_persisted_and_reopened": true,
+    "stale_target_refusal_preserves_ready3": true,
+    "guarded_late_journal_fault_preserves_ready3": true,
+    "existing_acceptance_decision_and_consumed_grant_unchanged": true,
+    "callbacks_executed": 0,
+    "strict_and_normal_new_use_behavior_preserved": true,
+    "cumulative_allowances_unchanged": true
+  },
+  "bounds": {
+    "account_bytes": 8388608,
+    "account_nodes": 65536,
+    "ready_snapshot_bytes": 4096,
+    "ready_snapshot_nodes": 96,
+    "cancelled_snapshot_bytes": 4096,
+    "cancelled_snapshot_nodes": 100,
+    "snapshot_depth": 64,
+    "thread_bytes": 1024,
+    "journal_bytes": 1024,
+    "resource_identity_bytes": 256,
+    "turn_history_aggregate_bytes": 512,
+    "historical_acceptance_bytes": 8192,
+    "historical_before_snapshot_bytes": 4096,
+    "historical_decision_and_grant_bytes": 4096,
+    "scope_body_bytes": 2048,
+    "scope_hash_wrapper_bytes": 2070,
+    "compact_input_prompt_definition_and_semantic_checks": "unchanged",
+    "simultaneous_maxima_guaranteed": false
+  },
+  "prior_strict_scout": {
+    "error_code": "permission_unsupported_profile",
+    "authority_read_terminal_counts": [
+      0,
+      1,
+      0
+    ],
+    "account_usage": [
+      3355151,
+      37057
+    ],
+    "stored_revision": 3,
+    "complete_storage_unchanged": true,
+    "callbacks_executed": 0,
+    "retirement_qualified": true
+  },
+  "coverage_limits": [
+    "Compact original Always UUID resource shape, input/prompt/labels and empty metadata only.",
+    "The guarded fault is paired with unfaulted success; the shared Store error does not establish unique dynamic trigger provenance or classify arbitrary errors.",
+    "NewUse and legacy Once cancellation, original callback execution and later reuse of original UUID records are not qualified.",
+    "HTTP, Linux, mixed/parallel work, broad durable permissions and exhaustive operation audits remain open."
+  ],
+  "durable_permission_capability_enabled": false,
+  "ignored_tests_executed": false,
+  "observed_final_workspace_cases": {
+    "original_cancellation_cases": 3,
+    "original_uuid_producer_cases": 3,
+    "legacy_driver_cases": 12,
+    "current_uuid_input_cases": 3,
+    "outcome_cases": 8,
+    "pure_driver_controls": 7
+  }
+}

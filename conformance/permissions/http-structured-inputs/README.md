@@ -1,0 +1,9 @@
+# Nested permission inputs over HTTP
+
+On local macOS arm64 with Rust 1.93.1, the real TCP/SQLite scenario verifies a nested original input through pending approval, Always approval and the original callback, then saved permission reuse with a distinct nested input after normal retirement and reopen.
+
+The original input contains Unicode, objects, arrays, null and booleans: 294 UTF-8 bytes, 30 value nodes and depth 5. The reuse input is 98 bytes, 9 values and depth 3. The actual parked snapshot is 1501 bytes and 179 canonical nodes. Independent expected maps are compared with request, callback and durable record inputs. Original Dispatch4/Complete5 and reuse Complete4, one callback each, permission provenance, complete nine-table projections, immutable original history and normal owner/server retirement are asserted.
+
+The [qualification record](qualification.json) binds the exact source and five fresh checks: the new case passes 1/0/0; complete approval and reuse targets pass 6+1/0/0; formatting, strict test-target lint and contract metadata pass. Metadata carries no runtime credit. This verification changes one test file and no production implementation. The earlier [embedded qualification](../structured-original-inputs/README.md) contains separate full-workspace evidence; those results are not transferred here.
+
+This is one representative nested flow, not a guarantee that every maximum input combination fits. Existing HTTP V4 discovery, input bounds, runtime accounts, cancellation, deletion and row limits remain unchanged. Response-read, quiescence and listener waits retain their existing 5-second bounds; connect/write have no individual timeout. The verification controller bounds the whole process to 600 seconds with group cleanup and reaping. No runnable-example process coverage is claimed.

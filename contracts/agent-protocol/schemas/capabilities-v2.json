@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capabilities-v2.json",
+  "title": "B4 supervised admission operational capability descriptor v2",
+  "x-schema-id": "urn:b4:agent-protocol:native:capabilities-v2",
+  "x-implementation-status": "native-subset",
+  "x-compatibility-status": "authored-native-operational-contract",
+  "description": "Protected route-free mechanism declaration with supervised admission drain and bounded embedding waits. It is not a health result, successful drain, caller permission or full graceful-shutdown/core-profile conformance. It neither interrupts native callbacks nor closes listeners, viewers or application-owned resources. All unchanged bounds and assembly rules retain the frozen v1 contract.",
+  "type": "object",
+  "properties": {
+    "descriptor_version": {
+      "type": "integer",
+      "const": 2
+    },
+    "target_profile": {
+      "$ref": "capabilities.json#/properties/target_profile"
+    },
+    "profile_status": {
+      "$ref": "capabilities.json#/properties/profile_status"
+    },
+    "core_profile_frozen": {
+      "$ref": "capabilities.json#/properties/core_profile_frozen"
+    },
+    "runtime_version": {
+      "$ref": "capabilities.json#/properties/runtime_version"
+    },
+    "application": {
+      "$ref": "capabilities.json#/properties/application"
+    },
+    "execution": {
+      "$ref": "capabilities.json#/properties/execution"
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "live_attach": {
+          "$ref": "capabilities.json#/properties/features/properties/live_attach"
+        },
+        "required_once_deny": {
+          "$ref": "capabilities.json#/properties/features/properties/required_once_deny"
+        },
+        "trusted_known_id_recovery": {
+          "$ref": "capabilities.json#/properties/features/properties/trusted_known_id_recovery"
+        },
+        "fenced_cancellation": {
+          "$ref": "capabilities.json#/properties/features/properties/fenced_cancellation"
+        },
+        "fenced_deletion": {
+          "$ref": "capabilities.json#/properties/features/properties/fenced_deletion"
+        },
+        "automatic_recovery_scan": {
+          "$ref": "capabilities.json#/properties/features/properties/automatic_recovery_scan"
+        },
+        "always_permissions": {
+          "$ref": "capabilities.json#/properties/features/properties/always_permissions"
+        },
+        "durable_event_replay": {
+          "$ref": "capabilities.json#/properties/features/properties/durable_event_replay"
+        },
+        "native_live_chunks": {
+          "$ref": "capabilities.json#/properties/features/properties/native_live_chunks"
+        },
+        "built_in_model_providers": {
+          "$ref": "capabilities.json#/properties/features/properties/built_in_model_providers"
+        },
+        "memory_candidates": {
+          "$ref": "capabilities.json#/properties/features/properties/memory_candidates"
+        },
+        "managed_workspaces": {
+          "$ref": "capabilities.json#/properties/features/properties/managed_workspaces"
+        },
+        "ag_ui": {
+          "$ref": "capabilities.json#/properties/features/properties/ag_ui"
+        },
+        "dynamic_graphs": {
+          "$ref": "capabilities.json#/properties/features/properties/dynamic_graphs"
+        },
+        "graceful_shutdown": {
+          "$ref": "capabilities.json#/properties/features/properties/graceful_shutdown"
+        },
+        "turn_deadline": {
+          "$ref": "capabilities.json#/properties/features/properties/turn_deadline"
+        },
+        "native_callback_sandbox": {
+          "$ref": "capabilities.json#/properties/features/properties/native_callback_sandbox"
+        },
+        "supervised_admission_drain": {
+          "const": true
+        }
+      },
+      "required": [
+        "live_attach",
+        "required_once_deny",
+        "trusted_known_id_recovery",
+        "fenced_cancellation",
+        "fenced_deletion",
+        "automatic_recovery_scan",
+        "always_permissions",
+        "durable_event_replay",
+        "native_live_chunks",
+        "built_in_model_providers",
+        "memory_candidates",
+        "managed_workspaces",
+        "ag_ui",
+        "dynamic_graphs",
+        "graceful_shutdown",
+        "turn_deadline",
+        "native_callback_sandbox",
+        "supervised_admission_drain"
+      ],
+      "additionalProperties": false
+    },
+    "store": {
+      "$ref": "capabilities.json#/properties/store"
+    },
+    "readiness": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "$ref": "capabilities.json#/properties/readiness/properties/response"
+        },
+        "aggregation": {
+          "const": "store_readiness_and_no_owned_worker_fault_and_serving_admission"
+        },
+        "checks": {
+          "const": [
+            "store_readiness",
+            "owned_worker_fault",
+            "serving_admission"
+          ]
+        }
+      },
+      "required": [
+        "response",
+        "aggregation",
+        "checks"
+      ],
+      "additionalProperties": false
+    },
+    "limits": {
+      "$ref": "capabilities.json#/properties/limits"
+    },
+    "controls": {
+      "type": "object",
+      "properties": {
+        "callback_timeout_ms": {
+          "$ref": "capabilities.json#/properties/controls/properties/callback_timeout_ms"
+        },
+        "validator_timeout_ms": {
+          "$ref": "capabilities.json#/properties/controls/properties/validator_timeout_ms"
+        },
+        "turn_deadline_ms": {
+          "$ref": "capabilities.json#/properties/controls/properties/turn_deadline_ms"
+        },
+        "max_threads": {
+          "$ref": "capabilities.json#/properties/controls/properties/max_threads"
+        },
+        "max_history_bytes": {
+          "$ref": "capabilities.json#/properties/controls/properties/max_history_bytes"
+        },
+        "parked_retention_ms": {
+          "$ref": "capabilities.json#/properties/controls/properties/parked_retention_ms"
+        },
+        "connection_limit": {
+          "$ref": "capabilities.json#/properties/controls/properties/connection_limit"
+        },
+        "whole_process_memory_bytes": {
+          "$ref": "capabilities.json#/properties/controls/properties/whole_process_memory_bytes"
+        },
+        "shutdown_default_wait_ms": {
+          "type": "integer",
+          "const": 30000
+        },
+        "shutdown_max_wait_ms": {
+          "type": "integer",
+          "const": 300000
+        }
+      },
+      "required": [
+        "callback_timeout_ms",
+        "validator_timeout_ms",
+        "turn_deadline_ms",
+        "max_threads",
+        "max_history_bytes",
+        "parked_retention_ms",
+        "connection_limit",
+        "whole_process_memory_bytes",
+        "shutdown_default_wait_ms",
+        "shutdown_max_wait_ms"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "descriptor_version",
+    "target_profile",
+    "profile_status",
+    "core_profile_frozen",
+    "runtime_version",
+    "application",
+    "execution",
+    "features",
+    "store",
+    "readiness",
+    "limits",
+    "controls"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "capabilities.json#/allOf/0"
+    },
+    {
+      "$ref": "capabilities.json#/allOf/1"
+    },
+    {
+      "$ref": "capabilities.json#/allOf/2"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "record_version": 1,
+  "profile": "http_original_always_creation_and_reuse",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "native_source_descriptor_sha256": "b7f839f417ee16d59d372f81ab8205ba542cf26e1ead416e47d8563f48b3b9e3",
+  "source_files": [
+    {
+      "path": "contracts/agent-protocol/examples/capabilities-v4-permission-approvals.json",
+      "bytes": 2486,
+      "sha256": "15399877e19b1a1f332071d043d72b9c70373e8022f300a8c8b3d5d19bca7ca8"
+    },
+    {
+      "path": "contracts/agent-protocol/examples/manifest.json",
+      "bytes": 2804,
+      "sha256": "1c526a3869d15b0009e774f5c11b42433906eadbbf6320dcbbdc987d05fd850f"
+    },
+    {
+      "path": "contracts/agent-protocol/schemas/capabilities-v4.json",
+      "bytes": 4199,
+      "sha256": "55a6851c2e16c90d182dd5b59868b7eb3d6db4a92a7a1dff5d3908243ed84746"
+    },
+    {
+      "path": "crates/b4-contract/src/capabilities_v4.rs",
+      "bytes": 8618,
+      "sha256": "8cea879683671caf211525822a836c3221a3cf152890809dea3cbba0993a7ae0"
+    },
+    {
+      "path": "crates/b4-contract/src/lib.rs",
+      "bytes": 590,
+      "sha256": "968473b55d8f0d656db40a28d3ec7e32fcf253b58dc3c1b22b61e25bc3bb2227"
+    },
+    {
+      "path": "crates/b4-contract/tests/capabilities_v4.rs",
+      "bytes": 12179,
+      "sha256": "628ebcbdb31286cc70639d26dfa631731d9cdc657943b07b2256eeef7925d648"
+    },
+    {
+      "path": "crates/b4-http/src/approval.rs",
+      "bytes": 25093,
+      "sha256": "4a59fef55c3b7c0111c05e2368b77186b7d29adb9dae27b44c322bea05655683"
+    },
+    {
+      "path": "crates/b4-http/src/capabilities.rs",
+      "bytes": 9348,
+      "sha256": "5110995456f5f13f68c232435ba0facd6c60e6d44ecacf14ed8b17e36f09fe52"
+    },
+    {
+      "path": "crates/b4-http/src/lib.rs",
+      "bytes": 4100,
+      "sha256": "b70655a8643f16a8a3ec525cba5ccd630dfdc323f189f00c9072577ae3acba45"
+    },
+    {
+      "path": "crates/b4-http/src/permissions.rs",
+      "bytes": 16552,
+      "sha256": "f6261d10beb408dbe7afc8d09ce976db14c7511a46fddcc04f4cf434792d99fb"
+    },
+    {
+      "path": "crates/b4-http/src/worker.rs",
+      "bytes": 41079,
+      "sha256": "51d93c7c51b4333e7b687a3441f0119adc695c1f107a0d041095deac82b3b54e"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_approval_boundaries/mod.rs",
+      "bytes": 18281,
+      "sha256": "e47f04811a69602237229268065fdaff13f073651666aa99966d2e55a9ac3704"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_approvals.rs",
+      "bytes": 36839,
+      "sha256": "807513204a26248e2713a5e7d527f71ae1b69ecf782a8add94c0db28d991c6ce"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/model.rs",
+      "bytes": 23681,
+      "sha256": "f26d4e560b4e0ba45212f4c27f9032647c01121dd7c07930284a36f56baa30b4"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/mod.rs",
+      "bytes": 89098,
+      "sha256": "1b23cba039e1c7bfded7bea18e8a083d34a9106455974b7b4941eef42f7e3387"
+    },
+    {
+      "path": "scripts/check_contracts.py",
+      "bytes": 61628,
+      "sha256": "d8e35ab43f786ff74e1025d092f1c9073dba23c63fe310594bffdcf893cba669"
+    }
+  ],
+  "checks": {
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.491,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "private_run": "format-check-1792542251911032000"
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 52.4,
+      "log_sha256": "c20e89ce680c1b5f55e1ebd121f4bb53face43c996f8cb532e6dbc0edb45750c",
+      "source_unchanged": true,
+      "private_run": "lint-1792542251910629000"
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 173.099,
+      "log_sha256": "6df3c57707e61df8627fd82dcc227deb8f8649c9d44eb6cdacbde9b79ac7cfe9",
+      "source_unchanged": true,
+      "private_run": "compile-1792542309493092000"
+    },
+    "http-approvals": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_approvals",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 9.255,
+      "log_sha256": "242dcb90aee1d353e9bec69a6b4052f346615ae6d115ac06c00bc43d81a8ca3c",
+      "source_unchanged": true,
+      "private_run": "http-approvals-1792542225615842000"
+    },
+    "metadata": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 7.088,
+      "log_sha256": "4fb7485ede2f75ee8abe59c10d7cf9d5177afa40a65b0f81de75f5523f03bf50",
+      "source_unchanged": true,
+      "private_run": "metadata-1792542309493275000",
+      "scope": "metadata/schema/reference/named-test presence only"
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 317.019,
+      "log_sha256": "21c824661c7a33b15383aa59e45f23da9b030eff9e5db75bac1735d9f8c0f87a",
+      "source_unchanged": true,
+      "private_run": "workspace-tests-1792542493714236000"
+    }
+  },
+  "fresh_full_workspace": {
+    "passed": 1567,
+    "failed": 0,
+    "ignored": 11
+  },
+  "focused_http": {
+    "passed": 5,
+    "failed": 0,
+    "ignored": 0
+  },
+  "scope": {
+    "original": "genuine HTTP Waiting2/token/Always -> Ready3 -> Dispatch4 -> Complete5, callback1, no original Use",
+    "reuse": "normal owner reopen, real linked PermissionUse -> Complete4 without replacement approval",
+    "faults": "invalid auth/current policy/token and legacy Always refusal leave storage unchanged; exact late acceptance and callback terminal journal faults roll back atomically; host faults, no callback replay",
+    "discovery": "V4 narrow durable_permission_creation/reuse true; broad Always and lifecycle flags false",
+    "general_durable_permissions": false,
+    "metadata_is_runtime_evidence": false,
+    "example_changed": false,
+    "git_writes": false
+  },
+  "historical_checks": "Earlier missing-API and encoding-oracle failures remain private diagnostics, not passing evidence."
+}

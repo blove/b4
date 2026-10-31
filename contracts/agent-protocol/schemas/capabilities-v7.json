@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capabilities-v7.json",
+  "title": "B4 narrow durable permission withheld, Ready and entered cancellation capability descriptor v7",
+  "x-schema-id": "urn:b4:agent-protocol:native:capabilities-v7",
+  "x-implementation-status": "authored-contract",
+  "x-compatibility-status": "authored-native-operational-contract",
+  "description": "Opt-in single-run, single-task durable permission cancellation for withheld, registered Ready and entered states retaining V6 permission creation, reuse and required Once/Deny fallback. Withheld cancellation does not cover all pre-entry timing states. This authored declaration does not prove HTTP execution or promise general fenced cancellation, broader Always permissions, recovery, deletion, callback interruption or full core-profile conformance. Supervised admission drain, controls and unchanged limits retain V6 bounds. Metadata is not execution evidence.",
+  "type": "object",
+  "properties": {
+    "descriptor_version": {
+      "type": "integer",
+      "const": 7
+    },
+    "target_profile": {
+      "$ref": "capabilities-v6.json#/properties/target_profile"
+    },
+    "profile_status": {
+      "$ref": "capabilities-v6.json#/properties/profile_status"
+    },
+    "core_profile_frozen": {
+      "$ref": "capabilities-v6.json#/properties/core_profile_frozen"
+    },
+    "runtime_version": {
+      "$ref": "capabilities-v6.json#/properties/runtime_version"
+    },
+    "application": {
+      "$ref": "capabilities-v6.json#/properties/application"
+    },
+    "execution": {
+      "$ref": "capabilities-v6.json#/properties/execution"
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "live_attach": {
+          "const": true
+        },
+        "required_once_deny": {
+          "const": true
+        },
+        "trusted_known_id_recovery": {
+          "const": false
+        },
+        "fenced_cancellation": {
+          "const": false
+        },
+        "fenced_deletion": {
+          "const": false
+        },
+        "automatic_recovery_scan": {
+          "const": false
+        },
+        "always_permissions": {
+          "const": false
+        },
+        "durable_event_replay": {
+          "const": false
+        },
+        "native_live_chunks": {
+          "const": false
+        },
+        "built_in_model_providers": {
+          "const": false
+        },
+        "memory_candidates": {
+          "const": false
+        },
+        "managed_workspaces": {
+          "const": false
+        },
+        "ag_ui": {
+          "const": false
+        },
+        "dynamic_graphs": {
+          "const": false
+        },
+        "graceful_shutdown": {
+          "const": false
+        },
+        "turn_deadline": {
+          "const": false
+        },
+        "native_callback_sandbox": {
+          "const": false
+        },
+        "supervised_admission_drain": {
+          "const": true
+        },
+        "durable_permission_reuse": {
+          "const": true
+        },
+        "durable_permission_creation": {
+          "const": true
+        },
+        "durable_permission_entered_cancellation": {
+          "const": true
+        },
+        "durable_permission_ready_cancellation": {
+          "const": true
+        },
+        "durable_permission_withheld_cancellation": {
+          "const": true
+        }
+      },
+      "required": [
+        "live_attach",
+        "required_once_deny",
+        "trusted_known_id_recovery",
+        "fenced_cancellation",
+        "fenced_deletion",
+        "automatic_recovery_scan",
+        "always_permissions",
+        "durable_event_replay",
+        "native_live_chunks",
+        "built_in_model_providers",
+        "memory_candidates",
+        "managed_workspaces",
+        "ag_ui",
+        "dynamic_graphs",
+        "graceful_shutdown",
+        "turn_deadline",
+        "native_callback_sandbox",
+        "supervised_admission_drain",
+        "durable_permission_reuse",
+        "durable_permission_creation",
+        "durable_permission_entered_cancellation",
+        "durable_permission_ready_cancellation",
+        "durable_permission_withheld_cancellation"
+      ],
+      "additionalProperties": false
+    },
+    "store": {
+      "$ref": "capabilities-v6.json#/properties/store"
+    },
+    "readiness": {
+      "$ref": "capabilities-v6.json#/properties/readiness"
+    },
+    "limits": {
+      "$ref": "capabilities-v6.json#/properties/limits"
+    },
+    "controls": {
+      "$ref": "capabilities-v6.json#/properties/controls"
+    }
+  },
+  "required": [
+    "descriptor_version",
+    "target_profile",
+    "profile_status",
+    "core_profile_frozen",
+    "runtime_version",
+    "application",
+    "execution",
+    "features",
+    "store",
+    "readiness",
+    "limits",
+    "controls"
+  ],
+  "additionalProperties": false
+}

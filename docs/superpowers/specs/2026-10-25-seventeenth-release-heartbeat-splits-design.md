@@ -1,0 +1,34 @@
+# T-017 heartbeat and split-stream release design
+
+Status: prospective bounded T-017 design under the approved full Rust runtime program. T-016 is accepted; this document itself grants no T-017, COMPAT, M0 or whole-core credit.
+
+## Contract and selected claim
+
+RFC `B4-RUST-RUNTIME-001` section 14.4 requires T-017: “Heartbeats and arbitrary UTF-8/network splits parse correctly.” Sections 7.1/SSE-001 and SSE-006 require actual SSE framing, Unicode-safe values and `: ping\n\n` during quiet periods. `FND-C-008` covers native encoding in isolation; `HTTP-H-012` covers a scripted local TCP heartbeat. Neither is a complete release proof with the current immutable native application, owned SQLite, complete HTTP framing, durable result and independent split parser.
+
+The selected release claim is one healthy native POST `RunStream` over loopback TCP: a fully observed quiet heartbeat before the callback's selected Unicode frame, exact application frames through one terminal and EOF, and invariant decoding of its captured raw HTTP response under every single byte-cut position plus a one-byte-at-a-time partition. This exercises a fixed transcript against arbitrary cut locations and actual server heartbeat behavior. It does **not** prove every network schedule, retransmission, proxy, compression, client library, application payload, socket failure or SSE stream shape. TypeScript-client and current-HEAD `COMPAT` comparison are separate gates.
+
+No production change is planned. A genuine server defect requires a design amendment and fresh review before repair; parser or fixture mistakes are repaired only in the acceptance test and re-reviewed.
+
+## Native fixture and ordered flow
+
+Create one dedicated `b4-http` integration test using a real loopback listener, the opt-in immutable `NativeApplication`, one approval-free `Pure` task, owned SQLite and finite callback gates installed before admission. Ordinary and controlled callback entries panic. The native streaming callback can publish one frozen `chunk` JSON string containing non-ASCII multi-byte characters, quotes, a backslash and an embedded newline; a separate frozen result settles the task. Expected `tool_call`/`tool_result` values derive from the independently read durable attempt ID and frozen input/result, never captured wire or callback-returned data. Keep input/output, digest, queue, snapshot, active-run and payload limits ample so no unrelated bound is reached.
+
+1. Admit through POST `RunStream`. Parse the complete trusted `tool_call` and positively observe the held callback and durable `Running/InFlight` state. Preserve every raw TCP byte read.
+2. Keep the callback held before publishing the selected `chunk`. With a configured short positive heartbeat interval and a longer finite deadline, read at least one complete `: ping` SSE comment. Prove it occurs after the trusted call and before the selected chunk and terminal. More than one legal quiet heartbeat may occur; do not assert a scheduling-dependent exact count. Recheck the callback is held and durable result absent.
+3. Publish the selected Unicode chunk and require `NativeChunkResult::Accepted`. Release the callback, drain the same primary response through EOF, and require exactly one `chunk`, one `tool_result`, and one `done` in that order after the trusted call. The `done` payload equals the independent durable task result. Ignore only legal heartbeat comments before the terminal, and reject comments/data after the terminal.
+4. Independently assert the complete raw HTTP status/headers/body framing and exact SSE application events. Verify raw UTF-8 bytes of the selected non-ASCII scalar actually occur within the JSON `data:` line, and verify escaped newline/quotes do not create a second SSE control line. Reject invalid UTF-8, duplicate JSON keys, unknown SSE fields, malformed chunking, trailers, duplicate events, extra terminal, and post-EOF bytes.
+5. Replay the captured *raw HTTP bytes* through a test-owned incremental decoder that has no call to the server encoder or a captured-frame-derived expected payload. Feed every two-piece partition (`0..=N` byte cut) and the all-one-byte partition; include explicit cuts inside each byte of the selected multi-byte scalar, between CR/LF and HTTP chunk digits/delimiters, and within `event:`/`data:` labels. Require the same independently expected status, headers, ordered SSE frames and comment-before-terminal relation for every partition. The partitions are simulated reader delivery, not claims about how the OS actually segmented TCP.
+6. Verify one callback/attempt, durable completed success, exact result and typed/raw SQLite histories; retire the server, destroy the sole store owner, reopen at owner generation plus one, and perform GET-only preservation checks without replay.
+
+Every socket read/write, header/body read, callback wait, store poll, server join and cleanup wait is finite. Panic-release guards exist before admission, and a failed assertion cannot strand the callback or listener. An EOF or heartbeat alone never establishes authoritative settlement.
+
+## Parser and oracle independence
+
+The test decoder is a separate byte-state machine for HTTP response framing, chunked transfer and SSE line/comment/event parsing. It retains incomplete prefixes and UTF-8 sequences across arbitrary input partitions; it decodes JSON only after a complete `data:` field. It imposes finite total/header/chunk/frame/depth bounds independent of the server configuration. It does not split a UTF-8 string chunk-by-chunk with replacement characters, parse SSE with a whole-body string split, invoke `Frame::new`, or use captured wire values to construct expected application payloads.
+
+The replay oracle holds the expected event names, frozen values and durable attempt identity constant across partitions. It may compare each replay result with the independently asserted complete response, but never treat the first parse as the only source of truth. Invalid fixture responses must fail the complete parse before replay; replay must not repair malformed bytes.
+
+## Release and evidence boundary
+
+Follow the T-016 isolated-source, exact-map, independent source/results review, initial named proof, early strict lint, metadata RED/GREEN, final current-map regression matrix, semantic manifest, reversible adoption and public-integrity gates. The exact test name, file, controller commands and metadata counts belong to the reviewed implementation plan. Preserve all T-001–T-016 acceptance and qualification bytes. T-017 alone may become `NATIVE` after actual proof and release review; T-018–T-056, M0, CP-010, COMPAT and full core remain open. The accepted T-016 public descriptor and the new program/design documents are separately bound in setup; old runtime receipts give no T-017 credit.

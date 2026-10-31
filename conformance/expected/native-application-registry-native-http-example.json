@@ -1,0 +1,31 @@
+{
+  "profile": "immutable_native_application_sqlite_http_example",
+  "passed": true,
+  "transport": "real_loopback_tcp",
+  "backend": "sqlite",
+  "provider_calls": 0,
+  "checks": [
+    "missing_token_rejected",
+    "protected_discovery_browser_guards",
+    "route_free_bounded_no_store_descriptor",
+    "native_wait_and_stream_callbacks",
+    "null_and_omitted_input",
+    "definition_order_parallel_join",
+    "invalid_input_no_admission_or_implicit_thread",
+    "missing_native_route_uniform_refusal",
+    "required_once_continuation",
+    "completed_sibling_preserved",
+    "grant_replay_refused",
+    "interrupt_then_null_done",
+    "healthy_expected_refusals",
+    "descriptor_and_settled_states_preserved_after_process_reopen",
+    "read_only_prior_owner_attachment_pending_unchanged",
+    "prior_owner_ordinary_reads_require_recovery",
+    "reopened_inactive_state_retry_null_done"
+  ],
+  "tokens_recorded": false,
+  "reference_execution": false,
+  "limitations": [
+    "Provider-free native callbacks only; exact trusted known-ID unfinished recovery and actual crash boundaries are separately qualified. No automatic scan, native live chunks, sandbox or full core-profile compatibility."
+  ]
+}

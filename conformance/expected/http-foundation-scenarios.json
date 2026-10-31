@@ -1,0 +1,77 @@
+{
+  "receipt_version": 1,
+  "profile": "foundation",
+  "evidence_class": "native_requirement",
+  "passed": true,
+  "scenarios": [
+    {
+      "name": "parallel_approval_snapshot_round_trip",
+      "passed": true,
+      "observation": {
+        "name": "parallel_approval_snapshot_round_trip",
+        "evidence_class": "native_requirement",
+        "status": "completed",
+        "values": {
+          "items": [
+            "A",
+            "B"
+          ]
+        },
+        "effect_counts": {
+          "effect-A": 1,
+          "effect-B": 1
+        },
+        "attempts_used": 2,
+        "failure": null,
+        "tasks": {
+          "A": {
+            "status": "succeeded",
+            "attempt_id": "attempt-A",
+            "approved": false
+          },
+          "B": {
+            "status": "succeeded",
+            "attempt_id": "attempt-B",
+            "approved": true
+          }
+        },
+        "snapshot_round_trips": 1,
+        "discarded_pending_results": 0
+      }
+    },
+    {
+      "name": "uncertain_unsafe_effect",
+      "passed": true,
+      "observation": {
+        "name": "uncertain_unsafe_effect",
+        "evidence_class": "native_requirement",
+        "status": "recovery_blocked",
+        "values": {
+          "items": []
+        },
+        "effect_counts": {
+          "effect-A": 1
+        },
+        "attempts_used": 1,
+        "failure": "effect_outcome_unknown",
+        "tasks": {
+          "A": {
+            "status": "outcome_unknown",
+            "attempt_id": "attempt-A",
+            "approved": false
+          }
+        },
+        "snapshot_round_trips": 1,
+        "discarded_pending_results": 1
+      }
+    }
+  ],
+  "limitations": [
+    "SQLite durability and transactions are outside this foundation profile.",
+    "HTTP runtime and SSE transport are outside this foundation profile.",
+    "production authentication and grant validation are outside this foundation profile.",
+    "TypeScript comparison is outside this foundation profile; native requirements are not reference-runtime observations.",
+    "Snapshot restoration here is an in-memory JSON round trip, not disk durability or process restart evidence.",
+    "Scripted effects are fixtures; this foundation profile does not qualify live adapters."
+  ]
+}

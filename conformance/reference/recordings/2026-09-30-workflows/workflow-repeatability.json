@@ -1,0 +1,41 @@
+{
+  "format_version": 2,
+  "evidence_classification": "runtime_repeatability_verification",
+  "reference_commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "fixture_revision": "3a4552e3226691137ef2306d07d9081d35ecb4254351795f43dc7f6d3cb21d8d",
+  "transport": "in_process_fetch",
+  "first_recording_path": "conformance/reference/recordings/2026-09-30-workflows/workflow-observations.json",
+  "first_recording_sha256": "2485bb8a5404c2cd0af3e28a898de1afcc432b0fdee733919143ef72d1a08a16",
+  "second_recording_path": "conformance/reference/recordings/2026-09-30-workflows/repeat/workflow-observations.json",
+  "second_recording_sha256": "ec59969faffce44425b1e553f26d318ef772deff2b0e072fb79b48ab9a911ef8",
+  "compared_cases": 62,
+  "matching_cases": 62,
+  "normalized_projection_sha256": "cb0ee1321822daba7d088b4ff7153e53d2789d96ea81ee863b598c3063dca077",
+  "comparison_script": {
+    "path": "conformance/reference/fixture/compare-recordings.mjs",
+    "sha256": "405ad762e3c76f2b172e4b193314ac2e0df958fc8d96ce3861f26e94c74a1436"
+  },
+  "comparison_dependencies": [
+    {
+      "path": "conformance/reference/fixture/harness.mjs",
+      "sha256": "06be8adba6c5889b95f50304055a8977f1afedd3e798114ef9ed6adc98f8e6a9"
+    }
+  ],
+  "projection_formula": "recording.observations.map(o => ({id:o.id,request:o.request,response:projectResponse(o.response),...(o.thread_after ? {thread_after:projectResponse(o.thread_after)} : {})})); projectResponse(r) = ({status:r.status,status_text:r.status_text,headers:r.headers,body:r.normalized_body_utf8,...(r.sse_frames ? {sse_frames:r.sse_frames} : {})}); digest = SHA256(UTF8(JSON.stringify(projection)))",
+  "fields_compared": [
+    "request",
+    "response.status",
+    "response.status_text",
+    "response.headers",
+    "response.normalized_body_utf8",
+    "response.sse_frames",
+    "thread_after.status",
+    "thread_after.status_text",
+    "thread_after.headers",
+    "thread_after.normalized_body_utf8"
+  ],
+  "volatile_normalization": {
+    "thread": "Only top-level thread_id, created_at and updated_at are replaced; raw bytes are also retained",
+    "none": "No normalization"
+  }
+}

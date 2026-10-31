@@ -1,0 +1,590 @@
+{
+  "repository": "cacheplane/b4run",
+  "commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "evidence": "source_and_selected_runtime_observations",
+  "reference_executed": true,
+  "files": [
+    {
+      "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+      "git_blob_sha": "1a4acc3d72898291de2a64abeec6fabf2c70e49f",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/src/lib/dev/runtime-fetch-core.ts",
+      "sha256": "ddb883fdc04825246b774ae27e342cb34ab7362afb6f228147445646c1a3ab72",
+      "bytes": 187880,
+      "captured_path": "source/packages/cli/src/lib/dev/runtime-fetch-core.ts",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "packages/cli/src/lib/dev/pending-interrupts.ts",
+      "git_blob_sha": "5a0bae5e11db53904cc3efd2f896ba1f62aecdc1",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/src/lib/dev/pending-interrupts.ts",
+      "sha256": "bc24097388b0a30855ddfb71306d2add5ef64cfae6b63d81f47fa182c8bd5f5f",
+      "bytes": 9725,
+      "captured_path": "source/packages/cli/src/lib/dev/pending-interrupts.ts",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "packages/sqlite-storage/src/threads/store.ts",
+      "git_blob_sha": "19c31c159ece23a0e2d1bb075ab1931e277c0286",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/sqlite-storage/src/threads/store.ts",
+      "sha256": "a6aa541c79987e18a1b1eaf263abb21273f289a83c12e9200afefec14462657b",
+      "bytes": 3633,
+      "captured_path": "source/packages/sqlite-storage/src/threads/store.ts",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "apps/web/content/docs/dev-server/agent-protocol.mdx",
+      "git_blob_sha": "734bd21c83a5593333144151cbe234695260207f",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/apps/web/content/docs/dev-server/agent-protocol.mdx",
+      "sha256": "48a7ba3ab7ae06ed481a5f22899f3e3fabbd139afb85d0cde4984c057002f421",
+      "bytes": 17344,
+      "captured_path": "source/apps/web/content/docs/dev-server/agent-protocol.mdx",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "apps/web/content/docs/approval-grants.mdx",
+      "git_blob_sha": "02d280779f5ea1dc31f270086028a8915ed7814f",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/apps/web/content/docs/approval-grants.mdx",
+      "sha256": "4d484ecc56748bb2497a0a80dfd07e764d07f9dac2cdcc23188d88c896849d5f",
+      "bytes": 13477,
+      "captured_path": "source/apps/web/content/docs/approval-grants.mdx",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "package.json",
+      "git_blob_sha": "75d1e52cf30aea7a0c41b55e9e083b421a575b39",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/package.json",
+      "sha256": "9f965f5b995cd43350a5793948d74a61cf1acc4454f3ba41b557d0a286a11e45",
+      "bytes": 5714,
+      "captured_path": "source/package.json",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "packages/cli/package.json",
+      "git_blob_sha": "0cfaa32c33f01105562ca427a6cbf137f2ab8c5d",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/package.json",
+      "sha256": "f9eae129b26f012c72406691f3cfcff98ab15feb8d3d2ebfc86efbde106de630",
+      "bytes": 2820,
+      "captured_path": "source/packages/cli/package.json",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "git_blob_sha": "b3f361cca058abd4029dd0e69c1e719f401963e1",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/pnpm-lock.yaml",
+      "sha256": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0",
+      "bytes": 625496,
+      "captured_path": "source/pnpm-lock.yaml",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "git_blob_sha": "e963d8648b51bc514a213bb14bef837ffe2d81dc",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/pnpm-workspace.yaml",
+      "sha256": "3809d90a40b2520861494b3202a8687515f98a86b83a9c644351d7f553471920",
+      "bytes": 632,
+      "captured_path": "source/pnpm-workspace.yaml",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "packages/cli/src/lib/runtime/stream-types.ts",
+      "git_blob_sha": "5085a2d28a81585f79c9102634999c4be708b0bd",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/src/lib/runtime/stream-types.ts",
+      "sha256": "1a2aac2e0f1f14d1f58f1346b1d8595d1c4806d5df32556895cd611438728851",
+      "bytes": 2617,
+      "captured_path": "source/packages/cli/src/lib/runtime/stream-types.ts",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "packages/cli/src/lib/dev/server-errors.ts",
+      "git_blob_sha": "83bfce84686e8e2f7c0855a500dcec0ef337ad53",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/src/lib/dev/server-errors.ts",
+      "sha256": "113b8f7f0d637268da78ac1ad913123c4118de204475e568285d2adefb558504",
+      "bytes": 1725,
+      "captured_path": "source/packages/cli/src/lib/dev/server-errors.ts",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "packages/cli/src/lib/dev/live-turn-hub.ts",
+      "git_blob_sha": "5765bf1d5fee49e0070daaa26646b17b1bfb9eca",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/src/lib/dev/live-turn-hub.ts",
+      "sha256": "545875fee37254c264f503e5991a1269ee90fc324807436d5015dcc3262aef27",
+      "bytes": 11334,
+      "captured_path": "source/packages/cli/src/lib/dev/live-turn-hub.ts",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "packages/cli/src/lib/dev/approval-grants.ts",
+      "git_blob_sha": "5864008b7b3da6de2b267cd900fdf24814b73f99",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/src/lib/dev/approval-grants.ts",
+      "sha256": "8a85e2828bd59fdeeb2403c62895ce318c4d01ec126a029dcaf52f7aa5d295a5",
+      "bytes": 17344,
+      "captured_path": "source/packages/cli/src/lib/dev/approval-grants.ts",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "packages/cli/test/stream-types.test.ts",
+      "git_blob_sha": "f81cd382185cf741600b097bd5bd1b9f6901e971",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/test/stream-types.test.ts",
+      "sha256": "cdbc2391b9163e910591c621bef9b1a59d39ddec24b0c1fe566b4a7a488d896e",
+      "bytes": 3315,
+      "captured_path": "source/packages/cli/test/stream-types.test.ts",
+      "evidence_classification": "source_test_observation"
+    },
+    {
+      "path": "packages/cli/test/stream-message-identity.test.ts",
+      "git_blob_sha": "b6fe7571d5ebe5d4e658c70767479ea2b83b80ae",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/test/stream-message-identity.test.ts",
+      "sha256": "792b5adcabb1f3a1551eef0f98bb5cb386ebfbf458f8c75abfb82e11651d2a71",
+      "bytes": 1478,
+      "captured_path": "source/packages/cli/test/stream-message-identity.test.ts",
+      "evidence_classification": "source_test_observation"
+    },
+    {
+      "path": "packages/cli/test/runtime-fetch-handler.test.ts",
+      "git_blob_sha": "1f174428dfa02144bc66d1c21bd455ec5960ac35",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/test/runtime-fetch-handler.test.ts",
+      "sha256": "fac6eaf7b9ba3993deb493488ac6a75320b97df828af8afe6845fbdab3b334b1",
+      "bytes": 9965,
+      "captured_path": "source/packages/cli/test/runtime-fetch-handler.test.ts",
+      "evidence_classification": "source_test_observation"
+    },
+    {
+      "path": "packages/cli/test/runs-wait-output.test.ts",
+      "git_blob_sha": "b4c26509c178a283ed8bff5229f120e6fd34e9b5",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/test/runs-wait-output.test.ts",
+      "sha256": "bba686cbfc9a2f363444461b24dbb9fda3e90c5aa22adbf041b3560629f61fba",
+      "bytes": 8916,
+      "captured_path": "source/packages/cli/test/runs-wait-output.test.ts",
+      "evidence_classification": "source_test_observation"
+    },
+    {
+      "path": "packages/cli/test/ap-attach-endpoint.test.ts",
+      "git_blob_sha": "1038c2bbf23aa67b969467216e6ef8a3b857ff10",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/test/ap-attach-endpoint.test.ts",
+      "sha256": "3c77f297b5002f89b07b0b5d2eb7441945098354806052ef3cc681b69008d9d8",
+      "bytes": 29227,
+      "captured_path": "source/packages/cli/test/ap-attach-endpoint.test.ts",
+      "evidence_classification": "source_test_observation"
+    },
+    {
+      "path": "packages/cli/test/resume-endpoint.test.ts",
+      "git_blob_sha": "53b3d7b4f0c2549c82ac316d6fa132e827798f59",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/cli/test/resume-endpoint.test.ts",
+      "sha256": "9921d4ca6dcb45fbcd05a65737009c71265eca03e42b36267f69aa790912a251",
+      "bytes": 18607,
+      "captured_path": "source/packages/cli/test/resume-endpoint.test.ts",
+      "evidence_classification": "source_test_observation"
+    },
+    {
+      "path": "test/runtime/run-agent-protocol.test.ts",
+      "git_blob_sha": "cab9aaa06c2d904e5ba2e8827c27f6aed2b62beb",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/test/runtime/run-agent-protocol.test.ts",
+      "sha256": "c171555cdcfdf9b7df14f89749320f389924cff7be00f2d109062ab21c258ec9",
+      "bytes": 28534,
+      "captured_path": "source/test/runtime/run-agent-protocol.test.ts",
+      "evidence_classification": "source_test_observation"
+    },
+    {
+      "path": "test/runtime/vitest.config.ts",
+      "git_blob_sha": "d12a632cf9b0bf5d1219ae220fa574ae8b2ad565",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/test/runtime/vitest.config.ts",
+      "sha256": "cb681e9f44b9f6d620b773902368250330f33da2220384f6733f3455bba8291a",
+      "bytes": 2038,
+      "captured_path": "source/test/runtime/vitest.config.ts",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "packages/sdk/src/interrupt-grants.ts",
+      "git_blob_sha": "7e464c8c20fba1263f17a8d5ee667e951f09135b",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/packages/sdk/src/interrupt-grants.ts",
+      "sha256": "523b8b569e0b4bd9ad7a2c96c3dce0d07da2281396e16f51bf012d7dfebb172d",
+      "bytes": 13716,
+      "captured_path": "source/packages/sdk/src/interrupt-grants.ts",
+      "evidence_classification": "source_observation"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "262d273f5cfb11177aec82a0314cae4d0509dda0",
+      "url": "https://github.com/cacheplane/b4run/blob/8acac534ba6eb960b34de217b0da45b8405023af/LICENSE",
+      "sha256": "d805df508e4812d412205f18341737067429f46dc353e9a8ce7e14402a2f5455",
+      "bytes": 1062,
+      "captured_path": "source/LICENSE",
+      "evidence_classification": "source_observation"
+    }
+  ],
+  "format_version": 1,
+  "profile": "b4-ap-core/0",
+  "m0_status": "open",
+  "scope": "partial_source_and_executed_workflow_capture",
+  "capture_method": "GitHub connector exact-ref reads, independently checked against Git blob SHA and local SHA-256",
+  "runtime_observations": [
+    {
+      "recording": "recordings/2026-09-30-workflows/workflow-observations.json",
+      "cases": 62,
+      "classification": "runtime_observation"
+    }
+  ],
+  "http_fixture_files": [
+    "fixture/cases.json",
+    "fixture/capture.mjs",
+    "fixture/harness.mjs"
+  ],
+  "sse_fixture_files": [
+    "recordings/2026-09-30-workflows/workflow-observations.json"
+  ],
+  "lockfile": {
+    "path": "source/pnpm-lock.yaml",
+    "sha256": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0"
+  },
+  "build": {
+    "status": "runtime_dependency_graph_passed_full_workspace_partial",
+    "requires_complete_checkout": true,
+    "node_requirement": ">=24.0.0",
+    "package_manager": "pnpm@10.33.0",
+    "instructions": [
+      "git clone https://github.com/cacheplane/b4run.git b4run-reference",
+      "git -C b4run-reference checkout --detach 8acac534ba6eb960b34de217b0da45b8405023af",
+      "cd b4run-reference",
+      "pnpm install --frozen-lockfile --ignore-scripts",
+      "CI=1 TURBO_TELEMETRY_DISABLED=1 pnpm build",
+      "CI=1 TURBO_TELEMETRY_DISABLED=1 pnpm build --filter=@b4run/cli..."
+    ],
+    "note": "Frozen install and pinned root build executed in isolated clone. Three web/inspector helper-port failures prevented whole-workspace success; runtime dependency graph passed 13/13. Capture uses that freshly built dist, with separate build provenance. Listed commands are reproduction instructions, not additional execution evidence.",
+    "provenance": "recordings/2026-09-30-workflows/build-provenance.json"
+  },
+  "dependency_versions": {
+    "evidence_classification": "source_observation",
+    "effective_installed_versions": {
+      "@b4run/cli": "0.13.0",
+      "@b4run/sdk": "0.13.0",
+      "@b4run/core": "0.13.0",
+      "@b4run/langchain": "0.13.0",
+      "@b4run/sqlite-storage": "0.13.0",
+      "@langchain/core": "1.2.12",
+      "@langchain/langgraph": "1.4.17",
+      "langchain": "1.5.12",
+      "typescript": "7.0.2",
+      "vitest": "4.1.11"
+    },
+    "declared_root": {
+      "typescript": "7.0.2",
+      "vitest": "4.1.11",
+      "turbo": "2.10.8",
+      "zod": "4.4.3"
+    },
+    "declared_cli": {
+      "@b4run/cli": "0.13.0",
+      "@langchain/core": "1.2.12",
+      "@langchain/langgraph": "1.4.17",
+      "langchain": "1.5.12"
+    },
+    "effective_versions_evidence": "recordings/2026-09-30-workflows/workflow-observations.json"
+  },
+  "fixture_application": {
+    "revision": "3a4552e3226691137ef2306d07d9081d35ecb4254351795f43dc7f6d3cb21d8d",
+    "status": "executed_independent_workflows",
+    "effective_configuration": {},
+    "fixture_file_hashes": [
+      {
+        "path": "b4.config.ts",
+        "sha256": "fc00d19bc94e10c24f07bd9be1c2bb24d4978856963c5a68745338ecbf131dfc",
+        "bytes": 18
+      },
+      {
+        "path": "package.json",
+        "sha256": "7ed855976dff6a243c843b768d8c71bfaf066408c96a00876796e8c3d3476111",
+        "bytes": 88
+      },
+      {
+        "path": "src/app/empty/index.ts",
+        "sha256": "20f2432d8aadc21ec0937fa460bb522192454c8acc72dff373a94661c20520d5",
+        "bytes": 39
+      },
+      {
+        "path": "src/app/fail/index.ts",
+        "sha256": "67fe6e578e55b71e8e4344beaf38009b742851d7bc492a9262395538e7a98864",
+        "bytes": 87
+      },
+      {
+        "path": "src/app/false/index.ts",
+        "sha256": "7d731a9ab61746736ddd4e2a6f9ad133d1928bd0b98990257ccebf980cb3ba53",
+        "bytes": 42
+      },
+      {
+        "path": "src/app/probe/index.ts",
+        "sha256": "2b06650062c288eb1aa12ece586e85ef31e28104ccd2aca474e0a4699a880627",
+        "bytes": 146
+      },
+      {
+        "path": "src/app/validate/index.ts",
+        "sha256": "54d5cfc9105db1e14b0cb6bbcc36ae4924aa7db3900d836186030cffcfa80669",
+        "bytes": 219
+      },
+      {
+        "path": "src/app/void/index.ts",
+        "sha256": "f01d30338cf59b878cc8ec98b493f10695b6be1add6f280088c547ce6eaa6b2d",
+        "bytes": 46
+      },
+      {
+        "path": "src/app/zero/index.ts",
+        "sha256": "5400a414258596585c755e024f8517e3db8f2b2cabb4d03201858eaf1fac9131",
+        "bytes": 38
+      }
+    ],
+    "cases_sha256": "48224462e5f0f1400ef126e17c276f1092f56b80ce055613f136e2f2fbf40d0a",
+    "note": "Independently authored deterministic workflow application, actual pinned Fetch handler; no provider calls."
+  },
+  "characterization": [
+    {
+      "id": "CP-001",
+      "status": "runtime_partial",
+      "recording": "recordings/2026-09-30-workflows/workflow-observations.json"
+    },
+    {
+      "id": "CP-002",
+      "status": "runtime_partial",
+      "recording": "recordings/2026-09-30-workflows/workflow-observations.json"
+    },
+    {
+      "id": "CP-003",
+      "status": "runtime_partial",
+      "recording": "recordings/2026-09-30-workflows/workflow-observations.json"
+    },
+    {
+      "id": "CP-004",
+      "status": "runtime_partial",
+      "recording": "recordings/2026-09-30-workflows/workflow-observations.json"
+    },
+    {
+      "id": "CP-005",
+      "status": "runtime_unresolved"
+    },
+    {
+      "id": "CP-006",
+      "status": "runtime_unresolved"
+    },
+    {
+      "id": "CP-007",
+      "status": "runtime_unresolved"
+    },
+    {
+      "id": "CP-008",
+      "status": "runtime_unresolved"
+    },
+    {
+      "id": "CP-009",
+      "status": "runtime_unresolved"
+    },
+    {
+      "id": "CP-010",
+      "status": "runtime_unresolved"
+    }
+  ],
+  "observations": [
+    {
+      "id": "REF-001",
+      "classification": "source_observation",
+      "summary": "Absent run input defaults to {}; present null/scalar/array passes to route. Run root unknown keys are ignored. Empty or wrong-type route validation and exact lookup are distinct.",
+      "sources": [
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 4155
+        }
+      ]
+    },
+    {
+      "id": "REF-002",
+      "classification": "source_observation",
+      "summary": "Request bodies use request.text plus JSON.parse without a content-type check. Empty create body is accepted. Create/run isRecord admits arrays; resume rejects arrays and enforces exact keys.",
+      "sources": [
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 1518
+        },
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 2446
+        },
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 4245
+        }
+      ]
+    },
+    {
+      "id": "REF-003",
+      "classification": "source_observation",
+      "summary": "Raw SSE chunk emits data directly and drops messageId; tool/done events omit type and retain named fields; tool IDs are optional.",
+      "sources": [
+        {
+          "path": "packages/cli/src/lib/runtime/stream-types.ts",
+          "line": 1
+        },
+        {
+          "path": "packages/cli/src/lib/runtime/stream-types.ts",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "id": "REF-004",
+      "classification": "source_test_observation",
+      "summary": "Upstream void-output tests specify wait 200 body null; equivalent POST stream omits undefined output, producing done {} through the encoder. These tests were read, not executed.",
+      "sources": [
+        {
+          "path": "packages/cli/test/runs-wait-output.test.ts",
+          "line": 63
+        },
+        {
+          "path": "packages/cli/test/runs-wait-output.test.ts",
+          "line": 103
+        },
+        {
+          "path": "packages/cli/src/lib/runtime/stream-types.ts",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "id": "REF-005",
+      "classification": "source_observation",
+      "summary": "Idle GET attach sends state, retry 1500-2500 ms, then done output:null. Live state uses anchor values and internal turn frame objects. Capacity may terminate with detached before state.",
+      "sources": [
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 3624
+        },
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 3662
+        }
+      ]
+    },
+    {
+      "id": "REF-006",
+      "classification": "source_observation",
+      "summary": "Pending response is interrupts with interruptId, resumeKey, value and optional lifted grant. Aliases and malformed are internal only. Undefined value is omitted on JSON serialization.",
+      "sources": [
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 3459
+        }
+      ]
+    },
+    {
+      "id": "REF-007",
+      "classification": "source_observation",
+      "summary": "Wait cancellation is 409 request_error details.code run_cancelled; SSE cancellation is done output.cancelled:true; SSE runtime failure is done output.error:string.",
+      "sources": [
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 2721
+        },
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 3004
+        }
+      ]
+    },
+    {
+      "id": "REF-008",
+      "classification": "source_observation",
+      "summary": "State reads empty checkpoint namespace; created_at is read time; next preserves pending channel names; absent parent is null.",
+      "sources": [
+        {
+          "path": "packages/cli/src/lib/dev/runtime-fetch-core.ts",
+          "line": 2051
+        }
+      ]
+    },
+    {
+      "id": "REF-009",
+      "classification": "source_observation",
+      "summary": "New grants use b4ag_ plus base64url of 32 random bytes. Wire shape validation only checks prefix and length 6-128, not base64url syntax or exact length. Grant diagnostics follow access and exact pending-set validation.",
+      "sources": [
+        {
+          "path": "packages/sdk/src/interrupt-grants.ts",
+          "line": 190
+        },
+        {
+          "path": "packages/sdk/src/interrupt-grants.ts",
+          "line": 242
+        },
+        {
+          "path": "packages/cli/src/lib/dev/approval-grants.ts",
+          "line": 160
+        }
+      ]
+    }
+  ],
+  "local_checkout": {
+    "path": "/Users/blove/repos/dawn",
+    "project_name": "b4run",
+    "directory_name": "dawn",
+    "origin": "git@github.com:cacheplane/b4run.git",
+    "observed_head": "260920ca2b6bf13ddd15839f6e9ec32ba4c90b3a",
+    "observed_local_date": "2026-09-30",
+    "baseline_commit_available": true,
+    "working_checkout_matches_baseline": false,
+    "preexisting_local_changes": true,
+    "working_checkout_modified_by_this_task": false,
+    "pinned_source_files_verified": 23,
+    "verification_receipt": "../expected/local-reference-verification.json",
+    "note": "Pinned baseline source verified against local Git objects. Runtime execution uses an isolated temporary clone; original checkout remains unchanged."
+  },
+  "runtime_execution_scope": "62 deterministic workflow in-process Fetch cases; no full CP closure, TCP reference transport, park/grants or client qualification.",
+  "runtime_recordings": [
+    {
+      "path": "recordings/2026-09-30-workflows/workflow-observations.json",
+      "sha256": "2485bb8a5404c2cd0af3e28a898de1afcc432b0fdee733919143ef72d1a08a16",
+      "cases": 62,
+      "transport": "in_process_fetch",
+      "fixture_revision": "3a4552e3226691137ef2306d07d9081d35ecb4254351795f43dc7f6d3cb21d8d",
+      "runtime_entry_sha256": "daafaf39e5a137e6c332a195bc6e00125f71621d1fa9831d7c4194d400785721",
+      "repeatability_receipt": "recordings/2026-09-30-workflows/workflow-repeatability.json",
+      "retained_repeat": "recordings/2026-09-30-workflows/repeat/workflow-observations.json",
+      "retained_repeat_sha256": "ec59969faffce44425b1e553f26d318ef772deff2b0e072fb79b48ab9a911ef8"
+    }
+  ],
+  "runtime_artifacts": {
+    "path": "recordings/2026-09-30-workflows/runtime-artifacts.json",
+    "sha256": "b2e22d96e88e8a45e31890af1a5387a00686196c7c831a8e0c0d305f9d12820c",
+    "observation_timing": "post_capture_inventory",
+    "coverage": "414 workspace dist JS/JSON files; provenance superset, not import closure",
+    "note": "Only wrapper hash was contemporaneous in retained captures; future captures collect full inventory before/after execution."
+  },
+  "capture_tools": [
+    {
+      "path": "fixture/capture.mjs",
+      "sha256": "98bea197db65894632757fe87e7662d431687e39127e006efc6eb65c40481c04"
+    },
+    {
+      "path": "fixture/capture.test.mjs",
+      "sha256": "93ea404fb6116629e3d91a68e47bc30a8cf0b8d5ce5af2b8af8f864ac1a03bca"
+    },
+    {
+      "path": "fixture/compare-recordings.mjs",
+      "sha256": "405ad762e3c76f2b172e4b193314ac2e0df958fc8d96ce3861f26e94c74a1436"
+    },
+    {
+      "path": "fixture/compare-recordings.test.mjs",
+      "sha256": "cc32a0174a035fd29abbf9e650cc5f7889be67e2d9de72bfb8eab2c92ed1a295"
+    },
+    {
+      "path": "fixture/harness.mjs",
+      "sha256": "06be8adba6c5889b95f50304055a8977f1afedd3e798114ef9ed6adc98f8e6a9"
+    },
+    {
+      "path": "fixture/harness.test.mjs",
+      "sha256": "576ac400552264cf33e7963876707a34ea96ccd573eb02f9e9af92e7f18a753b"
+    },
+    {
+      "path": "fixture/runtime-artifacts.mjs",
+      "sha256": "32d9140ad5372f2cded62f5ea19641d2e4989406f19d932eaccefd70f1d474c3"
+    },
+    {
+      "path": "fixture/runtime-artifacts.test.mjs",
+      "sha256": "4977dc1918a552963127e185ed44a277737163861ecd162c44884a44194734ba"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Native scripted attachment schema; selected inactive state fields and terminals compared separately. Full TypeScript/LangGraph projection parity remains partial CP-007.",
+  "x-compatibility-status": "selected-fields-only",
+  "$id": "sse-state.json",
+  "title": "Native bounded run attachment state",
+  "x-implementation-status": "scripted-subset",
+  "type": "object",
+  "properties": {
+    "status": {
+      "enum": [
+        "idle",
+        "busy",
+        "interrupted"
+      ]
+    },
+    "live": {
+      "type": "boolean"
+    },
+    "anchor": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "run_started_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "resume": {
+      "type": "boolean"
+    },
+    "values": {
+      "type": "object"
+    },
+    "input": {},
+    "turn": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "event": {
+            "enum": [
+              "chunk",
+              "interrupt"
+            ]
+          },
+          "data": {}
+        },
+        "required": [
+          "event",
+          "data"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "turn_truncated": {
+      "type": "boolean"
+    },
+    "interrupts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "interruptId": {
+            "$ref": "opaque-id.json"
+          },
+          "resumeKey": {
+            "type": "string"
+          },
+          "value": {},
+          "grant": {
+            "$ref": "grant.json"
+          }
+        },
+        "required": [
+          "interruptId",
+          "resumeKey",
+          "value",
+          "grant"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "status",
+    "live",
+    "anchor",
+    "run_started_at",
+    "resume",
+    "values",
+    "input",
+    "turn",
+    "interrupts"
+  ],
+  "additionalProperties": false,
+  "description": "Implemented native snapshot plus raw event/data turn digest. Inactive snapshot uses null input/start/turn/anchor and a separate retry hint then done.output null. Live anchor is a native execution identifier and values are its immutable publication snapshot. Digest overflow/recovery reports turn null and turn_truncated true. Values, frame merging and approval envelope differ from the pinned TypeScript projection.",
+  "x-schema-id": "urn:b4:agent-protocol:draft:sse-state",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "live": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "anchor": {
+            "type": "null"
+          },
+          "run_started_at": {
+            "type": "null"
+          },
+          "resume": {
+            "const": false
+          },
+          "input": {
+            "type": "null"
+          },
+          "turn": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "live": {
+            "const": true
+          },
+          "turn": {
+            "type": "null"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "turn_truncated"
+        ],
+        "properties": {
+          "turn_truncated": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}

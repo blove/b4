@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Authored native design input; compatibility with independently executed TypeScript is unverified.",
+  "x-compatibility-status": "unverified",
+  "$id": "resume-request.json",
+  "title": "Native strict resume request",
+  "x-implementation-status": "scripted-subset",
+  "type": "object",
+  "properties": {
+    "route": {
+      "$ref": "route-key.json"
+    },
+    "resume": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "interruptId": {
+                "$ref": "opaque-id.json"
+              },
+              "status": {
+                "const": "resolved"
+              },
+              "payload": {
+                "enum": [
+                  "once",
+                  "always",
+                  "deny"
+                ]
+              },
+              "grant": {
+                "$ref": "grant.json"
+              }
+            },
+            "required": [
+              "interruptId",
+              "status",
+              "payload"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "interruptId": {
+                "$ref": "opaque-id.json"
+              },
+              "status": {
+                "const": "cancelled"
+              },
+              "grant": {
+                "$ref": "grant.json"
+              }
+            },
+            "required": [
+              "interruptId",
+              "status"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "description": "The explicit required-approval host validates the exact complete pending set and grants before atomic continuation. Once and Deny/cancelled are supported; structurally valid Always is rejected. Structural validity alone grants no authority."
+    }
+  },
+  "required": [
+    "route",
+    "resume"
+  ],
+  "additionalProperties": false,
+  "x-schema-id": "urn:b4:agent-protocol:draft:resume-request"
+}

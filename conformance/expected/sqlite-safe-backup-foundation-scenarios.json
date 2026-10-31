@@ -1,0 +1,77 @@
+{
+  "evidence_class": "native_requirement",
+  "limitations": [
+    "SQLite durability and transactions are outside this foundation profile.",
+    "HTTP runtime and SSE transport are outside this foundation profile.",
+    "production authentication and grant validation are outside this foundation profile.",
+    "TypeScript comparison is outside this foundation profile; native requirements are not reference-runtime observations.",
+    "Snapshot restoration here is an in-memory JSON round trip, not disk durability or process restart evidence.",
+    "Scripted effects are fixtures; this foundation profile does not qualify live adapters."
+  ],
+  "passed": true,
+  "profile": "foundation",
+  "receipt_version": 1,
+  "scenarios": [
+    {
+      "name": "parallel_approval_snapshot_round_trip",
+      "observation": {
+        "attempts_used": 2,
+        "discarded_pending_results": 0,
+        "effect_counts": {
+          "effect-A": 1,
+          "effect-B": 1
+        },
+        "evidence_class": "native_requirement",
+        "failure": null,
+        "name": "parallel_approval_snapshot_round_trip",
+        "snapshot_round_trips": 1,
+        "status": "completed",
+        "tasks": {
+          "A": {
+            "approved": false,
+            "attempt_id": "attempt-A",
+            "status": "succeeded"
+          },
+          "B": {
+            "approved": true,
+            "attempt_id": "attempt-B",
+            "status": "succeeded"
+          }
+        },
+        "values": {
+          "items": [
+            "A",
+            "B"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "uncertain_unsafe_effect",
+      "observation": {
+        "attempts_used": 1,
+        "discarded_pending_results": 1,
+        "effect_counts": {
+          "effect-A": 1
+        },
+        "evidence_class": "native_requirement",
+        "failure": "effect_outcome_unknown",
+        "name": "uncertain_unsafe_effect",
+        "snapshot_round_trips": 1,
+        "status": "recovery_blocked",
+        "tasks": {
+          "A": {
+            "approved": false,
+            "attempt_id": "attempt-A",
+            "status": "outcome_unknown"
+          }
+        },
+        "values": {
+          "items": []
+        }
+      },
+      "passed": true
+    }
+  ]
+}

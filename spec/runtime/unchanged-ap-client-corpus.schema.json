@@ -1,0 +1,1397 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://b4run.invalid/native/unchanged-ap-client-corpus-v1",
+  "title": "Selected unchanged AP client native corpus safe summary version 1",
+  "$comment": "Closed public projection for the fixed 63-call corpus. Structure does not authenticate original execution, authority, capture or retirement. Offline audits and separate execution/provenance receipts remain required.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "kind",
+    "platform",
+    "source_commit",
+    "selected_method_count",
+    "core_operation_count",
+    "core_operations",
+    "invocation_count",
+    "groups",
+    "retirement",
+    "seams",
+    "gates",
+    "limitations"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 1
+    },
+    "kind": {
+      "const": "unchanged-ap-client-native-summary"
+    },
+    "platform": {
+      "const": "macos-arm64"
+    },
+    "source_commit": {
+      "const": "8acac534ba6eb960b34de217b0da45b8405023af"
+    },
+    "selected_method_count": {
+      "type": "integer",
+      "const": 19
+    },
+    "core_operation_count": {
+      "type": "integer",
+      "const": 9
+    },
+    "core_operations": {
+      "const": [
+        "AP-001",
+        "AP-002",
+        "AP-003",
+        "AP-005",
+        "AP-006",
+        "AP-007",
+        "AP-008",
+        "AP-009",
+        "AP-010"
+      ]
+    },
+    "invocation_count": {
+      "type": "integer",
+      "const": 63
+    },
+    "groups": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "invocation_count",
+            "observations"
+          ],
+          "properties": {
+            "name": {
+              "const": "C1"
+            },
+            "invocation_count": {
+              "type": "integer",
+              "const": 10
+            },
+            "observations": {
+              "type": "array",
+              "minItems": 10,
+              "maxItems": 10,
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/observation"
+                  },
+                  {
+                    "properties": {
+                      "method": {
+                        "enum": [
+                          "controller.create",
+                          "controller.dispatch",
+                          "controller.approve",
+                          "controller.retry",
+                          "controller.deny",
+                          "controller.intake",
+                          "controller.approveIntake",
+                          "controller.rejectIntake",
+                          "controller.cancel",
+                          "controller.reconcile",
+                          "controller.interrupt"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "invocation_count",
+            "observations"
+          ],
+          "properties": {
+            "name": {
+              "const": "C2"
+            },
+            "invocation_count": {
+              "type": "integer",
+              "const": 2
+            },
+            "observations": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/observation"
+                  },
+                  {
+                    "properties": {
+                      "method": {
+                        "enum": [
+                          "controller.create",
+                          "controller.dispatch",
+                          "controller.approve",
+                          "controller.retry",
+                          "controller.deny",
+                          "controller.intake",
+                          "controller.approveIntake",
+                          "controller.rejectIntake",
+                          "controller.cancel",
+                          "controller.reconcile",
+                          "controller.interrupt"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "invocation_count",
+            "observations"
+          ],
+          "properties": {
+            "name": {
+              "const": "C3"
+            },
+            "invocation_count": {
+              "type": "integer",
+              "const": 3
+            },
+            "observations": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/observation"
+                  },
+                  {
+                    "properties": {
+                      "method": {
+                        "enum": [
+                          "controller.create",
+                          "controller.dispatch",
+                          "controller.approve",
+                          "controller.retry",
+                          "controller.deny",
+                          "controller.intake",
+                          "controller.approveIntake",
+                          "controller.rejectIntake",
+                          "controller.cancel",
+                          "controller.reconcile",
+                          "controller.interrupt"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "invocation_count",
+            "observations"
+          ],
+          "properties": {
+            "name": {
+              "const": "C4"
+            },
+            "invocation_count": {
+              "type": "integer",
+              "const": 11
+            },
+            "observations": {
+              "type": "array",
+              "minItems": 11,
+              "maxItems": 11,
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/observation"
+                  },
+                  {
+                    "properties": {
+                      "method": {
+                        "enum": [
+                          "controller.create",
+                          "controller.dispatch",
+                          "controller.approve",
+                          "controller.retry",
+                          "controller.deny",
+                          "controller.intake",
+                          "controller.approveIntake",
+                          "controller.rejectIntake",
+                          "controller.cancel",
+                          "controller.reconcile",
+                          "controller.interrupt"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "invocation_count",
+            "observations"
+          ],
+          "properties": {
+            "name": {
+              "const": "W1"
+            },
+            "invocation_count": {
+              "type": "integer",
+              "const": 11
+            },
+            "observations": {
+              "type": "array",
+              "minItems": 11,
+              "maxItems": 11,
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/observation"
+                  },
+                  {
+                    "properties": {
+                      "method": {
+                        "enum": [
+                          "worker.createThread",
+                          "worker.getThread",
+                          "worker.deleteThread",
+                          "worker.pendingInterrupts",
+                          "worker.startRun",
+                          "worker.reattach",
+                          "worker.resume",
+                          "worker.cancel"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "invocation_count",
+            "observations"
+          ],
+          "properties": {
+            "name": {
+              "const": "W2"
+            },
+            "invocation_count": {
+              "type": "integer",
+              "const": 6
+            },
+            "observations": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 6,
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/observation"
+                  },
+                  {
+                    "properties": {
+                      "method": {
+                        "enum": [
+                          "worker.createThread",
+                          "worker.getThread",
+                          "worker.deleteThread",
+                          "worker.pendingInterrupts",
+                          "worker.startRun",
+                          "worker.reattach",
+                          "worker.resume",
+                          "worker.cancel"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "invocation_count",
+            "observations"
+          ],
+          "properties": {
+            "name": {
+              "const": "W3"
+            },
+            "invocation_count": {
+              "type": "integer",
+              "const": 13
+            },
+            "observations": {
+              "type": "array",
+              "minItems": 13,
+              "maxItems": 13,
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/observation"
+                  },
+                  {
+                    "properties": {
+                      "method": {
+                        "enum": [
+                          "worker.createThread",
+                          "worker.getThread",
+                          "worker.deleteThread",
+                          "worker.pendingInterrupts",
+                          "worker.startRun",
+                          "worker.reattach",
+                          "worker.resume",
+                          "worker.cancel"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "invocation_count",
+            "observations"
+          ],
+          "properties": {
+            "name": {
+              "const": "W4"
+            },
+            "invocation_count": {
+              "type": "integer",
+              "const": 7
+            },
+            "observations": {
+              "type": "array",
+              "minItems": 7,
+              "maxItems": 7,
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/observation"
+                  },
+                  {
+                    "properties": {
+                      "method": {
+                        "enum": [
+                          "worker.createThread",
+                          "worker.getThread",
+                          "worker.deleteThread",
+                          "worker.pendingInterrupts",
+                          "worker.startRun",
+                          "worker.reattach",
+                          "worker.resume",
+                          "worker.cancel"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "items": false,
+      "allOf": [
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.create"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.dispatch"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.approve"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.retry"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.deny"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.intake"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.approveIntake"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.rejectIntake"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.cancel"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.reconcile"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "controller.interrupt"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "worker.createThread"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "worker.getThread"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "worker.deleteThread"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "worker.pendingInterrupts"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "worker.startRun"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "worker.reattach"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "worker.resume"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "method": {
+                      "const": "worker.cancel"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "retirement": {
+      "$ref": "#/$defs/retirement"
+    },
+    "seams": {
+      "const": [
+        "native-fixture-outcomes",
+        "controller-bearer-header-injection",
+        "controller-origin-and-redirect-guard",
+        "forced-private-interrupt-id",
+        "passive-socket-accepted-bytes"
+      ]
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "M0",
+        "CP001_to009",
+        "CP010",
+        "M5",
+        "broad56",
+        "core_profile"
+      ],
+      "properties": {
+        "M0": {
+          "const": "open"
+        },
+        "CP001_to009": {
+          "const": "partial"
+        },
+        "CP010": {
+          "const": "unresolved"
+        },
+        "M5": {
+          "const": "partial"
+        },
+        "broad56": {
+          "const": "not_run"
+        },
+        "core_profile": {
+          "const": "unfrozen"
+        }
+      }
+    },
+    "limitations": {
+      "const": [
+        "selected-original-callers-only",
+        "initial-macos-arm64-only",
+        "factory-business-behavior-excluded",
+        "socket-acceptance-is-not-caller-consumption",
+        "pending-schema-and-grantless-resume-counterexamples-retained",
+        "method-calls-are-not-all-positive-successes"
+      ]
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "integer",
+      "enum": [
+        0,
+        200,
+        201,
+        204,
+        400,
+        401,
+        404,
+        409,
+        500
+      ]
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "outcome",
+        "http_status",
+        "client_status",
+        "error_class",
+        "error_code",
+        "result_shape",
+        "frames",
+        "eof",
+        "cut"
+      ],
+      "properties": {
+        "method": {
+          "enum": [
+            "controller.create",
+            "controller.dispatch",
+            "controller.approve",
+            "controller.retry",
+            "controller.deny",
+            "controller.intake",
+            "controller.approveIntake",
+            "controller.rejectIntake",
+            "controller.cancel",
+            "controller.reconcile",
+            "controller.interrupt",
+            "worker.createThread",
+            "worker.getThread",
+            "worker.deleteThread",
+            "worker.pendingInterrupts",
+            "worker.startRun",
+            "worker.reattach",
+            "worker.resume",
+            "worker.cancel"
+          ]
+        },
+        "outcome": {
+          "enum": [
+            "returned",
+            "rejected",
+            "stream"
+          ]
+        },
+        "http_status": {
+          "$ref": "#/$defs/status"
+        },
+        "client_status": {
+          "$ref": "#/$defs/status"
+        },
+        "error_class": {
+          "enum": [
+            "none",
+            "ControllerHttpError",
+            "WorkerHttpError",
+            "ZodError",
+            "DOMException",
+            "AbortError",
+            "Error",
+            "TypeError"
+          ]
+        },
+        "error_code": {
+          "enum": [
+            "none",
+            "authentication_required",
+            "resource_unavailable",
+            "thread_busy",
+            "execution_error",
+            "grant_required",
+            "invalid_request",
+            "no_run_in_flight",
+            "thread_not_found",
+            "run_cancelled",
+            "run_in_flight"
+          ]
+        },
+        "result_shape": {
+          "enum": [
+            "none",
+            "route-outcome",
+            "fixture-value",
+            "void-null",
+            "thread-id",
+            "thread-metadata",
+            "null",
+            "deleted",
+            "not-found",
+            "interrupt-result",
+            "pending-empty",
+            "cancel-result",
+            "frame-stream"
+          ]
+        },
+        "frames": {
+          "type": "array",
+          "maxItems": 64,
+          "items": {
+            "$ref": "#/$defs/frame"
+          }
+        },
+        "eof": {
+          "type": "boolean"
+        },
+        "cut": {
+          "enum": [
+            "none",
+            "viewer-return",
+            "signal-abort"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "rejected"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "error_class": {
+                "not": {
+                  "const": "none"
+                }
+              },
+              "result_shape": {
+                "const": "none"
+              },
+              "frames": {
+                "maxItems": 0
+              },
+              "eof": {
+                "const": false
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "error_class": {
+                "const": "none"
+              },
+              "error_code": {
+                "const": "none"
+              },
+              "client_status": {
+                "const": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "stream"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "result_shape": {
+                "const": "frame-stream"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "cut": {
+                      "const": "none"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "eof": {
+                      "const": true
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "eof": {
+                      "const": false
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "else": {
+            "properties": {
+              "frames": {
+                "maxItems": 0
+              },
+              "eof": {
+                "const": false
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "outcome": {
+                      "const": "returned"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "cut": {
+                      "const": "none"
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "cut": {
+                      "enum": [
+                        "none",
+                        "signal-abort"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event",
+        "shape"
+      ],
+      "properties": {
+        "event": {
+          "enum": [
+            "state",
+            "done",
+            "interrupt",
+            "chunk"
+          ]
+        },
+        "shape": {
+          "enum": [
+            "state-busy",
+            "state-idle",
+            "state-interrupted",
+            "done-value",
+            "done-null",
+            "done-void",
+            "done-failure",
+            "done-cancelled",
+            "native-permission-request",
+            "fixture-value"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "state"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "shape": {
+                "enum": [
+                  "state-busy",
+                  "state-idle",
+                  "state-interrupted"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "done"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "shape": {
+                "enum": [
+                  "done-value",
+                  "done-null",
+                  "done-void",
+                  "done-failure",
+                  "done-cancelled"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "interrupt"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "shape": {
+                "enum": [
+                  "native-permission-request"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "chunk"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "shape": {
+                "enum": [
+                  "fixture-value"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "retirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accepted",
+        "retired",
+        "capture_complete",
+        "child_exit_code",
+        "control_eof",
+        "control_joined",
+        "stderr_joined",
+        "server_joined",
+        "quiescent",
+        "faulted",
+        "store_weak_absent",
+        "application_weak_absent",
+        "writer_reopened",
+        "owner_advanced",
+        "expired_gates",
+        "cleanup_releases"
+      ],
+      "properties": {
+        "accepted": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        },
+        "retired": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        },
+        "capture_complete": {
+          "const": true
+        },
+        "child_exit_code": {
+          "type": "integer",
+          "const": 0
+        },
+        "control_eof": {
+          "const": true
+        },
+        "control_joined": {
+          "const": true
+        },
+        "stderr_joined": {
+          "const": true
+        },
+        "server_joined": {
+          "const": true
+        },
+        "quiescent": {
+          "const": true
+        },
+        "faulted": {
+          "const": false
+        },
+        "store_weak_absent": {
+          "const": true
+        },
+        "application_weak_absent": {
+          "const": true
+        },
+        "writer_reopened": {
+          "const": true
+        },
+        "owner_advanced": {
+          "const": true
+        },
+        "expired_gates": {
+          "type": "integer",
+          "const": 0
+        },
+        "cleanup_releases": {
+          "type": "integer",
+          "const": 0
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "accepted": {
+              "const": 1
+            },
+            "retired": {
+              "const": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 2
+            },
+            "retired": {
+              "const": 2
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 3
+            },
+            "retired": {
+              "const": 3
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 4
+            },
+            "retired": {
+              "const": 4
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 5
+            },
+            "retired": {
+              "const": 5
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 6
+            },
+            "retired": {
+              "const": 6
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 7
+            },
+            "retired": {
+              "const": 7
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 8
+            },
+            "retired": {
+              "const": 8
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 9
+            },
+            "retired": {
+              "const": 9
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 10
+            },
+            "retired": {
+              "const": 10
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 11
+            },
+            "retired": {
+              "const": 11
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 12
+            },
+            "retired": {
+              "const": 12
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 13
+            },
+            "retired": {
+              "const": 13
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 14
+            },
+            "retired": {
+              "const": 14
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 15
+            },
+            "retired": {
+              "const": 15
+            }
+          }
+        },
+        {
+          "properties": {
+            "accepted": {
+              "const": 16
+            },
+            "retired": {
+              "const": 16
+            }
+          }
+        }
+      ]
+    }
+  }
+}

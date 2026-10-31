@@ -1,0 +1,7 @@
+/target/
+.DS_Store
+/.contract-tools/
+/.b4-http-data/
+/.b4-permission-data/
+/.b4-work/
+__pycache__/

@@ -1,0 +1,186 @@
+{
+  "record_version": 1,
+  "profile": "receipt_owned_single_task_new_use_driver",
+  "date": "2026-10-20",
+  "scope": "selected local embedded functional tests",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "broad_profile_qualified": false,
+  "durable_permission_capability_enabled": false,
+  "exhaustive_operation_audit_qualified": false,
+  "source_descriptor_sha256": "22b7dde150e8b2d4dfc09f91232b7db93893521181db97e0b13622377df3f6b9",
+  "code_source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter.rs",
+      "bytes": 28881,
+      "sha256": "b3255639259d536347964171b63be96e3f99d6acf4e120c988c1c1139896f9ce"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter_account.rs",
+      "bytes": 17300,
+      "sha256": "781517fb83724e0fa5e3e6aafac06bc813c94b352c4fcd0c354f32331433c3ed"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter_tests.rs",
+      "bytes": 9462,
+      "sha256": "105b5afc4fcf8e88400d9ddebbb37c9334652390ce8c051470c4b0db377a665a"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 6678,
+      "sha256": "79863b0933e43e3d10d10908f78933c678e0045457d0122f8498097fcbce94a7"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "bytes": 432176,
+      "sha256": "c97b2f48bda1de6501c9dda29b887212f4b84ef294b273586ef2ad985b6e3f84"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome.rs",
+      "bytes": 32567,
+      "sha256": "28d6893f84a6412bfb56b88d41cc0d93a326926eefd0303133711311d050a86d"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions.rs",
+      "bytes": 241063,
+      "sha256": "5cc38a29d829452edd4ac06ee8793481e460231d0bea360b4cd194df66358c3b"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/use_driver.rs",
+      "bytes": 74313,
+      "sha256": "7d85c54c53527a7fce51c5e00545c814cdcb893d48c5e266b05e8a998c59a1d6"
+    }
+  ],
+  "checks": {
+    "format": {
+      "cargo_arguments": [
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_run": "format-check-1792517177579664000"
+    },
+    "strict_lint": {
+      "cargo_arguments": [
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "log_sha256": "91e8e64dfa8aa279a4de6c1fbc7a14a99ee3e0240e9b824d99efef69ddd7af42",
+      "local_run": "lint-1792517179731019000"
+    },
+    "workspace_compilation": {
+      "cargo_arguments": [
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "log_sha256": "28765d75705a1d09c7ff3874f95834014684ee25925c2e368ce9411e19fcd9cb",
+      "local_run": "compile-1792517181858178000"
+    },
+    "validation_controls": {
+      "cargo_arguments": [
+        "test",
+        "-p",
+        "b4-runtime",
+        "--lib",
+        "--locked",
+        "--offline",
+        "driver_adapter",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log_sha256": "324e6d65318ea166f106d3c38865516b1c3decf2a9396eb6d22c31aceb5f1fb4",
+      "local_run": "driver-account-1792517183811896000",
+      "passed": 7
+    },
+    "sqlite_driver_cases": {
+      "cargo_arguments": [
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--locked",
+        "--offline",
+        "use_driver::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log_sha256": "65019f87fe06fb3e02b6fba67d4db9649caeb2d6a5cede77cc82fbaa74068586",
+      "local_run": "driver-controls-1792517186947073000",
+      "passed": 12
+    },
+    "sqlite_outcome_compatibility": {
+      "cargo_arguments": [
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--locked",
+        "--offline",
+        "permission_use_outcome::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log_sha256": "0faf66950814bb620d2ae66bb10a4b31f23e5c482aca4033543df8d2daaab05d",
+      "local_run": "outcome-compatibility-1792517190070418000",
+      "passed": 8
+    },
+    "normal_workspace_regression": {
+      "cargo_arguments": [
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "log_sha256": "b0ab96293779ce44ff358ffe040b810fdb559006574d8ed09ed1915613a386df",
+      "local_run": "workspace-tests-1792517366329440000",
+      "ignored_tests_executed": false
+    }
+  },
+  "adapter_limits": {
+    "charged_bytes": 16777216,
+    "structural_nodes": 131072,
+    "coarse_operations": 128,
+    "json_encoded_bytes": 65536,
+    "json_depth": 64,
+    "json_nodes": 16384
+  },
+  "inherited_producer_limits": {
+    "combined_actor_policy_bytes": 33,
+    "execution_id_bytes": 20,
+    "task_id_bytes": 7
+  },
+  "unqualified": [
+    "full permission profile and capability",
+    "HTTP and generated UUID IDs",
+    "human and legacy renewal",
+    "mixed and parallel tasks",
+    "resource-changing cancellation and recovery",
+    "lost-response confirmation",
+    "Linux",
+    "dedicated poisoned-slot and one-consume behavioral controls",
+    "exhaustive Rust library operation audit and whole-process memory bound"
+  ]
+}

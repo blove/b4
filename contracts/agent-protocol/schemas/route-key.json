@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Authored native design input; compatibility with independently executed TypeScript is unverified.",
+  "x-compatibility-status": "unverified",
+  "$id": "route-key.json",
+  "title": "Literal native route key",
+  "x-implementation-status": "native-dto",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 256,
+  "pattern": "^/[^#\\u0000-\\u001f\\u007f-\\u009f]*#(agent|workflow)(?![\\s\\S])",
+  "x-max-utf8-bytes": 256,
+  "description": "Literal route key starting with /, exactly one #, suffix agent or workflow. No normalization or executable path resolution. Path / itself is permitted. Native maximum is 256 UTF-8 bytes. Registered-route lookup is a future runtime operation.",
+  "x-schema-id": "urn:b4:agent-protocol:draft:route-key"
+}

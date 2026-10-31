@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "name": "uncertain_unsafe_effect",
+  "evidence_class": "native_requirement",
+  "description": "An unsafe effect is invoked once before its completion is recorded. An in-memory JSON snapshot round trip loses that transient result; recovery blocks and never replays the effect.",
+  "initial": {
+    "execution_id": "execution-uncertain",
+    "turn_id": "turn-initial",
+    "owner_generation": 1,
+    "now_ms": 100,
+    "definition": {
+      "route": "/uncertain-effect#workflow",
+      "revision": "definition-v1",
+      "batches": [[
+        {"id": "A", "effect_id": "effect-A", "recovery": "unsafe", "requires_approval": false}
+      ]],
+      "max_attempts": 8
+    },
+    "values": {"items": []}
+  },
+  "effects": {
+    "effect-A": {"output": {"task": "A"}, "writes": [{"type": "append", "field": "items", "items": ["A"]}]}
+  },
+  "steps": [
+    {"type": "start", "now_ms": 101},
+    {"type": "dispatch", "task_id": "A", "attempt_id": "attempt-A", "now_ms": 102},
+    {"type": "restore_snapshot"},
+    {"type": "recover", "available_revision": "definition-v1", "turn_id": "turn-recovered", "owner_generation": 2, "now_ms": 103}
+  ],
+  "expect": {
+    "status": "recovery_blocked",
+    "values": {"items": []},
+    "effect_counts": {"effect-A": 1},
+    "attempts_used": 1,
+    "failure": "effect_outcome_unknown",
+    "tasks": {
+      "A": {"status": "outcome_unknown", "attempt_id": "attempt-A", "approved": false}
+    },
+    "snapshot_round_trips": 1,
+    "discarded_pending_results": 1
+  }
+}

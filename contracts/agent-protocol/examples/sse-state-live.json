@@ -1,0 +1,24 @@
+{
+  "status": "busy",
+  "live": true,
+  "anchor": "native-execution-example",
+  "run_started_at": "2026-10-01T21:00:00Z",
+  "resume": false,
+  "values": {
+    "input": {
+      "text": "雪"
+    }
+  },
+  "input": {
+    "text": "雪"
+  },
+  "turn": [
+    {
+      "event": "chunk",
+      "data": {
+        "text": "hello"
+      }
+    }
+  ],
+  "interrupts": []
+}

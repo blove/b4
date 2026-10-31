@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "increment": "startup_confinement",
+  "status": "qualified_bounded_runtime_and_focused_metadata_scope",
+  "release_scope": "explicit_bounded_opt_in_native_startup_confinement_only",
+  "credited_cases": [
+    {
+      "file": "crates/b4-http/src/startup/confinement/tests.rs",
+      "name": "borrowed_start_future_has_no_framework_alias_before_poll"
+    },
+    {
+      "file": "crates/b4-http/src/startup/confinement/tests.rs",
+      "name": "start_limits_and_single_attempt_precede_argument_clones"
+    },
+    {
+      "file": "crates/b4-http/src/startup/confinement/tests.rs",
+      "name": "startup_job_requires_whole_original_and_exact_principal"
+    },
+    {
+      "file": "crates/b4-http/src/startup/confinement/tests.rs",
+      "name": "startup_arguments_dispose_two_panicking_handles_under_one_anchor"
+    },
+    {
+      "file": "crates/b4-http/src/startup/confinement/tests.rs",
+      "name": "startup_progress_counts_verified_receipt_but_not_ambiguous_commit"
+    },
+    {
+      "file": "crates/b4-http/src/startup/confinement/tests.rs",
+      "name": "final_startup_capture_drop_cannot_activate_or_escape_ownership"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement.rs",
+      "name": "opt_in_missing_exact_definition_confines_original_prior_owner"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement.rs",
+      "name": "opt_in_denied_recover_policy_preserves_accepted_once"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement.rs",
+      "name": "default_preparation_refusal_remains_unchanged"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement.rs",
+      "name": "unresolved_principal_and_denied_confinement_authority_refuse"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement.rs",
+      "name": "audited_prior_block_counts_without_readoption"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement.rs",
+      "name": "available_historical_definition_uses_original_typed_recovery"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement.rs",
+      "name": "unsupported_and_changed_custom_store_refuse_before_write"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement.rs",
+      "name": "scan_limit_preserves_two_confirmed_blocks_and_stops_third_candidate"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement_tcp.rs",
+      "name": "preparing_listener_stays_closed_through_confinement_authority_and_cleanup"
+    },
+    {
+      "file": "crates/b4-http/tests/startup_confinement_tcp.rs",
+      "name": "mixed_startup_opens_after_confinement_before_runnable_callback_settlement"
+    }
+  ],
+  "infrastructure": {
+    "private_declarations": 6,
+    "independent_api_declarations": 8,
+    "independent_tcp_declarations": 2,
+    "helper_test_declarations": 0,
+    "loop_branch_and_retirement_marker_additional_case_credit": 0,
+    "reruns_add_case_credit": false,
+    "prior_ignored_helpers_and_nested_cli_summaries_add_case_credit": false
+  },
+  "source": {
+    "new_rust_files": 13,
+    "selected_existing_rust_files": 5,
+    "new_production_files": 5,
+    "new_private_test_and_helper_files": 2,
+    "new_public_qualifier_and_helper_files": 6,
+    "owned_rust_paths": 18,
+    "new_cargo_targets": 2,
+    "new_borrowed_preparation_entry_points": 1,
+    "new_pure_observation_types": 5,
+    "old_default_preparation_and_known_id_observer_bodies_preserved": true,
+    "all_other_predecessor_rust_sources_and_test_bodies_preserved": true,
+    "protected_reused_helpers_preserved": true,
+    "runtime_kernel_sqlite_store_schema_dependency_changes": 0,
+    "old_public_enum_extensions": 0,
+    "production_cli_default_changes": 0,
+    "runtime_qualification_input_count": 733,
+    "runtime_qualification_crate_file_count": 299,
+    "binding_status": "qualified_rust_and_final_scoped_public_checker_metadata_source_bound",
+    "rust_source_sha256": {
+      "crates/b4-http/src/confinement/mod.rs": "d7a9581420067e6b7163a1cbbe5e8dc24781048804a796ee759bbc8c2483f1b2",
+      "crates/b4-http/src/confinement/operation.rs": "05be9bd45482289f445471df25006caab9b2a5d5f1e41467495374abe2b12af0",
+      "crates/b4-http/src/confinement/startup.rs": "ddce8d38aded8b64ce03131fa8bef105d53bb95f7bdf46cd1d435878ad0ee4c9",
+      "crates/b4-http/src/lib.rs": "94ec11a5374360a46f53f8eeb5671708d6113a748d9a1d5a7d27e52e1d368eeb",
+      "crates/b4-http/src/startup/confinement/coordinator.rs": "c66de069be84ba0fa55b57f71f36772902f820bbe6ce5eadc13776c8a160c030",
+      "crates/b4-http/src/startup/confinement/mod.rs": "f685261d37a11c82d17be167445d2ffb633366fdf940fd428d64a23638e756a1",
+      "crates/b4-http/src/startup/confinement/model.rs": "f43cd2a033d4b9d12c44e6b1ac94e1535908d02ab87e793787ca6bfeaeee5ff9",
+      "crates/b4-http/src/startup/confinement/ownership.rs": "698ed47fcbd152ee8c8d7c9f067ff9be6c8d832a9cc7d298552b648dff674efb",
+      "crates/b4-http/src/startup/confinement/test_support.rs": "ab1ed3bc178b493917af9f056f3ae33043dd43e897d882afafa9d2bd52344d71",
+      "crates/b4-http/src/startup/confinement/tests.rs": "d0a35cb996454d739d2ac44b6773a37c4008aac054c5575285b11433f539d678",
+      "crates/b4-http/src/startup/coordinator.rs": "b93e1cbc3b537348d3a7acb0e398be10319452b6d93644f86607f73be612abb5",
+      "crates/b4-http/src/startup/mod.rs": "fc2e29d4da25c713a4fdf0cba350802f91d48fd00e11a747c5a2e7def097c81b",
+      "crates/b4-http/tests/startup_confinement.rs": "01acb150ed99a35f4d89d509beccf767968cbe33ebb5185e24e7291fa7a91ce0",
+      "crates/b4-http/tests/startup_confinement_support/fixtures.rs": "cc663608b544d64b81105ff7d1d3602f28d5a25fa67689983aec7afd0feecdce",
+      "crates/b4-http/tests/startup_confinement_support/gate.rs": "a3ad7f401b6b277334e1fb8a3ac2306c886bfa133c09b75f286086f5a3c3d0a0",
+      "crates/b4-http/tests/startup_confinement_support/mod.rs": "86450e758851275085754bfb658cbd41c01ea2fcf6e7940701a090d6c09bc1cf",
+      "crates/b4-http/tests/startup_confinement_support/server.rs": "1819ad82a12eb24e143b8d445fa37d2a32cbca056938049efb6b56f31dc687c7",
+      "crates/b4-http/tests/startup_confinement_tcp.rs": "2578028f8a9cdcd52c78a9b8e8263b5f650ced9d0ca7861a04e64466d18b3f3c"
+    },
+    "public_checker_and_metadata_sha256": {
+      "scripts/check_contracts.py": "b14dcbcd69043fbfbc6540d69f220087f83921815308c6ca743da5df6d4cd579",
+      "scripts/test_startup_confinement_traceability.py": "0ab1ce1c8b5ee898f8ea0f27fd922c8069786f6c7f4a92b3098a17ac209091b1",
+      "spec/runtime/requirements.yaml": "632512c776e58cd7821a9a8bf026a51e00b9baa5c6a15cf283014356a7b05c9c"
+    },
+    "runtime_qualification_cargo_inputs": 9,
+    "runtime_qualification_rust_rs_files": 287
+  },
+  "observations": {
+    "startup": {
+      "explicit_opt_in_only": true,
+      "borrowed_unpolled_future_clones_no_trusted_handles": true,
+      "limits_and_executor_checked_before_counted_registration_and_clones": true,
+      "old_and_new_entry_points_share_single_attempt": true,
+      "no_new_http_route_or_automatic_cli_pass": true,
+      "ordinary_admission_closed_through_confinement_and_final_capture_disposal": true,
+      "resource_free_observers_and_pending_wait_not_cancellation": true,
+      "normal_runnable_recovery_complete_can_precede_callback_settlement": true
+    },
+    "original_and_authority": {
+      "whole_ordinary_bootstrap_and_trusted_principal_required": true,
+      "bootstrap_outside_new_serialized_audit_caps": true,
+      "first_and_renewed_bounded_captures_equal_entire_original": true,
+      "resolver_precedes_each_initial_and_renewed_reason": true,
+      "principal_equals_bootstrap_and_exact_native_origin": true,
+      "supported_reasons": [
+        "ExactDefinitionUnavailable",
+        "DispatchNotAuthorized"
+      ],
+      "startup_required_authority_unavailable_reason_supported": false,
+      "independent_confinement_permission_checks": 2,
+      "atomic_backend_third_audit": true,
+      "verified_receipt_before_confirmed_progress": true,
+      "original_exact_definition_only_for_typed_fallback": true,
+      "newer_validator_or_callback_substitution": false
+    },
+    "durable_state": {
+      "full_original_definition_input_tasks_attempts_results_interrupts_grants_acceptances_and_journal_retained": true,
+      "accepted_once_consumption_not_refunded": true,
+      "expiry_not_revocation": true,
+      "confined_candidate_validator_or_callback_invocations": 0,
+      "one_existing_no_dispatch_block_transition_and_commit_journal": true,
+      "prior_block_audit_unchanged_and_without_readoption": true,
+      "scan_limit_qualified_confirmed_blocks": 2,
+      "third_candidate_capture_or_mutation_after_limit": false,
+      "original_derived_whole_view_approval_journal_and_six_table_comparisons": true
+    },
+    "progress_and_failure": {
+      "typed_admission_disposition_counters_not_repurposed": true,
+      "confirmed_only_verified_returned_receipts": true,
+      "already_blocked_only_successful_complete_unchanged_audit": true,
+      "counter_sum_bounded_by_candidates_and_limit": true,
+      "preparing_samples_monotonic_lower_bounds_not_global_atomic_pair": true,
+      "finished_final_tuple_stable": true,
+      "verified_receipt_survives_later_cleanup_fault_without_activation": true,
+      "commit_then_error_or_panic_without_receipt_confirmed_credit": 0,
+      "ambiguous_commit_is_not_rollback_evidence": true,
+      "retry_retarget_or_post_adoption_confinement": false,
+      "earlier_verified_blocks_retained_after_later_incomplete": true
+    },
+    "retirement": {
+      "explicit_normal_gate_and_callback_returns": true,
+      "normal_coordinator_and_cleanup_return": true,
+      "healthy_or_intentionally_fault_classified_normal_quiescence": true,
+      "all_qualified_caller_and_framework_aliases_dropped": true,
+      "relevant_store_sqlite_application_weak_absent": true,
+      "tcp_normal_listener_join_before_physical_assertions": true,
+      "genuine_next_writer_actual_owner_plus_one_and_ready": true,
+      "whole_persisted_state_checked_and_successor_normally_closed": true,
+      "forced_cleanup_abort_timeout_or_container_removal_counts_as_retirement": false
+    }
+  },
+  "bounds": {
+    "max_pages": 64,
+    "max_scanned_rows_per_page": 32,
+    "max_scans": 2048,
+    "max_candidates": 256,
+    "max_confinement_audit_passes": 3,
+    "snapshot_input_bytes": 1048576,
+    "thread_component_bytes": 262144,
+    "grants": 64,
+    "acceptances": 64,
+    "grant_acceptance_record_bytes": 131072,
+    "selected_journal_rows_including_reserved_append": 4096,
+    "journal_record_bytes": 4096,
+    "aggregate_selected_input_bytes": 8388608,
+    "aggregate_lexical_nodes": 65536,
+    "row_depth": 64,
+    "row_nodes": 16384,
+    "fixture_gate_io_wait_seconds": 15,
+    "fixture_tcp_whole_watchdog_seconds": 120,
+    "fixture_tcp_response_bytes": 65536,
+    "serialized_data_and_work_structure_only": true,
+    "ordinary_bootstrap_and_later_typed_recovery_reads_outside_new_caps": true,
+    "global_snapshot_claim": false,
+    "whole_startup_heap_cpu_io_storage_rss_or_hard_deadline_claim": false
+  },
+  "focused_execution": {
+    "status": "actual_qualified_and_independently_reviewed",
+    "private_passed": 6,
+    "api_passed": 8,
+    "tcp_passed": 2,
+    "distinct_feature_declarations_passed": 16,
+    "failed": 0,
+    "new_ignored": 0,
+    "old_compatibility_targets_passed": 5,
+    "old_compatibility_entries_passed": 40,
+    "old_compatibility_ignored_helpers": 2,
+    "complete_http_library_passed": 101,
+    "broad_platform_replacement_claim": false
+  },
+  "platforms": [
+    {
+      "platform": "macOS",
+      "architecture": "arm64",
+      "status": "actual_qualified_and_independently_reviewed",
+      "format_exit": 0,
+      "strict_workspace_lint_exit": 0,
+      "workspace_exit": 0,
+      "outer_cargo_targets": 106,
+      "normal_workspace_passed": 1232,
+      "separate_slow_passed": 3,
+      "distinct_qualified_rust_cases": 1235,
+      "failed": 0,
+      "default_ignored": 8,
+      "excluded_nested_cli_summaries": 2,
+      "new_feature_named_passes": 16,
+      "python_passed_before_new_metadata": 111,
+      "python_exit": 0,
+      "contract_checker_exit": 0,
+      "prior_named_requirement_inventory": 459
+    },
+    {
+      "platform": "Linux",
+      "architecture": "aarch64",
+      "status": "actual_qualified_and_independently_reviewed",
+      "format_exit": 0,
+      "strict_workspace_lint_exit": 0,
+      "workspace_exit": 0,
+      "outer_cargo_targets": 106,
+      "normal_workspace_passed": 1232,
+      "separate_slow_passed": 3,
+      "distinct_qualified_rust_cases": 1235,
+      "failed": 0,
+      "default_ignored": 8,
+      "excluded_nested_cli_summaries": 2,
+      "new_feature_named_passes": 16,
+      "nonroot": true,
+      "network": "none",
+      "privileged": false,
+      "all_capabilities_dropped": true,
+      "host_mounts": false,
+      "container_cleanup_not_runtime_retirement_evidence": true
+    }
+  ],
+  "retained_execution_history": {
+    "initial_private_scaffold": {
+      "declarations_run": 6,
+      "inherited_controls_passed": 4,
+      "intended_first_assertion_failures": 2,
+      "whole_original_guard_observed_capture_calls": 0,
+      "whole_original_guard_desired_capture_calls": 1,
+      "ambiguous_commit_guard_observed_writes": 0,
+      "ambiguous_commit_guard_desired_writes": 1,
+      "normal_legal_retirement_preceded_intended_failures": true,
+      "later_loop_branches_initial_red_credit": 0,
+      "later_branches_qualified_in_current_green": true
+    },
+    "initial_api_scaffold": {
+      "declarations_run": 8,
+      "compatibility_passed": 2,
+      "intended_first_assertion_failures": 6,
+      "repeated_prior_four_add_declaration_credit": false,
+      "initial_red_branch_limits": [
+        "Missing-definition and denied-Recover stop at intended Complete; later confirmed-progress assertions initially unreached.",
+        "Unresolved and mismatched-principal controls pass before the first denied-authority call fails; unavailable-authority and later assertions initially unreached.",
+        "AlreadyBlocked stops at intended Complete before later already-blocked and capture assertions.",
+        "First Unsupported custom case stops at capture-call vector before the port error is reached; profile, target and whole-view cases initially unreached.",
+        "Scan limit stops at candidate/outcome assertion before later two-block and third-record checks."
+      ],
+      "later_assertions_or_modes_initial_red_credit": 0,
+      "later_branches_qualified_in_current_green": true
+    },
+    "tcp_permission_setup": {
+      "status": "local_loopback_bind_permission_denied_retained",
+      "passed": 0,
+      "failed": 2,
+      "behavioral_red_credit": 0,
+      "positive_retirement_credit": 0,
+      "same_source_and_selection_later_authorized": true,
+      "subsequent_passed": 2,
+      "additional_case_credit": 0
+    },
+    "compile_style_lint_and_parser_bookkeeping": {
+      "classification": "setup_or_source_only",
+      "behavioral_red_credit": 0
+    },
+    "predecessor_inherited_macos_cli_timer_failure": {
+      "history": "conformance/expected/startup-accepted-once-verification.json",
+      "root_cause": "unresolved",
+      "later_passes_do_not_erase_failure_or_establish_cause": true,
+      "environment_exclusion_claim": false
+    },
+    "evidence_parser_v2_refusal": {
+      "status": "failed_closed_before_output",
+      "cause": "Global cfg comparison treated a preserved Linux-only local statement inside an existing test as a test-inventory difference.",
+      "product_failure_or_behavioral_red_credit": 0,
+      "new_count_credit": 0,
+      "actual_platform_counts_independently_closed": true,
+      "successor_source_review_separate": true,
+      "subsequent_reviewed_v3_reconciliation_completed_both_platforms": true,
+      "subsequent_reconciliation_additional_rust_case_credit": 0
+    }
+  },
+  "python_and_metadata": {
+    "group": "startup_confinement_requirements",
+    "new_record_id": "STARTUP-CONFINE-001",
+    "component": "startup-confinement",
+    "source": "spec/runtime/startup-confinement-design.md",
+    "release_scope": "explicit_bounded_opt_in_native_startup_confinement_only",
+    "bounded_pass_token": "passed_bounded_startup_confinement_native_macos_linux_scope",
+    "methods_declared": 3,
+    "status": "actual_focused_metadata_passed_full_suites_recorded_separately",
+    "actual_new_metadata_red": {
+      "methods_run": 3,
+      "failure_entries": 12,
+      "errors": 0,
+      "timed_out": false,
+      "seconds": 20.003,
+      "reasons": [
+        "Actual scoped YAML group missing; later declaration and output assertions unreached.",
+        "Ten malformed classification/source/component/scope/status/evidence guards ignored.",
+        "Injected empty scoped inventory ignored; five acceptance variants and 26 duplicate variants unreached."
+      ]
+    },
+    "actual_new_metadata_green": {
+      "methods_passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "timed_out": false,
+      "seconds": 54.381,
+      "malformed_guard_variants_reached": 10,
+      "acceptance_list_variants_reached": 5,
+      "prior_group_duplicate_variants_reached": 26,
+      "full_direct_declaration_inventory_and_checker_messages_reached": true
+    },
+    "new_metadata_passing_test_credit": 3,
+    "new_requirement_records_publicly_adopted": 1,
+    "current_named_requirement_inventory_after_adoption": 460,
+    "final_python_passed": null,
+    "final_python_exit": null,
+    "final_contract_checker_exit": null,
+    "metadata_is_not_runtime_evidence": true,
+    "predicted_suite_counts_credited": false,
+    "prior_groups_records_and_statuses_preserved": true,
+    "pre_metadata_full_python_passed": 111,
+    "pre_metadata_contract_exit": 0,
+    "prior_named_requirement_records": 459,
+    "initial_red_later_acceptance_duplicate_and_output_branches": "Initially unreached; current GREEN executes these branches without retrospective RED credit.",
+    "subsequent_full_python_and_checker": "Recorded separately in external acceptance; final_python_* and final_contract_checker_exit are null because this scoped receipt does not report those whole-suite outcomes."
+  },
+  "receipt_scope": {
+    "current_increment": "explicit_bounded_opt_in_native_startup_confinement_only",
+    "accepted_once_and_two_lane_receipts_retain_historical_scope": true,
+    "final_broad_metadata_and_support_gate": "Runtime platforms and focused metadata are qualified and scoped public source hashes are bound. Post-support whole Python/contracts are recorded separately in external acceptance.",
+    "post_documentation_and_final_external_freeze": "Recorded separately in immutable external acceptance, without a cyclic public receipt hash."
+  },
+  "privacy": {
+    "private_paths_identifiers_fixture_identities_authority_material_addresses_raw_storage_logs_and_evidence_hashes_excluded": true,
+    "sensitive_evidence_remains_private": true,
+    "no_self_referential_document_or_final_freeze_hash": true,
+    "reviewed_public_rust_checker_metadata_source_hashes_only_after_final_binding": true,
+    "public_hash_bindings_exclude_runbook_safe_receipt_design_plan_and_external_freeze": true
+  },
+  "excluded_scope": [
+    "Automatic default or production CLI startup exposure",
+    "Unresolved actor or secret reconstruction",
+    "Anonymous policy fallback or legacy authority inference",
+    "Persistent Always",
+    "Actual confinement deletion/reincarnation race",
+    "Unblock or permanent revocation",
+    "Provider or external-effect reconciliation",
+    "Native chunks or AP parity",
+    "Recovered stream-history signaling",
+    "Full RFC11.4",
+    "All 56 broad release scenarios",
+    "M0 and CP010 closure",
+    "Fresh original TypeScript/client or Node unit-suite execution",
+    "Arbitrary exactly-once external-effect guarantees",
+    "Whole startup heap/CPU/I/O/storage/RSS or hard deadline bounds"
+  ]
+}

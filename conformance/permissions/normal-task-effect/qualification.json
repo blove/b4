@@ -1,0 +1,148 @@
+{
+  "record_version": 1,
+  "profile": "normal_task_effect_ids_embedded_permission_use",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "native_source_descriptor_sha256": "53da83dc6507a72fdf6ce88f8a58a003093c497ec1afd016c6c4dd046ad833bd",
+  "code_source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "bytes": 448955,
+      "sha256": "a7a53ae5afa9310de93b7abe38fc726ebc1736baf1e87d7667c5654970108552"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 751297,
+      "sha256": "94cdbb72b2489a2fa6ddb6af42e6b82bbf678900afb899c934ce0fb0d73efd1f"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/normal_task_effect_ids.rs",
+      "bytes": 18390,
+      "sha256": "c5d7d54328493a4a932ee76735d2489a07971bfe7f86e38e86d85a2b152ba7a6"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_always_ids.rs",
+      "bytes": 34831,
+      "sha256": "e95b589189eaa4e0c51cc632f4f5d9a4bb9137c2a51bac0598b1a078f27afc03"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_reuse_driver.rs",
+      "bytes": 42806,
+      "sha256": "9728b65c19fe1ea6670d52ba7b8f259079d689448a4defdbaa65bd3ae1d3ce6d"
+    }
+  ],
+  "checks": {
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.041,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "private_run": "format-check-1792531609680464000"
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 63.246,
+      "log_sha256": "063b7420a9d6c97fbe29516c6d3527ae7f63d5878035d32806540706947c41c2",
+      "source_unchanged": true,
+      "private_run": "compile-1792531611918340000"
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 19.137,
+      "log_sha256": "1db8f52f7bf2f6bacb4e2841f0f05fe21dba71d3d5f26525bee8296704846495",
+      "source_unchanged": true,
+      "private_run": "lint-1792531675289648000"
+    },
+    "task-effect-cases": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--locked",
+        "--offline",
+        "normal_task_effect_ids::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.492,
+      "log_sha256": "0570dce5131dffa29cd8d8fbf2f796dc7db20a4b3a5c8ea07af90296657f088c",
+      "source_unchanged": true,
+      "private_run": "task-effect-cases-1792531694541556000"
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 161.164,
+      "log_sha256": "8b01905e43d6f66b272e570fd81d8c2f7ffa263d3211888fb490526bd0e084b6",
+      "source_unchanged": true,
+      "private_run": "workspace-tests-1792531697147978000"
+    }
+  },
+  "focused_cases": {
+    "positive": "permission_normal_task_effect_ids_reuse_persists_success",
+    "negative": "permission_normal_task_effect_ids_current_effect_mismatch_blocks_callback",
+    "passed": 2
+  },
+  "scope": {
+    "application_id": "07d7d468-c4f9-47e1-b421-ff889251df80",
+    "task_id": "publish-monthly-report",
+    "effect_id": "reports.publish-monthly",
+    "tasks": 1,
+    "input": "modest nested JSON",
+    "metadata": "empty",
+    "strict_defaults": "unchanged",
+    "cumulative_accounts": "unchanged",
+    "http_integration": "pending",
+    "maximum_size_qualification": "pending",
+    "full_core_release": "pending"
+  }
+}

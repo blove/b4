@@ -1,0 +1,17 @@
+# Cancel a Ready permission run over HTTP
+
+Construct the host with `HttpHost::new_with_permission_ready_cancellation(store, auth, policy, PermissionHostConfig)`. This explicit V6 profile extends the entered permission cancellation host with genuinely registered original Always and saved-permission runs that remain Ready. It requires the existing entered profile's durable Store declarations plus both Ready writer declarations. Older constructors retain their capability versions and behavior.
+
+Use the existing one-route, one-batch, required-approval Pure task configuration with one active run/task. Send the authenticated `POST /threads/{thread_id}/cancel` request. Current CancelRun policy, origin, recorded route, captured claim/run identity, full catalog/source records and fences must authorize the operation. A revoked effect constraint does not veto an authorized stop.
+
+A confirmed original Ready cancellation advances revision 3 to Cancelled4; a saved NewUse advances revision 2 to Cancelled3. HTTP 200 returns `{"status":"interrupted","thread_id":"..."}` after the typed atomic writer confirms its result. An attached stream receives one cancelled Done. This Ready path invokes no callback, creates no callback receipt, sends no native cancellation signal and fabricates no acknowledgement.
+
+The interrupted response does not release the worker. Claim, capacity, callback assembly and Store remain owned until the actual Driver drains, including when the client abandons the cancellation request. The runtime reconciles only a real typed-writer confirmation with that worker's own Store, exact initial/current resource and owner epoch, no Work or invocation, and a narrowly identified stale-initial or preparation-fence failure. Unrelated actor, catalog, source, limit or storage errors remain failures. A terminal snapshot by itself is insufficient.
+
+If Dispatch wins while the Ready request is pending, the request releases its gate and returns HTTP 409 `run_not_cancellable` when actual callback entry has not occurred. The callback can then proceed; once it actually enters, the existing entered cancellation path is available. It commits CancelRequested before signalling native code and retains actual callback outcomes through quiescence. See the [entered profile](http-permission-entered-cancellation.md).
+
+Earlier unregistered/preparing states and dispatched-but-unentered withdrawal remain outside this profile. The V5 entered constructor continues refusing Ready cancellation; older permission constructors retain their unsupported cancellation response. Unknown Store outcomes fault the owned host/control. There is no automatic callback replay, settlement retry, recovery or deletion. Retain ownership through normal shutdown/drain.
+
+V6 advertises `durable_permission_ready_cancellation=true` and the entered flag. Generic fenced cancellation and broad permission, recovery and deletion promises remain false. Each typed Ready-management attempt has a fresh cumulative 24 MiB evidence allowance and the existing 65,536-node ceiling; the captured-identity conflict loop is capped at eight attempts. Old account defaults and input, record, history and source limits remain unchanged. Individual maxima do not guarantee that every combined input fits an evidence allowance.
+
+The [local qualification](../../conformance/permissions/http-ready-cancellation/README.md) records frozen-source execution evidence and its limits. Metadata validation is recorded separately.

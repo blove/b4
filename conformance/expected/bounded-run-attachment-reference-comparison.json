@@ -1,0 +1,60 @@
+{
+  "profile": "bounded_run_attachment_selected_lifecycle_comparison",
+  "passed": true,
+  "reference": "conformance/reference/recordings/2026-10-01-lifecycle/lifecycle-observations.json",
+  "reference_sha256": "e1c45cc4f935c29875e82494870189de4ec8e69dd21b0e7b5fe11660bdc03818",
+  "reference_transport": "actual_in_process_fetch",
+  "native_transport": "actual_loopback_tcp",
+  "source_pin": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "status_cases": [
+    "missing.attach",
+    "idle.attach",
+    "completed.attach",
+    "live.attach",
+    "stream-cancel.attach",
+    "parked.attach",
+    "parked.foreign-attach",
+    "parked.attach-after-reopen",
+    "completed.attach-after-reopen"
+  ],
+  "inactive_state_cases": [
+    "completed.attach",
+    "completed.attach-after-reopen",
+    "parked.attach",
+    "parked.attach-after-reopen"
+  ],
+  "inactive_state_fields": [
+    "anchor",
+    "input",
+    "live",
+    "resume",
+    "run_started_at",
+    "status",
+    "turn"
+  ],
+  "done_cases": [
+    "completed.attach",
+    "completed.attach-after-reopen",
+    "parked.attach",
+    "parked.attach-after-reopen",
+    "stream-cancel.attach"
+  ],
+  "done_comparison": "Exact JSON payload equality; four inactive null outputs and one live cancelled output. No event sorting.",
+  "acceptance_test": "crates/b4-http/tests/attachment_tcp.rs",
+  "native_retry_check": "Exactly state, standalone retry2000, Done in order after ignoring quiet comment-only frames; source retry jitter remains explicitly distinct.",
+  "prior_cancellation_comparison": "conformance/expected/owned-run-cancellation-reference-comparison.json",
+  "workflow_body_event_comparisons_retained": 24,
+  "grant_status_comparisons_retained": 14,
+  "deletion_status_comparisons_retained": 7,
+  "cancellation_status_comparisons_retained": 9,
+  "cancel_receipt_comparisons_retained": 2,
+  "cancelled_producer_done_comparisons_retained": 1,
+  "total_selected_lifecycle_status_comparisons": 25,
+  "limitations": [
+    "Selected executed native fields/statuses/Done only; no full state/error/header/wire/client parity claim.",
+    "Native values, live anchor identifiers, raw event digest, approval envelopes/tokens and timestamps are excluded from full shape comparison.",
+    "Finite native Pure scripts; no arbitrary provider frames or LangGraph message merging.",
+    "Frozen source recordings/build inventories are reused unchanged, not a new reference runtime capture.",
+    "All broad release scenarios remain pending; CP-007 remains partial."
+  ]
+}

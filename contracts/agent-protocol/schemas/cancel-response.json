@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Native owned-run cancellation receipt; selected lifecycle status/body comparisons only, not full protocol qualification.",
+  "x-compatibility-status": "selected-lifecycle-comparison",
+  "$id": "cancel-response.json",
+  "title": "Owned run cancellation receipt",
+  "x-implementation-status": "scripted-subset",
+  "type": "object",
+  "properties": {
+    "thread_id": {
+      "$ref": "opaque-id.json"
+    },
+    "status": {
+      "const": "interrupted"
+    }
+  },
+  "required": [
+    "thread_id",
+    "status"
+  ],
+  "additionalProperties": false,
+  "x-schema-id": "urn:b4:agent-protocol:draft:cancel-response"
+}

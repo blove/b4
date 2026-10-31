@@ -1,0 +1,11 @@
+# HTTP original Always creation and reuse
+
+`HttpHost::new_with_permissions` and `PermissionHostConfig` opt into the bounded native permission profile. A genuine authenticated HTTP run parks, exposes its real pending token, accepts Always atomically and executes the original callback once through Ready3, Dispatch4 and Complete5. That original execution has no synthetic PermissionUse. After normal server/store retirement and owner reopening, a matching fresh run creates a real linked Use and completes at revision4 without another approval.
+
+Five actual TCP cases cover this flow, complete nine-table kernel-derived state, invalid authentication/current policy/token with unchanged storage, the old builder still refusing Always, a late acceptance-journal rollback that preserves the actual token, and an actual callback-installed terminal-journal fault. The terminal fault retains Dispatch4, faults the host and rejects replay. Tests retain the actual listener/worker/store owners through normal drain and reopening.
+
+Discovery is version4 with narrow `durable_permission_creation` and `durable_permission_reuse` true. The constructor additionally requires the explicit default-false `PermissionStore::original_always_atomic_durable` opt-in; SQLite declares it. Broad `durable_permissions` and `always_permissions` remain false. Existing builders, descriptor versions and the seed/serve example retain their behavior. Permission-aware recovery, cancellation, deletion, startup reconstruction and client version4 compatibility are separate work.
+
+On macOS arm64 with Rust1.93.1, the same final source passed formatting, strict all-target lint, workspace compilation, five focused HTTP cases and a fresh full workspace regression: **1,567 passed, zero failed, 11 ignored**. Schema/reference checks passed separately and establish metadata evidence only. Earlier missing-API and test-encoding diagnostics are not passing evidence.
+
+The [qualification record](qualification.json) binds the exact code changes, commands and log hashes. See [usage notes](../../../docs/runbooks/http-always-approvals.md) and the [scoped specification amendment](../../../spec/runtime/http-original-always-amendment.md).

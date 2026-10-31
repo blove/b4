@@ -1,0 +1,38 @@
+name: Rust runtime
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  foundation:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Install pinned Rust toolchain
+        run: rustup toolchain install 1.93.1 --profile minimal --component rustfmt --component clippy
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+      - name: Lint
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - name: Test
+        run: cargo test --workspace --locked
+      - name: Run native foundation scenarios
+        run: cargo run --locked -p b4-testkit --bin b4-conformance -- --profile foundation
+      - name: Check approval example disclosure
+        run: python3 -B -m unittest discover -s scripts -p 'test_check_approval_example.py'
+      - name: Check reference fixtures and grant evidence integrity
+        run: node --test conformance/reference/fixture/*.test.mjs conformance/reference/grant-fixture/*.test.mjs scripts/check_grant_recordings.test.mjs
+      - name: Check draft contract artifacts
+        run: |
+          python3 -m venv .contract-tools
+          .contract-tools/bin/python -m pip install -r requirements-dev.txt
+          .contract-tools/bin/python scripts/check_contracts.py

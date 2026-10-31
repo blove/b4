@@ -1,0 +1,103 @@
+{
+  "name": "@b4run/cli",
+  "version": "0.13.0",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "description": "Command-line development, testing, build, and runtime tools for B4.run applications.",
+  "keywords": [
+    "b4",
+    "typescript",
+    "langgraph",
+    "cli",
+    "ai-agents",
+    "developer-tools"
+  ],
+  "homepage": "https://github.com/cacheplane/b4run/tree/main/packages/cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cacheplane/b4run.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/cacheplane/b4run/issues"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "docs",
+    "SKILL.md"
+  ],
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "b4": "./bin/b4.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./fetch": {
+      "types": "./dist/fetch-exports.d.ts",
+      "default": "./dist/fetch-exports.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime-exports.d.ts",
+      "default": "./dist/runtime-exports.js"
+    },
+    "./testing": {
+      "types": "./dist/testing/index.d.ts",
+      "default": "./dist/testing/index.js"
+    },
+    "./workspace": {
+      "types": "./dist/workspace-exports.d.ts",
+      "default": "./dist/workspace-exports.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json && node scripts/generate-docs.mjs",
+    "lint": "biome check --config-path ../config-biome/biome.json package.json bin src test scripts tsconfig.json tsconfig.build.json vitest.config.ts",
+    "test": "vitest --run --config vitest.config.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@ag-ui/core": "0.0.59",
+    "@b4run/ag-ui": "workspace:*",
+    "@b4run/core": "workspace:*",
+    "@b4run/langchain": "workspace:*",
+    "@b4run/langgraph": "workspace:*",
+    "@b4run/memory": "workspace:*",
+    "@b4run/permissions": "workspace:*",
+    "@b4run/sdk": "workspace:*",
+    "@b4run/sqlite-storage": "workspace:*",
+    "@b4run/workspace": "workspace:*",
+    "commander": "15.0.0",
+    "esbuild": "^0.28.1",
+    "tsx": "^4.23.5"
+  },
+  "devDependencies": {
+    "@b4run/config-typescript": "workspace:*",
+    "@b4run/sandbox": "workspace:*",
+    "@hono/node-server": "^2.1.0",
+    "@langchain/core": "1.2.12",
+    "@langchain/langgraph": "1.4.17",
+    "@langchain/langgraph-checkpoint": "^1.1.5",
+    "@neondatabase/serverless": "^1.1.0",
+    "@testcontainers/postgresql": "^12.0.4",
+    "@types/node": "26.1.2",
+    "@types/pg": "^8.20.4",
+    "hono": "^4.13.5",
+    "langchain": "1.5.12",
+    "pg": "^8.22.0",
+    "testcontainers": "^12.0.4",
+    "vercel": "58.9.0",
+    "wrangler": "4.120.0",
+    "zod": "4.4.3"
+  }
+}

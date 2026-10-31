@@ -1,0 +1,292 @@
+{
+  "record_version": 1,
+  "profile": "original_always_driver",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "native_source_descriptor_sha256": "8017ec3a22e5609200aca7d7fc4f91b907b7ef3f0f48119668555a30a1020538",
+  "source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/catalog.rs",
+      "bytes": 21289,
+      "sha256": "b0ad27abbde128aaa404d8a6e570e2a2c42141f983ec88015556173ec9005073"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter.rs",
+      "bytes": 36499,
+      "sha256": "bf0d7df6f98e07af5f2c18ce3e885c55daee5dee3446f87e64b8c253b947d9d8"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter_account.rs",
+      "bytes": 18058,
+      "sha256": "51bd19b9c116e05fc5f3a33c21592ac7db87d79298c936bf66fef2707dcf915c"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 8132,
+      "sha256": "e3e6b6c96055a393bd4baaff419e763af50a8503738867ade06471aca6f1ae88"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/model.rs",
+      "bytes": 23342,
+      "sha256": "ef279150023a1d85e1747e11cda1e9269d5d4113611a712559e1d931b0bb399e"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/original_always.rs",
+      "bytes": 15409,
+      "sha256": "5414223296796ebeb1d782fd3e3c62be242478fb9d687f64af63b45eced443bf"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/ready_authorization.rs",
+      "bytes": 58617,
+      "sha256": "df014ca5d0d335d372b23022b43d82cd8c74a734dc444708c11e1ca23d4e29f7"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "bytes": 451836,
+      "sha256": "4984c987fca1105e30622ce715c958b0def7d1348fa0f3701863801ea66b4071"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use.rs",
+      "bytes": 57348,
+      "sha256": "d827d4ee75e5a63bcee039cb10584c8510aa5386fcda8b1846039ebf10858279"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome_source.rs",
+      "bytes": 52288,
+      "sha256": "eeb049043f926d94a60d1a3abe777ef714e45466d6fb45deb936eaba4aff3833"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome_writer.rs",
+      "bytes": 76652,
+      "sha256": "2982bc06bae7f76bfd0f35e158376baf9d95d9a3dd1c536e4116a8fb06c4cbd5"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_renewal.rs",
+      "bytes": 69099,
+      "sha256": "63fca4a9078f892caf902ff521dd29f45c95ae6d9d5ad20986e14831a5fa0c50"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 756166,
+      "sha256": "0196c1d75a7bec2097a62d702b4601a90b956ef5a47e0eea37ce1eccef532af5"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/mod.rs",
+      "bytes": 89023,
+      "sha256": "0c5e789e9a4bb6dde5753f7db90bcdc9714c300b4f70b5d8b070e56131ceae87"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/original_always.rs",
+      "bytes": 9446,
+      "sha256": "f07b5e521e6972ae5ea44277053c3496bb9c8d824d32b8e7507d66e21677715d"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/ready_authorization.rs",
+      "bytes": 27286,
+      "sha256": "891f0199025c30eb8c91886a09217e51b29f194565399e0f148b26e338c758f9"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_dispatch.rs",
+      "bytes": 18742,
+      "sha256": "42ef4a6bd77a989072fcd142ad43cca040ba0456997369d72aed4fa661f5ba94"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_outcome.rs",
+      "bytes": 24872,
+      "sha256": "da3c86f20549f0a2dadf96be599ae10e381efe0ad6ca324a487feb3c01023295"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_outcome_immediate.rs",
+      "bytes": 21399,
+      "sha256": "de7902e65e2fc77e98b4041b6e44bc1cc57ad3e23be8ccf50bedffb8cdd2de61"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_renewal.rs",
+      "bytes": 26430,
+      "sha256": "a8eeac160de82ae0b7a1ea1c0cd148155bb505a7797f77092bab83760940401f"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_always_boundaries.rs",
+      "bytes": 9885,
+      "sha256": "6d8d6187e7ff7f2fc1a8a2721845b7c3ce039f58d40263ea42943ab7a4940573"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_always_driver.rs",
+      "bytes": 24752,
+      "sha256": "92c0c44290c43db773cb3324c6deec21de05c223198ea89dd032c1e4fbfd94af"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_reuse_driver.rs",
+      "bytes": 42952,
+      "sha256": "e9dd71f1d94ca0822d63d7a2341e792d1e1390498304edfe90356ffa61c57a56"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/use_driver.rs",
+      "bytes": 75388,
+      "sha256": "edc02bc8539b0501e24548cc4fa38ed15aee27de8f5c2af114cd66f06d830a33"
+    }
+  ],
+  "verification": [
+    {
+      "step": "outcome-range-control",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-runtime",
+        "--lib",
+        "--locked",
+        "--offline",
+        "permissions::runtime_use_outcome_source::source_controls::shortened_or_extra_ranges_never_close",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "source_files": 954,
+      "elapsed_seconds": 10.066,
+      "log_sha256": "a1b6a2075f7fffcf51ff17728ce9e174e63e4c49590e89066ff0d7d4e732c0a7",
+      "rust_test_results": {
+        "passed": 1,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "step": "original-always-tests",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--locked",
+        "--offline",
+        "original_always_driver",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "source_files": 954,
+      "elapsed_seconds": 6.834,
+      "log_sha256": "f5055b830573b7519016f0aa69d1f3c0718a9cafd5c62c9654746245a2a183ef",
+      "rust_test_results": {
+        "passed": 5,
+        "failed": 0,
+        "ignored": 0
+      }
+    },
+    {
+      "step": "format-check",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "source_files": 954,
+      "elapsed_seconds": 2.276,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rust_test_results": null
+    },
+    {
+      "step": "lint",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "source_files": 954,
+      "elapsed_seconds": 32.149,
+      "log_sha256": "7d1ff11cf06b07634891ee9b8a343696ac3c74c0be3b6da06bed484923ade5a2",
+      "rust_test_results": null
+    },
+    {
+      "step": "compile",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "source_files": 954,
+      "elapsed_seconds": 55.428,
+      "log_sha256": "46ed10230de631faccf807fee9fcedd646e368c0cf44e31f7525b17f99521513",
+      "rust_test_results": null
+    },
+    {
+      "step": "workspace-tests",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "source_files": 954,
+      "elapsed_seconds": 225.548,
+      "log_sha256": "812d69c20744f72ff7560a59a42d8ddf0f7c2afa6a9a4afd05663bd46a99a443",
+      "rust_test_results": {
+        "passed": 1550,
+        "failed": 0,
+        "ignored": 11
+      }
+    }
+  ],
+  "focused_cases": 5,
+  "behavior": [
+    "Genuine original normal-ID human Always Ready3 -> Dispatch4 -> Complete5, callback once, no original PermissionUse",
+    "Real close/reopen and new-run permission reuse to Complete4 from completed creator history",
+    "Renewed local callback-entry refusal and current authority refusal preserve Dispatch4 without callback",
+    "Actual bounded native failure persists kernel FailAttempt5",
+    "Exact installed terminal journal guard, full nine-table rollback, retained result and same-Work storage-only retry; repeat retry refuses"
+  ],
+  "limits": [
+    "Single-task Pure/required profile qualified with UUID application/resource IDs, descriptive task/effect IDs and modest structured JSON",
+    "Existing bounded record/input/context ceilings apply; individual maxima do not imply every maximum-sized combination fits",
+    "Standalone range defaults remain five rows; production history is selected exactly from sealed five/six-row creator evidence"
+  ],
+  "scope_exclusions": [
+    "HTTP Always acceptance",
+    "Permission-aware recovery, cancellation and deletion",
+    "Broad durable-permission capability",
+    "Other platforms and broad release qualification"
+  ],
+  "public_contract_checker_scope": "Metadata/schema/reference/named-test presence only; does not execute runtime behavior",
+  "git_writes": false
+}

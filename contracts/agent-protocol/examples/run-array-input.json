@@ -1,0 +1,7 @@
+{
+  "route": "/echo#workflow",
+  "input": [
+    "one",
+    2
+  ]
+}

@@ -1,0 +1,2974 @@
+{
+  "format_version": 1,
+  "evidence_classification": "runtime_observation",
+  "transport": "in_process_fetch",
+  "protocol_surface": "Agent Protocol HTTP endpoints; no AG-UI",
+  "reference": {
+    "commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+    "lockfile_sha256": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0"
+  },
+  "runtime_entry": {
+    "path": "packages/cli/dist/lib/dev/runtime-fetch-handler.js",
+    "sha256": "daafaf39e5a137e6c332a195bc6e00125f71621d1fa9831d7c4194d400785721"
+  },
+  "execution": {
+    "node_version": "v24.20.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "external_fetch_attempts": 0
+  },
+  "effective_dependency_versions": {
+    "@b4run/cli": "0.13.0",
+    "@b4run/sdk": "0.13.0",
+    "@b4run/core": "0.13.0",
+    "@b4run/langchain": "0.13.0",
+    "@b4run/sqlite-storage": "0.13.0",
+    "@langchain/core": "1.2.12",
+    "@langchain/langgraph": "1.4.17",
+    "langchain": "1.5.12",
+    "typescript": "7.0.2",
+    "vitest": "4.1.11"
+  },
+  "fixture_application": {
+    "revision": "3a4552e3226691137ef2306d07d9081d35ecb4254351795f43dc7f6d3cb21d8d",
+    "files": [
+      {
+        "path": "b4.config.ts",
+        "sha256": "fc00d19bc94e10c24f07bd9be1c2bb24d4978856963c5a68745338ecbf131dfc",
+        "bytes": 18
+      },
+      {
+        "path": "package.json",
+        "sha256": "7ed855976dff6a243c843b768d8c71bfaf066408c96a00876796e8c3d3476111",
+        "bytes": 88
+      },
+      {
+        "path": "src/app/empty/index.ts",
+        "sha256": "20f2432d8aadc21ec0937fa460bb522192454c8acc72dff373a94661c20520d5",
+        "bytes": 39
+      },
+      {
+        "path": "src/app/fail/index.ts",
+        "sha256": "67fe6e578e55b71e8e4344beaf38009b742851d7bc492a9262395538e7a98864",
+        "bytes": 87
+      },
+      {
+        "path": "src/app/false/index.ts",
+        "sha256": "7d731a9ab61746736ddd4e2a6f9ad133d1928bd0b98990257ccebf980cb3ba53",
+        "bytes": 42
+      },
+      {
+        "path": "src/app/probe/index.ts",
+        "sha256": "2b06650062c288eb1aa12ece586e85ef31e28104ccd2aca474e0a4699a880627",
+        "bytes": 146
+      },
+      {
+        "path": "src/app/validate/index.ts",
+        "sha256": "54d5cfc9105db1e14b0cb6bbcc36ae4924aa7db3900d836186030cffcfa80669",
+        "bytes": 219
+      },
+      {
+        "path": "src/app/void/index.ts",
+        "sha256": "f01d30338cf59b878cc8ec98b493f10695b6be1add6f280088c547ce6eaa6b2d",
+        "bytes": 46
+      },
+      {
+        "path": "src/app/zero/index.ts",
+        "sha256": "5400a414258596585c755e024f8517e3db8f2b2cabb4d03201858eaf1fac9131",
+        "bytes": 38
+      }
+    ],
+    "cases_sha256": "48224462e5f0f1400ef126e17c276f1092f56b80ce055613f136e2f2fbf40d0a",
+    "configuration": {},
+    "routes": [
+      "/probe#workflow",
+      "/void#workflow",
+      "/zero#workflow",
+      "/false#workflow",
+      "/empty#workflow",
+      "/fail#workflow",
+      "/validate#workflow"
+    ]
+  },
+  "normalization": {
+    "thread": "Only top-level thread_id, created_at and updated_at are replaced; raw bytes are also retained",
+    "none": "No normalization"
+  },
+  "characterization_scope": "Selected CP-001–004 parser/input/workflow terminals. Permission park, cancellation, and TCP transport remain unqualified; CP-001–010 and M0 remain open.",
+  "observations": [
+    {
+      "id": "create-empty",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [],
+        "body_utf8": "",
+        "body_base64": "",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LWJkZjU1ODNlIiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDEzWiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQxM1oiLCJtZXRhZGF0YSI6e30sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"t-bdf5583e\",\"created_at\":\"2026-10-01T04:47:42.413Z\",\"updated_at\":\"2026-10-01T04:47:42.413Z\",\"metadata\":{},\"status\":\"idle\"}",
+        "body_sha256": "309cbaabd00afc0145a19954b12448e53db77c928828e30398adec66a61f8d74",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "create-whitespace",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [],
+        "body_utf8": " \n\t",
+        "body_base64": "IAoJ",
+        "body_sha256": "9b8318187072010f3081af0de6d1c356f4695d1b5a5e1778629153663acad751"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LTUxMWJhYjI2IiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDE2WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQxNloiLCJtZXRhZGF0YSI6e30sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"t-511bab26\",\"created_at\":\"2026-10-01T04:47:42.416Z\",\"updated_at\":\"2026-10-01T04:47:42.416Z\",\"metadata\":{},\"status\":\"idle\"}",
+        "body_sha256": "bcef7cff6a99d05bd41bac443531bbbd6505c062e4f9ae857b1d12718c1b0c7c",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "create-object",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{}",
+        "body_base64": "e30=",
+        "body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LWJkZDRmNjIyIiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDE3WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQxN1oiLCJtZXRhZGF0YSI6e30sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"t-bdd4f622\",\"created_at\":\"2026-10-01T04:47:42.417Z\",\"updated_at\":\"2026-10-01T04:47:42.417Z\",\"metadata\":{},\"status\":\"idle\"}",
+        "body_sha256": "7e6645bb9e950a9c58580d6bc4f9af3387877baaa861b6441a8e52d21f77cc4e",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "create-wrong-content-type",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "text/plain"
+          ]
+        ],
+        "body_utf8": "{\"metadata\":{\"contentType\":\"text\"}}",
+        "body_base64": "eyJtZXRhZGF0YSI6eyJjb250ZW50VHlwZSI6InRleHQifX0=",
+        "body_sha256": "19c818d9a8e031d037eae93b19ba8cb60a98b54cc9599316a77e0769c09b45b8"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LWJlMGEwMWM2IiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDE3WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQxN1oiLCJtZXRhZGF0YSI6eyJjb250ZW50VHlwZSI6InRleHQifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"t-be0a01c6\",\"created_at\":\"2026-10-01T04:47:42.417Z\",\"updated_at\":\"2026-10-01T04:47:42.417Z\",\"metadata\":{\"contentType\":\"text\"},\"status\":\"idle\"}",
+        "body_sha256": "89f4d0f3a3ea8536172c79837a49658927b460eeeaa9511003c3b470d89d6def",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"contentType\":\"text\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "create-no-content-type",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [],
+        "body_utf8": "{\"metadata\":{\"contentType\":\"absent\"}}",
+        "body_base64": "eyJtZXRhZGF0YSI6eyJjb250ZW50VHlwZSI6ImFic2VudCJ9fQ==",
+        "body_sha256": "250a8827074cca2be67c5e82f8d91fa907143dfd0b581289ea031632b6a5c9b8"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LWM3YmMzNjI3IiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDE4WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQxOFoiLCJtZXRhZGF0YSI6eyJjb250ZW50VHlwZSI6ImFic2VudCJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"t-c7bc3627\",\"created_at\":\"2026-10-01T04:47:42.418Z\",\"updated_at\":\"2026-10-01T04:47:42.418Z\",\"metadata\":{\"contentType\":\"absent\"},\"status\":\"idle\"}",
+        "body_sha256": "e45758ed87cda4a1f98149e4a17645fd8d92b920c6d1c60956b05638c0c18d42",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"contentType\":\"absent\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "create-malformed",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{",
+        "body_base64": "ew==",
+        "body_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJNYWxmb3JtZWQgcmVxdWVzdCBib2R5In19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}",
+        "body_sha256": "7a80eea665d6b4f58313b0ec692bcc491dc58de698de69de52def0d134b9414f",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}"
+      }
+    },
+    {
+      "id": "create-null",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "null",
+        "body_base64": "bnVsbA==",
+        "body_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJNYWxmb3JtZWQgcmVxdWVzdCBib2R5In19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}",
+        "body_sha256": "7a80eea665d6b4f58313b0ec692bcc491dc58de698de69de52def0d134b9414f",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}"
+      }
+    },
+    {
+      "id": "create-string",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "\"body\"",
+        "body_base64": "ImJvZHki",
+        "body_sha256": "bfd4d039e9f8aca33b52a877ded02f73846f28f9095c2bba178316be62ef7c1f"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJNYWxmb3JtZWQgcmVxdWVzdCBib2R5In19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}",
+        "body_sha256": "7a80eea665d6b4f58313b0ec692bcc491dc58de698de69de52def0d134b9414f",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}"
+      }
+    },
+    {
+      "id": "create-number",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "12",
+        "body_base64": "MTI=",
+        "body_sha256": "6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJNYWxmb3JtZWQgcmVxdWVzdCBib2R5In19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}",
+        "body_sha256": "7a80eea665d6b4f58313b0ec692bcc491dc58de698de69de52def0d134b9414f",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}"
+      }
+    },
+    {
+      "id": "create-boolean",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "false",
+        "body_base64": "ZmFsc2U=",
+        "body_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJNYWxmb3JtZWQgcmVxdWVzdCBib2R5In19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}",
+        "body_sha256": "7a80eea665d6b4f58313b0ec692bcc491dc58de698de69de52def0d134b9414f",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}"
+      }
+    },
+    {
+      "id": "create-array",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "[]",
+        "body_base64": "W10=",
+        "body_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LWFlZDNlMjA2IiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDE5WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQxOVoiLCJtZXRhZGF0YSI6e30sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"t-aed3e206\",\"created_at\":\"2026-10-01T04:47:42.419Z\",\"updated_at\":\"2026-10-01T04:47:42.419Z\",\"metadata\":{},\"status\":\"idle\"}",
+        "body_sha256": "ada6e4d6d828a53e70fe92123f7f9515db57e8c32dbe68b89851e7467d7d2f02",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "create-metadata-array",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"metadata\":[1,2]}",
+        "body_base64": "eyJtZXRhZGF0YSI6WzEsMl19",
+        "body_sha256": "6c50a43e64b3d5c2923d831e2c4224eafc4a483374ca2e015d33db53246569b4"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LTM2NDNmNzZlIiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDE5WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQxOVoiLCJtZXRhZGF0YSI6WzEsMl0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"t-3643f76e\",\"created_at\":\"2026-10-01T04:47:42.419Z\",\"updated_at\":\"2026-10-01T04:47:42.419Z\",\"metadata\":[1,2],\"status\":\"idle\"}",
+        "body_sha256": "cee923aae7a9f60e46f28837d9a2d9b0a841f30eb1a0f213a6ec21b755a7ccb7",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":[1,2],\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "create-metadata-null",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"metadata\":null}",
+        "body_base64": "eyJtZXRhZGF0YSI6bnVsbH0=",
+        "body_sha256": "0bb1d2b5d57e7cdffd736112413205177756f88307ea9925aeebd4643009ef7b"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJtZXRhZGF0YSBtdXN0IGJlIGFuIG9iamVjdCJ9fQ==",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"metadata must be an object\"}}",
+        "body_sha256": "9184dbea7679d9e49a01cde3d8b20cd3effbdc47695e8bf06cc6e36bdff5ed2b",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"metadata must be an object\"}}"
+      }
+    },
+    {
+      "id": "create-unknown-root-field",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"unknown\":\"ignored\",\"metadata\":{\"x\":1}}",
+        "body_base64": "eyJ1bmtub3duIjoiaWdub3JlZCIsIm1ldGFkYXRhIjp7IngiOjF9fQ==",
+        "body_sha256": "88cc90206e7244bc71366fd070d35b3112bed139f2f6add4db47f8d3fc7f0bb5"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LTA2YjE5MzQyIiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDIwWiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQyMFoiLCJtZXRhZGF0YSI6eyJ4IjoxfSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"t-06b19342\",\"created_at\":\"2026-10-01T04:47:42.420Z\",\"updated_at\":\"2026-10-01T04:47:42.420Z\",\"metadata\":{\"x\":1},\"status\":\"idle\"}",
+        "body_sha256": "264e8e712fa0ccbb1b3cefb3ff5c79e58ad69b7cbe3e46c1a94d5a4fc1612293",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"x\":1},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "create-duplicate-metadata",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"metadata\":{\"winner\":\"first\"},\"metadata\":{\"winner\":\"last\"}}",
+        "body_base64": "eyJtZXRhZGF0YSI6eyJ3aW5uZXIiOiJmaXJzdCJ9LCJtZXRhZGF0YSI6eyJ3aW5uZXIiOiJsYXN0In19",
+        "body_sha256": "b708d04c01acb2b11584afd7b90919874798416a01022f470de2313ddcd64fc1"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LWUwZGM4NmQ2IiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDIwWiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQyMFoiLCJtZXRhZGF0YSI6eyJ3aW5uZXIiOiJsYXN0In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"t-e0dc86d6\",\"created_at\":\"2026-10-01T04:47:42.420Z\",\"updated_at\":\"2026-10-01T04:47:42.420Z\",\"metadata\":{\"winner\":\"last\"},\"status\":\"idle\"}",
+        "body_sha256": "97dbea75137b195b9036c4c3d4d44bbc50b963589be65f1e9f95d1939e2b8827",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"winner\":\"last\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "create-duplicate-metadata-invalid-last",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"metadata\":{},\"metadata\":null}",
+        "body_base64": "eyJtZXRhZGF0YSI6e30sIm1ldGFkYXRhIjpudWxsfQ==",
+        "body_sha256": "ed018df5ea95ad04671fa805d4d16b0246325b6547e96bec7d9d973a699896b9"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJtZXRhZGF0YSBtdXN0IGJlIGFuIG9iamVjdCJ9fQ==",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"metadata must be an object\"}}",
+        "body_sha256": "9184dbea7679d9e49a01cde3d8b20cd3effbdc47695e8bf06cc6e36bdff5ed2b",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"metadata must be an object\"}}"
+      }
+    },
+    {
+      "id": "create-duplicate-metadata-valid-last",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"metadata\":null,\"metadata\":{\"winner\":\"last\"}}",
+        "body_base64": "eyJtZXRhZGF0YSI6bnVsbCwibWV0YWRhdGEiOnsid2lubmVyIjoibGFzdCJ9fQ==",
+        "body_sha256": "d7f0108783aef12288515fa50dce536d314db69e939525ac4db99be1922ef3a0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0LTMzNDYwMjBmIiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDIwWiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQyMFoiLCJtZXRhZGF0YSI6eyJ3aW5uZXIiOiJsYXN0In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"t-3346020f\",\"created_at\":\"2026-10-01T04:47:42.420Z\",\"updated_at\":\"2026-10-01T04:47:42.420Z\",\"metadata\":{\"winner\":\"last\"},\"status\":\"idle\"}",
+        "body_sha256": "545816aa56cad7a313b167a35cbc3289b1f747ccd5575f3fca6338882c48354f",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"winner\":\"last\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-body-empty",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-body-empty/runs/wait",
+        "headers": [],
+        "body_utf8": "",
+        "body_base64": "",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJNYWxmb3JtZWQgcmVxdWVzdCBib2R5In19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}",
+        "body_sha256": "7a80eea665d6b4f58313b0ec692bcc491dc58de698de69de52def0d134b9414f",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-whitespace",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-whitespace/runs/wait",
+        "headers": [],
+        "body_utf8": " \n\t",
+        "body_base64": "IAoJ",
+        "body_sha256": "9b8318187072010f3081af0de6d1c356f4695d1b5a5e1778629153663acad751"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJNYWxmb3JtZWQgcmVxdWVzdCBib2R5In19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}",
+        "body_sha256": "7a80eea665d6b4f58313b0ec692bcc491dc58de698de69de52def0d134b9414f",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-malformed",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-malformed/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{",
+        "body_base64": "ew==",
+        "body_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJNYWxmb3JtZWQgcmVxdWVzdCBib2R5In19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}",
+        "body_sha256": "7a80eea665d6b4f58313b0ec692bcc491dc58de698de69de52def0d134b9414f",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-null",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-null/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "null",
+        "body_base64": "bnVsbA==",
+        "body_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJNYWxmb3JtZWQgcmVxdWVzdCBib2R5In19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}",
+        "body_sha256": "7a80eea665d6b4f58313b0ec692bcc491dc58de698de69de52def0d134b9414f",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Malformed request body\"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-array",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-array/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "[]",
+        "body_base64": "W10=",
+        "body_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJSZXF1ZXN0IGJvZHkgbXVzdCBpbmNsdWRlIHJvdXRlIGFzIGEgc3RyaW5nIChhc3Npc3RhbnRfaWQgb3Igcm91dGVfaWQpIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Request body must include route as a string (assistant_id or route_id)\"}}",
+        "body_sha256": "e8b028d54aa59495e8de1e59dbbdb9d7df9543401131cf022326e34c003f3684",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Request body must include route as a string (assistant_id or route_id)\"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-missing-route",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-missing-route/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{}",
+        "body_base64": "e30=",
+        "body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJSZXF1ZXN0IGJvZHkgbXVzdCBpbmNsdWRlIHJvdXRlIGFzIGEgc3RyaW5nIChhc3Npc3RhbnRfaWQgb3Igcm91dGVfaWQpIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Request body must include route as a string (assistant_id or route_id)\"}}",
+        "body_sha256": "e8b028d54aa59495e8de1e59dbbdb9d7df9543401131cf022326e34c003f3684",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Request body must include route as a string (assistant_id or route_id)\"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-route-null",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-route-null/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":null}",
+        "body_base64": "eyJyb3V0ZSI6bnVsbH0=",
+        "body_sha256": "c9d93524f17935c1becb14d44b2c40e9e62fbad29292b0b2e9db43d1c91d8db9"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJSZXF1ZXN0IGJvZHkgbXVzdCBpbmNsdWRlIHJvdXRlIGFzIGEgc3RyaW5nIChhc3Npc3RhbnRfaWQgb3Igcm91dGVfaWQpIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Request body must include route as a string (assistant_id or route_id)\"}}",
+        "body_sha256": "e8b028d54aa59495e8de1e59dbbdb9d7df9543401131cf022326e34c003f3684",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Request body must include route as a string (assistant_id or route_id)\"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-route-number",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-route-number/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":1}",
+        "body_base64": "eyJyb3V0ZSI6MX0=",
+        "body_sha256": "26b5fe4288b5b4de0832e487c1f09906a8eb9a57f4360d522153f2c537846757"
+      },
+      "response": {
+        "status": 400,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJSZXF1ZXN0IGJvZHkgbXVzdCBpbmNsdWRlIHJvdXRlIGFzIGEgc3RyaW5nIChhc3Npc3RhbnRfaWQgb3Igcm91dGVfaWQpIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Request body must include route as a string (assistant_id or route_id)\"}}",
+        "body_sha256": "e8b028d54aa59495e8de1e59dbbdb9d7df9543401131cf022326e34c003f3684",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Request body must include route as a string (assistant_id or route_id)\"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-route-empty",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-route-empty/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"\"}",
+        "body_base64": "eyJyb3V0ZSI6IiJ9",
+        "body_sha256": "ccfcf43fb56ec36acd578a377355d43897f8836ba175b6b1a682dd988485f17b"
+      },
+      "response": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJVbmtub3duIHJvdXRlOiAifX0=",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Unknown route: \"}}",
+        "body_sha256": "1789cf8171e5c55277af1b6363cf11d8f788068b0c7faf5fd04c066639403405",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Unknown route: \"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-unknown-route",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-unknown-route/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/missing#workflow\",\"input\":null}",
+        "body_base64": "eyJyb3V0ZSI6Ii9taXNzaW5nI3dvcmtmbG93IiwiaW5wdXQiOm51bGx9",
+        "body_sha256": "9cfa5c39ce2b696528bb2199d89b3840161ecf3272d0ae654bcf33023df7f394"
+      },
+      "response": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJVbmtub3duIHJvdXRlOiAvbWlzc2luZyN3b3JrZmxvdyJ9fQ==",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Unknown route: /missing#workflow\"}}",
+        "body_sha256": "d9f4875cfbd2f82b7d30d8c594de4af77605c4dc471f4d170283faababc9af57",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Unknown route: /missing#workflow\"}}"
+      },
+      "thread_after": {
+        "status": 404,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoicmVxdWVzdF9lcnJvciIsIm1lc3NhZ2UiOiJUaHJlYWQgbm90IGZvdW5kIn19",
+        "body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}",
+        "body_sha256": "15a9fe9fa7278a4eba04f93e2cc367aa403cd220c6e5add277628e3c1ad2478d",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"request_error\",\"message\":\"Thread not found\"}}"
+      }
+    },
+    {
+      "id": "wait-wrong-content-type",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-wrong-content-type/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "text/plain"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "04acc749c0bfabec386d83e22ca8961344d05ffc733013a2f31460626659eeb8"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6eyJ4IjoxfSwia2luZCI6Im9iamVjdCJ9",
+        "body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}",
+        "body_sha256": "7cb642ddc764261e05a068ed18e3fc2af472cdc28d7717a71d400afffbec8b25",
+        "normalized_body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LXdyb25nLWNvbnRlbnQtdHlwZSIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQyM1oiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40MzBaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-wrong-content-type\",\"created_at\":\"2026-10-01T04:47:42.423Z\",\"updated_at\":\"2026-10-01T04:47:42.430Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "cd016827dcaf5ae8b742e7988364051ec388e65e296496c64a9e23e50e45feff",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-no-content-type",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-no-content-type/runs/wait",
+        "headers": [],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "04acc749c0bfabec386d83e22ca8961344d05ffc733013a2f31460626659eeb8"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6eyJ4IjoxfSwia2luZCI6Im9iamVjdCJ9",
+        "body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}",
+        "body_sha256": "7cb642ddc764261e05a068ed18e3fc2af472cdc28d7717a71d400afffbec8b25",
+        "normalized_body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LW5vLWNvbnRlbnQtdHlwZSIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQzMVoiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40MzJaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-no-content-type\",\"created_at\":\"2026-10-01T04:47:42.431Z\",\"updated_at\":\"2026-10-01T04:47:42.432Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "211ca2e65e9926d41b79a92ec876acaf238d37ea68be967124c3900ffebf342d",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-unknown-root-field",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-unknown-root-field/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1},\"unknown\":\"ignored\"}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9LCJ1bmtub3duIjoiaWdub3JlZCJ9",
+        "body_sha256": "55b15d915fd9172b91cd4b3a1d65ef6b1f6dbf436e13caa816b275e7ec28b7ad"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6eyJ4IjoxfSwia2luZCI6Im9iamVjdCJ9",
+        "body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}",
+        "body_sha256": "7cb642ddc764261e05a068ed18e3fc2af472cdc28d7717a71d400afffbec8b25",
+        "normalized_body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LXVua25vd24tcm9vdC1maWVsZCIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQzM1oiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40MzNaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-unknown-root-field\",\"created_at\":\"2026-10-01T04:47:42.433Z\",\"updated_at\":\"2026-10-01T04:47:42.433Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "f96a2f1254a0227d25eb7737853daf5ae295451d10fb974e578d3c47958c35bf",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-duplicate-route",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-duplicate-route/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/missing#workflow\",\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9taXNzaW5nI3dvcmtmbG93Iiwicm91dGUiOiIvcHJvYmUjd29ya2Zsb3ciLCJpbnB1dCI6eyJ4IjoxfX0=",
+        "body_sha256": "08e42d31703b9a453ce12d65fdb707f43479c762c8bfc82f4ea31c2e892c5b98"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6eyJ4IjoxfSwia2luZCI6Im9iamVjdCJ9",
+        "body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}",
+        "body_sha256": "7cb642ddc764261e05a068ed18e3fc2af472cdc28d7717a71d400afffbec8b25",
+        "normalized_body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWR1cGxpY2F0ZS1yb3V0ZSIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQzNFoiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40MzVaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-duplicate-route\",\"created_at\":\"2026-10-01T04:47:42.434Z\",\"updated_at\":\"2026-10-01T04:47:42.435Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "592347a897905d8d053d0f76452f9da4f811880cd65b73552cc29959cd373049",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-duplicate-input",
+      "characterization": "CP-001",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-duplicate-input/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":\"first\",\"input\":\"last\"}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0IjoiZmlyc3QiLCJpbnB1dCI6Imxhc3QifQ==",
+        "body_sha256": "31bd2bfaf37e0bacb72fb3c2221b3e1634b28b8d0a8a62f84a644b207db71a75"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6Imxhc3QiLCJraW5kIjoic3RyaW5nIn0=",
+        "body_utf8": "{\"input\":\"last\",\"kind\":\"string\"}",
+        "body_sha256": "352a39452cfd7892e26fbd854a160a678b13b1a409f594bc62d32f417d189bc4",
+        "normalized_body_utf8": "{\"input\":\"last\",\"kind\":\"string\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWR1cGxpY2F0ZS1pbnB1dCIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQzNVoiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40MzVaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-duplicate-input\",\"created_at\":\"2026-10-01T04:47:42.435Z\",\"updated_at\":\"2026-10-01T04:47:42.435Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "a286d10a06ae026d923a278eccf47793104709dccd03e94c02f29a3bdf654592",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-input-omitted",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-input-omitted/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\"}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyJ9",
+        "body_sha256": "2a58b34a8c5b6f035f0b110fa367b3305266091694055f8d22d99501e83c633b"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6e30sImtpbmQiOiJvYmplY3QifQ==",
+        "body_utf8": "{\"input\":{},\"kind\":\"object\"}",
+        "body_sha256": "c82d687982b4173d67222bfd564ce65ccb99bad197baefe0e1b83e86dc74ce74",
+        "normalized_body_utf8": "{\"input\":{},\"kind\":\"object\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWlucHV0LW9taXR0ZWQiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40MzZaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDM2WiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL3Byb2JlI3dvcmtmbG93In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"th-wait-input-omitted\",\"created_at\":\"2026-10-01T04:47:42.436Z\",\"updated_at\":\"2026-10-01T04:47:42.436Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "f2e2fde99e519ab0a49f157fc1da85ee1a9b7ef91fedf12238ac4745bbe0f7fd",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-input-omitted",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-input-omitted/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\"}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyJ9",
+        "body_sha256": "2a58b34a8c5b6f035f0b110fa367b3305266091694055f8d22d99501e83c633b"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiaW5wdXQiOnt9LCJraW5kIjoib2JqZWN0In19Cgo=",
+        "body_utf8": "event: done\ndata: {\"output\":{\"input\":{},\"kind\":\"object\"}}\n\n",
+        "body_sha256": "a385608cdc8384d87a82bc8f0885a25342a600b836958b7a3204f15e0c1cbf7f",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"input\":{},\"kind\":\"object\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "input": {},
+                "kind": "object"
+              }
+            },
+            "data_text": "{\"output\":{\"input\":{},\"kind\":\"object\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0taW5wdXQtb21pdHRlZCIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQzN1oiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40MzhaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-stream-input-omitted\",\"created_at\":\"2026-10-01T04:47:42.437Z\",\"updated_at\":\"2026-10-01T04:47:42.438Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "c07f30b0f4c7ab7ea1826640d7b4a9df04888a920fab731138c32e7b80fc2a0c",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-input-null",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-input-null/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":null}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0IjpudWxsfQ==",
+        "body_sha256": "403f25d77a7f1ed617e9ba19647f85518e74f6ef4db12f865229aa082fed4ebb"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6bnVsbCwia2luZCI6Im51bGwifQ==",
+        "body_utf8": "{\"input\":null,\"kind\":\"null\"}",
+        "body_sha256": "37982e9992aa8b70027271aae32c25aa9267c767dea0fb619e213e310939cf89",
+        "normalized_body_utf8": "{\"input\":null,\"kind\":\"null\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWlucHV0LW51bGwiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40MzlaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDM5WiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL3Byb2JlI3dvcmtmbG93In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"th-wait-input-null\",\"created_at\":\"2026-10-01T04:47:42.439Z\",\"updated_at\":\"2026-10-01T04:47:42.439Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "2aa461eaef646f8fa52e4467a1a4473cd0a2c26bb1c4f90d2a7d51c1c379dda7",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-input-null",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-input-null/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":null}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0IjpudWxsfQ==",
+        "body_sha256": "403f25d77a7f1ed617e9ba19647f85518e74f6ef4db12f865229aa082fed4ebb"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiaW5wdXQiOm51bGwsImtpbmQiOiJudWxsIn19Cgo=",
+        "body_utf8": "event: done\ndata: {\"output\":{\"input\":null,\"kind\":\"null\"}}\n\n",
+        "body_sha256": "cce3ce0725c88348468f2e10f6a20df9602e30310cbbde23155995455ef54196",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"input\":null,\"kind\":\"null\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "input": null,
+                "kind": "null"
+              }
+            },
+            "data_text": "{\"output\":{\"input\":null,\"kind\":\"null\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0taW5wdXQtbnVsbCIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ0MFoiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NDBaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-stream-input-null\",\"created_at\":\"2026-10-01T04:47:42.440Z\",\"updated_at\":\"2026-10-01T04:47:42.440Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "381d3324ba7df4d77e4ed66a2f10d6ed77ac13e699f9773a03910022f657820e",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-input-string",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-input-string/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":\"fixture\"}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0IjoiZml4dHVyZSJ9",
+        "body_sha256": "8a693b8d4b712e3a83fb514e2b0b05f7c6b5657975da29cf37cd25aaf74017e6"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6ImZpeHR1cmUiLCJraW5kIjoic3RyaW5nIn0=",
+        "body_utf8": "{\"input\":\"fixture\",\"kind\":\"string\"}",
+        "body_sha256": "248d23a9c38be7d83c4534b2fdbc6c5b60b3632dbbabb680827280c20959d5de",
+        "normalized_body_utf8": "{\"input\":\"fixture\",\"kind\":\"string\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWlucHV0LXN0cmluZyIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ0MFoiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NDFaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-input-string\",\"created_at\":\"2026-10-01T04:47:42.440Z\",\"updated_at\":\"2026-10-01T04:47:42.441Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "19095b5b33be8d2d7aea90c74790430e8ec031fd9fa4ad6425a6761d79f9b9f5",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-input-string",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-input-string/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":\"fixture\"}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0IjoiZml4dHVyZSJ9",
+        "body_sha256": "8a693b8d4b712e3a83fb514e2b0b05f7c6b5657975da29cf37cd25aaf74017e6"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiaW5wdXQiOiJmaXh0dXJlIiwia2luZCI6InN0cmluZyJ9fQoK",
+        "body_utf8": "event: done\ndata: {\"output\":{\"input\":\"fixture\",\"kind\":\"string\"}}\n\n",
+        "body_sha256": "14efdfba669d74134db068c717e549bac1287b05f5f60fe7f480a8dc5e7d9aa5",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"input\":\"fixture\",\"kind\":\"string\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "input": "fixture",
+                "kind": "string"
+              }
+            },
+            "data_text": "{\"output\":{\"input\":\"fixture\",\"kind\":\"string\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0taW5wdXQtc3RyaW5nIiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDQxWiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ0MVoiLCJtZXRhZGF0YSI6eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-stream-input-string\",\"created_at\":\"2026-10-01T04:47:42.441Z\",\"updated_at\":\"2026-10-01T04:47:42.441Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "4c506c0c0b8e42355066db291822cf6936f68ee6f624001ae3b6239050032286",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-input-number",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-input-number/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":7}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0Ijo3fQ==",
+        "body_sha256": "f674c260c8c3268cd24568b7a2009186168af21b5cfcaf6392e4e0b57397e861"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6Nywia2luZCI6Im51bWJlciJ9",
+        "body_utf8": "{\"input\":7,\"kind\":\"number\"}",
+        "body_sha256": "0f297ffed4926f20c9b2100f62167681c4153e130d576467b7a96e4bf5ed2f6d",
+        "normalized_body_utf8": "{\"input\":7,\"kind\":\"number\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWlucHV0LW51bWJlciIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ0MloiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NDNaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-input-number\",\"created_at\":\"2026-10-01T04:47:42.442Z\",\"updated_at\":\"2026-10-01T04:47:42.443Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "4ff06b95e2e0a73fe2f2075e35fc91b7c848c564bd918f58ed9f3b5ea6d73c79",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-input-number",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-input-number/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":7}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0Ijo3fQ==",
+        "body_sha256": "f674c260c8c3268cd24568b7a2009186168af21b5cfcaf6392e4e0b57397e861"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiaW5wdXQiOjcsImtpbmQiOiJudW1iZXIifX0KCg==",
+        "body_utf8": "event: done\ndata: {\"output\":{\"input\":7,\"kind\":\"number\"}}\n\n",
+        "body_sha256": "a045c1299ff1286852ae76bdc12d340f6964adfc44372f0e1119e92327b75cda",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"input\":7,\"kind\":\"number\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "input": 7,
+                "kind": "number"
+              }
+            },
+            "data_text": "{\"output\":{\"input\":7,\"kind\":\"number\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0taW5wdXQtbnVtYmVyIiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDQ0WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ0NVoiLCJtZXRhZGF0YSI6eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-stream-input-number\",\"created_at\":\"2026-10-01T04:47:42.444Z\",\"updated_at\":\"2026-10-01T04:47:42.445Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "d251997d7a94191bebde7d62b9fc832e1594ee3f519cc2a1925457071c6d96c5",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-input-boolean",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-input-boolean/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":false}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0IjpmYWxzZX0=",
+        "body_sha256": "a15665135874859383189d1e90a9bb09f26301c4a3908a080bb3a4fb2efb4ed1"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6ZmFsc2UsImtpbmQiOiJib29sZWFuIn0=",
+        "body_utf8": "{\"input\":false,\"kind\":\"boolean\"}",
+        "body_sha256": "0c0d90689e174b9fe0156ede93ff0ef775757ee6a60d2ce846a2e0856bdf0385",
+        "normalized_body_utf8": "{\"input\":false,\"kind\":\"boolean\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWlucHV0LWJvb2xlYW4iLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NDVaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDQ2WiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL3Byb2JlI3dvcmtmbG93In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"th-wait-input-boolean\",\"created_at\":\"2026-10-01T04:47:42.445Z\",\"updated_at\":\"2026-10-01T04:47:42.446Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "de6826d0be40613728d9f19abb66967c4c864d28c9b673a3b4160a254d2a3b72",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-input-boolean",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-input-boolean/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":false}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0IjpmYWxzZX0=",
+        "body_sha256": "a15665135874859383189d1e90a9bb09f26301c4a3908a080bb3a4fb2efb4ed1"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiaW5wdXQiOmZhbHNlLCJraW5kIjoiYm9vbGVhbiJ9fQoK",
+        "body_utf8": "event: done\ndata: {\"output\":{\"input\":false,\"kind\":\"boolean\"}}\n\n",
+        "body_sha256": "23bd8def55ac10d1224517cf9fb5f0976447d858b930e1238cf578201340066c",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"input\":false,\"kind\":\"boolean\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "input": false,
+                "kind": "boolean"
+              }
+            },
+            "data_text": "{\"output\":{\"input\":false,\"kind\":\"boolean\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0taW5wdXQtYm9vbGVhbiIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ0NloiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NDdaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-stream-input-boolean\",\"created_at\":\"2026-10-01T04:47:42.446Z\",\"updated_at\":\"2026-10-01T04:47:42.447Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "7c5751f33a0edc1fc3dd3b68def9bc590d78d87a82902304439c0a15f3f0a362",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-input-array",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-input-array/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":[1,\"a\"]}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0IjpbMSwiYSJdfQ==",
+        "body_sha256": "d0c07bfc493d28b8d04a3ca8d2cc6d86fb771b1669cddf511578d4e640acb522"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6WzEsImEiXSwia2luZCI6ImFycmF5In0=",
+        "body_utf8": "{\"input\":[1,\"a\"],\"kind\":\"array\"}",
+        "body_sha256": "b5303eba4fad7a1cc5ed8cc44c689374bbd0b57ff7ef7e79667e972f82129c36",
+        "normalized_body_utf8": "{\"input\":[1,\"a\"],\"kind\":\"array\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWlucHV0LWFycmF5IiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDQ3WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ0N1oiLCJtZXRhZGF0YSI6eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-wait-input-array\",\"created_at\":\"2026-10-01T04:47:42.447Z\",\"updated_at\":\"2026-10-01T04:47:42.447Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "d1fcf49aef18d41a8d10da08cea1e38cafad28fd0687b5bf4ba726895179661d",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-input-array",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-input-array/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":[1,\"a\"]}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0IjpbMSwiYSJdfQ==",
+        "body_sha256": "d0c07bfc493d28b8d04a3ca8d2cc6d86fb771b1669cddf511578d4e640acb522"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiaW5wdXQiOlsxLCJhIl0sImtpbmQiOiJhcnJheSJ9fQoK",
+        "body_utf8": "event: done\ndata: {\"output\":{\"input\":[1,\"a\"],\"kind\":\"array\"}}\n\n",
+        "body_sha256": "586712b0788209f630c4728c5956925eb4d67d1d89150f38aa872769c404ee05",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"input\":[1,\"a\"],\"kind\":\"array\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "input": [
+                  1,
+                  "a"
+                ],
+                "kind": "array"
+              }
+            },
+            "data_text": "{\"output\":{\"input\":[1,\"a\"],\"kind\":\"array\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0taW5wdXQtYXJyYXkiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NDhaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDQ4WiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL3Byb2JlI3dvcmtmbG93In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"th-stream-input-array\",\"created_at\":\"2026-10-01T04:47:42.448Z\",\"updated_at\":\"2026-10-01T04:47:42.448Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "1aac642a5da20656a10266db05ad41327c6b82b39096877ec64ee24ea801317d",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-input-object",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-input-object/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "04acc749c0bfabec386d83e22ca8961344d05ffc733013a2f31460626659eeb8"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJpbnB1dCI6eyJ4IjoxfSwia2luZCI6Im9iamVjdCJ9",
+        "body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}",
+        "body_sha256": "7cb642ddc764261e05a068ed18e3fc2af472cdc28d7717a71d400afffbec8b25",
+        "normalized_body_utf8": "{\"input\":{\"x\":1},\"kind\":\"object\"}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWlucHV0LW9iamVjdCIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ0OFoiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NDhaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvcHJvYmUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-input-object\",\"created_at\":\"2026-10-01T04:47:42.448Z\",\"updated_at\":\"2026-10-01T04:47:42.448Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "b0f6592d2591c4ef45a16609491279bf71e8fa7fa66b354c406b8ae2c8953679",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-input-object",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-input-object/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "04acc749c0bfabec386d83e22ca8961344d05ffc733013a2f31460626659eeb8"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiaW5wdXQiOnsieCI6MX0sImtpbmQiOiJvYmplY3QifX0KCg==",
+        "body_utf8": "event: done\ndata: {\"output\":{\"input\":{\"x\":1},\"kind\":\"object\"}}\n\n",
+        "body_sha256": "6b4fba2a877f25bdee838d13442eab74007608cf42f7bf60447aa940ad2d7627",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"input\":{\"x\":1},\"kind\":\"object\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "input": {
+                  "x": 1
+                },
+                "kind": "object"
+              }
+            },
+            "data_text": "{\"output\":{\"input\":{\"x\":1},\"kind\":\"object\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0taW5wdXQtb2JqZWN0IiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDQ5WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ1MFoiLCJtZXRhZGF0YSI6eyJyb3V0ZSI6Ii9wcm9iZSN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-stream-input-object\",\"created_at\":\"2026-10-01T04:47:42.449Z\",\"updated_at\":\"2026-10-01T04:47:42.450Z\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "66e6f19b0975512fa3fa61ca11983f1bfaee62716c09ae2264b6d1235e10419c",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/probe#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-void",
+      "characterization": "CP-003",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-void/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/void#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii92b2lkI3dvcmtmbG93IiwiaW5wdXQiOnsieCI6MX19",
+        "body_sha256": "50808d46997ead6a849c103df2c811618616e0162d77451d5a3e164aefe97ba2"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "bnVsbA==",
+        "body_utf8": "null",
+        "body_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "normalized_body_utf8": "null"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LXZvaWQiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NTBaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDUyWiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL3ZvaWQjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-void\",\"created_at\":\"2026-10-01T04:47:42.450Z\",\"updated_at\":\"2026-10-01T04:47:42.452Z\",\"metadata\":{\"route\":\"/void#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "7dfab5f2fe236510b48247ff31ddf2611849ef18895482a474718957d657b12c",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/void#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-void",
+      "characterization": "CP-003",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-void/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/void#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii92b2lkI3dvcmtmbG93IiwiaW5wdXQiOnsieCI6MX19",
+        "body_sha256": "50808d46997ead6a849c103df2c811618616e0162d77451d5a3e164aefe97ba2"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YToge30KCg==",
+        "body_utf8": "event: done\ndata: {}\n\n",
+        "body_sha256": "2b7bb78cdea57adaee4c06fce5ebf35bf656dd5dc99cc3456d4027ae72e2e121",
+        "normalized_body_utf8": "event: done\ndata: {}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {},
+            "data_text": "{}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0tdm9pZCIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ1M1oiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NTRaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvdm9pZCN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-stream-void\",\"created_at\":\"2026-10-01T04:47:42.453Z\",\"updated_at\":\"2026-10-01T04:47:42.454Z\",\"metadata\":{\"route\":\"/void#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "bf92eff30440d4a8d06f2571218bbd8d5c21b5b11a76e16960279c6dc57ef566",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/void#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-zero",
+      "characterization": "CP-004",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-zero/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/zero#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii96ZXJvI3dvcmtmbG93IiwiaW5wdXQiOnsieCI6MX19",
+        "body_sha256": "0b699904ad545d6d9b95b07755c6d1e2878bd43e6681ab832604c186a9d459cf"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "MA==",
+        "body_utf8": "0",
+        "body_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "normalized_body_utf8": "0"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LXplcm8iLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NTVaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDU3WiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL3plcm8jd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-zero\",\"created_at\":\"2026-10-01T04:47:42.455Z\",\"updated_at\":\"2026-10-01T04:47:42.457Z\",\"metadata\":{\"route\":\"/zero#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "eae44210c2433ed814e0767916920bbd6d42841564e32e706806264a3321d86e",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/zero#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-zero",
+      "characterization": "CP-004",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-zero/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/zero#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii96ZXJvI3dvcmtmbG93IiwiaW5wdXQiOnsieCI6MX19",
+        "body_sha256": "0b699904ad545d6d9b95b07755c6d1e2878bd43e6681ab832604c186a9d459cf"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOjB9Cgo=",
+        "body_utf8": "event: done\ndata: {\"output\":0}\n\n",
+        "body_sha256": "ef29be3e04cc85f5ec0722c16d3f99c099a71ed22bab0e67673e8f0c8517bcfd",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":0}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": 0
+            },
+            "data_text": "{\"output\":0}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0temVybyIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ1N1oiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NThaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvemVybyN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-stream-zero\",\"created_at\":\"2026-10-01T04:47:42.457Z\",\"updated_at\":\"2026-10-01T04:47:42.458Z\",\"metadata\":{\"route\":\"/zero#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "966471d49fdb62bd97c8e81ad29aad462f3b7542a11cde08980dbb013512c70f",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/zero#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-false",
+      "characterization": "CP-004",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-false/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/false#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9mYWxzZSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "faf7c2e3199912064b38c9bd3e2b0ea9755e046dbfd911192742c46f8f57b472"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "ZmFsc2U=",
+        "body_utf8": "false",
+        "body_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "normalized_body_utf8": "false"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWZhbHNlIiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDU4WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ2MFoiLCJtZXRhZGF0YSI6eyJyb3V0ZSI6Ii9mYWxzZSN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-wait-false\",\"created_at\":\"2026-10-01T04:47:42.458Z\",\"updated_at\":\"2026-10-01T04:47:42.460Z\",\"metadata\":{\"route\":\"/false#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "20af2cdd0b30720023a06149421e13270ea1ab07de7c4b5e3926217da1eea421",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/false#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-false",
+      "characterization": "CP-004",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-false/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/false#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9mYWxzZSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "faf7c2e3199912064b38c9bd3e2b0ea9755e046dbfd911192742c46f8f57b472"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOmZhbHNlfQoK",
+        "body_utf8": "event: done\ndata: {\"output\":false}\n\n",
+        "body_sha256": "2a5a2a64df6a2e2b1ae883cd8a70e7d86519f3bb60e9ceb4bac97afd3d715db7",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":false}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": false
+            },
+            "data_text": "{\"output\":false}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0tZmFsc2UiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NjFaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDYxWiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL2ZhbHNlI3dvcmtmbG93In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"th-stream-false\",\"created_at\":\"2026-10-01T04:47:42.461Z\",\"updated_at\":\"2026-10-01T04:47:42.461Z\",\"metadata\":{\"route\":\"/false#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "e603df7b9d2d0c543ee49daa70a8a5eacaa76bb4c8a80db706f6affbdd171a92",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/false#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-empty",
+      "characterization": "CP-004",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-empty/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/empty#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9lbXB0eSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "7e57d4f72c3610df67d8b17b2b1af48e7cf8d318d7e42d792a6cc8787b1466db"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "IiI=",
+        "body_utf8": "\"\"",
+        "body_sha256": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+        "normalized_body_utf8": "\"\""
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWVtcHR5IiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDYxWiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ2MloiLCJtZXRhZGF0YSI6eyJyb3V0ZSI6Ii9lbXB0eSN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-wait-empty\",\"created_at\":\"2026-10-01T04:47:42.461Z\",\"updated_at\":\"2026-10-01T04:47:42.462Z\",\"metadata\":{\"route\":\"/empty#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "eb4e175251412c35abaacab20ac2d04a81788aea9ad139b3b84e4187f4224bf6",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/empty#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-empty",
+      "characterization": "CP-004",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-empty/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/empty#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9lbXB0eSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "7e57d4f72c3610df67d8b17b2b1af48e7cf8d318d7e42d792a6cc8787b1466db"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOiIifQoK",
+        "body_utf8": "event: done\ndata: {\"output\":\"\"}\n\n",
+        "body_sha256": "4e113c6926fcbe43f78ac4608b5e88ff538e633b268ae6f8932dd49d891db9bd",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":\"\"}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": ""
+            },
+            "data_text": "{\"output\":\"\"}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0tZW1wdHkiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NjJaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDYzWiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL2VtcHR5I3dvcmtmbG93In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"th-stream-empty\",\"created_at\":\"2026-10-01T04:47:42.462Z\",\"updated_at\":\"2026-10-01T04:47:42.463Z\",\"metadata\":{\"route\":\"/empty#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "387c46a2be05f900d5f37cb4c7d6fdf6604e13690f559652066159ae2866c3cc",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/empty#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-fail",
+      "characterization": "CP-003",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-fail/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/fail#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9mYWlsI3dvcmtmbG93IiwiaW5wdXQiOnsieCI6MX19",
+        "body_sha256": "a45a0bf4a5a46135800fc003357d384da6bb6049d35dca29177c2f629c29c326"
+      },
+      "response": {
+        "status": 500,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoiZXhlY3V0aW9uX2Vycm9yIiwibWVzc2FnZSI6ImZpeHR1cmUgZXhlY3V0aW9uIGZhaWx1cmUifX0=",
+        "body_utf8": "{\"error\":{\"kind\":\"execution_error\",\"message\":\"fixture execution failure\"}}",
+        "body_sha256": "3571a2a0097e2bb86c8f79f242ea1ea8b64d0537aa572be4715ce1622d030112",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"execution_error\",\"message\":\"fixture execution failure\"}}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LWZhaWwiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NjNaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDY0WiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL2ZhaWwjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-wait-fail\",\"created_at\":\"2026-10-01T04:47:42.463Z\",\"updated_at\":\"2026-10-01T04:47:42.464Z\",\"metadata\":{\"route\":\"/fail#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "5f0fd3e9012e9358ba2be5ccbf641e9e4a9833f901d1c039b6ff56f4e8060457",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/fail#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-fail",
+      "characterization": "CP-003",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-fail/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/fail#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii9mYWlsI3dvcmtmbG93IiwiaW5wdXQiOnsieCI6MX19",
+        "body_sha256": "a45a0bf4a5a46135800fc003357d384da6bb6049d35dca29177c2f629c29c326"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiZXJyb3IiOiJmaXh0dXJlIGV4ZWN1dGlvbiBmYWlsdXJlIn19Cgo=",
+        "body_utf8": "event: done\ndata: {\"output\":{\"error\":\"fixture execution failure\"}}\n\n",
+        "body_sha256": "e15fe949cd280517f3d8bfe72e21d5fca7768f886e32b9a80c543543604f7f5d",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"error\":\"fixture execution failure\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "error": "fixture execution failure"
+              }
+            },
+            "data_text": "{\"output\":{\"error\":\"fixture execution failure\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0tZmFpbCIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ2NFoiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NjRaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvZmFpbCN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-stream-fail\",\"created_at\":\"2026-10-01T04:47:42.464Z\",\"updated_at\":\"2026-10-01T04:47:42.464Z\",\"metadata\":{\"route\":\"/fail#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "2fe75dfa4eb9e908d95c5e0deb02ed62a53ed58edbae650aecba3b43718e9597",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/fail#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-validate",
+      "characterization": "CP-004",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-validate/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/validate#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii92YWxpZGF0ZSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "71db8e2fd1ef3dd79c0aeb1fbfb4118cb2047426ba3d91bdb994e85e2ab8cade"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJhY2NlcHRlZCI6dHJ1ZSwiaW5wdXQiOnsieCI6MX19",
+        "body_utf8": "{\"accepted\":true,\"input\":{\"x\":1}}",
+        "body_sha256": "ebec95d9365f66b6300d2e9ab5fb09736cb22f195c367119cc27204595c6e55c",
+        "normalized_body_utf8": "{\"accepted\":true,\"input\":{\"x\":1}}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LXZhbGlkYXRlIiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDY0WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ2N1oiLCJtZXRhZGF0YSI6eyJyb3V0ZSI6Ii92YWxpZGF0ZSN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-wait-validate\",\"created_at\":\"2026-10-01T04:47:42.464Z\",\"updated_at\":\"2026-10-01T04:47:42.467Z\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "e8ee8719c044279462dad75a310e48bdbb267c2f2a282893849e1d03e8969378",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-validate",
+      "characterization": "CP-004",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-validate/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/validate#workflow\",\"input\":{\"x\":1}}",
+        "body_base64": "eyJyb3V0ZSI6Ii92YWxpZGF0ZSN3b3JrZmxvdyIsImlucHV0Ijp7IngiOjF9fQ==",
+        "body_sha256": "71db8e2fd1ef3dd79c0aeb1fbfb4118cb2047426ba3d91bdb994e85e2ab8cade"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiYWNjZXB0ZWQiOnRydWUsImlucHV0Ijp7IngiOjF9fX0KCg==",
+        "body_utf8": "event: done\ndata: {\"output\":{\"accepted\":true,\"input\":{\"x\":1}}}\n\n",
+        "body_sha256": "29944287b9e5fd094dfa90e58f2da9a66040bf72bb6843e247197eb83b8425a3",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"accepted\":true,\"input\":{\"x\":1}}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "accepted": true,
+                "input": {
+                  "x": 1
+                }
+              }
+            },
+            "data_text": "{\"output\":{\"accepted\":true,\"input\":{\"x\":1}}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0tdmFsaWRhdGUiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NjdaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDY3WiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL3ZhbGlkYXRlI3dvcmtmbG93In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"th-stream-validate\",\"created_at\":\"2026-10-01T04:47:42.467Z\",\"updated_at\":\"2026-10-01T04:47:42.467Z\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "5a60ff30f395244eee9076efcb36626c7dc7c8948bb0b5b23d1623c343f993b2",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-validate-null",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-validate-null/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/validate#workflow\",\"input\":null}",
+        "body_base64": "eyJyb3V0ZSI6Ii92YWxpZGF0ZSN3b3JrZmxvdyIsImlucHV0IjpudWxsfQ==",
+        "body_sha256": "616f19c206c5d06dd51ec85627aa021d503be2037a8dc4dbf217b57ca569ef75"
+      },
+      "response": {
+        "status": 500,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoiZXhlY3V0aW9uX2Vycm9yIiwibWVzc2FnZSI6ImZpeHR1cmUgaW5wdXQgbXVzdCBiZSBhbiBvYmplY3QifX0=",
+        "body_utf8": "{\"error\":{\"kind\":\"execution_error\",\"message\":\"fixture input must be an object\"}}",
+        "body_sha256": "cdf6f327ffebde84a00622eab6bdc4f26b4c75e5d92f5dfbc77306c3cbad61da",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"execution_error\",\"message\":\"fixture input must be an object\"}}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LXZhbGlkYXRlLW51bGwiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NjhaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDY4WiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL3ZhbGlkYXRlI3dvcmtmbG93In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"th-wait-validate-null\",\"created_at\":\"2026-10-01T04:47:42.468Z\",\"updated_at\":\"2026-10-01T04:47:42.468Z\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "3bb4b3be41e07780264b7107d1aac5399db6cf1f38225018c548c57cb6892e8e",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "wait-validate-array",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-wait-validate-array/runs/wait",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/validate#workflow\",\"input\":[]}",
+        "body_base64": "eyJyb3V0ZSI6Ii92YWxpZGF0ZSN3b3JrZmxvdyIsImlucHV0IjpbXX0=",
+        "body_sha256": "cd7f36fb0a2b943930026d3e1e91efac9894cb7e562c9b2289956e45f0249d7a"
+      },
+      "response": {
+        "status": 500,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJlcnJvciI6eyJraW5kIjoiZXhlY3V0aW9uX2Vycm9yIiwibWVzc2FnZSI6ImZpeHR1cmUgaW5wdXQgbXVzdCBiZSBhbiBvYmplY3QifX0=",
+        "body_utf8": "{\"error\":{\"kind\":\"execution_error\",\"message\":\"fixture input must be an object\"}}",
+        "body_sha256": "cdf6f327ffebde84a00622eab6bdc4f26b4c75e5d92f5dfbc77306c3cbad61da",
+        "normalized_body_utf8": "{\"error\":{\"kind\":\"execution_error\",\"message\":\"fixture input must be an object\"}}"
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC13YWl0LXZhbGlkYXRlLWFycmF5IiwiY3JlYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDY4WiIsInVwZGF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ2OFoiLCJtZXRhZGF0YSI6eyJyb3V0ZSI6Ii92YWxpZGF0ZSN3b3JrZmxvdyJ9LCJzdGF0dXMiOiJpZGxlIn0=",
+        "body_utf8": "{\"thread_id\":\"th-wait-validate-array\",\"created_at\":\"2026-10-01T04:47:42.468Z\",\"updated_at\":\"2026-10-01T04:47:42.468Z\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "af1b301b34f9fe6974e8b917a304e98883c7cefe249fbe8e247a1515e774cfe3",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-validate-null",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-validate-null/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/validate#workflow\",\"input\":null}",
+        "body_base64": "eyJyb3V0ZSI6Ii92YWxpZGF0ZSN3b3JrZmxvdyIsImlucHV0IjpudWxsfQ==",
+        "body_sha256": "616f19c206c5d06dd51ec85627aa021d503be2037a8dc4dbf217b57ca569ef75"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiZXJyb3IiOiJmaXh0dXJlIGlucHV0IG11c3QgYmUgYW4gb2JqZWN0In19Cgo=",
+        "body_utf8": "event: done\ndata: {\"output\":{\"error\":\"fixture input must be an object\"}}\n\n",
+        "body_sha256": "788c06e3af6f5cfbff5121864ff6ce908926b7bc47bff39953bf41e1a2569980",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"error\":\"fixture input must be an object\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "error": "fixture input must be an object"
+              }
+            },
+            "data_text": "{\"output\":{\"error\":\"fixture input must be an object\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0tdmFsaWRhdGUtbnVsbCIsImNyZWF0ZWRfYXQiOiIyMDI2LTEwLTAxVDA0OjQ3OjQyLjQ2OFoiLCJ1cGRhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NjlaIiwibWV0YWRhdGEiOnsicm91dGUiOiIvdmFsaWRhdGUjd29ya2Zsb3cifSwic3RhdHVzIjoiaWRsZSJ9",
+        "body_utf8": "{\"thread_id\":\"th-stream-validate-null\",\"created_at\":\"2026-10-01T04:47:42.468Z\",\"updated_at\":\"2026-10-01T04:47:42.469Z\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "3444c65f5766529437edb81325d702a7d3f8336a9a6bf32c8bdcf25ebe562f5a",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}"
+      }
+    },
+    {
+      "id": "stream-validate-array",
+      "characterization": "CP-002",
+      "evidence_classification": "runtime_observation",
+      "request": {
+        "method": "POST",
+        "path": "/threads/th-stream-validate-array/runs/stream",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_utf8": "{\"route\":\"/validate#workflow\",\"input\":[]}",
+        "body_base64": "eyJyb3V0ZSI6Ii92YWxpZGF0ZSN3b3JrZmxvdyIsImlucHV0IjpbXX0=",
+        "body_sha256": "cd7f36fb0a2b943930026d3e1e91efac9894cb7e562c9b2289956e45f0249d7a"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "cache-control",
+            "no-cache, no-transform"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "content-type",
+            "text/event-stream"
+          ]
+        ],
+        "body_base64": "ZXZlbnQ6IGRvbmUKZGF0YTogeyJvdXRwdXQiOnsiZXJyb3IiOiJmaXh0dXJlIGlucHV0IG11c3QgYmUgYW4gb2JqZWN0In19Cgo=",
+        "body_utf8": "event: done\ndata: {\"output\":{\"error\":\"fixture input must be an object\"}}\n\n",
+        "body_sha256": "788c06e3af6f5cfbff5121864ff6ce908926b7bc47bff39953bf41e1a2569980",
+        "normalized_body_utf8": "event: done\ndata: {\"output\":{\"error\":\"fixture input must be an object\"}}\n\n",
+        "sse_frames": [
+          {
+            "event": "done",
+            "data": {
+              "output": {
+                "error": "fixture input must be an object"
+              }
+            },
+            "data_text": "{\"output\":{\"error\":\"fixture input must be an object\"}}"
+          }
+        ]
+      },
+      "thread_after": {
+        "status": 200,
+        "status_text": "",
+        "headers": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "body_base64": "eyJ0aHJlYWRfaWQiOiJ0aC1zdHJlYW0tdmFsaWRhdGUtYXJyYXkiLCJjcmVhdGVkX2F0IjoiMjAyNi0xMC0wMVQwNDo0Nzo0Mi40NjlaIiwidXBkYXRlZF9hdCI6IjIwMjYtMTAtMDFUMDQ6NDc6NDIuNDY5WiIsIm1ldGFkYXRhIjp7InJvdXRlIjoiL3ZhbGlkYXRlI3dvcmtmbG93In0sInN0YXR1cyI6ImlkbGUifQ==",
+        "body_utf8": "{\"thread_id\":\"th-stream-validate-array\",\"created_at\":\"2026-10-01T04:47:42.469Z\",\"updated_at\":\"2026-10-01T04:47:42.469Z\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}",
+        "body_sha256": "567e9c0f7886e6fac65626fc3e43f831076587e8ebf04a8f3f7156b65001d62e",
+        "normalized_body_utf8": "{\"thread_id\":\"<generated-thread-id>\",\"created_at\":\"<generated-timestamp>\",\"updated_at\":\"<generated-timestamp>\",\"metadata\":{\"route\":\"/validate#workflow\"},\"status\":\"idle\"}"
+      }
+    }
+  ]
+}

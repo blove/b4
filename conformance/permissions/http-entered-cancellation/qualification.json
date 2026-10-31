@@ -1,0 +1,344 @@
+{
+  "record_version": 1,
+  "profile": "http_permission_entered_cancellation",
+  "status": "qualified",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "native_source_descriptor_sha256": "7a7defb2387931e3e323bd262a8087f5ffc60667e5a43747b470bf4008595ea6",
+  "native_source_file_count": 1026,
+  "source_files": [
+    {
+      "path": "contracts/agent-protocol/examples/capabilities-v5-permission-entered-cancellation.json",
+      "bytes": 2539,
+      "sha256": "ee4bde3e702b2f6a6e565756491e977033b776e511d8b78c3062f438864aa24b"
+    },
+    {
+      "path": "contracts/agent-protocol/schemas/capabilities-v5.json",
+      "bytes": 4406,
+      "sha256": "f0e2bff85ce495c2bc1d59e242c71a6a5051e0731fff365bf5e133115b60dc8d"
+    },
+    {
+      "path": "crates/b4-contract/src/capabilities_v5.rs",
+      "bytes": 8965,
+      "sha256": "d391ae3258b84761eefa99d58f3e4d00de34382284ecbd3647c268a9649e11dc"
+    },
+    {
+      "path": "crates/b4-contract/src/lib.rs",
+      "bytes": 639,
+      "sha256": "f61334a641873fe9da2caf9c3c6e15fe3128ecda79edfd400ef56edabddd36ce"
+    },
+    {
+      "path": "crates/b4-contract/tests/capabilities_v5.rs",
+      "bytes": 10147,
+      "sha256": "1fc98a29512386cd18a7e58a3586f0cb036f5e6197ed9bcad571e66dfa02e96c"
+    },
+    {
+      "path": "crates/b4-http/src/cancellation.rs",
+      "bytes": 9915,
+      "sha256": "9b55a2d1b892832f47ef01626e74ef776ed525e527227f0eee4f91a2abd4f98f"
+    },
+    {
+      "path": "crates/b4-http/src/capabilities.rs",
+      "bytes": 10071,
+      "sha256": "a63a30af660967afc1de105f8defb582a4ddb719ff981efbfe95b1d1829fd9b5"
+    },
+    {
+      "path": "crates/b4-http/src/host.rs",
+      "bytes": 15090,
+      "sha256": "77fe9776a22ced3292ee16f3e01d14cb1293429f754263eb4ea69114ea9870e6"
+    },
+    {
+      "path": "crates/b4-http/src/lib.rs",
+      "bytes": 4129,
+      "sha256": "d246d101f52458c4b5ad655381e78bdd448f7e532809f84d6198f71bfea03fbc"
+    },
+    {
+      "path": "crates/b4-http/src/permission_cancellation.rs",
+      "bytes": 7553,
+      "sha256": "4a01cbf894c8427a6fc75bef74e8f5ee284da6176360885b7c29e79dfb73404c"
+    },
+    {
+      "path": "crates/b4-http/src/permissions.rs",
+      "bytes": 22830,
+      "sha256": "2069d6dd828efc0db65663fd26faf89ace63835d513b64e452dbf135cdcd91c4"
+    },
+    {
+      "path": "crates/b4-http/src/transport.rs",
+      "bytes": 23731,
+      "sha256": "10304f8d0dece40db1b05ff2742a61b5f3f54f286b67cab96a9470156b6369f5"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_entered_cancellation.rs",
+      "bytes": 24283,
+      "sha256": "5d652d4d8d5c0fd3ccca07c6c91383d230ccae3dd1bb710cd727298937534bbd"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_entered_support/mod.rs",
+      "bytes": 11984,
+      "sha256": "f76d16b261bc0575771a3c0277409ae75f6fc127c95e44e0d3ae0ae56a278bf8"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_entered_support/store.rs",
+      "bytes": 17345,
+      "sha256": "8c12d2e6c9c790f260621cbeb879055c05166cf4adb556d9823a117915797ffe"
+    },
+    {
+      "path": "crates/b4-runtime/src/application/registry.rs",
+      "bytes": 8848,
+      "sha256": "9cd12b541f1978380997379dbbbe6cbf6fa86801c4e5c3582f116dbc78b07f20"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/catalog.rs",
+      "bytes": 22267,
+      "sha256": "fa958a1a01164755f114ad9d04c883b729927a0ae3b66d498925c9c0c01fa8fd"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 763218,
+      "sha256": "82187d88c1e31cc9e4aa7ebecc0d299eb1ad81fd9b9778caece4fdfdcd13a208"
+    },
+    {
+      "path": "crates/b4-runtime/tests/native_callback_mapping.rs",
+      "bytes": 13191,
+      "sha256": "db8c486ecbc851cebc41bb173f527be33b8a36ec0f59ab0780bd721738a5596f"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-20-http-permission-entered-cancellation.md",
+      "bytes": 6309,
+      "sha256": "4aa4f66b6315c09f24eb1265c0e3a8fb911e123b48a1c220bee14e82a5545202"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-20-http-permission-entered-cancellation-design.md",
+      "bytes": 9499,
+      "sha256": "d98d286822554724fccbca0b338cdfbdeb2e7567d3fec5b2a295d1ad2c7fa6b3"
+    },
+    {
+      "path": "scripts/check_contracts.py",
+      "bytes": 66367,
+      "sha256": "1045b1506d586756ecb128b6f542ca78c351c0ef3ceb51251282308c808fc6ad"
+    }
+  ],
+  "checks": {
+    "native-mapping-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-runtime",
+        "--test",
+        "native_callback_mapping",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 10.643,
+      "log_sha256": "32722dbba2841c5e9f604077ffb30a0c3c9e2e002f525f1733d86dedac990240",
+      "private_run": "native-mapping-tests-1792557987321009000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "capabilities-v5-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-contract",
+        "--test",
+        "capabilities_v5",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 1.458,
+      "log_sha256": "f5a2e91d4b6362f7b4248682f489680fa71d27d692b20f83ae09ba6ccbf9cf19",
+      "private_run": "capabilities-v5-tests-1792558000649585000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "http-entered-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_entered_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 14.742,
+      "log_sha256": "4c31c739aab55fa0e571be293d269a181320c3b3775d68a21be9cf0ca9092b72",
+      "private_run": "http-entered-tests-1792557937785953000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.68,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "private_run": "format-check-1792557986153263000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 85.278,
+      "log_sha256": "16be611b509de948d19a587ff5fc3b1762e321e07f4a80ca823dc9c50a0eda13",
+      "private_run": "lint-1792558006740515000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 142.305,
+      "log_sha256": "5ee454d3ab87056064d2e22910c1eebe33b3aa8383519dfa31f9e5aab6f7d8f5",
+      "private_run": "compile-1792558094647435000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 443.719,
+      "log_sha256": "c6584eb99ed3aa16e4471fe2440dc1f383b01cbe37e04cd1d1b54c62aecbb265",
+      "private_run": "workspace-tests-1792558880678826000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "metadata": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 3.053,
+      "log_sha256": "149fd5806486e88a3f1d9d60d2c96b22bcadd1c36cba8e66c9eb3a8a204029d4",
+      "private_run": "metadata-1792557986153261000",
+      "source_unchanged": true,
+      "metadata_only": true
+    }
+  },
+  "focused": {
+    "native-mapping-tests": {
+      "counts": {
+        "passed": 2,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "capabilities-v5-tests": {
+      "counts": {
+        "passed": 6,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "http-entered-tests": {
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    }
+  },
+  "http_scenarios": 7,
+  "included_fixture_controls": 2,
+  "full_workspace": {
+    "counts": {
+      "passed": 1612,
+      "failed": 0,
+      "ignored": 11
+    },
+    "summary_executions": 145
+  },
+  "scope": {
+    "explicit_opt_in_host": true,
+    "original_always_and_saved_new_use": true,
+    "actual_registered_callback_body_entry_required": true,
+    "entered_management_account": {
+      "bytes_per_typed_attempt": 25165824,
+      "nodes_per_typed_attempt": 65536,
+      "conflict_attempts_max": 8,
+      "reset_or_refund_within_account": false
+    },
+    "confirmed_request_precedes_local_signal": true,
+    "actual_ack_success_failure_settlement": true,
+    "owned_until_actual_quiescence": true,
+    "generic_permission_store_fallback": false,
+    "ready_or_unentered_cancellation": false,
+    "preparing_failure_retirement": false,
+    "recovery_or_deletion": false,
+    "broad_durable_permissions": false,
+    "automatic_callback_replay_or_receipt_retry": false,
+    "old_http_v1_through_v4_unchanged": true,
+    "dependencies_and_locks_unchanged": true,
+    "maximum_size_qualification": false,
+    "cross_platform_qualification": false,
+    "metadata_is_runtime_evidence": false,
+    "reported_counts_include_child_executions": true,
+    "git_writes": false
+  }
+}

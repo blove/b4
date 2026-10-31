@@ -1,0 +1,873 @@
+{
+  "schema_version": 1,
+  "profile": "b4-ap-core/0",
+  "classification": "NATIVE",
+  "status": "passed_bounded_prior_owner_native_macos_linux_scope",
+  "scope": "explicit_bounded_known_id_prior_owner_native_confinement_only",
+  "source_input_freeze": {
+    "sha256": "c8019ae5308c14d706f0f53dc543c6f0048197796197311706f56d4739f44122",
+    "bytes": 553980
+  },
+  "platform_checks": {
+    "macOS": {
+      "status": "passed_bounded_prior_owner_native_macos_linux_scope",
+      "architecture": "arm64",
+      "rust_passed_entries": 1213,
+      "cargo_targets": 102,
+      "rust_failed": 0,
+      "normal_workspace_ignored": 6,
+      "historical_ignored": 3,
+      "new_default_ignored_slow_selectors": 3,
+      "raw_result_passed": 1215,
+      "nested_child_entries_excluded": 2,
+      "qualified_outer_Rust_case_executions": 1216,
+      "checks": [
+        {
+          "name": "fmt",
+          "exit": 0,
+          "log": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "name": "clippy",
+          "exit": 0,
+          "log": {
+            "sha256": "e9c056bdcc15d404eea96b96e5b924e98a33ee338667ad1d42af1c74ecfacce8",
+            "bytes": 493
+          }
+        },
+        {
+          "name": "workspace",
+          "exit": 0,
+          "log": {
+            "sha256": "99e686a028de26528a0c51fea2a379434862399e1b6900d0891206ca9039bdba",
+            "bytes": 123449
+          }
+        },
+        {
+          "name": "confinement-slow",
+          "exit": 0,
+          "log": {
+            "sha256": "7cddade440a891b225926b613eb27e7196017a913dfb9c4da18cf3620a737055",
+            "bytes": 558
+          }
+        },
+        {
+          "name": "python",
+          "exit": 0,
+          "log": {
+            "sha256": "602df8fa9de09e137073d2c36a8ee964aecc83bcf440c23874cd018cc3d9634c",
+            "bytes": 206
+          }
+        },
+        {
+          "name": "contracts",
+          "exit": 0,
+          "log": {
+            "sha256": "4374be4ae7af30f16144c279853cd53a90d320b60a04b9e44fb193f8fb264e63",
+            "bytes": 1779
+          }
+        }
+      ],
+      "separate_slow": {
+        "selectors": [
+          "sqlite_journal_4095_append_and_prior_blocked_4096_audit_have_distinct_reservations",
+          "sqlite_eligible_4096_entry_journal_refuses_a_reserved_confinement_append",
+          "sqlite_individually_bounded_metadata_and_real_journal_cross_aggregate_nodes"
+        ],
+        "declarations": 3,
+        "passed": 3,
+        "failed": 0,
+        "ignored": 0,
+        "filtered_out": 18,
+        "log": {
+          "sha256": "7cddade440a891b225926b613eb27e7196017a913dfb9c4da18cf3620a737055",
+          "bytes": 558
+        }
+      },
+      "actual_execution_receipt": {
+        "sha256": "7909e918d1f9efae35de2c641b5d778a961ec2e4f3c0e552fc9e367b2fbb67b3",
+        "bytes": 3752
+      },
+      "independent_source_execution_quality": {
+        "sha256": "59e1a01430f1c184943d94d57545562be95f3055d9d5d62599350b0b95e3b23e",
+        "bytes": 8825
+      },
+      "counting_rule": "1213 top-level normal entries plus3 separately executed slow cases per platform. Raw1215 includes2 nested child summaries excluded. Six default ignored markers split3 historical unrun helpers and3 slow declarations passed separately. Modes, earlier subsets and repeated suites add no declarations or passes."
+    },
+    "Linux": {
+      "status": "passed_bounded_prior_owner_native_macos_linux_scope",
+      "architecture": "aarch64",
+      "rust_passed_entries": 1213,
+      "cargo_targets": 102,
+      "rust_failed": 0,
+      "normal_workspace_ignored": 6,
+      "historical_ignored": 3,
+      "new_default_ignored_slow_selectors": 3,
+      "raw_result_passed": 1215,
+      "nested_child_entries_excluded": 2,
+      "qualified_outer_Rust_case_executions": 1216,
+      "checks": [
+        {
+          "name": "source-integrity",
+          "exit": 0,
+          "log": {
+            "sha256": "4c624ced3d37af291268a22e47685932dc0f267c9f1c74ec37dc97871de234a1",
+            "bytes": 246
+          }
+        },
+        {
+          "name": "fmt",
+          "exit": 0,
+          "log": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "name": "clippy",
+          "exit": 0,
+          "log": {
+            "sha256": "4b1ad8c69777705afc9d59e380043a2b552a9ac828a650fe3a8ff0b71e69d4f1",
+            "bytes": 2656
+          }
+        },
+        {
+          "name": "workspace",
+          "exit": 0,
+          "log": {
+            "sha256": "42f9e0a40522387cae91d805c0e00626c90abba0bc48481f29d78eaa62ab4acf",
+            "bytes": 128939
+          }
+        },
+        {
+          "name": "confinement-slow",
+          "exit": 0,
+          "log": {
+            "sha256": "a720d93d67315c3973f76c1ab947ec349858abaca88f0a39d684cc6ff867c257",
+            "bytes": 1143
+          }
+        },
+        {
+          "name": "source-integrity-after",
+          "exit": 0,
+          "log": {
+            "sha256": "4c624ced3d37af291268a22e47685932dc0f267c9f1c74ec37dc97871de234a1",
+            "bytes": 246
+          }
+        }
+      ],
+      "separate_slow": {
+        "selectors": [
+          "sqlite_journal_4095_append_and_prior_blocked_4096_audit_have_distinct_reservations",
+          "sqlite_eligible_4096_entry_journal_refuses_a_reserved_confinement_append",
+          "sqlite_individually_bounded_metadata_and_real_journal_cross_aggregate_nodes"
+        ],
+        "declarations": 3,
+        "passed": 3,
+        "failed": 0,
+        "ignored": 0,
+        "filtered_out": 18,
+        "log": {
+          "sha256": "a720d93d67315c3973f76c1ab947ec349858abaca88f0a39d684cc6ff867c257",
+          "bytes": 1143
+        }
+      },
+      "actual_execution_receipt": {
+        "sha256": "e32611be354585f1ff200ee6c2145906440ca61481b62e86a0583840fe41157d",
+        "bytes": 6109
+      },
+      "independent_source_execution_quality": {
+        "sha256": "5159f7fc7539b3ca8163d6ca054d45cbd8b0bc0e439611f72c828215b8817928",
+        "bytes": 22629
+      },
+      "counting_rule": "1213 top-level normal entries plus3 separately executed slow cases per platform. Raw1215 includes2 nested child summaries excluded. Six default ignored markers split3 historical unrun helpers and3 slow declarations passed separately. Modes, earlier subsets and repeated suites add no declarations or passes."
+    }
+  },
+  "python": {
+    "platform": "macOS",
+    "passed_cases": 105,
+    "new_traceability_cases": 3,
+    "log": {
+      "sha256": "602df8fa9de09e137073d2c36a8ee964aecc83bcf440c23874cd018cc3d9634c",
+      "bytes": 206
+    }
+  },
+  "new_rust_test_inventory": [
+    {
+      "file": "crates/b4-kernel/src/confinement/tests.rs",
+      "scope": "implementation_private",
+      "declarations": 24,
+      "names": [
+        "missing_definition_blocks_unstarted_work_with_full_definition_and_values",
+        "missing_authority_preserves_prior_batch_results_and_current_input",
+        "policy_denial_preserves_waiting_tasks_and_original_prompts",
+        "in_flight_effects_of_every_recovery_kind_are_preserved_without_settlement",
+        "cancellation_drain_keeps_in_flight_effect_and_cancelled_prompt",
+        "failure_drain_replaces_only_execution_reason_and_keeps_failed_task_evidence",
+        "adoption_uses_actual_owner_even_after_multiple_epochs",
+        "all_terminal_states_refuse_without_changing_the_original",
+        "prior_block_is_an_unchanged_backend_observation_not_a_second_kernel_adoption",
+        "zero_current_owner_current_or_future_snapshot_and_reused_turn_refuse",
+        "backwards_time_refuses_without_a_proposal",
+        "exhausted_revision_refuses_without_wrapping",
+        "zero_stored_owner_and_unsupported_version_remain_invalid_snapshots",
+        "depth64_inclusive_input_is_confined",
+        "depth65_is_refused_before_recursive_clone_or_validation",
+        "excessive_nodes_refuse_even_when_encoded_bytes_are_small",
+        "standalone_typed_input_over8_mib_refuses",
+        "replacement_at1_mib_inclusive_is_accepted",
+        "replacement_one_byte_over1_mib_refuses",
+        "canonical_input_above1_mib_can_shrink_to_an_eligible_replacement",
+        "escaped_container_text_utf8_and_numeric_spellings_do_not_invent_shape",
+        "fresh_turn_that_reaches_output_node_limit_is_accepted",
+        "fresh_turn_that_exceeds_output_node_limit_is_refused",
+        "reused_older_turn_is_refused_even_when_current_turn_is_different"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "331a04ef4038abcacbb4de884bfba675cc20f9b7763186b8ec97d41d12ce4f8c",
+        "bytes": 19159
+      }
+    },
+    {
+      "file": "crates/b4-kernel/tests/recovery_confinement.rs",
+      "scope": "public_qualifier",
+      "declarations": 11,
+      "names": [
+        "accepted_proposal_preserves_all_fields_for_each_reason_and_actual_owner_jump",
+        "running_proposal_keeps_ready_and_all_four_inflight_recovery_kinds_unchanged",
+        "waiting_proposal_retains_pending_interrupt_input_and_completed_sibling_result",
+        "cancellation_drain_keeps_real_inflight_attempts_and_prior_approval_history",
+        "failure_drain_keeps_task_cause_results_and_state_without_reduction_or_settlement",
+        "terminal_and_old_recovery_blocked_inputs_refuse_without_rewriting_their_history",
+        "owner_turn_clock_and_revision_guards_preserve_original_on_refusal",
+        "replacement_encoded_limit_is_inclusive_and_one_extra_byte_refuses_unchanged",
+        "compact_decoded_failure_drain_can_shrink_below_replacement_cap_without_second_read_cap",
+        "depth_and_node_boundaries_check_input_and_the_fresh_turn_output",
+        "standalone_safe_clone_byte_guard_precedes_kernel_validation_without_claiming_output_success"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "9303ba6ed1f4a09d17306cfa3f3a99143053e77bd2b60beebe6dfec6e45ad846",
+        "bytes": 13979
+      }
+    },
+    {
+      "file": "crates/b4-runtime/src/confinement/shape.rs",
+      "scope": "implementation_private",
+      "declarations": 8,
+      "names": [
+        "raw_strings_escapes_and_object_keys_have_independent_shape_counts",
+        "raw_unclosed_mismatched_and_unescaped_control_shapes_refuse_statically",
+        "raw_depth_64_is_inclusive_and_65_refuses_before_owned_decode",
+        "raw_nodes_include_container_and_stop_at_16384",
+        "borrowed_measurement_counts_encoded_unicode_and_escapes_without_buffer_contract",
+        "borrowed_measurement_checks_container_depth_before_descending_further",
+        "bounded_encoder_returns_exact_canonical_bytes_or_static_limit",
+        "serializer_errors_keep_only_static_unavailable"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "64fac6595f85284d4536c74cc8b02b2055a05054aae4aac736d0fa4d39fff159",
+        "bytes": 9624
+      }
+    },
+    {
+      "file": "crates/b4-runtime/src/confinement/tests.rs",
+      "scope": "implementation_private",
+      "declarations": 5,
+      "names": [
+        "memory_current_owner_capture_is_static_refusal_and_preserves_the_full_view",
+        "memory_current_owner_mutation_is_static_refusal_and_preserves_the_full_view",
+        "memory_absent_target_is_static_not_found_without_creating_a_resource",
+        "memory_valid_snapshot_over_one_mib_refuses_before_owner_classification",
+        "memory_valid_thread_components_over_256_kib_refuse_without_mutation"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "31988eccd5a0f574e51b0f3ed1df9c0e76d8d5516fe3b113bbdbae1408310960",
+        "bytes": 4909
+      }
+    },
+    {
+      "file": "crates/b4-runtime/src/confinement/backend.rs",
+      "scope": "implementation_private",
+      "declarations": 8,
+      "names": [
+        "aggregate_byte_limit_is_checked_without_partial_accounting",
+        "aggregate_node_limit_is_checked_atomically_with_bytes",
+        "snapshot_version_probe_distinguishes_unsigned_future_from_malformed",
+        "raw_snapshot_decoder_does_not_apply_a_canonical_input_cap",
+        "streamed_source_generated_chain_checks_the_complete_final_projection",
+        "streamed_chain_refuses_gaps_owner_time_and_identity_contradictions",
+        "streamed_chain_refuses_missing_or_inexact_final_record",
+        "journal_count_reserves_one_changed_row_but_none_for_already_blocked"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "cbd48d597cab2088eacc797916b192b97246be7c0e1b29f26e4c503ba9c8fa21",
+        "bytes": 20689
+      }
+    },
+    {
+      "file": "crates/b4-runtime/src/confinement/audit.rs",
+      "scope": "implementation_private",
+      "declarations": 5,
+      "names": [
+        "source_issued_pending_and_once_deny_evidence_reach_current_owner_refusal",
+        "source_cancelled_unapproved_retained_grant_is_not_a_corruption",
+        "missing_evidence_profile_refuses_after_all_present_contradictions",
+        "malformed_present_binding_and_consumption_rows_are_corrupt",
+        "journal_retains_only_unique_authority_revisions"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "653a5cfef13966e87981ee62a2f77666c91b0bd4e245c09f620f384b2477d5d5",
+        "bytes": 25639
+      }
+    },
+    {
+      "file": "crates/b4-runtime/tests/recovery_confinement.rs",
+      "scope": "public_qualifier",
+      "declarations": 4,
+      "names": [
+        "memory_actual_volatile_grant_profile_remains_current_owner_and_exactly_unchanged",
+        "memory_legacy_direct_approval_refuses_the_unsupported_profile_before_owner_classification",
+        "memory_depth_and_node_limits_precede_current_owner_without_rewriting_valid_values",
+        "memory_target_guards_and_arc_reference_forwarding_preserve_custom_default_refusal"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "d0cbf40ac2bcfe5d697f10a0a510c7d2e1220f367561aab45da39deae06fd811",
+        "bytes": 8733
+      }
+    },
+    {
+      "file": "crates/b4-sqlite/src/confinement/tests.rs",
+      "scope": "implementation_private",
+      "declarations": 8,
+      "names": [
+        "prior_owner_capture_returns_the_full_original_after_real_writer_reopen",
+        "prior_accepted_mutation_confirms_exact_no_dispatch_change_after_normal_retirement",
+        "current_owner_capture_refuses_with_all_six_raw_tables_unchanged",
+        "stale_target_refuses_without_refresh_or_storage_mutation",
+        "valid_legacy_waiting_without_grants_is_unsupported_not_corrupt_or_normalized",
+        "otherwise_valid_raw_snapshot_over_one_mib_is_static_limit_exceeded",
+        "prior_terminal_capture_refuses_without_rewriting_the_completed_result",
+        "prior_already_blocked_mutation_returns_unchanged_without_a_second_journal_entry"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "9b3fd2b31db45d84fbd50e29bd4f86b0dd2ceb93ac986652414b37cb13bdb663",
+        "bytes": 14061
+      }
+    },
+    {
+      "file": "crates/b4-sqlite/src/confinement/rollback_tests.rs",
+      "scope": "implementation_private",
+      "declarations": 2,
+      "names": [
+        "ignored_journal_insert_refuses_and_rolls_back_all_six_tables_before_receipt",
+        "aborting_journal_insert_refuses_and_rolls_back_all_six_tables_before_receipt"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "167fc8367117f451dbbc6b1667c5d9a36db28a4553c42f119d992c574c129132",
+        "bytes": 5807
+      }
+    },
+    {
+      "file": "crates/b4-sqlite/tests/recovery_confinement.rs",
+      "scope": "public_qualifier",
+      "declarations": 21,
+      "names": [
+        "sqlite_pending_durable_grant_survives_confinement_and_actual_owner_reopen",
+        "sqlite_historical_once_deny_and_failure_drain_authority_remain_exact_after_expiry",
+        "sqlite_cancel_requested_accepts_retained_or_legitimately_deleted_outstanding_grant",
+        "sqlite_all_four_inflight_recovery_kinds_are_blocked_without_attempt_reset_or_settlement",
+        "sqlite_legacy_direct_once_and_always_without_durable_rows_remain_unsupported",
+        "sqlite_present_authority_contradictions_are_corrupt_without_fabricated_missing_profile",
+        "sqlite_compact_raw_failure_drain_is_actually_confined_when_replacement_shrinks",
+        "sqlite_raw_snapshot_byte_limit_is_inclusive_without_conflating_replacement_bytes",
+        "sqlite_compact_valid_input_can_capture_but_refuse_a_large_canonical_replacement",
+        "sqlite_thread_component_cap_counts_raw_metadata_origin_and_fixed_identity_scalars",
+        "sqlite_depth_and_node_reader_bounds_and_fresh_turn_output_growth_are_distinct",
+        "sqlite_atomic_boundary_rejects_changed_whole_original_view_with_matching_fences",
+        "sqlite_actual_required_durable_pending_grant_count_has_inclusive_64_record_limit",
+        "sqlite_journal_4095_append_and_prior_blocked_4096_audit_have_distinct_reservations",
+        "sqlite_eligible_4096_entry_journal_refuses_a_reserved_confinement_append",
+        "sqlite_actual_64_acceptances_fit_and_65_complete_acceptances_cross_both_authority_counts",
+        "sqlite_real_grant_raw_128k_boundary_changes_spelling_only_and_is_inclusive",
+        "sqlite_real_acceptance_raw_128k_boundary_preserves_actual_consumed_authority",
+        "sqlite_real_admit_journal_raw_4k_boundary_preserves_typed_projection_and_indexes",
+        "sqlite_real_pending_grants_can_cross_8mib_aggregate_while_each_row_and_count_fits",
+        "sqlite_individually_bounded_metadata_and_real_journal_cross_aggregate_nodes"
+      ],
+      "separate_slow_selectors": [
+        "sqlite_journal_4095_append_and_prior_blocked_4096_audit_have_distinct_reservations",
+        "sqlite_eligible_4096_entry_journal_refuses_a_reserved_confinement_append",
+        "sqlite_individually_bounded_metadata_and_real_journal_cross_aggregate_nodes"
+      ],
+      "source": {
+        "sha256": "111bbe3560be4775b89c951b72325036f07b77d699267e7ced3cedea0cf53478",
+        "bytes": 38224
+      }
+    },
+    {
+      "file": "crates/b4-http/src/confinement/tests.rs",
+      "scope": "implementation_private",
+      "declarations": 26,
+      "names": [
+        "confinement_unpolled_future_borrows_handles_without_owner_or_mutation",
+        "confinement_first_poll_without_executor_refuses_before_capture",
+        "confinement_draining_host_refuses_without_dispatch_authority_or_store_capture",
+        "confinement_persistent_fault_refuses_before_registration_and_capture",
+        "confinement_capacity_refusal_preserves_handle_counts_without_trusted_calls",
+        "confinement_same_thread_claim_refuses_without_capture",
+        "confinement_missing_exact_definition_calls_only_separate_authority_with_original",
+        "confinement_trusted_resolution_failures_never_fabricate_dispatch_principal",
+        "confinement_recover_policy_denial_preserves_exact_recorded_provenances",
+        "confinement_dispatch_available_is_not_applicable_without_mutation_authority",
+        "confinement_separate_authority_denial_or_unavailability_preserves_whole_source",
+        "confinement_renewal_checks_whole_view_not_only_revision_and_incarnation",
+        "confinement_changed_renewed_dispatch_reason_refuses_without_substitution",
+        "confinement_renewed_authority_receives_same_original_and_can_refuse",
+        "confinement_backend_local_refusals_and_infrastructure_faults_are_distinct",
+        "confinement_commit_then_error_or_panic_is_ambiguous_not_rollback",
+        "confinement_contradictory_backend_receipt_never_becomes_confirmed",
+        "confinement_shutdown_cut_loses_before_lease_or_finishes_after_won_lease",
+        "confinement_owned_core_retains_verified_receipt_through_authority_replacement_payloads",
+        "confinement_owned_core_disposes_two_panicking_handles_independently",
+        "confinement_final_shared_drop_keeps_claim_capacity_group_and_returned_receipt",
+        "confinement_direct_prestart_job_disposal_is_counted_but_never_a_commit",
+        "confinement_abandoned_public_wait_keeps_won_lease_capture_until_actual_return",
+        "confinement_scripted_host_is_explicitly_unsupported_without_store_capture",
+        "confinement_out_of_scope_original_origin_never_reaches_trusted_callbacks",
+        "confinement_authority_callback_panic_is_faulted_counted_and_never_confirmed"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "9aec24989e1a303fb0ec1cb95eab61f753f7e479c3eb701e14bae4da63079fc6",
+        "bytes": 37108
+      }
+    },
+    {
+      "file": "crates/b4-http/tests/recovery_confinement.rs",
+      "scope": "public_qualifier",
+      "declarations": 10,
+      "names": [
+        "prior_owner_known_id_is_durably_confined_without_dispatch",
+        "audited_prior_blocked_history_stays_exact_without_any_trusted_callback",
+        "public_current_terminal_and_real_stale_targets_refuse_before_trusted_authority",
+        "actual_sqlite_recovery_during_authority_invalidates_original_without_retry",
+        "public_retained_definition_unresolved_or_denied_dispatch_confines_without_effects",
+        "public_first_and_renewed_mutation_authority_refusals_preserve_full_history",
+        "public_changed_renewed_dispatch_observation_never_substitutes_a_reason",
+        "public_shutdown_cut_refuses_before_lease_and_preserves_a_won_commit",
+        "public_real_journal_abort_is_static_fault_with_full_rollback",
+        "public_abandoned_wait_keeps_callback_destructor_and_payload_owned_until_release"
+      ],
+      "separate_slow_selectors": [],
+      "source": {
+        "sha256": "b4304dfdb8265ae8ccc64400faa22e01ccb624f7019a9813b2831d97bdce5e19",
+        "bytes": 29819
+      }
+    }
+  ],
+  "new_rust_declarations": 132,
+  "new_rust_default_executed_entries_per_platform": 129,
+  "new_rust_separate_slow_entries_per_platform": 3,
+  "local_accepted_component_checks": [
+    {
+      "name": "kernel_public",
+      "status": "accepted_local_targeted_earlier_input",
+      "evidence": {
+        "sha256": "942fdb4b32041a5075bb6c66776956e122c5ee6bd09c5732c50beb9878a20bbb",
+        "bytes": 506
+      },
+      "counts": {
+        "passed": 11,
+        "declarations": 11
+      },
+      "scope": "Earlier accepted focused kernel source only; no SQLite persistence inference."
+    },
+    {
+      "name": "original_backend_public",
+      "status": "accepted_local_targeted_earlier_input",
+      "evidence": {
+        "sha256": "b75dc35bd9503021211be0864f85a1c41810fb8fbca07f8378fda7f47b4cbdfd",
+        "bytes": 4010
+      },
+      "counts": {
+        "runtime_public": 4,
+        "sqlite_original_public": 13,
+        "distinct_declarations": 17
+      },
+      "scope": "Earlier accepted backend component revision; broad component suite totals are not new test counts."
+    },
+    {
+      "name": "additional_sqlite_boundary",
+      "status": "accepted_local_targeted_earlier_input",
+      "evidence": {
+        "sha256": "57aa60d4a0465e5d619198cee2affb212e2177a40de3395e3fe7aa7a14b211db",
+        "bytes": 5619
+      },
+      "counts": {
+        "additional_declarations": 8,
+        "normal_new_passed": 5,
+        "separate_slow_passed": 3,
+        "normal_original_repeats_excluded": 13
+      },
+      "scope": "Local5+actual separate3; default ignored3 not normal passes or final Linux evidence."
+    },
+    {
+      "name": "http_private_and_earlier_public",
+      "status": "accepted_local_targeted_earlier_input",
+      "evidence": {
+        "sha256": "a6c6067b4e31794af2b01b4496223b235a49ead8b378fe7b22bbb7b04365a7bc",
+        "bytes": 1143
+      },
+      "counts": {
+        "private_passed": 26,
+        "private_declarations": 26,
+        "earlier_public_passed": 4,
+        "earlier_public_declarations": 4
+      },
+      "scope": "Earlier accepted targeted input; repeated26 in full library95 excluded. Public10 final execution gate separate."
+    },
+    {
+      "name": "metadata",
+      "status": "accepted_local_targeted_earlier_input",
+      "evidence": {
+        "sha256": "b1f6cd9ac2de19d598386b3e0075be924b1b8f08af3288a78d6bde11e065a6c3",
+        "bytes": 1027
+      },
+      "counts": {
+        "new_declarations": 3,
+        "full_python_passed_cases": 105
+      },
+      "scope": "Metadata only; focused3 included in105, no runtime conformance.17 rows still pending/not_run at this input."
+    }
+  ],
+  "public_http_final_targeted_review": {
+    "status": "accepted_targeted_macOS_source_execution",
+    "declarations": 10,
+    "passed": 10,
+    "failed": 0,
+    "ignored": 0,
+    "different_author_source_execution_quality": {
+      "sha256": "1013797c00bba4197d31817d4ddcc21dc26e2a0f9ccfb3320fd8f2a484dd594b",
+      "bytes": 11380
+    },
+    "scope": "Current public10 is independently reviewed; implementation-privateHTTP26 remains separate. Each appears once in its final workspace target.13 additional modes and one same-thread probe add no declarations. No author selfapproval or retrospective RED."
+  },
+  "requirement_group": {
+    "name": "prior_owner_confinement_requirements",
+    "rows": 17,
+    "named_acceptance_links": 79,
+    "unique_file_function_pairs": 75,
+    "python_names": 3,
+    "old_groups_and_statuses_preserved": true,
+    "verification_scope": "passed_bounded_prior_owner_native_macos_linux_scope",
+    "evidence": "conformance/expected/prior-owner-confinement-verification.json"
+  },
+  "provenance": {
+    "authored_qualification_inputs": 693,
+    "crate_inputs": 273,
+    "protected_prior_files": 653,
+    "Cargo_inputs_preserved": 9,
+    "packages": 88,
+    "external_packages": 81,
+    "package_metadata": {
+      "sha256": "189b5be4c30f4ade490ec29f16d22e6afe64f414f607f43a6cc46aa527042f5d",
+      "bytes": 430672
+    },
+    "package_graph_preservation": "Remove only four additive recovery_confinement targets to restore the entire predecessor parsed metadata object; all88packages/81external packages/dependencies/features/other metadata unchanged.",
+    "bindings_scope": "Exact qualification snapshot hashes at c801, not later current documentation/status hashes. Qualification YAML55044 and plan67323 were pending at compilation; promotion is a separate exact support bridge. These are code/document/evidence hashes, never stored-resource/database/authority-row digests.",
+    "package_metadata_predecessor": {
+      "sha256": "76fe374da4f5d3dc6c24abf396930e7bcc4067a61d1c629c8a39a559bef2bd18",
+      "bytes": 429837
+    },
+    "package_metadata_inverse_audit": {
+      "sha256": "445333ec6ff716d043f5662c073b44bde3d18a7f96503f76102c458d9de48fbf",
+      "bytes": 2176
+    },
+    "qualification_source_bindings": [
+      {
+        "file": "spec/runtime/prior-owner-confinement-design.md",
+        "sha256": "322bf3adb0b1f223a064d6ca5df42facc81fbbf9178ed16c34d942b293c5d761",
+        "bytes": 42433
+      },
+      {
+        "file": "docs/superpowers/plans/2026-10-02-prior-owner-confinement.md",
+        "sha256": "67323ba78f3c2a3af2c1e911052a957f2f7346ec3d287107c847fb0dbf0fead5",
+        "bytes": 16549
+      },
+      {
+        "file": "crates/b4-kernel/src/confinement.rs",
+        "sha256": "6edf7d971d77f1da0117f6c6f75319bd7eeed7f21b41baf806b91791f9aa9f1f",
+        "bytes": 2782
+      },
+      {
+        "file": "crates/b4-runtime/src/confinement/mod.rs",
+        "sha256": "ce9f50053006aa18c335659ea7374a61ac8174312b484cc6070027484f0bbffc",
+        "bytes": 345
+      },
+      {
+        "file": "crates/b4-runtime/src/confinement/model.rs",
+        "sha256": "35bd115202c4ea1f6a5bc5f7a6597fb553cfd1279e1c7648acc32944ea644e01",
+        "bytes": 4760
+      },
+      {
+        "file": "crates/b4-runtime/src/confinement/backend.rs",
+        "sha256": "cbd48d597cab2088eacc797916b192b97246be7c0e1b29f26e4c503ba9c8fa21",
+        "bytes": 20689
+      },
+      {
+        "file": "crates/b4-runtime/src/confinement/audit.rs",
+        "sha256": "653a5cfef13966e87981ee62a2f77666c91b0bd4e245c09f620f384b2477d5d5",
+        "bytes": 25639
+      },
+      {
+        "file": "crates/b4-runtime/src/confinement/shape.rs",
+        "sha256": "64fac6595f85284d4536c74cc8b02b2055a05054aae4aac736d0fa4d39fff159",
+        "bytes": 9624
+      },
+      {
+        "file": "crates/b4-runtime/src/memory/confinement.rs",
+        "sha256": "e5a4e038f91ec86fcf29b2d82e05107e7f74205c193041b36b738ece914f310c",
+        "bytes": 5432
+      },
+      {
+        "file": "crates/b4-sqlite/src/confinement.rs",
+        "sha256": "6f38a9aa619e697d335c90a05e98cf032870682abc761a4269a24eb6a5f23ad2",
+        "bytes": 22062
+      },
+      {
+        "file": "crates/b4-sqlite/src/confinement/queries.rs",
+        "sha256": "3ddda9ba3d7b72dbe110002da6fd3a510523d0e0585a1c7b3c05f5aaef0fe99a",
+        "bytes": 4966
+      },
+      {
+        "file": "crates/b4-http/src/confinement/mod.rs",
+        "sha256": "2650cd71de1d593ab8a43fd83b4d9da3e665950d19661b3d651e30e18c81b8df",
+        "bytes": 3651
+      },
+      {
+        "file": "crates/b4-http/src/confinement/operation.rs",
+        "sha256": "82b49d3cdaba98ce79af49cb72ab2114cfe14d64eb55e323d795c28c0be128cc",
+        "bytes": 19377
+      },
+      {
+        "file": "crates/b4-kernel/tests/recovery_confinement.rs",
+        "sha256": "9303ba6ed1f4a09d17306cfa3f3a99143053e77bd2b60beebe6dfec6e45ad846",
+        "bytes": 13979
+      },
+      {
+        "file": "crates/b4-runtime/tests/recovery_confinement.rs",
+        "sha256": "d0cbf40ac2bcfe5d697f10a0a510c7d2e1220f367561aab45da39deae06fd811",
+        "bytes": 8733
+      },
+      {
+        "file": "crates/b4-sqlite/tests/recovery_confinement.rs",
+        "sha256": "111bbe3560be4775b89c951b72325036f07b77d699267e7ced3cedea0cf53478",
+        "bytes": 38224
+      },
+      {
+        "file": "crates/b4-http/tests/recovery_confinement.rs",
+        "sha256": "b4304dfdb8265ae8ccc64400faa22e01ccb624f7019a9813b2831d97bdce5e19",
+        "bytes": 29819
+      },
+      {
+        "file": "crates/b4-http/src/confinement/tests.rs",
+        "sha256": "9aec24989e1a303fb0ec1cb95eab61f753f7e479c3eb701e14bae4da63079fc6",
+        "bytes": 37108
+      },
+      {
+        "file": "scripts/check_contracts.py",
+        "sha256": "8fa769b861f54e99803b5c7c84eca94c7494e973608e7ce78b461af69aef1a87",
+        "bytes": 39325
+      },
+      {
+        "file": "scripts/test_prior_owner_confinement_traceability.py",
+        "sha256": "47c4c6f156dacf57b7628fea71c859e69e49e687c9b5e1b627ba3a85875356bd",
+        "bytes": 9495
+      },
+      {
+        "file": "spec/runtime/requirements.yaml",
+        "sha256": "55044bb108c21d037eacb61bba3edf2f7283833e1f74f74fd69f3edf73d4b892",
+        "bytes": 420339
+      },
+      {
+        "file": "crates/b4-kernel/src/confinement/tests.rs",
+        "sha256": "331a04ef4038abcacbb4de884bfba675cc20f9b7763186b8ec97d41d12ce4f8c",
+        "bytes": 19159
+      },
+      {
+        "file": "crates/b4-runtime/src/confinement/tests.rs",
+        "sha256": "31988eccd5a0f574e51b0f3ed1df9c0e76d8d5516fe3b113bbdbae1408310960",
+        "bytes": 4909
+      },
+      {
+        "file": "crates/b4-sqlite/src/confinement/tests.rs",
+        "sha256": "9b3fd2b31db45d84fbd50e29bd4f86b0dd2ceb93ac986652414b37cb13bdb663",
+        "bytes": 14061
+      },
+      {
+        "file": "crates/b4-sqlite/src/confinement/rollback_tests.rs",
+        "sha256": "167fc8367117f451dbbc6b1667c5d9a36db28a4553c42f119d992c574c129132",
+        "bytes": 5807
+      }
+    ]
+  },
+  "required_independent_gates": [
+    {
+      "name": "root-backend-dependency-acceptance",
+      "status": "accepted_scoped_source_or_execution",
+      "evidence": {
+        "sha256": "b75dc35bd9503021211be0864f85a1c41810fb8fbca07f8378fda7f47b4cbdfd",
+        "bytes": 4010
+      }
+    },
+    {
+      "name": "root-backend-boundary-acceptance",
+      "status": "accepted_scoped_source_or_execution",
+      "evidence": {
+        "sha256": "57aa60d4a0465e5d619198cee2affb212e2177a40de3395e3fe7aa7a14b211db",
+        "bytes": 5619
+      }
+    },
+    {
+      "name": "root-http-green-v2-production-acceptance",
+      "status": "accepted_scoped_source_or_execution",
+      "evidence": {
+        "sha256": "a6c6067b4e31794af2b01b4496223b235a49ead8b378fe7b22bbb7b04365a7bc",
+        "bytes": 1143
+      }
+    },
+    {
+      "name": "public-http-ten-independent-source-execution-quality",
+      "status": "accepted_scoped_source_or_execution",
+      "evidence": {
+        "sha256": "1013797c00bba4197d31817d4ddcc21dc26e2a0f9ccfb3320fd8f2a484dd594b",
+        "bytes": 11380
+      }
+    },
+    {
+      "name": "final-runtime-source-freeze-independent-quality",
+      "status": "accepted_scoped_source_or_execution",
+      "evidence": {
+        "sha256": "3860e9bd3db35fd21a459d3a926a43eef3189562cbaca27ca928c32fd7e62987",
+        "bytes": 6075
+      }
+    },
+    {
+      "name": "final-macos-independent-source-execution-quality",
+      "status": "accepted_scoped_source_or_execution",
+      "evidence": {
+        "sha256": "59e1a01430f1c184943d94d57545562be95f3055d9d5d62599350b0b95e3b23e",
+        "bytes": 8825
+      }
+    },
+    {
+      "name": "final-linux-independent-source-execution-quality",
+      "status": "accepted_scoped_source_or_execution",
+      "evidence": {
+        "sha256": "5159f7fc7539b3ca8163d6ca054d45cbd8b0bc0e439611f72c828215b8817928",
+        "bytes": 22629
+      }
+    },
+    {
+      "name": "root-final-platform-acceptance",
+      "status": "accepted_scoped_source_or_execution",
+      "evidence": {
+        "sha256": "d01b8e5a310cfa8b8b3d24f85f2b69d929e1a65aaedc77ae2341b394c0297e1d",
+        "bytes": 1205
+      }
+    }
+  ],
+  "linux_environment": {
+    "image": "sha256:6ae0042ec7e8a073013b2b7dad5a3f61b8a4baa2a45390a38fd17c85c6ab2c7e",
+    "user": "10001:10001",
+    "network": "none",
+    "cap_drop": [
+      "ALL"
+    ],
+    "mounts": [],
+    "privileged": false,
+    "fresh_compilation_target": true,
+    "owned_idle_container_cleanup": "Actual complete; environment cleanup only, never runtime retirement evidence."
+  },
+  "semantics": [
+    "Trusted embedding operation mutates one captured known-ID prior-owner ordinary view; no automatic discovery, dispatch authorization or startup readiness.",
+    "One fixed ExactDefinitionUnavailable, RequiredAuthorityUnavailable or DispatchNotAuthorized reason is observed twice against the same ORIGINAL. Separate mutation authority renews once; no fabricated actor, target refresh or reason substitution.",
+    "Confinement preserves task states/attempts/outputs/completed results; changes only fixed blocked reason/status, actual newer owner, fresh turn, revisions/time. No dispatch, task settlement, retry, remint/refund or external reconciliation.",
+    "Atomic SQLite boundary compares the entire original under actual owner/metadata/fences and reaudits bounded current authority/profile/index/journal evidence. Unsupported ambiguous legacy profiles do not become fabricated policy or claimed corruption.",
+    "Prior AlreadyBlocked is fully audited unchanged without trusted calls. Memory owner remains1 and provides current-owner/refusal evidence only.",
+    "Raw persisted1MiB, standalone safe-clone8MiB, replacement canonical1MiB, depth64/nodes16384, thread256KiB, authority128KiB, journal4KiB, authority64/journal4096 reservations and aggregate8MiB/65536 are distinct limits. Aggregate crossing probes do not prove exact aggregate-edge inclusivity.",
+    "Borrowed public handles remain external ownership; counted operation holds carrier/claim/permit and captured handles through cleanup. Waiter cancellation is not operation cancellation.",
+    "Expected static backend refusals differ from infrastructure/panic/contradictory-receipt faults. None never proves rollback. Only independently verified returned mutation evidence can survive later cleanup fault.",
+    "Shutdown lease cut distinguishes prelease refusal from a won commit. The held actual public same-thread request has spare capacity and reaches ThreadBusy without extra trusted calls.",
+    "Explicit nonexpired release, actual normal quiescence, all relevant aliases dropped, Weak absence and real next-owner writer reread support scoped physical proof. Receipt/readiness/count/timeout/forced cleanup/container deletion alone do not."
+  ],
+  "truthful_history": [
+    "First real SQLite Unsupported positive expectation compiled and failed only after normal cleanup and actual next-owner persisted reread.",
+    "Corrected kernel24, original backend13 and owned HTTP26 genuine behavioral RED precede GREEN. PrivateHTTP26 RED had2 controls pass/24 feature failures. Original public4 Unsupported failures are separate from later public qualification.",
+    "Metadata3 declarations produced11 assertion/subcase failures before GREEN; those observations are not11 tests or runtime evidence.",
+    "Additional public six declarations and same-thread probe are post-implementation qualification with no retrospective RED. Modes/repeated suites/earlier subsets add no declaration count.",
+    "Setup/compiler/kernel fixture/import/style/environment failures are retained and excluded from feature RED/final passing results. Any future platform failed attempt remains separate before an authorized rerun.",
+    "Compiled qualification snapshot contained17pending/not_run rows; final support/status promotion is a later independently reviewed bridge. Actual platform results bind the unchanged compiled source snapshot."
+  ],
+  "retained_evidence": {
+    "original_TypeScript_client": "historical; not rerun",
+    "original_Node_unit_suite": "historical221; not rerun",
+    "current_Node_subprocess_scope": "Retained recording integrity scripts invoked through Python/contracts only; no original Node or TypeScript suite rerun."
+  },
+  "limits": [
+    "Explicit bounded known-ID native confinement only; no public HTTP confinement endpoint, automatic startup activation/global consistency/provider reconciliation.",
+    "Actual typed-recovery fence mutation and refusal evidence do not establish actual deletion/reincarnation race qualification.",
+    "Durable confinement is not callback settlement/external-effect rollback/permanent revocation/exactly-once. Absent receipt cannot establish rollback.",
+    "Direct never-started disposal does not prove actual queued-executor cancellation. Caller-owned external aliases can retain resources beyond framework retirement.",
+    "Aggregate crossings do not prove exact-edge inclusivity;65 complete accepted decisions cross both acceptance and required consumed-grant counts, not isolated acceptance65.",
+    "56 release scenarios pending;CP001-009 partial,CP010 unresolved,M0 open,M5 partial/core unfrozen.",
+    "No original client rerun, manual deployment or broad crash/release closure; no hard CPU/RSS/wall-time/disk-I/O guarantee."
+  ],
+  "external_acceptance_checks": [
+    {
+      "name": "final_traceability_and_safe_support_spec_and_quality",
+      "status": "required_separate_external_acceptance",
+      "binding_rule": "Later support candidate review, post-documentation checks and final freeze/audit acceptance bind this receipt externally. No later self-binding digest or future-pass claim is embedded."
+    },
+    {
+      "name": "post_documentation_python_and_contracts",
+      "status": "required_separate_external_acceptance",
+      "binding_rule": "Later support candidate review, post-documentation checks and final freeze/audit acceptance bind this receipt externally. No later self-binding digest or future-pass claim is embedded."
+    },
+    {
+      "name": "exact_final_freeze_and_external_binding_audit",
+      "status": "required_separate_external_acceptance",
+      "binding_rule": "Later support candidate review, post-documentation checks and final freeze/audit acceptance bind this receipt externally. No later self-binding digest or future-pass claim is embedded."
+    }
+  ],
+  "hash_cycle_policy": "This receipt may bind preexisting source/execution evidence. Later support review, post-documentation checks and final external freeze/audit acceptance remain separate artifacts; their hashes are intentionally omitted here. Pending external checks assert no future pass.",
+  "inventory_accounting": {
+    "status": "complete_source_and_actual_platform_inventory",
+    "source_files": 12,
+    "distinct_function_names": 132,
+    "distinct_file_function_pairs": 132,
+    "public_qualifier_declarations": 46,
+    "implementation_private_declarations": 86,
+    "new_default_ignored_slow_declarations": 3,
+    "declaration_total_is_not_passing_count": true,
+    "iterations_modes_and_suite_repeats_not_declarations": true,
+    "shared_helper_declarations": 0,
+    "source_input": {
+      "sha256": "c8019ae5308c14d706f0f53dc543c6f0048197796197311706f56d4739f44122",
+      "bytes": 553980
+    },
+    "scope": "All12 new files qualify132 declarations per platform as129 normal+3 separate slow. Private86/public46 retain different scopes; modes/probes/repeated suites add no declarations."
+  }
+}

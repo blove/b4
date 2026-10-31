@@ -1,0 +1,31 @@
+[workspace]
+members = ["crates/b4-contract", "crates/b4-kernel", "crates/b4-testkit", "crates/b4-runtime", "crates/b4-sqlite", "crates/b4-http", "crates/b4-cli"]
+resolver = "2"
+exclude = ["vendor/rusqlite"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.93.1"
+publish = false
+
+[workspace.dependencies]
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.138"
+b4-contract = { path = "crates/b4-contract" }
+b4-kernel = { path = "crates/b4-kernel" }
+b4-runtime = { path = "crates/b4-runtime" }
+axum = { version = "=0.8.9", default-features = false, features = ["http1", "tokio"] }
+tokio = { version = "=1.53.1", features = ["rt-multi-thread", "macros", "net", "sync", "time", "io-util"] }
+uuid = { version = "=1.13.1", features = ["v4"] }
+time = { version = "=0.3.37", features = ["formatting"] }
+tower = { version = "=0.5.3", features = ["util"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = "warn"
+
+[patch.crates-io]
+rusqlite = { path = "vendor/rusqlite" }

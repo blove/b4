@@ -1,0 +1,297 @@
+{
+  "record_version": 1,
+  "profile": "http_permission_deletion_example",
+  "status": "qualified",
+  "date": "2026-10-21",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "native_source_descriptor_sha256": "1490ff5309b19853958f4385a89a6ba5f6f85a9670e7ebdf1f943e9195987783",
+  "native_source_file_count": 1080,
+  "binary_sha256": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+  "checks": {
+    "example-build": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "build",
+        "-p",
+        "b4-http",
+        "--example",
+        "serve_permission_reuse",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 10.739,
+      "log_sha256": "f55185dc4f572a21e7bbd46e6bdc7f7a306ed78429b4b630c1d932cb94d2f479",
+      "binary_path": "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse",
+      "binary_sha256_before": "f39576a61212d7e66df54b4c31d7847b818cd811d29b038af74834fc4cf85586",
+      "binary_sha256_after": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "private_run": "example-build-1792582404922550000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "deletion-probe": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_permission_deletion_example.py",
+        "--example",
+        "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 1.328,
+      "log_sha256": "6f04434e6520e14ee2af684b0c979ca26e74ae54e5db3083a78946fd2bd3d063",
+      "binary_path": "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse",
+      "binary_sha256_before": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "binary_sha256_after": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "private_run": "deletion-probe-1792582428041219000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "reuse-probe": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_permission_reuse_example.py",
+        "--example",
+        "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 0.345,
+      "log_sha256": "c53a61631328d93f522250865915718db784fb8156e1faea91760d32f9fc6431",
+      "binary_path": "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse",
+      "binary_sha256_before": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "binary_sha256_after": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "private_run": "reuse-probe-1792582449785513000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "always-probe": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_http_always_example.py",
+        "--example",
+        "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 0.284,
+      "log_sha256": "1cd884bb02e0bf3e5ba17537d989b389397fa452f57a7008a0e6af73dc5bbc7c",
+      "binary_path": "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse",
+      "binary_sha256_before": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "binary_sha256_after": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "private_run": "always-probe-1792582466031310000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "cancellation-probe": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_permission_cancellation_example.py",
+        "--example",
+        "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 0.409,
+      "log_sha256": "53c42373d1e8c4531e1195b13b7d852dec4f66b8350b037e9148f62a12549e06",
+      "binary_path": "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse",
+      "binary_sha256_before": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "binary_sha256_after": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "private_run": "cancellation-probe-1792582472806561000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.532,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "binary_path": "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse",
+      "binary_sha256_before": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "binary_sha256_after": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "private_run": "format-check-1792582722153002000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "example-lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "-p",
+        "b4-http",
+        "--example",
+        "serve_permission_reuse",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 4.203,
+      "log_sha256": "7611dddd7665ea682c5cba4f16ba4e900adfb9546b7510e73d4be1033c66d917",
+      "binary_path": "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse",
+      "binary_sha256_before": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "binary_sha256_after": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "private_run": "example-lint-1792582731950395000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "metadata": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 3.521,
+      "log_sha256": "6bb60954c4e06021932103c0feb199cea7e04c63ad592378d1387a23ed36b770",
+      "binary_path": "/Users/blove/repos/b4/.b4-work/http-permission-deletion-example/build-target/debug/examples/serve_permission_reuse",
+      "binary_sha256_before": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "binary_sha256_after": "008fb3dd955f54c3707b252d48668cfae05750e845558f02ab94d2a5b965a91a",
+      "private_run": "metadata-1792582722155542000",
+      "source_unchanged": true,
+      "metadata_only": true
+    }
+  },
+  "source_files": [
+    {
+      "path": "crates/b4-http/examples/serve_permission_reuse.rs",
+      "bytes": 20214,
+      "sha256": "2d536e21d6556aaa308e02c7927f00a75465e60cc539fb68b5398eb84a4a4630"
+    },
+    {
+      "path": "scripts/check_permission_deletion_example.py",
+      "bytes": 43799,
+      "sha256": "0793d415c93f9a01fee674c493efe7311013397f116e22b4f6d2d18785004d15"
+    }
+  ],
+  "process_evidence": {
+    "actual_delete_committed": true,
+    "children_reaped": 8,
+    "children_started": 8,
+    "cleanup_ok": true,
+    "control_after_reuse": {
+      "approval_acceptances": 0,
+      "approval_grants": 1,
+      "executions": 2,
+      "journal": 12,
+      "permission_acceptances": 1,
+      "permission_decisions": 1,
+      "permission_uses": 1,
+      "threads": 1
+    },
+    "control_before": {
+      "approval_acceptances": 0,
+      "approval_grants": 1,
+      "executions": 1,
+      "journal": 7,
+      "permission_acceptances": 1,
+      "permission_decisions": 1,
+      "permission_uses": 0,
+      "threads": 1
+    },
+    "forced_cleanup": false,
+    "http_workers_joined": true,
+    "integrity_ok": true,
+    "listeners_released": true,
+    "live_delete_refused": true,
+    "mode": "serve-deletion",
+    "normal_owners": 3,
+    "other_rows_byte_identical": true,
+    "owned_temporary_removed": true,
+    "owner_locks_released": true,
+    "permission_provenance_unchanged": true,
+    "status": "ok",
+    "survivor_genuine_additional_use": 1,
+    "target_before": {
+      "approval_acceptances": 1,
+      "approval_grants": 2,
+      "executions": 4,
+      "journal": 24,
+      "permission_acceptances": 1,
+      "permission_decisions": 1,
+      "permission_uses": 2,
+      "threads": 1
+    },
+    "target_removed_all_eight_tables": true
+  },
+  "old_process_probes": {
+    "reuse-probe": {
+      "passed": true,
+      "actual_summary": "permission-reuse-example: seed=Cancelled4 owners=1,2,3 reused=Complete4,Complete4 uses=2 normal_shutdowns=2 integrity=ok removed=true"
+    },
+    "always-probe": {
+      "passed": true,
+      "actual_summary": "http-always-example: original=Complete5 owners=1,2 reused=Complete4 uses=1 normal_shutdowns=2 integrity=ok removed=true"
+    },
+    "cancellation-probe": {
+      "passed": true,
+      "actual_summary": "permission-cancellation-example: original=Cancelled6 reused=Cancelled5,Complete4 owners=1,2,3 uses=2 normal_shutdowns=3 integrity=ok removed=true entered_only=true"
+    }
+  },
+  "tdd_red": {
+    "private_run": "deletion-probe-red-1792581955267386000",
+    "source_snapshot_sha256": "77dc4201cd77f84cc011bb260423c90eba15873ada5667984ddff2ebc4041fca",
+    "exit_code": 1,
+    "reaped": true,
+    "timed_out": false,
+    "log_sha256": "dbb25bf58efc00de5d20253d25798c24cfc258090bc67e4b03bb35a474c006db",
+    "binary_sha256": "f39576a61212d7e66df54b4c31d7847b818cd811d29b038af74834fc4cf85586",
+    "old_binary_preservation_receipt_sha256": "b9f6b24eb60d2b913324b94bfdb25284e8a0d2c63e06cc5d71787386fec2df84",
+    "reason": "missing_explicit_mode",
+    "cleanup": {
+      "children_reaped": 1,
+      "children_started": 1,
+      "cleanup_ok": true,
+      "forced_cleanup": true,
+      "http_workers_joined": true,
+      "normal_owners": 0,
+      "owned_temporary_removed": true,
+      "status": "failed"
+    },
+    "positive_process_evidence": false
+  },
+  "scope": {
+    "example_only": true,
+    "old_modes_unchanged": true,
+    "libraries_contracts_dependencies_unchanged": true,
+    "actual_entered_live_delete_refusal": true,
+    "settled_delete_after_normal_owner_drain": true,
+    "target_rows_removed_from_all_eight_tables": true,
+    "other_history_bytes_preserved": true,
+    "surviving_permission_reused_after_reopen": true,
+    "sql_inspection_only_after_normal_retirement": true,
+    "deterministic_pre_entry_process_evidence": false,
+    "new_full_workspace_run": false,
+    "metadata_is_runtime_evidence": false,
+    "live_retirement_or_recovery": false,
+    "automatic_replay_or_storage_retry": false,
+    "maximum_size_qualification": false,
+    "cross_platform_qualification": false,
+    "git_writes": false
+  }
+}

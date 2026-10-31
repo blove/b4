@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "profile": "b4-ap-core/0",
+  "classification": "NATIVE",
+  "status": "passed_native_scope",
+  "scope": "bounded_store_discovery_only",
+  "source_input_freeze": {
+    "sha256": "82c1686351c3e5a60e66a2f777bb0c2232706726e6cafe5a3d5d9bb3f59614cd",
+    "bytes": 436411
+  },
+  "platform_checks": {
+    "macOS": {
+      "status": "passed_native_scope",
+      "architecture": "arm64",
+      "rust_passed_entries": 966,
+      "cargo_targets": 91,
+      "rust_failed": 0,
+      "historical_ignored": 3,
+      "raw_result_passed": 968,
+      "nested_child_entries_excluded": 2,
+      "checks": [
+        {
+          "name": "fmt",
+          "exit": 0,
+          "log": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "name": "clippy",
+          "exit": 0,
+          "log": {
+            "sha256": "29c570e1965f287cb620abc52fc5d5cf38e12da36df90d8900cad6bdd63766bd",
+            "bytes": 349
+          }
+        },
+        {
+          "name": "workspace",
+          "exit": 0,
+          "log": {
+            "sha256": "e49bb4f09371d5d74febf2fcfcb3e4c6d65476290bd380482ffcce220fa96d90",
+            "bytes": 96982
+          }
+        },
+        {
+          "name": "python",
+          "exit": 0,
+          "log": {
+            "sha256": "7529a47fec6716372430443190c47ad8c74a7d31742330890f713ae7f0fa959e",
+            "bytes": 196
+          }
+        },
+        {
+          "name": "contracts",
+          "exit": 0,
+          "log": {
+            "sha256": "9006006db4398042e92ab72dd7e42b7b236ebce792994c6ec7d400a8c3af17cd",
+            "bytes": 1438
+          }
+        }
+      ]
+    },
+    "Linux": {
+      "status": "passed_native_scope",
+      "architecture": "aarch64",
+      "rust_passed_entries": 966,
+      "cargo_targets": 91,
+      "rust_failed": 0,
+      "historical_ignored": 3,
+      "raw_result_passed": 968,
+      "nested_child_entries_excluded": 2,
+      "checks": [
+        {
+          "name": "source-integrity",
+          "exit": 0,
+          "log": {
+            "sha256": "7f24d99d81b7a8abb1f57ad429797cad7c29c0b3fa3900f984972692073b57cf",
+            "bytes": 246
+          }
+        },
+        {
+          "name": "fmt",
+          "exit": 0,
+          "log": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "name": "clippy",
+          "exit": 0,
+          "log": {
+            "sha256": "6db9d43fef06d59bb457e637a97da0bee11a0133cc669b1d917b48dbeb2862a6",
+            "bytes": 2656
+          }
+        },
+        {
+          "name": "workspace",
+          "exit": 0,
+          "log": {
+            "sha256": "a259479b4019406b75ef84a24a58f69b646415fc0ff85e7272ae9b92bd40e165",
+            "bytes": 102083
+          }
+        },
+        {
+          "name": "source-integrity-after",
+          "exit": 0,
+          "log": {
+            "sha256": "7f24d99d81b7a8abb1f57ad429797cad7c29c0b3fa3900f984972692073b57cf",
+            "bytes": 246
+          }
+        }
+      ]
+    }
+  },
+  "python": {
+    "platform": "macOS",
+    "passed_cases": 96,
+    "new_traceability_cases": 3
+  },
+  "new_rust_test_inventory": [
+    {
+      "file": "crates/b4-runtime/src/discovery/tests.rs",
+      "declarations": 24,
+      "names": [
+        "origin_borrows_only_its_live_cursor_and_generation",
+        "cursor_retains_only_the_marker_after_origin_drop",
+        "shape_counts_keys_containers_and_primitives",
+        "shape_accounts_escapes_unicode_and_scalars_at_every_split",
+        "shape_depth_accepts64_and_refuses65_before_child_visit",
+        "shape_nodes_accept16384_and_refuse16385",
+        "shape_wire_bytes_accept_one_mib_and_refuse_the_next_byte",
+        "shape_rejects_unclosed_or_mismatched_containers_and_strings",
+        "shape_writer_marks_only_its_own_limit_failures",
+        "borrowed_snapshot_measurement_matches_compact_json_and_decoder",
+        "borrowed_snapshot_measurement_refuses_depth_before_kernel_validation",
+        "borrowed_snapshot_measurement_refuses_a_large_plain_string",
+        "shared_decoder_classifies_unsupported_version_and_escaped_root_key",
+        "shared_decoder_rejects_missing_duplicate_version_and_malformed_json",
+        "shared_decoder_budget_precedes_recursive_probe_and_decode",
+        "shared_projection_preserves_exact_current_and_prior_fences",
+        "shared_projection_distinguishes_zero_snapshot_and_future_owner",
+        "shared_projection_checks_indexes_and_thread_before_terminal_filter",
+        "page_budget_accepts_all32_capped_rows_without_stalling",
+        "helper_budget_small_cap_and_checked_overflow_preserve_last_total",
+        "projection_rejects_every_index_relationship_before_terminal_filter",
+        "serializer_opening_refusal_precedes_the_65th_container_children",
+        "unsupported_version_probe_still_consumes_and_validates_the_entire_document",
+        "discovery_error_codes_are_static_and_have_no_source"
+      ]
+    },
+    {
+      "file": "crates/b4-runtime/src/discovery/memory_tests.rs",
+      "declarations": 6,
+      "names": [
+        "discovery_refuses_corrupt_selected_source_without_mutation",
+        "discovery_validates_terminal_history_and_foreign_pointer",
+        "discovery_refuses_unfinished_history_behind_a_terminal_active_pointer",
+        "identity_only_lookahead_does_not_validate_or_measure_its_payload",
+        "discovery_limits_borrowed_values_before_recursive_kernel_work",
+        "discovery_poison_is_static_unavailable"
+      ]
+    },
+    {
+      "file": "crates/b4-runtime/tests/unfinished_discovery.rs",
+      "declarations": 13,
+      "names": [
+        "memory_admitted_execution_is_discovered",
+        "memory_selects_all_unfinished_states_and_task_uncertainties_without_mutation",
+        "memory_pages_thirty_two_rows_with_identity_only_lookahead",
+        "memory_terminal_prefix_returns_an_empty_advancing_page",
+        "memory_per_snapshot_byte_limit_preserves_known_id_access",
+        "memory_full_page_at_each_snapshot_byte_cap_does_not_stall",
+        "memory_depth_limit_preserves_valid_known_id_snapshot",
+        "memory_node_limit_preserves_valid_known_id_snapshot",
+        "memory_cursor_rejects_a_different_source_with_the_same_owner",
+        "memory_continuation_observes_interpage_changes_without_a_global_snapshot",
+        "custom_store_discovery_defaults_to_refusal_without_probing",
+        "existing_arc_and_reference_wrappers_forward_builtin_discovery",
+        "memory_pages_and_cursors_retain_no_store_after_a_move"
+      ]
+    },
+    {
+      "file": "crates/b4-sqlite/src/discovery/tests.rs",
+      "declarations": 10,
+      "names": [
+        "metadata_zero_or_replaced_owner_is_refused",
+        "metadata_version_or_checksum_is_refused",
+        "missing_metadata_row_is_refused",
+        "otherwise_valid_snapshot_over_one_mib_is_a_read_limit",
+        "raw_snapshot_depth_and_nodes_are_checked_before_decode",
+        "indexed_revision_mismatch_is_refused",
+        "future_snapshot_owner_is_an_owner_conflict",
+        "zero_snapshot_owner_is_kernel_corruption",
+        "foreign_pointer_is_refused",
+        "persisted_byte_limit_does_not_apply_a_second_canonical_limit"
+      ]
+    },
+    {
+      "file": "crates/b4-sqlite/tests/unfinished_discovery.rs",
+      "declarations": 18,
+      "names": [
+        "reopened_unfinished_execution_is_discovered",
+        "sqlite_selects_all_unfinished_states_and_task_uncertainties_without_mutation",
+        "sqlite_pages_thirty_two_rows_with_identity_only_lookahead",
+        "sqlite_terminal_prefix_returns_an_empty_advancing_page",
+        "sqlite_per_snapshot_byte_limit_preserves_known_id_access",
+        "sqlite_full_page_at_each_snapshot_byte_cap_does_not_stall",
+        "sqlite_depth_limit_preserves_valid_known_id_snapshot",
+        "sqlite_node_limit_preserves_valid_known_id_snapshot",
+        "sqlite_cursor_rejects_a_different_source_with_the_same_owner",
+        "sqlite_continuation_observes_interpage_changes_without_a_global_snapshot",
+        "sqlite_raw_json_spelling_counts_persisted_bytes_without_normalization",
+        "sqlite_pages_and_cursors_retain_no_store_or_owner_lock",
+        "sqlite_refuses_corrupt_index_thread_and_active_relationships_read_only",
+        "sqlite_refuses_future_owner_and_unsupported_metadata_without_repair",
+        "sqlite_validates_hidden_terminal_history_before_filtering",
+        "sqlite_lookahead_does_not_decode_the_thirty_third_snapshot",
+        "sqlite_lookahead_identity_limit_counts_utf8_bytes_before_decoding",
+        "sqlite_snapshot_version_probe_handles_escaped_and_duplicate_root_keys"
+      ]
+    },
+    {
+      "file": "crates/b4-http/tests/unfinished_discovery_recovery.rs",
+      "declarations": 7,
+      "names": [
+        "discovered_current_owner_does_not_authorize_recovery",
+        "discovered_prior_park_preserves_actual_grants_and_pending_identity_over_authenticated_tcp",
+        "discovered_prior_ready_continues_committed_once_without_new_approval",
+        "discovered_target_requires_renewed_policy_origin_and_exact_fences",
+        "discovered_target_cannot_replace_the_full_immutable_definition",
+        "discovered_unsafe_inflight_and_blocked_work_is_observation_without_automatic_retry",
+        "discovered_old_thread_generation_cannot_adopt_a_successor_thread"
+      ]
+    }
+  ],
+  "new_rust_declarations": 78,
+  "new_rust_executed_entries_per_platform": 78,
+  "requirement_group": {
+    "name": "unfinished_discovery_requirements",
+    "rows": 19,
+    "named_acceptance_links": 67,
+    "previous_groups_preserved": {
+      "foundation": 338,
+      "unchanged_ap_client": 8,
+      "native_cancellation": 15
+    },
+    "python_row_UDISC_019_platform": "macOS"
+  },
+  "provenance": {
+    "reviewed_sources": [
+      {
+        "file": "crates/b4-runtime/src/lib.rs",
+        "sha256": "4c91c17ca6754511abd5ebc6a38eb32b81e5066815c7066e3680a3f6a3a1cbfc",
+        "bytes": 576
+      },
+      {
+        "file": "crates/b4-runtime/src/store.rs",
+        "sha256": "175327e4bdfb63f49b73d0abb7a8d2feadea2f2e62f6a81f5694a56cac4e0c49",
+        "bytes": 21659
+      },
+      {
+        "file": "crates/b4-runtime/src/memory.rs",
+        "sha256": "6866eb562a53a5d3907e5c8db0a014a80382a4634adb54116ee11253352aa4b4",
+        "bytes": 34652
+      },
+      {
+        "file": "crates/b4-runtime/src/discovery/backend.rs",
+        "sha256": "df925b0f7a1ffcb5d887e40966c61919bb7de8409d03ff7045a7add6520a8363",
+        "bytes": 7028
+      },
+      {
+        "file": "crates/b4-runtime/src/discovery/memory.rs",
+        "sha256": "255f2c57569f926cef9c5bb0b4fda1c4888003770d4e9a45ba76008cfa91c1a5",
+        "bytes": 2942
+      },
+      {
+        "file": "crates/b4-runtime/src/discovery/memory_tests.rs",
+        "sha256": "97df396b761f9afdb307872f016b47ee340d961dd6072f8faf86556b9cfd690a",
+        "bytes": 7464
+      },
+      {
+        "file": "crates/b4-runtime/src/discovery/mod.rs",
+        "sha256": "1b87b49207b19b1d235eb2380b00c623ac8fcd3f0c4b68cfb564f9db79229594",
+        "bytes": 3419
+      },
+      {
+        "file": "crates/b4-runtime/src/discovery/shape.rs",
+        "sha256": "f5e9c882b58f82238fe481d8a797c9baee723a8006f4f90b9a0576c20d6b2055",
+        "bytes": 4525
+      },
+      {
+        "file": "crates/b4-runtime/src/discovery/tests.rs",
+        "sha256": "91d0fe0f19366bf60f503f63bb53fc327f0d4f9584af84457f32b251feb58b76",
+        "bytes": 16875
+      },
+      {
+        "file": "crates/b4-sqlite/src/lib.rs",
+        "sha256": "83c4dcefab385f0d3092deb80b01830434d7842dbadad151283cae6b5d79fc31",
+        "bytes": 51987
+      },
+      {
+        "file": "crates/b4-sqlite/src/discovery.rs",
+        "sha256": "59b678e117f23ea56466cad38be5695e471e0a5aa9bd91338e899fe6258c8575",
+        "bytes": 13098
+      },
+      {
+        "file": "crates/b4-sqlite/src/discovery/tests.rs",
+        "sha256": "c6eb6d921ed07ab07a7c0a52afc8a89f9df573454f95e1d208bd3df43f9a1b42",
+        "bytes": 9589
+      },
+      {
+        "file": "crates/b4-runtime/tests/unfinished_discovery.rs",
+        "sha256": "8e146bed39c910f3800613025b7ef990767b0f37f0b07f2021061186e7e7f747",
+        "bytes": 3934
+      },
+      {
+        "file": "crates/b4-runtime/tests/unfinished_discovery_support/mod.rs",
+        "sha256": "0031ab536538d5838c6ed7a50153b6b0d40e1d2102f30794f72b8023c4fbb476",
+        "bytes": 5974
+      },
+      {
+        "file": "crates/b4-runtime/tests/unfinished_discovery_support/scenarios.rs",
+        "sha256": "b3a9670775f6339d2c2da64d76dc1a5fef4a989a2afbc08cde80c91729e3e213",
+        "bytes": 20082
+      },
+      {
+        "file": "crates/b4-runtime/tests/unfinished_discovery_support/custom.rs",
+        "sha256": "9ffec14f043a3b846f3b21d4fbdf3a813a1c2aa6b083a8943f8ee39f01c3cab2",
+        "bytes": 1930
+      },
+      {
+        "file": "crates/b4-sqlite/tests/unfinished_discovery.rs",
+        "sha256": "452887e2b66b540afe0d274f0c61a81cf3d6323297eab23736b1a3e2035e314b",
+        "bytes": 15503
+      },
+      {
+        "file": "crates/b4-sqlite/tests/unfinished_discovery_support/mod.rs",
+        "sha256": "71f75d259ef7d011a25f4af1b209f085e8a65ec1436967ac4c6029f0d75dd9f2",
+        "bytes": 2946
+      },
+      {
+        "file": "crates/b4-http/tests/unfinished_discovery_recovery.rs",
+        "sha256": "f78ecbefa41953d8e0bf61275c6ab1b56562e480533f178107f0d8b9b1b329b7",
+        "bytes": 13695
+      },
+      {
+        "file": "crates/b4-http/tests/unfinished_discovery_recovery_support/mod.rs",
+        "sha256": "af564d0abe56a74f2bdf5e1b5717459c275c45023e67ca2f9df56a79fd97ff28",
+        "bytes": 13870
+      },
+      {
+        "file": "scripts/check_contracts.py",
+        "sha256": "2d95ba3e5024af1a11ae2844aaea0c5e1512c11f50066f3a18901fd9cce1d06b",
+        "bytes": 36359
+      },
+      {
+        "file": "scripts/test_unfinished_discovery_traceability.py",
+        "sha256": "8ebe20ad47b6a93d77b69e3b3dfd585dd626d2a74078b0f2a21d9069aab4582a",
+        "bytes": 2896
+      }
+    ],
+    "protected_prior_files": 597,
+    "authored_qualification_inputs": 625,
+    "crate_inputs": 219,
+    "packages": 88,
+    "external_packages": 81,
+    "package_metadata": {
+      "sha256": "3717b4e2a5908f34d36d529757f0d70478b62c068fcd51e969f348f4891192f6",
+      "bytes": 428391
+    },
+    "accepted_source_review_bundle": {
+      "sha256": "b1d668360b0d9722057fcc4260d4011993fc1464229685af1a5bf261a9638f10",
+      "bytes": 18482
+    }
+  },
+  "qualified_behaviors": [
+    "Optional default refusal and only existing Arc/reference delegation.",
+    "Bounded selected snapshot preflight, exact index/thread fences, terminal validation, provenance-bound cursors, empty advancing pages and read-only preservation.",
+    "SQLite persisted-byte accounting accepts within-cap spelling even when its canonical encoding is larger.",
+    "Pages/cursors retain no Store; actual normal Store drop permits a real successor writer.",
+    "Existing separately authorized recovery preserves actual park and consumed Once decisions, rejects wrong authority/Definition/fences and does not replay unsafe uncertainty."
+  ],
+  "evidence_limits": [
+    "Workspace totals include the previously frozen AP example tests; original TypeScript clients and Node tests were not rerun.",
+    "Private scoped checks and subset reruns are not added to workspace totals; two nested historical child results are excluded.",
+    "Recovery integration is the trusted embedding API, while authenticated TCP covers ordinary views/pending grants.",
+    "Actual parked grants/authority rows and raw private fixtures are omitted from this safe receipt.",
+    "Normal owned idle-container cleanup is environment cleanup, not proof of callback or Store retirement.",
+    "Final public-support review and external freeze are separately recorded."
+  ],
+  "open_work": [
+    "Automatic actor/policy reconstruction and pre-serving startup coordination; full RFC 11.4 algorithm.",
+    "Persistent Always, complete crash/recovery matrix and external reconciliation.",
+    "Historical definition coexistence, broader TypeScript/provider/business parity.",
+    "M0, CP010, M5, 56 broad release scenarios and full core-profile release."
+  ]
+}

@@ -1,0 +1,536 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capabilities.json",
+  "title": "B4 native operational capability descriptor v1",
+  "x-schema-id": "urn:b4:agent-protocol:native:capabilities-v1",
+  "x-implementation-status": "native-subset",
+  "x-compatibility-status": "authored-native-operational-contract",
+  "description": "Protected route-free assembled mechanism declaration. It is not a health result, permission promise or full core-profile conformance. No TypeScript reference execution is claimed. Native callbacks are trusted and not sandboxed. Null controls explicitly identify absent bounds.",
+  "type": "object",
+  "properties": {
+    "descriptor_version": {
+      "const": 1
+    },
+    "target_profile": {
+      "const": "b4-ap-core/0"
+    },
+    "profile_status": {
+      "const": "native_subset"
+    },
+    "core_profile_frozen": {
+      "const": false
+    },
+    "runtime_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[^\\u0000-\\u001f\\u007f-\\u009f]+$",
+      "x-max-utf8-bytes": 256,
+      "description": "Rust additionally enforces256 UTF-8 bytes; standard JSON Schema maxLength counts code points."
+    },
+    "application": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/application"
+        }
+      ]
+    },
+    "execution": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "const": "single_process"
+        },
+        "registration": {
+          "const": "immutable"
+        },
+        "native_callbacks": {
+          "type": "boolean"
+        },
+        "approval_service_mode": {
+          "enum": [
+            "disabled",
+            "durable_required",
+            "volatile_fixture"
+          ]
+        }
+      },
+      "required": [
+        "mode",
+        "registration",
+        "native_callbacks",
+        "approval_service_mode"
+      ],
+      "additionalProperties": false
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "live_attach": {
+          "const": true
+        },
+        "required_once_deny": {
+          "type": "boolean"
+        },
+        "trusted_known_id_recovery": {
+          "type": "boolean"
+        },
+        "fenced_cancellation": {
+          "type": "boolean"
+        },
+        "fenced_deletion": {
+          "type": "boolean"
+        },
+        "automatic_recovery_scan": {
+          "const": false
+        },
+        "always_permissions": {
+          "const": false
+        },
+        "durable_event_replay": {
+          "const": false
+        },
+        "native_live_chunks": {
+          "const": false
+        },
+        "built_in_model_providers": {
+          "const": false
+        },
+        "memory_candidates": {
+          "const": false
+        },
+        "managed_workspaces": {
+          "const": false
+        },
+        "ag_ui": {
+          "const": false
+        },
+        "dynamic_graphs": {
+          "const": false
+        },
+        "graceful_shutdown": {
+          "const": false
+        },
+        "turn_deadline": {
+          "const": false
+        },
+        "native_callback_sandbox": {
+          "const": false
+        }
+      },
+      "required": [
+        "live_attach",
+        "required_once_deny",
+        "trusted_known_id_recovery",
+        "fenced_cancellation",
+        "fenced_deletion",
+        "automatic_recovery_scan",
+        "always_permissions",
+        "durable_event_replay",
+        "native_live_chunks",
+        "built_in_model_providers",
+        "memory_candidates",
+        "managed_workspaces",
+        "ag_ui",
+        "dynamic_graphs",
+        "graceful_shutdown",
+        "turn_deadline",
+        "native_callback_sandbox"
+      ],
+      "additionalProperties": false
+    },
+    "store": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "unspecified",
+            "memory",
+            "sqlite"
+          ]
+        },
+        "durable_runtime": {
+          "type": "boolean"
+        },
+        "durable_approvals": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "null means approval storage declaration unavailable through this assembled Store port; bool is a separate physical ApprovalStore declaration."
+        }
+      },
+      "required": [
+        "kind",
+        "durable_runtime",
+        "durable_approvals"
+      ],
+      "additionalProperties": false
+    },
+    "readiness": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "const": "status_only"
+        },
+        "aggregation": {
+          "const": "store_readiness_and_no_owned_worker_fault"
+        },
+        "checks": {
+          "const": [
+            "store_readiness",
+            "owned_worker_fault"
+          ]
+        }
+      },
+      "required": [
+        "response",
+        "aggregation",
+        "checks"
+      ],
+      "additionalProperties": false
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "body_bytes": {
+          "const": 65536
+        },
+        "json_depth": {
+          "const": 64
+        },
+        "active_runs": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 256
+        },
+        "concurrent_tasks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 256
+        },
+        "concurrent_tasks_per_execution": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "viewer_queue_frames": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 512
+        },
+        "heartbeat_ms": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 60000
+        },
+        "input_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65536
+        },
+        "output_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65536
+        },
+        "max_attached_viewers": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "turn_buffer_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8388608
+        },
+        "turn_buffer_frames": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4096
+        },
+        "viewer_queue_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8388608
+        },
+        "attachment_snapshot_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8388608
+        },
+        "program_routes": {
+          "const": 64
+        },
+        "program_tasks": {
+          "const": 64
+        },
+        "program_attempts": {
+          "const": 64
+        },
+        "completion_attempts": {
+          "const": 8
+        },
+        "task_failure_bytes": {
+          "const": 1024
+        },
+        "script_chunks": {
+          "const": 64
+        },
+        "script_delay_ms": {
+          "const": 5000
+        },
+        "approval_bytes": {
+          "const": 65536
+        },
+        "approval_ttl_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 86400000
+        }
+      },
+      "required": [
+        "body_bytes",
+        "json_depth",
+        "active_runs",
+        "concurrent_tasks",
+        "concurrent_tasks_per_execution",
+        "viewer_queue_frames",
+        "heartbeat_ms",
+        "input_bytes",
+        "output_bytes",
+        "max_attached_viewers",
+        "turn_buffer_bytes",
+        "turn_buffer_frames",
+        "viewer_queue_bytes",
+        "attachment_snapshot_bytes",
+        "program_routes",
+        "program_tasks",
+        "program_attempts",
+        "completion_attempts",
+        "task_failure_bytes",
+        "script_chunks",
+        "script_delay_ms",
+        "approval_bytes",
+        "approval_ttl_ms"
+      ],
+      "additionalProperties": false
+    },
+    "controls": {
+      "type": "object",
+      "properties": {
+        "callback_timeout_ms": {
+          "const": null
+        },
+        "validator_timeout_ms": {
+          "const": null
+        },
+        "turn_deadline_ms": {
+          "const": null
+        },
+        "max_threads": {
+          "const": null
+        },
+        "max_history_bytes": {
+          "const": null
+        },
+        "parked_retention_ms": {
+          "const": null
+        },
+        "connection_limit": {
+          "const": null
+        },
+        "whole_process_memory_bytes": {
+          "const": null
+        }
+      },
+      "required": [
+        "callback_timeout_ms",
+        "validator_timeout_ms",
+        "turn_deadline_ms",
+        "max_threads",
+        "max_history_bytes",
+        "parked_retention_ms",
+        "connection_limit",
+        "whole_process_memory_bytes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "descriptor_version",
+    "target_profile",
+    "profile_status",
+    "core_profile_frozen",
+    "runtime_version",
+    "application",
+    "execution",
+    "features",
+    "store",
+    "readiness",
+    "limits",
+    "controls"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "application": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\u0000-\\u001f\\u007f-\\u009f]+$",
+          "x-max-utf8-bytes": 256,
+          "description": "Rust additionally enforces256 UTF-8 bytes; standard JSON Schema maxLength counts code points."
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\u0000-\\u001f\\u007f-\\u009f]+$",
+          "x-max-utf8-bytes": 256,
+          "description": "Rust additionally enforces256 UTF-8 bytes; standard JSON Schema maxLength counts code points."
+        }
+      },
+      "required": [
+        "id",
+        "revision"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "execution": {
+            "properties": {
+              "native_callbacks": {
+                "const": true
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "application": {
+            "$ref": "#/$defs/application"
+          },
+          "execution": {
+            "properties": {
+              "approval_service_mode": {
+                "enum": [
+                  "durable_required",
+                  "volatile_fixture"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "application": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "execution": {
+            "properties": {
+              "approval_service_mode": {
+                "const": "disabled"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "features": {
+            "properties": {
+              "required_once_deny": {
+                "const": false
+              },
+              "trusted_known_id_recovery": {
+                "const": false
+              }
+            }
+          },
+          "limits": {
+            "properties": {
+              "approval_ttl_ms": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "features": {
+            "properties": {
+              "required_once_deny": {
+                "const": true
+              },
+              "trusted_known_id_recovery": {
+                "const": true
+              }
+            }
+          },
+          "limits": {
+            "properties": {
+              "approval_ttl_ms": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 86400000
+              }
+            }
+          },
+          "store": {
+            "properties": {
+              "durable_approvals": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "execution": {
+            "properties": {
+              "approval_service_mode": {
+                "const": "durable_required"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "store": {
+            "properties": {
+              "durable_approvals": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

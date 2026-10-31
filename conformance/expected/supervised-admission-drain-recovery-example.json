@@ -1,0 +1,15 @@
+{
+  "accepted_before_reopen": true,
+  "attempts_used": 1,
+  "continued_after_original_ttl": true,
+  "limitations": [
+    "Controlled fixture clock; no network listener, provider, automatic scan or full crash matrix."
+  ],
+  "native_done_count": 1,
+  "original_grant_and_audit_preserved": true,
+  "passed": true,
+  "profile": "trusted_known_id_host_recovery_example",
+  "status": "completed",
+  "tokens_recorded": false,
+  "transport": "embedding_response_body"
+}

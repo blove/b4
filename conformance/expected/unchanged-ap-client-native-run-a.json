@@ -1,0 +1,915 @@
+{
+  "version": 1,
+  "kind": "unchanged-ap-client-native-summary",
+  "platform": "macos-arm64",
+  "source_commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "selected_method_count": 19,
+  "core_operation_count": 9,
+  "core_operations": [
+    "AP-001",
+    "AP-002",
+    "AP-003",
+    "AP-005",
+    "AP-006",
+    "AP-007",
+    "AP-008",
+    "AP-009",
+    "AP-010"
+  ],
+  "invocation_count": 63,
+  "groups": [
+    {
+      "name": "C1",
+      "invocation_count": 10,
+      "observations": [
+        {
+          "method": "controller.create",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.dispatch",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.approve",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.retry",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.deny",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.intake",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.approveIntake",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.rejectIntake",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.cancel",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "void-null",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.reconcile",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        }
+      ]
+    },
+    {
+      "name": "C2",
+      "invocation_count": 2,
+      "observations": [
+        {
+          "method": "controller.dispatch",
+          "outcome": "rejected",
+          "http_status": 401,
+          "client_status": 401,
+          "error_class": "ControllerHttpError",
+          "error_code": "authentication_required",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.dispatch",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        }
+      ]
+    },
+    {
+      "name": "C3",
+      "invocation_count": 3,
+      "observations": [
+        {
+          "method": "controller.dispatch",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.dispatch",
+          "outcome": "rejected",
+          "http_status": 500,
+          "client_status": 500,
+          "error_class": "ControllerHttpError",
+          "error_code": "none",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.cancel",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "void-null",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        }
+      ]
+    },
+    {
+      "name": "C4",
+      "invocation_count": 11,
+      "observations": [
+        {
+          "method": "controller.dispatch",
+          "outcome": "rejected",
+          "http_status": 0,
+          "client_status": 0,
+          "error_class": "AbortError",
+          "error_code": "none",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "signal-abort"
+        },
+        {
+          "method": "controller.dispatch",
+          "outcome": "rejected",
+          "http_status": 409,
+          "client_status": 409,
+          "error_class": "ControllerHttpError",
+          "error_code": "thread_busy",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.dispatch",
+          "outcome": "rejected",
+          "http_status": 409,
+          "client_status": 409,
+          "error_class": "ControllerHttpError",
+          "error_code": "thread_busy",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.interrupt",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "interrupt-result",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.dispatch",
+          "outcome": "rejected",
+          "http_status": 409,
+          "client_status": 409,
+          "error_class": "ControllerHttpError",
+          "error_code": "run_cancelled",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.interrupt",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "interrupt-result",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.dispatch",
+          "outcome": "rejected",
+          "http_status": 409,
+          "client_status": 409,
+          "error_class": "ControllerHttpError",
+          "error_code": "thread_busy",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.interrupt",
+          "outcome": "returned",
+          "http_status": 409,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "interrupt-result",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.interrupt",
+          "outcome": "returned",
+          "http_status": 404,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "interrupt-result",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.dispatch",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "route-outcome",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "controller.interrupt",
+          "outcome": "returned",
+          "http_status": 404,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "interrupt-result",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        }
+      ]
+    },
+    {
+      "name": "W1",
+      "invocation_count": 11,
+      "observations": [
+        {
+          "method": "worker.createThread",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "thread-id",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.getThread",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "thread-metadata",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.getThread",
+          "outcome": "returned",
+          "http_status": 404,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "null",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.getThread",
+          "outcome": "returned",
+          "http_status": 404,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "null",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.getThread",
+          "outcome": "rejected",
+          "http_status": 401,
+          "client_status": 401,
+          "error_class": "WorkerHttpError",
+          "error_code": "authentication_required",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.deleteThread",
+          "outcome": "returned",
+          "http_status": 204,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "deleted",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.deleteThread",
+          "outcome": "returned",
+          "http_status": 204,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "deleted",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.createThread",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "thread-id",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "stream",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "frame-stream",
+          "frames": [
+            {
+              "event": "done",
+              "shape": "done-value"
+            }
+          ],
+          "eof": true,
+          "cut": "none"
+        },
+        {
+          "method": "worker.deleteThread",
+          "outcome": "rejected",
+          "http_status": 409,
+          "client_status": 409,
+          "error_class": "WorkerHttpError",
+          "error_code": "run_in_flight",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.deleteThread",
+          "outcome": "returned",
+          "http_status": 204,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "deleted",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        }
+      ]
+    },
+    {
+      "name": "W2",
+      "invocation_count": 6,
+      "observations": [
+        {
+          "method": "worker.createThread",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "thread-id",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "stream",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "frame-stream",
+          "frames": [
+            {
+              "event": "done",
+              "shape": "done-value"
+            }
+          ],
+          "eof": true,
+          "cut": "none"
+        },
+        {
+          "method": "worker.createThread",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "thread-id",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "stream",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "frame-stream",
+          "frames": [
+            {
+              "event": "done",
+              "shape": "done-void"
+            }
+          ],
+          "eof": true,
+          "cut": "none"
+        },
+        {
+          "method": "worker.createThread",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "thread-id",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "stream",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "frame-stream",
+          "frames": [
+            {
+              "event": "done",
+              "shape": "done-failure"
+            }
+          ],
+          "eof": true,
+          "cut": "none"
+        }
+      ]
+    },
+    {
+      "name": "W3",
+      "invocation_count": 13,
+      "observations": [
+        {
+          "method": "worker.createThread",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "thread-id",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "stream",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "frame-stream",
+          "frames": [],
+          "eof": false,
+          "cut": "signal-abort"
+        },
+        {
+          "method": "worker.reattach",
+          "outcome": "stream",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "frame-stream",
+          "frames": [
+            {
+              "event": "state",
+              "shape": "state-busy"
+            }
+          ],
+          "eof": false,
+          "cut": "viewer-return"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "rejected",
+          "http_status": 409,
+          "client_status": 409,
+          "error_class": "WorkerHttpError",
+          "error_code": "thread_busy",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "rejected",
+          "http_status": 409,
+          "client_status": 409,
+          "error_class": "WorkerHttpError",
+          "error_code": "thread_busy",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.createThread",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "thread-id",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "stream",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "frame-stream",
+          "frames": [
+            {
+              "event": "done",
+              "shape": "done-cancelled"
+            }
+          ],
+          "eof": true,
+          "cut": "none"
+        },
+        {
+          "method": "worker.cancel",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "cancel-result",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "rejected",
+          "http_status": 409,
+          "client_status": 409,
+          "error_class": "WorkerHttpError",
+          "error_code": "thread_busy",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.reattach",
+          "outcome": "stream",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "frame-stream",
+          "frames": [
+            {
+              "event": "state",
+              "shape": "state-idle"
+            },
+            {
+              "event": "done",
+              "shape": "done-null"
+            }
+          ],
+          "eof": true,
+          "cut": "none"
+        },
+        {
+          "method": "worker.cancel",
+          "outcome": "returned",
+          "http_status": 409,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "cancel-result",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.cancel",
+          "outcome": "returned",
+          "http_status": 404,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "cancel-result",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.cancel",
+          "outcome": "returned",
+          "http_status": 404,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "cancel-result",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        }
+      ]
+    },
+    {
+      "name": "W4",
+      "invocation_count": 7,
+      "observations": [
+        {
+          "method": "worker.createThread",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "thread-id",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.pendingInterrupts",
+          "outcome": "returned",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "pending-empty",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.startRun",
+          "outcome": "stream",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "none",
+          "error_code": "none",
+          "result_shape": "frame-stream",
+          "frames": [
+            {
+              "event": "interrupt",
+              "shape": "native-permission-request"
+            },
+            {
+              "event": "done",
+              "shape": "done-null"
+            }
+          ],
+          "eof": true,
+          "cut": "none"
+        },
+        {
+          "method": "worker.pendingInterrupts",
+          "outcome": "rejected",
+          "http_status": 200,
+          "client_status": 0,
+          "error_class": "ZodError",
+          "error_code": "none",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.resume",
+          "outcome": "rejected",
+          "http_status": 400,
+          "client_status": 400,
+          "error_class": "WorkerHttpError",
+          "error_code": "grant_required",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.resume",
+          "outcome": "rejected",
+          "http_status": 400,
+          "client_status": 400,
+          "error_class": "WorkerHttpError",
+          "error_code": "grant_required",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        },
+        {
+          "method": "worker.resume",
+          "outcome": "rejected",
+          "http_status": 400,
+          "client_status": 400,
+          "error_class": "WorkerHttpError",
+          "error_code": "invalid_request",
+          "result_shape": "none",
+          "frames": [],
+          "eof": false,
+          "cut": "none"
+        }
+      ]
+    }
+  ],
+  "retirement": {
+    "accepted": 6,
+    "retired": 6,
+    "capture_complete": true,
+    "child_exit_code": 0,
+    "control_eof": true,
+    "control_joined": true,
+    "stderr_joined": true,
+    "server_joined": true,
+    "quiescent": true,
+    "faulted": false,
+    "store_weak_absent": true,
+    "application_weak_absent": true,
+    "writer_reopened": true,
+    "owner_advanced": true,
+    "expired_gates": 0,
+    "cleanup_releases": 0
+  },
+  "seams": [
+    "native-fixture-outcomes",
+    "controller-bearer-header-injection",
+    "controller-origin-and-redirect-guard",
+    "forced-private-interrupt-id",
+    "passive-socket-accepted-bytes"
+  ],
+  "gates": {
+    "M0": "open",
+    "CP001_to009": "partial",
+    "CP010": "unresolved",
+    "M5": "partial",
+    "broad56": "not_run",
+    "core_profile": "unfrozen"
+  },
+  "limitations": [
+    "selected-original-callers-only",
+    "initial-macos-arm64-only",
+    "factory-business-behavior-excluded",
+    "socket-acceptance-is-not-caller-consumption",
+    "pending-schema-and-grantless-resume-counterexamples-retained",
+    "method-calls-are-not-all-positive-successes"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "profile": "bounded_run_attachment_http_example",
+  "passed": true,
+  "transport": "real_loopback_tcp",
+  "backend": "sqlite",
+  "tokens_recorded": false,
+  "checks": [
+    "unauthenticated_missing_idle_refusals",
+    "state_before_live_tail",
+    "utf8_input_preserved",
+    "exact_attached_cancelled_done_before_quiescence",
+    "postterminal_drain_nonlive_null_done",
+    "producer_exclusion_retained",
+    "late_outcome_without_cancelled_state_reduction",
+    "inactive_retry_null_done",
+    "completed_process_restart_readonly_state",
+    "healthy_readiness",
+    "no_store_no_transform_no_proxy_buffering",
+    "startup_and_stderr_credential_scan"
+  ],
+  "limitations": [
+    "Finite Pure script; viewer queue/capacity races qualified separately; no provider or full protocol claim."
+  ]
+}

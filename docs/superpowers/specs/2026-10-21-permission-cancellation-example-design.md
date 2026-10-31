@@ -1,0 +1,25 @@
+# Runnable permission cancellation example
+
+Add a runnable cancellation mode to the existing permission example after the qualified V7 library profile is adopted. Keep the change focused on a finite Pure callback, real HTTP cancellation and process restart/reuse evidence.
+
+## Choice and scope
+
+Extend `crates/b4-http/examples/serve_permission_reuse.rs` with explicit `serve-cancellation`, using `HttpHost::new_with_permission_withheld_cancellation`. Keep `seed`, `serve` and `serve-approvals` behavior and wire outputs unchanged. A separate example would duplicate the existing authentication, catalog, listener and shutdown code; upgrading every serving mode would erase intentional profile boundaries. The explicit mode gives a runnable V7 profile with the existing narrow limits and actual ownership/drain behavior.
+
+The new mode uses a distinct application revision for its changed callback behavior, preserving existing modes' immutable application and catalog revisions. Its saved permissions are genuinely provisioned by HTTP Always and reused under the same new revision across owners. Do not silently import or rewrite old permission records.
+
+## Callback and process observations
+
+Normal input returns the existing literal report result. In the new mode only, an explicit `wait_for_cancel: true` field in HTTP input (read from the actual kernel wrapper `invocation.input["input"]`) makes the Pure callback cooperatively wait for accepted native cancellation for a finite maximum of 30 seconds. It creates no descendants or external report effect. `invoke_controlled` checks the real observer; it returns `ControlledNativeOutcome::Cancelled` only after that observer reports accepted intent and its local wait is stopped. Expiry returns the ordinary literal success. Use a monotonic deadline and a small bounded sleep. The direct fallback remains a genuine normal outcome.
+
+Emit and flush a bounded JSON `callback_entered` event with the actual `InvocationContext.thread_id` before the controlled wait. It supplies real body-entry observation to the process check and user, without logging input, token, approval secret or permission record. This event is available only in the new mode. Handle output failure as a known no-effect failure, never fabricate acknowledgement or signal. Preserve readiness JSON exactly and install SIGINT handling before readiness. Existing shutdown retains all work until quiescence; normal SIGINT is not automatically accepted CancelRun intent.
+
+This example enables Ready, withheld and entered capabilities. Its process probe deliberately proves actual entered cancellation; the already-qualified library HTTP suites supply Ready/withheld evidence. Do not introduce a production Store barrier or promise that process timing deterministically reaches pre-entry withdrawal.
+
+## Focused acceptance
+
+Add a bounded standard-library process check consuming an explicitly built example binary; it never builds, fetches or writes SQL. Use owned temporary data, ephemeral loopback ports and fresh bearer token. Three normally retired owners share one thread and database: owner1 creates a real thread and pending approval, starts HTTP Always with waiting input, observes actual callback entry, requests cancellation and receives one cancelled SSE Done; owner2 starts a genuinely saved-permission run, observes entry and cancels its wait response; owner3 reuses the permission normally and completes. Inspect SQLite only after each normal owner exit. Verify actual original Cancelled6 and NewUse Cancelled5, retained provenance/absence of invented output/receipt, both journal transitions, healthy database and later normal Complete4, fresh identities/owner epochs and permission-use records. Do not claim callback execution count from stored attempts alone.
+
+Every socket/pipe/wait/worker/process has a finite deadline and cleanup. Give normal retirement enough time for the 30-second callback expiry plus bounded shutdown overhead (for example 45 seconds); do not blindly inherit the old 10-second WAIT for a live waiting callback. Signal timeout/kill is cleanup failure, never normal retirement. Use byte-bounded output capture and process-group kill/reap for emergency cleanup, release listeners/owner lock before reopen, scan captured output for credential leakage and remove only owned temporary data. Cross-thread HTTP workers must not call the existing SIGALRM-only-main-thread exchange helper; use a finite socket/total deadline implementation suitable for background workers. Avoid waiting on an executor context indefinitely after an assertion failure.
+
+Run the new probe, both existing permission process probes, example build, formatting, strict example-target lint and focused configuration/callback tests as justified by behavior. Libraries and contracts should remain byte-identical to adopted V. No fresh full workspace rerun is necessary for example-only changes if those scoped checks pass; prior V qualification remains separately attributed. Publish the runnable instructions and exact binary/source-bound process evidence, preserving old qualification records.

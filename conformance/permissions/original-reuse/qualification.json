@@ -1,0 +1,159 @@
+{
+  "record_version": 1,
+  "profile": "original_always_uuid_reuse_embedded_driver",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "source_descriptor_sha256": "4bc80c56cf960cd352ef27bf26995ce77ebb0f3a536c0abb616da28d47eee366",
+  "code_source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "bytes": 446238,
+      "sha256": "6238b33d828d43088ccb395d5c1c2233c09aedb2e371efcef94bfaacdbe7adf6"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use.rs",
+      "bytes": 55969,
+      "sha256": "8b6149d43f6f40251ba6c203af5c940df5d34fb8649de00f176c500471e0032f"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome_source.rs",
+      "bytes": 51104,
+      "sha256": "ced59623925b686a4f225e142d1123656b2ed38ac3f1f30a218f4faa79a44b99"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome_writer.rs",
+      "bytes": 75456,
+      "sha256": "5ce172cf7fecb6fad3bfd85d21123025b7d7dcee76b584bdea0f54fe189222d1"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_renewal.rs",
+      "bytes": 68767,
+      "sha256": "2e79450b7997754caaa4f5619ebcbaf568f77eae214e949981fcfbb065861e65"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 750966,
+      "sha256": "1db7deac22c6ab3a545e991f7b3850c811c501b67000c8588c21ae1f4d862b5e"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_ready_cancel.rs",
+      "bytes": 26447,
+      "sha256": "4eb40872109c89f57374a90f07f08d2b150aa2dbd586b3647c647b3be16fc35b"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_reuse_driver.rs",
+      "bytes": 42495,
+      "sha256": "4075839b61321ee9e08a3ab56ffc7c3a0a4c81969bf746db2a1b4eefa40ad5a2"
+    }
+  ],
+  "checks": {
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.064,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.987,
+      "log_sha256": "25726a8b110e27872f54b6c91beed92db428150ab71fd39732c6ff33b74d3c90",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.104,
+      "log_sha256": "bf1369cb85cf9ac3dd391c5ef3771e489259b5294116850c4782de070ed952ef",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "reuse-cases": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--locked",
+        "--offline",
+        "use_driver::original_always_ids::original_ready_cancel::original_reuse_driver::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.819,
+      "log_sha256": "b2a0e59c82e5bab675ae2e50dc084a86ec168fc9864b7286b3209e928c40eff7",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "workspace": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 150.682,
+      "log_sha256": "53d739ae80e065576bcf5ad86ef98ae78e471390bb2fd3e27e94ba9213343956",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    }
+  },
+  "observed_reuse_cases": 3,
+  "supported_scope": {
+    "genuine_original_always_uuid_approval_cancellation_reopen": true,
+    "existing_ready_authorization_exact_ready2_and_linked_use": true,
+    "new_uuid_execution_turn_attempt_and_modest_nested_json": true,
+    "exact_dispatch3_and_complete4_with_one_callback": true,
+    "definition_substitution_refuses_storage_and_retains_outcome": true,
+    "guarded_journal_rollback_then_same_work_storage_only_retry": true,
+    "full_original_records_immutable_and_actual_state_reopened": true,
+    "strict_defaults_and_cumulative_allowances_unchanged": true
+  },
+  "coverage_limits": [
+    "Compact application/actor/task/effect/Definition labels, original input/prompt and empty metadata only.",
+    "Individual ceilings do not guarantee simultaneous maxima fit cumulative accounts; PermissionUse remains16384bytes including before_snapshot.",
+    "The guarded fault is paired with successful completion and retry. The private initial Driver error does not establish a unique backend code or classify arbitrary errors.",
+    "Original-human callback execution, NewUse/legacy cancellation, HTTP, Linux, mixed/parallel work, broad durable permissions and exhaustive operation audits remain open."
+  ],
+  "durable_permission_capability_enabled": false,
+  "ignored_tests_executed": false
+}

@@ -1,0 +1,9 @@
+# T-018 durable approval before disclosure qualification
+
+This release record qualifies one required-durable native approval park over real loopback TCP and an owned SQLite store on local macOS arm64 with Rust 1.93.1. In two separate fresh fixtures, a grant-insert or park-journal-insert abort kept committed admission and Running, disclosed no complete interrupt, prompt, or grant, and made authorized pending reads fault with `503 host_unready`.
+
+In the healthy fixture, the first complete interrupt and authorized pending response matched a separate read-only SQLite view of the committed, unconsumed grant, park snapshot, prompt, identity, revision, and journal. Ordinary state omitted the token. The test then hard-killed and reaped the server and reopened the same store at owner generation plus one, preserving the typed and raw park evidence without resuming the task.
+
+The [qualification](qualification.json) binds the exact acceptance test and full 1,200-file native source map. Its 27 final current-map checks include 24 runtime-credit checks, followed by format, strict three-crate lint, and 131 metadata guard tests with no runtime credit. Separate initial test, lint, and metadata preflight runs add no final runtime credit. Independent source, metadata, results, semantic manifest, adoption, and public-integrity reviews are separate release gates.
+
+This evidence does not qualify arbitrary crash points, postrestart HTTP disclosure or recovery, resume, other approval modes, every TCP schedule, current-HEAD TypeScript `COMPAT`, M0, CP-001–010, the full core profile, or whole-product parity. T-019–T-056 remain pending. The [reviewed design](../../../docs/superpowers/specs/2026-10-25-eighteenth-release-durable-disclosure-design.md) and [reviewed plan](../../../docs/superpowers/plans/2026-10-25-eighteenth-release-durable-disclosure-plan.md) define the bounded claim and release gates.

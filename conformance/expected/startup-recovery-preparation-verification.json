@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "profile": "b4-ap-core/0",
+  "classification": "NATIVE",
+  "status": "passed_native_scope",
+  "scope": "opt_in_bounded_native_preparation_only",
+  "source_input_freeze": {
+    "sha256": "696a1112946e8d534bd3c83750fd0eb0054836906de35cf66b42101a1ba43aac",
+    "bytes": 455968
+  },
+  "platform_checks": {
+    "macOS": {
+      "status": "passed_native_scope",
+      "architecture": "arm64",
+      "rust_passed_entries": 1036,
+      "cargo_targets": 94,
+      "rust_failed": 0,
+      "historical_ignored": 3,
+      "raw_result_passed": 1038,
+      "nested_child_entries_excluded": 2,
+      "checks": [
+        {
+          "name": "fmt",
+          "exit": 0,
+          "log": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "name": "clippy",
+          "exit": 0,
+          "log": {
+            "sha256": "5857057a5652927eb90c140749a66f382e9a15068c7a15152b4b66b803a941a6",
+            "bytes": 205
+          }
+        },
+        {
+          "name": "workspace",
+          "exit": 0,
+          "log": {
+            "sha256": "286a0dd980f59769c9d4c1279b13e34b5144e13a6f58641accc8b54f2d5c52e9",
+            "bytes": 103892
+          }
+        },
+        {
+          "name": "python",
+          "exit": 0,
+          "log": {
+            "sha256": "0c0903b4fe44324a204bf7fee050fb097cb55402f5cd3574aeeb56c3728ca83d",
+            "bytes": 199
+          }
+        },
+        {
+          "name": "contracts",
+          "exit": 0,
+          "log": {
+            "sha256": "d92d238439421748868ed31763f77ecf76a2ab699e5ad2b20f2cccbbbc4d33fe",
+            "bytes": 1544
+          }
+        }
+      ]
+    },
+    "Linux": {
+      "status": "passed_native_scope",
+      "architecture": "aarch64",
+      "rust_passed_entries": 1036,
+      "cargo_targets": 94,
+      "rust_failed": 0,
+      "historical_ignored": 3,
+      "raw_result_passed": 1038,
+      "nested_child_entries_excluded": 2,
+      "checks": [
+        {
+          "name": "source-integrity",
+          "exit": 0,
+          "log": {
+            "sha256": "4b2b0f749df5d63bd18d89472d2e2f93f77fe7a95f538aee5926499d66d15076",
+            "bytes": 246
+          }
+        },
+        {
+          "name": "fmt",
+          "exit": 0,
+          "log": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "name": "clippy",
+          "exit": 0,
+          "log": {
+            "sha256": "d7a2550fb53c68ae00ff413907b1a8ab6f95db04855ebd0e27bd9d3fca096e5a",
+            "bytes": 2656
+          }
+        },
+        {
+          "name": "workspace",
+          "exit": 0,
+          "log": {
+            "sha256": "2dda178605dff06ca5758002aefce5a9fcc5e7fd90b70faa7d228394e3d510a7",
+            "bytes": 108866
+          }
+        },
+        {
+          "name": "source-integrity-after",
+          "exit": 0,
+          "log": {
+            "sha256": "4b2b0f749df5d63bd18d89472d2e2f93f77fe7a95f538aee5926499d66d15076",
+            "bytes": 246
+          }
+        }
+      ]
+    }
+  },
+  "python": {
+    "platform": "macOS",
+    "passed_cases": 99,
+    "new_traceability_cases": 3
+  },
+  "new_rust_test_inventory": [
+    {
+      "file": "crates/b4-http/src/recovery/tests.rs",
+      "declarations": 8,
+      "names": [
+        "typed_core_adopts_actual_unsafe_block_without_callback",
+        "typed_core_adopts_actual_exhausted_ready_without_budget_reset",
+        "typed_core_authority_refusal_is_unadopted_and_preserves_whole_view",
+        "typed_core_confirmed_post_adoption_failure_keeps_actual_receipt_and_fault",
+        "typed_core_post_adoption_identity_mismatch_cannot_publish_runnable",
+        "typed_core_post_adoption_cleared_active_pointer_cannot_publish",
+        "typed_core_post_adoption_swapped_active_pointer_cannot_publish",
+        "typed_core_post_adoption_wrong_thread_record_cannot_publish"
+      ]
+    },
+    {
+      "file": "crates/b4-http/src/startup/gate_tests.rs",
+      "declarations": 5,
+      "names": [
+        "startup_gate_closes_ordinary_admission_before_begin",
+        "startup_begin_installs_one_counted_exact_role",
+        "startup_capability_cannot_authorize_another_supervisor",
+        "startup_completion_opens_only_after_exact_finished_pass",
+        "startup_lease_and_activation_cannot_win_shutdown_cut"
+      ]
+    },
+    {
+      "file": "crates/b4-http/src/startup/ownership_tests.rs",
+      "declarations": 6,
+      "names": [
+        "startup_polled_opaque_payload_remains_counted_until_real_disposal",
+        "startup_ready_capture_cleanup_precedes_serving_activation",
+        "startup_cancelled_pending_capture_faults_before_counted_cleanup",
+        "startup_replacement_panic_payload_disposal_keeps_same_owner_group",
+        "startup_ready_future_drop_panic_is_faulted_and_counted_before_payload_cleanup",
+        "startup_last_carrier_shared_drop_panic_prevents_activation_until_owned_cleanup"
+      ]
+    },
+    {
+      "file": "crates/b4-http/src/startup/tests.rs",
+      "declarations": 6,
+      "names": [
+        "startup_coordinator_empty_owned_source_exhausts_one_real_page",
+        "startup_coordinator_held_trusted_resolver_keeps_real_source_before_adoption",
+        "startup_coordinator_rejects_custom_scanned_overflow_before_counters",
+        "startup_coordinator_rejects_custom_records_over_scanned_before_iteration",
+        "startup_coordinator_checks_original_full_view_fence_before_resolver",
+        "startup_coordinator_known_discovery_refusal_preserves_actual_source"
+      ]
+    },
+    {
+      "file": "crates/b4-http/tests/recovery_admission.rs",
+      "declarations": 18,
+      "names": [
+        "typed_recovery_adopts_prior_owner_without_response",
+        "typed_recovery_preserves_exact_park_and_original_grant_without_callback",
+        "typed_accepted_once_dispatches_after_original_ttl_without_remint_or_refund",
+        "typed_unsafe_and_reconcilable_adopt_real_block_without_callback",
+        "typed_attempt_limit_adopts_without_resetting_attempt_budget",
+        "typed_actual_cancellation_and_failure_drain_become_terminal_dispositions",
+        "typed_authority_definition_and_every_captured_fence_refuse_before_adoption",
+        "typed_current_owner_and_terminal_targets_are_not_recovered",
+        "typed_real_journal_trigger_failure_proves_full_rollback_and_static_fault",
+        "typed_commit_then_error_or_panic_has_no_confirmed_receipt_but_actual_durable_mutation",
+        "typed_failure_after_returned_adoption_keeps_confirmed_receipt",
+        "typed_caller_detach_preserves_preflight_owner_until_actual_return",
+        "typed_caller_detach_after_real_commit_keeps_owned_driver_running",
+        "typed_unpolled_call_starts_no_owner_preflight_or_store_work",
+        "typed_duplicate_prior_target_retains_real_same_thread_claim_before_commit",
+        "legacy_response_adapter_preserves_real_block_and_attempt_limit_conflicts",
+        "typed_post_receipt_thread_and_active_relationship_mismatch_faults_without_dispatch",
+        "legacy_runnable_response_and_body_drop_keep_actual_callback_owned"
+      ]
+    },
+    {
+      "file": "crates/b4-http/tests/startup_preparation.rs",
+      "declarations": 23,
+      "names": [
+        "preparation_automatically_adopts_exact_work_and_completes_before_callback_retirement",
+        "preparation_preserves_stable_park_and_consumed_once_after_ttl",
+        "preparation_classifies_real_unsafe_block_but_attempt_limit_stays_closed",
+        "preparation_resolver_failures_foreign_actor_and_originless_rows_remain_unchanged",
+        "preparation_renews_policy_and_exact_whole_definition_without_fabricating_block",
+        "preparation_stale_view_after_held_resolver_fails_closed_without_rescan",
+        "preparation_current_owner_and_discovery_refusal_never_open_serving",
+        "preparation_terminal_prefix_pages_and_exact_caps_are_counted_honestly",
+        "preparation_candidate_cap_does_not_touch_the_next_park",
+        "preparation_nonwaiting_capacity_refusal_keeps_earlier_callback_owned",
+        "preparation_shutdown_cut_blocks_held_resolver_without_adoption_or_activation",
+        "preparation_already_won_recovery_lease_can_finish_after_shutdown_cut",
+        "preparation_handle_and_waiter_drop_do_not_abort_the_owned_resolver",
+        "preparation_normal_resolver_capture_cleanup_keeps_owners_and_serving_closed",
+        "preparation_opaque_resolver_panic_payload_is_disposed_while_store_remains_owned",
+        "preparation_ambiguous_commit_is_faulted_unconfirmed_and_never_retried",
+        "preparing_construction_requires_actual_durability_and_required_approval_mode",
+        "preparation_without_existing_executor_starts_no_job_and_changes_no_source",
+        "preparation_invalid_limits_leave_not_started_and_empty_valid_source_can_complete",
+        "preparation_router_rejects_before_polling_the_actual_supplied_request_body",
+        "preparation_maximum_candidate_cap_accepts_exact_256_and_refuses_the_257th",
+        "preparation_replacement_panic_payload_cleanup_remains_counted_until_actual_return",
+        "preparation_actual_cancelled_and_failed_adoptions_increment_terminal_only"
+      ]
+    },
+    {
+      "file": "crates/b4-http/tests/startup_preparation_tcp.rs",
+      "declarations": 4,
+      "names": [
+        "preparing_host_closes_real_tcp_readiness_and_ordinary_admission",
+        "tcp_preparing_and_incomplete_reject_all_ordinary_paths_before_auth_body_or_store",
+        "tcp_completed_preparation_opens_real_authenticated_operations_and_resource_free_handles",
+        "tcp_startup_shutdown_race_never_reopens_readiness_or_admits_held_target"
+      ]
+    }
+  ],
+  "new_rust_declarations": 70,
+  "new_rust_executed_entries_per_platform": 70,
+  "requirement_group": {
+    "name": "startup_recovery_preparation_requirements",
+    "rows": 28,
+    "named_acceptance_links": 68,
+    "unique_names": 65,
+    "unique_rust_names": 62,
+    "python_names": 3,
+    "private_typed_tests_unmapped": 8
+  },
+  "provenance": {
+    "authored_qualification_inputs": 648,
+    "crate_inputs": 237,
+    "protected_prior_files": 614,
+    "packages": 88,
+    "external_packages": 81,
+    "package_metadata": {
+      "sha256": "7e2a55e40afca3923ff27663c787fd26bd63b91c44b62f2792a53d4f11fdb308",
+      "bytes": 429012
+    },
+    "reviewed_sources": [
+      {
+        "file": "crates/b4-http/src/recovery/admission.rs",
+        "sha256": "df9a0606da23d2fc9096c4129e07a8d5de658e92f706da857a12c2af98046c58",
+        "bytes": 3983
+      },
+      {
+        "file": "crates/b4-http/src/recovery/mapping.rs",
+        "sha256": "3dcb7729f8261c2f5c4439e5ebba50d163be10744ea9db87d9811f57f905c22d",
+        "bytes": 5033
+      },
+      {
+        "file": "crates/b4-http/src/recovery/tests.rs",
+        "sha256": "8c27ad59c4e2ffc26ea90c6ac9f37cdef26054d775048f0cc9d5c94481cb52ff",
+        "bytes": 17465
+      },
+      {
+        "file": "crates/b4-http/src/startup/coordinator.rs",
+        "sha256": "733b83afa17d506de6d3a537d10aef8f64d173aecc4d03559ef37c708e9abe75",
+        "bytes": 13917
+      },
+      {
+        "file": "crates/b4-http/src/startup/gate_tests.rs",
+        "sha256": "19b200d1e778dd0d5411dbee300264de4e0f6dca12a17815c5e0c653f6dd2728",
+        "bytes": 2753
+      },
+      {
+        "file": "crates/b4-http/src/startup/mod.rs",
+        "sha256": "108a17f6914d3f583750fa2f1d2127d8c98588551ddcdc43a9545318edf7f9a0",
+        "bytes": 2686
+      },
+      {
+        "file": "crates/b4-http/src/startup/model.rs",
+        "sha256": "32452cb6653c3de3793bc87e95ba85a52ad6968d1c5482da9ec42ffe3e397c0c",
+        "bytes": 3744
+      },
+      {
+        "file": "crates/b4-http/src/startup/ownership_tests.rs",
+        "sha256": "84e7187f560b99c900929612043583cc392a96fe67c8fbeea7406099aed74e25",
+        "bytes": 10225
+      },
+      {
+        "file": "crates/b4-http/src/startup/test_support.rs",
+        "sha256": "f52cfe2e63a7a8d55f92b28f6b0b72fb1391441ed73b9323a503b76f0dca8d6d",
+        "bytes": 9014
+      },
+      {
+        "file": "crates/b4-http/src/startup/tests.rs",
+        "sha256": "8d21ba889ee7a6bd6d3a5c0e666a4cdcbc7a00c93e2d28a9dbcfaf9cccbfa970",
+        "bytes": 15356
+      },
+      {
+        "file": "crates/b4-http/tests/recovery_admission.rs",
+        "sha256": "20fe04db033ddc28ace377674173265723baa7896e4c8a80dab314bcc7203b29",
+        "bytes": 39424
+      },
+      {
+        "file": "crates/b4-http/tests/startup_preparation.rs",
+        "sha256": "394908e5500ab4d518330230af00f5914ffbe4303f458a1ec977ecc4ab60d424",
+        "bytes": 55230
+      },
+      {
+        "file": "crates/b4-http/tests/startup_preparation_tcp.rs",
+        "sha256": "3c0ab063614e5e2079c8a18553a2e63e262ccf9beaf1bd556b75d8c57fecdf37",
+        "bytes": 11205
+      },
+      {
+        "file": "scripts/check_contracts.py",
+        "sha256": "a19e63ef1da77eaf4a8e73d85fa65f516e5498e60236d42e26885f44c6ac0725",
+        "bytes": 36632
+      },
+      {
+        "file": "scripts/test_startup_recovery_preparation_traceability.py",
+        "sha256": "91f97153d5008559d3bd05c450a5385970c24d9a899208301eb25e9ecbb8fb48",
+        "bytes": 3071
+      },
+      {
+        "file": "spec/runtime/bounded-startup-recovery-design.md",
+        "sha256": "2c07cf5a1c739354d30db195fc2e9f1a732767e39baf46527f137c4f630a511d",
+        "bytes": 35003
+      }
+    ]
+  },
+  "qualified_behaviors": [
+    "Typed prior-owner admission preserves actual adoption evidence and original Response behavior; unconfirmed outcomes permit no rollback inference or retry.",
+    "One bounded startup coordinator renews current trusted authority, policy, complete Definition and original fences under the shutdown admission gate.",
+    "Actual park, consumed Once, unsafe block, attempt budget, partial admission, stale authority and post-commit ambiguity are covered by finite real SQLite fixtures.",
+    "Ordinary HTTP admission stays closed before completion, ahead of authentication, request body and Store work.",
+    "Owned panic/capture cleanup precedes activation and retirement; normal join, Weak absence and actual successor writer qualify finite resource lifetime."
+  ],
+  "limits": {
+    "max_pages": 64,
+    "page_rows": 32,
+    "max_scanned": 2048,
+    "max_candidates": 256,
+    "max_observation_wait_seconds": 300,
+    "trusted_covenant": "External writer isolation and stable execution-ID membership are embedding requirements.",
+    "complete_meaning": "Ordinary admission opened after finite preparation; callbacks may still be running.",
+    "unconfirmed_adoption": "None is no confirmed returned receipt, not proof of rollback or permission to retry.",
+    "trusted_duration": "No hard duration, CPU, I/O or RSS limit for arbitrary trusted callbacks, resolvers or destructors."
+  },
+  "historical_scope": {
+    "rust_ap_example_entries_included": 30,
+    "original_node_unit_suite_cases": 221,
+    "original_node_unit_suite_rerun": false,
+    "original_typescript_client_corpus_rerun": false,
+    "retained_recording_integrity_scripts_rerun": true
+  },
+  "not_claimed": [
+    "Automatic CLI startup",
+    "Full RFC11.4 restart algorithm or durable policy/Definition refusal blocks",
+    "Historical Definition coexistence",
+    "Provider reconciliation",
+    "Broad56 release scenarios, M0 or CP-010 closure"
+  ]
+}

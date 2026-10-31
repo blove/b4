@@ -1,0 +1,80 @@
+
+> b4-run@ build /private/tmp/b4run-grant-reference-8acac534
+> turbo run build --filter=@b4run/cli... --force
+
+
+   • Packages in scope: @b4run/ag-ui, @b4run/cli, @b4run/config-typescript, @b4run/core, @b4run/evals, @b4run/langchain, @b4run/langgraph, @b4run/memory, @b4run/permissions, @b4run/sandbox, @b4run/sdk, @b4run/sqlite-storage, @b4run/testing, @b4run/workspace
+   • Running build in 14 packages
+   • Remote caching disabled
+
+@b4run/sdk:build: cache bypass, force executing 80757de9446b4f15
+@b4run/ag-ui:build: cache bypass, force executing 6711612247e36f50
+@b4run/ag-ui:build: 
+@b4run/ag-ui:build: > @b4run/ag-ui@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/ag-ui
+@b4run/ag-ui:build: > node -e "const fs = require('node:fs'); const path = require('node:path'); if (fs.existsSync('dist')) for (const entry of fs.readdirSync('dist', { withFileTypes: true })) if (entry.isFile() && /^(?:encode|run-input|translate)\./.test(entry.name)) fs.rmSync(path.join('dist', entry.name))" && tsc -b tsconfig.json && node -e "const fs = require('node:fs'); fs.mkdirSync('dist/react', { recursive: true }); fs.copyFileSync('src/react/styles.css', 'dist/react/styles.css')"
+@b4run/ag-ui:build: 
+@b4run/sdk:build: 
+@b4run/sdk:build: > @b4run/sdk@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/sdk
+@b4run/sdk:build: > tsc -b tsconfig.json
+@b4run/sdk:build: 
+@b4run/workspace:build: cache bypass, force executing 85067a9d861857a1
+@b4run/permissions:build: cache bypass, force executing bd09d13aa1254e12
+@b4run/langgraph:build: cache bypass, force executing 070fb0c8c140e63f
+@b4run/workspace:build: 
+@b4run/workspace:build: > @b4run/workspace@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/workspace
+@b4run/workspace:build: > tsc -b tsconfig.json
+@b4run/workspace:build: 
+@b4run/permissions:build: 
+@b4run/permissions:build: > @b4run/permissions@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/permissions
+@b4run/permissions:build: > tsc -b tsconfig.json
+@b4run/permissions:build: 
+@b4run/langgraph:build: 
+@b4run/langgraph:build: > @b4run/langgraph@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/langgraph
+@b4run/langgraph:build: > tsc -b tsconfig.json
+@b4run/langgraph:build: 
+@b4run/sqlite-storage:build: cache bypass, force executing b886cace41adaccb
+@b4run/sandbox:build: cache bypass, force executing 7cb72135c22c77e6
+@b4run/sandbox:build: 
+@b4run/sandbox:build: > @b4run/sandbox@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/sandbox
+@b4run/sandbox:build: > tsc -b tsconfig.json
+@b4run/sandbox:build: 
+@b4run/sqlite-storage:build: 
+@b4run/sqlite-storage:build: > @b4run/sqlite-storage@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/sqlite-storage
+@b4run/sqlite-storage:build: > tsc -b tsconfig.json
+@b4run/sqlite-storage:build: 
+@b4run/memory:build: cache bypass, force executing 19019b547fbcbbef
+@b4run/core:build: cache bypass, force executing 7d72c3f913174387
+@b4run/memory:build: 
+@b4run/memory:build: > @b4run/memory@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/memory
+@b4run/memory:build: > tsc -b tsconfig.json
+@b4run/memory:build: 
+@b4run/core:build: 
+@b4run/core:build: > @b4run/core@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/core
+@b4run/core:build: > tsc -b tsconfig.json
+@b4run/core:build: 
+@b4run/langchain:build: cache bypass, force executing c7d494e94e4d5640
+@b4run/langchain:build: 
+@b4run/langchain:build: > @b4run/langchain@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/langchain
+@b4run/langchain:build: > tsc -b tsconfig.json
+@b4run/langchain:build: 
+@b4run/cli:build: cache bypass, force executing e9ebef00e52fa5e7
+@b4run/cli:build: 
+@b4run/cli:build: > @b4run/cli@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/cli
+@b4run/cli:build: > tsc -b tsconfig.build.json && node scripts/generate-docs.mjs
+@b4run/cli:build: 
+@b4run/cli:build: [generate-docs] wrote 80 topic(s) + README.md to /private/tmp/b4run-grant-reference-8acac534/packages/cli/docs
+@b4run/testing:build: cache bypass, force executing 28b7b9c14289aa67
+@b4run/testing:build: 
+@b4run/testing:build: > @b4run/testing@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/testing
+@b4run/testing:build: > tsc -b tsconfig.build.json
+@b4run/testing:build: 
+@b4run/evals:build: cache bypass, force executing dac36cd9b78ccd70
+@b4run/evals:build: 
+@b4run/evals:build: > @b4run/evals@0.13.0 build /private/tmp/b4run-grant-reference-8acac534/packages/evals
+@b4run/evals:build: > tsc -b tsconfig.json
+@b4run/evals:build: 
+
+ Tasks:    13 successful, 13 total
+Cached:    0 cached, 13 total
+  Time:    11.913s 
+

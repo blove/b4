@@ -1,0 +1,125 @@
+{
+  "receipt_version": 1,
+  "profile": "selected_pinned_lifecycle_reference_characterization",
+  "evidence_class": "reference_only_increment_with_prior_native_verification",
+  "verified_at_utc": "2026-10-01T19:37:53.812417+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "command": "node --test conformance/reference/fixture/*.test.mjs conformance/reference/grant-fixture/*.test.mjs conformance/reference/lifecycle-fixture/*.test.mjs scripts/check_grant_recordings.test.mjs scripts/check_lifecycle_recordings.test.mjs",
+      "exit_code": 0,
+      "tests_passed": 50,
+      "tests_failed": 0
+    },
+    {
+      "command": "python3 -B -m unittest discover -s scripts -p 'test_check_approval_example.py'",
+      "exit_code": 0,
+      "tests_passed": 4
+    },
+    {
+      "command": "python3 -B scripts/check_contracts.py",
+      "exit_code": 0,
+      "schemas": 17,
+      "authored_examples": 14,
+      "rejection_cases": 48,
+      "local_references": 119,
+      "local_requirements": 102
+    }
+  ],
+  "reference": {
+    "reference": {
+      "commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+      "lockfile_sha256": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0"
+    },
+    "transport": "actual pinned in-process Fetch",
+    "captures": 2,
+    "cases_each": 77,
+    "assertions_each": 11,
+    "ordered_limited_projection_matches": 77,
+    "fixture_files": 10,
+    "fixture_revision": "02ffc63f5b852f2525c68b2f45720b9afabb95715b1d4d813163e0700e75715a",
+    "canonical": {
+      "file": "lifecycle-observations.json",
+      "sha256": "e1c45cc4f935c29875e82494870189de4ec8e69dd21b0e7b5fe11660bdc03818",
+      "projection_sha256": "bb68168196e2570777825c9c547c53118aa9d39a2389073c3da2f3fa2b564ed6"
+    },
+    "repeat": {
+      "file": "repeat/lifecycle-observations.json",
+      "sha256": "ed28a82a75406fc5721ec26dd26652ac98eedd7e66b84f7eca18801708e0d592",
+      "projection_sha256": "bb68168196e2570777825c9c547c53118aa9d39a2389073c3da2f3fa2b564ed6"
+    },
+    "runtime_artifacts": 385,
+    "runtime_inventory_sha256": "71e2663947013ddf3dbac74abcc1465b1364ae946a33256a2807c8ec35163018",
+    "build_scope": "No new install or build performed; reuse of documented clean-source freshly compiled scoped runtime after exact full 385-file hash/inventory equality before import and after each capture. Prior install/build logs remain retained at their original paths.",
+    "provider_calls_each": 0,
+    "external_fetch_attempts_each": 0,
+    "deterministic_model_calls_each": 1,
+    "incomplete_viewer_abort_cuts_each": 1,
+    "policy_profiles": {
+      "owner_policy_cases": 73,
+      "ungated_missing_cases": 4
+    }
+  },
+  "independent_review": "No material findings. Independently re-derived77 ordered response/cut-time-ledger projections,154raw responses,26present request bodies,32SSE responses/10retry blocks,fixture/build/source links and actual production handler/model/tool/policy paths. Six held effects enter/exit once. Late cancel stays bound to prior turn; viewer abort/capacity do not release producer. External checker reviewed and18meaningful corruption/integrity tests passed.",
+  "qualified_observations": [
+    "Missing/idle/completed/parked/live deletion and refusal before effect quiescence.",
+    "Wait/stream cancellation terminals precede held effect exit; replacement/deletion remain refused.",
+    "Late async policy cancellation cannot target successor.",
+    "Live/settled/parked attachment, retry-only blocks, capacity detach and explicit incomplete viewer_abort prefix.",
+    "Plain workflows have no checkpoint; genuine park/checkpoint/grant identity survives graceful reopen then deletion."
+  ],
+  "prior_native": {
+    "receipt": "conformance/expected/trusted-restart-verification.json",
+    "sha256": "b10d61f4067682e6b27277dfaaa0eb0c68ab5a5bc87afc9058456f6ab59fcf84",
+    "rust_tests_passed": 287,
+    "qualification": "No Rust source changed in this reference-only increment;287 is linked prior fresh native qualification, not a new Rust run."
+  },
+  "scope": {
+    "M0": "open",
+    "CP_001_through_009": "partial",
+    "CP_010": "unresolved",
+    "public_native_operations": 7,
+    "planned_native_operations": 3,
+    "native_lifecycle_parity": false,
+    "raw_byte_equality": false,
+    "TCP_reference": false,
+    "full_upstream_suites": false,
+    "abrupt_crash_matrix": false,
+    "core_profile_release": false,
+    "all_56_release_scenarios": "pending"
+  },
+  "prior_evidence_policy": "Historical receipts/frozen fixtures/raw recordings remain byte-for-byte; prior protected conformance hashes checked. Mutable reference README catalog is excluded.",
+  "protected_prior_evidence_artifacts": 103,
+  "artifacts_sha256": {
+    "README.md": "c27e0319692953e4619c40503ea583750c92cad86a44009ca19595d26361113c",
+    "conformance/expected/trusted-restart-verification.json": "b10d61f4067682e6b27277dfaaa0eb0c68ab5a5bc87afc9058456f6ab59fcf84",
+    "conformance/reference/README.md": "2242624fa8e36435fa99a46a3833351fff2877b070b6fdc71aec12a361e262c4",
+    "conformance/reference/lifecycle-fixture/README.md": "43b6a87709eabfd685c67be96e5c5459e273877ddfa979a9b0c7d2c9fa013c13",
+    "conformance/reference/lifecycle-fixture/app/b4.config.ts": "a9ff8c44dedbe368e0d274b0098a97c911633b2b906f5769948e3771b32da9c0",
+    "conformance/reference/lifecycle-fixture/app/package.json": "b0ff31107b87603e7adc0a15fb5fc02ecdf53336ae617ee6db4013049c7ad36b",
+    "conformance/reference/lifecycle-fixture/app/src/app/held/index.ts": "a3251f84a6bcda8b68deaf087c1c8119ae57ac0f1d1ddaefad52ca460f7e5980",
+    "conformance/reference/lifecycle-fixture/app/src/app/immediate/index.ts": "0623b8e0abcdac8f67b36e9c67835bf0db574c9d9193925e0b0609008fe7fa9b",
+    "conformance/reference/lifecycle-fixture/app/src/app/park/index.ts": "f8daa1b9a25660eef72734936b13c71a9748fbd749a4823ea7bc27c8d2941143",
+    "conformance/reference/lifecycle-fixture/app/src/app/park/tools/localDecision.ts": "e9d43c3fd22c29676b0845d14520b12843fc61d41db74d6af555feaa0f508a15",
+    "conformance/reference/lifecycle-fixture/capture.mjs": "7ad47319080c3fdc44de0965af2618b8b64a96fefc170ff43fd94fb3653dbc3e",
+    "conformance/reference/lifecycle-fixture/projection.mjs": "3008c8045c7059c634bf2ff795236bd9e47c776e5d9cdfbe458bdb0e0eb43c21",
+    "conformance/reference/lifecycle-fixture/projection.test.mjs": "5bd6174ee0f78c1cc7194a247bb3c52709be966e8db0182a463e95b1cafcf015",
+    "conformance/reference/recordings/2026-10-01-lifecycle/README.md": "f1c7cd8925b15920bcabcc7f753623fcfa7dd8d5cea86e2b4be2e6ada999c9f6",
+    "conformance/reference/recordings/2026-10-01-lifecycle/build-provenance.json": "212fc71313a7c24751befcfd5aa602f4d74d740423709f4012449b9edaa71d08",
+    "conformance/reference/recordings/2026-10-01-lifecycle/capture.log": "5981bc709711ebd1d417cc133d8870a331524855138b9f8b5e65dee73ff92047",
+    "conformance/reference/recordings/2026-10-01-lifecycle/lifecycle-observations.json": "e1c45cc4f935c29875e82494870189de4ec8e69dd21b0e7b5fe11660bdc03818",
+    "conformance/reference/recordings/2026-10-01-lifecycle/lifecycle-repeatability.json": "ebf5d78734e566296dbbeca75ff036fbeed998faf4529c19f6f450919f51029a",
+    "conformance/reference/recordings/2026-10-01-lifecycle/repeat/capture.log": "c2658fe3c480bcf5325f339ead778f04ba516847198e9d439ce840c24fcd09fa",
+    "conformance/reference/recordings/2026-10-01-lifecycle/repeat/lifecycle-observations.json": "ed28a82a75406fc5721ec26dd26652ac98eedd7e66b84f7eca18801708e0d592",
+    "conformance/reference/recordings/2026-10-01-lifecycle/repeat/runtime-artifacts.json": "52c858197b3523c7b832427058e94512c48315e9bf916a75b0771b456dd8dd1d",
+    "conformance/reference/recordings/2026-10-01-lifecycle/runtime-artifacts.json": "0bd61e4ff3b999e45f1892e6983272db50c1aff93164bf17d79e49b25fbb1fba",
+    "contracts/agent-protocol/openapi.yaml": "dfe4ba23b2246e0dd680a936f01507b2b8a8d2a427ffff8b86dac39d5ff6cd10",
+    "docs/superpowers/plans/2026-10-01-lifecycle-reference.md": "b4390f91897f9c301221632d524680132332ae434010357d9d46e098b818b85d",
+    "scripts/check_contracts.py": "accdc421d1f007976bf0a5dcc83f253d391ce339a97805c28d365270bf2764ff",
+    "scripts/check_lifecycle_recordings.mjs": "a5be89d2efa3ee11f59550fc29bf8cf680a6b096e9a38d1885522809ebe07237",
+    "scripts/check_lifecycle_recordings.test.mjs": "929d52b7173ef27b763c80022bced6feaa1a917b167aba7a6a1ebb698b5130bb",
+    "spec/runtime/compatibility.md": "467d63ab7e846e51250dde36f7606d2ba0abe993c08e4763245a8aaf15f4de9c",
+    "spec/runtime/lifecycle-reference-design.md": "34db840852d4f1fc757e52a11c7ed4060c9d45b2edebc59db2d10df6957f89d2",
+    "spec/runtime/requirements.yaml": "3bb6e2df5a33641db2fd5a5c14af7dadef38ab175b1c2579facc64b388ccaaa7"
+  }
+}

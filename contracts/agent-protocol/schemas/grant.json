@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Authored native design input; compatibility with independently executed TypeScript is unverified.",
+  "x-compatibility-status": "unverified",
+  "$id": "grant.json",
+  "title": "Opaque approval grant",
+  "x-implementation-status": "native-dto",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 256,
+  "pattern": "^[^\\u0000-\\u001f\\u007f-\\u009f]+(?![\\s\\S])",
+  "x-max-utf8-bytes": 256,
+  "description": "Opaque nonempty DTO token, at most 256 UTF-8 bytes and no Unicode controls. The explicit durable approval service and HTTP host implement required issuance and atomic consumption; this generic schema checks only token structure and confers no authority.",
+  "x-schema-id": "urn:b4:agent-protocol:draft:grant"
+}

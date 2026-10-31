@@ -1,0 +1,60 @@
+{
+  "inspection_report_version": 1,
+  "mode": "stopped_readonly",
+  "redacted": true,
+  "reader": {
+    "package_version": "0.1.0",
+    "sqlite_library_version": "3.53.2",
+    "snapshot_version": 1,
+    "store_schema_version": 3,
+    "target_profile": "b4-ap-core/0",
+    "profile_status": "native_subset",
+    "capability_descriptor_version": 2,
+    "core_profile_frozen": false
+  },
+  "validation_scope": "schema_structure_and_execution_snapshots",
+  "table_rows": {
+    "metadata": 1,
+    "threads": 0,
+    "executions": 0,
+    "journal": 0,
+    "approval_grants": 0,
+    "approval_acceptances": 0
+  },
+  "executions_by_status": {
+    "accepted": 0,
+    "running": 0,
+    "waiting_for_approval": 0,
+    "completed": 0,
+    "failed": 0,
+    "cancel_requested": 0,
+    "cancelled": 0,
+    "recovery_blocked": 0
+  },
+  "initialized_tasks_by_status": {
+    "ready": 0,
+    "waiting_for_approval": 0,
+    "in_flight": 0,
+    "succeeded": 0,
+    "failed": 0,
+    "denied": 0,
+    "cancelled": 0,
+    "outcome_unknown": 0
+  },
+  "declared_definition_tasks_by_recovery_policy": {
+    "pure": 0,
+    "idempotent": 0,
+    "reconcilable": 0,
+    "unsafe": 0
+  },
+  "recorded_uncertain_tasks_by_policy": {
+    "pure": 0,
+    "idempotent": 0,
+    "reconcilable": 0,
+    "unsafe": 0
+  },
+  "blocked": {
+    "selection": "recorded_unfinished_or_uncertain",
+    "rows": []
+  }
+}

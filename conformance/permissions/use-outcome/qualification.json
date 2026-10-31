@@ -1,0 +1,213 @@
+{
+  "record_version": 1,
+  "profile": "receipt_owned_new_use_outcome",
+  "date": "2026-10-20",
+  "scope": "selected local functional tests",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "broad_profile_qualified": false,
+  "durable_permission_capability_enabled": false,
+  "exhaustive_operation_audit_qualified": false,
+  "code_source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 6419,
+      "sha256": "9add765ad00955ec00988afa84fbaaf2fbbf4fd9eec07a42ffbd1cc27404e1fc"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/model.rs",
+      "bytes": 22268,
+      "sha256": "c1b28a9e33412733d563628bf702866ab300adb0b912d2c40f2d7faf6102353b"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "bytes": 431231,
+      "sha256": "df4dc1e5f628033a6dbe587ed1246d74afb05ffbec8ecc9a7e3e94ab01b99ab6"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use.rs",
+      "bytes": 54532,
+      "sha256": "dc0cf7eb77d7425cd279f2d3d99715c30ca4c9d046ed5a79de01acb4243d5579"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_callback.rs",
+      "bytes": 18795,
+      "sha256": "4180ffb32b9075c752d16a4dc97ae5f2d54c1e05a65b604803ad09b18e834629"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome.rs",
+      "bytes": 30302,
+      "sha256": "4d39737249dbcc14e5d08158d837e21fed1cba65bad8601f3f7faf5ee73e2bd3"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome_source.rs",
+      "bytes": 50703,
+      "sha256": "9115343d6588a033c09c169935ab5afdbdf2a09cfb9a67e7a1576857e65fb6f2"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome_writer.rs",
+      "bytes": 75019,
+      "sha256": "c9f1d1d9a6e7052b0b7ea10d215c5a3a802bcccf288e0e28836d5f2678b50293"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_renewal.rs",
+      "bytes": 68346,
+      "sha256": "87656318e8982db7a9507b5243d444e276fd9c38b963827f845260eef20c0004"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 738384,
+      "sha256": "52665a95ac4cbea7cf94b8427192dc7f3469275bb851e0cd96b25d7a03a9aa8f"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/mod.rs",
+      "bytes": 88411,
+      "sha256": "2035092790f32ac4eb4726eda7ef1ad4d3fc8a505039f536eb0645f9fbc579e8"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_outcome.rs",
+      "bytes": 24866,
+      "sha256": "5b9fdd40da4c21792b4673163ae8f5f206ed82c7bf55527047e2dcd24f918b13"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_outcome_immediate.rs",
+      "bytes": 21393,
+      "sha256": "9faa5d1acf52a5bb976d91d5c44e87eb38da261afb19873ceb78acc286fda546"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/use_outcome.rs",
+      "bytes": 122358,
+      "sha256": "7d461d1fc62317a6a42429d3321f9260e246d5cb0cfb55ac3ac1772659a89897"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions.rs",
+      "bytes": 240997,
+      "sha256": "ec251941a515ca88de284d1e527a57cec00596ec460af38095ea62c1decfd7db"
+    }
+  ],
+  "checks": {
+    "sqlite_outcome_cases": {
+      "cargo_arguments": [
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_outcome::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "log_sha256": "1934062e5b912b36de5a3c72809cefd939db3a3cd9498dcf85c1b013525aa623",
+      "local_receipt": ".b4-work/outcome-recovery/verification/outcome-integration-1792512748892519000/receipt.json",
+      "passed": 8
+    },
+    "outcome_protocol_controls": {
+      "cargo_arguments": [
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-runtime",
+        "--lib",
+        "outcome",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "log_sha256": "0fa46ba6885633766afa93893dab2463130c318b63cf5c010b4a2467e62085af",
+      "local_receipt": ".b4-work/outcome-recovery/verification/all-outcome-controls-1792512766420030000/receipt.json",
+      "passed": 15
+    },
+    "workspace_compilation": {
+      "cargo_arguments": [
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "log_sha256": "fbc22ac2fb8506d19e2f691f3e725b8ddb6a59d60d392fc55ae41941af1f1272",
+      "local_receipt": ".b4-work/outcome-recovery/verification/workspace-no-run-1792512799416732000/receipt.json"
+    },
+    "workspace_regression": {
+      "cargo_arguments": [
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "log_sha256": "4980c971b44a24953231c7ba793fbc896265336cdbc639af6dc787360200fa5b",
+      "local_receipt": ".b4-work/outcome-recovery/verification/workspace-tests-1792512873364866000/receipt.json"
+    },
+    "strict_lint": {
+      "cargo_arguments": [
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "log_sha256": "628c57c8d6009c7428da9fb66131239e707ee0df7154542789306639406da066",
+      "local_receipt": ".b4-work/outcome-recovery/verification/lint-1792512524863298000/receipt.json"
+    },
+    "formatting": {
+      "cargo_arguments": [
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_receipt": ".b4-work/outcome-recovery/verification/format-check-1792512525999228000/receipt.json"
+    }
+  },
+  "evidence_availability": "Detailed receipts, logs, reviews and rollback copies are local in the ignored .b4-work/outcome-recovery directory; not distributed. Commands and adopted code are reproducible source inputs, not a promise of cross-platform qualification.",
+  "historical_results_transferred": false,
+  "limits": {
+    "logical_outcome_bytes": 4294967296,
+    "logical_outcome_nodes": 16777216,
+    "whole_process_resource_bound": false
+  },
+  "remaining": [
+    "Driver integration",
+    "supported concurrent resource and cancellation projection",
+    "live-Work same-database owner handoff",
+    "recovery and lost-response confirmation",
+    "human and legacy renewal",
+    "Linux qualification",
+    "exhaustive Rust/std operation accounting",
+    "broad persistent-permission capability"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "profile": "owned_run_cancellation_selected_lifecycle_comparison",
+  "passed": true,
+  "reference": "conformance/reference/recordings/2026-10-01-lifecycle/lifecycle-observations.json",
+  "reference_sha256": "e1c45cc4f935c29875e82494870189de4ec8e69dd21b0e7b5fe11660bdc03818",
+  "reference_transport": "actual_in_process_fetch",
+  "native_transport": "actual_loopback_tcp",
+  "source_pin": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "status_cases": [
+    "wait-cancel.cancel",
+    "wait-cancel.producer",
+    "wait-cancel.delete-before-quiescence",
+    "stream-cancel.cancel",
+    "stream-cancel.producer",
+    "wait-cancel.run-before-quiescence",
+    "stream-cancel.delete-before-quiescence",
+    "late-cancel.held-cancel",
+    "parked.cancel"
+  ],
+  "cancel_receipt_cases": [
+    "wait-cancel.cancel",
+    "stream-cancel.cancel"
+  ],
+  "receipt_normalization": "Only thread_id replaced with <thread> after asserting each native receipt has the exact requested ID; full object equality.",
+  "cancelled_done_case": "stream-cancel.producer",
+  "done_comparison": "Exact JSON payload from the frozen one-frame Done; no event sorting.",
+  "acceptance_test": "crates/b4-http/tests/cancellation_tcp.rs",
+  "prior_deletion_comparison": "conformance/expected/fenced-thread-deletion-reference-comparison.json",
+  "workflow_body_event_comparisons_retained": 24,
+  "grant_status_comparisons_retained": 14,
+  "prior_deletion_status_comparisons_retained": 7,
+  "limitations": [
+    "Selected statuses/receipts/Done only; whole state/error/header/wire/client parity unqualified.",
+    "Finite native Pure scripts and explicit native stronger origin/refusal rules.",
+    "Native same-thread admission comparison uses the two-slot stream fixture; single-slot capacity precedence returns503."
+  ]
+}

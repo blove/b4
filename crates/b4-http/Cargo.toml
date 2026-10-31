@@ -1,0 +1,28 @@
+[package]
+name = "b4-http"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+b4-contract.workspace = true
+b4-kernel.workspace = true
+b4-runtime.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+axum.workspace = true
+tokio.workspace = true
+uuid.workspace = true
+time.workspace = true
+futures-core = "=0.3.31"
+getrandom = "=0.3.4"
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["signal"] }
+tower.workspace = true
+b4-sqlite = { path = "../b4-sqlite" }
+rusqlite = { version = "=0.40.2", default-features = false, features = ["bundled"] }
+
+[lints]
+workspace = true

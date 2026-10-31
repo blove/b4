@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "increment": "startup_accepted_once",
+  "status": "qualified_bounded_accepted_once_native_macos_linux_scope",
+  "release_scope": "bounded_accepted_once_process_startup_only",
+  "credited_cases": [
+    {
+      "file": "crates/b4-http/tests/startup_accepted_once.rs",
+      "name": "process_startup_accepted_once_after_expiry_preserves_intent_and_sibling"
+    }
+  ],
+  "infrastructure": {
+    "ignored_helper": "startup_accepted_once_child_helper",
+    "ignored_helpers": 1,
+    "finite_child_roles": 2,
+    "additional_case_credit": 0,
+    "reruns_add_case_credit": false
+  },
+  "source": {
+    "new_rust_files": 6,
+    "new_cargo_targets": 1,
+    "unchanged_reused_process_transport_evidence_helpers": 3,
+    "old_protected_source_and_test_bodies_preserved": true,
+    "production_api_changes": 0,
+    "production_cli_default_changes": 0,
+    "wire_schema_changes": 0,
+    "storage_schema_changes": 0,
+    "dependency_changes": 0,
+    "runtime_qualification_input_count": 715,
+    "runtime_qualification_crate_file_count": 286,
+    "new_rust_source_sha256": {
+      "crates/b4-http/tests/startup_accepted_once.rs": "72dd868fd9034826fcf5243265f4494d6782e58bea17cad3fb90984ec37ca2be",
+      "crates/b4-http/tests/startup_accepted_once_support/mod.rs": "5c7532ed996f04a10eb62dcae834ec9c5cccc6f46ae982d081a28a94ac285770",
+      "crates/b4-http/tests/startup_accepted_once_support/model.rs": "8f215519eba5f19c2551e016ab11bcd79cf145c9d16a710157e9ee819bfc0bbd",
+      "crates/b4-http/tests/startup_accepted_once_support/gates.rs": "5355c53892c0ada299c5cf269c4810c52e6a0b920a348432ea620f7ec163453e",
+      "crates/b4-http/tests/startup_accepted_once_support/store.rs": "39fd45d9fafc89d461418e0b7883d434715c053f7451c3b387bbc06b942ae9cf",
+      "crates/b4-http/tests/startup_accepted_once_support/fixture.rs": "efe67ad02fe39b0d4c5e278e6557a1b272511032f1cec4ff94d114373b648323"
+    }
+  },
+  "observations": {
+    "accepted_boundary": {
+      "parallel_sibling_succeeded_before_original_park": true,
+      "original_full_once_envelope_used": true,
+      "actual_sqlite_accept_committed_before_seed_success_delivery": true,
+      "release_task_approved_ready_before_seed_kill": true,
+      "original_grant_consumed_once_before_seed_kill": true,
+      "full_acceptance_preserved": true,
+      "release_callback_invocations_before_seed_kill": 0,
+      "acceptance_and_intended_kill_observed_before_original_expiry": true,
+      "post_accept_gate_holds_no_sql_transaction": true
+    },
+    "restart": {
+      "actual_owned_seed_sigkill_and_reap": true,
+      "independent_post_kill_inspector_retired_before_restart": true,
+      "actual_wall_time_observed_after_original_recorded_expiry": true,
+      "grant_expiry_not_modified": true,
+      "replacement_grant_or_second_resume": false,
+      "preparing_host_health_available_while_readiness_and_ordinary_admission_closed": true,
+      "trusted_resolver_explicitly_released_without_expiry_or_cleanup": true,
+      "automatic_recovery_admits_original_accepted_intent": true,
+      "preparation_complete_and_dispatched_callback_hold_observed_separately": true,
+      "consumed_grant_and_acceptance_preserved_after_expiry": true,
+      "successful_sibling_replayed": false,
+      "restart_input_validator_invocations": 0,
+      "release_callback_invocations_in_restart": 1,
+      "attempts_before_restart": 1,
+      "attempts_after_real_dispatch": 2,
+      "attempt_budget": 4,
+      "normal_explicit_callback_release": true,
+      "final_status": "completed",
+      "joined_values_order": "original_sibling_then_approved_release"
+    },
+    "independent_state": {
+      "entire_accepted_state_derived_from_original_park_and_original_decision": true,
+      "entire_dispatched_state_derived_from_recover_and_dispatch": true,
+      "entire_terminal_state_derived_from_complete": true,
+      "original_full_input_definition_sibling_results_writes_and_authority_preserved": true,
+      "full_selected_journal_and_thread_resource_progression_checked": true
+    },
+    "retirement": {
+      "healthy_normal_quiescence": true,
+      "actual_listener_completion": true,
+      "all_store_application_host_route_callback_aliases_dropped": true,
+      "store_and_application_weak_absent": true,
+      "resource_free_control_reader_joined_before_child_return": true,
+      "normal_restart_exit_reap_and_log_drains": true,
+      "genuine_final_writer_rereads_selected_full_state": true,
+      "actual_final_writer_is_restart_owner_plus_one": true,
+      "actual_owner_sequence_observed_including_inspector": true,
+      "intended_seed_kill_is_not_normal_seed_retirement": true,
+      "container_cleanup_is_not_runtime_retirement_evidence": true
+    },
+    "original_resume_transport": {
+      "outcome": "abrupt_eof_or_reset_cut",
+      "terminal_done_observed": false,
+      "normally_framed_complete_response_claim": false,
+      "initial_headers_or_frame_required": false
+    }
+  },
+  "bounds": {
+    "capture_bytes": 1048576,
+    "fixture_grants": 1,
+    "fixture_acceptances": 1,
+    "fixture_journal_entries": 64,
+    "control_request_bytes": 1024,
+    "control_reply_bytes": 2048,
+    "control_commands": 16,
+    "io_timeout_seconds": 30,
+    "gate_timeout_seconds": 60,
+    "parent_watchdog_seconds": 120,
+    "original_grant_lifetime_seconds": 10,
+    "expiry_polling_bound_seconds": 30,
+    "parent_evidence_bytes": 16776192,
+    "seed_evidence_bytes": 8388608,
+    "restarted_child_evidence_bytes": 8388608,
+    "external_effect_ledger_bytes": 1024,
+    "total_persisted_evidence_bytes": 33554432,
+    "stdout_bytes_per_child": 1048576,
+    "stderr_bytes_per_child": 1048576,
+    "fixture_and_serialized_artifacts_only": true,
+    "whole_startup_heap_bound_claim": false,
+    "hard_cpu_io_storage_rss_or_deadline_claim": false,
+    "sqlite_source_and_build_outputs_excluded": true
+  },
+  "platforms": [
+    {
+      "platform": "macOS",
+      "architecture": "arm64",
+      "status": "actual_qualified_and_independently_reviewed",
+      "format_exit": 0,
+      "strict_workspace_lint_exit": 0,
+      "workspace_exit": 0,
+      "outer_cargo_targets": 104,
+      "normal_workspace_passed": 1216,
+      "separate_slow_passed": 3,
+      "distinct_qualified_rust_cases": 1219,
+      "failed": 0,
+      "default_ignored": 8,
+      "excluded_nested_cli_summaries": 2,
+      "new_parent_passed": 1,
+      "new_parent_failed": 0,
+      "new_ignored_infrastructure": 1,
+      "python_passed_before_new_metadata": 108,
+      "python_exit": 0,
+      "contract_checker_exit": 0,
+      "prior_named_requirement_inventory": 458,
+      "prior_process_startup_restart_requirement_rows": 2
+    },
+    {
+      "platform": "Linux",
+      "architecture": "aarch64",
+      "status": "actual_qualified_and_independently_reviewed",
+      "format_exit": 0,
+      "strict_workspace_lint_exit": 0,
+      "workspace_exit": 0,
+      "outer_cargo_targets": 104,
+      "normal_workspace_passed": 1216,
+      "separate_slow_passed": 3,
+      "distinct_qualified_rust_cases": 1219,
+      "failed": 0,
+      "default_ignored": 8,
+      "excluded_nested_cli_summaries": 2,
+      "new_parent_passed": 1,
+      "new_parent_failed": 0,
+      "new_ignored_infrastructure": 1,
+      "nonroot": true,
+      "network": "none",
+      "privileged": false,
+      "all_capabilities_dropped": true,
+      "host_mounts": false,
+      "container_cleanup_not_runtime_retirement_evidence": true
+    }
+  ],
+  "retained_execution_history": {
+    "initial_macos_workspace": {
+      "status": "failed_incomplete_retained",
+      "workspace_exit": 101,
+      "outer_cli_passed": 41,
+      "outer_cli_failed": 1,
+      "accepted_once_parent_reached": false,
+      "failure_scope": "existing_inherited_cli_transport_timer_assertion",
+      "root_cause": "unresolved",
+      "environment_exclusion_claim": false,
+      "accepted_once_behavioral_red_credit": false,
+      "metadata_red_credit": false
+    },
+    "unchanged_isolated_existing_cli_discriminator": {
+      "passed": 1,
+      "failed": 0,
+      "source_changed": false,
+      "additional_case_credit": 0,
+      "first_failure_cause_resolved": false
+    },
+    "unchanged_full_macos_rerun": {
+      "completed": true,
+      "source_changed": false,
+      "additional_case_credit": 0,
+      "does_not_erase_initial_failure": true
+    }
+  },
+  "python_and_metadata": {
+    "pre_metadata_full_python_passed": 108,
+    "pre_metadata_contract_exit": 0,
+    "prior_named_requirement_records": 458,
+    "prior_process_restart_group_rows": 2,
+    "actual_new_metadata_red": {
+      "methods_run": 3,
+      "failure_entries": 11,
+      "errors": 0,
+      "reason": "The actual group was missing; the old checker ignored nine scope/status/evidence mutations and the empty inventory."
+    },
+    "actual_new_metadata_green": {
+      "methods_passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "seconds": 34.629
+    },
+    "new_metadata_passing_test_credit": 3,
+    "new_requirement_records_publicly_adopted": 1,
+    "new_one_row_trace_group": "accepted_once_startup_requirements",
+    "metadata_is_not_runtime_evidence": true,
+    "predicted_post_metadata_suite_counts_credited": false,
+    "new_metadata_declarations": 3,
+    "initial_red_later_substitution_and_duplicate_branches": "not_reached; no individual RED credit",
+    "new_record_id": "ONCE-STARTUP-001",
+    "new_record_release_scope": "bounded_accepted_once_process_startup_only",
+    "current_named_requirements_after_single_record_adoption": 459,
+    "subsequent_full_python_and_checker": "Separate external post-documentation execution; no predicted count credited in this receipt."
+  },
+  "receipt_scope": {
+    "preceding_two_lane_accepted_before_dispatch_exclusion": "historical_preceding_scope_preserved",
+    "current_increment": "one_bounded_accepted_before_dispatch_preparing_restart_after_real_original_expiry",
+    "no_whole_startup_algorithm_or_production_exposure_claim": true,
+    "post_documentation_and_final_freeze": "Separate external acceptance records following support Source review and adoption; not claimed by this receipt."
+  },
+  "privacy": {
+    "private_paths_identifiers_control_addresses_authority_nonces_raw_storage_and_digests_excluded": true,
+    "sensitive_evidence_remains_private": true,
+    "no_self_referential_final_document_freeze_hash": true,
+    "static_public_rust_source_hashes_only": true
+  },
+  "excluded_scope": [
+    "Automatic incompatible or revoked-policy confinement",
+    "Persistent Always",
+    "Actual confinement deletion/reincarnation race",
+    "Recovered token-history signaling",
+    "Provider reconciliation",
+    "General production CLI startup exposure",
+    "Full RFC11.4",
+    "All 56 broad release scenarios",
+    "M0 and CP010 closure",
+    "Fresh original TypeScript/client or Node unit-suite execution",
+    "Arbitrary external-effect rollback or exactly-once guarantee",
+    "Whole startup heap/CPU/I/O/storage/RSS bounds"
+  ]
+}

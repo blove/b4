@@ -1,0 +1,178 @@
+{
+  "record_version": 1,
+  "profile": "embedded_new_use_current_uuid_and_structured_input",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "source_descriptor_sha256": "3abe6b3e8c642650ffebb5f97fce4ec1b26b977c9b453ca6fec3e504758a1694",
+  "code_source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter.rs",
+      "bytes": 28917,
+      "sha256": "1b27d0325b633f730c644ab78b4d5454b3bb6c731e81b19774120d5208d2efed"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "bytes": 437948,
+      "sha256": "796f201d5eb2363a3140765aaf9ec16ad1fac04a737914615c26ed1314cd2746"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 739652,
+      "sha256": "440f1b94dfd787998001565688430ea12299b1f9cdb8d74f1fd17507c543fd27"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/use_driver.rs",
+      "bytes": 75347,
+      "sha256": "cbb11ec9c7eb9996a3ebb2c7ae0f9a6a957d92f5d4c19fabcf2c7acabf14c34d"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/use_driver_inputs.rs",
+      "bytes": 14085,
+      "sha256": "69405d9056a22f0a8dd27956d870d2387d0f9a5a7798bd5ac09710124d513752"
+    }
+  ],
+  "observed_final_workspace_cases": {
+    "normal_input_cases": 3,
+    "old_driver_cases": 12,
+    "outcome_cases": 8,
+    "pure_driver_controls": 7
+  },
+  "checks": {
+    "format": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.053,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "reaped": true,
+      "timed_out": false
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.993,
+      "log_sha256": "12bd8087f5a748140372868478ba83611ba3b1d54029eced7ed4b4aa0038caff",
+      "source_unchanged": true,
+      "reaped": true,
+      "timed_out": false
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.588,
+      "log_sha256": "915660b7723501e3ce4adb2190a45f08197768738fef6078f643c4e325f2aef1",
+      "source_unchanged": true,
+      "reaped": true,
+      "timed_out": false
+    },
+    "normal_inputs": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--locked",
+        "--offline",
+        "use_driver::use_driver_inputs::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.919,
+      "log_sha256": "bdfcdabfe2ffe08521a3bb9c95bdbe5b34ae6f7eb392abedb31bac504f9e8e74",
+      "source_unchanged": true,
+      "reaped": true,
+      "timed_out": false
+    },
+    "workspace": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 144.935,
+      "log_sha256": "49745b51aaca37058697cabbcf94b072ada6231eb4e3b7db4fd89f0ba12fdc21",
+      "source_unchanged": true,
+      "reaped": true,
+      "timed_out": false
+    }
+  },
+  "supported_scope": {
+    "current_execution_turn_attempt_uuids": true,
+    "modest_nested_json": true,
+    "exact_kernel_result_persisted_after_one_callback": true,
+    "normal_shaped_candidate_substitution_retains_settled_outcome": true,
+    "public_strict_producer_unchanged": true,
+    "cumulative_account_ceilings_unchanged": true
+  },
+  "bounds": {
+    "opaque_current_id_bytes": 256,
+    "turn_history_aggregate_bytes": 512,
+    "snapshot_and_input_bytes": 65536,
+    "snapshot_and_input_nodes": 16384,
+    "snapshot_and_input_depth": 64,
+    "thread_bytes": 1024,
+    "thread_metadata": "empty; existing fixed structure",
+    "dispatch_journal_bytes": 1024,
+    "permission_use_record_bytes": 16384,
+    "permission_use_record_depth": 64,
+    "driver_raw_string_preflight": "conservative six-byte escaping before serialization",
+    "simultaneous_maxima_guaranteed": false
+  },
+  "failed_setup_observations": [
+    {
+      "selected_ascii_characters": 33000,
+      "error_code": "permission_limit_exceeded",
+      "stage": "genuine NewUse authorization before Driver entry",
+      "driver_refusal_qualified": false,
+      "retirement_qualified": false
+    },
+    {
+      "selected_ascii_characters": 11000,
+      "error_code": "permission_limit_exceeded",
+      "stage": "genuine NewUse authorization before Driver entry",
+      "driver_refusal_qualified": false,
+      "retirement_qualified": false
+    }
+  ],
+  "coverage_limits": [
+    "End-to-end invalid Driver input byte/depth boundaries are not qualified; seven separate private Driver controls cover input and account refusal behavior.",
+    "A depth-only proposal was not executed: the genuine PermissionUse record envelope preempts it.",
+    "Original thread/creator IDs, scope labels and metadata retain prior limits.",
+    "HTTP integration, human/legacy settlement, mixed/parallel work, Linux qualification and exhaustive operation audit remain open."
+  ],
+  "durable_permission_capability_enabled": false,
+  "exhaustive_operation_audit_qualified": false,
+  "ignored_tests_executed": false
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "revision": 2,
+  "execution_id": "execution-example",
+  "turn_id": "turn-example",
+  "owner_generation": 7,
+  "definition": {
+    "route": "/approval#agent",
+    "revision": "fixture-v1",
+    "batches": [
+      [
+        {
+          "id": "task-example",
+          "effect_id": "effect-example",
+          "recovery": "unsafe",
+          "requires_approval": true
+        }
+      ]
+    ],
+    "max_attempts": 4
+  },
+  "status": "waiting_for_approval",
+  "batch_index": 0,
+  "values": {
+    "messages": [
+      "initial"
+    ]
+  },
+  "tasks": [
+    {
+      "spec": {
+        "id": "task-example",
+        "effect_id": "effect-example",
+        "recovery": "unsafe",
+        "requires_approval": true
+      },
+      "status": "waiting_for_approval",
+      "input": {
+        "messages": [
+          "initial"
+        ]
+      },
+      "attempt_id": null,
+      "result": null,
+      "interrupt": {
+        "id": "interrupt-example",
+        "prompt": {
+          "question": "Proceed?"
+        }
+      },
+      "approved": false
+    }
+  ],
+  "attempts_used": 0,
+  "updated_at_ms": 100,
+  "failure": null,
+  "turn_history": [
+    "turn-example"
+  ],
+  "attempt_history": []
+}

@@ -1,0 +1,102 @@
+{
+  "execution": {
+    "snapshot": {
+      "attempt_history": [
+        "attempt-run-shared-driver-final"
+      ],
+      "attempts_used": 1,
+      "batch_index": 1,
+      "definition": {
+        "batches": [
+          [
+            {
+              "effect_id": "effect-run-shared-driver-final",
+              "id": "fixture",
+              "recovery": "pure",
+              "requires_approval": false
+            }
+          ]
+        ],
+        "max_attempts": 1,
+        "revision": "fixture-v1",
+        "route": "/scripted#agent"
+      },
+      "execution_id": "run-shared-driver-final",
+      "failure": null,
+      "output": {
+        "message": "B4run committed this scripted effect through SQLite."
+      },
+      "owner_generation": 1,
+      "revision": 3,
+      "schema_version": 1,
+      "status": "completed",
+      "tasks": [
+        {
+          "approved": false,
+          "attempt_id": "attempt-run-shared-driver-final",
+          "input": {},
+          "interrupt": null,
+          "result": {
+            "output": {
+              "effect_id": "effect-run-shared-driver-final"
+            },
+            "writes": [
+              {
+                "field": "message",
+                "type": "replace",
+                "value": "B4run committed this scripted effect through SQLite."
+              }
+            ]
+          },
+          "spec": {
+            "effect_id": "effect-run-shared-driver-final",
+            "id": "fixture",
+            "recovery": "pure",
+            "requires_approval": false
+          },
+          "status": "succeeded"
+        }
+      ],
+      "turn_history": [
+        "turn-run-shared-driver-final"
+      ],
+      "turn_id": "turn-run-shared-driver-final",
+      "updated_at_ms": 1790900502625,
+      "values": {
+        "message": "B4run committed this scripted effect through SQLite."
+      }
+    },
+    "thread_id": "thread-run-shared-driver-final"
+  },
+  "journal": [
+    {
+      "execution_id": "run-shared-driver-final",
+      "owner_generation": 1,
+      "revision": 0,
+      "status": "accepted",
+      "updated_at_ms": 1790900502624
+    },
+    {
+      "execution_id": "run-shared-driver-final",
+      "owner_generation": 1,
+      "revision": 1,
+      "status": "running",
+      "updated_at_ms": 1790900502624
+    },
+    {
+      "execution_id": "run-shared-driver-final",
+      "owner_generation": 1,
+      "revision": 2,
+      "status": "running",
+      "updated_at_ms": 1790900502625
+    },
+    {
+      "execution_id": "run-shared-driver-final",
+      "owner_generation": 1,
+      "revision": 3,
+      "status": "completed",
+      "updated_at_ms": 1790900502625
+    }
+  ],
+  "scope": "native scripted SQLite example; no HTTP or provider"
+}

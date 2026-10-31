@@ -1,0 +1,21 @@
+# Runnable Rust permission-reuse example
+
+HTTP permission reuse is adopted and verified. The user requests continuous work; the optional next-priority question has had no reply, so proceed with the stated runnable-example default. Design is presented before implementation and independently reviewed. No Git writes or routine approval loops.
+
+Build a small standalone Cargo example showing the new Rust host with a harmless local report callback, ordinary UUID resources, descriptive task/effect names and modest JSON. Prefer this over changing the product CLI (larger supported command surface) or adding HTTP Always creation (separate permission-authority feature).
+
+Expose explicit `seed` and `serve` modes. `seed` performs genuine embedded park -> actual Always token acceptance -> Ready cancellation and closes the database; it prints a machine-readable thread ID/route so the user can target the persisted permission. It grants only the fixed local example task under the fixed demo actor and policy. No manufactured record inserts. `serve` reopens that owner, requires an environment bearer token, binds loopback and uses PermissionUseHostConfig with its documented bounds. It creates no permission automatically. Existing Once/Deny fallback remains available when a permission does not match.
+
+Keep the example's application/catalog definition shared between both modes. Use a pure callback with a small JSON result and no external effect/state writes. Preserve the narrow V3 capabilities and unsupported-operation behavior. Include owned signal shutdown: stop admission, await callback drain and listener retirement, then release actual store aliases; do not abandon a callback when the viewer disconnects.
+
+A concise README/runbook supplies exact seed/serve/request commands, data ownership and fixed demo-identity behavior, plus supported limits. Enable the already-locked Tokio signal feature only for this example/dev target; add no dependency packages or lock changes. General permission import, startup recovery, production service installation and broad release qualification remain separate work.
+
+Verification should exercise the actual example in separate processes: seed a temporary database, serve with a generated local token/ephemeral port, send an authenticated request that completes with reused permission, stop normally, restart the same database and run again. Verify real persisted Complete4/Use and unchanged permission provenance, normal exits, listener retirement and temporary-directory removal. Tests first establish the absent example/behavior gap; source review precedes native execution. Standard format/compile/lint and appropriate regression cover the final source. Retain normal subset scope on macOS/Rust1.93.1.
+
+## Files and contract
+
+Create `crates/b4-http/examples/serve_permission_reuse.rs` with focused supporting modules only when needed for clear responsibilities, `scripts/check_permission_reuse_example.py` for bounded external-process acceptance, and `docs/runbooks/permission-reuse-example.md` for exact commands. Add the existing Tokio dependency with `signal` enabled under b4-http dev-dependencies so a targeted example build supports owned interrupt shutdown without relying on workspace feature unification. Existing example and library behavior remains unchanged.
+
+Use one fixed harmless local report Definition and exact catalog in both modes. `seed` prints one JSON object containing thread_id and route. `serve` prints one JSON readiness object with the actual loopback address after successful binding. Neither output contains the bearer token. Missing or empty token and invalid mode/port refuse before opening storage or a listener where applicable. The process harness uses an ephemeral port and temporary database, bounded startup/request/shutdown deadlines, and kill/reap only for failed child retirement. Normal shutdown must exit successfully after actual listener and worker quiescence.
+
+The recommended standalone example keeps the supported surface small. Extending the product CLI would introduce new product commands and configuration contracts; HTTP Always creation would add a separate approval-authority feature. Both can be subsequent increments.

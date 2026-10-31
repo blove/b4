@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "profile": "b4-ap-core/0",
+  "classification": "NATIVE",
+  "status": "passed_native_scope",
+  "scope": "explicit_approval_free_retained_native_only",
+  "source_input_freeze": {
+    "sha256": "adfce105a3c2cd75dcc7113bfb1a3ca8822a89d6b23cf9e1effeaaaeb4a0bfca",
+    "bytes": 485042
+  },
+  "platform_checks": {
+    "macOS": {
+      "status": "passed_native_scope",
+      "architecture": "arm64",
+      "rust_passed_entries": 1084,
+      "cargo_targets": 98,
+      "rust_failed": 0,
+      "historical_ignored": 3,
+      "raw_result_passed": 1086,
+      "nested_child_entries_excluded": 2,
+      "checks": [
+        {
+          "name": "fmt",
+          "exit": 0,
+          "log": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "name": "clippy",
+          "exit": 0,
+          "log": {
+            "sha256": "2461b00c8697c4189b2de92ca6fb05b5d72273c78a0a47b1ce4e83ccca077b70",
+            "bytes": 72
+          }
+        },
+        {
+          "name": "workspace",
+          "exit": 0,
+          "log": {
+            "sha256": "e26b07ec60994d9cc587775cd43983f765016610bef631d2409a3d2aeb3f07f6",
+            "bytes": 109083
+          }
+        },
+        {
+          "name": "python",
+          "exit": 0,
+          "log": {
+            "sha256": "bf63628053104803c92a986ec91b662925bff1549d4081ca4e081ccc92c04b8b",
+            "bytes": 203
+          }
+        },
+        {
+          "name": "contracts",
+          "exit": 0,
+          "log": {
+            "sha256": "94f782731e0dffdc7fc78df451a7402b83a908d85f605bcee0909bf37f2fcf0c",
+            "bytes": 1655
+          }
+        }
+      ]
+    },
+    "Linux": {
+      "status": "passed_native_scope",
+      "architecture": "aarch64",
+      "rust_passed_entries": 1084,
+      "cargo_targets": 98,
+      "rust_failed": 0,
+      "historical_ignored": 3,
+      "raw_result_passed": 1086,
+      "nested_child_entries_excluded": 2,
+      "checks": [
+        {
+          "name": "source-integrity",
+          "exit": 0,
+          "log": {
+            "sha256": "2540acf3fa260b414d588ca3fc6eb64685f2f619a50cb5a4881aecb948bbb25e",
+            "bytes": 246
+          }
+        },
+        {
+          "name": "fmt",
+          "exit": 0,
+          "log": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "name": "clippy",
+          "exit": 0,
+          "log": {
+            "sha256": "f8ff4d6701900dd38682779887dd4988a7c98b18f5d4de9bf81435069db0532a",
+            "bytes": 2656
+          }
+        },
+        {
+          "name": "workspace",
+          "exit": 0,
+          "log": {
+            "sha256": "55207a7f62d12ebceed6346bc560a7ebccc7d701a88651dc7fe6a4ed70f7d9f5",
+            "bytes": 115588
+          }
+        },
+        {
+          "name": "source-integrity-after",
+          "exit": 0,
+          "log": {
+            "sha256": "2540acf3fa260b414d588ca3fc6eb64685f2f619a50cb5a4881aecb948bbb25e",
+            "bytes": 246
+          }
+        }
+      ]
+    }
+  },
+  "python": {
+    "platform": "macOS",
+    "passed_cases": 102,
+    "new_traceability_cases": 3
+  },
+  "new_rust_test_inventory": [
+    {
+      "file": "crates/b4-runtime/src/application/history_tests.rs",
+      "declarations": 18,
+      "names": [
+        "old_constructor_and_current_lookup_keep_existing_semantics",
+        "history_lookup_keeps_current_and_removed_routes_explicit",
+        "combined_limit_accepts_and_selects_exactly_sixty_four",
+        "combined_limit_refuses_sixty_five_before_callbacks",
+        "current_bounds_and_old_identity_error_order_are_preserved",
+        "duplicate_current_route_keeps_original_static_reason",
+        "history_pairs_cannot_collide_with_current_even_when_content_changes",
+        "duplicate_history_pairs_refuse_equal_or_changed_content",
+        "distinct_history_revisions_bind_their_own_identically_named_effects",
+        "history_approval_is_refused_in_current_or_future_batches",
+        "current_approval_registration_remains_supported",
+        "each_history_program_limit_is_validated",
+        "history_kernel_shape_and_binding_coverage_are_required",
+        "retained_input_validator_and_output_kind_are_version_specific",
+        "retained_context_and_task_membership_guards_remain_exact",
+        "altered_or_missing_history_never_falls_back_to_current",
+        "retained_controlled_default_and_ack_checks_preserve_old_entries",
+        "retained_void_output_and_uncertain_callback_keep_static_checks"
+      ]
+    },
+    {
+      "file": "crates/b4-runtime/tests/native_history.rs",
+      "declarations": 12,
+      "names": [
+        "retained_definition_invokes_original_callback_with_installed_assembly_context",
+        "combined_registration_bound_and_nonempty_current_are_enforced_before_user_code",
+        "duplicate_pairs_refuse_even_with_changed_definition_or_callback_bindings",
+        "removed_historical_route_invokes_exact_history_without_entering_current_collection",
+        "any_future_historical_approval_refuses_while_current_approval_can_coexist",
+        "historical_and_current_validators_select_their_original_inputs_without_invocation",
+        "retained_void_output_does_not_borrow_current_value_output_kind",
+        "retained_known_failure_and_uncertainty_preserve_direct_and_default_controlled_outcomes",
+        "controlled_history_uses_its_override_supplied_observer_and_original_output_guard",
+        "altered_whole_definitions_and_missing_pairs_refuse_all_selection_before_user_code",
+        "historical_context_owner_and_task_membership_refuse_before_callback",
+        "historical_program_and_binding_admission_preserve_per_definition_limits"
+      ]
+    },
+    {
+      "file": "crates/b4-http/tests/native_history_recovery.rs",
+      "declarations": 13,
+      "names": [
+        "historical_typed_recovery_adopts_prior_owner_recorded_definition",
+        "historical_legacy_void_output_and_attachment_replay_keep_distinct_shapes",
+        "detached_historical_legacy_response_keeps_the_real_callback_owned",
+        "removed_historical_route_drains_without_becoming_a_new_route",
+        "absent_or_altered_history_refuses_without_mutating_any_authority",
+        "historical_recovery_preserves_actor_policy_and_every_captured_fence",
+        "current_owner_and_real_successor_cannot_reuse_the_original_history_target",
+        "historical_policy_revocation_after_actual_adoption_keeps_confirmed_evidence",
+        "initial_native_resume_policy_uses_recorded_support_even_when_history_is_missing",
+        "abandoned_historical_resume_policy_retires_all_transitive_registration_captures",
+        "unsupported_scripted_resume_preserves_initial_current_requested_provenance",
+        "current_once_and_deny_keep_real_grants_and_never_borrow_history_prompts",
+        "expired_current_grant_refuses_without_changing_approval_or_history"
+      ]
+    },
+    {
+      "file": "crates/b4-http/tests/native_history_startup.rs",
+      "declarations": 3,
+      "names": [
+        "startup_adopts_accepted_and_pure_history_without_claiming_callback_settlement",
+        "startup_missing_and_altered_history_remain_incomplete_with_unchanged_authority",
+        "startup_drains_a_historical_only_removed_route"
+      ]
+    },
+    {
+      "file": "crates/b4-http/tests/native_history_tcp.rs",
+      "declarations": 2,
+      "names": [
+        "authenticated_tcp_new_work_selects_current_v2_after_real_v1_startup",
+        "tcp_native_wrong_resume_route_preserves_current_requested_provenance"
+      ]
+    }
+  ],
+  "new_rust_declarations": 48,
+  "new_rust_executed_entries_per_platform": 48,
+  "requirement_group": {
+    "name": "historical_native_definitions_requirements",
+    "rows": 31,
+    "named_acceptance_links": 33,
+    "unique_names": 33,
+    "unique_rust_names": 30,
+    "python_names": 3,
+    "private_registry_tests_unmapped": 18
+  },
+  "provenance": {
+    "authored_qualification_inputs": 662,
+    "crate_inputs": 246,
+    "protected_prior_files": 636,
+    "Cargo_inputs_preserved": 9,
+    "packages": 88,
+    "external_packages": 81,
+    "package_metadata": {
+      "sha256": "76fe374da4f5d3dc6c24abf396930e7bcc4067a61d1c629c8a39a559bef2bd18",
+      "bytes": 429837
+    },
+    "package_graph_preservation": "Removing exactly four additive test targets restores the complete predecessor metadata object; dependencies/features/manifests/lock unchanged."
+  },
+  "linux_environment": {
+    "image": "sha256:6ae0042ec7e8a073013b2b7dad5a3f61b8a4baa2a45390a38fd17c85c6ab2c7e",
+    "user": "10001:10001",
+    "network": "none",
+    "cap_drop": [
+      "ALL"
+    ],
+    "mounts": [],
+    "privileged": false,
+    "fresh_compilation_target": true,
+    "owned_idle_container_cleanup": "complete; does not prove runtime retirement"
+  },
+  "semantics": [
+    "Immutable current and explicit retained route/execution revision pairs require complete recorded Definition equality. New work and prompts remain current-only; aggregate registrations <=64 with nonempty current and unique pairs.",
+    "Historical-only removed routes drain but do not accept new work; any approval-bearing historical task including a future batch refuses assembly. Current approval/grant/Once/Deny/TTL behavior remains supported.",
+    "Exact retained callbacks, output kinds and portable validators stay version-specific. HTTP recovery/resume do not revalidate admitted input. Installed assembly revision differs from recorded executable revision.",
+    "Existing actor, policy, origin, thread/incarnation/turn/resource/execution fences remain. Native resume policy receives recorded matching provenance; scripted requested provenance retains prior behavior.",
+    "Counted policy jobs return pure metadata; selection resumes under owned request/worker carriers. Actual held-request tests require normal return, cleanup, Weak absence and next-owner writer. Caller detach/readiness/counters/timeout/container cleanup do not prove callback settlement or physical retirement."
+  ],
+  "truthful_history": [
+    "Original independent compiling portable and real SQLite historical typed recovery feature REDs precede implementation GREEN. Initial expanded compile/fixture failures and narrow corrected assumptions remain separate from feature RED.",
+    "Initial restricted macOS attempt stopped at the first CLI target with33pass/9listener failures; minimal localhost binding refused with Operation not permitted. The same frozen source passed the authorized socket-enabled rerun. No failed/subset or nested child counts are added to final totals.",
+    "This compilation input still contained31 planned/not_run rows. Final documentation/status promotion is a later reviewed change; code remains bound to the exact qualification inputs."
+  ],
+  "factual_scope": [
+    "Original typed positive fixture is Accepted with Pure policy; separate legacy/startup cases exercise Pure InFlight.",
+    "Removed-route HTTP case is typed recovery plus settled replay/new-work refusal.",
+    "Preparing TCP case waits for actual Complete before its requests; it has no explicit TCP pre/post readyz probes.",
+    "Once/Deny compares the whole consumed grant and acceptance count/decision, not whole acceptance record equality; original historical ApprovalView whole equality is separate."
+  ],
+  "retained_evidence": {
+    "original_TypeScript_client": "historical; not rerun",
+    "original_Node_unit_suite": "historical221; not rerun",
+    "current_Node_subprocess_scope": "unchanged retained recording integrity scripts invoked by Python/contracts only"
+  },
+  "limits": [
+    "Known explicit historical native support only; healthy missing/altered support refusal and startup Incomplete remain unchanged.",
+    "Durable incompatible/revoked-policy confinement, automated RFC11.4 readiness, provider reconciliation and broad crash/release matrices remain incomplete.",
+    "56 release scenarios remain pending; CP001-009 partial,CP010 unresolved,M0 open,M5 partial/core unfrozen.",
+    "Pure/Idempotent declarations and trusted original executable bindings do not provide external exactly-once or hard CPU/RSS/time guarantees."
+  ]
+}

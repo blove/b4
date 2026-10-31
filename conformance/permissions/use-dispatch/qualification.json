@@ -1,0 +1,455 @@
+{
+  "actual_adoption_review": {
+    "Source": {
+      "bytes": 362544,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+      "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+    },
+    "actual_public_adoption_accepted": true,
+    "all_public_descriptors_rebuilt": true,
+    "all_public_inputs": 865,
+    "findings": [],
+    "new_inputs": 5,
+    "operator": {
+      "bytes": 10889,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-use-dispatch-adopter-v2.py",
+      "sha256": "36484f5c8b718c0baebbd685cc52b3255d43537db5b001008d744f22e3ec7eb5"
+    },
+    "private_candidate_unchanged": true,
+    "prospective_adoption_quality": {
+      "bytes": 3276,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-use-dispatch-independent-code-review-dedt346p/adoption-quality.json",
+      "sha256": "c8f4127ee978c95f5035c43eaaf0009747e263b06bd893eb7c4aa15482e26d11"
+    },
+    "public_adoption_accepted": true,
+    "public_diff_Source": {
+      "bytes": 362544,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+      "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+    },
+    "receipt": {
+      "bytes": 244069,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/public-adoption-receipt.json",
+      "sha256": "5e5a808e263d4f3c94ccaa72d8b570476aaa239d79b0362a8b61d5c1b4876f84"
+    },
+    "release": {
+      "bytes": 1915,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/public-adoption-release.json",
+      "sha256": "b01c9136d4024e0519bdf6b68e5e0d5a2a2c2a9cc30f2284d630f6cebbc1b687"
+    },
+    "reviewer_public_mutation_performed": false,
+    "schema": "independent.UseDispatch.actual-public-adoption-review.v1",
+    "scope": "Actual Root adopter receipt244069 whole-read and descriptor verified. Independent current public rg inventory including ignoredvendor equals exact865candidate and receipt map. All865actual public regular-file bytes/hash/modes rebuilt:11selected outputs match privateSource,5newfiles644,old existing modes preserved,854unselected public descriptors literal baseline. All865private source descriptors remain exact. Actual receipt binds exact current10889operator/release and qualified currentSource/publicDiff. No user document or other public change observed. Git-mutatedfalse is receipt/procedure claim; reviewer did not take an independent pre/post Git snapshot, so no broader Git-state inference.",
+    "selected_paths": 11,
+    "unselected_existing_literal": 854
+  },
+  "adopted_source": {
+    "bytes": 362544,
+    "mode": "0o600",
+    "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+    "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+  },
+  "corrected_accounting": {
+    "E1": [
+      8386688,
+      57961
+    ],
+    "P03": [
+      405945,
+      19485
+    ],
+    "Source": {
+      "bytes": 362544,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+      "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+    },
+    "charged_upper": [
+      9764279,
+      56052
+    ],
+    "corrected_census": {
+      "bytes": 237623,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-dispatch-corrected-accounting-3dv78fvp/complete-retained-census.json",
+      "sha256": "ffcdbbd3f17cd1de43b5c8a8b5dd6e68433c39641945d788229956dc2a478d85"
+    },
+    "corrected_invoice": {
+      "bytes": 523968,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-dispatch-corrected-accounting-3dv78fvp/complete-fixed-and-early-payer-proposal.json",
+      "sha256": "e6fa610ad156afd7d53745d8697e46fad4b6a2dc755b37bb5636febb51d8a006"
+    },
+    "findings": [],
+    "full_fee_application_accepted": true,
+    "implementation_changed": false,
+    "original_census": {
+      "bytes": 236570,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-cancel-UseDispatch-main-purpose-full-invoice-aojlz8gg/complete-compact-retained-charge-census.json",
+      "sha256": "5ea133f73d0be9fc8d5d0d870812d1bb93701d1b7a44c69a8cec2e5a8bd8bbe7"
+    },
+    "original_invoice": {
+      "bytes": 523425,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-cancel-UseDispatch-main-purpose-full-invoice-aojlz8gg/complete-fixed-and-early-payer-proposal.json",
+      "sha256": "49925dd2ff725e331ac94e0d6a2105a75d0e64e35028b193cceb026d760ea5e6"
+    },
+    "proposal": {
+      "bytes": 4302,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-use-dispatch-independent-code-review-dedt346p/accounting-omission-proposal.json",
+      "sha256": "513d635f813dd94510be75f2b80ca7ad387945b1381f54e22b289f665db20820"
+    },
+    "public_adoption_accepted": false,
+    "rows": 359,
+    "schema": "Root.UseDispatch.corrected-retained-charge-application.v1",
+    "scope": "Root whole-read exact proposal and full original gate entry/function plus singleton catalog caller. Appended original positive entry82048/322 before route lookups; old358 rows byte-equivalent as JSON values, old fixed schedules and all1075 guards unchanged. Retained source-bound original payer and refusal inception; no new work/carrier or runtime price. Actual two test usages fit corrected upper; no source changes/refunds/lift. Independent behavior/fullregression/adoption review pending."
+  },
+  "evidence_storage": "Referenced complete logs, source copies and protection maps remain external local evidence; hashes identify their exact contents. Counts include nested child test summaries.",
+  "full_workspace": {
+    "Source": {
+      "bytes": 362544,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+      "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+    },
+    "candidate865_and_public860_descriptors_exact": true,
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "--offline",
+      "--workspace"
+    ],
+    "exit_code": 0,
+    "failed": 0,
+    "ignored": 11,
+    "log": {
+      "bytes": 157475,
+      "mode": "0o644",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/full-loopback-qualified.log",
+      "sha256": "4cd29c52b5a5ce649553af153f09651db939efee5141f33aa438358c0caffb6f"
+    },
+    "loopback_permission_granted": true,
+    "passed": 1431,
+    "public_mutated": false,
+    "reaped": true,
+    "schema": "Root.UseDispatch.permissioned-full-regression.v1",
+    "scope": "Permissioned retry after sandbox listener denial; source descriptors current865/private860/public revalidated after actual completion. Log includes nested child fixture test summaries; counts sum all reported results.",
+    "summaries": 130
+  },
+  "rollback": {
+    "CARGO_TARGET_DIR": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/cargo-target",
+    "Source": {
+      "bytes": 362544,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+      "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+    },
+    "after": {
+      "bytes": 1296206,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-rollback-0-after.json",
+      "sha256": "c2be7c5abff691995d15c3a65da554fd6da58a08b0aad65fabab938e6f7d48e8"
+    },
+    "before": {
+      "bytes": 1296206,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-rollback-0-before.json",
+      "sha256": "c2be7c5abff691995d15c3a65da554fd6da58a08b0aad65fabab938e6f7d48e8"
+    },
+    "behavior_accepted": false,
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "--offline",
+      "-p",
+      "b4-sqlite",
+      "--test",
+      "persistent_permissions",
+      "permission_use_dispatch::late_journal::permission_use_dispatch_late_journal_failure_rolls_back_claim",
+      "--",
+      "--exact",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "elapsed_seconds": 0.4551910830195993,
+    "exit_code": 0,
+    "fee_accepted": false,
+    "log": {
+      "bytes": 726,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-rollback-0.log",
+      "sha256": "848df59f4f802fc82cbef8fcd75f3b907a9d1e3cb21d6a26f83ce2b8ef13225d"
+    },
+    "mode": "rollback",
+    "operator": {
+      "bytes": 6151,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-use-dispatch-main-runner-v1.py",
+      "sha256": "e2f6bf9bc9cd5d14f5d579a510f472a777705daf56ecc9dfbaf79ab6e1f2214f"
+    },
+    "protected_exact": true,
+    "public_mutated": false,
+    "reaped": true,
+    "release": {
+      "bytes": 3240,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/main-rollback-release.json",
+      "sha256": "9dc6f6a5022d1c3170c1d4ee1a09ba2705ecb48399c48395e6a5e48bc82e6014"
+    },
+    "timed_out": false
+  },
+  "scope": "Embedded single-task PermissionUse first Dispatch claim; callback renewal and broad durable profile remain open.",
+  "static_checks": [
+    {
+      "CARGO_TARGET_DIR": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/cargo-target",
+      "Source": {
+        "bytes": 362544,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+        "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+      },
+      "after": {
+        "bytes": 1290033,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-static-0-after.json",
+        "sha256": "0c0bd2f7b11c79b969b741841303b512856f35aee6ffefbe89947ec2dbd185da"
+      },
+      "before": {
+        "bytes": 1290033,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-static-0-before.json",
+        "sha256": "0c0bd2f7b11c79b969b741841303b512856f35aee6ffefbe89947ec2dbd185da"
+      },
+      "behavior_accepted": false,
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--no-run"
+      ],
+      "elapsed_seconds": 13.620354292041156,
+      "exit_code": 0,
+      "fee_accepted": false,
+      "log": {
+        "bytes": 2164,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-static-0.log",
+        "sha256": "ff74cb85f3180a5e96a325f5ebbbe81b2f419f546869d328d9a427181b7e2b4d"
+      },
+      "mode": "static",
+      "operator": {
+        "bytes": 6151,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-use-dispatch-main-runner-v1.py",
+        "sha256": "e2f6bf9bc9cd5d14f5d579a510f472a777705daf56ecc9dfbaf79ab6e1f2214f"
+      },
+      "protected_exact": true,
+      "public_mutated": false,
+      "reaped": true,
+      "release": {
+        "bytes": 2238,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/main-static-release.json",
+        "sha256": "53d2b186efc79f08900350c642f240cb43fbeea73e23cbe99d88d284bb0146d2"
+      },
+      "timed_out": false
+    },
+    {
+      "CARGO_TARGET_DIR": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/cargo-target",
+      "Source": {
+        "bytes": 362544,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+        "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+      },
+      "after": {
+        "bytes": 1290033,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-static-1-after.json",
+        "sha256": "0c0bd2f7b11c79b969b741841303b512856f35aee6ffefbe89947ec2dbd185da"
+      },
+      "before": {
+        "bytes": 1290033,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-static-1-before.json",
+        "sha256": "0c0bd2f7b11c79b969b741841303b512856f35aee6ffefbe89947ec2dbd185da"
+      },
+      "behavior_accepted": false,
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "elapsed_seconds": 1.9409009590162896,
+      "exit_code": 0,
+      "fee_accepted": false,
+      "log": {
+        "bytes": 0,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-static-1.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "mode": "static",
+      "operator": {
+        "bytes": 6151,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-use-dispatch-main-runner-v1.py",
+        "sha256": "e2f6bf9bc9cd5d14f5d579a510f472a777705daf56ecc9dfbaf79ab6e1f2214f"
+      },
+      "protected_exact": true,
+      "public_mutated": false,
+      "reaped": true,
+      "release": {
+        "bytes": 2238,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/main-static-release.json",
+        "sha256": "53d2b186efc79f08900350c642f240cb43fbeea73e23cbe99d88d284bb0146d2"
+      },
+      "timed_out": false
+    },
+    {
+      "CARGO_TARGET_DIR": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/cargo-target",
+      "Source": {
+        "bytes": 362544,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+        "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+      },
+      "after": {
+        "bytes": 1290033,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-static-2-after.json",
+        "sha256": "0c0bd2f7b11c79b969b741841303b512856f35aee6ffefbe89947ec2dbd185da"
+      },
+      "before": {
+        "bytes": 1290033,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-static-2-before.json",
+        "sha256": "0c0bd2f7b11c79b969b741841303b512856f35aee6ffefbe89947ec2dbd185da"
+      },
+      "behavior_accepted": false,
+      "command": [
+        "cargo",
+        "clippy",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-runtime",
+        "-p",
+        "b4-sqlite",
+        "-p",
+        "b4-kernel",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "elapsed_seconds": 10.370307833014522,
+      "exit_code": 0,
+      "fee_accepted": false,
+      "log": {
+        "bytes": 1613,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-static-2.log",
+        "sha256": "b33f6418d8f13016b072fb5d55d93af8800d7b25c6e7fa1182062e1c7bf35880"
+      },
+      "mode": "static",
+      "operator": {
+        "bytes": 6151,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-use-dispatch-main-runner-v1.py",
+        "sha256": "e2f6bf9bc9cd5d14f5d579a510f472a777705daf56ecc9dfbaf79ab6e1f2214f"
+      },
+      "protected_exact": true,
+      "public_mutated": false,
+      "reaped": true,
+      "release": {
+        "bytes": 2238,
+        "mode": "0o600",
+        "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/main-static-release.json",
+        "sha256": "53d2b186efc79f08900350c642f240cb43fbeea73e23cbe99d88d284bb0146d2"
+      },
+      "timed_out": false
+    }
+  ],
+  "success": {
+    "CARGO_TARGET_DIR": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/cargo-target",
+    "Source": {
+      "bytes": 362544,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/source-packet.json",
+      "sha256": "90dd3ecb1adb15241d8c6094701e27d9d57d7415383380989cc9f39eb789f9d8"
+    },
+    "after": {
+      "bytes": 1296104,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-retry-success-0-after.json",
+      "sha256": "2fe5e65a7ae24c34d92e4b8b7a91d2e4694b5f53bf991a141c933f980ea669f3"
+    },
+    "before": {
+      "bytes": 1296104,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-retry-success-0-before.json",
+      "sha256": "2fe5e65a7ae24c34d92e4b8b7a91d2e4694b5f53bf991a141c933f980ea669f3"
+    },
+    "behavior_accepted": false,
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "--offline",
+      "-p",
+      "b4-sqlite",
+      "--test",
+      "persistent_permissions",
+      "permission_use_dispatch::permission_use_ready_dispatch_claim_is_persisted_without_new_human",
+      "--",
+      "--exact",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "elapsed_seconds": 0.45274308300577104,
+    "exit_code": 0,
+    "fee_accepted": false,
+    "log": {
+      "bytes": 683,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/use-dispatch-main-retry-success-0.log",
+      "sha256": "19dfc8b650684834442de52c9e30c1aad83d0116cebdbed2a21e776e04c931ae"
+    },
+    "mode": "success",
+    "operator": {
+      "bytes": 6157,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-use-dispatch-main-runner-retry-v2.py",
+      "sha256": "e5a45e2ea98a88da0d6a2ecc77aaa12cf692b4c7e93082a50606ff4008dbf951"
+    },
+    "protected_exact": true,
+    "public_mutated": false,
+    "reaped": true,
+    "release": {
+      "bytes": 3247,
+      "mode": "0o600",
+      "path": "/var/folders/_b/0t5_pyt94n7dlqkv1gmt29300000gn/T/b4-root-use-dispatch-main-freshness-formatted-p3b2ak1b/main-success-retry-release.json",
+      "sha256": "f9f0093bef3e599cbdb2d945ebb21e5908358446b3ac12c78d20b907dd529451"
+    },
+    "timed_out": false
+  }
+}

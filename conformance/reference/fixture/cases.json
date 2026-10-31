@@ -1,0 +1,840 @@
+[
+  {
+    "id": "create-empty",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [],
+    "body": "",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-whitespace",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [],
+    "body": " \n\t",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-object",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{}",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-wrong-content-type",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "text/plain"
+      ]
+    ],
+    "body": "{\"metadata\":{\"contentType\":\"text\"}}",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-no-content-type",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [],
+    "body": "{\"metadata\":{\"contentType\":\"absent\"}}",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-malformed",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-null",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "null",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-string",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "\"body\"",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-number",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "12",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-boolean",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "false",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-array",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "[]",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-metadata-array",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"metadata\":[1,2]}",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-metadata-null",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"metadata\":null}",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-unknown-root-field",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"unknown\":\"ignored\",\"metadata\":{\"x\":1}}",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-duplicate-metadata",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"metadata\":{\"winner\":\"first\"},\"metadata\":{\"winner\":\"last\"}}",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-duplicate-metadata-invalid-last",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"metadata\":{},\"metadata\":null}",
+    "normalization": "thread"
+  },
+  {
+    "id": "create-duplicate-metadata-valid-last",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"metadata\":null,\"metadata\":{\"winner\":\"last\"}}",
+    "normalization": "thread"
+  },
+  {
+    "id": "wait-body-empty",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-body-empty/runs/wait",
+    "headers": [],
+    "body": "",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-whitespace",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-whitespace/runs/wait",
+    "headers": [],
+    "body": " \n\t",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-malformed",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-malformed/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-null",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-null/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "null",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-array",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-array/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "[]",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-missing-route",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-missing-route/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-route-null",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-route-null/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":null}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-route-number",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-route-number/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":1}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-route-empty",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-route-empty/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"\"}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-unknown-route",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-unknown-route/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/missing#workflow\",\"input\":null}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-wrong-content-type",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-wrong-content-type/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "text/plain"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-no-content-type",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-no-content-type/runs/wait",
+    "headers": [],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-unknown-root-field",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-unknown-root-field/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1},\"unknown\":\"ignored\"}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-duplicate-route",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-duplicate-route/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/missing#workflow\",\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-duplicate-input",
+    "characterization": "CP-001",
+    "method": "POST",
+    "path": "/threads/th-wait-duplicate-input/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":\"first\",\"input\":\"last\"}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-input-omitted",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-wait-input-omitted/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\"}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-input-omitted",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-stream-input-omitted/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\"}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-input-null",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-wait-input-null/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":null}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-input-null",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-stream-input-null/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":null}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-input-string",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-wait-input-string/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":\"fixture\"}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-input-string",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-stream-input-string/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":\"fixture\"}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-input-number",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-wait-input-number/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":7}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-input-number",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-stream-input-number/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":7}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-input-boolean",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-wait-input-boolean/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":false}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-input-boolean",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-stream-input-boolean/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":false}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-input-array",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-wait-input-array/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":[1,\"a\"]}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-input-array",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-stream-input-array/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":[1,\"a\"]}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-input-object",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-wait-input-object/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-input-object",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-stream-input-object/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/probe#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-void",
+    "characterization": "CP-003",
+    "method": "POST",
+    "path": "/threads/th-wait-void/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/void#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-void",
+    "characterization": "CP-003",
+    "method": "POST",
+    "path": "/threads/th-stream-void/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/void#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-zero",
+    "characterization": "CP-004",
+    "method": "POST",
+    "path": "/threads/th-wait-zero/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/zero#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-zero",
+    "characterization": "CP-004",
+    "method": "POST",
+    "path": "/threads/th-stream-zero/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/zero#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-false",
+    "characterization": "CP-004",
+    "method": "POST",
+    "path": "/threads/th-wait-false/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/false#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-false",
+    "characterization": "CP-004",
+    "method": "POST",
+    "path": "/threads/th-stream-false/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/false#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-empty",
+    "characterization": "CP-004",
+    "method": "POST",
+    "path": "/threads/th-wait-empty/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/empty#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-empty",
+    "characterization": "CP-004",
+    "method": "POST",
+    "path": "/threads/th-stream-empty/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/empty#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-fail",
+    "characterization": "CP-003",
+    "method": "POST",
+    "path": "/threads/th-wait-fail/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/fail#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-fail",
+    "characterization": "CP-003",
+    "method": "POST",
+    "path": "/threads/th-stream-fail/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/fail#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-validate",
+    "characterization": "CP-004",
+    "method": "POST",
+    "path": "/threads/th-wait-validate/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/validate#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-validate",
+    "characterization": "CP-004",
+    "method": "POST",
+    "path": "/threads/th-stream-validate/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/validate#workflow\",\"input\":{\"x\":1}}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-validate-null",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-wait-validate-null/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/validate#workflow\",\"input\":null}",
+    "normalization": "none"
+  },
+  {
+    "id": "wait-validate-array",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-wait-validate-array/runs/wait",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/validate#workflow\",\"input\":[]}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-validate-null",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-stream-validate-null/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/validate#workflow\",\"input\":null}",
+    "normalization": "none"
+  },
+  {
+    "id": "stream-validate-array",
+    "characterization": "CP-002",
+    "method": "POST",
+    "path": "/threads/th-stream-validate-array/runs/stream",
+    "headers": [
+      [
+        "content-type",
+        "application/json"
+      ]
+    ],
+    "body": "{\"route\":\"/validate#workflow\",\"input\":[]}",
+    "normalization": "none"
+  }
+]

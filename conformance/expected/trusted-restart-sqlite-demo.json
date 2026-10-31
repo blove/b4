@@ -1,0 +1,102 @@
+{
+  "execution": {
+    "snapshot": {
+      "attempt_history": [
+        "attempt-verified-trusted-restart-increment-1"
+      ],
+      "attempts_used": 1,
+      "batch_index": 1,
+      "definition": {
+        "batches": [
+          [
+            {
+              "effect_id": "effect-verified-trusted-restart-increment-1",
+              "id": "fixture",
+              "recovery": "pure",
+              "requires_approval": false
+            }
+          ]
+        ],
+        "max_attempts": 1,
+        "revision": "fixture-v1",
+        "route": "/scripted#agent"
+      },
+      "execution_id": "verified-trusted-restart-increment-1",
+      "failure": null,
+      "output": {
+        "message": "B4run committed this scripted effect through SQLite."
+      },
+      "owner_generation": 1,
+      "revision": 3,
+      "schema_version": 1,
+      "status": "completed",
+      "tasks": [
+        {
+          "approved": false,
+          "attempt_id": "attempt-verified-trusted-restart-increment-1",
+          "input": {},
+          "interrupt": null,
+          "result": {
+            "output": {
+              "effect_id": "effect-verified-trusted-restart-increment-1"
+            },
+            "writes": [
+              {
+                "field": "message",
+                "type": "replace",
+                "value": "B4run committed this scripted effect through SQLite."
+              }
+            ]
+          },
+          "spec": {
+            "effect_id": "effect-verified-trusted-restart-increment-1",
+            "id": "fixture",
+            "recovery": "pure",
+            "requires_approval": false
+          },
+          "status": "succeeded"
+        }
+      ],
+      "turn_history": [
+        "turn-verified-trusted-restart-increment-1"
+      ],
+      "turn_id": "turn-verified-trusted-restart-increment-1",
+      "updated_at_ms": 1790882501857,
+      "values": {
+        "message": "B4run committed this scripted effect through SQLite."
+      }
+    },
+    "thread_id": "thread-verified-trusted-restart-increment-1"
+  },
+  "journal": [
+    {
+      "execution_id": "verified-trusted-restart-increment-1",
+      "owner_generation": 1,
+      "revision": 0,
+      "status": "accepted",
+      "updated_at_ms": 1790882501855
+    },
+    {
+      "execution_id": "verified-trusted-restart-increment-1",
+      "owner_generation": 1,
+      "revision": 1,
+      "status": "running",
+      "updated_at_ms": 1790882501856
+    },
+    {
+      "execution_id": "verified-trusted-restart-increment-1",
+      "owner_generation": 1,
+      "revision": 2,
+      "status": "running",
+      "updated_at_ms": 1790882501856
+    },
+    {
+      "execution_id": "verified-trusted-restart-increment-1",
+      "owner_generation": 1,
+      "revision": 3,
+      "status": "completed",
+      "updated_at_ms": 1790882501857
+    }
+  ],
+  "scope": "native scripted SQLite example; no HTTP or provider"
+}

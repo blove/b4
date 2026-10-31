@@ -1,0 +1,1972 @@
+{
+  "format_version": 1,
+  "evidence_classification": "built_runtime_artifact_inventory",
+  "reference": {
+    "commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+    "lockfile_sha256": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0"
+  },
+  "observation_timing": "capture_time_inventory",
+  "assurance": "Inventory collected before import and checked again after capture; reference identity and inventory must match across capture.",
+  "coverage_scope": "All regular packages/*/dist .js/.mjs/.cjs/.json files; provenance superset, not a runtime import-closure claim",
+  "inventory_formula": "SHA256(UTF8(JSON.stringify(files))) where files are sorted by ASCII path and each entry has ordered keys path, sha256, bytes",
+  "files": [
+    {
+      "path": "packages/ag-ui/dist/activities.js",
+      "sha256": "4f97b8d6694603196cce57839a03de2bcfa60c2994783574d92700b872abad59",
+      "bytes": 9845
+    },
+    {
+      "path": "packages/ag-ui/dist/ids.js",
+      "sha256": "aa028b6726c2892832b1cf5987a1e868b09fb2f491a9f259f2d573f6c3220782",
+      "bytes": 668
+    },
+    {
+      "path": "packages/ag-ui/dist/inbound.js",
+      "sha256": "676f059d3da6ff8ca5e66b9497434952fd63fb99f8f8a845fc746e8b2e7b3693",
+      "bytes": 1590
+    },
+    {
+      "path": "packages/ag-ui/dist/index.js",
+      "sha256": "198974b9771f88ed51b77de6a0f5372f01722efb117859e0b3adc8046a87cb34",
+      "bytes": 256
+    },
+    {
+      "path": "packages/ag-ui/dist/interrupts.js",
+      "sha256": "8fad8727920e4ccd2bb6152d6ba870af4f47f3dc87f78659f5c5a12374d71c05",
+      "bytes": 3955
+    },
+    {
+      "path": "packages/ag-ui/dist/orchestration-ledger.js",
+      "sha256": "b0f8ea99ba464f3c9ee1aa49417d41867bca54b0d89c1e350da0f4b8528195f5",
+      "bytes": 8140
+    },
+    {
+      "path": "packages/ag-ui/dist/outbound.js",
+      "sha256": "95ff47a81dfba00bb1dc6bab7fe0f49fdf77a88765c1c34d5285a99d5c0ccd25",
+      "bytes": 14170
+    },
+    {
+      "path": "packages/ag-ui/dist/react/ActivityChecklist.js",
+      "sha256": "cf9d8c11e4f7a83f250f9906731a077dd28fe85faa2cdeb26bd61c4efed86e29",
+      "bytes": 1854
+    },
+    {
+      "path": "packages/ag-ui/dist/react/PlanActivityCard.js",
+      "sha256": "d4aeafd49f84d2a1258877fe0e82bf8bdce62655b277180eb0ca139c23da583a",
+      "bytes": 1129
+    },
+    {
+      "path": "packages/ag-ui/dist/react/SubagentActivityCard.js",
+      "sha256": "3c9a27341906c9eccec60bd9b7e12eab03139a2962140dd51f1750d561807210",
+      "bytes": 3243
+    },
+    {
+      "path": "packages/ag-ui/dist/react/index.js",
+      "sha256": "67cd61c0e2054e5243ae2d27d99f6e6111a0a724aeaf72b4b0d5170448c71465",
+      "bytes": 2234
+    },
+    {
+      "path": "packages/ag-ui/dist/react/parts.js",
+      "sha256": "c3f9bb548042b6435610156562795dc9abde779504d2cfede0bf14529a00bc8a",
+      "bytes": 145
+    },
+    {
+      "path": "packages/ag-ui/dist/react/renderers.js",
+      "sha256": "c007997c89c00066b837bc0a00b4c3159f6c3f2f19dc08f789bdae0123322b32",
+      "bytes": 1703
+    },
+    {
+      "path": "packages/ag-ui/dist/react/schemas.js",
+      "sha256": "087c6601a2e62d5c74e5b60bb4500dc9e00910e95326bdaa7038d6a4fd100844",
+      "bytes": 1404
+    },
+    {
+      "path": "packages/ag-ui/dist/sse.js",
+      "sha256": "5e8033ffc834a3d60132026995a6fc0d84972c02c56aed334db45700a63581d5",
+      "bytes": 262
+    },
+    {
+      "path": "packages/ag-ui/dist/types.js",
+      "sha256": "e386ed2921edf9870e553385059895b71fa14fe553ad8a86b41019a397c0415c",
+      "bytes": 1189
+    },
+    {
+      "path": "packages/cli/dist/commands/add.js",
+      "sha256": "027670348ef038bbd42249873fe8e33cbe4df207b4b6c6b48434d0d0fa8195f9",
+      "bytes": 4340
+    },
+    {
+      "path": "packages/cli/dist/commands/build.js",
+      "sha256": "966825af9a36b0f9192216edad8b3b5e40cee1c579271c630d0d72c577f70970",
+      "bytes": 6317
+    },
+    {
+      "path": "packages/cli/dist/commands/check.js",
+      "sha256": "094d0580db02bdff76a9aa65585c061c6966aa7a5a5a7fc3934aa2c27cbc8a53",
+      "bytes": 11577
+    },
+    {
+      "path": "packages/cli/dist/commands/dev.js",
+      "sha256": "6e1fbe2248f1928db4d00a74fd4c782ecbd2a78e88122db90d74a4ea6af3a4b4",
+      "bytes": 1115
+    },
+    {
+      "path": "packages/cli/dist/commands/docs.js",
+      "sha256": "80d3f9219abda329f40fcf31fb0b7f13450071ec00773dfc9cf7307019f12576",
+      "bytes": 3233
+    },
+    {
+      "path": "packages/cli/dist/commands/eval.js",
+      "sha256": "cd7e3ba05920ccc98b8ed66fe2f1b9f4128ef33c79ad6533d40d63e302ed0050",
+      "bytes": 7831
+    },
+    {
+      "path": "packages/cli/dist/commands/inspect.js",
+      "sha256": "e288008001b89ac03f3f4f8e6b98f4082b9364ead4fb6441699865a12e446541",
+      "bytes": 6860
+    },
+    {
+      "path": "packages/cli/dist/commands/memory.js",
+      "sha256": "6f0625d57e9a23e8b6dd93f9a6dbe5479f6a11025627a26cc5af4cd66ea18888",
+      "bytes": 14312
+    },
+    {
+      "path": "packages/cli/dist/commands/routes.js",
+      "sha256": "0e9410b377aec91e4aa5105c9ee78f6981600c7cdbf5ad0ffabb25df2f5f4640",
+      "bytes": 1158
+    },
+    {
+      "path": "packages/cli/dist/commands/run.js",
+      "sha256": "c4461aecc8dfc090fde5102c13615e78174c7c77349cd78e0c814530a9ecd210",
+      "bytes": 3270
+    },
+    {
+      "path": "packages/cli/dist/commands/start.js",
+      "sha256": "2e1e3aa71d41d312985c116b49adb3afc574be3af8c147d80c6679c850847d68",
+      "bytes": 2381
+    },
+    {
+      "path": "packages/cli/dist/commands/test.js",
+      "sha256": "a98ee9d9afed1a1a44e96a47470484e4aedc7a939ee73b6d8ca77ecd44677303",
+      "bytes": 5953
+    },
+    {
+      "path": "packages/cli/dist/commands/threads.js",
+      "sha256": "e3d6323b9f3e4ee7727ffd2358eb8fd7486c8fd2f0b692882d39c51c3b824836",
+      "bytes": 6765
+    },
+    {
+      "path": "packages/cli/dist/commands/typegen.js",
+      "sha256": "b09e5b33f6f215ccd5162dd9c90a7dc07394db19ae778cf858b6cfdc55002f79",
+      "bytes": 1125
+    },
+    {
+      "path": "packages/cli/dist/commands/verify.js",
+      "sha256": "a3df3d7593f7cb6859070d47f0c56564784db4872cbd9b73aac96b021affd321",
+      "bytes": 10246
+    },
+    {
+      "path": "packages/cli/dist/fetch-exports.js",
+      "sha256": "296092bd857a7e42f797008340afba23de1e20856a143674c33b957249f5f73e",
+      "bytes": 3188
+    },
+    {
+      "path": "packages/cli/dist/index.js",
+      "sha256": "42cba770affb65181e39ec5cb167a44bf1a18a7d31056bf2024e7a0fbaeaf52d",
+      "bytes": 4252
+    },
+    {
+      "path": "packages/cli/dist/lib/build/deployment-config.js",
+      "sha256": "230059459e291f7fc643ce805e9229aae9abd4534c49e172a835913431f41aa9",
+      "bytes": 547
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/edge-capabilities.js",
+      "sha256": "989ae0459c8d7651f988b47be58c0c0c569d7a53a0875e31761b24926a42573f",
+      "bytes": 14123
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/edge-modules-emitter.js",
+      "sha256": "16085e7435cde39d61f463db236fa0ef29b73525f796933c45292dea103f625d",
+      "bytes": 6211
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/hono.js",
+      "sha256": "46adc171383840e6be0f2df1d3bee4e7206cc187d7631edeff8cf80968903e43",
+      "bytes": 5445
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/index.js",
+      "sha256": "e6c65450766c1d9ada92cffc4c7abcce48b81e57a4c9556723279f4bda324156",
+      "bytes": 1220
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/langsmith.js",
+      "sha256": "76a2d86385c5c0e41c14b3343848afe46791f2c2d5f8dfe23f5f450ee9cb0542",
+      "bytes": 3790
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/marker-files.js",
+      "sha256": "0808b4e5a2283e5a8fcd2c830e9ddbfba06620133361e35c28d63ebe7ef999da",
+      "bytes": 5191
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/modules-emitter.js",
+      "sha256": "4dc4813932d432d7d37bead814d5d6f9b468cb624c2a63cf1db4ba970f93da68",
+      "bytes": 18067
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/node.js",
+      "sha256": "f9749616d387620fd24c99009778afc5ff1d48d8548f20e36191ac3e94dd511d",
+      "bytes": 9469
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/thread-access-probe.js",
+      "sha256": "83b21a6fcf20144297ee554232ff31247b3810adeef48c6751300c91ba4f7fc1",
+      "bytes": 1598
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/vercel-assets.js",
+      "sha256": "393dc200e6b520e83e3216444b74ce2ca4ee89d253945dc6992b4f901e7a0980",
+      "bytes": 3693
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/vercel-compose.js",
+      "sha256": "82cb53d7cf8ae3c80c4c0d318b056ad06461f39b3c16f214ad9c5e19b29b3bc2",
+      "bytes": 10111
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/vercel-config.js",
+      "sha256": "e9326b5d37abf05b3e24236fa81b35efeb1836a9aed499038d24f326e0878b1b",
+      "bytes": 11856
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/vercel-node-compat.js",
+      "sha256": "c331ee370c5dabb7449f545f5f0dc5bd0bdb5a9d2d626c951c0f804dd54e9037",
+      "bytes": 4936
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/vercel-output.js",
+      "sha256": "1c474530ef17d9e6c098dd5dc8f291801efe8da5dd9de417c421cde3910fb84e",
+      "bytes": 16278
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/vercel.js",
+      "sha256": "180150b9db00bc52ceab7eacaf68cbe0d8e29f8940912dccb0b154f5fad3095d",
+      "bytes": 9317
+    },
+    {
+      "path": "packages/cli/dist/lib/build/targets/web-runtime.js",
+      "sha256": "7dec633d373bb08e9773654e56098e5e2c4fcf43b9634dfbf84d80135ab6c236",
+      "bytes": 45341
+    },
+    {
+      "path": "packages/cli/dist/lib/build/workspace-artifact.js",
+      "sha256": "fcfb5d39723b9f22945b2a6cbc172230dada76310694e9c9d91d06824fe07c7c",
+      "bytes": 4486
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/abortable-iterable.js",
+      "sha256": "247146baf6c8ef5784dadc172a500bd04e6e3cf366bb030f9aefe39d843ea21b",
+      "bytes": 2016
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/agui-handler.js",
+      "sha256": "293b1062ae30a1e87b0d66b5199649f6cdd78126dec5a6c3e440c61731552eab",
+      "bytes": 32852
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/allocate-port.js",
+      "sha256": "3f1b0b39be4fbe937d09482d8aeeb6712a869fe764225e18eb528d0052488089",
+      "bytes": 837
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/approval-grants.js",
+      "sha256": "2712ba53f258e9c7ba477d4bf7b0859fd985275937004fbc2ec28a5278fdf9ef",
+      "bytes": 15667
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/boot-runtime.js",
+      "sha256": "30b1867f8fce7d2495f75cd3fc45fe2d9103adf8605267e20efceaa4217d6572",
+      "bytes": 1014
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/bounded-body.js",
+      "sha256": "bf0770d45676c99f9ac919d671ae55722a0e3da6fd264c4c305f0bad34dd3212",
+      "bytes": 3707
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/classify-change.js",
+      "sha256": "072c01fbf6dcb46cea125609e9ce4eed2284ad2734fd32f4b774b659f41b3f60",
+      "bytes": 2796
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/cors.js",
+      "sha256": "56bc0342bc0beef77a5dc3624592b492bb51bc3efdc94d244daed270bee8c83d",
+      "bytes": 7642
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/dev-child.js",
+      "sha256": "e64dd3a98345f5ab6c3e82deda8ab1a70a5dc25004a5e2fec888fae0773f9dee",
+      "bytes": 7395
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/dev-session.js",
+      "sha256": "347b192a351e10001f3f7777e5074fe74ecb4b582d446ca6d2d69d438d64e2f6",
+      "bytes": 11054
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/health.js",
+      "sha256": "8e2adddb64d07562b4fd6762f7f49d71739141ce8e51fa7a8c4c370bb6dd71c0",
+      "bytes": 1022
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/live-turn-hub.js",
+      "sha256": "4a09011b6120b5ceb4ce5fae9868a7cd84ef7fbcfdafcb4e69389f3dda69dc62",
+      "bytes": 9133
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/load-app-env.js",
+      "sha256": "3e0a70d40b27f849d05e53a23763e6c13954a9f5b504738e644bfcc2ca11e848",
+      "bytes": 1183
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/load-env.js",
+      "sha256": "9357d0943291cf3285ba5486cf4c6ab64e31571e9f5e7667b5d7b40f3be1d49a",
+      "bytes": 1720
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/memory-handler.js",
+      "sha256": "2c01ad7f6f11ce299159a942b7baffc9a9a4b6b7ebd3285cfcbba8eb492b8d2a",
+      "bytes": 3011
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/middleware-after.js",
+      "sha256": "b7d804f9b5c1cc66f44184a16d05cecae4cb849fe5ce6c53807c57c64ee97c07",
+      "bytes": 5455
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/middleware-node.js",
+      "sha256": "961dc4b8f2db413557b01df7cc3ecc00c91ccad332f947b6846344aa0bb3b519",
+      "bytes": 6243
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/middleware.js",
+      "sha256": "3485f8d25c47882e7ae8d8059a5605058853cf01f4a495b06d9192a3925d42a2",
+      "bytes": 5718
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/node-web-adapter.js",
+      "sha256": "c95a01f4b870a161d58265f1e92e8015247b3cba2705c4aafa677a6f01756e6d",
+      "bytes": 8668
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/parked-route.js",
+      "sha256": "5f78cffc686636f9f5c6e5d3c3801d738e7f8219da39928df08b5790e14efc01",
+      "bytes": 7522
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/parse-port.js",
+      "sha256": "4dfdb9852290fc9d885bf483280580d3974ca2257cf0e448b91c2b2fa6b32fed",
+      "bytes": 598
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/pending-interrupts.js",
+      "sha256": "c2aa68b98dfc971bbae42431c046f646554cd47671497040c773b93afa7e1acd",
+      "bytes": 6782
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/request-context.js",
+      "sha256": "aa19048b9e41d2a7237ffe67ec7f4564665a08f97530ec72182fde4a6b96aaa4",
+      "bytes": 751
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/resolve-env-path.js",
+      "sha256": "b23b54a1c01ef3b3a663dbd440a74dc342d97810bddfeffcc21ac90f9eb9c639",
+      "bytes": 644
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/response-schema.js",
+      "sha256": "71c4c723af1402afc1df7ebda2214f69889c0db1bda16bb14b4b4c42186abfed",
+      "bytes": 2443
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/run-envelope.js",
+      "sha256": "dc21385b6b939e1d1bd58887afd2ecf2c34982d8e141a1d59878e5773d530243",
+      "bytes": 5741
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/run-registry.js",
+      "sha256": "804cf45926dab7243904a8d901789c5325b23d04bc177b19e35b0ea1dfc2d1d0",
+      "bytes": 4296
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/runtime-error-report.js",
+      "sha256": "437aa807434603011304afb2e8e1431ac5e871c4c2e7b1236b4eed22eca2bb8a",
+      "bytes": 6112
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/runtime-fetch-core.js",
+      "sha256": "f7d7e85c4faca2729815445f6ae8b1dff83e638fbe4f7185ef8ae912cd5c1f75",
+      "bytes": 190552
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/runtime-fetch-handler.js",
+      "sha256": "daafaf39e5a137e6c332a195bc6e00125f71621d1fa9831d7c4194d400785721",
+      "bytes": 1164
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/runtime-registry-core.js",
+      "sha256": "5f80460ce085113752b22b388480c81cf11b9b1f39fe278cd20b704f231640b7",
+      "bytes": 3083
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/runtime-registry.js",
+      "sha256": "71b2b601e45292b4c164c8f6d68f8efd8586020bb987733ae320cc027ce86206",
+      "bytes": 684
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/runtime-server.js",
+      "sha256": "ea439bb43d556a3072406ad1c0f50d71ce9ae0779f7bb8b0859baa7e01878ccb",
+      "bytes": 4141
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/serve-runtime.js",
+      "sha256": "8128c6d4a036416d06e69d6e534c0a0e8dae5cbe7d13c09f2bcdb8387ffd0e5d",
+      "bytes": 3433
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/server-errors.js",
+      "sha256": "2888721f9257d2f1b6670b6fe996c2845c535580aa5e704f7308f73fb3948ab2",
+      "bytes": 1044
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/status-response.js",
+      "sha256": "9c5ec5f5092a80f23142ae6b2005bafb735ecfb25ee3b0a475fdcb2b888082ad",
+      "bytes": 2509
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/terminal-status.js",
+      "sha256": "90d8b7f00973300918f5ddc320686cac88796a4485bf022125f9c194fc77d19c",
+      "bytes": 2041
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/thread-access-node.js",
+      "sha256": "6d170e11a00f0ec94a3e23db9bab032ca7e7f71534c9d25772430c7417e10602",
+      "bytes": 5740
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/thread-access.js",
+      "sha256": "1f6cd1553acbe48e377c580d8cd127c900e09b4eb4f4334ee13fbd90b30e3168",
+      "bytes": 6768
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/thread-gate.js",
+      "sha256": "25541e64f0d9e64f7c2a206a9ce1f31c6337f60c6fd06191cf59de764e0bc0ef",
+      "bytes": 8609
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/thread-metadata.js",
+      "sha256": "6804ce59d941159af46c874e69966a7a98ffba4fe6dd3d7365bb2b645957016f",
+      "bytes": 3063
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/thread-workspace-http.js",
+      "sha256": "5b5afbf8619d191afa627ec573ce144d87c77249b9ac404b19d8804c6f3a16fb",
+      "bytes": 12880
+    },
+    {
+      "path": "packages/cli/dist/lib/dev/watch-app.js",
+      "sha256": "1ef4e531cbd2a914ce42861708469fe8d49cfefea9caef3e5324ca076975cfec",
+      "bytes": 918
+    },
+    {
+      "path": "packages/cli/dist/lib/diagnostics.js",
+      "sha256": "5ccb8f0bf524a0feccdfa60ec72b5764ef2ab190267b87e54b862c7510029c0f",
+      "bytes": 3672
+    },
+    {
+      "path": "packages/cli/dist/lib/docs-bundle.js",
+      "sha256": "c3a82d5920079272c95a3b21117bb3268ddd5fcdb9e8f0e8d9e65444071d9369",
+      "bytes": 6401
+    },
+    {
+      "path": "packages/cli/dist/lib/memory/distill-retry-config.js",
+      "sha256": "a903c7ed6397364d73306c8209d0b430e8b8ae111a6e8d25d84a815a72865848",
+      "bytes": 5909
+    },
+    {
+      "path": "packages/cli/dist/lib/memory/distill.js",
+      "sha256": "6bb48a1fda22f678796c88ba89859a6c1551b630dbdfbd7f20c8da3bb0475af7",
+      "bytes": 17355
+    },
+    {
+      "path": "packages/cli/dist/lib/node-config.js",
+      "sha256": "5446bf5762369118086b7859c86d6eeb7e2a3db1e96f21a3d185253d9b8ef8bf",
+      "bytes": 1358
+    },
+    {
+      "path": "packages/cli/dist/lib/output.js",
+      "sha256": "599b4bb4a5a4c28f215169f0ca357dd2cb9f5581f7252b0376d1b1c6a4c6420e",
+      "bytes": 1343
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/b4-context.js",
+      "sha256": "ccb56147e53dc96c2db27dee243d340aa87f4babf1cd2d293786aabb1d1ef1de",
+      "bytes": 556
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/check-tool-name-uniqueness.js",
+      "sha256": "f531306cd86c381804876874e8cf99920e10a0fc7b7dbaf98eef300f5d8643d3",
+      "bytes": 1049
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/checkpoint-route-provenance.js",
+      "sha256": "a096f0be44da9db355431edaffa146cd46baa53b6aad8c3cb278f0538b29c63e",
+      "bytes": 3103
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/cleanup-workspaces.js",
+      "sha256": "7d7169e7aaef1700fd3d583b2853665ba51e1b2378b8c221714f4a2baa61b0dd",
+      "bytes": 1473
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/collect-delegation-errors.js",
+      "sha256": "a6d85747138365bcb2dda961f325876a6f87b7f899fd9ed5bfec7b2fd09d1f31",
+      "bytes": 2776
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/collect-route-providers.js",
+      "sha256": "ed8150db31fa4ae9527e19dce1ac6d12221c9f1d26caeaa14298a0179d54be1a",
+      "bytes": 1815
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/collect-sandbox-errors.js",
+      "sha256": "8a65c08b893b1a5b1316b2842ae4ef43bbc9dd90bdb1714a8538633ab0342768",
+      "bytes": 3558
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/collect-tool-scope-errors.js",
+      "sha256": "56fc6573e434643e7c0411897d969ed77fdd947bde7a957703abbd2332e75c3a",
+      "bytes": 5489
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/descriptor-route-index.js",
+      "sha256": "d9092bc0c3c4c3f118b42953a6ac0e6305ab38a5232143d081cd802cc655aaa5",
+      "bytes": 1247
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/edge-capability-report.js",
+      "sha256": "b55ca4b7d99acc568a3054cab45ff4eea31a08c1e0b4eeaaebd73efa62b377e2",
+      "bytes": 8937
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/eval-fixture-path.js",
+      "sha256": "7ce201ab1aed5a86cdea23fdf6fab8d5f743af1f05dd46f5d23f8d121bd9c158",
+      "bytes": 671
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/execute-route-core.js",
+      "sha256": "02684dc3450a3af8f2fe398f2c3a3048d346f8f5edbccaf901635c9d05fa9367",
+      "bytes": 79908
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/execute-route-server.js",
+      "sha256": "4ddde0ab3577cdad28caf4801d7652798f4ad6468c9ff15024f2e05334b931cc",
+      "bytes": 2710
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/execute-route.js",
+      "sha256": "38750b8fc444a832751b066f105c00310f899c06317bc4756007573e8cf52d7d",
+      "bytes": 19810
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/import-module.js",
+      "sha256": "17bac801e8dcfcfbd6859fd7b48f1dde60d005e386482b23c446b0636b06b273",
+      "bytes": 583
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/load-evals.js",
+      "sha256": "4cacb4f1c133aef2b5d51dbcec729146133940614ae55dd18fa80ee8e1abe6d3",
+      "bytes": 4748
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/load-memory.js",
+      "sha256": "213052e759c5dcc8e13172012257e1613a13bd53ce7ba898bbab64eb6ae42beb",
+      "bytes": 457
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/load-route-kind.js",
+      "sha256": "d409efc56ccc1ea3e9a72b97003526321ef3482ee325c584d8010a7316306f7f",
+      "bytes": 776
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/load-run-scenarios.js",
+      "sha256": "0ef0fb6ff32c617013a9760522b4a6040050c446b07127385263176f9f71286e",
+      "bytes": 8553
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/managed-workspace-manager.js",
+      "sha256": "34b8b4d1fe53e7cf6d8d15c1bdf00c98b93a4513eb8aa11ab4df5c606fc2a2b7",
+      "bytes": 39682
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/managed-workspace-reader.js",
+      "sha256": "bf46ba08232c9154240aabd82d3650e0dec0484d3996df02ca7d706d4af13b69",
+      "bytes": 3015
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/memory-context.js",
+      "sha256": "ca2d3886b6bd73e75feac0e8cb5bc9005a8d41aba56d735f3a14822d09d5767e",
+      "bytes": 2039
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/node-marker-fs.js",
+      "sha256": "905511fb1d43f525d0b2b2c72c2a91f15de89018207de5933a16e169176bb2ad",
+      "bytes": 301
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/normalize-server-result.js",
+      "sha256": "a6e0769e001d0b420ad0bf54886e256ef27ac51726c124ab9ecf6ce2035025ff",
+      "bytes": 3547
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/pending-interrupts.js",
+      "sha256": "e323c031bd1f39f8fccf58ec7dd0e57a313fe36df5e23da62794e8ae6008485c",
+      "bytes": 551
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/postgres-driver.js",
+      "sha256": "9597cb021770af56b93c11b6363fd34c0848547c87f9f6e01c9d6980fd0d8e51",
+      "bytes": 4966
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/pure-hash.js",
+      "sha256": "c10b6819c9285394fd26a1fc36fd49220a7d5e16d92df38dfad5939ea353b256",
+      "bytes": 327
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/pure-path.js",
+      "sha256": "732ab8561ed08c4528c17416fe33298eebce96c44bfef785c804c8650c0f65e5",
+      "bytes": 327
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/pure-utils.js",
+      "sha256": "f2278bf51be0b4c72879f3842e1205b06914c9e5e6e6d89ac5986207b82973d4",
+      "bytes": 242
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/read-thread-workspace.js",
+      "sha256": "2e4af5d7962e225c1478f27ce07e3d479037acb89d1c8110d817b7fa71320547",
+      "bytes": 7496
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/record-episode.js",
+      "sha256": "50dfc50131d2d6d85f8dbfde0dca69b1e8df2ad4913aaed2867a7a95bc176e2e",
+      "bytes": 8133
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/register-tsx-loader.js",
+      "sha256": "78100e5e5c32c4c566f1b06426c104ab372efb383adc05d2ed838700920cb8e9",
+      "bytes": 256
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/resolve-identity.js",
+      "sha256": "9b991ee1bfbd7b12c097845a295e51c87544ff5e51ee638eaa51e30a163f4f61",
+      "bytes": 2054
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/resolve-memory.js",
+      "sha256": "7008fd3736ef3c77e7c921a1157577de94a1ae642f88d0c01c62d480c51f2409",
+      "bytes": 6434
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/resolve-route-target.js",
+      "sha256": "2afd0c3df790fa5c8b89574d37e4a7d34d237a45247ffedc094f74a40f2d911d",
+      "bytes": 1965
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/resolve-sandbox.js",
+      "sha256": "4531fc334d0be8901eef8483ca06a7d3699a0594838f9c8b60e2e3526503b8a7",
+      "bytes": 9191
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/result.js",
+      "sha256": "f1bae05c9f44f457ae687bd330882e4a7bd704a32004fa3600a3d2ce5103e291",
+      "bytes": 1517
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/route-identity-node.js",
+      "sha256": "81448d168ead5217fcf6bba6b2880cae96e02f90da97ed1d2b24f4b9562c473a",
+      "bytes": 1365
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/route-identity.js",
+      "sha256": "b3baa636021245f50b9a367ccb4c26e9afc309627cd669aa590c311c94dc02a8",
+      "bytes": 333
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/route-memory-shape.js",
+      "sha256": "35aeeecba4209f5ca89c31c2aac748bcc29eb065c5238ddf5ee7683dd0ea0ceb",
+      "bytes": 948
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/route-module-shape.js",
+      "sha256": "d618b714992d2e08d08acdc39a7bf1667efa49fa30b843297d0618b190298a3e",
+      "bytes": 2167
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/sandbox-config-shape.js",
+      "sha256": "7b66f65e229068063af26bf060a8e55c90bbb2e61f39d4fe4b406a48822b27ea",
+      "bytes": 5326
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/sandbox-manager.js",
+      "sha256": "1919aeb4518efd4801b7d80228b44d6b1185d2233cf1f9ddc87ef69fcb40e2fb",
+      "bytes": 6492
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/scenario-tool-expectations.js",
+      "sha256": "5a405dc9984e807fb50b09bad7e14249c05c6bc3638f679e48fbbf5c28b2a712",
+      "bytes": 5058
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/scenario-tool-overrides.js",
+      "sha256": "b6d08f6db2f1bfb66af5ed6b4b71050a2b0a24e5b67581998e45e448f7b0cbd4",
+      "bytes": 1252
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/state-discovery.js",
+      "sha256": "ba6006ab4b704d58a693c141bcc8d2c4f72862d3d2a012ff1631573e616c4c44",
+      "bytes": 2593
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/static-modules-core.js",
+      "sha256": "c9fbcc08c1ee294c5c8ce8bbe40edcd4683a94ad826fcd8235fabdb7f0b8c1e6",
+      "bytes": 6845
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/static-modules.js",
+      "sha256": "068003db004fddbe8bafdd4858c18ba3f6237748656f54610f087792a4b59228",
+      "bytes": 3837
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/stream-types.js",
+      "sha256": "3cc3158c967eec899f1c273731a1df393d8f707dc60ca40da5548dc2aef61875",
+      "bytes": 1643
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/thread-policy.js",
+      "sha256": "22cbd5fb36d32dd49ae7ce3f1136c34c7398b65bfee1e0c32614b255f568305c",
+      "bytes": 1588
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/tool-discovery.js",
+      "sha256": "27ae6aee202a71a50bdcc23f4b0de25cd3c470837c11d7c847eeda57e7dc8772",
+      "bytes": 2328
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/tool-shape.js",
+      "sha256": "8326b17809dad82c095c628aff249925a604a3b5393d451d789afbbd4435e1b1",
+      "bytes": 4822
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/utils.js",
+      "sha256": "252ceebb4e8355382e2f6e56df0d2d499a52a2894638e181ee3c30dfb154c999",
+      "bytes": 296
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/warn-unknown-model-ids.js",
+      "sha256": "856c2383eb75f294695cc2a109fcd26395f3542c7690feaf0d0b4cf028530902",
+      "bytes": 1486
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/with-workspace.js",
+      "sha256": "24310d1e97a867f976086a1db3f2971be7d5ae355790363f42b26df356f02a9a",
+      "bytes": 2492
+    },
+    {
+      "path": "packages/cli/dist/lib/runtime/workspace-protocol.js",
+      "sha256": "164f37b703eb8e17cdea6d0c720b5d375ec63be14bff060b18593ef7662e9fde",
+      "bytes": 3298
+    },
+    {
+      "path": "packages/cli/dist/lib/threads/attach-state.js",
+      "sha256": "45dd79641aec37ed0cb507baa23f7eef2566495c0b4901494a52224d766958c8",
+      "bytes": 3598
+    },
+    {
+      "path": "packages/cli/dist/lib/threads/sse-frames.js",
+      "sha256": "ebbbe4a6165d0ba8608623aabd0e04ccd9334029723ea2c43ae021083ede95b1",
+      "bytes": 3280
+    },
+    {
+      "path": "packages/cli/dist/lib/threads/tail-render.js",
+      "sha256": "612d1fda6656b2abcdb7f834c561ce864fc3e2fdf8be7cd54eb92127ba3afcf2",
+      "bytes": 4781
+    },
+    {
+      "path": "packages/cli/dist/lib/threads/tail-stream.js",
+      "sha256": "cb6fd732422e47fc47888d3acc16d60da86fb26bbb132bdce8ec01bd61398d3b",
+      "bytes": 4144
+    },
+    {
+      "path": "packages/cli/dist/lib/typegen/refresh-typegen.js",
+      "sha256": "baf10dba769c2f60b4cf97d5a66962c4a37550109415b4ad1cd8f29ff09c45fe",
+      "bytes": 1596
+    },
+    {
+      "path": "packages/cli/dist/lib/typegen/run-typegen.js",
+      "sha256": "65340eab3e85ced136f4f58ef784fe905653a4f7708b5d1a215f4e491dc143a2",
+      "bytes": 9795
+    },
+    {
+      "path": "packages/cli/dist/lib/verify/check-dependencies.js",
+      "sha256": "64bed06cbd4b13ba05afab36d99eadf6b1b7d6ce9b1195817ecb5e7c89a78452",
+      "bytes": 8196
+    },
+    {
+      "path": "packages/cli/dist/lib/verify/check-runtime.js",
+      "sha256": "1c66247a7ad8eb37c13926284a069799e6fc3e5037f01b16f738140b8feba00a",
+      "bytes": 2207
+    },
+    {
+      "path": "packages/cli/dist/runtime-exports.js",
+      "sha256": "4b1682c067d7a082e68f4256afc975909ee7183af31c208b7c3a9ce9fee0d6af",
+      "bytes": 2072
+    },
+    {
+      "path": "packages/cli/dist/testing/index.js",
+      "sha256": "003a7145b782d4ba7684dd155f624e63cae69d86de7353dcdc6df1ead648a050",
+      "bytes": 282
+    },
+    {
+      "path": "packages/cli/dist/workspace-exports.js",
+      "sha256": "d88bd170b8f012197478a92eaa60ea77faec5d1c05e2d8a19942ac8004a81fcb",
+      "bytes": 1291
+    },
+    {
+      "path": "packages/core/dist/build-targets.js",
+      "sha256": "2545afc415581f1bc2e1d0cb18145ad83f45338fc9578ff2f47540af2bb8f7e7",
+      "bytes": 803
+    },
+    {
+      "path": "packages/core/dist/capabilities/approval-grants.js",
+      "sha256": "e2a339d5ed062f887bbadb55aa6fe4db2ad44b2fb0fb0994ab052cd0a034fc94",
+      "bytes": 6490
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in-tool-names.js",
+      "sha256": "1400e99d4dea3f9a2fe29368b2fd342db8097e4f51d07654d15cb9dad6154d29",
+      "bytes": 686
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/agents-md.js",
+      "sha256": "5f76cb669790021e4a1b914b6bfbfb2e474a02abf01aafa209097f56d56239a1",
+      "bytes": 2634
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/frontmatter.js",
+      "sha256": "d5d3564a5c0602b7a7fd1c33c478dd9a74317175a0464ffdb225a21c2058a07c",
+      "bytes": 1588
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/memory-md.js",
+      "sha256": "cbb2fd57ef579e71c79db354792cc8c31463f5a33eb6940feed32a86e6084df2",
+      "bytes": 1850
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/memory.js",
+      "sha256": "1d4fe8d497ed165a49485776c16d846539779cd62a67db9e56c13eeb047ddca7",
+      "bytes": 20450
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/plan-md-parser.js",
+      "sha256": "7e61946eadaf43e625d562ae5fc4ab6ef2b235fa9555635d813de1ecc40bd088",
+      "bytes": 550
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/planning.js",
+      "sha256": "ae34a85dad9ed989a474b23d7fb89d2164ef9e474e234ae6e639ab34cb30ba8b",
+      "bytes": 6041
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/skills.js",
+      "sha256": "6cbc55e87466c89b7851e43a95ca99d98458dd567d8605f168c30c56dbd180ed",
+      "bytes": 4395
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/subagents.js",
+      "sha256": "c145e2f673cb9e7a15a392754c48f275f0444a46247cebfd9d161475e6831061",
+      "bytes": 2220
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/time-expr.js",
+      "sha256": "4beb4adb0d7ac66b312640034342c25c929146adffbbe77819139d4913f4e817",
+      "bytes": 1101
+    },
+    {
+      "path": "packages/core/dist/capabilities/built-in/workspace.js",
+      "sha256": "b408017a4d1d923ea808a4c3aa1b776c26891d1c7b0f8e9d776bf5e0cfbf2dfd",
+      "bytes": 13981
+    },
+    {
+      "path": "packages/core/dist/capabilities/permission-gate.js",
+      "sha256": "8f1ac5674c4416952af422fb93745287136283b44e885cddbe8ebfc0582704a0",
+      "bytes": 17898
+    },
+    {
+      "path": "packages/core/dist/capabilities/registry.js",
+      "sha256": "8660c3da0bd2264769dbd672fa6d316caaeb694330941ad4dac472bcd6e3bd2d",
+      "bytes": 1099
+    },
+    {
+      "path": "packages/core/dist/capabilities/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/core/dist/capabilities/workspace-fs.js",
+      "sha256": "b1f397a19bda2b15b2c240cf1048236d4953b2723fc3891e25ca5a1f232f0ab0",
+      "bytes": 4802
+    },
+    {
+      "path": "packages/core/dist/compiler/analyze-route-tools.js",
+      "sha256": "07c7f5b608cf3fd22264b5742e04e0a4fb2a9d65cb4b6dfdf08da9cb585b875f",
+      "bytes": 1610
+    },
+    {
+      "path": "packages/core/dist/compiler/errors.js",
+      "sha256": "e4146b33e062907f3ae4031f7c0af6f2cf2b3abd7bba8a855c17980c3bc676b4",
+      "bytes": 1647
+    },
+    {
+      "path": "packages/core/dist/compiler/index.js",
+      "sha256": "ccc4c074a4c7f5bf8ff463e3942173c76abe69b9cee871e4801018575adf8d37",
+      "bytes": 816
+    },
+    {
+      "path": "packages/core/dist/compiler/json-schema.js",
+      "sha256": "7d68ec7b074b3b2131430a0bdb7d49675b79a259ec9d5478dd04ca6273247ae3",
+      "bytes": 2900
+    },
+    {
+      "path": "packages/core/dist/compiler/model.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/core/dist/compiler/typescript-backend.js",
+      "sha256": "42415c2fd03bea3a3e7fe9832a4cde0eb6f4b7e141367ae5ed565442a03be534",
+      "bytes": 22938
+    },
+    {
+      "path": "packages/core/dist/config-helper.js",
+      "sha256": "d9115dff440293bf3445be7c64accfae374490f26c5353ab9bea5f0de352d015",
+      "bytes": 261
+    },
+    {
+      "path": "packages/core/dist/config-node.js",
+      "sha256": "5cbbda9fe83c840119dec4faf909aca9cdaee73d7140adc42b38c5dbe9198e43",
+      "bytes": 2088
+    },
+    {
+      "path": "packages/core/dist/config.js",
+      "sha256": "462bc2a799b46c1b1d9735b84ada9750998be9f3837a1a9e5d3c0aa9c9bc11b7",
+      "bytes": 2738
+    },
+    {
+      "path": "packages/core/dist/discovery/b4-app-error.js",
+      "sha256": "b92ff61845ca624c907074375a78ee9ff3a202910638b617d3f2bf24f793ee5a",
+      "bytes": 505
+    },
+    {
+      "path": "packages/core/dist/discovery/discover-routes.js",
+      "sha256": "5daff292b8d553dc040e7cf46afa4fb62b885eb243fbd4540f1bfede7cfafd7e",
+      "bytes": 11183
+    },
+    {
+      "path": "packages/core/dist/discovery/find-b4-app.js",
+      "sha256": "adf3f0496f6019bfb3dbf700152a75c0d033ca276b1d8f676bef2df336018f25",
+      "bytes": 4356
+    },
+    {
+      "path": "packages/core/dist/discovery/route-segments.js",
+      "sha256": "ebbd19ecf4a5383238fe0783bf5d83b075d5e95920d71c7a0091b4f47f2789e5",
+      "bytes": 1006
+    },
+    {
+      "path": "packages/core/dist/index.js",
+      "sha256": "b083f876f87e914f88aad20559db49f5d8cf4475a3c87f4219e8cba438c13d48",
+      "bytes": 2844
+    },
+    {
+      "path": "packages/core/dist/node-marker-fs.js",
+      "sha256": "6deaa1c05bc398c06c8f0f59c9983b4f6d4fde51021544e076e3c90b23e8b232",
+      "bytes": 1312
+    },
+    {
+      "path": "packages/core/dist/node.js",
+      "sha256": "23bd4ec0c7867e96b59df67b15325bda471ac972ccc062ee5c8c8ad06a20da8b",
+      "bytes": 1531
+    },
+    {
+      "path": "packages/core/dist/runtime-env.js",
+      "sha256": "96e0072ddff24d924b93c718777594171a49e5543d6fc44f89920bef55118e75",
+      "bytes": 3266
+    },
+    {
+      "path": "packages/core/dist/state/resolve-state-fields.js",
+      "sha256": "056c89d99107892741b6633dedcbda728993e9e70317344b2a18249724970286",
+      "bytes": 561
+    },
+    {
+      "path": "packages/core/dist/static-marker-fs.js",
+      "sha256": "8d7b03683b33133d43e0b5d352639eb6aa95b47c6c22f304002cf6287f08b88b",
+      "bytes": 3305
+    },
+    {
+      "path": "packages/core/dist/subagents/policy.js",
+      "sha256": "47967c490774e9fc6fac27e784796a77d92e36fe70357f44998aba4e7891f302",
+      "bytes": 5115
+    },
+    {
+      "path": "packages/core/dist/subagents/registry.js",
+      "sha256": "77a7118d515ac113870a3fcffdba67da26c03eb5db58081f097ad729335f3ce8",
+      "bytes": 12066
+    },
+    {
+      "path": "packages/core/dist/subagents/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/core/dist/tool-scope.js",
+      "sha256": "2817d81a9df582bac1244428203a695ea7cb3f4db9d81c526c7a52b3967f8136",
+      "bytes": 2832
+    },
+    {
+      "path": "packages/core/dist/typegen/extract-tool-schema.js",
+      "sha256": "d1a09452e5cce6c73fbe5e91dc771565f2028960850da643362e1169e2e0adaa",
+      "bytes": 189
+    },
+    {
+      "path": "packages/core/dist/typegen/extract-tool-types.js",
+      "sha256": "0a75e69f76e4d6b8c897bd6d2ee9282e61cb8f9496ff64d8ea8586cc17eb01d7",
+      "bytes": 185
+    },
+    {
+      "path": "packages/core/dist/typegen/render-route-types.js",
+      "sha256": "dcd59858dce9e1aa72ba38aa9527787fc1ce0cd4659f1ed0f02acf5729eef4db",
+      "bytes": 2750
+    },
+    {
+      "path": "packages/core/dist/typegen/render-scenario-types.js",
+      "sha256": "e1f4ebc09b3a4b354bb4ea08bf9c5949de0233b96eee619780842717ae66bce2",
+      "bytes": 1252
+    },
+    {
+      "path": "packages/core/dist/typegen/render-state-types.js",
+      "sha256": "efe98b38382133c9e78c8de1a88fece3bd458edc2a081d66aa6cdda3dde883b2",
+      "bytes": 693
+    },
+    {
+      "path": "packages/core/dist/typegen/render-tool-types.js",
+      "sha256": "213507b016d68afbffab4fa4b793bc5726577e43dcdd97e1cee59afd6b6baef1",
+      "bytes": 946
+    },
+    {
+      "path": "packages/core/dist/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/evals/dist/define-eval.js",
+      "sha256": "37dbd91059b0252db39d81a688b9f22b0e52546897653bae9c8517b6b8a96a87",
+      "bytes": 602
+    },
+    {
+      "path": "packages/evals/dist/gate.js",
+      "sha256": "8dcf5060b36e6608de3a970ba1d7d8175a80d43b2ac5be2c3b73b45b436b0f12",
+      "bytes": 2094
+    },
+    {
+      "path": "packages/evals/dist/index.js",
+      "sha256": "b7c56dccad461335330c92594a0666c7dc3b8a78aa470a3a9ab694e66ea5390d",
+      "bytes": 429
+    },
+    {
+      "path": "packages/evals/dist/llm-judge.js",
+      "sha256": "02d732e31771676e8be5d65b888b2247bc5fffdf97e6b5d781404b8061ba39a8",
+      "bytes": 2478
+    },
+    {
+      "path": "packages/evals/dist/regex-safety.js",
+      "sha256": "8498bf980353981fe2837930365f9d12b20607b7ede23f9917bb8660db12e203",
+      "bytes": 2618
+    },
+    {
+      "path": "packages/evals/dist/resolve-dataset.js",
+      "sha256": "71a8c52085b8d6c5c352ea17908c01e96731f858e287e41319aeafba2712cad9",
+      "bytes": 1424
+    },
+    {
+      "path": "packages/evals/dist/run-eval.js",
+      "sha256": "703de2e30c0452d9dcdc7d40ac0ec16ba2c6815345ed8de111dbed2098971931",
+      "bytes": 2431
+    },
+    {
+      "path": "packages/evals/dist/score.js",
+      "sha256": "802b702885ecbed2cfd04f63ef659202069eeb70872c74bfbaa3879958977344",
+      "bytes": 658
+    },
+    {
+      "path": "packages/evals/dist/scorers.js",
+      "sha256": "63df5f1d0e2b6e68eb1aab705d03820f8b744d803f40745cab9c682e92b9b583",
+      "bytes": 5256
+    },
+    {
+      "path": "packages/evals/dist/types.js",
+      "sha256": "ba4b9744184408a57adbb8692e14172958cdccceb5d19773bcbbdb0aeb395a3e",
+      "bytes": 121
+    },
+    {
+      "path": "packages/langchain/dist/agent-adapter.js",
+      "sha256": "132b97e4d890d432864720ff9019da3a32ee829d7a2e993ca27ed4ceada9c6fe",
+      "bytes": 48136
+    },
+    {
+      "path": "packages/langchain/dist/agent-middleware.js",
+      "sha256": "d1dcad0b782841eb5f494b17a1e7a681bc96c2126d5039c7e2ac56f7b295303b",
+      "bytes": 7795
+    },
+    {
+      "path": "packages/langchain/dist/canonical-json-stream.js",
+      "sha256": "8d9a8b8e76d9d0ba4fb4a7a83e8cf63aec6ea9608556ef9189225d80151f3484",
+      "bytes": 9270
+    },
+    {
+      "path": "packages/langchain/dist/chain-adapter.js",
+      "sha256": "d49245dd822e467d0ce6913a3ff667ae92200cc2bff9ccbfc03e153927185332",
+      "bytes": 984
+    },
+    {
+      "path": "packages/langchain/dist/chat-model-factory.js",
+      "sha256": "8ac304c5baa952d03d00b4f21750ef78c27f004b8f12002c854fe0efa29055a8",
+      "bytes": 10265
+    },
+    {
+      "path": "packages/langchain/dist/checkpoint-writes.js",
+      "sha256": "0bc8071350d8621cfc2632c009f9803c73802e173d5fbaa44396dcaed421836c",
+      "bytes": 1851
+    },
+    {
+      "path": "packages/langchain/dist/default-model-importer.js",
+      "sha256": "fc0107db42a182f4ab46618cb25dc4e2853a71febe44c5daeb42f5d3a93bd98c",
+      "bytes": 171
+    },
+    {
+      "path": "packages/langchain/dist/index.js",
+      "sha256": "970703495b56567c89e5106de8e6492ed8d04f0e10703ba44d210b34d7af898e",
+      "bytes": 1246
+    },
+    {
+      "path": "packages/langchain/dist/logical-tool-call-id.js",
+      "sha256": "71efdfda8854fbe47990dac8f8c69643cfb13bf2755594c04e874f0034b2566c",
+      "bytes": 1636
+    },
+    {
+      "path": "packages/langchain/dist/model-call-retry.js",
+      "sha256": "e4cb28cc7c5e92d982a581343873141a8ca180b8316e6b7ecc5839a64e9c1769",
+      "bytes": 7815
+    },
+    {
+      "path": "packages/langchain/dist/model-provider-resolver.js",
+      "sha256": "af5135266a1ef135a9daf5a3c250e76a9e65329eac467458c9f5458eeaa51dc8",
+      "bytes": 799
+    },
+    {
+      "path": "packages/langchain/dist/offload/offload-store.js",
+      "sha256": "e8d07a544d113c05438adebee7a3206c5ff1873e85e7402bfd53247a17dae7ea",
+      "bytes": 3764
+    },
+    {
+      "path": "packages/langchain/dist/offload/offload-tool-output.js",
+      "sha256": "7b8d6f6b335b826e4268b71a44626c5c42989ccf62bc4004ef210720858da4ba",
+      "bytes": 580
+    },
+    {
+      "path": "packages/langchain/dist/offload/stub.js",
+      "sha256": "7d3117d5d87de0ba0c18c07d4740cf000802c74824488779c1faaf7cd4e4b95b",
+      "bytes": 1380
+    },
+    {
+      "path": "packages/langchain/dist/openai-embedder.js",
+      "sha256": "7d52196493182cf2fb1c79954749e26b097a111eb89dc1526f5ab91aece609bc",
+      "bytes": 1916
+    },
+    {
+      "path": "packages/langchain/dist/retry.js",
+      "sha256": "ffacdc7a70042f3e7fb35ae380d4fc3c3638016ac5d3f0dcc9df77622daaa108",
+      "bytes": 2783
+    },
+    {
+      "path": "packages/langchain/dist/state-adapter.js",
+      "sha256": "490074d468d97989bb6a76e9d33df2aee6e4163a7278a6ecc94cf6ce104b8809",
+      "bytes": 2313
+    },
+    {
+      "path": "packages/langchain/dist/static-model-importer.js",
+      "sha256": "2d268ae8129438f40f7ba955e0c8580fed82241243e5a487b7486e282167b3cc",
+      "bytes": 472
+    },
+    {
+      "path": "packages/langchain/dist/subagent-tool-bridge.js",
+      "sha256": "60a99ed1e6b50906829be703d2b5eed73b90f0d3aff83a64d241e6521ae3c467",
+      "bytes": 5838
+    },
+    {
+      "path": "packages/langchain/dist/summarization/hook.js",
+      "sha256": "00cc5ba8ca3295582c6e94915bab63bce1b8ebe68de14f1310cfc1f5cc08da8e",
+      "bytes": 2409
+    },
+    {
+      "path": "packages/langchain/dist/summarization/index.js",
+      "sha256": "7fe64e9b25a6aad47b77a61c87a5bb12f26bb3dc9d9e16d7b8aed6b78f53dfd0",
+      "bytes": 229
+    },
+    {
+      "path": "packages/langchain/dist/summarization/split.js",
+      "sha256": "9a4f44747f94c0220de43c571943f8b53006a46a1b010ee92430e8f7678f9ea4",
+      "bytes": 1103
+    },
+    {
+      "path": "packages/langchain/dist/summarization/summarize.js",
+      "sha256": "67d7c3c932b3b4d949bb6d5a2777845899b0f05fee67226e675e48bbb26e56a5",
+      "bytes": 1773
+    },
+    {
+      "path": "packages/langchain/dist/summarization/token-counter.js",
+      "sha256": "c9ee30ee72ba5cb76fbcf3df8dfbd85713e9cb5d1187eded3719fd2f4fc0e7e2",
+      "bytes": 996
+    },
+    {
+      "path": "packages/langchain/dist/system-prompt.js",
+      "sha256": "aad87904af87e9633ca5f2205723392b16f11002cda02881de0362fd4be16082",
+      "bytes": 530
+    },
+    {
+      "path": "packages/langchain/dist/tool-converter.js",
+      "sha256": "7178649a33b8ca2d643c0d1f01f634c31713579f1297bee2044c71c1efec4609",
+      "bytes": 8492
+    },
+    {
+      "path": "packages/langchain/dist/tool-loop.js",
+      "sha256": "25dfcdbcc7f44a258f1caf17800ad5b790e26fd572901ebf1fe4e2735fdfde89",
+      "bytes": 2043
+    },
+    {
+      "path": "packages/langchain/dist/unwrap-tool-result.js",
+      "sha256": "333498abe7668e40d78550c88c41ec2ac7a7afaf0c0fab01a27529e7054645ca",
+      "bytes": 1889
+    },
+    {
+      "path": "packages/langgraph/dist/define-entry.js",
+      "sha256": "44b1ab6c887e8c8e06100b346e0a3851337b12af14dd6083f7e840ba961c5817",
+      "bytes": 153
+    },
+    {
+      "path": "packages/langgraph/dist/index.js",
+      "sha256": "6263338aeb1fa523a42b1fc97882d436d1d45770fcb25a6a28ded8f57c8028bd",
+      "bytes": 180
+    },
+    {
+      "path": "packages/langgraph/dist/langgraph-adapter.js",
+      "sha256": "81d621a47929da03d37ec40d334b40a65907d84487aac451e5351980b3971151",
+      "bytes": 1171
+    },
+    {
+      "path": "packages/langgraph/dist/route-module.js",
+      "sha256": "9b17c87fc615b47ff5fbba9d54ab81954a1f7e193b1e6b87b706f7aa14342490",
+      "bytes": 891
+    },
+    {
+      "path": "packages/langgraph/dist/runtime-context.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/memory/dist/browse-budget.js",
+      "sha256": "8765865443ae2f53eb3defac9181081e1fde54daf4e5dd9940e978d57ceb5308",
+      "bytes": 2835
+    },
+    {
+      "path": "packages/memory/dist/browse-cursor.js",
+      "sha256": "cf489688c34af2e6ca55f83e1728686bacf4edbd714497ab044b129353930b22",
+      "bytes": 6715
+    },
+    {
+      "path": "packages/memory/dist/browse-filter.js",
+      "sha256": "d66a0838539d95ea7bd2f399e659a5ea7bbfdda8026eb3cba5552a602b8e25d5",
+      "bytes": 681
+    },
+    {
+      "path": "packages/memory/dist/browse-order.js",
+      "sha256": "36e97d688868afcbb813266952e2263f99a9cee69c954990d63e9ce390d8f621",
+      "bytes": 1912
+    },
+    {
+      "path": "packages/memory/dist/browse-range.js",
+      "sha256": "068684532cc5aa306bf2bb5fa5c960a26e2261eb64d83b53072b42e6368f2a29",
+      "bytes": 2558
+    },
+    {
+      "path": "packages/memory/dist/browse-validate.js",
+      "sha256": "d11e0e366c760f980d1c0616a10c3a9b33b38c4ee703aea871b32784aada6e53",
+      "bytes": 11041
+    },
+    {
+      "path": "packages/memory/dist/browse.js",
+      "sha256": "8d9d9ca0d499232b4273532ecb439157d7eaefdeadd9e9a43b25ce5bfe1786c0",
+      "bytes": 505
+    },
+    {
+      "path": "packages/memory/dist/distill.js",
+      "sha256": "0632ff97ede7dd81fa7ddcd57c3eef375acb29f34d6bb1460b64616539d766ce",
+      "bytes": 19101
+    },
+    {
+      "path": "packages/memory/dist/hybrid.js",
+      "sha256": "06acf9386bc8be6dcec4fe9c10d2d6b111c5eb3e2253fe2b47e182a59f0cd4e5",
+      "bytes": 3881
+    },
+    {
+      "path": "packages/memory/dist/index.js",
+      "sha256": "848a51920eace678bff35bda05ed0a3079e60cda118c7a9f1dd12a27db4e8c00",
+      "bytes": 1356
+    },
+    {
+      "path": "packages/memory/dist/namespace.js",
+      "sha256": "76f4bbbdaa53bcb98dfe8ff803a18694be0dda951526b39420657cc4a166a4e7",
+      "bytes": 2882
+    },
+    {
+      "path": "packages/memory/dist/reconcile.js",
+      "sha256": "2e7186cc1d584ca998f71c72daa7a8573500f00dadea62532206a9458fa454e0",
+      "bytes": 5654
+    },
+    {
+      "path": "packages/memory/dist/score.js",
+      "sha256": "8844c6f6073d6f2d06d5509d44079c290f36d1fd75ddd6668880aa21a8bc4537",
+      "bytes": 2873
+    },
+    {
+      "path": "packages/memory/dist/sqlite-browse-sql.js",
+      "sha256": "2d41174b0265b32abf6a897258f12a6ecaadfc3134d367f1beec4e2edf841174",
+      "bytes": 8742
+    },
+    {
+      "path": "packages/memory/dist/sqlite-store.js",
+      "sha256": "cd3a5de3f85af00b30876c8cf0076974f63c36850277075034524d3966217ee6",
+      "bytes": 26652
+    },
+    {
+      "path": "packages/memory/dist/tokenize.js",
+      "sha256": "741d41e2b081e0b956111548563a490322af12b457b5ee4bfb6309e1650806b3",
+      "bytes": 406
+    },
+    {
+      "path": "packages/memory/dist/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/memory/dist/vector.js",
+      "sha256": "23b1b19ecf988eac5795b62e6401c07f37b2c503e33846b966fc509d5fabcf79",
+      "bytes": 1604
+    },
+    {
+      "path": "packages/permissions/dist/index.js",
+      "sha256": "a99e9ed389a86aa9b2b651cf85ebed36a3e9744e91dff7384193b662f5ead540",
+      "bytes": 289
+    },
+    {
+      "path": "packages/permissions/dist/node.js",
+      "sha256": "d7a838339ec2f410e28ff5e0e56e7a03532c2b82f8d97b6a8399b72dae273aee",
+      "bytes": 4598
+    },
+    {
+      "path": "packages/permissions/dist/pattern-matching.js",
+      "sha256": "b0643a5095010f77662843160443d32da03ba16d0c14dde0378809ac3a93832e",
+      "bytes": 894
+    },
+    {
+      "path": "packages/permissions/dist/suggested-pattern.js",
+      "sha256": "0b35243f4ef74916bfbf06ca26b46ffebe335d3158ff231269449ceac412bb70",
+      "bytes": 1372
+    },
+    {
+      "path": "packages/permissions/dist/thread-store.js",
+      "sha256": "891613401d73c0a7836aea344512c9a467c1cbbbb6b85b9b093b391737beeea4",
+      "bytes": 3100
+    },
+    {
+      "path": "packages/permissions/dist/types.js",
+      "sha256": "dd1f9538583e9257245c4645d548054bbfd4a1078d5ea9f78ef2b6165e3c19a7",
+      "bytes": 538
+    },
+    {
+      "path": "packages/sandbox/dist/batch-read.js",
+      "sha256": "c2278d2cc24399c34d9d777088ba59fe256b5734daf27fd29e51c6292d75f88b",
+      "bytes": 7962
+    },
+    {
+      "path": "packages/sandbox/dist/bounded-read.js",
+      "sha256": "ebfe0ab7350c2ff1ec0e97379e668f6fd23345b9034eb927ade86f0fc0358db5",
+      "bytes": 2128
+    },
+    {
+      "path": "packages/sandbox/dist/docker/docker-cli.js",
+      "sha256": "4254ad4f34b8de5683618ad6d88a568e362fb6ac45206741dcf67fed41b762cf",
+      "bytes": 1689
+    },
+    {
+      "path": "packages/sandbox/dist/docker/docker-exec.js",
+      "sha256": "9afd0abc8563761432aaab51fa8b152310fd771a35fe93bc371479fb9d89b965",
+      "bytes": 4053
+    },
+    {
+      "path": "packages/sandbox/dist/docker/docker-filesystem.js",
+      "sha256": "f47adb5233a0287f5156a330ddba46a81a0ac531cd9bb955d405c32d2bcb384c",
+      "bytes": 5195
+    },
+    {
+      "path": "packages/sandbox/dist/docker/docker-pid-exhaustion.js",
+      "sha256": "c80a8e9816e01d127b52606dfe422511b72f8f96a67b05ce75adf2522791b493",
+      "bytes": 1683
+    },
+    {
+      "path": "packages/sandbox/dist/docker/docker-sandbox.js",
+      "sha256": "9658473b6736c0a0155bdbbcef90cf4462ce8841e30934a39b7bed670a0d8e22",
+      "bytes": 16001
+    },
+    {
+      "path": "packages/sandbox/dist/docker/docker-workspace-reader.js",
+      "sha256": "2a4f5ca3d0589913191931c0b8988581ac25c5d7cf41c360b6443630950601b0",
+      "bytes": 7222
+    },
+    {
+      "path": "packages/sandbox/dist/docker/managed-workspace-prepare.js",
+      "sha256": "c092c0c6e0ebaf6c288311a91224de42a7317d6194bac51d2889962d511ec60a",
+      "bytes": 2554
+    },
+    {
+      "path": "packages/sandbox/dist/docker/managed-workspace.js",
+      "sha256": "ed66e6560ac6067f43bc95943c629503ca8c53b6e1657365acbd966b591999c9",
+      "bytes": 25001
+    },
+    {
+      "path": "packages/sandbox/dist/docker/thread-lifecycle.js",
+      "sha256": "37eae33b6e714a4cc89618571158c87acb7bfd4de231e241253ef1f5501c19c8",
+      "bytes": 3047
+    },
+    {
+      "path": "packages/sandbox/dist/errors.js",
+      "sha256": "3148a35cb25eb23a5d737436e0487dd3cb72c5395eef64c60db05b4653a36c93",
+      "bytes": 377
+    },
+    {
+      "path": "packages/sandbox/dist/index.js",
+      "sha256": "4cea5792d0baf0ab2b96210c75d3f628a393c6fcf79da7388acff6dad1434b0d",
+      "bytes": 203
+    },
+    {
+      "path": "packages/sandbox/dist/kubernetes/default-kube-client.js",
+      "sha256": "7a62dc0633e501926de4ec9f31563070da2ad53de745a4da71af48ac7c151877",
+      "bytes": 13863
+    },
+    {
+      "path": "packages/sandbox/dist/kubernetes/kube-client.js",
+      "sha256": "e4efb2930c23c70d4cff310cd29fdfa7689e758f2d3d9929b8be7a53e45b008f",
+      "bytes": 1473
+    },
+    {
+      "path": "packages/sandbox/dist/kubernetes/kube-exec.js",
+      "sha256": "65232b3a509503b63e7c9434eddd3e3d451eb5c6cfff394bf033a1e3ba22ed5f",
+      "bytes": 1964
+    },
+    {
+      "path": "packages/sandbox/dist/kubernetes/kube-filesystem.js",
+      "sha256": "d22f4798361e22eb8a4e8412d40372c90cf3a8b12d0a819b08e41edb5c7099a3",
+      "bytes": 3937
+    },
+    {
+      "path": "packages/sandbox/dist/kubernetes/kube-sandbox.js",
+      "sha256": "d28a130350e3a119ea4e4073851d1a55fccf33e9934e48a7f8ac92d7b12c9f8b",
+      "bytes": 12709
+    },
+    {
+      "path": "packages/sandbox/dist/resource-scope.js",
+      "sha256": "89a6b09d8768686166a48e0e5bfd7e2251de0082f0dd3a9824fe6f709a0fcb65",
+      "bytes": 507
+    },
+    {
+      "path": "packages/sandbox/dist/testing/conformance.js",
+      "sha256": "741cc51496b23cedd9e784e1f3743af9e3cb7c662174867bb47569f6ef171e1e",
+      "bytes": 8381
+    },
+    {
+      "path": "packages/sandbox/dist/testing/fake-sandbox.js",
+      "sha256": "1c0caa89feab043d610ac80d765f09112ef54b46f4e7b7f4d01249512f69c1a1",
+      "bytes": 5945
+    },
+    {
+      "path": "packages/sandbox/dist/testing/index.js",
+      "sha256": "d3174d370daa2aebf3d79bb5d8d27da0434dfdf292697e7f0956176b8a711f0b",
+      "bytes": 108
+    },
+    {
+      "path": "packages/sdk/dist/agent.js",
+      "sha256": "381392f89fc52539f150a34b2ad0e1eca0012daf9fcbe7ef7ad84f1a5fb03891",
+      "bytes": 1096
+    },
+    {
+      "path": "packages/sdk/dist/backend-adapter.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/sdk/dist/errors.js",
+      "sha256": "ca14e20e9f71dfc8d2e3977e99478db6457710e44158aead682e120a7b17e551",
+      "bytes": 4578
+    },
+    {
+      "path": "packages/sdk/dist/index.js",
+      "sha256": "ba95c07a2e43983b3129ec95b660e87bc716d0d046d761a334d23000257c9d99",
+      "bytes": 867
+    },
+    {
+      "path": "packages/sdk/dist/interrupt-grants.js",
+      "sha256": "f02f29076e3ae489f791305c8b715470fa54ed396d971ac1a45e23788c1fa71e",
+      "bytes": 6813
+    },
+    {
+      "path": "packages/sdk/dist/known-model-ids.js",
+      "sha256": "2abfe2e8e357e5b90d2b68513c4f0143d7fe6f1611414b7e12ac8b7f73f972c1",
+      "bytes": 1081
+    },
+    {
+      "path": "packages/sdk/dist/memory.js",
+      "sha256": "4243350b8dc75b9ef3abf41d4993aa8b9a8ab18ba50c7a61d0c9275f280bc068",
+      "bytes": 285
+    },
+    {
+      "path": "packages/sdk/dist/middleware.js",
+      "sha256": "fb164324da0d34e85a0425787f9523631bfa03791b109040ff4ab26812f0e7b3",
+      "bytes": 529
+    },
+    {
+      "path": "packages/sdk/dist/model-provider.js",
+      "sha256": "7c929ca1c6f9b7c88560e423c0e653fc60e9d5e4dc86a7fe2ae67009a9944e15",
+      "bytes": 710
+    },
+    {
+      "path": "packages/sdk/dist/pure/hash.js",
+      "sha256": "ecd5529a444d9b3418daccd33f9b5575d100ee32eb8a270958e92772505418b2",
+      "bytes": 7471
+    },
+    {
+      "path": "packages/sdk/dist/pure/index.js",
+      "sha256": "55feab7d90e1dfeac129819ce25e0674a7bbba1b2576c8b678c8c039485ee439",
+      "bytes": 560
+    },
+    {
+      "path": "packages/sdk/dist/pure/path.js",
+      "sha256": "cf73a803b22906d250784a098b884837c6dac146e0a8d5d9ed09fb7c7742f342",
+      "bytes": 6053
+    },
+    {
+      "path": "packages/sdk/dist/route-config.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/sdk/dist/route-types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/sdk/dist/runtime-context.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/sdk/dist/runtime-result.js",
+      "sha256": "859525f0caba4d08c234b2edf777987cba3bc709fa80afac5f99e11bbf46ca9e",
+      "bytes": 237
+    },
+    {
+      "path": "packages/sdk/dist/testing/index.js",
+      "sha256": "de3afbe6de52e1da08af1dc931c10682329aab4a4c279304c81ac1bd5ebcc046",
+      "bytes": 4391
+    },
+    {
+      "path": "packages/sdk/dist/testing/scenario-builder.js",
+      "sha256": "210f1f9b291dd95c85557ad9594e2aba8b2bcbba635b12e1d1b853f59a5b11c9",
+      "bytes": 25743
+    },
+    {
+      "path": "packages/sdk/dist/testing/scenario-snapshot.js",
+      "sha256": "a4149bcb178d338d83a5560d2a10c1cfac2f02d2683268d490f65d5035c4a6c9",
+      "bytes": 50850
+    },
+    {
+      "path": "packages/sdk/dist/testing/scenario-types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/sdk/dist/thread-access.js",
+      "sha256": "4c3bd31dbad0c4a1a217d60bdcc2d6bb91c8f07a70ba3e6383b71bf47f8a7d15",
+      "bytes": 1674
+    },
+    {
+      "path": "packages/sdk/dist/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/sdk/dist/validate-model-id.js",
+      "sha256": "57c3164608f315c94c8d5431df1e35c3be43cfda30800364758dd6a800ca8381",
+      "bytes": 1959
+    },
+    {
+      "path": "packages/sdk/dist/workspace-fs.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/sqlite-storage/dist/checkpointer/index.js",
+      "sha256": "97712322cf6b44d34256f40b6d7ec5d700e3aff5f2b149c1237776963614e1ba",
+      "bytes": 410
+    },
+    {
+      "path": "packages/sqlite-storage/dist/checkpointer/saver.js",
+      "sha256": "638eaaccfbfcd4d967e29c458896b8384741b939118cd611eb93865b3a0f78ae",
+      "bytes": 6929
+    },
+    {
+      "path": "packages/sqlite-storage/dist/checkpointer/schema.js",
+      "sha256": "e50449d7c4bbc80f2788847cf520e127386ec3fb5451b3b134ce377d48f2010d",
+      "bytes": 886
+    },
+    {
+      "path": "packages/sqlite-storage/dist/checkpointer/serde.js",
+      "sha256": "a2e32885dd8cd3301c6cc595ff9aa9c3730225075f5cd095abb7805775481158",
+      "bytes": 238
+    },
+    {
+      "path": "packages/sqlite-storage/dist/index.js",
+      "sha256": "0ff458a8bea633560ddf38331a6b40033a671991acab480285476446fe8611a2",
+      "bytes": 396
+    },
+    {
+      "path": "packages/sqlite-storage/dist/internal/db.js",
+      "sha256": "ac852bc5024a457572a5622d3f46a2d6a3754a1593b0cf2fc73275c9091dff23",
+      "bytes": 487
+    },
+    {
+      "path": "packages/sqlite-storage/dist/internal/migrate.js",
+      "sha256": "41c077b7bd37f2a78f90d21d97cae2756ea5abab494462f6c582a8f9a6f8e24d",
+      "bytes": 704
+    },
+    {
+      "path": "packages/sqlite-storage/dist/interrupt-grants/index.js",
+      "sha256": "0b43d14a7ccae6804894499ca8c7cfcb3d81892f94c85cd0cfa33a8725c34eac",
+      "bytes": 607
+    },
+    {
+      "path": "packages/sqlite-storage/dist/interrupt-grants/schema.js",
+      "sha256": "e580ae592ce84152ce040b4042bbfae6cb928f76da06559797b8eb6a8c53b0d5",
+      "bytes": 2889
+    },
+    {
+      "path": "packages/sqlite-storage/dist/interrupt-grants/store.js",
+      "sha256": "7da1f424494735837cddc6069ee9465cf44418ea0b819aa382c2d76b6a138db0",
+      "bytes": 7048
+    },
+    {
+      "path": "packages/sqlite-storage/dist/interrupt-grants/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/sqlite-storage/dist/threads/index.js",
+      "sha256": "13ac4311d2a9a6af30de49f76272f892de848e7ae0a7868026e017cbea4014a9",
+      "bytes": 358
+    },
+    {
+      "path": "packages/sqlite-storage/dist/threads/schema.js",
+      "sha256": "66b24c3158e6e89eca94c2ccbb93fe07500fed00de45011962458a576669bd68",
+      "bytes": 392
+    },
+    {
+      "path": "packages/sqlite-storage/dist/threads/store.js",
+      "sha256": "20e8996a292aed7d46363b80925ab3aa98ed5957f3ef1035712cb6bf0dad836e",
+      "bytes": 2453
+    },
+    {
+      "path": "packages/sqlite-storage/dist/workspace/association-store.js",
+      "sha256": "ec94aa07028f44b5cf7bde98ee357de68b32303a5d17a9cb35a0d1eee2b0a78f",
+      "bytes": 8089
+    },
+    {
+      "path": "packages/sqlite-storage/dist/workspace/installation.js",
+      "sha256": "4f5f94d05ba1bafb262a94551a38845c48a08e7741f12dbcaa3cbcb5e1ac6911",
+      "bytes": 14237
+    },
+    {
+      "path": "packages/sqlite-storage/dist/workspace/source-store.js",
+      "sha256": "422bdb4b777a5ec85fa3fc3cb62084e57599365c6aab8e96a0fb1d3c247076ca",
+      "bytes": 4084
+    },
+    {
+      "path": "packages/sqlite-storage/dist/workspace/staged-source-store.js",
+      "sha256": "a79eaf63a9e18aa76cf824ddf94b7a56d83aded2f0de195aee299ded4f45fb97",
+      "bytes": 12725
+    },
+    {
+      "path": "packages/sqlite-storage/dist/workspace/thread-sandbox-store.js",
+      "sha256": "bb0e7653be5b99bd446a38ef96d5208b14819ae8153b1a8a8a236d06cec66e3a",
+      "bytes": 4427
+    },
+    {
+      "path": "packages/testing/dist/aimock-runner.js",
+      "sha256": "fe1279e666c8497b6fedf55407819b80d8e3c5632f8a310c6f0066c1bf63f518",
+      "bytes": 2951
+    },
+    {
+      "path": "packages/testing/dist/checkpointer-conformance.js",
+      "sha256": "f67d8fb217e0e1a350e336fa2128d50bc2a77def3e7c3675460b26ca5bb04ae2",
+      "bytes": 19624
+    },
+    {
+      "path": "packages/testing/dist/fake-embedder.js",
+      "sha256": "f24fcf5e9dab15c66bdebe0dd9fe3b7c3d3cee463ec6a7f4c265373efa617297",
+      "bytes": 1143
+    },
+    {
+      "path": "packages/testing/dist/fixture-builder.js",
+      "sha256": "6829c4b108c305e7428b9417cc5c82d6751fe1c7f377cfd725aa1244a100b8aa",
+      "bytes": 1637
+    },
+    {
+      "path": "packages/testing/dist/fixture-file.js",
+      "sha256": "a21f57cfde06a4ee34de920c4670e2a434792e71cd2b8a2c5a14d33bfc79bec4",
+      "bytes": 1575
+    },
+    {
+      "path": "packages/testing/dist/harness.js",
+      "sha256": "96eca8e35ffeeb2aa0a68df37fa566da2d0d9844d8b731f622421d1541850d1e",
+      "bytes": 11950
+    },
+    {
+      "path": "packages/testing/dist/http-inject.js",
+      "sha256": "c7090f45b0b0ad31efcf02d39c7f3d9bed336ee7d4d751a46f7b7e60f528fe17",
+      "bytes": 2410
+    },
+    {
+      "path": "packages/testing/dist/index.js",
+      "sha256": "2afbe8b644a81845f894786bdbd5dcbeac95d35b708840e2b206af2c65ce19bd",
+      "bytes": 1345
+    },
+    {
+      "path": "packages/testing/dist/matchers.js",
+      "sha256": "99e9dda4b8437f0da70a8e502596098d95a55914554c4eef6fd473c7db1e9f13",
+      "bytes": 10242
+    },
+    {
+      "path": "packages/testing/dist/memory-conformance.js",
+      "sha256": "946707da017573571c931c0a1e65b874ecb0b57e9a637acaa06bee2631d37823",
+      "bytes": 69600
+    },
+    {
+      "path": "packages/testing/dist/memory.js",
+      "sha256": "e9e83388bf1070e5fb841651b4dfc6b62da65d05ded3b6f1e829e3b25c85ba34",
+      "bytes": 799
+    },
+    {
+      "path": "packages/testing/dist/middleware-harness.js",
+      "sha256": "610a8fcf068807b31460341a7705b80e4c404416151bd7367bd1ed4934de5cec",
+      "bytes": 1385
+    },
+    {
+      "path": "packages/testing/dist/permissions-conformance.js",
+      "sha256": "69061e01aa1f5f0a3175ee347c7381957da98a12c1e305dcb5c9ce253b254d8c",
+      "bytes": 8470
+    },
+    {
+      "path": "packages/testing/dist/record-fixtures.js",
+      "sha256": "0dbcf159ed990ab5fc580615876bf9197266721eba7c4d3c71906e531d1c2d36",
+      "bytes": 3964
+    },
+    {
+      "path": "packages/testing/dist/record.js",
+      "sha256": "cd37355bab25bda6d55e6602ed62980f8d4a45858d8d358d37e0025a622b4ec7",
+      "bytes": 741
+    },
+    {
+      "path": "packages/testing/dist/regex-safety.js",
+      "sha256": "8498bf980353981fe2837930365f9d12b20607b7ede23f9917bb8660db12e203",
+      "bytes": 2618
+    },
+    {
+      "path": "packages/testing/dist/run-result.js",
+      "sha256": "b085beb86842271601d29bea94eea40d9d388a4ea9975ce687703f1b0b4693ef",
+      "bytes": 12626
+    },
+    {
+      "path": "packages/testing/dist/subprocess.js",
+      "sha256": "d7145b734a17f45d2ca9e6183e479f509596a581b2d15b94d3ea60dfac04cdc1",
+      "bytes": 8442
+    },
+    {
+      "path": "packages/testing/dist/thread-access-harness.js",
+      "sha256": "9808d06ab20d984f54f8fdb50f82e0c07d9fd03662a37198f17a3a6014616d7d",
+      "bytes": 1656
+    },
+    {
+      "path": "packages/testing/dist/threads-conformance.js",
+      "sha256": "c5c663ad56adf672fb056e50c1f2dc41e4cec3d8e0368317455d3188b211b3b8",
+      "bytes": 14959
+    },
+    {
+      "path": "packages/testing/dist/tool-harness.js",
+      "sha256": "97cb8a54a6adf40f9ed0140ef704ba499511e0d247404fb48a5626111209b915",
+      "bytes": 875
+    },
+    {
+      "path": "packages/testing/dist/workspace-harness.js",
+      "sha256": "7a855f334b815314d0359346ea8decd3022bbcac3de301df00025b7381e99f13",
+      "bytes": 1574
+    },
+    {
+      "path": "packages/workspace/dist/compose.js",
+      "sha256": "91fd04d084673babf995baee7d770bc8e04429a00fc4954f44197c32d1bd23f7",
+      "bytes": 507
+    },
+    {
+      "path": "packages/workspace/dist/index.js",
+      "sha256": "b17c6604b8a3e00f58743f746b6bdae30a5b54b11918c3596284aeac0abcbec0",
+      "bytes": 504
+    },
+    {
+      "path": "packages/workspace/dist/inspect-workspace.js",
+      "sha256": "f3ad5edcc5b23b16c3e8777f8f1e734af6a6dc15659852b611856f8a3f242e48",
+      "bytes": 17441
+    },
+    {
+      "path": "packages/workspace/dist/inspection-errors.js",
+      "sha256": "d4b964e38a2093b5fb16374cfa51d87e6c2e6f687f3063edfe8d133f4e263221",
+      "bytes": 2134
+    },
+    {
+      "path": "packages/workspace/dist/local-exec.js",
+      "sha256": "d6418b469d932ff6306008dd0662a0d8f3bbc2b068ae37462c9e39b307f42bbb",
+      "bytes": 1404
+    },
+    {
+      "path": "packages/workspace/dist/local-filesystem.js",
+      "sha256": "60e2ac29fa7c85622fc4601843fe91d22d24ded8b98546685636b08764b9d8f4",
+      "bytes": 4450
+    },
+    {
+      "path": "packages/workspace/dist/managed-workspace-node.js",
+      "sha256": "73e1d4fbe6e3a2d4a44173ccdfb1448e4dae510a8a161676f109d88f1a1f6305",
+      "bytes": 14334
+    },
+    {
+      "path": "packages/workspace/dist/managed-workspace.js",
+      "sha256": "df8c315661fc1c6efdb04af840c44048b48fbe7f1a9d9ceb595017a12606886c",
+      "bytes": 219
+    },
+    {
+      "path": "packages/workspace/dist/node.js",
+      "sha256": "a021e24adbf631e95f0ca2d4307081ed9d304718244eae7e50099dcf5a424dc0",
+      "bytes": 1230
+    },
+    {
+      "path": "packages/workspace/dist/sandbox-types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "bytes": 11
+    },
+    {
+      "path": "packages/workspace/dist/source-bundle.js",
+      "sha256": "4d8015e7345a0cf18ead2cfd8f87b6674f90234ceb770f32b25a06f78c27f60d",
+      "bytes": 4191
+    },
+    {
+      "path": "packages/workspace/dist/source-capture.js",
+      "sha256": "2bc3513bc2d84983e522dab5e91060bcf463c58ec02b3989c89936046e4d50f3",
+      "bytes": 10481
+    },
+    {
+      "path": "packages/workspace/dist/source-validation.js",
+      "sha256": "549a06b749cf5039ff984a121cac2e9b0ec966c7d3736921935e087dbd1c480d",
+      "bytes": 3916
+    },
+    {
+      "path": "packages/workspace/dist/thread-sandbox.js",
+      "sha256": "ae7e17620e924424d92b4891b16ad8f374be59f34ca7da13b2ee451a30f64eb8",
+      "bytes": 11424
+    },
+    {
+      "path": "packages/workspace/dist/types.js",
+      "sha256": "979226bf6370ce2171b9c158a7a819d63ec6848631b3e30dda905ce603994e63",
+      "bytes": 376
+    },
+    {
+      "path": "packages/workspace/dist/with-logging.js",
+      "sha256": "698746e8d05cda0705c369941b7b2a32973e395a97aedb255069d3d48fd411c5",
+      "bytes": 2966
+    },
+    {
+      "path": "packages/workspace/dist/with-workspace-reader.js",
+      "sha256": "3cedc990153baa0c6050df71ab78a63522a3da1c5b4e4bd88aecae06ed289e61",
+      "bytes": 1534
+    }
+  ],
+  "inventory_sha256": "71e2663947013ddf3dbac74abcc1465b1364ae946a33256a2807c8ec35163018",
+  "runtime_wrapper": {
+    "path": "packages/cli/dist/lib/dev/runtime-fetch-handler.js",
+    "sha256": "daafaf39e5a137e6c332a195bc6e00125f71621d1fa9831d7c4194d400785721",
+    "bytes": 1164
+  },
+  "runtime_core": {
+    "path": "packages/cli/dist/lib/dev/runtime-fetch-core.js",
+    "sha256": "f7d7e85c4faca2729815445f6ae8b1dff83e638fbe4f7185ef8ae912cd5c1f75",
+    "bytes": 190552
+  },
+  "recording_links": [
+    {
+      "path": "grant-observations.json",
+      "path_base": "sidecar_directory",
+      "sha256": "3f6ccea87a5baa63405256348939b6ce9c5fe71e1678315a5f420a1d3fe7ef03",
+      "runtime_wrapper_sha256": "daafaf39e5a137e6c332a195bc6e00125f71621d1fa9831d7c4194d400785721"
+    }
+  ],
+  "inventory_script": {
+    "path": "conformance/reference/fixture/runtime-artifacts.mjs",
+    "sha256": "32d9140ad5372f2cded62f5ea19641d2e4989406f19d932eaccefd70f1d474c3"
+  },
+  "inventory_dependencies": [
+    {
+      "path": "conformance/reference/fixture/harness.mjs",
+      "sha256": "06be8adba6c5889b95f50304055a8977f1afedd3e798114ef9ed6adc98f8e6a9"
+    },
+    {
+      "path": "conformance/reference/fixture/capture.mjs",
+      "sha256": "98bea197db65894632757fe87e7662d431687e39127e006efc6eb65c40481c04"
+    }
+  ]
+}

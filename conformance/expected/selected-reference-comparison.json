@@ -1,0 +1,64 @@
+{
+  "receipt_version": 1,
+  "evidence_class": "selected_native_reference_comparison",
+  "verified_at_utc": "2026-10-01T05:08:48.106787+00:00",
+  "passed": true,
+  "reference_recording": "conformance/reference/recordings/2026-09-30-workflows/workflow-observations.json",
+  "reference_recording_sha256": "2485bb8a5404c2cd0af3e28a898de1afcc432b0fdee733919143ef72d1a08a16",
+  "reference_commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "fixture_revision": "3a4552e3226691137ef2306d07d9081d35ecb4254351795f43dc7f6d3cb21d8d",
+  "test": {
+    "file": "crates/b4-http/tests/reference.rs",
+    "name": "selected_successful_workflow_terminals_match_pinned_reference",
+    "sha256": "a2bb73ed3807c83d7c532ae9031e3ac5b4376a26f1148d4fb8c5fbe9eeae351b"
+  },
+  "cases_compared": 22,
+  "cases_matched": 22,
+  "case_ids": [
+    "wait-input-omitted",
+    "stream-input-omitted",
+    "wait-input-null",
+    "stream-input-null",
+    "wait-input-string",
+    "stream-input-string",
+    "wait-input-number",
+    "stream-input-number",
+    "wait-input-boolean",
+    "stream-input-boolean",
+    "wait-input-array",
+    "stream-input-array",
+    "wait-input-object",
+    "stream-input-object",
+    "wait-void",
+    "stream-void",
+    "wait-zero",
+    "stream-zero",
+    "wait-false",
+    "stream-false",
+    "wait-empty",
+    "stream-empty"
+  ],
+  "request_adaptation": "Added explicit native bearer authentication; captured methods, paths, headers and body bytes otherwise used directly. Both handlers implicitly create run threads.",
+  "fields_compared": [
+    "HTTP status",
+    "JSON wait body",
+    "content-type media type (charset ignored)",
+    "ordered SSE event names and decoded JSON data"
+  ],
+  "native_assertions": [
+    "Every selected execution durably Completed before comparison returns."
+  ],
+  "evidence_transport": {
+    "reference": "actual pinned Node Fetch handler",
+    "native_comparison": "Axum in-process router plus committed MemoryStore",
+    "native_transport_qualification": "Five separate real TCP tests, including SQLite worker ownership; see authenticated-http-verification.json."
+  },
+  "excluded": [
+    "Raw response bytes, all headers, media-type charset, comments/heartbeat/spacing",
+    "Generated thread identifiers/timestamps, metadata and state parity",
+    "Expected application failures and custom validation",
+    "Approval parks, grants, resume/cancel/delete/GET attach, client corpus, full protocol profile"
+  ],
+  "core_profile_compatible": false,
+  "M0": "open"
+}

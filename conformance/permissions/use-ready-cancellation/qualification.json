@@ -1,0 +1,192 @@
+{
+  "record_version": 1,
+  "profile": "embedded_permission_use_ready_cancellation",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "qualified",
+  "native_source_descriptor_sha256": "ddfc4d955b335c390ff0ddd6ffefd48c94f593887087763487237e7b5dc712e6",
+  "native_source_file_count": 996,
+  "source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 8499,
+      "sha256": "2cf4e212a87d062d916ab114fad043b3bd6a56727e97b325cbfbb3e842a763b1"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/model.rs",
+      "bytes": 29493,
+      "sha256": "ade983923d148179979bb1e0ac0aca8003c0f00cdb96a7edfc472ee3b633699d"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use.rs",
+      "bytes": 61767,
+      "sha256": "48b65ac82c936fba414ce31e4a92777202bed24dda0924c1f6e0528225625099"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/use_ready_cancellation.rs",
+      "bytes": 9864,
+      "sha256": "82d5f087917f37e6ee88448027f7563d208bffe4507428c4504e619223d5f585"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/mod.rs",
+      "bytes": 93460,
+      "sha256": "2fd61f87050f1776ec41aba2a059ff9f79f1036db4bd4dcbb60b37db7cbb35a0"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_ready_cancellation.rs",
+      "bytes": 4756,
+      "sha256": "991540b4c096de5c26792a9cef40afa58618b1251e917351a986423a145a4b86"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/permission_use_ready_cancellation.rs",
+      "bytes": 42330,
+      "sha256": "bc3eb56aee4ae3302269839d4d4fe51fde54de9c34f8eff7e6e3c52b3b13d0db"
+    }
+  ],
+  "checks": {
+    "focused": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_use_ready_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 11.714,
+      "log_sha256": "3fd8837bf6a965bafb412a87a2b1d51162852c2e26b29a300e058e82f5ee6ed0",
+      "private_run": "ready-cancellation-tests-1792549791594927000",
+      "source_unchanged": true
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.4,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "private_run": "format-check-1792549836823328000",
+      "source_unchanged": true
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 48.322,
+      "log_sha256": "1779b64c131d1416c5b69e9a1b9fc2e2bdd07cd7ac9a3d535a8a567a27984836",
+      "private_run": "lint-1792549836823870000",
+      "source_unchanged": true
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 114.256,
+      "log_sha256": "899bef83262f67c55fa7dfa6615493e5e78b161993a55ae95b400184800db067",
+      "private_run": "compile-1792549904337086000",
+      "source_unchanged": true
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 295.247,
+      "log_sha256": "e355784581e77b26996b31652db152da7997d494cc7c8cda1c370e261126eea9",
+      "private_run": "workspace-tests-1792550043105667000",
+      "source_unchanged": true
+    },
+    "metadata": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 3.433,
+      "log_sha256": "4fb7485ede2f75ee8abe59c10d7cf9d5177afa40a65b0f81de75f5523f03bf50",
+      "private_run": "metadata-1792549879021222000",
+      "source_unchanged": true
+    }
+  },
+  "focused": {
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  "full_workspace": {
+    "counts": {
+      "passed": 1587,
+      "failed": 0,
+      "ignored": 11
+    },
+    "summary_lines": 140
+  },
+  "observed": {
+    "ready_winner": "genuine NewUse Ready2 to Kernel Cancelled3 without callback or attempt; repeat request refuses",
+    "preservation": "immutable Use/original authority and normal reopen with actual fresh NewUse Complete4",
+    "management": "actor/catalog/stale refusal unchanged; same-catalog effect gate revocation cannot veto dedicated management stop",
+    "journal_fault": "literal post-update execution/thread guard, trigger presence, complete Ready2 rollback, DROP then same-target healthy cancellation",
+    "dispatch_winner": "actual authorized-source pause then genuine controlled Dispatch3 entry; Ready request refuses with no extra mutation before actual entered CancelRequested4/Ack5 cleanup",
+    "owned_retirement": "finite channels/scoped threads, capacity/store handles retired, integrity check, owner rollover and temp directory removal"
+  },
+  "scope": {
+    "new_use_ready_two_only": true,
+    "no_callback_claim_or_receipt_created": true,
+    "already_claimed_work_withdrawal": false,
+    "owned_driver_drain": false,
+    "http_permission_cancellation": false,
+    "recovery_or_deletion": false,
+    "broad_durable_permissions": false,
+    "existing_creators_and_readers_unchanged": true,
+    "default_drivers_and_entered_apis_unchanged": true,
+    "dependencies_and_locks_unchanged": true,
+    "http_v1_through_v4_unchanged": true,
+    "maximum_size_qualification": false,
+    "cross_platform_qualification": false,
+    "metadata_is_runtime_evidence": false,
+    "git_writes": false
+  }
+}

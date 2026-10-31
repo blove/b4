@@ -1,0 +1,286 @@
+{
+   "bounds" : {
+      "capture_bytes" : 1048576,
+      "control_commands" : 16,
+      "control_reply_bytes" : 2048,
+      "control_request_bytes" : 1024,
+      "external_effect_ledger_bytes" : 1024,
+      "fixture_acceptances" : 1,
+      "fixture_grants" : 1,
+      "fixture_journal_entries" : 64,
+      "gate_timeout_seconds" : 60,
+      "io_timeout_seconds" : 30,
+      "lane_timeout_seconds" : 120,
+      "no_hard_cpu_io_rss_deadline" : true,
+      "parent_evidence_bytes" : 16776192,
+      "restarted_child_evidence_bytes" : 8388608,
+      "seed_evidence_bytes" : 8388608,
+      "stderr_bytes_per_child" : 1048576,
+      "stdout_bytes_per_child" : 1048576,
+      "total_persisted_evidence_bytes" : 33554432
+   },
+   "credited_cases" : [
+      {
+         "file" : "crates/b4-http/tests/startup_restart.rs",
+         "name" : "process_startup_park_preserves_once_and_sibling_without_replay"
+      },
+      {
+         "file" : "crates/b4-http/tests/startup_restart.rs",
+         "name" : "process_startup_unsafe_effect_is_blocked_before_readiness_without_replay"
+      }
+   ],
+   "excluded_scope" : [
+      "Accepted approval committed before dispatch through Preparing startup",
+      "Automatic incompatible or revoked-policy confinement",
+      "Actual confinement deletion/reincarnation race",
+      "Persistent Always",
+      "Recovered token-history signaling",
+      "Provider reconciliation",
+      "General CLI startup exposure",
+      "Full RFC11.4",
+      "56 broad release scenarios",
+      "M0 and CP010 closure",
+      "Fresh original TypeScript/client or Node unit-suite execution",
+      "Arbitrary external-effect rollback or exactly-once guarantee"
+   ],
+   "increment" : "process_startup_restart",
+   "infrastructure" : {
+      "additional_test_credit" : 0,
+      "finite_role_lane_selections" : 4,
+      "ignored_helper" : "startup_restart_child_helper",
+      "ignored_helpers" : 1
+   },
+   "observations" : {
+      "approval" : {
+         "full_original_authority_and_lineage_preserved_or_legitimately_consumed" : true,
+         "no_successful_sibling_replay" : true,
+         "only_release_task_continues" : true,
+         "original_full_once_grant_used" : true,
+         "stable_park_and_successful_sibling_before_kill" : true
+      },
+      "common" : {
+         "actual_next_writer_is_restarted_owner_plus_one" : true,
+         "actual_sigkill_and_reap" : true,
+         "complete_selected_authority_and_journal_reread" : true,
+         "container_cleanup_is_not_runtime_retirement_evidence" : true,
+         "explicit_nonexpired_trusted_resolver_release" : true,
+         "health_available_and_ordinary_admission_closed_before_and_during_preparation" : true,
+         "healthy_normal_quiescence_and_listener_join" : true,
+         "independent_post_kill_sqlite_read" : true,
+         "inspector_aliases_absent_during_preparation" : true,
+         "normal_child_exit_and_reap" : true,
+         "restarted_owner_strictly_newer_than_source_and_inspector" : true,
+         "store_and_application_weak_absent" : true
+      },
+      "unsafe" : {
+         "no_result_committed_before_kill" : true,
+         "recovered_execution_status" : "recovery_blocked",
+         "recovered_task_status" : "outcome_unknown",
+         "synced_external_effect_entries" : 1,
+         "unrelated_pure_work_completes" : true,
+         "unsafe_callback_replayed" : false
+      }
+   },
+   "platforms" : [
+      {
+         "architecture" : "arm64",
+         "checks" : [
+            {
+               "check" : "fmt",
+               "exit_code" : 0,
+               "log_bytes" : 0,
+               "log_sha256" : "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+               "check" : "clippy",
+               "exit_code" : 0,
+               "log_bytes" : 139,
+               "log_sha256" : "b620d7561a4ae191d32886e29762e078a74db046230cecf16f55bec221793d9d"
+            },
+            {
+               "check" : "workspace",
+               "exit_code" : 0,
+               "log_bytes" : 123409,
+               "log_sha256" : "3447ea1842adbf60f2e8e35c4e8645149cb943f71b402f9f14e24be407e5a996"
+            },
+            {
+               "check" : "confinement-slow",
+               "exit_code" : 0,
+               "log_bytes" : 558,
+               "log_sha256" : "e372dad88aa64ea5417c4d0da30b1e94480d21c3d59d92a006497cd4b39df5ec"
+            },
+            {
+               "check" : "python",
+               "exit_code" : 0,
+               "log_bytes" : 206,
+               "log_sha256" : "5cc008114bf557e41814d45dff7b1994d115993fcc7725ce65048f799c4ab725"
+            },
+            {
+               "check" : "contracts",
+               "exit_code" : 0,
+               "log_bytes" : 1779,
+               "log_sha256" : "4374be4ae7af30f16144c279853cd53a90d320b60a04b9e44fb193f8fb264e63"
+            }
+         ],
+         "default_ignored" : 7,
+         "distinct_qualified_rust_cases" : 1218,
+         "excluded_nested_cli_summaries" : 2,
+         "failed" : 0,
+         "format_exit" : 0,
+         "normal_workspace_passed" : 1215,
+         "outer_cargo_targets" : 103,
+         "platform" : "macOS",
+         "raw_pass_sum" : 1217,
+         "raw_summaries" : 105,
+         "remaining_default_ignored_infrastructure" : 4,
+         "restart_helper_ignored" : 1,
+         "restart_parent_failed" : 0,
+         "restart_parent_passed" : 2,
+         "separate_slow_failed" : 0,
+         "separate_slow_ignored" : 0,
+         "separate_slow_passed" : 3,
+         "status" : "actual_qualified_and_independently_reviewed",
+         "strict_lint_exit" : 0
+      },
+      {
+         "architecture" : "aarch64",
+         "checks" : [
+            {
+               "check" : "source-integrity",
+               "exit_code" : 0,
+               "log_bytes" : 246,
+               "log_sha256" : "76efb3e55dadaee045ecc7d0b33d0e4aab3181b61386908ef76587bc80517433"
+            },
+            {
+               "check" : "fmt",
+               "exit_code" : 0,
+               "log_bytes" : 0,
+               "log_sha256" : "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+               "check" : "clippy",
+               "exit_code" : 0,
+               "log_bytes" : 2655,
+               "log_sha256" : "d6f8d9a5da58dbb54bbbf0f0d49ce9d132abb3d1544e4ba80e81a68c37a28231"
+            },
+            {
+               "check" : "workspace",
+               "exit_code" : 0,
+               "log_bytes" : 129449,
+               "log_sha256" : "762a0a0e1ce57b1f5db280c3aa41afe3cc14115fad679afd1d8623cfae73ce76"
+            },
+            {
+               "check" : "confinement-slow",
+               "exit_code" : 0,
+               "log_bytes" : 1143,
+               "log_sha256" : "9f03cd22179f676a465b9344fe234de8e515435c2b0e17f90f9838bcd071e7e6"
+            },
+            {
+               "check" : "source-integrity-after",
+               "exit_code" : 0,
+               "log_bytes" : 246,
+               "log_sha256" : "76efb3e55dadaee045ecc7d0b33d0e4aab3181b61386908ef76587bc80517433"
+            }
+         ],
+         "default_ignored" : 7,
+         "distinct_qualified_rust_cases" : 1218,
+         "excluded_nested_cli_summaries" : 2,
+         "failed" : 0,
+         "format_exit" : 0,
+         "normal_workspace_passed" : 1215,
+         "outer_cargo_targets" : 103,
+         "platform" : "Linux",
+         "raw_pass_sum" : 1217,
+         "raw_summaries" : 105,
+         "remaining_default_ignored_infrastructure" : 4,
+         "restart_helper_ignored" : 1,
+         "restart_parent_failed" : 0,
+         "restart_parent_passed" : 2,
+         "separate_slow_failed" : 0,
+         "separate_slow_ignored" : 0,
+         "separate_slow_passed" : 3,
+         "status" : "actual_qualified_and_independently_reviewed",
+         "strict_lint_exit" : 0
+      }
+   ],
+   "privacy" : {
+      "no_self_referential_final_document_freeze_hash" : true,
+      "only_safe_summary_and_relative_source_hashes" : true,
+      "private_paths_identifiers_sockets_and_capture_hashes_excluded" : true,
+      "raw_authority_and_database_evidence_remains_private" : true
+   },
+   "python_and_metadata" : {
+      "actual_metadata_green_failed" : 0,
+      "actual_metadata_green_passed" : 3,
+      "actual_red_failing_declarations" : 3,
+      "actual_red_failure_entries_including_subtests" : 13,
+      "earlier_requirement_records_preserved" : 456,
+      "metadata_input_count" : 705,
+      "new_metadata_declarations" : 3,
+      "new_requirement_records" : 2,
+      "pre_metadata_contract_exit" : 0,
+      "pre_metadata_full_python_passed" : 105,
+      "red_execution_scope" : "Missing group and checker; later branches do not all receive RED credit",
+      "requirement_implementation_status" : "implemented",
+      "requirement_verification_status" : "passed_bounded_two_lane_native_macos_linux_scope"
+   },
+   "receipt_scope" : {
+      "recorded_runtime_input_count" : 704,
+      "recorded_metadata_input_count" : 705,
+      "metadata_stage_requirement_status" : "Initially pending/not_run; scoped implementation and native pass status is supported by the completed platform evidence",
+      "post_documentation_and_final_source_reviews" : "Recorded separately; outside this runtime qualification receipt"
+   },
+   "release_scope" : "bounded_two_lane_process_startup_restart_only",
+   "source" : {
+      "cargo_inputs_preserved" : 9,
+      "new_cargo_targets" : 1,
+      "new_dependency_edges" : 0,
+      "new_test_helper_files" : [
+         {
+            "bytes" : 1141,
+            "file" : "crates/b4-http/tests/startup_restart.rs",
+            "sha256" : "7e04ab0b41aceabf68f4b1824b0f7870e3148e40a4baa953815c122bd54629cf"
+         },
+         {
+            "bytes" : 13229,
+            "file" : "crates/b4-http/tests/startup_restart_support/evidence.rs",
+            "sha256" : "9f06e9f9ac0850216a4460c6d094ee2e7e48c65f91f474bf94873e3392244ebb"
+         },
+         {
+            "bytes" : 46128,
+            "file" : "crates/b4-http/tests/startup_restart_support/fixture.rs",
+            "sha256" : "f0bc5079bbb40645b9cc0cbc18a83512662535a1eab76733aca6f866b0f222ce"
+         },
+         {
+            "bytes" : 1014,
+            "file" : "crates/b4-http/tests/startup_restart_support/mod.rs",
+            "sha256" : "07d3834ca98b787e47950afec190d3b6a19560cef1368e189371103e3f604147"
+         },
+         {
+            "bytes" : 7797,
+            "file" : "crates/b4-http/tests/startup_restart_support/model.rs",
+            "sha256" : "a13f687dd78e4c731aad85a2ea62e3e38eb66f54f95f8eeabb33f1db2d5aa58d"
+         },
+         {
+            "bytes" : 15685,
+            "file" : "crates/b4-http/tests/startup_restart_support/process.rs",
+            "sha256" : "a6a7145b00adc8b22201656dde414097529c1ad48ee44e094e414307563a6a09"
+         },
+         {
+            "bytes" : 9293,
+            "file" : "crates/b4-http/tests/startup_restart_support/server.rs",
+            "sha256" : "6fcc468be31ae5da6f7165d0e3650b4154e12e813ce3f2f37637d18050de628d"
+         }
+      ],
+      "prior_inputs_preserved" : 697,
+      "production_changes" : 0,
+      "qualified_crate_file_count" : 280,
+      "qualified_crate_map_sha256" : "668b2b75ae804e2c220dc111774cc4322964583590adf325486157fdca7ec56f",
+      "qualified_input_count" : 704,
+      "qualified_input_map_sha256" : "65a412ed0110a28a81133d8b51e664e89fbf2923706e2dd823397b53e5746421",
+      "schema_changes" : 0,
+      "source_map_encoding" : "UTF-8 sorted-key compact JSON plus LF; relative file paths mapped to source SHA256"
+   },
+   "status" : "passed_bounded_two_lane_native_macos_linux_scope",
+   "version" : 1
+}

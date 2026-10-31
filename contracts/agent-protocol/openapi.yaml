@@ -1,0 +1,577 @@
+openapi: 3.1.0
+info:
+  title: B4 Agent Protocol (native applications, scripted subset and core draft)
+  version: 0.0.0-draft
+  description: >-
+    Ten operations run in the bounded authenticated host with finite scripts or immutable trusted Rust applications. Protected native capability discovery is an additional operational endpoint. M0 remains open, CP-001–009 are partial and CP-010 unresolved.
+    Selected workflow bodies/events and required-grant statuses are compared with
+    the independently executed pinned reference; full b4-ap-core/0 compatibility is unverified.
+    Historical DTO schemas do not fully describe host responses. In particular,
+    void POST stream uses done {} rather than the explicit-output draft schema.
+    Embedding applications must supply an authenticator and resource policy.
+x-implementation-status: scripted-subset
+x-compatibility-status: selected-workflow-comparison
+x-milestone-M0: open
+x-authentication-boundary: >-
+  Serving non-probe operations require a verified principal and resource policy.
+  After supervised admission closes, new protected requests uniformly return
+  healthy503 host_draining before authentication, body, policy or Store work;
+  that operational refusal performs no protected action or disclosure.
+  The example uses an explicit bearer token, loopback and Host/Origin protections;
+  the reusable host does not prescribe a production credential mechanism.
+x-transport-limits:
+  body_bytes: 65536
+  json_depth: 64
+  implementation_status: scripted-subset
+x-probes:
+  healthz: GET /healthz reports process liveness
+  readyz: >-
+    GET /readyz checks Serving admission, host fault and Store readiness. Draining
+    returns status-only503 without a Store probe; pre-cut probes recheck phase
+    and fault before responding.
+x-schema-scope: >-
+  schemas/*.json retain historical native DTO contracts. The host has a separate
+  void done variant; request errors retain the AP envelope with details.code.
+  This inventory does not
+  claim every historical DTO schema conforms to every current HTTP response.
+  SettledExecutionFailure documents the observed execution-error envelope
+  without details; request errors retain the historical DTO envelope.
+x-sse-contract:
+  framing: "event: NAME\ndata: JSON\n\n"
+  chunk_payload: direct JSON value
+  done_payload: successful output is {output:value}; void is {}; known failure is {output:{error:message}}
+  durable_replay: false
+  last_event_id: not a replay cursor
+  encoder_implementation: bounded native HTTP plus historical foundation encoder
+paths:
+  /b4/capabilities:
+    get:
+      operationId: getCapabilities
+      x-operation-id: NATIVE-OP-001
+      x-implementation-status: native-subset
+      x-evidence-kind: authored-native-operational-contract
+      summary: Read protected assembled host capabilities
+      description: >-
+        Requires a verified principal, matching native application scope and
+        ReadCapabilities resource policy. Declares installed mechanisms and
+        effective limits without route names/counts, grants, paths or callback
+        captures. This static metadata is not a health result or permission
+        promise. Approval storage durability is null when the assembled Store
+        port has no ApprovalStore declaration. Runtime version and application
+        labels use native UTF-8 byte checks. Unimplemented subsystem flags remain
+        false and absent callback/validator/turn/history/connection/process controls
+        are null. Descriptor v2 declares supervised_admission_drain true, keeps
+        graceful_shutdown false, and reports fixed default/max wait controls of
+        30000/300000ms. Readiness aggregates Store readiness, no owned worker fault
+        and Serving admission with a status-only response. After the admission
+        cut this endpoint refuses with healthy503 host_draining. Responses are bounded to
+        65,536 bytes and use Cache-Control no-store. Full core-profile conformance
+        and TypeScript capability parity remain unverified.
+      responses:
+        '200':
+          description: Versioned native subset descriptor
+          headers:
+            Cache-Control:
+              schema:
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: schemas/capabilities-v2.json
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '503':
+          $ref: '#/components/responses/Unready'
+  /threads:
+    post:
+      operationId: createThread
+      x-operation-id: AP-001
+      x-implementation-status: scripted-subset
+      summary: Create an authorized thread
+      description: >-
+        Empty/whitespace body becomes {}. Otherwise the body must be a strict
+        object with optional object metadata. Unknown fields (including workspace)
+        and recursive duplicate keys return 400. Content type does not gate JSON
+        parsing. Metadata never supplies server-owned origin. These restrictions
+        deliberately differ from selected broader reference acceptance.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: schemas/create-thread-request.json
+      responses:
+        '200':
+          description: Created thread
+          content:
+            application/json:
+              schema:
+                $ref: schemas/thread.json
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '503':
+          $ref: '#/components/responses/Unready'
+
+  /threads/{thread_id}:
+    parameters:
+      - $ref: '#/components/parameters/ThreadId'
+    get:
+      operationId: getThread
+      x-operation-id: AP-002
+      x-implementation-status: scripted-subset
+      summary: Read an authorized thread
+      responses:
+        '200':
+          description: Thread
+          content:
+            application/json:
+              schema:
+                $ref: schemas/thread.json
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '503':
+          $ref: '#/components/responses/Unready'
+
+    delete:
+      operationId: deleteThread
+      x-operation-id: AP-003
+      x-implementation-status: scripted-subset
+      summary: Delete native thread state when safe
+      description: >-
+        Authorized missing resources return empty no-store 204. Existing resources
+        require exact immutable origin and renewed policy. Atomic fenced cleanup
+        removes the whole execution history, journal, grants and accepted audit.
+        Active or uncertain work, including a worker retaining its claim after
+        terminal/park commitment, returns 409 run_in_flight. Changed captured
+        targets return 409 resource_changed. Native denied resources use 404;
+        corrupt history or failed transactions mark the host unready. Custom
+        stores without the atomic capability return healthy 501. CP-006 is partial.
+      responses:
+        '204':
+          description: Deleted; no response body
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '501':
+          $ref: '#/components/responses/Unsupported'
+        '503':
+          $ref: '#/components/responses/Unready'
+  /threads/{thread_id}/state:
+    parameters:
+      - $ref: '#/components/parameters/ThreadId'
+    get:
+      operationId: getThreadState
+      x-operation-id: AP-004
+      x-implementation-status: scripted-subset
+      summary: Read the authorized AP checkpoint projection
+      description: >-
+        No checkpoint is fabricated for a new thread. A supported current native
+        execution is projected separately from internal snapshot version 1, with
+        stored update time, native metadata and empty next. Current parked approval
+        state is supported by explicit approval hosts; unsupported legacy approval
+        state, recovery-blocked or unsettled prior-owner work returns 501 after authorization. Complete
+        reference state/time/channel comparison remains CP-008 work.
+      responses:
+        '200':
+          description: AP projection
+          content:
+            application/json:
+              schema:
+                $ref: schemas/state.json
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '501':
+          $ref: '#/components/responses/Unsupported'
+        '503':
+          $ref: '#/components/responses/Unready'
+
+  /threads/{thread_id}/pending_interrupts:
+    parameters:
+      - $ref: '#/components/parameters/ThreadId'
+    get:
+      operationId: getPendingInterrupts
+      x-operation-id: AP-005
+      x-implementation-status: scripted-subset
+      summary: Read the authorized stable pending set
+      description: >-
+        Authorize origin and recorded route before disclosure. The no-approval
+        subset returns {interrupts:[]}. Explicit approval-enabled hosts disclose
+        the durable stable required-grant set after renewed policy and revision
+        checks. Ordinary hosts reject approval-bearing persisted work. Partial
+        parks, recovery-blocked and unsettled prior-owner work fail closed.
+      responses:
+        '200':
+          description: Pending prompt projection; reading does not consume a grant
+          headers:
+            Cache-Control:
+              schema:
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: schemas/pending-interrupts.json
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '501':
+          $ref: '#/components/responses/Unsupported'
+        '503':
+          $ref: '#/components/responses/Unready'
+
+  /threads/{thread_id}/runs/wait:
+    parameters:
+      - $ref: '#/components/parameters/ThreadId'
+    post:
+      operationId: runWait
+      x-operation-id: AP-006
+      x-implementation-status: scripted-subset
+      summary: Admit a route invocation and wait for the turn to settle
+      description: >-
+        Native body is strict; omitted input defaults to {} and present JSON
+        values are preserved. The host authorizes registered route lookup,
+        implicit thread creation and resource-revision-fenced admission. Owned
+        workers survive viewer disconnection. Successful void returns null and
+        falsy values remain intact. Explicit known failure returns 500 only after
+        durable Failed; readiness stays healthy. Explicit approval hosts can
+        settle a stable park with null; clients retrieve grants through pending.
+        Park/custom-validation parity remains partial.
+      requestBody:
+        $ref: '#/components/requestBodies/Run'
+      responses:
+        '200':
+          description: Direct route output JSON, with no invented Rust wrapper
+          content:
+            application/json:
+              schema: {}
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '500':
+          $ref: '#/components/responses/SettledExecutionFailure'
+        '503':
+          $ref: '#/components/responses/Unready'
+
+  /threads/{thread_id}/runs/stream:
+    parameters:
+      - $ref: '#/components/parameters/ThreadId'
+    post:
+      operationId: runStream
+      x-operation-id: AP-007
+      x-implementation-status: scripted-subset
+      summary: Admit a route invocation and stream the turn
+      description: >-
+        Uses the same fenced admission service as wait. Results commit before
+        publication. Pure workflows emit no invented tool events. Successful
+        output ends with done {output:value}; void ends with done {}. Viewer
+        detach/queue overflow cannot cancel or stall persistence; overflow closes
+        without a terminal completeness claim. Faults make the host unready and
+        do not produce false successful done. A known failure ends with committed
+        done {output:{error:message}} and keeps readiness healthy. Park parity is excluded.
+      requestBody:
+        $ref: '#/components/requestBodies/Run'
+      responses:
+        '200':
+          $ref: '#/components/responses/Stream'
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '503':
+          $ref: '#/components/responses/Unready'
+
+    get:
+      operationId: attachStream
+      x-operation-id: AP-008
+      x-implementation-status: scripted-subset
+      summary: Read a snapshot and attach to bounded live output
+      description: >-
+        Read-only; never starts, resumes or recovers execution. Snapshot and bounded
+        subscription share one publication cut, bound to the original run before
+        policy waits. Renew exact origin and immutable registered definition before
+        disclosure. Live output follows state; inactive durable state has retry2000
+        then done.output null, including stable approvals after restart without
+        adoption or consumption. Idle without recorded route returns409
+        thread_route_unknown; orphan unfinished work requires explicit recovery.
+        Viewer capacity returns only detached.capacity. Queue overflow detaches
+        that viewer without affecting execution. Native raw event/data digest and
+        values differ from TypeScript/LangGraph; full CP-007 parity stays partial.
+        No durable replay or Last-Event-ID cursor.
+      responses:
+        '200':
+          $ref: '#/components/responses/Stream'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '501':
+          $ref: '#/components/responses/Unsupported'
+        '503':
+          $ref: '#/components/responses/Unready'
+  /threads/{thread_id}/resume:
+    parameters:
+      - $ref: '#/components/parameters/ThreadId'
+    post:
+      operationId: resumeExecution
+      x-operation-id: AP-009
+      x-implementation-status: scripted-subset
+      summary: Authorize and atomically accept the complete pending decision set
+      description: >-
+        Available only through the explicit required-approval host constructor.
+        Strict root and entries. Recorded route and current registered definition
+        must match. Renew policy before grant-specific checks, reserve capacity
+        and a thread claim, then atomically consume the complete Once/Deny set
+        with its continuation. The owned worker survives viewer disconnection.
+        Always is unsupported. Native error precedence and interrupt envelope
+        differ from selected pinned behavior; full CP-005 qualification stays open.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: schemas/resume-request.json
+      responses:
+        '200':
+          $ref: '#/components/responses/Stream'
+        '400':
+          description: invalid_request, always_unsupported or grant_required after appropriate gates
+          content:
+            application/json:
+              schema:
+                $ref: schemas/error.json
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          description: Uniform grant_invalid after resource authorization
+          content:
+            application/json:
+              schema:
+                $ref: schemas/error.json
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          description: >-
+            route_mismatch, interrupt_set_mismatch, thread_busy, resume_required,
+            grant_consumed, grant_expired, grant_unavailable, recovery_required,
+            resource_changed or execution_changed under the documented native precedence
+          content:
+            application/json:
+              schema:
+                $ref: schemas/error.json
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '501':
+          $ref: '#/components/responses/Unsupported'
+        '503':
+          $ref: '#/components/responses/Unready'
+  /threads/{thread_id}/cancel:
+    parameters:
+      - $ref: '#/components/parameters/ThreadId'
+    post:
+      operationId: cancelTurn
+      x-operation-id: AP-010
+      x-implementation-status: scripted-subset
+      summary: Cancel the exact captured active turn
+      description: >-
+        After authentication, capture an exact locally owned generation,
+        execution, turn and owner before resource policy evaluation. Renew
+        authority before atomic cancellation; never retarget a successor.
+        A committed request promptly finishes wait with 409 run_cancelled or
+        stream with done.output.cancelled=true. The producer retains capacity,
+        thread exclusion and store through actual quiescence. Stable parks and
+        prior-owner work without a local control return no_run_in_flight.
+        Finite Pure scripted effects only; arbitrary interruption is unqualified.
+      responses:
+        '200':
+          description: Cancellation accepted
+          content:
+            application/json:
+              schema:
+                $ref: schemas/cancel-response.json
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          description: no_run_in_flight for the observed turn
+          content:
+            application/json:
+              schema:
+                $ref: schemas/error.json
+        '501':
+          $ref: '#/components/responses/Unsupported'
+        '503':
+          $ref: '#/components/responses/Unready'
+components:
+  parameters:
+    ThreadId:
+      name: thread_id
+      in: path
+      required: true
+      schema:
+        $ref: schemas/opaque-id.json
+  requestBodies:
+    Run:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: schemas/run-request.json
+  responses:
+    InvalidRequest:
+      description: Malformed JSON or invalid body; no work created and no grant consumed
+      content:
+        application/json:
+          schema:
+            $ref: schemas/error.json
+    Unauthenticated:
+      description: Required authenticator did not produce a valid verified principal
+      content:
+        application/json:
+          schema:
+            $ref: schemas/error.json
+    Forbidden:
+      description: Access denied without protected resource or token diagnostics
+      content:
+        application/json:
+          schema:
+            $ref: schemas/error.json
+    NotFound:
+      description: Absent/inaccessible resource, checkpoint or registered literal route
+      content:
+        application/json:
+          schema:
+            $ref: schemas/error.json
+    Conflict:
+      description: Current execution/turn/pending state does not permit the operation
+      content:
+        application/json:
+          schema:
+            $ref: schemas/error.json
+    PayloadTooLarge:
+      description: Body exceeds the enforced 65,536-byte native transport bound
+      content:
+        application/json:
+          schema:
+            $ref: schemas/error.json
+    Unsupported:
+      description: >-
+        Authorized operation/execution state is outside the current scripted
+        subset. Scoped inaccessible/missing resources still return uniform 404.
+      content:
+        application/json:
+          schema:
+            $ref: schemas/error.json
+    Unready:
+      description: >-
+        Host/store fault, global active-run capacity exhausted, or healthy
+        supervised-admission refusal (host_draining). Capacity and admission
+        refusals do not latch a host fault.
+      content:
+        application/json:
+          schema:
+            $ref: schemas/error.json
+    SettledExecutionFailure:
+      description: >-
+        Committed known application or deterministic reduction failure. The
+        application message is public configured content, not infrastructure
+        exception text. This observed host envelope omits historical DTO details.
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties:
+              error:
+                type: object
+                additionalProperties: false
+                required: [kind, message]
+                properties:
+                  kind:
+                    const: execution_error
+                  message:
+                    type: string
+                    minLength: 1
+                    maxLength: 1024
+                    x-max-utf8-bytes: 1024
+    Stream:
+      description: >-
+        Bounded live text/event-stream transport for settled scripted runs.
+        Chunk payload is direct JSON. One committed terminal done and closure
+        settle a normally delivered turn; void done is {}, known failure done
+        contains output.error. Default
+        heartbeat is 15s. Socket EOF without terminal is an unknown transport
+        outcome. Native attachment includes state/retry/done or viewer detachment;
+        tool payloads below retain draft scope and CP-007 full merging stays open.
+      content:
+        text/event-stream:
+          schema:
+            type: string
+      x-sse-payload-schemas:
+        chunk:
+          $ref: schemas/sse-chunk.json
+        tool_call:
+          $ref: schemas/sse-tool-call.json
+        tool_result:
+          $ref: schemas/sse-tool-result.json
+        done:
+          oneOf:
+            - $ref: schemas/sse-done.json
+            - type: object
+              maxProperties: 0
+              description: Implemented void-workflow POST stream terminal
+        state:
+          $ref: schemas/sse-state.json
+        detached:
+          $ref: schemas/sse-detached.json

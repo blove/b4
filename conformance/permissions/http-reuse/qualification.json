@@ -1,0 +1,242 @@
+{
+  "record_version": 1,
+  "profile": "http_durable_permission_reuse",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "native_source_descriptor_sha256": "a2082c2cf905b68847f85c4971787a14cc5444bb2298b0bfbe274c0d15cca51d",
+  "source_files": [
+    {
+      "path": "contracts/agent-protocol/examples/capabilities-v3-permission-use.json",
+      "bytes": 2445,
+      "sha256": "078f7e3dfdc1b4ffff534467a5a3390bc42054c665bf2ceaadd434f3e6e0e9cc"
+    },
+    {
+      "path": "contracts/agent-protocol/examples/manifest.json",
+      "bytes": 2682,
+      "sha256": "15191986492ab59a2bb760f33d84abaf5f3e8b4b9eea41c1543b4a62a12efb64"
+    },
+    {
+      "path": "contracts/agent-protocol/schemas/capabilities-v3.json",
+      "bytes": 4954,
+      "sha256": "1ca68e8ef2ac2af17695488fd1225ee2f2602f7c36d69383f20eaaa3852d6dac"
+    },
+    {
+      "path": "crates/b4-contract/src/capabilities_v3.rs",
+      "bytes": 8182,
+      "sha256": "b34433c680e6cb92c0b013370ef26fa6afc4a66e4eac5f7bafe4da5a8ef61451"
+    },
+    {
+      "path": "crates/b4-contract/src/lib.rs",
+      "bytes": 541,
+      "sha256": "276586adff121b97bf740429b774cab9792e286bff0f2148c0072c58505eeb55"
+    },
+    {
+      "path": "crates/b4-contract/tests/capabilities_v3.rs",
+      "bytes": 12367,
+      "sha256": "61c72e7c68c446583137564227bd82cd523ba679c3df29aa5abd8ed4872f0b0f"
+    },
+    {
+      "path": "crates/b4-http/src/approval.rs",
+      "bytes": 22259,
+      "sha256": "2db48534b0ff6093611e47c4ba79634a3dc7197d19737a077cb211cb7c55a903"
+    },
+    {
+      "path": "crates/b4-http/src/capabilities.rs",
+      "bytes": 8538,
+      "sha256": "ec1cb1b64c892367caa22ffacc03c5d436bbdad5e701b145b3e5f8e883392512"
+    },
+    {
+      "path": "crates/b4-http/src/confinement/operation.rs",
+      "bytes": 24320,
+      "sha256": "f8627e6af37ea08844a9f25b889c7c578a761235420a8de83401062d1bd12ac0"
+    },
+    {
+      "path": "crates/b4-http/src/host.rs",
+      "bytes": 14933,
+      "sha256": "939261143744c7901bd43397bdc8ae0b181339eb58a02ed04b31dab505836149"
+    },
+    {
+      "path": "crates/b4-http/src/lib.rs",
+      "bytes": 4076,
+      "sha256": "28f89623e3ec209897620ca6ddaf8a51801daaca674beea9ddb3719d8fbc55c2"
+    },
+    {
+      "path": "crates/b4-http/src/permissions.rs",
+      "bytes": 11232,
+      "sha256": "b7cb7cbf089aca730f6e07366501fa2397b97bd5a68b176807ddda8042855b5b"
+    },
+    {
+      "path": "crates/b4-http/src/recovery.rs",
+      "bytes": 8374,
+      "sha256": "e8b18b4afe5b9a31df7f7c228f38eaf2d8f47d0116620bb1d78355f806675f01"
+    },
+    {
+      "path": "crates/b4-http/src/transport.rs",
+      "bytes": 23665,
+      "sha256": "457f67b8bb738d9039e35c47f3c6f6a82a8cf1b03620f5365cde15394af172f0"
+    },
+    {
+      "path": "crates/b4-http/src/worker.rs",
+      "bytes": 40315,
+      "sha256": "aabd1db803954352d0fb936835b4560d131d4bfca86e97e7645fb9f86188e7c9"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_use_boundaries.rs",
+      "bytes": 22985,
+      "sha256": "5bc4433757a3c3229456a8d578462cfb16a26a2359d679ee862152010bc8f6d2"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_use_lifecycle.rs",
+      "bytes": 18237,
+      "sha256": "9fa98a139e326302d6c4641035ce905c3834fe0a9de92fbfe875c91521db6581"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_use_support/mod.rs",
+      "bytes": 19721,
+      "sha256": "73ffe6d8599df920d6429e8fa09ee388bed5226f428526b36152d953c2f5c185"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_uses.rs",
+      "bytes": 31821,
+      "sha256": "5bbe1a10f7c2dd1fdd3337e2678ec383c3fc422c162bc35280497aacb05f0889"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/catalog.rs",
+      "bytes": 20655,
+      "sha256": "b4dc54d319678696deed65ec00b89a7dd045912d8d4077189b2f55bb0afaf210"
+    },
+    {
+      "path": "scripts/check_contracts.py",
+      "bytes": 57005,
+      "sha256": "8dc9b2d1b34f75803ec70213e257102779b02098fc8d098d74a375a0a0228da3"
+    }
+  ],
+  "checks": {
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.464,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "private_run": "format-check-1792535350961137000"
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 68.441,
+      "log_sha256": "208b7fb0213c4dd85344f10a55bea89345fe3b2acd75fb65e353e4fdb191f8dd",
+      "source_unchanged": true,
+      "private_run": "compile-1792535352106044000"
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 25.399,
+      "log_sha256": "ca5a8f0dd634a54adf2bc150cafebd77450bac47ca38a03682150d1dab1554b0",
+      "source_unchanged": true,
+      "private_run": "lint-1792535426890551000"
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 250.832,
+      "log_sha256": "79d3d866cdd545561697a80e091bdd5a2cd43a31f96c63f9a791ce561f174431",
+      "source_unchanged": true,
+      "private_run": "workspace-tests-1792535456990067000"
+    }
+  },
+  "executed_tests": {
+    "workspace_passed": 1545,
+    "workspace_failed": 0,
+    "workspace_ignored_not_executed": 11,
+    "new_http": 11,
+    "new_v3_contract": 12
+  },
+  "focused_targets": [
+    "permission_uses",
+    "permission_use_boundaries",
+    "permission_use_lifecycle",
+    "capabilities_v3"
+  ],
+  "scope": {
+    "application_id": "07d7d468-c4f9-47e1-b421-ff889251df80",
+    "task_id": "publish-monthly-report",
+    "effect_id": "reports.publish-monthly",
+    "tasks": 1,
+    "input_default_bytes": 4096,
+    "input_value_depth": 16,
+    "input_value_nodes": 256,
+    "body_bytes": 65536,
+    "body_json_depth": 64,
+    "output_bytes_required": 65536,
+    "permission_provisioning": "genuine embedded Always approval, Ready cancellation and owner reopen",
+    "fallback": "only verified Ok(None) permission miss; actual Once/Deny",
+    "settlement": "receipt-backed typed writer, no HTTP automatic retry",
+    "capability_descriptor": 3,
+    "broad_durable_permissions": false,
+    "http_always_creation": "pending",
+    "permission_cancellation_recovery_deletion": "unsupported by this host",
+    "operator_confinement_mutation": "unsupported by this host",
+    "linux": "not qualified",
+    "maximum_size_combinations": "not qualified",
+    "full_core_release": "pending"
+  },
+  "red_evidence": {
+    "api_absence": {
+      "run": "http-permission-case-1792533528549520000",
+      "exit_code": 101,
+      "scope": "absent config/constructor, no executed tests"
+    },
+    "legacy_delegation": {
+      "run": "http-permission-case-1792533652272908000",
+      "exit_code": 101,
+      "scope": "genuine permission provisioned and reopened; actual HTTP200 null, callback0, no Use completion; actual retirement passed"
+    }
+  },
+  "metadata_check": {
+    "exit_code": 0,
+    "elapsed_seconds": 4.757,
+    "source_unchanged": true,
+    "log_sha256": "928ff3e4d5d97c6a256234f47a6ee389a97c2428ac5d05cb8c65579e88d3ddef",
+    "scope": "metadata/schema/reference/named-test-presence only"
+  }
+}

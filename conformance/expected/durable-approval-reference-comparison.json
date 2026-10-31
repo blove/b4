@@ -1,0 +1,77 @@
+{
+  "receipt_version": 1,
+  "evidence_class": "selected_native_reference_comparison",
+  "verified_at_utc": "2026-10-01T17:48:33.083364+00:00",
+  "passed": true,
+  "reference_recording": "conformance/reference/recordings/2026-09-30-workflows/workflow-observations.json",
+  "reference_recording_sha256": "2485bb8a5404c2cd0af3e28a898de1afcc432b0fdee733919143ef72d1a08a16",
+  "reference_commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "fixture_revision": "3a4552e3226691137ef2306d07d9081d35ecb4254351795f43dc7f6d3cb21d8d",
+  "cases_compared": 24,
+  "cases_matched": 24,
+  "case_ids": [
+    "wait-input-omitted",
+    "stream-input-omitted",
+    "wait-input-null",
+    "stream-input-null",
+    "wait-input-string",
+    "stream-input-string",
+    "wait-input-number",
+    "stream-input-number",
+    "wait-input-boolean",
+    "stream-input-boolean",
+    "wait-input-array",
+    "stream-input-array",
+    "wait-input-object",
+    "stream-input-object",
+    "wait-void",
+    "stream-void",
+    "wait-zero",
+    "stream-zero",
+    "wait-false",
+    "stream-false",
+    "wait-empty",
+    "stream-empty",
+    "wait-fail",
+    "stream-fail"
+  ],
+  "request_adaptation": "Added explicit native bearer authentication; captured methods, paths, headers and body bytes otherwise used directly. Both handlers implicitly create run threads.",
+  "fields_compared": [
+    "HTTP status",
+    "JSON wait body",
+    "content-type media type (charset ignored)",
+    "ordered SSE event names and decoded JSON data"
+  ],
+  "native_assertions": [
+    "22 successful cases durably Completed before comparison returns.",
+    "Both known-failure cases durably Failed with matching task/execution cause, no result and no success output.",
+    "Known failure leaves thread idle and host healthy/ready."
+  ],
+  "evidence_transport": {
+    "reference": "actual pinned Node Fetch handler",
+    "native_comparison": "Axum in-process router plus committed MemoryStore",
+    "native_transport_qualification": "Seven separate real TCP tests including SQLite ownership and settled failures; see durable-approval-verification.json. Embedded grant tests supply no reference grant parity."
+  },
+  "excluded": [
+    "Raw response bytes, all headers, media-type charset, comments/heartbeat/spacing",
+    "Generated thread identifiers/timestamps, metadata and state parity",
+    "Custom route validation, arbitrary failure adapters and request-error precedence",
+    "Approval parks, grants, resume/cancel/delete/GET attach, client corpus, full protocol profile"
+  ],
+  "core_profile_compatible": false,
+  "M0": "open",
+  "verified_local_date": "2026-10-01",
+  "tests": [
+    {
+      "file": "crates/b4-http/tests/reference.rs",
+      "name": "selected_successful_workflow_terminals_match_pinned_reference",
+      "sha256": "fdfa40b727171ab2a75210a962f54b505bec674734a4a62dc63e6fec4167157e"
+    },
+    {
+      "file": "crates/b4-http/tests/reference.rs",
+      "name": "selected_failure_workflow_terminals_match_pinned_reference",
+      "sha256": "fdfa40b727171ab2a75210a962f54b505bec674734a4a62dc63e6fec4167157e"
+    }
+  ],
+  "prior_receipt": "conformance/expected/settled-failure-reference-comparison.json"
+}

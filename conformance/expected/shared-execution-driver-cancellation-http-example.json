@@ -1,0 +1,19 @@
+{
+  "profile": "owned_run_cancellation_http_example",
+  "passed": true,
+  "transport": "real_loopback_tcp",
+  "backend": "sqlite",
+  "tokens_recorded": false,
+  "checks": [
+    "wait_409_run_cancelled",
+    "stream_one_cancelled_done",
+    "prompt_receipt_before_quiescence",
+    "draining_deletion_and_admission_refused",
+    "late_result_evidence_retained_without_state_reduction",
+    "healthy_readiness",
+    "deletion_after_quiescence"
+  ],
+  "limitations": [
+    "Finite delayed Pure script; no arbitrary callback interruption, abrupt restart or full protocol qualification."
+  ]
+}

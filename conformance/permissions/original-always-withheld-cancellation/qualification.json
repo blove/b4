@@ -1,0 +1,219 @@
+{
+  "record_version": 1,
+  "profile": "embedded_permission_original_always_withheld_cancellation",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "qualified",
+  "native_source_descriptor_sha256": "e47454f450e437a667a4c206c50075e3fad4eb1dcbc4c5171da63b718dee3e7b",
+  "native_source_file_count": 1012,
+  "source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter.rs",
+      "bytes": 41849,
+      "sha256": "ad35f48d797de8469318de68f9564fdab2c7ff6d74f8937e4056694e2d9eb63f"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 8772,
+      "sha256": "31db8117c728040bd4741646f2dce61f1f3c1a5cffc07bff646a2cb68dc5e186"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/model.rs",
+      "bytes": 32160,
+      "sha256": "0681461a3d0f16219419546d4bfe745cfece0564faf41057bfefa9f97bb07f14"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/original_always.rs",
+      "bytes": 20514,
+      "sha256": "0bb090034e288a9d4c7c4f5631cc39f1493e5daf8a7965860d6adb72ec556478"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/original_always_withheld_cancellation.rs",
+      "bytes": 8805,
+      "sha256": "54fc898b526a4d1689875cdd226fc8e0c3ccd5acaae8142be64911ca3f6ac45e"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_mutation.rs",
+      "bytes": 452923,
+      "sha256": "d62699bd4e500c924e8212d6be739fd69e68e43e476a04e94c9684e2d536e49f"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/mod.rs",
+      "bytes": 94976,
+      "sha256": "ee47ba61b9ce3b179ea3211aedc80c2831dfeedc54b4d5d5f946699bd0b415fc"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/original_always.rs",
+      "bytes": 11565,
+      "sha256": "55d075bc5245521c368b00a34f6776243f760573f5ecc72d23f34575719a6d12"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/original_always_withheld_cancellation.rs",
+      "bytes": 3225,
+      "sha256": "1711dcbaa14a98ef613ccf1ec7dc17834e8af4df16e13ee714fe4999341fd284"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/permission_original_always_withheld_cancellation.rs",
+      "bytes": 44601,
+      "sha256": "9fc8bf73e295874cc75c063f1077cac45d6765394211d94f909aa8b4408597b8"
+    }
+  ],
+  "checks": {
+    "focused": {
+      "private_run": "original-withheld-cancellation-tests-1792553700018377000",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_original_always_withheld_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 17.128,
+      "log_sha256": "80250b2bfe277edad685d21696968528f42546c6ee2c9824957205f0f19e6344",
+      "source_unchanged": true
+    },
+    "format-check": {
+      "private_run": "format-check-1792553769795848000",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.582,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true
+    },
+    "lint": {
+      "private_run": "lint-1792553769795896000",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 75.919,
+      "log_sha256": "634ed19dc178ddc318e4a84960d839f3986a05d40aad0485816af74284c3ee63",
+      "source_unchanged": true
+    },
+    "compile": {
+      "private_run": "compile-1792553856139980000",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 128.084,
+      "log_sha256": "a90668239f72204f27738bdf723ce87398ebb6b540571c0ec9154265058954dc",
+      "source_unchanged": true
+    },
+    "workspace-tests": {
+      "private_run": "workspace-tests-1792554051784125000",
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 451.41,
+      "log_sha256": "0fda5ffc73ce6d4efa5b516ae15c16d3752a06181cfb33c2e4042a8b8c5429d0",
+      "source_unchanged": true
+    },
+    "metadata": {
+      "private_run": "metadata-1792553769796044000",
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.694,
+      "log_sha256": "4fb7485ede2f75ee8abe59c10d7cf9d5177afa40a65b0f81de75f5523f03bf50",
+      "source_unchanged": true
+    }
+  },
+  "focused": {
+    "passed": 4,
+    "failed": 0,
+    "ignored": 0
+  },
+  "full_workspace": {
+    "counts": {
+      "passed": 1595,
+      "failed": 0,
+      "ignored": 11
+    },
+    "summary_lines": 142
+  },
+  "observed": {
+    "withheld_owner": "genuine returned drained Driver EntryRefused with uniquely retained uninvoked original NewHuman Work, no synthetic Use or native receipt",
+    "terminal": "actual Kernel CancelRequested5 and Cancelled6, two journals and thread resource advances in one atomic Immediate transaction; repeat refusal",
+    "management": "same owner survives actor/catalog/stale-target refusals, revoked effect constraint denial probe then dedicated stop without another constraint call",
+    "source": "actual original claim selector checks complete Dispatch4 resource, three exact immutable record bytes and physical indices, five journals and Use/legacy absence under Deferred and Immediate",
+    "journal_fault": "literal exact journal6 guard requires terminal execution/thread+2; stored DDL and presence1, full nine-table Running4 rollback, DROP/presence0 and healthy retry using same actual failure",
+    "ineligible_ownership": "real native-entered uncertainty and real admission-hook panic both refuse without extra writes or callback replay; body observations asserted outside callback panic boundary",
+    "preservation": "immutable original acceptance/decision/consumed grant and no original Use, normal reopen, exact seven-entry creator history consumed by actual fresh NewUse Complete4",
+    "bounded_retirement": "synchronous actual owners, same finite capacity reused across failure retirement/reopen/fresh callback, weak callback links, integrity checks, owner rollover and temp removal"
+  },
+  "scope": {
+    "original_always_entry_refused_only": true,
+    "active_driver_drain": false,
+    "other_pre_entry_failure_retirement": false,
+    "native_receipt_or_acknowledgement_fabricated": false,
+    "synthetic_original_use": false,
+    "automatic_retry_or_callback_replay": false,
+    "existing_retained_allowance": {
+      "bytes": 33554432,
+      "nodes": 262144,
+      "driver_operations_max": 128,
+      "new_use_begin_or_origin_used": false,
+      "reset_or_refund": false
+    },
+    "original_resource_read_ledger_limit_claimed": false,
+    "existing_input_record_history_and_old_account_limits_unchanged": true,
+    "existing_new_use_and_entered_paths_unchanged": true,
+    "http_permission_cancellation": false,
+    "recovery_or_deletion": false,
+    "broad_durable_permissions": false,
+    "dependencies_and_locks_unchanged": true,
+    "http_v1_through_v4_unchanged": true,
+    "maximum_size_qualification": false,
+    "cross_platform_qualification": false,
+    "metadata_is_runtime_evidence": false,
+    "git_writes": false
+  }
+}

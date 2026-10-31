@@ -1,0 +1,24 @@
+{
+  "profile": "authenticated_http_required_approval_example",
+  "passed": true,
+  "transport": "real_loopback_tcp",
+  "backend": "sqlite",
+  "checks": [
+    "missing_token_rejected",
+    "authentication_and_browser_guards",
+    "wait_stable_park_null",
+    "identical_authorized_pending_no_store",
+    "ordinary_state_no_grants",
+    "missing_grant_spends_nothing",
+    "once_continuation",
+    "successful_sibling_preserved",
+    "replay_rejected",
+    "interrupt_before_null_done",
+    "deny_without_effect",
+    "healthy_readiness"
+  ],
+  "tokens_recorded": false,
+  "limitations": [
+    "Finite local scripted effects; no provider, automatic owner recovery, accepted-ready HTTP restart launch or full protocol compatibility."
+  ]
+}

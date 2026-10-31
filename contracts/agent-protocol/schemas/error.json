@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Authored native design input; compatibility with independently executed TypeScript is unverified.",
+  "x-compatibility-status": "unverified",
+  "$id": "error.json",
+  "title": "AP error envelope",
+  "x-implementation-status": "native-dto",
+  "type": "object",
+  "properties": {
+    "error": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "request_error",
+            "execution_error"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "object",
+          "description": "Native protocol detail codes are carried at details.code, not error.code. Other application-neutral JSON detail fields are allowed.",
+          "properties": {
+            "code": {
+              "description": "When a native adapter supplies a protocol code, it uses this field. The portable details map itself accepts arbitrary JSON and does not require code presence."
+            }
+          },
+          "additionalProperties": true
+        },
+        "code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional registry-level code; do not invent a registered code for native errors."
+        },
+        "docsUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "message",
+        "details"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "error"
+  ],
+  "additionalProperties": false,
+  "x-schema-id": "urn:b4:agent-protocol:draft:error"
+}

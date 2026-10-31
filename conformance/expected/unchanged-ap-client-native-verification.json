@@ -1,0 +1,469 @@
+{
+  "version": 1,
+  "kind": "unchanged-ap-client-native-verification",
+  "status": "qualified_selected_original_clients_macos_arm64_scope",
+  "platform": "macos-arm64",
+  "source_commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "original_clients": {
+    "controller_methods": 11,
+    "worker_methods": 8,
+    "selected_methods": 19,
+    "core_operations": 9,
+    "groups": 8,
+    "invocations_per_run": 63,
+    "qualified_fresh_runs": 2,
+    "qualified_invocations": 126
+  },
+  "safe_summaries": [
+    "conformance/expected/unchanged-ap-client-native-run-a.json",
+    "conformance/expected/unchanged-ap-client-native-run-b.json"
+  ],
+  "comparison": "Stable consumed shapes equal. Passive accepted HTTP status for caller AbortError/signal-abort and socket cardinality are independently retained and validated for each run, without assuming repeat stability.",
+  "actual_history": {
+    "total_authorized_native_attempts": 3,
+    "total_original_factory_imports": 6,
+    "total_original_invocations": 189,
+    "qualified_final_attempts": 2,
+    "excluded_initial_attempts": 1,
+    "initial_reason": "A strict reopened-state auditor incorrectly expected an entered successful callback task to be cancelled when its execution was cancelled. Existing kernel semantics preserve the real successful task result without reducing execution values. The source-backed audit repair and copied synthetic fixture were independently reviewed before two new runs.",
+    "historical_readonly_artifact_analysis_not_counted_as_new_runs": true
+  },
+  "original_source_and_tools": {
+    "source": {
+      "commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+      "files": [
+        {
+          "path": "examples/software-factory/controller/src/lib/client.ts",
+          "gitBlob": "4dc62f501187af8156212c57730f15e528a61046",
+          "sha256": "b78f89ec1e5cb29b0a8d0ed833868805001355cada42ed7597f91d1af7a01407",
+          "bytes": 4880
+        },
+        {
+          "path": "examples/software-factory/controller/src/lib/worker/client.ts",
+          "gitBlob": "98ee0e811e91f13b6e7f6d7659db5311379bb5a4",
+          "sha256": "195282a5a01e3c7dde235711f9710745195912572037a88638261621a705f374",
+          "bytes": 10775
+        },
+        {
+          "path": "examples/software-factory/controller/src/lib/worker/wire.ts",
+          "gitBlob": "0c7696b4c0bbb0705aecbb272af40d3c3a1c8af6",
+          "sha256": "2fd6ff07389bc72477552f5cedbc4189f314a1da2d0de9d23f6ed05c52643574",
+          "bytes": 1970
+        },
+        {
+          "path": "examples/software-factory/controller/src/lib/worker/sse.ts",
+          "gitBlob": "471e351e293cd428f89d1a2e317112b94c897335",
+          "sha256": "f7bbcb5c6eec64a9fccc98f8242e53d901e4c48b5739ee15dc5b359013ad19fc",
+          "bytes": 2491
+        },
+        {
+          "path": "examples/software-factory/controller/package.json",
+          "gitBlob": "d2836575175fc979ad72a881291fdca104931304",
+          "sha256": "f2f00f3395ec0389425465d67454032e3bcdbd1ffa21093aecdfc95a8bde2a52",
+          "bytes": 1179
+        },
+        {
+          "path": "examples/software-factory/controller/tsconfig.json",
+          "gitBlob": "2b485dd21e8ab15249da95e41bfb2f158969e768",
+          "sha256": "9b8f7479c2ecb20e03288d400fb3fbd1eef37014a1b2895bcc4131812212f37a",
+          "bytes": 583
+        },
+        {
+          "path": "package.json",
+          "gitBlob": "75d1e52cf30aea7a0c41b55e9e083b421a575b39",
+          "sha256": "9f965f5b995cd43350a5793948d74a61cf1acc4454f3ba41b557d0a286a11e45",
+          "bytes": 5714
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "gitBlob": "b3f361cca058abd4029dd0e69c1e719f401963e1",
+          "sha256": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0",
+          "bytes": 625496
+        },
+        {
+          "path": "tsconfig.json",
+          "gitBlob": "4bb0f9ed220436e6205104021a82e24f6c0bf485",
+          "sha256": "71a38113db8909197e9b8c0f58502050055feab24b595285546b3e6a5449fa81",
+          "bytes": 300
+        }
+      ]
+    },
+    "tools": {
+      "node": {
+        "version": "v24.20.0",
+        "sha256": "9d050fd455b56426e25d4d603c7c501cbb2630348e836cf221dcce748e90588a"
+      },
+      "esbuild": {
+        "version": "0.28.1",
+        "sha256": "e2dc9a52440a2a34f09434a2f4843cb1e30f84e40dcf238976ec61ef8cd7f36a"
+      }
+    },
+    "packages": {
+      "zod": {
+        "version": "4.4.3",
+        "packageJsonSha256": "c630bd10b52dcf71c112a2bf78dbf2734b9db58d62de663b8d86c2ec2c8cda2e"
+      },
+      "esbuild": {
+        "version": "0.28.1",
+        "packageJsonSha256": "d55d1d19fcc5b6079e4a71dd4111340c79c682bc36835ac7058a0c364c7db58a"
+      }
+    },
+    "build": {
+      "platform": "node",
+      "format": "esm",
+      "bundle": true,
+      "charset": "utf8",
+      "minify": false,
+      "sourcemap": false,
+      "tsconfig": "examples/software-factory/controller/tsconfig.json",
+      "externalImports": [
+        "node:crypto",
+        "node:timers/promises"
+      ]
+    },
+    "source_records": 9,
+    "runtime_original_inputs": 4,
+    "runtime_zod_inputs": 79,
+    "outputs": [
+      {
+        "file": "controller-client.mjs",
+        "sha256": "c973441b9bf03b4e76172cc1961f013e309770c9aa7237ed3cb8c7a19eeade95",
+        "bytes": 3157
+      },
+      {
+        "file": "worker-client.mjs",
+        "sha256": "c8d2c47d65ed62efc98a4f359219e9ae49abcdccabd6f42ec8959d91ec0b90f6",
+        "bytes": 502955
+      }
+    ],
+    "fresh_final_builds": 2,
+    "total_offline_builds_in_increment": 4
+  },
+  "current_source_files": [
+    {
+      "path": "README.md",
+      "sha256": "e96fe9359545d6c8f544a46a70257402498b96aa6329146f293d1c4064db33d5",
+      "bytes": 42116
+    },
+    {
+      "path": "conformance/reference/client-fixture/artifacts.mjs",
+      "sha256": "2bf705c41d5144ae4c90c8d74c9d91f215ae1ce4f3625d07d24e180218be7990",
+      "bytes": 6670
+    },
+    {
+      "path": "conformance/reference/client-fixture/artifacts.test.mjs",
+      "sha256": "7a3f57083d34decb92c4cbe55b0589d0972d74b05f41fb705c5cb669d7ae11ed",
+      "bytes": 6130
+    },
+    {
+      "path": "conformance/reference/client-fixture/bundle-core.mjs",
+      "sha256": "e093d8b122cb717c471a1a3ca32b95e3a160a07b1d046fb65c480cf124f23f77",
+      "bytes": 12971
+    },
+    {
+      "path": "conformance/reference/client-fixture/bundle-errors.mjs",
+      "sha256": "49c5b8520b7c6223c8a4e39fc36d4c53fba927a8c93d751ed7d371974447cfde",
+      "bytes": 456
+    },
+    {
+      "path": "conformance/reference/client-fixture/bundle-pinned.mjs",
+      "sha256": "88879cdbe4e5b641678298a5d88200618a9e20a4b9971d766adbd4717a569f43",
+      "bytes": 4950
+    },
+    {
+      "path": "conformance/reference/client-fixture/bundle.mjs",
+      "sha256": "6aeecdf30c34963a23a61ccbc1b5445472ac0be1d9e17239d8b39ffa88a1d8ed",
+      "bytes": 3589
+    },
+    {
+      "path": "conformance/reference/client-fixture/bundle.test.mjs",
+      "sha256": "5fca2093d117c21d08ca4fb461da83891cd82c39a8c123bde98f1ba30d50cde5",
+      "bytes": 14491
+    },
+    {
+      "path": "conformance/reference/client-fixture/client-audit-unit-fixture.mjs",
+      "sha256": "69a7903f15ade1c86a787700f1afe8e02e2bfc9622c83e1da7a1cc489a485d87",
+      "bytes": 19047
+    },
+    {
+      "path": "conformance/reference/client-fixture/client-audit.mjs",
+      "sha256": "f7a0fa6123c628fe9a5180b6d946135297555ba6efb3f6819962966ce28e8f5f",
+      "bytes": 33395
+    },
+    {
+      "path": "conformance/reference/client-fixture/client-audit.test.mjs",
+      "sha256": "96e7ed149423abcef8b7851a9bf0b8f97ac280b48fd302773a5c64586c147581",
+      "bytes": 12873
+    },
+    {
+      "path": "conformance/reference/client-fixture/control.mjs",
+      "sha256": "b73f14a9342fdb48f0f8726e7c68f61e908062961d2c676d732d72927a7ab304",
+      "bytes": 10035
+    },
+    {
+      "path": "conformance/reference/client-fixture/controller-cases.mjs",
+      "sha256": "8c2a6acdc9f922ef5cc01802fa98bfb3432bed0b942bbac88e0a546830b1dcbb",
+      "bytes": 5990
+    },
+    {
+      "path": "conformance/reference/client-fixture/native-audit.mjs",
+      "sha256": "e97ac5e7a879dc40777de550995221bbbe9e04af19a9e7daf43b53dcb8884e17",
+      "bytes": 30227
+    },
+    {
+      "path": "conformance/reference/client-fixture/native-audit.test.mjs",
+      "sha256": "f7af6cb4c8bc7b931b0317944af7ba22e8b003e7669adb1994ae3eb49325aa20",
+      "bytes": 28299
+    },
+    {
+      "path": "conformance/reference/client-fixture/private-output.mjs",
+      "sha256": "f3923d1d0e9632853707fc79a4dd633797821fc10f6b99692eed746ac1302625",
+      "bytes": 3801
+    },
+    {
+      "path": "conformance/reference/client-fixture/projection.mjs",
+      "sha256": "be6abec2bee5db080a85fd5b82b7e1076aab7247755b14162e4d0e065f2d1b51",
+      "bytes": 8077
+    },
+    {
+      "path": "conformance/reference/client-fixture/projection.test.mjs",
+      "sha256": "faf28b816eb6f212042acbeed442d5de760d1b9db45d4ee929ee3e9526ee4e5a",
+      "bytes": 7788
+    },
+    {
+      "path": "conformance/reference/client-fixture/qualification-unit-fixture.mjs",
+      "sha256": "4abc536bb98baf3e5aef1772ab35a5b02974d478d0f0c69c566ea6d51cda25a5",
+      "bytes": 17948
+    },
+    {
+      "path": "conformance/reference/client-fixture/qualify.mjs",
+      "sha256": "ec0b2aa14aea153cca505958f35f2f3f1a35aa2d229db1435fa39720d6dab389",
+      "bytes": 953
+    },
+    {
+      "path": "conformance/reference/client-fixture/qualify.test.mjs",
+      "sha256": "e816a3378f5d5a5249ca6ff28d946beebc67d2a2c2ef65b24537b6daea800b38",
+      "bytes": 6280
+    },
+    {
+      "path": "conformance/reference/client-fixture/runner-cases.mjs",
+      "sha256": "6dbc6921e67432dd38afdbb5c06535c058b63292d0e2910a8b0f44394e768dd9",
+      "bytes": 1939
+    },
+    {
+      "path": "conformance/reference/client-fixture/runner-context.mjs",
+      "sha256": "d77264676a9693f8e7bd38f133541886e0204107faedb3f9576f43e418011fb9",
+      "bytes": 7876
+    },
+    {
+      "path": "conformance/reference/client-fixture/runner-support.mjs",
+      "sha256": "62d72133840725473cd07cfb2cee70d037e4f2997aef4121ceda0489f207aabd",
+      "bytes": 971
+    },
+    {
+      "path": "conformance/reference/client-fixture/runner-unit-fixture.mjs",
+      "sha256": "9e8da3d275a2828cf3f12b1064a6b6313fa0ad9f150683188394c5a980b7990d",
+      "bytes": 6406
+    },
+    {
+      "path": "conformance/reference/client-fixture/runner.mjs",
+      "sha256": "0840d42bf429c906be7d434149bd118f4c71f9463ab15f88cc6813372ff9768c",
+      "bytes": 5943
+    },
+    {
+      "path": "conformance/reference/client-fixture/runner.test.mjs",
+      "sha256": "fa5e2bbd67449166f3a3b235b6fdc994dc75e6fda7cd4cc887bc95ed57d0005a",
+      "bytes": 19071
+    },
+    {
+      "path": "conformance/reference/client-fixture/wire.mjs",
+      "sha256": "1cb02ccaeef335af810f79daf53a6a5aed8652ec1490fab623c557a39e1d57ed",
+      "bytes": 17924
+    },
+    {
+      "path": "conformance/reference/client-fixture/wire.test.mjs",
+      "sha256": "3d5018eb1c684e005b14666ec98ffbee1c06574e06480e3b0ec0b633b4c9d96b",
+      "bytes": 12989
+    },
+    {
+      "path": "conformance/reference/client-fixture/worker-cases.mjs",
+      "sha256": "26e99769c0cc6dd15caac6e1b7237fe38fca4203bf80dc4fa8068e2fc062df0b",
+      "bytes": 8725
+    },
+    {
+      "path": "crates/b4-http/examples/ap_client_support/application.rs",
+      "sha256": "ca7e3fb1fdcca303b70fbeef157a2eb375ad30d433c25042465bd9d19b753b82",
+      "bytes": 8430
+    },
+    {
+      "path": "crates/b4-http/examples/ap_client_support/capture.rs",
+      "sha256": "36f48de785314249f3d93e06ba1852cdaf615b7a68f44836b95643da4799c644",
+      "bytes": 19578
+    },
+    {
+      "path": "crates/b4-http/examples/ap_client_support/control.rs",
+      "sha256": "2bd323f95812bc56cb47fd3673dce07f534085726bc56d251fd9293dc927c196",
+      "bytes": 15893
+    },
+    {
+      "path": "crates/b4-http/examples/ap_client_support/files.rs",
+      "sha256": "1e16f3a1fc0ca2047afa268c54a6fac7403ab5c2175dabe83984326e20c4a4c5",
+      "bytes": 12006
+    },
+    {
+      "path": "crates/b4-http/examples/ap_client_support/gate.rs",
+      "sha256": "d6753a16c6476b451a0db178abd317d81daca7dcec11db5968812aef9a352d1f",
+      "bytes": 10745
+    },
+    {
+      "path": "crates/b4-http/examples/ap_client_support/mod.rs",
+      "sha256": "9f1df9a39325e8b9eda5e9ec11f534b392c4dd2caf255f88dee80239446ed5d1",
+      "bytes": 404
+    },
+    {
+      "path": "crates/b4-http/examples/ap_client_support/native_tests.rs",
+      "sha256": "a48d00a7a7b956852c215628d06a63e6c47b458d52b6dc6d4d6bb7923b800073",
+      "bytes": 13457
+    },
+    {
+      "path": "crates/b4-http/examples/ap_client_support/process.rs",
+      "sha256": "8f02fe18e9b008c7b650d5a5b8a501897ebf3fabf26086839f9d956dddea5d0c",
+      "bytes": 18798
+    },
+    {
+      "path": "crates/b4-http/examples/qualify_ap_clients.rs",
+      "sha256": "a52e9562112c136dbf3ba229d001f7ab21d422e9b887d707695fc46802efa5be",
+      "bytes": 676
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-02-unchanged-ap-client-corpus.md",
+      "sha256": "e12a1b1262e6304401118b734885661bda6dd052c156dd646d5170717492669e",
+      "bytes": 17477
+    },
+    {
+      "path": "scripts/check_contracts.py",
+      "sha256": "8586ae94ebc40d676ffb4dc95be7c5c860d2403bc0dec50d0f06eb096fd4a8d0",
+      "bytes": 35805
+    },
+    {
+      "path": "scripts/test_unchanged_ap_client_traceability.py",
+      "sha256": "f737fcdb57bbd402f0d1ce4d5657450a2c6f5a8d2e1bf707d3fd32e88f3b431a",
+      "bytes": 2705
+    },
+    {
+      "path": "spec/runtime/compatibility.md",
+      "sha256": "acf339a929fa2cb294d647ebc4d8a773104d95c7c69df56f95c7a9d0fb6ba220",
+      "bytes": 36526
+    },
+    {
+      "path": "spec/runtime/decisions/0022-unchanged-ap-client-native-corpus.md",
+      "sha256": "38a98dac6f9f80932a86fec2e05ddf4b6ea14a9dec77b4c13dd8cf40d1217c1d",
+      "bytes": 5221
+    },
+    {
+      "path": "spec/runtime/requirements.yaml",
+      "sha256": "735c20a26299553776b5153255d891a68ea131ba5c106f2e51c4e9636a842613",
+      "bytes": 321190
+    },
+    {
+      "path": "spec/runtime/unchanged-ap-client-corpus-design.md",
+      "sha256": "fab81c38e30e7142d5a53feaf51b80669877f43a37886a0ee53a4db5ba6edf12",
+      "bytes": 22275
+    },
+    {
+      "path": "spec/runtime/unchanged-ap-client-corpus-runbook.md",
+      "sha256": "12003738917a2ee2c06adec34f09a81d0d92a92d5f9e0bfab9d627d60ca59782",
+      "bytes": 11894
+    },
+    {
+      "path": "spec/runtime/unchanged-ap-client-corpus.schema.json",
+      "sha256": "3820125e67d037b47dd587ab25971a7cec0a8ee84da8dddcdf825b9ab4aab986",
+      "bytes": 33854
+    }
+  ],
+  "checks": {
+    "Rust": {
+      "top_level_passed": 844,
+      "failed": 0,
+      "historical_ignored_helpers": 3,
+      "scope": "Current macOS all-target locked/offline Rust. No Rust source changed during the private auditor repair."
+    },
+    "Node": {
+      "declarations": 221,
+      "passed": 221,
+      "failed": 0,
+      "files": 16,
+      "scope": "Explicit authored mjs test selection, including47 native artifact audit and10 qualification cases. Original factories execute only in the separately reviewed live corpus."
+    },
+    "Python": {
+      "declarations": 90,
+      "passed": 90,
+      "failed": 0
+    },
+    "format_and_strict_all_target_lint": "pass",
+    "cargo_graph": {
+      "packages": 88,
+      "external_packages": 81,
+      "old_package_ids_resolve_edges_features_targets_preserved": true,
+      "only_added_target": "qualify_ap_clients example"
+    },
+    "named_local_requirements": {
+      "existing": 338,
+      "selected_original_corpus": 8,
+      "total": 346,
+      "existence_is_not_execution": true
+    }
+  },
+  "preservation": {
+    "protected_old_files": 538,
+    "existing_old_crate_paths": 182,
+    "pinned_regular_files": 97071,
+    "pinned_symlinks": 4779,
+    "historical_build_artifacts": 385,
+    "all_protected_bytes_and_original_source_inventory_preserved": true,
+    "original_Dawn_checkout_untouched": true,
+    "dependency_and_toolchain_changes": 0
+  },
+  "boundaries": {
+    "native_evidence_limit_bytes": 25165824,
+    "client_evidence_limit_bytes": 8388608,
+    "limits_scope": "Self-inclusive disjoint serialized evidence only; runtime database, compiler/bundles and private coordinator inventories are separate. No aggregate disk/RSS/I/O bound.",
+    "socket_limit": 16,
+    "each_socket_direction_bytes": 262144,
+    "control_command_limit": 256,
+    "each_control_line_bytes": 8192,
+    "held_gate_deadline_seconds": 30,
+    "normal_physical_retirement": "Each run proves normal originalNode0, control/stderr EOF and joins, graceful native server retirement, capture accepted=retired/no loss, all held callbacks explicitly returned before deadline, Quiescent without fault, Store/application weak references absent and real fresh writer reopening."
+  },
+  "retained_counterexamples": [
+    "Default controller authentication401",
+    "Original nonempty RequiredDurable pending schema ZodError",
+    "Forced actual interrupt-ID-only grantless once/deny400grant_required",
+    "Empty resolution400invalid_request"
+  ],
+  "gates": {
+    "M0": "open",
+    "M1": "partial",
+    "M2": "partial",
+    "M3": "partial",
+    "M4": "partial",
+    "M5": "partial",
+    "M6": "not_started",
+    "CP001_through_CP009": "partial",
+    "CP010": "unresolved",
+    "release_scenarios": 56,
+    "release_scenarios_status": "not_run",
+    "core_profile": "unfrozen"
+  },
+  "limitations": [
+    "Selected original callers against finite Rust transport fixture on macOSarm64 only. Original-client Linux execution, full factory business/provider/workspace behavior, AP004, other callers and TypeScript-host parity remain outside this corpus.",
+    "Private raw HTTP/control/state/grants/IDs/origins/logs and their raw-derived digests remain private. Public summaries contain only closed allowlisted static labels, statuses, shapes, errors and bounded lifecycle facts.",
+    "Historical Linux Rust/container/diagnostics results remain separately recorded; this receipt makes no new Linux qualification claim."
+  ],
+  "review_status": {
+    "current_component_SPEC_and_nonauthor_QUALITY": "approved",
+    "exact_successor_admission_SPEC": "approved",
+    "complete_independent_actual_two_run_audit": "approved",
+    "public_support_final_review": "separate external source-bound freeze"
+  }
+}

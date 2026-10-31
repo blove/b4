@@ -1,0 +1,412 @@
+{
+  "actual_stages": {
+    "cli_all": {
+      "default_ignored": 1,
+      "failures": 0,
+      "nested_storage_probe_summaries_excluded": 2,
+      "new_twelve_repeat_credit": 0,
+      "outer_passes": 87,
+      "outer_targets": 8
+    },
+    "contracts_before_final_support": {
+      "authored_examples": 23,
+      "exit": 0,
+      "fresh_native_process_reference_client_node_caller_unit_conformance_credit": 0,
+      "local_refs": 170,
+      "named_requirement_records": 461,
+      "node_artifact_integrity_tools_executed": true,
+      "rejection_cases": 427,
+      "schemas": 20,
+      "unchanged_local_records": 338
+    },
+    "focused_green": {
+      "compiled_cli_controls_passes": 2,
+      "composition_new_execution_credit": 0,
+      "historical_compiled_cli_passes": 1,
+      "parked_compiled_cli_passes": 1,
+      "parser_passes": 4,
+      "private_startup_passes": 4,
+      "unique_new_cases": 12
+    },
+    "metadata_green": {
+      "errors": 0,
+      "failures": 0,
+      "field_mutations_completed": 10,
+      "genuine_methods_passed": 3,
+      "inventory_substitutions_completed": 5,
+      "native_credit": 0,
+      "prior_group_duplicate_id_iterations_completed": 27,
+      "subtest_detail": "inferred from passing bound ordinary bodies; no individual raw pass lines or added case credit",
+      "timed_out": false
+    },
+    "metadata_initial_red": {
+      "assertion_failure_entries": 12,
+      "empty_inventory_first_failure": 1,
+      "errors": 0,
+      "genuine_methods": 3,
+      "later_unreached_inventory_and_global_id_branches_red_credit": 0,
+      "missing_group_first_failure": 1,
+      "native_credit": 0,
+      "ten_foreign_field_subtest_failures_in_one_method": 10,
+      "timed_out": false
+    },
+    "native_initial_red": {
+      "historical_static_refusal_parent_failed": 1,
+      "later_initial_branches_retrospective_red_credit": 0,
+      "normal_seed_restart_and_real_writer_oracles_preceded_failures": true,
+      "parked_owner_adoption_parent_failed": 1
+    },
+    "parked_fixture_history": {
+      "actual_later_status": 400,
+      "cause": "Resume payload sent to RunWait route and JSON expected for SSE",
+      "corrected_clean_build_exit": 0,
+      "later_unreached_failed_attempt_retirement_credit": 0,
+      "narrow_new_fixture_only_correction": "existing Resume route and finite SSE",
+      "post_feature_parent_exit": 101,
+      "production_algorithm_failure_claim": false,
+      "whole_parent_green_passed": 1
+    },
+    "parser_green": {
+      "fresh_current_production_parser_passed": 4,
+      "new_cases_passed": 4,
+      "protected_parser_cases_passed": 9,
+      "repeat_new_credit": 0
+    },
+    "parser_initial": {
+      "clean_setup": true,
+      "controls_passed": 2,
+      "intended_argument_failures": 2,
+      "later_unreached_branches_retrospective_red_credit": 0
+    },
+    "post_support": {
+      "contracts_exit": null,
+      "final_source_binding": "external immutable acceptance after these artifacts; no selfhash",
+      "final_status_bridge": null,
+      "python_exit": null,
+      "python_methods_passed": null
+    },
+    "production_setup_history": {
+      "behavioral_red_credit": 0,
+      "compiled_executables": 8,
+      "corrected_cli_build_exit": 0,
+      "first_build_exit": 101,
+      "new_parent_missing_trait_import_errors": 3,
+      "test_execution_credit": 0
+    },
+    "python_before_final_support": {
+      "errors": 0,
+      "exit": 0,
+      "failures": 0,
+      "metadata_trio_is_included": true,
+      "native_credit": 0,
+      "ordinary_methods_passed": 117,
+      "skips": 0,
+      "timed_out": false
+    },
+    "workspace_linux_normal": {
+      "architecture": "aarch64",
+      "default_ignored": 9,
+      "failures": 0,
+      "fresh_target_verified": true,
+      "nested_storage_probe_summaries_excluded": 2,
+      "no_host_mounts": true,
+      "nonroot": true,
+      "offline": true,
+      "outer_passes": 1244,
+      "outer_targets": 109,
+      "owned_idle_container_cleanup": "completed; zero runtime-retirement inference",
+      "source_integrity_checks": 2,
+      "source_mismatches": 0,
+      "style_and_normal_checks_exits_zero": true
+    },
+    "workspace_macos_normal": {
+      "architecture": "arm64",
+      "default_ignored": 9,
+      "exit": 0,
+      "failures": 0,
+      "nested_storage_probe_summaries_excluded": 2,
+      "outer_passes": 1244,
+      "outer_targets": 109,
+      "timed_out": false
+    },
+    "workspace_style": {
+      "linux_format_exit": 0,
+      "linux_strict_lint_exit": 0,
+      "macos_format_exit": 0,
+      "macos_strict_lint_exit": 0,
+      "runtime_credit": 0
+    }
+  },
+  "behavior": {
+    "accepted_option_orders": [
+      "--demo --recover",
+      "--recover --demo"
+    ],
+    "commands": [
+      "serve",
+      "config-check"
+    ],
+    "complete": "actual Complete precedes fixed b4run_ready marker; recovered callback may still be running",
+    "config_check": "same selection/environment validation; no storage, owner, executor, data-leaf or listener acquisition; compiled callback values are constructed but never invoked",
+    "confinement_authority_added": false,
+    "default_serve": "direct serving preserved",
+    "final_parked_assertion_limit": "final completion/items/Definition/task/consumed-grant/acceptance fields; no independently retained entire final snapshot claim",
+    "fixed_resolver_tuple": {
+      "application": "native-demo",
+      "principal": "owner",
+      "tenant": "local"
+    },
+    "lost_negative": "explicit kill/reap is cleanup only, zero positive retirement credit",
+    "normal_retirement": "explicit normal work return, actual quiescence/outer-server success, relevant Weak absence where observable, normal process exit/reap and genuine next SQLite writer at actual current owner plus one",
+    "original_park": "full original view/journal preserved before original-grant Resume; only approved release runs",
+    "pending": "renewed observation only; health available and ordinary admission/readiness closed",
+    "preparation": "existing ordinary Preparing API and default bounded limits, exactly one synchronous begin after owning actual listener task",
+    "preparation_failure": "fixed b4run_preparation_failed/exit1 after normal witnessed drain; HostFault/real Server retain precedence",
+    "resume": "existing /resume route with finite SSE and exactly one expected done frame",
+    "server_result": "opaque actual result cached in supervising owner before pure trigger return; Lost retains payload/executor",
+    "signal_first": "remains a signal trigger even if shutdown later makes preparation incomplete"
+  },
+  "case_partition": {
+    "compiled_cli_controls": 2,
+    "compiled_cli_missing_definition": 1,
+    "compiled_cli_parked_recovery": 1,
+    "helpers_loops_repeats_nested_summaries_case_credit": 0,
+    "ignored_private_child_case_credit": 0,
+    "parser": 4,
+    "private_startup": 4,
+    "pure_parser_and_resolver_cases": 5
+  },
+  "classification": "NATIVE",
+  "code_bindings": [
+    {
+      "bytes": 15370,
+      "file": "crates/b4-cli/src/config.rs",
+      "sha256": "fb36cdad7e6ea231552b70dacb111832c4440a0c2ae0140ee0506a95079e5604"
+    },
+    {
+      "bytes": 2195,
+      "file": "crates/b4-cli/src/lib.rs",
+      "sha256": "8d80b25963864d8977453a12528a3520ca1b91e4ddc1900af0b3bddac21bcdc7"
+    },
+    {
+      "bytes": 16241,
+      "file": "crates/b4-cli/src/process.rs",
+      "sha256": "fff741552c2440b5e990d9edca539a81cf8e6f67626ae9e2b649e0480615dc6b"
+    },
+    {
+      "bytes": 4472,
+      "file": "crates/b4-cli/src/process_startup.rs",
+      "sha256": "4429b2e3009d15241bb5d985cbda4c76eafd20244ee9b4d40c29cb2eb8d82bc0"
+    },
+    {
+      "bytes": 9680,
+      "file": "crates/b4-cli/src/process_startup_tests.rs",
+      "sha256": "acab9e206bcf15f78c60c71bc999f494725192562a6eb0fcd7ef4935e035ffe1"
+    },
+    {
+      "bytes": 21506,
+      "file": "crates/b4-cli/src/process_startup_test_support.rs",
+      "sha256": "4cf1719a9d6627512d16560f22afc464d8611e352d3f7de09c6c163f6037df0f"
+    },
+    {
+      "bytes": 5642,
+      "file": "crates/b4-cli/src/config_recovery_tests.rs",
+      "sha256": "8ced58a132ff5d325850338530921329643bd46bf4a1885e62cc3051b0b515ad"
+    },
+    {
+      "bytes": 10829,
+      "file": "crates/b4-cli/tests/cli_startup_recovery.rs",
+      "sha256": "dc46394d0e01872bb27cc9b08f01eb22a0fa25508e910039b9422b336df32970"
+    },
+    {
+      "bytes": 18842,
+      "file": "crates/b4-cli/tests/cli_startup_missing_definition.rs",
+      "sha256": "16adfb60b9eea24880ec9d6bfef177487d218a702348e7c6f612479269713102"
+    },
+    {
+      "bytes": 4031,
+      "file": "crates/b4-cli/tests/cli_startup_controls.rs",
+      "sha256": "3a681630a037c153dfd0931ae8e534158ec3d460a1538d9eb75ad225ee4ee2f6"
+    },
+    {
+      "bytes": 8474,
+      "file": "scripts/test_cli_startup_recovery_traceability.py",
+      "sha256": "a9a6b2d7330362b9fb8bc83c1d187bed54bedaeeb902b438299f0e426695e150"
+    },
+    {
+      "bytes": 52862,
+      "file": "scripts/check_contracts.py",
+      "sha256": "cfc7027ba96b6ba2387f007eeee6d03726728c49643e7f2e73e1f01007a416b1"
+    },
+    {
+      "bytes": 433476,
+      "file": "spec/runtime/requirements.yaml",
+      "sha256": "ae57f8d7bcf532c010286622e5c9bf55720c3d437dbf70a7e6624aa9861e6210"
+    }
+  ],
+  "component": "cli-startup-recovery",
+  "design": "spec/runtime/cli-startup-recovery-design.md",
+  "increment": "cli_startup_recovery",
+  "inherited_slow_controls": {
+    "CLI_or_HTTP_dependency_added": false,
+    "added_to_normal_pass_counts": false,
+    "applicability": "exact 138 protected whole sources/Cargo plus reviewed platform/configuration context; Linux same pinned compiler context, Mac current toolchain observation and unchanged normal-workspace context; historical selected slow binary separate, no historical compiler checksum or binary-equality claim; final source recheck external",
+    "dependency_roots": [
+      "b4-sqlite",
+      "b4-runtime",
+      "b4-kernel",
+      "b4-contract"
+    ],
+    "fresh_executions": 0,
+    "names": [
+      "sqlite_eligible_4096_entry_journal_refuses_a_reserved_confinement_append",
+      "sqlite_individually_bounded_metadata_and_real_journal_cross_aggregate_nodes",
+      "sqlite_journal_4095_append_and_prior_blocked_4096_audit_have_distinct_reservations"
+    ],
+    "previous_cases_each_platform": 3,
+    "source_dependency_and_Cargo_closure_files": 138
+  },
+  "new_genuine_rust_declarations": 12,
+  "open_scope": [
+    "arbitrary_application_loading",
+    "general_actor_or_secret_reconstruction",
+    "automatic_confinement",
+    "persistent_Always",
+    "actual_confinement_deletion_reincarnation_races",
+    "full_RFC11_4",
+    "whole_startup_heap_CPU_IO_storage_or_deadline_guarantees",
+    "all_56_broad_release_scenarios",
+    "M0",
+    "CP010",
+    "fresh_TypeScript_reference_client_or_Node_caller_unit_evidence"
+  ],
+  "ordered_acceptance_tests": [
+    {
+      "file": "crates/b4-cli/src/config_recovery_tests.rs",
+      "name": "explicit_recovery_selects_distinct_serve_command_in_both_option_orders"
+    },
+    {
+      "file": "crates/b4-cli/src/config_recovery_tests.rs",
+      "name": "recovery_config_check_accepts_both_orders_without_a_serve_command"
+    },
+    {
+      "file": "crates/b4-cli/src/config_recovery_tests.rs",
+      "name": "recovery_grammar_refuses_malformed_options_before_environment_access"
+    },
+    {
+      "file": "crates/b4-cli/src/config_recovery_tests.rs",
+      "name": "recovery_selection_preserves_defaults_and_redacts_private_configuration"
+    },
+    {
+      "file": "crates/b4-cli/src/process_startup_tests.rs",
+      "name": "startup_resolver_accepts_only_the_fixed_trusted_demo_tuple"
+    },
+    {
+      "file": "crates/b4-cli/src/process_startup_tests.rs",
+      "name": "signal_during_held_recovery_keeps_ownership_until_normal_return"
+    },
+    {
+      "file": "crates/b4-cli/src/process_startup_tests.rs",
+      "name": "opaque_lost_server_during_preparation_keeps_payload_and_executor_owned"
+    },
+    {
+      "file": "crates/b4-cli/src/process_startup_tests.rs",
+      "name": "readiness_precedes_settlement_of_a_legally_accepted_recovered_callback"
+    },
+    {
+      "file": "crates/b4-cli/tests/cli_startup_recovery.rs",
+      "name": "explicit_cli_restart_adopts_the_original_park_and_resumes_only_approved_work"
+    },
+    {
+      "file": "crates/b4-cli/tests/cli_startup_missing_definition.rs",
+      "name": "explicit_cli_missing_historical_definition_refuses_after_normal_retirement"
+    },
+    {
+      "file": "crates/b4-cli/tests/cli_startup_controls.rs",
+      "name": "recovery_config_check_both_orders_validate_without_storage_or_listener_acquisition"
+    },
+    {
+      "file": "crates/b4-cli/tests/cli_startup_controls.rs",
+      "name": "explicit_empty_store_startup_preserves_empty_work_and_releases_its_real_owner"
+    }
+  ],
+  "portable_command_selections": {
+    "cli_all": [
+      "cargo",
+      "test",
+      "--locked",
+      "--offline",
+      "-p",
+      "b4-cli",
+      "--all-targets",
+      "--",
+      "--test-threads=1"
+    ],
+    "contracts": [
+      "python3",
+      "scripts/check_contracts.py"
+    ],
+    "format": [
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "lint": [
+      "cargo",
+      "clippy",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "linux_additional_selection": "private isolated fresh target directory retained in external actual argv",
+    "normal_workspace": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline",
+      "--",
+      "--test-threads=1"
+    ],
+    "python": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*.py",
+      "-v"
+    ]
+  },
+  "privacy": "Repository-relative source names, reviewed public code hashes, fixed commands/diagnostics/counts/scopes only. Private paths, captured IDs, credentials/tokens/prompts/nonces/ports/controls, raw storage/approval/journal records and private capture/row digests are externally retained only.",
+  "release_scope": "explicit_fixed_native_demo_cli_startup_recovery_only",
+  "requirement_group": "cli_startup_recovery_requirements",
+  "requirement_id": "CLI-RECOVERY-001",
+  "scoped_pass_token": "passed_explicit_native_demo_cli_macos_linux_scope",
+  "source_changes": {
+    "manifests_and_lock_unchanged": 9,
+    "native_context_files": 306,
+    "new_metadata_file": "scripts/test_cli_startup_recovery_traceability.py",
+    "new_native_files": 7,
+    "new_requirement_records": 1,
+    "old_default_select_and_shared_drain_inverses_exact": true,
+    "old_tests_helpers_all_other_native_sources_schemas_dependencies_protected": true,
+    "prior_requirement_records_preserved": 460,
+    "rust_context_files": 294,
+    "selected_old_production": [
+      "crates/b4-cli/src/config.rs",
+      "crates/b4-cli/src/lib.rs",
+      "crates/b4-cli/src/process.rs"
+    ]
+  },
+  "version": 1
+}

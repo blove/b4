@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://b4run.invalid/native/request-diagnostic-batch-v1",
+  "title": "Authored native embedding request diagnostic batch version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "diagnostic_batch_version",
+    "scope",
+    "redacted",
+    "capacity",
+    "record_loss",
+    "total_evicted_records",
+    "correlation_exhausted",
+    "records"
+  ],
+  "properties": {
+    "diagnostic_batch_version": {
+      "const": 1
+    },
+    "scope": {
+      "const": "request_boundary"
+    },
+    "redacted": {
+      "const": true
+    },
+    "capacity": {
+      "const": 256
+    },
+    "record_loss": {
+      "type": "boolean"
+    },
+    "total_evicted_records": {
+      "$ref": "#/$defs/u64"
+    },
+    "correlation_exhausted": {
+      "type": "boolean"
+    },
+    "records": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    }
+  },
+  "$defs": {
+    "u64": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_id",
+        "event",
+        "method",
+        "status_code",
+        "elapsed_ms"
+      ],
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 53,
+          "maxLength": 53,
+          "pattern": "^b4r_[0-9a-f]{32}_[0-9a-f]{16}$",
+          "allOf": [
+            {
+              "not": {
+                "pattern": "_0000000000000000$"
+              }
+            }
+          ]
+        },
+        "event": {
+          "enum": [
+            "response_ready",
+            "request_future_dropped"
+          ]
+        },
+        "method": {
+          "enum": [
+            "get",
+            "post",
+            "delete",
+            "other"
+          ]
+        },
+        "status_code": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 100,
+          "maximum": 999
+        },
+        "elapsed_ms": {
+          "$ref": "#/$defs/u64"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "response_ready"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status_code": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "request_future_dropped"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status_code": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

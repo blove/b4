@@ -1,0 +1,345 @@
+# Agent Protocol
+
+Agent Protocol is B4.run's HTTP API for threads, runs, streaming, resuming
+after a human approves something, cancelling, and reviewing memory candidates.
+Both `b4 dev` and a Node runtime started with `b4 start` serve it.
+
+## Local quickstart
+
+Start a server on a known local port:
+
+```bash
+b4 dev --port 3001
+```
+
+Requests name a route with its generated `<routeId>#<kind>` key, such as
+`/research#agent`.
+
+<Callout type="warn" title="Authenticate the entire production service">
+  B4.run execution middleware is not blanket server authentication. It covers
+  Agent Protocol `runs/wait`, `runs/stream`, and `resume`, plus the
+  `pending_interrupts` read. AG-UI route execution
+  passes through the same middleware. Thread management, state, cancellation,
+  memory-candidate management, and health routes bypass it. So before you expose
+  the service beyond your machine, put outer authentication and network
+  restrictions around all of it. Leave out only the health probe you mean to expose.
+
+  An app with a [thread-access policy](/docs/thread-access) also checks every
+  thread endpoint in the table below against the thread, and a request must pass
+  both gates. Neither gate covers the memory-candidate and health routes.
+</Callout>
+
+## Agent Protocol endpoints
+
+| Method and path | Request | Success |
+|---|---|---|
+| `POST /threads` | Optional `{ "metadata": { ... }, "workspace": { "sourceDigest", "environmentLinks"?, "baseline"? } }` body. `workspace` only with `sandbox.stagedWorkspaces`, which also bounds the body to 1 MiB | `200` thread object. `400` `workspace_not_accepted` when the app does not accept a workspace, `422` `workspace_source_not_held` (not uploaded) or `workspace_invalid`, `409` when the source was reclaimed meanwhile, `413` over 1 MiB, `429` `workspace_create_in_flight` |
+| `GET /threads/:thread_id` | None | `200` thread object, or `404` when absent |
+| `DELETE /threads/:thread_id` | None | `204`. Deletes the thread metadata, supported checkpoints, and sandbox, in that order |
+| `GET /threads/:thread_id/state` | None | `200 { config, created_at, metadata, next, parent_config, values }`, or `404` without a checkpoint |
+| `GET /threads/:thread_id/pending_interrupts` | None | `200 { "interrupts": [...] }`. `404` `thread_not_found`. `409` `thread_route_unknown` when no route is recorded |
+| `POST /threads/:thread_id/workspace/inspect` | Optional `{ "root", "excludeRootDirectories", "expectedRootSymlinks", "ignorePrefixes", "maxEntries", "maxFileBytes", "maxTotalBytes" }` | `200 { threadId, sourceDigest, intentDigest, root?, inspection }`. Only with `sandbox.workspaceRead: "http"` and a thread-access policy. `409` `run_in_flight` or `workspace_changed`, `422` `workspace_root_missing`, `413` over 64 KiB, `504` `workspace_read_timeout` |
+| `PUT /workspace/sources/:digest` | A `SourceBundle` whose `digest` is the path's | `201 { digest, status: "created" }` or `200 { digest, status: "held" }`. Only with `sandbox.stagedWorkspaces` and a thread-access policy. `400` `digest_mismatch`, `422` `workspace_source_invalid`, `413` over `maxUploadBytes`, `408` `upload_timeout` past `uploadTimeoutMs`, `422` `workspace_uploader_invalid` when the policy's stamp cannot be kept, `429` `upload_in_flight`, `507` `staged_quota_exceeded` |
+| `POST /threads/:thread_id/runs/wait` | `{ "route": "<routeId>#<kind>", "input": { ... } }` | `200` final state JSON, or `null` when the route returned nothing. `500` naming the route when its output isn't JSON-serializable |
+| `POST /threads/:thread_id/runs/stream` | Same run body | `200 text/event-stream` |
+| `GET /threads/:thread_id/runs/stream` | None | `200 text/event-stream` (reattach). `404` `thread_not_found`. `409` `thread_route_unknown` when no route is recorded |
+| `POST /threads/:thread_id/resume` | `{ "resume": [...], "route": "<routeId>#<kind>" }` with no other keys | `200 text/event-stream` continuation |
+| `POST /threads/:thread_id/cancel` | No body | `200 { "thread_id", "status": "interrupted" }`. `404` unknown thread. `409` no active run |
+| `GET /memory/candidates` | None | `200 { "candidates": [...] }` |
+| `POST /memory/candidates/:id/approve` | No body | `200 { "record", "action", "superseded" }` |
+| `POST /memory/candidates/:id/reject` | No body | `200 { "ok": true }` |
+
+A run body needs `route`. `input` is optional and defaults to `{}`. A route id
+without `#<kind>` isn't a registered assistant id, so it returns `404`.
+B4.run's dev, Node, and Hono HTTP runtimes all use this `{ route, input }` body.
+LangSmith uses its own, keyed by `assistant_id`.
+
+## Thread lifecycle with curl
+
+Let's create a thread, run a route and wait for it, then read the latest
+checkpoint. We'll use `jq` to pull out the thread id:
+
+```bash
+BASE_URL=http://127.0.0.1:3001
+
+THREAD_ID=$(curl -sS -X POST "$BASE_URL/threads" \
+  -H 'content-type: application/json' \
+  -d '{}' | jq -r '.thread_id')
+
+curl -sS -X POST "$BASE_URL/threads/$THREAD_ID/runs/wait" \
+  -H 'content-type: application/json' \
+  -d '{
+    "route": "/research#agent",
+    "input": {
+      "messages": [{ "role": "user", "content": "Explain checkpoints briefly." }]
+    }
+  }'
+
+curl -sS "$BASE_URL/threads/$THREAD_ID/state"
+```
+
+A run creates the thread if it doesn't exist yet. Create it yourself when you
+need metadata or want to set it up before running anything.
+
+## Streaming over SSE
+
+`runs/stream` and `resume` return Server-Sent Events. The `event:` line is the
+chunk type, and the `data:` line is the chunk payload as plain JSON:
+
+```text
+event: chunk
+data: "partial text"
+
+event: tool_call
+data: {"id":"call-1","name":"search","input":{"query":"B4.run"}}
+
+event: done
+data: {"output":{"messages":[]}}
+```
+
+While a stream is quiet, B4.run sends this SSE comment every 15 seconds by
+default. SSE clients ignore it, and proxies see the connection is still alive:
+
+```text
+: ping
+```
+
+## Interrupt and resume
+
+When a run pauses for a permission, it sends an `interrupt` event with the
+`interruptId` and the permission details:
+
+```text
+event: interrupt
+data: {"interruptId":"perm-abc123","type":"permission-request","kind":"command","detail":{"command":"ls","suggestedPattern":"ls"}}
+```
+
+Answer every pending interrupt on the root thread in one request:
+
+```bash
+curl -N -X POST "$BASE_URL/threads/$THREAD_ID/resume" \
+  -H 'content-type: application/json' \
+  -d '{
+    "resume": [
+      { "interruptId": "perm-abc123", "status": "resolved", "payload": "once" },
+      { "interruptId": "perm-def456", "status": "cancelled" }
+    ],
+    "route": "/research#agent"
+  }'
+```
+
+The rules for this body:
+
+- It takes `resume` and `route`, and nothing else.
+- A resolved entry takes `interruptId`, `status`, and a `payload` of `"once"`, `"always"`, or `"deny"`.
+- A cancelled entry takes only `interruptId` and `status`, and counts as a denial.
+- The array lists every pending interrupt id once. A stale, partial, duplicate, or extra set returns `409`.
+- Interrupts from nested subagents are answered through the root thread.
+- The old `{ interrupt_id, decision }` form returns `400`.
+
+Only one Agent Protocol or AG-UI resume can answer a thread's pending prompts
+at a time. The resume claim is acquired before the run registry, so a concurrent
+resume returns `409` with `error.details.code` set to `resume_in_progress`.
+Anything else that tries to start work while the thread is busy gets
+`run_in_flight`.
+
+`route` is required in the body, but it usually doesn't pick the route. B4.run
+looks in the in-process thread-route map first, then persisted thread metadata.
+The body route is the last fallback. So changing it does not redirect a parked
+thread while either recorded route exists.
+
+### Recovering prompts without a live stream
+
+After a page reload, a client has no stream to read the `interrupt` event
+from. `GET /threads/:thread_id/pending_interrupts` returns the prompts still
+waiting on a thread, so you can show the permission UI again:
+
+```bash
+curl -sS "$BASE_URL/threads/$THREAD_ID/pending_interrupts"
+# {"interrupts":[{"interruptId":"perm-abc123","resumeKey":"...","value":{...}}]}
+```
+
+`value` is the interrupt payload as the checkpoint stores it. For a permission
+prompt, that's `{ interruptId, type, kind, detail }`, matching the `interrupt`
+event, except that a subagent's prompt carries a `callId` on the wire and not in
+the stored copy. `resumeKey` is the checkpoint write's key, or `null`. Clients
+refer to prompts by `interruptId`.
+
+A thread with nothing waiting returns `200` with an empty array. Responses carry
+`cache-control: no-store`, because the checkpoint can change at any moment.
+
+Answer the prompts with the same `POST /threads/:thread_id/resume` body as
+above, `{ resume, route }`. `route` is required even though the server prefers
+the route it recorded. If a reloaded client has lost the route, it can read
+`metadata.route` from `GET /threads/:thread_id`. That's the route key recorded
+at the start of every run on the thread.
+
+This endpoint checks access against the route that *parked* the interrupts,
+which the caller can't change. B4.run records it as `metadata.parked_route`
+when a turn parks and clears it once the last prompt is answered. Why not the
+last-run route? A caller allowed to run a cheaper route could start a run, move
+the thread's route, and read a prompt that route never raised. With no parked
+route, the check falls back to the in-process map, then `metadata.route`.
+
+A thread with none of those (usually one that was created but never run)
+returns `409` with `error.details.code` set to `thread_route_unknown`. So does a
+thread whose recorded route is no longer registered, without naming that route.
+An unknown thread returns `404` with `thread_not_found`.
+
+## One run at a time per thread
+
+B4.run allows one active run per thread. An ordinary run-slot collision (a
+second `runs/wait` or `runs/stream`, or a resume while another run is going)
+returns `409` with `error.details.code` set to `run_in_flight`. A second resume
+at the same time returns `resume_in_progress`, because of the resume claim above.
+The run registry lives in memory and is process-local, so this only holds
+within one process.
+
+To cancel the active run:
+
+```bash
+curl -sS -X POST "$BASE_URL/threads/$THREAD_ID/cancel"
+# {"status":"interrupted","thread_id":"..."}
+```
+
+Cancel returns `404` with `thread_not_found` for an unknown thread, and `409`
+with `no_run_in_flight` when the thread exists on this process but nothing is
+running. Cancelling keeps the checkpointed state, with no rollback.
+
+How a cancelled run reports it depends on the endpoint. A cancelled SSE run or
+resume ends the stream with:
+
+```text
+event: done
+data: {"output":{"cancelled":true}}
+```
+
+A cancelled `runs/wait` hasn't sent a response yet, so it returns `409` with
+`error.details.code` set to `run_cancelled`. A route failure, on the other hand,
+ends a stream with a `done` payload containing `output.error`.
+
+### `interrupted` covers cancelled and parked
+
+`GET /threads/:thread_id` reports `status: "interrupted"` for a run stopped by
+`POST /threads/:thread_id/cancel`, and also for a turn waiting on a person. Use
+`pending_interrupts` to tell them apart. A non-empty `interrupts` array means
+the thread is waiting on a person. An empty one means the run was cancelled or
+the prompts were already answered.
+
+The streaming endpoints `runs/stream` and `resume` set the parked status.
+`runs/wait` returns its thread to `"idle"` even when its turn parks, so after a
+`runs/wait`, check `pending_interrupts` rather than the thread status.
+
+## Client disconnect
+
+When a `runs/stream`, `runs/wait`, or `resume` client disconnects, the run
+keeps going. To stop it, call `POST /threads/:thread_id/cancel`. Shutting down
+the server also stops active work. A client that reconnects rejoins the run with
+`GET /threads/:thread_id/runs/stream` (below), so there's no need to poll
+`GET /threads/:thread_id/state`.
+
+Run admission and cancel are process-local. So a service with several replicas
+must send every request for a thread to the same process, or coordinate runs
+and cancels across processes itself. Shared Postgres stores keep the data
+durable, but they don't do that coordination.
+
+## Reattaching to a running turn
+
+`GET /threads/:thread_id/runs/stream` is a read-only copy of the `POST`
+stream. A client that dropped off (after a reload, a network blip or a sleeping
+laptop) rejoins with no request body and cancels nothing, so a stock
+`EventSource` can read it.
+
+It needs thread-access `read`, plus middleware approval for every recorded route
+whose content it shows: the live run's route, its anchor, and the parked and
+last-run routes. That set is fixed before middleware runs. Which route owns a
+checkpoint comes from metadata the runtime writes for that checkpoint ID
+(including verified routes from earlier turns), never from client-written
+thread metadata.
+
+A checkpoint whose origin B4.run can't verify, including one from an older
+version, fails closed with `409 thread_route_unknown`. Running another turn
+won't fix it, so start a fresh thread. B4.run never deletes checkpoints or
+thread history on its own.
+
+Reattaching gives you the current **state**. There's no event log, so there are
+no cursors, no `Last-Event-ID`, and no retention window. Every reconnect gets a
+fresh snapshot, so a client recovers from any failure by reconnecting. The stream always opens with one `event: state` frame (a B4.run
+addition to the Agent Protocol wire format). It carries `status`, `values`
+(channel values), `interrupts`, and, when a turn is streaming in this process,
+the turn's frames so far:
+
+```text
+event: state
+data: {"status":"busy","live":true,"anchor":"<checkpoint_id>","run_started_at":"<ISO>",
+       "resume":false,"values":{...},"input":{...},"turn":[...],"interrupts":[]}
+```
+
+- **A turn is running (`live: true`):** `values` is the checkpoint at `anchor`
+  (the moment the run started), and `turn` holds the turn's merged frames so
+  far. Then the live frames follow: the same `chunk`, `tool_call`,
+  `tool_result`, `interrupt` and capability frames the `POST` stream sends,
+  ending with the turn's own `done`. `interrupts` is always `[]` here, since a
+  running turn isn't parked. During a `resume` turn, `resume` is `true`, and the
+  client must leave `input` out of the transcript. If the in-memory buffer
+  overflowed, `turn` is `null` and `turn_truncated: true` is set. Reconnect for
+  a fresh snapshot.
+- **Nothing is running (`live: false`):** `values` is the latest checkpoint,
+  `interrupts` holds the parked prompts with their `value`, and the stream sends
+  a `retry:` hint and `event: done` `{"output":null}` before closing. This path
+  reads from the checkpoint, so it works across restarts, replicas, and
+  serverless. The live frames are best-effort, and only the process running the
+  turn has them.
+
+Clients **must** treat `done` and `detached` as the end of the stream.
+Cancelling the response body or aborting the request disconnects the viewer and
+leaves the run going. A viewer that falls behind until its queue fills is
+detached with `{"reason":"overflow"}`. Heartbeats wait for the client to catch up.
+
+Two fixed limits protect the in-memory buffer:
+
+- Each thread's turn buffer holds up to 2 MiB. On overflow, B4.run drops the
+  whole buffer, and the snapshot falls back to values plus the live frames.
+- Each thread serves up to 16 viewers at once. The 17th gets
+  `event: detached` `{"reason":"capacity"}` and closes.
+
+Neither limit affects the durable snapshot or cancellation.
+
+## Review memory candidates
+
+`GET /memory/candidates` lists candidates from every memory namespace.
+Approving one checks it against existing records with the same identity and
+reports an `action` of `activated`, `superseded`, or `deduped`. It returns `404`
+for a missing record and `409` when the record isn't a candidate. Rejecting a
+candidate deletes it.
+
+The list spans namespaces, and approve and reject are destructive. All three
+routes bypass B4.run execution middleware. Add outer authentication,
+tenant authorization, and audit logging before you expose them beyond your own
+machine.
+
+## Production topology
+
+The Node runtime serves the same API. For production, you'll also set up
+durable stores, outer authentication, network policy, health checks, and
+coordination between replicas.
+See [Production Topology](/docs/production-topology),
+[Persistence and Tenancy](/docs/persistence), and
+[Security Architecture](/docs/security-architecture).
+
+## AG-UI is a different client surface
+
+AG-UI uses `POST /agui/{routeId}` with an encoded assistant id and an AG-UI
+`RunAgentInput`, and turns B4.run chunks into AG-UI events. It handles
+disconnects the other way around: the run stops when its viewer disconnects,
+and there's no event replay. See [AG-UI and Web Clients](/docs/ag-ui) for that
+endpoint and lifecycle.
+
+## Related
+
+<RelatedCards items={[
+  { href: "/docs/dev-server", title: "Dev Server", subtitle: "start, restart, and inspect the local runtime" },
+  { href: "/docs/middleware", title: "Middleware", subtitle: "gate route execution and pass request context to tools" },
+  { href: "/docs/recipes/stream-output", title: "Stream Output", subtitle: "consume Agent Protocol SSE in an application" },
+  { href: "/docs/permissions", title: "Permissions", subtitle: "configure the decisions carried by resume entries" },
+]} />

@@ -1,0 +1,11 @@
+{
+  "route": "/approval#agent",
+  "resume": [
+    {
+      "interruptId": "interrupt-example",
+      "status": "resolved",
+      "payload": "once",
+      "grant": "b4ag_example_unissued"
+    }
+  ]
+}

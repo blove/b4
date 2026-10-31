@@ -1,0 +1,305 @@
+{
+  "receipt_version": 1,
+  "status": "passed_native_cooperative_callback_scope",
+  "scope": "Optional Rust callback control and exact durable explicit-cancellation notification; no broad core-profile or release closure.",
+  "design": "spec/runtime/native-cooperative-cancellation-design.md",
+  "plan": "docs/superpowers/plans/2026-10-02-native-cooperative-cancellation.md",
+  "qualification": {
+    "macos": {
+      "os": "macOS",
+      "architecture": "arm64",
+      "rust_entries_passed": 888,
+      "cargo_targets_completed": 88,
+      "failed": 0,
+      "historical_helper_ignores": 3,
+      "nested_child_results_excluded": 2,
+      "fmt": "passed",
+      "strict_clippy": "passed",
+      "locked_offline": true,
+      "exact_current_sources": true,
+      "portable_controlled_entries": 15,
+      "native_api_entries": 20,
+      "authenticated_tcp_entries": 9,
+      "frozen_ap_example_entries": 30
+    },
+    "linux": {
+      "os": "Linux",
+      "architecture": "aarch64",
+      "rust_entries_passed": 888,
+      "cargo_targets_completed": 88,
+      "failed": 0,
+      "historical_helper_ignores": 3,
+      "nested_child_results_excluded": 2,
+      "fmt": "passed",
+      "strict_clippy": "passed",
+      "locked_offline": true,
+      "exact_current_sources": true,
+      "portable_controlled_entries": 15,
+      "native_api_entries": 20,
+      "authenticated_tcp_entries": 9,
+      "frozen_ap_example_entries": 30
+    },
+    "python_tests_passed": 93,
+    "native_rust_harness_entries": 44,
+    "distinct_new_rust_declarations": 42,
+    "distinct_http_semantic_declarations": 23,
+    "fixture_regression_declarations": 4,
+    "shared_gate_declarations_compiled_in_both_http_targets": 2,
+    "subset_and_historical_runs_not_added": true
+  },
+  "source_preservation": {
+    "previously_authored_protected_files_exact": 580,
+    "previous_crate_paths_checked": 191,
+    "selected_existing_crate_files_changed": 5,
+    "current_crate_paths_verified": 203,
+    "manifest_lock_dependency_feature_changes": 0,
+    "package_graph": 88,
+    "external_packages": 81,
+    "old_tests_schemas_examples_and_original_client_sources_exact": true
+  },
+  "requirements": {
+    "historical_group_preserved": 338,
+    "unchanged_client_group_preserved": 8,
+    "new_native_group_declared": 15,
+    "groups_counted_separately": true,
+    "named_existence_is_not_execution": true
+  },
+  "source_reviews": {
+    "portable_api": "accepted",
+    "http_wiring": "accepted",
+    "independent_qualifier": "accepted",
+    "traceability_hook": "accepted"
+  },
+  "qualified_lanes": [
+    {
+      "lane": 1,
+      "name": "durable_before_observation",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "durable_signal_waits_for_store_return_and_acknowledgement_completion"
+        }
+      ]
+    },
+    {
+      "lane": 2,
+      "name": "acknowledged_cancellation",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "accepted_durable_cancel_notifies_entered_native_callback"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "exact_thread_claim_and_capacity_reuse_follow_actual_acknowledgement_commit"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_accepted_cancel_notifies_without_releasing_callback_ownership"
+        }
+      ]
+    },
+    {
+      "lane": 3,
+      "name": "two_physical_barriers",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "durable_signal_waits_for_store_return_and_acknowledgement_completion"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "exact_thread_claim_and_capacity_reuse_follow_actual_acknowledgement_commit"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_callback_and_completion_barriers_retain_writer_until_positive_retirement"
+        }
+      ]
+    },
+    {
+      "lane": 4,
+      "name": "real_cancellation_failure",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "failed_and_refused_durable_cancellation_never_publish_native_signal"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "actual_sqlite_busy_write_failure_keeps_original_observer_clear"
+        }
+      ]
+    },
+    {
+      "lane": 5,
+      "name": "healthy_refusals",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "initial_and_renewed_policy_denial_leave_signal_and_authority_unchanged"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "failed_and_refused_durable_cancellation_never_publish_native_signal"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "stable_approval_park_and_no_local_target_are_not_signal_domains"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "prior_sqlite_owner_unfinished_native_attempt_is_not_a_local_signal_target"
+        }
+      ]
+    },
+    {
+      "lane": 6,
+      "name": "stale_and_successor",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "stale_cancellation_cannot_notify_original_or_successor_callback"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "accepted_observer_remains_sticky_and_successor_has_fresh_signal"
+        }
+      ]
+    },
+    {
+      "lane": 7,
+      "name": "viewer_and_cancel_abandonment",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_abandoned_viewers_keep_signal_clear_and_real_result_owned"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_abandoned_admitted_cancel_completes_at_both_store_boundaries"
+        }
+      ]
+    },
+    {
+      "lane": 8,
+      "name": "late_genuine_outcomes_and_retry",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "late_genuine_outcomes_keep_durable_evidence_without_reducer_or_later_batch"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "acknowledged_completion_retries_retain_outcome_without_callback_replay"
+        }
+      ]
+    },
+    {
+      "lane": 9,
+      "name": "false_acknowledgement",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "false_and_foreign_native_acknowledgements_fault_without_task_cancellation"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "false_ack_during_pending_never_publishes_after_later_store_success"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_false_acknowledgement_retires_physical_owners_with_false_observer_clones"
+        }
+      ]
+    },
+    {
+      "lane": 10,
+      "name": "post_acceptance_late_fault",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "post_acceptance_sibling_fault_cannot_revoke_positive_acknowledgement"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_late_sibling_fault_preserves_single_cancelled_terminal_and_known_acknowledgement"
+        }
+      ]
+    },
+    {
+      "lane": 11,
+      "name": "shutdown_separation",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_ordinary_shutdown_retains_callback_without_cancel_intent_or_resources_in_observers"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_callback_and_completion_barriers_retain_writer_until_positive_retirement"
+        }
+      ]
+    },
+    {
+      "lane": 12,
+      "name": "observer_clone_resource_proof",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_callback_and_completion_barriers_retain_writer_until_positive_retirement"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_abandoned_viewers_keep_signal_clear_and_real_result_owned"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_ordinary_shutdown_retains_callback_without_cancel_intent_or_resources_in_observers"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_false_acknowledgement_retires_physical_owners_with_false_observer_clones"
+        }
+      ]
+    },
+    {
+      "lane": 13,
+      "name": "old_api_guard_parent_scope",
+      "tests": [
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation.rs",
+          "name": "accepted_durable_cancel_notifies_entered_native_callback"
+        },
+        {
+          "file": "crates/b4-http/tests/native_cooperative_cancellation_tcp.rs",
+          "name": "tcp_accepted_cancel_notifies_without_releasing_callback_ownership"
+        }
+      ]
+    }
+  ],
+  "physical_evidence": [
+    "Actual callback and acknowledgement-completion holds retain runtime ownership and the SQLite writer lock.",
+    "Positive callback return, fenced completion and normal producer/server drainage precede reuse.",
+    "Retained true and false observer clones survive Weak Store/application absence and actual SQLite writer reopen with advanced owner generation and readiness.",
+    "No abort, deadline expiry, forced process cleanup or container teardown is used as a positive runtime-retirement witness."
+  ],
+  "trust_boundary": "Native callbacks must stop their owned work before acknowledging cancellation; detached application work is not discovered or sandboxed by this API.",
+  "unchanged_original_client_evidence": {
+    "receipt": "conformance/expected/unchanged-ap-client-native-verification.json",
+    "scope": "Previously frozen macOS original-client qualification, preserved without rerun.",
+    "node_tests_previously_passed": 221,
+    "not_current_native_feature_execution": true
+  },
+  "remaining": {
+    "broad_release_scenarios_not_run": 56,
+    "CP010": "unresolved",
+    "M0": "open",
+    "M5": "partial",
+    "core_profile": "unfrozen",
+    "automatic_startup_recovery": "open",
+    "always_permissions": "open",
+    "native_chunk_publication": "open",
+    "new_original_client_or_release_packaging_claim": false
+  }
+}

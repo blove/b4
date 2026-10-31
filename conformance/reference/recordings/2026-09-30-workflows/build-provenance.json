@@ -1,0 +1,39 @@
+{
+  "format_version": 1,
+  "pinned_commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "lockfile_sha256": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0",
+  "source_checkout": "isolated clone from existing local Git objects; original checkout unchanged",
+  "node": "v24.20.0",
+  "pnpm": "10.33.0",
+  "install": {
+    "command": "pnpm install --frozen-lockfile --ignore-scripts",
+    "exit_code": 0,
+    "workspace_projects": 32,
+    "packages": 1626,
+    "lifecycle_scripts": false
+  },
+  "build": {
+    "full_workspace": {
+      "command": "CI=1 TURBO_TELEMETRY_DISABLED=1 pnpm build",
+      "exit_code": 1,
+      "tasks_succeeded": 25,
+      "tasks_total": 28,
+      "limitation": "Three web/inspector builds need helper ports unavailable in this execution environment; CLI and runtime dependencies compiled successfully from the clean pinned checkout."
+    },
+    "runtime_dependency_graph": {
+      "command": "CI=1 TURBO_TELEMETRY_DISABLED=1 pnpm build --filter=@b4run/cli...",
+      "exit_code": 0,
+      "tasks_succeeded": 13,
+      "tasks_total": 13,
+      "cache_provenance": "Outputs/cache created in the same isolated clean pinned build; no outputs copied from original checkout."
+    }
+  },
+  "capture": {
+    "command": "node conformance/reference/fixture/capture.mjs --reference-root <pinned-checkout> --output <new-recording-directory>",
+    "exit_code": 0,
+    "tracked_sources_unchanged": true,
+    "recording_sha256": "2485bb8a5404c2cd0af3e28a898de1afcc432b0fdee733919143ef72d1a08a16",
+    "external_fetch_attempts": 0
+  },
+  "scope": "Pinned runtime dependency graph and in-process Fetch fixture; not whole TypeScript monorepo validation."
+}

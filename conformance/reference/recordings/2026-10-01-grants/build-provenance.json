@@ -1,0 +1,56 @@
+{
+  "format_version": 1,
+  "pinned_commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "lockfile_sha256": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0",
+  "source_checkout": "Fresh isolated clone from local Git objects using --no-hardlinks --no-checkout, followed by detached checkout of the exact pin; no source or build files from the original working tree reused.",
+  "tracked_sources_unchanged_before_and_after_capture": true,
+  "source_status_after_build_and_both_captures": "clean",
+  "node": "v24.20.0",
+  "pnpm": "10.33.0",
+  "install": {
+    "command": "pnpm --filter @b4run/cli... install --frozen-lockfile --ignore-scripts",
+    "exit_code": 0,
+    "selected_workspace_projects": 12,
+    "workspace_projects_total": 32,
+    "packages": 1320,
+    "lifecycle_scripts": false,
+    "log_file": "install.log",
+    "log_sha256": "d557a5e1b2385c7e8827972e582c198216a6ef23c9dff4cf44a089027d9f44e2",
+    "initial_offline_attempts": "Full install lacked @mdx-js/loader 3.1.1 and scoped install lacked @ag-ui/core 0.0.59 tarballs; authorized frozen-lockfile restoration completed in the same isolated tree."
+  },
+  "build": {
+    "command": "CI=1 TURBO_TELEMETRY_DISABLED=1 pnpm build --filter=@b4run/cli... --force",
+    "exit_code": 0,
+    "tasks_succeeded": 13,
+    "tasks_total": 13,
+    "cache_hits": 0,
+    "log_file": "build.log",
+    "log_sha256": "eaa98f50b7cc5799238e3a441f52f7bb2b9cdf7a35325847f0fbf7cc5c557923",
+    "provenance": "All selected package outputs compiled from clean pinned sources in this isolated tree. No original checkout or historical runtime output copied."
+  },
+  "capture": {
+    "command": "env -i PATH=<node-bin>:/usr/bin:/bin TMPDIR=/private/tmp node conformance/reference/grant-fixture/capture.mjs --reference-root <fresh-pinned-checkout> --output <new-recording-directory>",
+    "exit_codes": [
+      0,
+      0
+    ],
+    "transport": "in_process_fetch",
+    "provider_calls_per_capture": 0,
+    "external_fetch_attempts_per_capture": 0,
+    "observations_per_capture": 39,
+    "runtime_artifact_files": 385,
+    "runtime_inventory_sha256": "71e2663947013ddf3dbac74abcc1465b1364ae946a33256a2807c8ec35163018",
+    "inventory_observation_timing": "Before actual runtime import and checked after complete capture; same inventory across fresh repeat.",
+    "recording_sha256": "d65a81878bcf0a88b12e746f92a0baa62beaafc7b2f8a0c358293c80e433e8a0",
+    "repeat_recording_sha256": "3f6ccea87a5baa63405256348939b6ce9c5fe71e1678315a5f420a1d3fe7ef03"
+  },
+  "original_checkout": {
+    "path": "/Users/blove/repos/dawn",
+    "head_before_and_after": "260920ca2b6bf13ddd15839f6e9ec32ba4c90b3a",
+    "preexisting_status_preserved": [
+      " M .gitignore",
+      "?? docs/superpowers/specs/2026-08-09-server-controlled-data-exploration-requirements.md"
+    ]
+  },
+  "scope": "Scoped pinned runtime build and actual Agent Protocol required-grant paths with deterministic in-process model. No whole-TypeScript-workspace, TCP transport, real-provider or whole-protocol parity claim."
+}

@@ -1,0 +1,45 @@
+{
+  "format_version": 1,
+  "pinned_commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "lockfile_sha256": "46be0b081db024914c6da5d861c9416392abeea3bd44cbc10b6fba0840494ca0",
+  "node": "v24.20.0",
+  "source_checkout": "/private/tmp/b4run-grant-reference-8acac534",
+  "source_state_before_and_after_both_captures": "clean tracked and untracked source status",
+  "build_reuse": {
+    "prior_provenance": {
+      "file": "conformance/reference/recordings/2026-10-01-grants/build-provenance.json",
+      "path_base": "repository_root",
+      "sha256": "31ed6674ebe98b31dffddffc5ccb777ad2120d0ead7ca7140ffb441ff2f38423"
+    },
+    "build_command": "CI=1 TURBO_TELEMETRY_DISABLED=1 pnpm build --filter=@b4run/cli... --force",
+    "tasks_succeeded": 13,
+    "tasks_total": 13,
+    "cache_hits": 0,
+    "claim": "No new install or build performed; reuse of documented clean-source freshly compiled scoped runtime after exact full 385-file hash/inventory equality before import and after each capture. Prior install/build logs remain retained at their original paths.",
+    "inventory_sha256": "71e2663947013ddf3dbac74abcc1465b1364ae946a33256a2807c8ec35163018"
+  },
+  "capture": {
+    "command": "env -i PATH=<Node24.20.0-bin>:/usr/bin:/bin TMPDIR=/private/tmp node conformance/reference/lifecycle-fixture/capture.mjs --reference-root <pinned-build> --output <new-output>",
+    "transport": "in_process_fetch",
+    "fresh_applications_and_databases_per_capture": 2,
+    "requests_per_capture": 77,
+    "assertions_per_capture": 11,
+    "deterministic_model_calls_per_capture": 1,
+    "provider_calls_per_capture": 0,
+    "external_fetch_attempts_per_capture": 0,
+    "fixture_revision": "02ffc63f5b852f2525c68b2f45720b9afabb95715b1d4d813163e0700e75715a",
+    "canonical": {
+      "file": "lifecycle-observations.json",
+      "sha256": "e1c45cc4f935c29875e82494870189de4ec8e69dd21b0e7b5fe11660bdc03818",
+      "log_file": "capture.log",
+      "log_sha256": "5981bc709711ebd1d417cc133d8870a331524855138b9f8b5e65dee73ff92047"
+    },
+    "repeat": {
+      "file": "repeat/lifecycle-observations.json",
+      "sha256": "ed28a82a75406fc5721ec26dd26652ac98eedd7e66b84f7eca18801708e0d592",
+      "log_file": "repeat/capture.log",
+      "log_sha256": "c2658fe3c480bcf5325f339ead778f04ba516847198e9d439ce840c24fcd09fa"
+    }
+  },
+  "scope": "Selected actual Fetch lifecycle/state/attachment behavior under declared owner-policy and separate ungated profiles. No new full upstream build, TCP, abrupt crash, native parity or automatic recovery claim."
+}

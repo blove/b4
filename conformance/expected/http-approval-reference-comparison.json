@@ -1,0 +1,97 @@
+{
+  "receipt_version": 1,
+  "evidence_class": "selected_native_reference_comparison",
+  "verified_at_utc": "2026-10-01T18:53:33.357337+00:00",
+  "passed": true,
+  "reference_commit": "8acac534ba6eb960b34de217b0da45b8405023af",
+  "workflow": {
+    "recording": "conformance/reference/recordings/2026-09-30-workflows/workflow-observations.json",
+    "sha256": "2485bb8a5404c2cd0af3e28a898de1afcc432b0fdee733919143ef72d1a08a16",
+    "cases_matched": 24,
+    "case_ids": [
+      "wait-input-omitted",
+      "stream-input-omitted",
+      "wait-input-null",
+      "stream-input-null",
+      "wait-input-string",
+      "stream-input-string",
+      "wait-input-number",
+      "stream-input-number",
+      "wait-input-boolean",
+      "stream-input-boolean",
+      "wait-input-array",
+      "stream-input-array",
+      "wait-input-object",
+      "stream-input-object",
+      "wait-void",
+      "stream-void",
+      "wait-zero",
+      "stream-zero",
+      "wait-false",
+      "stream-false",
+      "wait-empty",
+      "stream-empty",
+      "wait-fail",
+      "stream-fail"
+    ],
+    "fields_compared": [
+      "HTTP status",
+      "JSON wait body",
+      "content-type media type (charset ignored)",
+      "ordered SSE event names and decoded JSON data"
+    ]
+  },
+  "required_grants": {
+    "recording": "conformance/reference/recordings/2026-10-01-grants/grant-observations.json",
+    "sha256": "d65a81878bcf0a88b12e746f92a0baa62beaafc7b2f8a0c358293c80e433e8a0",
+    "fixture_revision": "594dc74a1a8fc723164aadea2241be8d708e07c69bfc5aff0d798b9ab4a05edd",
+    "status_comparisons": 14,
+    "case_ids": [
+      "once.resume-missing",
+      "once.resume-malformed",
+      "once.resume-wrong",
+      "once.resume-wrong-id",
+      "pair.resume-incomplete",
+      "pair.resume-one-invalid",
+      "pair.resume-accepted",
+      "pair.resume-replay",
+      "once.resume-accepted",
+      "once.resume-replay",
+      "deny.resume",
+      "deny.resume-replay",
+      "cancelled.resume",
+      "cancelled.resume-replay"
+    ],
+    "refusal_status_and_codes_matched": 6,
+    "accepted_decisions_status_and_execution_counts_matched": 4,
+    "replay_status_matched": 4,
+    "replay_codes_equal": false,
+    "identity_comparison": "Repeated and gracefully reopened pending identities are compared within each runtime; generated identities are not compared between runtimes. Native explicit prior-owner recovery required.",
+    "adaptation": "Authenticated native finite Pure scripted route; captured request IDs/grants rebound to native generated pending values. Actual reference production agent uses deterministic exported model seam and local tool ledger.",
+    "explicit_differences": [
+      "Source replay409 stale_interrupt; native settled replay409 resume_required.",
+      "Source differing submitted route resumes recorded route200; native exact route required409.",
+      "Source48-character base64url grants; native b4ag_ plus64hex.",
+      "Source permission prompt/envelope and denial/completion bodies differ from native finite script output.",
+      "Source unauthorized resume403; native resource visibility404."
+    ]
+  },
+  "native_transport": "In-process Axum comparison plus independent20 real TCP tests (13 approval,7 historical).",
+  "tests": [
+    {
+      "file": "crates/b4-http/tests/reference.rs",
+      "sha256": "fdfa40b727171ab2a75210a962f54b505bec674734a4a62dc63e6fec4167157e"
+    },
+    {
+      "file": "crates/b4-http/tests/grant_reference.rs",
+      "sha256": "8cf7c009b3e4f76ae33a6dccf3d35ca071cb47321f078fe0d5080c02dc3aee3c"
+    }
+  ],
+  "excluded": [
+    "Whole response bytes, all headers, every envelope/status/state field, full precedence/modes/expiry/races/crash/client corpus.",
+    "Full Agent Protocol profile and broad release scenarios."
+  ],
+  "core_profile_compatible": false,
+  "M0": "open",
+  "prior_receipt": "conformance/expected/durable-approval-reference-comparison.json"
+}

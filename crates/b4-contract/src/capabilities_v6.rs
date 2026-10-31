@@ -1,0 +1,217 @@
+//! Narrow opt-in durable permission Ready-cancellation metadata.
+//!
+//! This contract extends V5 with registered Ready permission cancellation and
+//! retains entered cancellation. It does not cover all pre-entry timing states
+//! or prove HTTP execution, general fenced cancellation, recovery, deletion,
+//! callback interruption, or broader Always permissions. V1–V5 retain their
+//! frozen wire contracts.
+use crate::*;
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(try_from = "CapabilityDescriptorV6Wire")]
+pub struct CapabilityDescriptorV6 {
+    pub descriptor_version: u32,
+    pub target_profile: CapabilityTargetProfile,
+    pub profile_status: CapabilityProfileStatus,
+    pub core_profile_frozen: bool,
+    pub runtime_version: String,
+    pub application: Option<CapabilityApplication>,
+    pub execution: CapabilityExecution,
+    pub features: CapabilityFeaturesV6,
+    pub store: CapabilityStore,
+    pub readiness: CapabilityReadinessV2,
+    pub limits: CapabilityLimits,
+    pub controls: CapabilityControlsV2,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct CapabilityFeaturesV6 {
+    pub live_attach: bool,
+    pub required_once_deny: bool,
+    pub trusted_known_id_recovery: bool,
+    pub fenced_cancellation: bool,
+    pub fenced_deletion: bool,
+    pub automatic_recovery_scan: bool,
+    pub always_permissions: bool,
+    pub durable_event_replay: bool,
+    pub native_live_chunks: bool,
+    pub built_in_model_providers: bool,
+    pub memory_candidates: bool,
+    pub managed_workspaces: bool,
+    pub ag_ui: bool,
+    pub dynamic_graphs: bool,
+    pub graceful_shutdown: bool,
+    pub turn_deadline: bool,
+    pub native_callback_sandbox: bool,
+    pub supervised_admission_drain: bool,
+    pub durable_permission_reuse: bool,
+    pub durable_permission_creation: bool,
+    pub durable_permission_entered_cancellation: bool,
+    pub durable_permission_ready_cancellation: bool,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
+struct CapabilityDescriptorV6Wire {
+    descriptor_version: u32,
+    target_profile: CapabilityTargetProfile,
+    profile_status: CapabilityProfileStatus,
+    core_profile_frozen: bool,
+    runtime_version: String,
+    // V6 requires a non-null native application on the wire.
+    application: CapabilityApplication,
+    execution: CapabilityExecution,
+    features: CapabilityFeaturesV6,
+    store: CapabilityStore,
+    readiness: CapabilityReadinessV2,
+    limits: CapabilityLimits,
+    controls: CapabilityControlsV2,
+}
+
+impl TryFrom<CapabilityDescriptorV6Wire> for CapabilityDescriptorV6 {
+    type Error = CapabilityError;
+
+    fn try_from(value: CapabilityDescriptorV6Wire) -> Result<Self, Self::Error> {
+        let descriptor = Self {
+            descriptor_version: value.descriptor_version,
+            target_profile: value.target_profile,
+            profile_status: value.profile_status,
+            core_profile_frozen: value.core_profile_frozen,
+            runtime_version: value.runtime_version,
+            application: Some(value.application),
+            execution: value.execution,
+            features: value.features,
+            store: value.store,
+            readiness: value.readiness,
+            limits: value.limits,
+            controls: value.controls,
+        };
+        descriptor.validate()?;
+        Ok(descriptor)
+    }
+}
+
+impl CapabilityDescriptorV6 {
+    /// Opt in from a valid V5 entered-cancellation assembly without changing its
+    /// effective limits or any declaration except the version and the narrow flag.
+    pub fn permission_ready_cancellation(
+        base: CapabilityDescriptorV5,
+    ) -> Result<Self, CapabilityError> {
+        base.validate()?;
+        let f = base.features;
+        let descriptor = Self {
+            descriptor_version: 6,
+            target_profile: base.target_profile,
+            profile_status: base.profile_status,
+            core_profile_frozen: base.core_profile_frozen,
+            runtime_version: base.runtime_version,
+            application: base.application,
+            execution: base.execution,
+            features: CapabilityFeaturesV6 {
+                live_attach: f.live_attach,
+                required_once_deny: f.required_once_deny,
+                trusted_known_id_recovery: f.trusted_known_id_recovery,
+                fenced_cancellation: f.fenced_cancellation,
+                fenced_deletion: f.fenced_deletion,
+                automatic_recovery_scan: f.automatic_recovery_scan,
+                always_permissions: f.always_permissions,
+                durable_event_replay: f.durable_event_replay,
+                native_live_chunks: f.native_live_chunks,
+                built_in_model_providers: f.built_in_model_providers,
+                memory_candidates: f.memory_candidates,
+                managed_workspaces: f.managed_workspaces,
+                ag_ui: f.ag_ui,
+                dynamic_graphs: f.dynamic_graphs,
+                graceful_shutdown: f.graceful_shutdown,
+                turn_deadline: f.turn_deadline,
+                native_callback_sandbox: f.native_callback_sandbox,
+                supervised_admission_drain: f.supervised_admission_drain,
+                durable_permission_reuse: f.durable_permission_reuse,
+                durable_permission_creation: f.durable_permission_creation,
+                durable_permission_entered_cancellation: f.durable_permission_entered_cancellation,
+                durable_permission_ready_cancellation: true,
+            },
+            store: base.store,
+            readiness: base.readiness,
+            limits: base.limits,
+            controls: base.controls,
+        };
+        descriptor.validate()?;
+        Ok(descriptor)
+    }
+
+    /// Validate public assembly before publishing a V6 descriptor.
+    pub fn validate(&self) -> Result<(), CapabilityError> {
+        let f = &self.features;
+        if self.descriptor_version != 6
+            || !f.durable_permission_ready_cancellation
+            || !f.durable_permission_entered_cancellation
+            || !f.durable_permission_creation
+            || !f.durable_permission_reuse
+            || f.always_permissions
+            || f.trusted_known_id_recovery
+            || f.fenced_cancellation
+            || f.fenced_deletion
+        {
+            return Err(CapabilityError("invalid_capability_v6_mechanism"));
+        }
+        // Bound caller-controlled identity strings before cloning metadata into
+        // the validation projection. The historical validators retain all bounds.
+        let label = |value: &str| {
+            !value.is_empty() && value.len() <= 256 && !value.chars().any(char::is_control)
+        };
+        if !label(&self.runtime_version)
+            || self.application.is_none()
+            || self
+                .application
+                .as_ref()
+                .is_some_and(|a| !label(&a.id) || !label(&a.revision))
+        {
+            return Err(CapabilityError("invalid_capability_identity"));
+        }
+        // This unpublished projection checks the entire unchanged V5 assembly,
+        // including required native/durable approvals, Once/Deny, entered
+        // cancellation, supervised admission drain, controls and single-task
+        // effective limits. Only the version and separately checked Ready flag
+        // are omitted.
+        CapabilityDescriptorV5 {
+            descriptor_version: 5,
+            target_profile: self.target_profile,
+            profile_status: self.profile_status,
+            core_profile_frozen: self.core_profile_frozen,
+            runtime_version: self.runtime_version.clone(),
+            application: self.application.clone(),
+            execution: self.execution.clone(),
+            features: CapabilityFeaturesV5 {
+                live_attach: f.live_attach,
+                required_once_deny: f.required_once_deny,
+                trusted_known_id_recovery: f.trusted_known_id_recovery,
+                fenced_cancellation: f.fenced_cancellation,
+                fenced_deletion: f.fenced_deletion,
+                automatic_recovery_scan: f.automatic_recovery_scan,
+                always_permissions: f.always_permissions,
+                durable_event_replay: f.durable_event_replay,
+                native_live_chunks: f.native_live_chunks,
+                built_in_model_providers: f.built_in_model_providers,
+                memory_candidates: f.memory_candidates,
+                managed_workspaces: f.managed_workspaces,
+                ag_ui: f.ag_ui,
+                dynamic_graphs: f.dynamic_graphs,
+                graceful_shutdown: f.graceful_shutdown,
+                turn_deadline: f.turn_deadline,
+                native_callback_sandbox: f.native_callback_sandbox,
+                supervised_admission_drain: f.supervised_admission_drain,
+                durable_permission_reuse: f.durable_permission_reuse,
+                durable_permission_creation: f.durable_permission_creation,
+                durable_permission_entered_cancellation: f.durable_permission_entered_cancellation,
+            },
+            store: self.store.clone(),
+            readiness: self.readiness.clone(),
+            limits: self.limits.clone(),
+            controls: self.controls.clone(),
+        }
+        .validate()
+    }
+}

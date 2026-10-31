@@ -1,0 +1,317 @@
+{
+  "adoption": {
+    "independent_actual_review": {
+      "bytes": 4397,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/Independent-actual-adoption-quality.json",
+      "sha256": "e7c32902e4fa2e7141705323eea86c5c6a9d4f56c5fe9b2c198aa9df3e7c5089"
+    },
+    "independent_result_review": {
+      "bytes": 5646,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-use-renewal-final-adoption-eligibility-4mlwmoap/quality.json",
+      "sha256": "66ef68fe3d377888eeaa955a018e601e3de64535d9943b442a7df3beb69dce06"
+    },
+    "receipt": {
+      "bytes": 2008,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/adoption-receipt.json",
+      "sha256": "e98633265a3aef8357ad159cca7f280b1730167273afd797e075ead9d3adc422"
+    },
+    "selected_code_bodies_exactly_match_candidate": true
+  },
+  "broad_profile_qualified": false,
+  "commands": {
+    "budget": {
+      "argv": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-runtime",
+        "--lib",
+        "use_renewal_production_budget_controls",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 1664,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/native-final-budget.log",
+        "sha256": "f08a4055248269dfc9ec11a45e8971eaef39bc4d7b47bed495e47d4d6c04310f"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2045,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/native-final-budget-receipt.json",
+        "sha256": "605b97924c195911b6d85b65c56f3f79437cb3fd88a9ccf2a87bb1e550a96742"
+      },
+      "timed_out": false
+    },
+    "clippy": {
+      "argv": [
+        "cargo",
+        "clippy",
+        "--locked",
+        "--offline",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 950,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/static-clippy.log",
+        "sha256": "3fed2fab8cfe50bdeb2b9246005a20a26056644147c58a4b4dba58980bdd9265"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 1855,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/static-clippy-receipt.json",
+        "sha256": "e3ef5f3376d7b9b56bdc592ce124ad83b4e9acdb8d22cf03d807d16e34351a2b"
+      },
+      "timed_out": false
+    },
+    "fmt": {
+      "argv": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 0,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/static-fmt.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 1770,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/static-fmt-receipt.json",
+        "sha256": "324f09a94ce680b129f70a44716c50c124cd54d8f8427959f2605a0f3f26b6ea"
+      },
+      "timed_out": false
+    },
+    "no-run": {
+      "argv": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--workspace",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 19351,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/static-no-run.log",
+        "sha256": "54ea4b7a15f3d13e102aedb74786604583cb6a7479d8abf9db3261c04b82090b"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 1814,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/static-no-run-receipt.json",
+        "sha256": "0e9b7b97b1133fb0adfd24f4ec7f8aa5f3be61d0d8102c29fe0904716c5bc281"
+      },
+      "timed_out": false
+    },
+    "renewals": {
+      "argv": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "permission_use_renewal::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 6305,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/native-final-renewals.log",
+        "sha256": "427d7db1e68ff1a71a3cc4b98b2f91bca9821a177e448d3c5ce1fc0eabe5b29e"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 2067,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/native-final-renewals-receipt.json",
+        "sha256": "130f7f36b2d28bd7e7c73e755de2889918153c6024764345c7548e1f4961dd5d"
+      },
+      "timed_out": false
+    },
+    "workspace": {
+      "argv": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--workspace"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 153353,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/native-final-workspace.log",
+        "sha256": "e2062d139afbd5453d1b3f818f246a7147b50333c8d35e624fcac151006d465a"
+      },
+      "reaped": true,
+      "receipt": {
+        "bytes": 1935,
+        "mode": "0o600",
+        "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/native-final-workspace-receipt.json",
+        "sha256": "626df66b38426535aea7d31c15301edb88eb7f1cb244184e77da883f157889b3"
+      },
+      "timed_out": false
+    }
+  },
+  "date": "2026-10-09",
+  "historical_note": "Parent meaningful RED and zero-test filter attempt preserved in external evidence. Zero-test attempt earns no pass credit.",
+  "limits": {
+    "complete_renewal_upper_bytes": 54361479,
+    "complete_renewal_upper_nodes": 45077,
+    "first_claim_bytes": 16777216,
+    "nodes": 65536,
+    "ordinary_bytes": 8388608,
+    "private_renewal_bytes": 67108864
+  },
+  "observed": {
+    "budget_tests": 7,
+    "cleanup_before_primary_assertion": true,
+    "constraint_calls_on_success": 1,
+    "healthy_usage": {
+      "bytes": 54324077,
+      "nodes": 45002
+    },
+    "owners": [
+      1,
+      2,
+      3
+    ],
+    "renewal_callbacks": 0,
+    "renewal_tests": 9,
+    "renewal_writes": 0
+  },
+  "production_application": {
+    "host": {
+      "bytes": 11901,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/host-application-proposal.json",
+      "sha256": "59630d4295eac75bdac9e14d185e79b48859660cbfe3c7764e583bb142b5f042"
+    },
+    "invoice": {
+      "bytes": 159771,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/invoice-proposal.json",
+      "sha256": "5a58f80197f11166a8ae2a0ec700777bab15195e26112a818987e3632abbd993"
+    },
+    "target_binding": {
+      "bytes": 9435,
+      "mode": "0o600",
+      "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/Root-target-binding-final.json",
+      "sha256": "d556fa750854cf91d8e638effd92bab1ba0c7460e917bf4d1954f3ed6d4a292c"
+    }
+  },
+  "qualified_cases": [
+    "healthy",
+    "authority-denial",
+    "constraint-denial",
+    "changed-policy",
+    "changed-application",
+    "changed-constraint",
+    "foreign-account",
+    "finished-account",
+    "refused-account"
+  ],
+  "remaining": [
+    "Human/Legacy renewal",
+    "owned permit callback consumption",
+    "outcome integration",
+    "recovery",
+    "other target/feature qualification",
+    "broad durable_permissions capability",
+    "Arbitrary foreign authority/constraint and panic payload/destructor qualification"
+  ],
+  "schema": "b4.permission-use-owned-renewal.qualification.v1",
+  "scope": "Embedded finite single-task NewUse owned claim renewal; local aarch64-apple-darwin default/std SHA-256, no asm feature, rustflags[]; selected finite fixture authority/constraint bodies",
+  "selected_bodies": {
+    "crates/b4-runtime/src/permissions/catalog.rs": {
+      "bytes": 19593,
+      "sha256": "c2b47a1cfc611707335711b5d6dccc1082a1c8d2712a09a34cb8591557fa2d34"
+    },
+    "crates/b4-runtime/src/permissions/mod.rs": {
+      "bytes": 5405,
+      "sha256": "53600769afe7edeff91d70aadc60c71679361c1d9b576ec5345dbb09297c3e4c"
+    },
+    "crates/b4-runtime/src/permissions/model.rs": {
+      "bytes": 18710,
+      "sha256": "1cc47491bf48697cfe0cd0fd6ba73935efb18f716ba2e54eb465a1c59c0eff83"
+    },
+    "crates/b4-runtime/src/permissions/runtime_mutation.rs": {
+      "bytes": 427789,
+      "sha256": "2a8bd1d29ff285f771534953629829383be345dc93834a8a47e0ecbbd85ebde4"
+    },
+    "crates/b4-runtime/src/permissions/runtime_use.rs": {
+      "bytes": 52683,
+      "sha256": "93c5c11f0a5f23ee3efd6dc6da3d7d94a6d0404eb72bff7136e6d148ed9cde82"
+    },
+    "crates/b4-runtime/src/permissions/runtime_use_renewal.rs": {
+      "bytes": 64494,
+      "sha256": "f24d2fc90cc9a7a8dcee7f2489a2c1ae14cfdf701fd503d72aa40ec537bb7ad7"
+    },
+    "crates/b4-runtime/src/permissions/validation.rs": {
+      "bytes": 708733,
+      "sha256": "d7e3400a613aeb16088761a25ef0f1dc96e19a3732ee7f89f6853f1ca447bb83"
+    },
+    "crates/b4-sqlite/src/permissions/mod.rs": {
+      "bytes": 87634,
+      "sha256": "108b4be96c1c74b10de0f764a05fc0f8af14a389eae7600b39b38a78951298be"
+    },
+    "crates/b4-sqlite/src/permissions/use_renewal.rs": {
+      "bytes": 26424,
+      "sha256": "da5e2bc76d8cdd987c2872ffcfda370ab62901d4cf1decd6208c4544ca52e54c"
+    },
+    "crates/b4-sqlite/tests/persistent_permissions.rs": {
+      "bytes": 240837,
+      "sha256": "3bb85db0ffd38c00229629675e8cc3ec704cb448dcc23fe8295ff927de3932d6"
+    },
+    "crates/b4-sqlite/tests/persistent_permissions/use_renewal.rs": {
+      "bytes": 75869,
+      "sha256": "fc9e3dfa783fbd766ec28b582ef392179d8cddd6dcea9c6642a4c34dd6f833f0"
+    }
+  },
+  "source": {
+    "bytes": 541676,
+    "mode": "0o600",
+    "path": "/private/tmp/b4-root-renewal-budget-final-6qv46ojd/source-packet.json",
+    "sha256": "c3ca1bbe854a27d1f5a268ebb0a42093f5bb9e568c26769d81add9e0ffc58759"
+  },
+  "workspace_reported_summaries": {
+    "failed_entries": 0,
+    "ignored_entries": 11,
+    "loopback_listener_access": true,
+    "passed_entries_including_repeated_child_results": 1448,
+    "summaries": 131,
+    "unique_test_count_claimed": false
+  }
+}

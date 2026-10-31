@@ -1,0 +1,26 @@
+[package]
+name = "b4-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "b4run"
+path = "src/main.rs"
+
+[dependencies]
+b4-contract.workspace = true
+b4-runtime.workspace = true
+b4-http = { path = "../b4-http" }
+b4-sqlite = { path = "../b4-sqlite" }
+serde_json.workspace = true
+axum.workspace = true
+tokio = { workspace = true, features = ["signal"] }
+
+[dev-dependencies]
+rusqlite = { version = "=0.40.2", default-features = false, features = ["bundled"] }
+socket2 = "=0.6.5"
+
+[lints]
+workspace = true

@@ -1,0 +1,12 @@
+{
+  "interrupts": [
+    {
+      "interruptId": "interrupt-example",
+      "resumeKey": "resume-example",
+      "value": {
+        "prompt": "Allow the proposed native fixture action?"
+      },
+      "grant": "b4ag_example_unissued"
+    }
+  ]
+}

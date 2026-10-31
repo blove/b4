@@ -1,0 +1,155 @@
+{
+  "record_version": 1,
+  "profile": "permission_driver_local_entry_gate",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "native_source_descriptor_sha256": "0547cbcdc4677cced147002a74fa979aa88bfbe05526e400bcf7425502e7f664",
+  "code_source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter.rs",
+      "bytes": 30703,
+      "sha256": "66b677e170b6fe1618f34fc2912917c648c7ad627b820cb69dd83b7e7eea0f15"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_reuse_driver.rs",
+      "bytes": 42885,
+      "sha256": "23b306cb5e53b2a40ac48298bf0942848b61e2c09545bfa9ef90fa17a5fd5ae2"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/permission_driver_entry_gate.rs",
+      "bytes": 17577,
+      "sha256": "31075d757f9a90d87d01a277aa87249b8587098cf127556b9610a5aed98c78b3"
+    }
+  ],
+  "checks": {
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.027,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "private_run": "format-check-1792532567992311000"
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 62.838,
+      "log_sha256": "45809cf2dd08babc94b7c8e87e13c6ab6450e49dd658c0833d9d647c92cbe2cf",
+      "source_unchanged": true,
+      "private_run": "compile-1792532570140680000"
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 21.994,
+      "log_sha256": "994c242956e7031bf9e5722e88fe23c635fc2c3021ff80617bd0efbd30d9345c",
+      "source_unchanged": true,
+      "private_run": "lint-1792532633103596000"
+    },
+    "entry-gate-cases": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--locked",
+        "--offline",
+        "permission_driver_entry_gate::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 0.394,
+      "log_sha256": "4d46b356c51edf050ad3e1c066a2c284666e558fe664fc039200f6a1db3dbf59",
+      "source_unchanged": true,
+      "private_run": "entry-gate-cases-1792532655233788000"
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 172.308,
+      "log_sha256": "2bea7c711d4b678b633609710f7a2ae1f14f3ac23d7f10e3ec527414fa515ec0",
+      "source_unchanged": true,
+      "private_run": "workspace-tests-1792532655746433000"
+    }
+  },
+  "focused_cases": {
+    "positive": "permission_driver_entry_gate_allows_once_persisted_success",
+    "negative": "permission_driver_entry_gate_refuses_before_callback",
+    "passed": 2
+  },
+  "scope": {
+    "application_id": "07d7d468-c4f9-47e1-b421-ff889251df80",
+    "task_id": "publish-monthly-report",
+    "effect_id": "reports.publish-monthly",
+    "tasks": 1,
+    "input": "modest nested JSON",
+    "metadata": "empty",
+    "strict_defaults": "unchanged",
+    "cumulative_accounts": "unchanged",
+    "http_integration": "pending",
+    "maximum_size_qualification": "pending",
+    "full_core_release": "pending",
+    "panic_retention": "source-reviewed; no separate native panic case",
+    "local_refusal": "not a persisted cancellation or authorization decision",
+    "default_hook": "allow; existing implementers source-compatible"
+  },
+  "red_evidence": {
+    "api_absence": {
+      "run": "entry-gate-cases-1792532342871529000",
+      "exit_code": 101,
+      "log_sha256": "43e9be88546536fa803485978a8a9cb6fa9aef6b13586ffd9466579532d7c703",
+      "scope": "E0407 absent trait method, no executed tests"
+    },
+    "unwired_default": {
+      "run": "entry-gate-cases-1792532417632090000",
+      "exit_code": 101,
+      "log_sha256": "47198a84a5f539e67c8aef1e7e5ba41bae706f1f564777d1d2b754cfc4583323",
+      "scope": "two executed failures; refusing case actually ran callback1 and completed, real retirement passed"
+    }
+  }
+}

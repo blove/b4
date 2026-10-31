@@ -1,0 +1,271 @@
+{
+  "record_version": 1,
+  "profile": "embedded_settled_permission_thread_deletion",
+  "status": "qualified",
+  "date": "2026-10-21",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "native_source_descriptor_sha256": "98298daf956d5f227f3a41bf6bcf8c710600b0fe77c72d5a400d21d356ab6e62",
+  "native_source_file_count": 1061,
+  "source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 8969,
+      "sha256": "49c30d34494bf9a298592171a292b25aad5274d076ce17460282d99a2b585747"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/model.rs",
+      "bytes": 34227,
+      "sha256": "1d80df7a6508539fbd2c29c24493df84c1316daa9067eb3089331d77f789ad84"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/thread_deletion.rs",
+      "bytes": 9921,
+      "sha256": "9b13fd92e720f96e5df971c2c06edec84146a174db745eff040f24208616914c"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 765246,
+      "sha256": "835a270bffee17002f133a333e7c863807e5d3f955b3dfb5b99acf773c863dde"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/mod.rs",
+      "bytes": 95975,
+      "sha256": "adb177f13d0cb430daf41e32724487a83f92822a669c2b6c1d112b0c4f498d75"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/thread_deletion.rs",
+      "bytes": 31493,
+      "sha256": "65dfded6d8cb016a639869d897f1dd44cd63ae27ff321453b9c200286f7417d1"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/permission_settled_thread_deletion.rs",
+      "bytes": 43551,
+      "sha256": "d04a0365318623fa19da21963563a62873d401bf3b23cfc3e6c60c9f06d1d7c8"
+    }
+  ],
+  "checks": {
+    "deletion-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_settled_thread_deletion",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 6.775,
+      "log_sha256": "8447c8f715922d9418d4465847bd4787c0f0289338fd05bc1c4bfa64ee35dd15",
+      "private_run": "deletion-tests-1792575027248611000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "legacy-guards-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_legacy_guards",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 4.018,
+      "log_sha256": "047cdeda4538fe3653518682a47a634a491c3f9b2943ff8d0798e727ee13b4f0",
+      "private_run": "legacy-guards-tests-1792575027249621000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "permission-records-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_records",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 6.027,
+      "log_sha256": "6ec2487b203b0fd08db843ebd9e8960256257ddf557fc8376d5a895362a064d5",
+      "private_run": "permission-records-tests-1792575027248594000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.35,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "private_run": "format-check-1792575027249084000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 196.594,
+      "log_sha256": "6dcf3658ca5b9e54dc16e2437ac6e8d9b2a5e626ff935db96bf1f020fcc472b0",
+      "private_run": "lint-1792575098889396000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 121.927,
+      "log_sha256": "8df73be0a5d8b48933569a1cb970923638cd6d472eb1e1f2abe52d0d9c62a4bf",
+      "private_run": "compile-1792575098889391000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 595.914,
+      "log_sha256": "44e06785f6bcaffa712fff6be4d74412964ef4aae864542e3a0756fc22562ca8",
+      "private_run": "workspace-tests-1792575333283328000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "metadata": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 3.278,
+      "log_sha256": "7bb4a69150f4fd83019f0a0fe46a29364f621f552c378008a9a5718aabd96579",
+      "private_run": "metadata-1792575098889434000",
+      "source_unchanged": true,
+      "metadata_only": true
+    }
+  },
+  "focused": {
+    "deletion-tests": {
+      "counts": {
+        "passed": 4,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "legacy-guards-tests": {
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "permission-records-tests": {
+      "counts": {
+        "passed": 89,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    }
+  },
+  "business_tests": 4,
+  "full_workspace": {
+    "counts": {
+      "passed": 1651,
+      "failed": 0,
+      "ignored": 11
+    },
+    "summary_executions": 151
+  },
+  "scope": {
+    "explicit_embedded_store_opt_in": true,
+    "genuine_once_always_and_multiple_saved_uses": true,
+    "completed_failed_cancelled_histories": true,
+    "caller_thread_exclusion_and_actual_driver_drain_required": true,
+    "exact_historical_target_and_separate_current_store_owner": true,
+    "current_dedicated_authority_outside_transaction": true,
+    "all_eight_owned_tables_atomic": true,
+    "other_thread_bytes_and_metadata_preserved": true,
+    "guarded_late_delete_rollback_and_healthy_control": true,
+    "foreign_creator_unknown_representation_conservatively_refused": true,
+    "limits": {
+      "executions": 16,
+      "each_record_table": 64,
+      "journal": 512,
+      "cumulative_evidence_bytes": 67108864,
+      "structural_nodes": 65536
+    },
+    "global_database_scan_time_bound": false,
+    "generic_permission_store_fallback": false,
+    "new_http_capability": false,
+    "live_retirement_or_recovery": false,
+    "automatic_storage_retry_or_callback_replay": false,
+    "dependencies_and_locks_unchanged": true,
+    "maximum_size_qualification": false,
+    "cross_platform_qualification": false,
+    "metadata_is_runtime_evidence": false,
+    "reported_counts_include_child_executions": true,
+    "git_writes": false
+  }
+}

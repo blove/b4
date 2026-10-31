@@ -1,0 +1,366 @@
+{
+  "record_version": 1,
+  "profile": "http_permission_withheld_cancellation",
+  "status": "qualified",
+  "date": "2026-10-21",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "native_source_descriptor_sha256": "0f679a5b87fc00edd1a737b8970b98ccd383d8c8917d448a7d468a098f6cd433",
+  "native_source_file_count": 1048,
+  "source_files": [
+    {
+      "path": "contracts/agent-protocol/examples/capabilities-v7-permission-withheld-cancellation.json",
+      "bytes": 2644,
+      "sha256": "ca6d09ec420f8e84d89d9faafe56206dcef422bc9633e8aa600f8ae0185aa047"
+    },
+    {
+      "path": "contracts/agent-protocol/schemas/capabilities-v7.json",
+      "bytes": 4810,
+      "sha256": "05eed70aa2d780db7bc49223385da1985f29cc31a3abb1e3e00eebe63eafefdb"
+    },
+    {
+      "path": "crates/b4-contract/src/capabilities_v7.rs",
+      "bytes": 9691,
+      "sha256": "89dc95a48bef8901838f3c70fb760f0821f12562025d5a0491055a6f945b9786"
+    },
+    {
+      "path": "crates/b4-contract/src/lib.rs",
+      "bytes": 737,
+      "sha256": "0b4220e8976402a22effc5ca97a2edd6178e1e7750c18a18d0af3c45cfcdf59f"
+    },
+    {
+      "path": "crates/b4-contract/tests/capabilities_v7.rs",
+      "bytes": 13604,
+      "sha256": "0960174554007e8ef4eb4d7f5904496abf7e985b1d14940ff5605ae6410f56e3"
+    },
+    {
+      "path": "crates/b4-http/src/cancellation.rs",
+      "bytes": 18505,
+      "sha256": "1bb48d68c5fa32fea09c60de0e089504fbb740313a830c6e690ec328b62c5a3a"
+    },
+    {
+      "path": "crates/b4-http/src/capabilities.rs",
+      "bytes": 11475,
+      "sha256": "79216f05776b419d17c69da2bf47db3e871006bf59e5e1bcf52074598edd5f70"
+    },
+    {
+      "path": "crates/b4-http/src/control.rs",
+      "bytes": 33318,
+      "sha256": "cd67f0ab41eb6703edeac87adc8bcb3480fd0e06e5cbe1d3cd3a916faefdd3fd"
+    },
+    {
+      "path": "crates/b4-http/src/host.rs",
+      "bytes": 15294,
+      "sha256": "bb79fa0e3625369e94740c28d77535015c76dcc14df3a40e1b1db6e292aea1ef"
+    },
+    {
+      "path": "crates/b4-http/src/permission_cancellation.rs",
+      "bytes": 11036,
+      "sha256": "53e15735cd561482350bf588a5de01f091507df2a1dc65bba7db549458646d9a"
+    },
+    {
+      "path": "crates/b4-http/src/permissions.rs",
+      "bytes": 33194,
+      "sha256": "01567002ea1c673a30829ea62761ea33b76a0b08539fd9218f2486258c19d285"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_entered_support/store.rs",
+      "bytes": 22029,
+      "sha256": "c3b969f7b913d86753881a1d2d2f0f2c735ebbde013330006ff291b6d251878a"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_withheld_cancellation.rs",
+      "bytes": 29677,
+      "sha256": "a7d82b5bc27630ad3c8b20839d1ab21d75996f50bcfa53f8da0f8a45dea84b57"
+    },
+    {
+      "path": "scripts/check_contracts.py",
+      "bytes": 77394,
+      "sha256": "64dd073b0f1924a5feb3d6f62ede6385e1ac9be01bd31db5d02930fe5e8e6133"
+    }
+  ],
+  "checks": {
+    "capabilities-v7-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-contract",
+        "--test",
+        "capabilities_v7",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 3.352,
+      "log_sha256": "912363120232a13600a1dd73b50ffd4b2f56891b3b34c6eb1dec8e3abecb8f50",
+      "private_run": "capabilities-v7-tests-1792567057661697000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "handoff-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--lib",
+        "permission_withheld",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 15.248,
+      "log_sha256": "39033fc48572fdc38181603c75cf869ff5360700ca8cd710592efc96cb529f90",
+      "private_run": "handoff-tests-1792566645782695000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "http-withheld-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_withheld_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 9.544,
+      "log_sha256": "8c769b4fe0f09093f5d783dfb45e64b3224102940eac5681659e994229bef843",
+      "private_run": "http-withheld-tests-1792566687896193000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "http-ready-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_ready_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 9.065,
+      "log_sha256": "befecc90f09d0c9d5fa540475a2fd43d168d3d92acfa2eba0bb8b090e5d509bc",
+      "private_run": "http-ready-tests-1792566750410619000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "http-entered-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_entered_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 8.17,
+      "log_sha256": "a531b03ab6db7393973796615152330cdc4444a3438080dabff27e0ffbc15495",
+      "private_run": "http-entered-tests-1792566759656993000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.545,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "private_run": "format-check-1792566951979068000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 82.95,
+      "log_sha256": "44f597bdeb38c93b8be7f03590cbdb482a42bd941fcd5d8bb26133460ffe3109",
+      "private_run": "lint-1792566964470858000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 122.949,
+      "log_sha256": "68ede212fa98bb4255ff358cf6bc8e2960e49690cd25a17b992e23792281dd77",
+      "private_run": "compile-1792567064606054000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 507.134,
+      "log_sha256": "51de2da885e3c2e19a0a3914b76938d3c16fca62a9afd049c5d33b512b4f4396",
+      "private_run": "workspace-tests-1792567187713899000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "metadata": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 3.323,
+      "log_sha256": "7bb4a69150f4fd83019f0a0fe46a29364f621f552c378008a9a5718aabd96579",
+      "private_run": "metadata-1792567061152871000",
+      "source_unchanged": true,
+      "metadata_only": true
+    }
+  },
+  "focused": {
+    "capabilities-v7-tests": {
+      "counts": {
+        "passed": 6,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "handoff-tests": {
+      "counts": {
+        "passed": 5,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "http-withheld-tests": {
+      "counts": {
+        "passed": 7,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "http-ready-tests": {
+      "counts": {
+        "passed": 7,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "http-entered-tests": {
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    }
+  },
+  "http_scenarios": 5,
+  "included_fixture_controls": 2,
+  "full_workspace": {
+    "counts": {
+      "passed": 1646,
+      "failed": 0,
+      "ignored": 11
+    },
+    "summary_executions": 149
+  },
+  "scope": {
+    "explicit_opt_in_host": true,
+    "original_always_and_saved_new_use": true,
+    "actual_entry_refused_work_required": true,
+    "worker_local_actual_failure_and_account": true,
+    "atomic_admission_veto_is_not_body_entry": true,
+    "reserved_then_current_preflight_then_one_ready_command": true,
+    "actual_typed_writer_and_exact_terminal_required": true,
+    "two_transitions_and_journals_atomic": true,
+    "withheld_publication_without_native_signal_or_receipt": true,
+    "registered_ready_and_actual_entered_cancellation_preserved": true,
+    "owned_until_actual_quiescence": true,
+    "automatic_withheld_storage_retry": false,
+    "automatic_callback_replay_or_receipt_retry": false,
+    "unregistered_preparing_retirement": false,
+    "uncertain_receipt_settlement": false,
+    "generic_permission_store_fallback": false,
+    "recovery_or_deletion": false,
+    "broad_durable_permissions": false,
+    "old_http_v1_through_v6_unchanged": true,
+    "dependencies_and_locks_unchanged": true,
+    "maximum_size_qualification": false,
+    "cross_platform_qualification": false,
+    "metadata_is_runtime_evidence": false,
+    "reported_counts_include_child_executions": true,
+    "git_writes": false
+  }
+}

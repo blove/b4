@@ -1,0 +1,16 @@
+{
+  "accepted_before_reopen": true,
+  "accepted_decisions": 1,
+  "attempts_used": 1,
+  "effect_calls": 1,
+  "grant_and_prompt_restored": true,
+  "limitations": [
+    "Embedded SQLite fixture; explicit known-ID recovery and simulated host time; no HTTP, provider, autonomous scanning or process-kill qualification."
+  ],
+  "passed": true,
+  "pending_count": 1,
+  "profile": "durable_required_approval_example",
+  "status": "completed",
+  "thread_generation_restored": true,
+  "tokens_recorded": false
+}

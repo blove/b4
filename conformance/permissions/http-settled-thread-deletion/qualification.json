@@ -1,0 +1,434 @@
+{
+  "record_version": 1,
+  "profile": "http_settled_permission_thread_deletion_v8",
+  "status": "qualified",
+  "date": "2026-10-21",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "native_source_descriptor_sha256": "248ce71bb54cfc9fcbdb6906429242cb4610a8552bca791a81263a615bb87d08",
+  "native_source_file_count": 1074,
+  "source_files": [
+    {
+      "path": "contracts/agent-protocol/examples/capabilities-v8-permission-settled-thread-deletion.json",
+      "bytes": 2700,
+      "sha256": "a57033596525d2593b5ea89092253907b542ddd67a113daf97602c9c062d4318"
+    },
+    {
+      "path": "contracts/agent-protocol/schemas/capabilities-v8.json",
+      "bytes": 4631,
+      "sha256": "ec8ab616647728a469e9dc985708953d258da61aded5d7c7c0556767dfa1db8c"
+    },
+    {
+      "path": "crates/b4-contract/src/capabilities_v8.rs",
+      "bytes": 9341,
+      "sha256": "34d9c16548b9797084a4bf58ff68a3a66c106ab48d8ad2b1a5aa5e9c787a6ce5"
+    },
+    {
+      "path": "crates/b4-contract/src/lib.rs",
+      "bytes": 786,
+      "sha256": "40a255aa1eb137dff2ee598db98c3324b34b044af06a9cbbdb7000c4a590b797"
+    },
+    {
+      "path": "crates/b4-contract/tests/capabilities_v8.rs",
+      "bytes": 9088,
+      "sha256": "c4f71af052d667b13894b4838b916d30ff7d80069cf3edfada4f99e65b9e35b0"
+    },
+    {
+      "path": "crates/b4-http/src/capabilities.rs",
+      "bytes": 12305,
+      "sha256": "f0b4a67701254e782ca300c6ecb6a067affda1fa06db2edc33a15d4705e39e3a"
+    },
+    {
+      "path": "crates/b4-http/src/deletion.rs",
+      "bytes": 6456,
+      "sha256": "90d759c5ddc6535e6e1fff4e267e66618e557c5a4cbedf171c588ef227500055"
+    },
+    {
+      "path": "crates/b4-http/src/host.rs",
+      "bytes": 15437,
+      "sha256": "ef95b31072802acf2bfc7a07e67834905a86657df539481be7886ce132ca0032"
+    },
+    {
+      "path": "crates/b4-http/src/lib.rs",
+      "bytes": 4154,
+      "sha256": "83884f70229b70c0beebe8d730eb9286ef0d6679da864fcb5c6bc7eab8615030"
+    },
+    {
+      "path": "crates/b4-http/src/permission_deletion.rs",
+      "bytes": 3961,
+      "sha256": "888e247da7da2f216a2886d96f0d34b73b04e0046991dbdf19f87b44701240b2"
+    },
+    {
+      "path": "crates/b4-http/src/transport.rs",
+      "bytes": 23773,
+      "sha256": "48c371f7e06d349d39b244daa10a86eaa25df51f21071c9a5040bccdddc16856"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_deletion_support/mod.rs",
+      "bytes": 7015,
+      "sha256": "195755ab45962e253581ffd1f4d37ae774aa35be166c51445b2f48b20688f67d"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_deletion_support/store.rs",
+      "bytes": 23573,
+      "sha256": "f8fa3e07482e5ce0039ae68d1c833c8744e4a79396c5c8786877bac238f622eb"
+    },
+    {
+      "path": "crates/b4-http/tests/permission_settled_thread_deletion.rs",
+      "bytes": 23124,
+      "sha256": "b5f59ee9f1a8344543dc2242c360c3169ef68da3d9917a1b653cd790151b3d47"
+    },
+    {
+      "path": "scripts/check_contracts.py",
+      "bytes": 83255,
+      "sha256": "54dc546951dfe00a6070d19c4f1ceee3914f39db0dcce03bc2f2e0311e5d2f20"
+    }
+  ],
+  "checks": {
+    "contract-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-contract",
+        "--test",
+        "capabilities_v8",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 11.912,
+      "log_sha256": "4062719c008520cc4833d8cfcf85e90dbc328871726d0963cbcc7e80e5ec8d80",
+      "private_run": "contract-tests-1792579064802833000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "deletion-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_settled_thread_deletion",
+        "--locked",
+        "--offline",
+        "--",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 23.781,
+      "log_sha256": "1182a2ac8564f87d39977c379f1f5794f53fa9d498114d5950d83036c916578d",
+      "private_run": "deletion-tests-1792579086237688000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "embedded-deletion-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_settled_thread_deletion",
+        "--locked",
+        "--offline",
+        "--",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 15.352,
+      "log_sha256": "b83760dd5b1bfc94e304e0617c304c495c6acad3e6ed9193a0fff1658cd43c34",
+      "private_run": "embedded-deletion-tests-1792579117504345000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "v7-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-contract",
+        "--test",
+        "capabilities_v7",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 5.969,
+      "log_sha256": "6c59822f4ea507f4ca94eda320efba28ff80c146a60b77e415126ac617f0e711",
+      "private_run": "v7-tests-1792579133040646000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "withheld-cancellation-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_withheld_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 8.635,
+      "log_sha256": "836d5e3298b77cdc8ba3b0d7b068159d85bb8a6edee2ca45d235b67851939c2d",
+      "private_run": "withheld-cancellation-tests-1792579141196751000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "legacy-guards-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_legacy_guards",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 6.971,
+      "log_sha256": "c808b2105c757d86ac4b9b4d63946b9d0c67be64c0230827c8cc47da1d54923e",
+      "private_run": "legacy-guards-tests-1792579282472072000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "permission-records-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_records",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 8.588,
+      "log_sha256": "2a9741af2a451d814178d0db1c7428a38cb53fcd6c0d6fac4f2d117bf8bb5d24",
+      "private_run": "permission-records-tests-1792579304350403000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.438,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "private_run": "format-check-1792579294112510000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 89.8,
+      "log_sha256": "7d0e2fa9c26767af8b1c2eebe712c315662ef2f4f2b483590978b6f7cfebb032",
+      "private_run": "lint-1792579316084665000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 121.309,
+      "log_sha256": "c7844384fb66f9a0db9c6bd79bd688bbfc41d293ba1b2e21a0e75ce4d942b87a",
+      "private_run": "compile-1792579408819561000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 776.772,
+      "log_sha256": "b422f1d26f5181af7778121ed3546c8c5d0d6d71911c4331c8d70399df14d860",
+      "private_run": "workspace-tests-1792579535315169000",
+      "source_unchanged": true,
+      "metadata_only": false
+    },
+    "metadata": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 3.682,
+      "log_sha256": "6bb60954c4e06021932103c0feb199cea7e04c63ad592378d1387a23ed36b770",
+      "private_run": "metadata-1792579294112492000",
+      "source_unchanged": true,
+      "metadata_only": true
+    }
+  },
+  "focused": {
+    "contract-tests": {
+      "counts": {
+        "passed": 4,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "deletion-tests": {
+      "counts": {
+        "passed": 7,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "embedded-deletion-tests": {
+      "counts": {
+        "passed": 4,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "v7-tests": {
+      "counts": {
+        "passed": 6,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "withheld-cancellation-tests": {
+      "counts": {
+        "passed": 7,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "legacy-guards-tests": {
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    },
+    "permission-records-tests": {
+      "counts": {
+        "passed": 89,
+        "failed": 0,
+        "ignored": 0
+      },
+      "summary_executions": 1
+    }
+  },
+  "http_business_tests": 5,
+  "contract_tests": 4,
+  "full_workspace": {
+    "counts": {
+      "passed": 1662,
+      "failed": 0,
+      "ignored": 11
+    },
+    "summary_executions": 153
+  },
+  "scope": {
+    "explicit_http_constructor_and_store_opt_in": true,
+    "genuine_once_always_and_multiple_saved_uses": true,
+    "entirely_settled_histories_required": true,
+    "existing_host_claim_and_actual_worker_drain": true,
+    "post_terminal_worker_still_busy": true,
+    "abandoned_caller_retains_admitted_writer_and_store": true,
+    "current_constraint_denial_does_not_replace_deletion_authority": true,
+    "healthy_limit_refusal_and_legacy_v7_unchanged": true,
+    "exact_historical_target_and_separate_current_store_owner": true,
+    "current_dedicated_authority_outside_transaction": true,
+    "all_eight_owned_tables_atomic": true,
+    "other_thread_bytes_and_metadata_preserved": true,
+    "guarded_late_delete_rollback_and_healthy_control": true,
+    "foreign_creator_unknown_representation_conservatively_refused": true,
+    "limits": {
+      "executions": 16,
+      "each_record_table": 64,
+      "journal": 512,
+      "cumulative_evidence_bytes": 67108864,
+      "structural_nodes": 65536
+    },
+    "global_database_scan_time_bound": false,
+    "generic_permission_store_fallback": false,
+    "new_http_capability": "V8.durable_permission_settled_thread_deletion",
+    "broad_fenced_deletion": false,
+    "earlier_http_contract_bytes_unchanged": true,
+    "runtime_and_sqlite_source_unchanged": true,
+    "live_retirement_or_recovery": false,
+    "automatic_storage_retry_or_callback_replay": false,
+    "dependencies_and_locks_unchanged": true,
+    "maximum_size_qualification": false,
+    "cross_platform_qualification": false,
+    "metadata_is_runtime_evidence": false,
+    "reported_counts_include_child_executions": true,
+    "git_writes": false
+  }
+}

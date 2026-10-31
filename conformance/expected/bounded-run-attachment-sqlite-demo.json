@@ -1,0 +1,102 @@
+{
+  "execution": {
+    "snapshot": {
+      "attempt_history": [
+        "attempt-attachment-qualified-script"
+      ],
+      "attempts_used": 1,
+      "batch_index": 1,
+      "definition": {
+        "batches": [
+          [
+            {
+              "effect_id": "effect-attachment-qualified-script",
+              "id": "fixture",
+              "recovery": "pure",
+              "requires_approval": false
+            }
+          ]
+        ],
+        "max_attempts": 1,
+        "revision": "fixture-v1",
+        "route": "/scripted#agent"
+      },
+      "execution_id": "attachment-qualified-script",
+      "failure": null,
+      "output": {
+        "message": "B4run committed this scripted effect through SQLite."
+      },
+      "owner_generation": 1,
+      "revision": 3,
+      "schema_version": 1,
+      "status": "completed",
+      "tasks": [
+        {
+          "approved": false,
+          "attempt_id": "attempt-attachment-qualified-script",
+          "input": {},
+          "interrupt": null,
+          "result": {
+            "output": {
+              "effect_id": "effect-attachment-qualified-script"
+            },
+            "writes": [
+              {
+                "field": "message",
+                "type": "replace",
+                "value": "B4run committed this scripted effect through SQLite."
+              }
+            ]
+          },
+          "spec": {
+            "effect_id": "effect-attachment-qualified-script",
+            "id": "fixture",
+            "recovery": "pure",
+            "requires_approval": false
+          },
+          "status": "succeeded"
+        }
+      ],
+      "turn_history": [
+        "turn-attachment-qualified-script"
+      ],
+      "turn_id": "turn-attachment-qualified-script",
+      "updated_at_ms": 1790892231218,
+      "values": {
+        "message": "B4run committed this scripted effect through SQLite."
+      }
+    },
+    "thread_id": "thread-attachment-qualified-script"
+  },
+  "journal": [
+    {
+      "execution_id": "attachment-qualified-script",
+      "owner_generation": 1,
+      "revision": 0,
+      "status": "accepted",
+      "updated_at_ms": 1790892231217
+    },
+    {
+      "execution_id": "attachment-qualified-script",
+      "owner_generation": 1,
+      "revision": 1,
+      "status": "running",
+      "updated_at_ms": 1790892231217
+    },
+    {
+      "execution_id": "attachment-qualified-script",
+      "owner_generation": 1,
+      "revision": 2,
+      "status": "running",
+      "updated_at_ms": 1790892231217
+    },
+    {
+      "execution_id": "attachment-qualified-script",
+      "owner_generation": 1,
+      "revision": 3,
+      "status": "completed",
+      "updated_at_ms": 1790892231218
+    }
+  ],
+  "scope": "native scripted SQLite example; no HTTP or provider"
+}

@@ -1,0 +1,175 @@
+{
+  "record_version": 1,
+  "profile": "original_always_uuid_resource_ids",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "source_descriptor_sha256": "4b5924295ba79a598a23700b0090f90949059f0717c3006374125bf1d49ec3c1",
+  "code_source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 7700,
+      "sha256": "ba5482fe6992824f507e0d5a789c2ac2838a1e45a0957661e364e8808c0a12c5"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 747141,
+      "sha256": "566c9c3cb2760995788863ff39f941921776b9f230a4ae94363349a03ca506e0"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/original_always_ids.rs",
+      "bytes": 34485,
+      "sha256": "cb5f0d056bc717c8f8c372bfcf5b9b1364c95739d1c3a0e2162ae5e09b61f341"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/persistent_permissions/use_driver.rs",
+      "bytes": 75373,
+      "sha256": "928fb17235646fb2043ad6d0266005f046e8995773de54ab0c33e1497f4997af"
+    }
+  ],
+  "checks": {
+    "format": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.001,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.391,
+      "log_sha256": "998a4f4ed1222e97429c4d72673a3347d80c0c8a83cbf1ddb8e21f9ee7c8bf1e",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.891,
+      "log_sha256": "50b12837fbba2e4f9194085d4909ec4a25ae027395d06f36f0325900b7122517",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "original_cases": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "persistent_permissions",
+        "--locked",
+        "--offline",
+        "use_driver::original_always_ids::",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.017,
+      "log_sha256": "9aa63615506f65545177cb7a8417c76b84f24964f3c01936137b4e4bcf0c729a",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    },
+    "workspace": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 162.163,
+      "log_sha256": "26ebea56f8e26cfeb41fad656a9afef135407059b647f8576c128fa437433f8e",
+      "reaped": true,
+      "timed_out": false,
+      "source_unchanged": true
+    }
+  },
+  "observed_original_cases": 3,
+  "supported_scope": {
+    "thread_execution_initial_and_approved_turn_uuids": true,
+    "genuine_pending_token_and_current_authority_required": true,
+    "exact_kernel_ready3_persisted_and_reopened": true,
+    "genuine_stale_fence_refusal_preserves_waiting": true,
+    "guarded_late_journal_fault_complete_rollback": true,
+    "callbacks_executed": 0,
+    "strict_defaults_unchanged": true,
+    "cumulative_allowances_unchanged": true
+  },
+  "bounds": {
+    "account_bytes": 8388608,
+    "account_nodes": 65536,
+    "before_resume_snapshot_bytes": 4096,
+    "acceptance_bytes": 8192,
+    "decision_bytes": 4096,
+    "grant_bytes": 4096,
+    "scope_body_bytes": 2048,
+    "scope_hash_wrapper_extra_bytes": 22,
+    "thread_and_journal_bytes": 1024,
+    "writer_output_aggregate_bytes": 6500,
+    "node_cardinality_depth_and_semantic_checks": "unchanged",
+    "prompt_bytes": 128,
+    "definition_bytes": 2048,
+    "simultaneous_maxima_guaranteed": false
+  },
+  "coverage_limits": [
+    "Compact application/context/Definition/task/effect labels, compact input/prompt and empty metadata only qualified by these cases.",
+    "The precommit capacity certificate is not evidence of an actual populated reader after commit; standalone populated reads remain Strict.",
+    "Guarded injected rollback is paired with unfaulted success; the shared Store error does not prove unique dynamic trigger provenance or classify arbitrary errors.",
+    "Cancellation, later NewUse reuse of original UUID records, original human callback execution, HTTP integration, Linux and exhaustive operation audits remain unqualified."
+  ],
+  "prior_observations": [
+    {
+      "entry": "accept_permission_human",
+      "result": "permission_unsupported_profile",
+      "storage_unchanged": true,
+      "retirement_qualified": true
+    },
+    {
+      "result": "new test observer misread INTEGER record_version as BLOB8",
+      "retirement_qualified": false,
+      "corrected": "exact INTEGER SQL type and decoded record version comparison"
+    }
+  ],
+  "durable_permission_capability_enabled": false,
+  "ignored_tests_executed": false,
+  "observed_final_workspace_cases": {
+    "original_uuid_cases": 3,
+    "legacy_driver_cases": 12,
+    "current_uuid_input_cases": 3,
+    "outcome_cases": 8,
+    "pure_driver_controls": 7
+  }
+}

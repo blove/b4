@@ -1,0 +1,261 @@
+{
+  "record_version": 1,
+  "profile": "embedded_entered_original_always_cancellation",
+  "date": "2026-10-20",
+  "platform": "macOS arm64",
+  "rust_toolchain": "1.93.1",
+  "status": "qualified",
+  "native_source_descriptor_sha256": "ac3d73e06a2b1058005801a61dedb1b932fd3709eeac05d892a9695ef0c4bb88",
+  "native_source_file_count": 988,
+  "source_files": [
+    {
+      "path": "crates/b4-runtime/src/permissions/driver_adapter.rs",
+      "bytes": 39556,
+      "sha256": "9c8fc3c2c98790dac7518c633e536be16cfef50877f020e21a330787f19e7110"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/mod.rs",
+      "bytes": 8436,
+      "sha256": "b6f012542f8e92163deff63adc2e678314d18ea4caa46fba91e891457b0f4875"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/model.rs",
+      "bytes": 27924,
+      "sha256": "91994f6099a9034dd87052977b7ef0162ef7b073d3208ebea47dbd622115a9f7"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/original_always.rs",
+      "bytes": 19553,
+      "sha256": "731b3243f993acc32fab722f04a9c672dfe928546c513e95b409f4f68b27e076"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/original_always_cancellation.rs",
+      "bytes": 13917,
+      "sha256": "3e22b708c07e782796e0cb35778dfb7711cda1a06331952e2e96eae31a736011"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/original_always_cancellation_relation.rs",
+      "bytes": 1704,
+      "sha256": "78b58cd253f62bdd17fabf5c23eb4b656d0a4b65791dda7bf50e19991adff646"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/ready_authorization.rs",
+      "bytes": 58701,
+      "sha256": "5b0bf6fe9a68ac395f66fd8ccac8f152f8cf5a594f3eab936999c6e2839d4553"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use.rs",
+      "bytes": 61347,
+      "sha256": "1ed818caa0849586111a3dfd27fd141947d4e89d689c4a83ba97722cec196ca8"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome_source.rs",
+      "bytes": 55480,
+      "sha256": "96a2183917136430825eeae4bf680a65aa94619f6a722451efe53a00a1b8003a"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/runtime_use_outcome_writer.rs",
+      "bytes": 79879,
+      "sha256": "a7dfd83e9178eb08292d39f12298e10cea88abac7ccfea5822889b68c27af954"
+    },
+    {
+      "path": "crates/b4-runtime/src/permissions/validation.rs",
+      "bytes": 760412,
+      "sha256": "edcf4f6d02f29ca178ad5df49a0fdb7af637ca7c3ef4b942d34e57ffa5476976"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/mod.rs",
+      "bytes": 92596,
+      "sha256": "f10a1ce1d7a1fa8bace4205b7e4c95361dd20efcc6f66661741c6cbcb9b36799"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/original_always.rs",
+      "bytes": 11554,
+      "sha256": "134eecf3aeb0eaa2ce2dd585b1a546928837234995a22fd7f91652697e811307"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/original_always_cancellation.rs",
+      "bytes": 9781,
+      "sha256": "f8c18a67676737de7022c95b9032dc04060a4b059a9d60db78ab7962922c6a2b"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/ready_authorization.rs",
+      "bytes": 27750,
+      "sha256": "dd1bb1d0f0c907bd01b4f4d7912563e3c05f943bf38a2b96f89e18e9779e10aa"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_dispatch.rs",
+      "bytes": 19567,
+      "sha256": "ee8217babbe7b9393e2f5e0ce5f6893109de72f0b932abd843415130ca73c8dc"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_outcome.rs",
+      "bytes": 25568,
+      "sha256": "1dd8e6f5f8bfc183fff8fdc9ec73d67384527450296d417ec770b72011137d3d"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_outcome_immediate.rs",
+      "bytes": 22095,
+      "sha256": "2ed0d772ec5e72ed26757936801e89b2f016e72c1dff40d746bf2fcfa650c42c"
+    },
+    {
+      "path": "crates/b4-sqlite/src/permissions/use_renewal.rs",
+      "bytes": 26858,
+      "sha256": "31de9a2ae7b9aae9bccd151ad4dea542a9d400ceb18778bb22adffc70403e44b"
+    },
+    {
+      "path": "crates/b4-sqlite/tests/permission_original_always_cancellation.rs",
+      "bytes": 43602,
+      "sha256": "d316dd4352213c6db2aa1abfc600f8fa663181701787a38f88c6ab98abc12ede"
+    }
+  ],
+  "checks": {
+    "focused": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-sqlite",
+        "--test",
+        "permission_original_always_cancellation",
+        "--locked",
+        "--offline",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 8.975,
+      "log_sha256": "e0e440d0c350c4250ac75faffe8b741c068272ae78ac22286ffb468a770d81b5",
+      "private_run": "original-cancellation-tests-1792548294771387000",
+      "source_unchanged": true
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.452,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "private_run": "format-check-1792548294771387000",
+      "source_unchanged": true
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 57.793,
+      "log_sha256": "06440859544a0106525f54aa764a3969b2fa5e6d7b549b73c63ff3e415beefb1",
+      "private_run": "lint-1792548318108159000",
+      "source_unchanged": true
+    },
+    "compile": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 117.364,
+      "log_sha256": "39276581736d447d78ac983fad03dfc7852f0777010271cbc9304183d15e8507",
+      "private_run": "compile-1792548382218817000",
+      "source_unchanged": true
+    },
+    "workspace-tests": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 279.43,
+      "log_sha256": "b4c63256717cfe89c17f89f7f5b6ead45bc61e9855b6aa6177fc8745595b8fc5",
+      "private_run": "workspace-tests-1792548516696953000",
+      "source_unchanged": true
+    },
+    "metadata": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.5,
+      "log_sha256": "4fb7485ede2f75ee8abe59c10d7cf9d5177afa40a65b0f81de75f5523f03bf50",
+      "private_run": "metadata-1792548318108521000",
+      "source_unchanged": true
+    }
+  },
+  "focused": {
+    "passed": 8,
+    "failed": 0,
+    "ignored": 0,
+    "outcome_scenarios": 9
+  },
+  "full_workspace": {
+    "counts": {
+      "passed": 1583,
+      "failed": 0,
+      "ignored": 11
+    },
+    "summary_lines": 139
+  },
+  "observed": {
+    "request": "genuine entered original NewHuman Dispatch4 to atomic CancelRequested5 before local signal; no synthetic Use",
+    "acknowledgement": "actual controlled receipt to Cancelled6",
+    "success_and_failure": "actual Complete or FailAttempt preserves kernel status and fields",
+    "no_request": "controlled success Complete5",
+    "management": "current actor and stale-target refusal; revoked effect constraint after entry cannot veto dedicated management stop",
+    "request_journal_fault": "exact post-update pre-commit journal abort, full Dispatch4 rollback, same-target healthy request",
+    "terminal_journal_fault": "exact post-update pre-commit journal abort, full CancelRequested5 rollback, actual original Work/receipt retained, explicit storage-only retry, repeated retry refused",
+    "signal_only": "does not manufacture durable cancellation authority",
+    "permission_preservation": "immutable original authority; normal close/reopen and genuine later NewUse Complete4 from exact seven-entry creator history",
+    "callback_ownership": "one original invocation per fixture; finite entered/release channels and normal thread/capacity/store retirement"
+  },
+  "scope": {
+    "already_entered_original_only": true,
+    "callback_entry_is_caller_sequencing": true,
+    "seven_entry_creator_relation": "actual Dispatch4 then CancelRequested5 then kernel terminal6; selected source counts and overflow sentinels through all consumed stages",
+    "pre_entry_scheduling_races": false,
+    "http_permission_cancellation": false,
+    "recovery_or_deletion": false,
+    "broad_durable_permissions": false,
+    "default_direct_and_entered_new_use_behavior_unchanged": true,
+    "dependencies_and_locks_unchanged": true,
+    "http_v1_through_v4_unchanged": true,
+    "maximum_size_qualification": false,
+    "cross_platform_qualification": false,
+    "metadata_is_runtime_evidence": false,
+    "git_writes": false
+  }
+}

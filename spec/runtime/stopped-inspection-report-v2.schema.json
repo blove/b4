@@ -1,0 +1,505 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://b4run.local/spec/runtime/stopped-inspection-report-v2.schema.json",
+  "title": "B4run stopped readonly inspection report version2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "inspection_report_version",
+    "mode",
+    "redacted",
+    "reader",
+    "validation_scope",
+    "table_rows",
+    "executions_by_status",
+    "initialized_tasks_by_status",
+    "declared_definition_tasks_by_recovery_policy",
+    "recorded_uncertain_tasks_by_policy",
+    "blocked",
+    "permission_authority"
+  ],
+  "properties": {
+    "inspection_report_version": {
+      "type": "integer",
+      "const": 2
+    },
+    "mode": {
+      "const": "stopped_readonly"
+    },
+    "redacted": {
+      "const": true
+    },
+    "reader": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "package_version",
+        "sqlite_library_version",
+        "snapshot_version",
+        "store_schema_version",
+        "target_profile",
+        "profile_status",
+        "capability_descriptor_versions",
+        "core_profile_frozen"
+      ],
+      "properties": {
+        "package_version": {
+          "const": "0.1.0"
+        },
+        "sqlite_library_version": {
+          "const": "3.53.2"
+        },
+        "snapshot_version": {
+          "const": 1
+        },
+        "store_schema_version": {
+          "type": "integer",
+          "const": 4
+        },
+        "target_profile": {
+          "const": "b4-ap-core/0"
+        },
+        "profile_status": {
+          "const": "native_subset"
+        },
+        "core_profile_frozen": {
+          "const": false
+        },
+        "capability_descriptor_versions": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "prefixItems": [
+            {
+              "type": "integer",
+              "const": 1
+            },
+            {
+              "type": "integer",
+              "const": 2
+            },
+            {
+              "type": "integer",
+              "const": 3
+            }
+          ],
+          "items": false
+        }
+      }
+    },
+    "validation_scope": {
+      "const": "schema_structure_execution_snapshots_and_bounded_permission_records"
+    },
+    "table_rows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metadata",
+        "threads",
+        "executions",
+        "journal",
+        "approval_grants",
+        "approval_acceptances",
+        "permission_acceptances",
+        "permission_decisions",
+        "permission_uses"
+      ],
+      "properties": {
+        "metadata": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "threads": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "executions": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "journal": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "approval_grants": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "approval_acceptances": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "permission_acceptances": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "permission_decisions": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "permission_uses": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        }
+      }
+    },
+    "executions_by_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accepted",
+        "running",
+        "waiting_for_approval",
+        "completed",
+        "failed",
+        "cancel_requested",
+        "cancelled",
+        "recovery_blocked"
+      ],
+      "properties": {
+        "accepted": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "running": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "waiting_for_approval": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "completed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "cancel_requested": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "cancelled": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "recovery_blocked": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        }
+      }
+    },
+    "initialized_tasks_by_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ready",
+        "waiting_for_approval",
+        "in_flight",
+        "succeeded",
+        "failed",
+        "denied",
+        "cancelled",
+        "outcome_unknown"
+      ],
+      "properties": {
+        "ready": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "waiting_for_approval": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "in_flight": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "succeeded": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "denied": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "cancelled": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "outcome_unknown": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        }
+      }
+    },
+    "declared_definition_tasks_by_recovery_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pure",
+        "idempotent",
+        "reconcilable",
+        "unsafe"
+      ],
+      "properties": {
+        "pure": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "idempotent": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "reconcilable": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "unsafe": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        }
+      }
+    },
+    "recorded_uncertain_tasks_by_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pure",
+        "idempotent",
+        "reconcilable",
+        "unsafe"
+      ],
+      "properties": {
+        "pure": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "idempotent": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "reconcilable": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "unsafe": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        }
+      }
+    },
+    "blocked": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "selection",
+            "rows"
+          ],
+          "properties": {
+            "selection": {
+              "const": "recorded_unfinished_or_uncertain"
+            },
+            "rows": {
+              "type": "array",
+              "maxItems": 64,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "ordinal",
+                  "status",
+                  "recorded_recovery_blocked",
+                  "recorded_approval_park",
+                  "has_uncertain_task",
+                  "initialized_tasks_by_status",
+                  "declared_definition_tasks_by_recovery_policy"
+                ],
+                "properties": {
+                  "ordinal": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 64
+                  },
+                  "status": {
+                    "enum": [
+                      "accepted",
+                      "running",
+                      "waiting_for_approval",
+                      "completed",
+                      "failed",
+                      "cancel_requested",
+                      "cancelled",
+                      "recovery_blocked"
+                    ]
+                  },
+                  "recorded_recovery_blocked": {
+                    "type": "boolean"
+                  },
+                  "recorded_approval_park": {
+                    "type": "boolean"
+                  },
+                  "has_uncertain_task": {
+                    "type": "boolean"
+                  },
+                  "initialized_tasks_by_status": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "ready",
+                      "waiting_for_approval",
+                      "in_flight",
+                      "succeeded",
+                      "failed",
+                      "denied",
+                      "cancelled",
+                      "outcome_unknown"
+                    ],
+                    "properties": {
+                      "ready": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "waiting_for_approval": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "in_flight": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "succeeded": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "failed": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "denied": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "cancelled": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "outcome_unknown": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      }
+                    }
+                  },
+                  "declared_definition_tasks_by_recovery_policy": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "pure",
+                      "idempotent",
+                      "reconcilable",
+                      "unsafe"
+                    ],
+                    "properties": {
+                      "pure": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "idempotent": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "reconcilable": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      },
+                      "unsafe": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18446744073709551615
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "permission_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_always_decisions",
+        "token_free_uses"
+      ],
+      "properties": {
+        "human_always_decisions": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "token_free_uses": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        }
+      }
+    }
+  }
+}

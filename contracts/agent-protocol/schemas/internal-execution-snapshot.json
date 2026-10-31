@@ -1,0 +1,364 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "internal-execution-snapshot.json",
+  "title": "Internal portable execution snapshot version 1",
+  "$comment": "NATIVE foundation schema. Not an AP checkpoint, LangGraph import contract, storage durability claim or public replay format. Structural schema validation does not replace kernel invariants. The unreleased v1 format now admits explicit settled task failures while retaining old snapshots that omit task failure. Semantic drain, conflict, owner and quiescence rules are enforced by the kernel.",
+  "$defs": {
+    "task_spec": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "opaque-id.json"
+        },
+        "effect_id": {
+          "$ref": "opaque-id.json"
+        },
+        "recovery": {
+          "enum": [
+            "pure",
+            "idempotent",
+            "reconcilable",
+            "unsafe"
+          ]
+        },
+        "requires_approval": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "effect_id",
+        "recovery",
+        "requires_approval"
+      ],
+      "additionalProperties": false
+    },
+    "definition": {
+      "type": "object",
+      "properties": {
+        "route": {
+          "$ref": "route-key.json"
+        },
+        "revision": {
+          "$ref": "opaque-id.json"
+        },
+        "batches": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/task_spec"
+            }
+          }
+        },
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        }
+      },
+      "required": [
+        "route",
+        "revision",
+        "batches",
+        "max_attempts"
+      ],
+      "additionalProperties": false
+    },
+    "pending_approval": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "opaque-id.json"
+        },
+        "prompt": {}
+      },
+      "required": [
+        "id",
+        "prompt"
+      ],
+      "additionalProperties": false
+    },
+    "state_write": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "replace"
+            },
+            "field": {
+              "type": "string"
+            },
+            "value": {}
+          },
+          "required": [
+            "type",
+            "field",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "append"
+            },
+            "field": {
+              "type": "string"
+            },
+            "items": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "required": [
+            "type",
+            "field",
+            "items"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "task_result": {
+      "type": "object",
+      "properties": {
+        "output": {},
+        "writes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/state_write"
+          }
+        }
+      },
+      "required": [
+        "output",
+        "writes"
+      ],
+      "additionalProperties": false
+    },
+    "task_record": {
+      "type": "object",
+      "properties": {
+        "spec": {
+          "$ref": "#/$defs/task_spec"
+        },
+        "status": {
+          "enum": [
+            "ready",
+            "waiting_for_approval",
+            "in_flight",
+            "succeeded",
+            "failed",
+            "denied",
+            "cancelled",
+            "outcome_unknown"
+          ]
+        },
+        "input": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "attempt_id": {
+          "anyOf": [
+            {
+              "$ref": "opaque-id.json"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/task_result"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "interrupt": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/pending_approval"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "approved": {
+          "type": "boolean"
+        },
+        "failure": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 1024,
+          "x-max-utf8-bytes": 1024,
+          "description": "Optional version-1 additive field. Absence defaults to no failure and is omitted when serializing None. Failed attempts require a nonempty bounded reason; kernel validation enforces UTF-8 bytes and outcome/status consistency."
+        }
+      },
+      "required": [
+        "spec",
+        "status",
+        "input",
+        "approved"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "failed"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "failure",
+              "attempt_id"
+            ],
+            "properties": {
+              "failure": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1024,
+                "x-max-utf8-bytes": 1024
+              },
+              "attempt_id": {
+                "$ref": "opaque-id.json"
+              },
+              "result": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "failure": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "x-implementation-status": "native-dto",
+  "x-compatibility-status": "not-applicable",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "execution_id": {
+      "$ref": "opaque-id.json"
+    },
+    "turn_id": {
+      "$ref": "opaque-id.json"
+    },
+    "owner_generation": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "definition": {
+      "$ref": "#/$defs/definition"
+    },
+    "status": {
+      "enum": [
+        "accepted",
+        "running",
+        "waiting_for_approval",
+        "completed",
+        "failed",
+        "cancel_requested",
+        "cancelled",
+        "recovery_blocked"
+      ]
+    },
+    "batch_index": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615,
+      "description": "Native usize index; runtime/kernel must validate it against the definition."
+    },
+    "values": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/task_record"
+      }
+    },
+    "attempts_used": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "updated_at_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "output": {
+      "description": "Omission means no output; present null is a recorded JSON-null output. This distinction survives serialization."
+    },
+    "failure": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "turn_history": {
+      "type": "array",
+      "items": {
+        "$ref": "opaque-id.json"
+      },
+      "description": "Required history of issued identities. Kernel validates uniqueness, current-identity membership and ledger consistency; serialized history is never reset on continuation/recovery."
+    },
+    "attempt_history": {
+      "type": "array",
+      "items": {
+        "$ref": "opaque-id.json"
+      },
+      "description": "Required history of issued identities. Kernel validates uniqueness, current-identity membership and ledger consistency; serialized history is never reset on continuation/recovery."
+    }
+  },
+  "required": [
+    "schema_version",
+    "revision",
+    "execution_id",
+    "turn_id",
+    "owner_generation",
+    "definition",
+    "status",
+    "batch_index",
+    "values",
+    "tasks",
+    "attempts_used",
+    "updated_at_ms",
+    "turn_history",
+    "attempt_history"
+  ],
+  "additionalProperties": false,
+  "x-schema-id": "urn:b4:internal:execution-snapshot:1"
+}

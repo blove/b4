@@ -1,0 +1,23 @@
+# Cancel a saved-permission run while Ready
+
+Entered NewUse and original Always cancellation are qualified separately. The next prerequisite for general cancellation is a genuine NewUse that is still Ready2: cancel it without claiming or invoking a callback, preserving the saved permission for later runs. Original Ready3 already has its explicit typed cancellation producer. This increment adds the missing NewUse Ready operation, without HTTP integration or receipt withdrawal for an already-claimed pre-entry invocation. User continuous development authorization applies; no routine approval pause or Git writes.
+
+## Approach and API
+
+Add `PermissionUseReadyCancellationRequest { context, target, facts }` and `cancel_permission_use_ready(store, authority, catalog, request, budget)`. Require `permission_use_ready_cancellation_atomic_durable`, default false with Arc forwarding and SQLite opt-in. Dedicated typed capture/prepared/commit ports default-refuse. The source may reuse the existing bounded normal NewUse reader and immutable witness; it must select the actual Ready2 relation and its three current journals, without enabling the entered-cancellation four-row mode or widening unrelated defaults. Existing valid five/six/seven-entry original creator histories remain proven through the existing selected source relation.
+
+Prove current Ready2/one approved required task/no attempt, genuine actual Use and inherited approval/decision/consumed-grant evidence, exact complete Definition/current registration/source binding, actor/origin/current context and dedicated management authority. Do not rerun effect execution constraints to authorize a management stop. Bind the final opaque capture resource to the actual source proof; decoded records or a revision number alone are not authority. Recheck exact owner/thread/resource/turn/execution/target and every immutable index/byte/history inside an Immediate transaction.
+
+Derive the actual Kernel Cancel projection Ready2→Cancelled3 and atomically update execution, thread revision and journal, leaving Use and original saved authority immutable. Return only the typed confirmed commit. Unknown Store outcomes do not prove rollback or justify automatic retry/invocation. No native invocation/claim/receipt is created, and no generic raw cancellation fallback is allowed. Existing finite normal inputs/envelopes and cumulative accounts apply; add no global cap or operation audit.
+
+## Races and limits
+
+If Ready cancellation commits before a competing Dispatch claim, the claim's existing exact fences must refuse; no callback can enter from that cancelled Ready. If a genuine competing claim wins before the cancellation Immediate reread, cancellation refuses without an extra write. Test this real contender with finite owned channels and current kernel/raw state, then retire its actual callback through an already-qualified path. Do not manufacture a claim, terminal or cancellation receipt.
+
+The operation deliberately handles only Ready2. It does not make drivers consume/settle an already-claimed invocation that has not entered native code, wait indefinitely for callback entry, or advertise HTTP permission cancellation. Those ownership/integration boundaries follow separately. Old direct/controlled/original drivers, entered request APIs, general Store cancellation guards and HTTP V1–V4 declarations remain unchanged.
+
+## Verification
+
+Fresh tests first use actual original human Always approval and existing original Ready cancellation, then real NewUse Ready2 with normal UUID application/resources, descriptive task/effect IDs and modest structured input. Complete typed/kernel/nine-table oracles show Cancelled3, no callback and unchanged immutable evidence. Normal drain/close/reopen and actual fresh later NewUse Complete4 prove preservation. Combine current-context/catalog/stale refusal controls and healthy cancellation; test exact post-update request-journal abort with literal guard DDL, complete Ready2 rollback and same-target healthy control; test one deterministic real Dispatch contender winning before Immediate reread and no extra cancellation mutation. Keep finite waits, SQL sentinels and existing bounds; no matrix/max-size claim.
+
+Independent source→Root missing-API RED→quality review precedes fresh single implementation. Source gate, focused GREEN, formatting, strict all-target lint, workspace compile/full locked-offline regression and independent source/results/adoption review precede exact selective adoption, scoped qualification and runbook. Public metadata is separate from runtime execution evidence.

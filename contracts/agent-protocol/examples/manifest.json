@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "evidence_kind": "NATIVE",
+  "status": "authored_design_inputs",
+  "reference_execution": false,
+  "description": "Examples are independently authored design inputs; tokens are unissued examples. They are not TypeScript runtime captures.",
+  "examples": [
+    {
+      "file": "run-omitted-input.json",
+      "schema": "../schemas/run-request.json"
+    },
+    {
+      "file": "run-null-input.json",
+      "schema": "../schemas/run-request.json"
+    },
+    {
+      "file": "run-array-input.json",
+      "schema": "../schemas/run-request.json"
+    },
+    {
+      "file": "resume-resolved.json",
+      "schema": "../schemas/resume-request.json"
+    },
+    {
+      "file": "resume-cancelled.json",
+      "schema": "../schemas/resume-request.json"
+    },
+    {
+      "file": "error.json",
+      "schema": "../schemas/error.json"
+    },
+    {
+      "file": "thread.json",
+      "schema": "../schemas/thread.json"
+    },
+    {
+      "file": "sse-chunk.json",
+      "schema": "../schemas/sse-chunk.json"
+    },
+    {
+      "file": "sse-tool-call.json",
+      "schema": "../schemas/sse-tool-call.json"
+    },
+    {
+      "file": "sse-tool-result.json",
+      "schema": "../schemas/sse-tool-result.json"
+    },
+    {
+      "file": "sse-done.json",
+      "schema": "../schemas/sse-done.json"
+    },
+    {
+      "file": "sse-done-null.json",
+      "schema": "../schemas/sse-done.json"
+    },
+    {
+      "file": "pending-interrupts.json",
+      "schema": "../schemas/pending-interrupts.json"
+    },
+    {
+      "file": "internal-execution-snapshot.json",
+      "schema": "../schemas/internal-execution-snapshot.json"
+    },
+    {
+      "file": "sse-state-live.json",
+      "schema": "../schemas/sse-state.json"
+    },
+    {
+      "file": "sse-state-inactive.json",
+      "schema": "../schemas/sse-state.json"
+    },
+    {
+      "file": "sse-state-truncated.json",
+      "schema": "../schemas/sse-state.json"
+    },
+    {
+      "file": "sse-detached-capacity.json",
+      "schema": "../schemas/sse-detached.json"
+    },
+    {
+      "file": "sse-detached-overflow.json",
+      "schema": "../schemas/sse-detached.json"
+    },
+    {
+      "file": "capabilities-native.json",
+      "schema": "../schemas/capabilities.json"
+    },
+    {
+      "file": "capabilities-scripted.json",
+      "schema": "../schemas/capabilities.json"
+    },
+    {
+      "file": "capabilities-v2-native.json",
+      "schema": "../schemas/capabilities-v2.json"
+    },
+    {
+      "file": "capabilities-v2-scripted.json",
+      "schema": "../schemas/capabilities-v2.json"
+    },
+    {
+      "file": "capabilities-v3-permission-use.json",
+      "schema": "../schemas/capabilities-v3.json"
+    },
+    {
+      "file": "capabilities-v4-permission-approvals.json",
+      "schema": "../schemas/capabilities-v4.json"
+    }
+  ]
+}

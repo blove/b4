@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capabilities-v3.json",
+  "title": "B4 narrow durable permission reuse capability descriptor v3",
+  "x-schema-id": "urn:b4:agent-protocol:native:capabilities-v3",
+  "x-implementation-status": "native-subset",
+  "x-compatibility-status": "authored-native-operational-contract",
+  "description": "Opt-in single-run, single-task durable permission reuse and required Once/Deny fallback. This declaration does not promise HTTP Always creation, recovery, cancellation, deletion, callback interruption or full core-profile conformance. Supervised admission drain, controls and unchanged limits retain V2 bounds. Metadata is not execution evidence.",
+  "type": "object",
+  "properties": {
+    "descriptor_version": {
+      "type": "integer",
+      "const": 3
+    },
+    "target_profile": {
+      "$ref": "capabilities.json#/properties/target_profile"
+    },
+    "profile_status": {
+      "$ref": "capabilities.json#/properties/profile_status"
+    },
+    "core_profile_frozen": {
+      "$ref": "capabilities.json#/properties/core_profile_frozen"
+    },
+    "runtime_version": {
+      "$ref": "capabilities.json#/properties/runtime_version"
+    },
+    "application": {
+      "$ref": "capabilities.json#/$defs/application"
+    },
+    "execution": {
+      "allOf": [
+        {
+          "$ref": "capabilities.json#/properties/execution"
+        },
+        {
+          "properties": {
+            "native_callbacks": {
+              "const": true
+            },
+            "approval_service_mode": {
+              "const": "durable_required"
+            }
+          }
+        }
+      ]
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "live_attach": {
+          "const": true
+        },
+        "required_once_deny": {
+          "const": true
+        },
+        "trusted_known_id_recovery": {
+          "const": false
+        },
+        "fenced_cancellation": {
+          "const": false
+        },
+        "fenced_deletion": {
+          "const": false
+        },
+        "automatic_recovery_scan": {
+          "const": false
+        },
+        "always_permissions": {
+          "const": false
+        },
+        "durable_event_replay": {
+          "const": false
+        },
+        "native_live_chunks": {
+          "const": false
+        },
+        "built_in_model_providers": {
+          "const": false
+        },
+        "memory_candidates": {
+          "const": false
+        },
+        "managed_workspaces": {
+          "const": false
+        },
+        "ag_ui": {
+          "const": false
+        },
+        "dynamic_graphs": {
+          "const": false
+        },
+        "graceful_shutdown": {
+          "const": false
+        },
+        "turn_deadline": {
+          "const": false
+        },
+        "native_callback_sandbox": {
+          "const": false
+        },
+        "supervised_admission_drain": {
+          "const": true
+        },
+        "durable_permission_reuse": {
+          "const": true
+        }
+      },
+      "required": [
+        "live_attach",
+        "required_once_deny",
+        "trusted_known_id_recovery",
+        "fenced_cancellation",
+        "fenced_deletion",
+        "automatic_recovery_scan",
+        "always_permissions",
+        "durable_event_replay",
+        "native_live_chunks",
+        "built_in_model_providers",
+        "memory_candidates",
+        "managed_workspaces",
+        "ag_ui",
+        "dynamic_graphs",
+        "graceful_shutdown",
+        "turn_deadline",
+        "native_callback_sandbox",
+        "supervised_admission_drain",
+        "durable_permission_reuse"
+      ],
+      "additionalProperties": false
+    },
+    "store": {
+      "allOf": [
+        {
+          "$ref": "capabilities.json#/properties/store"
+        },
+        {
+          "properties": {
+            "durable_runtime": {
+              "const": true
+            },
+            "durable_approvals": {
+              "const": true
+            }
+          }
+        }
+      ]
+    },
+    "readiness": {
+      "$ref": "capabilities-v2.json#/properties/readiness"
+    },
+    "limits": {
+      "allOf": [
+        {
+          "$ref": "capabilities.json#/properties/limits"
+        },
+        {
+          "properties": {
+            "active_runs": {
+              "const": 1
+            },
+            "concurrent_tasks": {
+              "const": 1
+            },
+            "concurrent_tasks_per_execution": {
+              "const": 1
+            },
+            "approval_ttl_ms": {
+              "type": "integer"
+            }
+          }
+        }
+      ]
+    },
+    "controls": {
+      "$ref": "capabilities-v2.json#/properties/controls"
+    }
+  },
+  "required": [
+    "descriptor_version",
+    "target_profile",
+    "profile_status",
+    "core_profile_frozen",
+    "runtime_version",
+    "application",
+    "execution",
+    "features",
+    "store",
+    "readiness",
+    "limits",
+    "controls"
+  ],
+  "additionalProperties": false
+}

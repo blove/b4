@@ -1,0 +1,93 @@
+{
+  "descriptor_version": 7,
+  "target_profile": "b4-ap-core/0",
+  "profile_status": "native_subset",
+  "core_profile_frozen": false,
+  "runtime_version": "0.1.0",
+  "application": {
+    "id": "native-demo",
+    "revision": "native-demo-v1"
+  },
+  "execution": {
+    "mode": "single_process",
+    "registration": "immutable",
+    "native_callbacks": true,
+    "approval_service_mode": "durable_required"
+  },
+  "features": {
+    "live_attach": true,
+    "required_once_deny": true,
+    "trusted_known_id_recovery": false,
+    "fenced_cancellation": false,
+    "fenced_deletion": false,
+    "automatic_recovery_scan": false,
+    "always_permissions": false,
+    "durable_event_replay": false,
+    "native_live_chunks": false,
+    "built_in_model_providers": false,
+    "memory_candidates": false,
+    "managed_workspaces": false,
+    "ag_ui": false,
+    "dynamic_graphs": false,
+    "graceful_shutdown": false,
+    "turn_deadline": false,
+    "native_callback_sandbox": false,
+    "supervised_admission_drain": true,
+    "durable_permission_reuse": true,
+    "durable_permission_creation": true,
+    "durable_permission_entered_cancellation": true,
+    "durable_permission_ready_cancellation": true,
+    "durable_permission_withheld_cancellation": true
+  },
+  "store": {
+    "kind": "sqlite",
+    "durable_runtime": true,
+    "durable_approvals": true
+  },
+  "readiness": {
+    "response": "status_only",
+    "aggregation": "store_readiness_and_no_owned_worker_fault_and_serving_admission",
+    "checks": [
+      "store_readiness",
+      "owned_worker_fault",
+      "serving_admission"
+    ]
+  },
+  "limits": {
+    "body_bytes": 65536,
+    "json_depth": 64,
+    "active_runs": 1,
+    "concurrent_tasks": 1,
+    "concurrent_tasks_per_execution": 1,
+    "viewer_queue_frames": 16,
+    "heartbeat_ms": 15000,
+    "input_bytes": 65536,
+    "output_bytes": 65536,
+    "max_attached_viewers": 16,
+    "turn_buffer_bytes": 2097152,
+    "turn_buffer_frames": 4096,
+    "viewer_queue_bytes": 2097152,
+    "attachment_snapshot_bytes": 2097152,
+    "program_routes": 64,
+    "program_tasks": 64,
+    "program_attempts": 64,
+    "completion_attempts": 8,
+    "task_failure_bytes": 1024,
+    "script_chunks": 64,
+    "script_delay_ms": 5000,
+    "approval_bytes": 65536,
+    "approval_ttl_ms": 300000
+  },
+  "controls": {
+    "callback_timeout_ms": null,
+    "validator_timeout_ms": null,
+    "turn_deadline_ms": null,
+    "max_threads": null,
+    "max_history_bytes": null,
+    "parked_retention_ms": null,
+    "connection_limit": null,
+    "whole_process_memory_bytes": null,
+    "shutdown_default_wait_ms": 30000,
+    "shutdown_max_wait_ms": 300000
+  }
+}

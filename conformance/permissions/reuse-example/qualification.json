@@ -1,0 +1,186 @@
+{
+  "record_version": 1,
+  "profile": "runnable_permission_reuse_example",
+  "date": "2026-10-20",
+  "platform": "macOS arm64 Unix process harness",
+  "rust_toolchain": "1.93.1",
+  "status": "adopted",
+  "native_source_descriptor_sha256": "ddb0e506ac5d77891b342480f26af277ddf4e0acbb86b006393e6aead8e6c69a",
+  "binary_sha256": "73bc21bf0831b2bec4999a82d027d750513610444db85d38afea8d90cf0c7598",
+  "source_files": [
+    {
+      "path": ".gitignore",
+      "bytes": 99,
+      "sha256": "f9435b10c0f190c4f3b0647aac3c01cd1c3f4974b95a85395526f775d5aa2925"
+    },
+    {
+      "path": "crates/b4-http/Cargo.toml",
+      "bytes": 662,
+      "sha256": "ad1e651660c7a52d8d878f4bb49c5ee60945bd03caf97596d0e0d018295f130c"
+    },
+    {
+      "path": "crates/b4-http/examples/serve_permission_reuse.rs",
+      "bytes": 16040,
+      "sha256": "9ddfa7d2997bbe360cadad246c462447125265f214f0a828ca36ff30379d7dc8"
+    },
+    {
+      "path": "scripts/check_permission_reuse_example.py",
+      "bytes": 21570,
+      "sha256": "aa13064421f88d2ea8c8c51f2a962d9fd67f39c6a38005e1797407561f0be063"
+    }
+  ],
+  "checks": {
+    "standalone-build": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "build",
+        "-p",
+        "b4-http",
+        "--example",
+        "serve_permission_reuse",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 4.253,
+      "log_sha256": "f1b3563d3e47c20d1096f575bd3831a5b0585a29a220376a2d76ef12e2bdb326",
+      "source_unchanged": true,
+      "private_run": "build-example-1792536588482103000",
+      "source_scope": "All Rust/manifest/SQL/locked inputs match final source; only the subsequent query-only Python reader correction differs from this build snapshot."
+    },
+    "process-acceptance": {
+      "command": [
+        "/Users/blove/.pyenv/versions/3.12.12/bin/python3",
+        "-B",
+        "scripts/check_permission_reuse_example.py",
+        "--example",
+        "/Users/blove/repos/b4/.b4-work/permission-reuse-example/build-target/debug/examples/serve_permission_reuse"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 0.349,
+      "log_sha256": "c53a61631328d93f522250865915718db784fb8156e1faea91760d32f9fc6431",
+      "source_unchanged": true,
+      "private_run": "example-acceptance-1792536812838439000"
+    },
+    "format-check": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.288,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "private_run": "format-check-1792536878406495000"
+    },
+    "lint": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 2.11,
+      "log_sha256": "5f4a6170e0f8ef3943888dcc92367686a5d99b0723b6d6a6c4ae521ec09e0000",
+      "source_unchanged": true,
+      "private_run": "lint-1792536878406565000"
+    },
+    "http-regression": {
+      "command": [
+        "/Users/blove/.rustup/toolchains/1.93.1-aarch64-apple-darwin/bin/cargo",
+        "test",
+        "-p",
+        "b4-http",
+        "--test",
+        "permission_uses",
+        "--test",
+        "permission_use_boundaries",
+        "--test",
+        "permission_use_lifecycle",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "reaped": true,
+      "timed_out": false,
+      "elapsed_seconds": 1.934,
+      "log_sha256": "113762eec81b6c3aad8cbd0c5f317cc05b6b122abd7fd86c160e461606e8bbd8",
+      "source_unchanged": true,
+      "private_run": "http-regression-1792536913771477000"
+    }
+  },
+  "actual_process_assertions": {
+    "seed": "genuine Always approval then Ready cancellation at revision4, no callback dispatch",
+    "owners": [
+      1,
+      2,
+      3
+    ],
+    "server_processes": 2,
+    "completed_reused_runs": 2,
+    "permission_uses": 2,
+    "normal_interrupt_shutdowns": 2,
+    "listener_retirement": "connection refused after normal exit",
+    "store_retirement": "actual owner.lock exclusively available after normal exit",
+    "persisted_state": "Complete4, real Use/Start1/journal linkage, immutable original records, distinct Use/attempt identities",
+    "sqlite_inspection": "existing canonical database, verified query-only SQL, integrity check",
+    "temporary_database_removed": true,
+    "invalid_configuration_before_storage": true,
+    "anonymous_request_refused": true
+  },
+  "selected_rust_tests": {
+    "passed": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  "scope": {
+    "callback_output": {
+      "published": true
+    },
+    "callback_state_writes": [],
+    "external_callback_effects": false,
+    "application": "fixed local demo actor/catalog/policy",
+    "new_locked_packages": false,
+    "lock_changes": false,
+    "feature_change": "existing Tokio signal enabled for dev/example target",
+    "production_library_changes": false,
+    "fresh_full_workspace_run": false,
+    "prior_http_host_qualification": "conformance/permissions/http-reuse/qualification.json",
+    "linux": "not qualified",
+    "windows": "not qualified",
+    "http_always_creation": "pending",
+    "permission_recovery_cancellation_deletion": "unsupported by this HTTP host",
+    "broad_core_release": "pending"
+  },
+  "red_evidence": {
+    "absent_executable": {
+      "run": "example-acceptance-absent-1792536229014711000",
+      "exit_code": 1,
+      "log_sha256": "0d10ac96ebe31ec114acd76673069db3ace7acc31cec128b334048450380a159",
+      "scope": "no application behavior executed"
+    },
+    "absent_example_target": {
+      "run": "build-example-1792536232446979000",
+      "exit_code": 101,
+      "log_sha256": "1997734a1dffbfca7243647d4a2c082d513f9e8a4bb65e106b74c41aa654db1f",
+      "scope": "Cargo target absence; no application behavior executed"
+    }
+  }
+}

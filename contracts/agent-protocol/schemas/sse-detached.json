@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sse-detached.json",
+  "x-schema-id": "urn:b4:agent-protocol:draft:sse-detached",
+  "title": "Bounded native viewer detachment",
+  "x-implementation-status": "scripted-subset",
+  "x-compatibility-status": "selected-capacity-only",
+  "type": "object",
+  "properties": {
+    "reason": {
+      "enum": [
+        "capacity",
+        "overflow"
+      ]
+    }
+  },
+  "required": [
+    "reason"
+  ],
+  "additionalProperties": false,
+  "description": "Terminal for this viewer; producer continues. Capacity may be the only GET event; overflow follows the authorized initial state if any. A nonreading socket has no delivery guarantee."
+}
