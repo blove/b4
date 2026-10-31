@@ -701,6 +701,10 @@ fn unread_stream(address: SocketAddr) -> TcpStream {
     )
     .unwrap();
     socket.set_recv_buffer_size(1024).unwrap();
+    eprintln!(
+        "unread_stream recv_buffer={}",
+        socket.recv_buffer_size().unwrap()
+    );
     socket.connect(&address.into()).unwrap();
     let mut stream: TcpStream = socket.into();
     // A single bounded response can fit Linux's kernel queue. Pipeline a finite
@@ -736,7 +740,14 @@ fn quiescent_unread_sse_retains_transport_and_rate_limits_waits_until_peer_close
         count >= 1 && count <= started.elapsed().as_millis() as usize / 40 + 3,
         "transport-only waits must use a bounded independent timer (observed {count})"
     );
-    assert!(!directory.0.join("runner-return").exists());
+    assert!(
+        !directory.0.join("runner-return").exists(),
+        "server_success={} server_failure={} pending_server={} write_pending={}",
+        directory.0.join("server-success").exists(),
+        directory.0.join("server-failure").exists(),
+        directory.0.join("pending-server-at-quiescence").exists(),
+        directory.0.join("write-pending").exists(),
+    );
     drop(peer);
     let _store = clean_return(&mut child, &directory, 0);
     child.finish();
