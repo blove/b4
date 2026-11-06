@@ -1190,7 +1190,6 @@ fn actual_dispatch_after_management_authorization_wins_before_immediate_reread()
     assert_commit(&after_request, &after, &expected_terminal, false);
     drop(actual);
     drop(management);
-    drop(capacity);
     drop(observer);
     drop(signal);
     fixture.retire(&after, 1);

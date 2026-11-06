@@ -799,7 +799,6 @@ impl Fixture {
         integrity(&directory.0);
         reopened.readiness().unwrap();
         assert_eq!(Arc::strong_count(&reopened), 1);
-        drop(capacity);
         drop(reopened);
         let path = directory.0.clone();
         drop(directory);

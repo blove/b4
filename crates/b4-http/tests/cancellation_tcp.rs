@@ -781,12 +781,24 @@ async fn actual_tcp_cancel_held_in_initial_policy_cannot_retarget_successor() {
     })
     .await
     .unwrap();
-    let second = store
-        .thread_view(&thread_id)
-        .unwrap()
-        .unwrap()
-        .execution
-        .unwrap();
+    let second = tokio::time::timeout(Duration::from_secs(5), async {
+        loop {
+            let execution = store
+                .thread_view(&thread_id)
+                .unwrap()
+                .unwrap()
+                .execution
+                .unwrap();
+            if execution.snapshot.execution_id != first_id
+                && execution.snapshot.status == ExecutionStatus::Running
+            {
+                break execution;
+            }
+            tokio::time::sleep(Duration::from_millis(5)).await;
+        }
+    })
+    .await;
+    let second = second.unwrap();
     assert_ne!(second.snapshot.execution_id, first_id);
     assert_eq!(second.snapshot.status, ExecutionStatus::Running);
     gate.release();

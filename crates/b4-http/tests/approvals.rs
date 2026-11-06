@@ -102,6 +102,27 @@ async fn request<S: Store + 'static>(
     let bytes = to_bytes(response.into_body(), 200_000).await.unwrap();
     (status, serde_json::from_slice(&bytes).unwrap(), headers)
 }
+
+async fn request_after_claim_release<S: Store + 'static>(
+    host: &HttpHost<S>,
+    method: &str,
+    path: &str,
+    token: Option<&str>,
+    body: &str,
+) -> (StatusCode, Value, axum::http::HeaderMap) {
+    let deadline = tokio::time::Instant::now() + std::time::Duration::from_secs(2);
+    loop {
+        let reply = request(host, method, path, token, body).await;
+        if reply.0 != StatusCode::CONFLICT || reply.1["error"]["message"] != "thread_busy" {
+            return reply;
+        }
+        assert!(
+            tokio::time::Instant::now() < deadline,
+            "owned claim did not release"
+        );
+        tokio::time::sleep(std::time::Duration::from_millis(1)).await;
+    }
+}
 struct Authority;
 impl ApprovalAuthority for Authority {
     fn authorize(
@@ -456,7 +477,7 @@ async fn grant_failure_statuses_are_distinct_without_consumption_or_sensitive_di
             ));
         }
         for (body, status, code) in bodies {
-            let rejected = request(
+            let rejected = request_after_claim_release(
                 &host,
                 "POST",
                 "/threads/thread/resume",

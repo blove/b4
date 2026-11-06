@@ -948,7 +948,6 @@ fn settled_case(
         assert_eq!(expected.snapshot.status, ExecutionStatus::Failed);
     }
     drop(actual);
-    drop(capacity);
     drop(observer);
     drop(signal);
     fixture.retire(&after, cancel);
@@ -1020,7 +1019,6 @@ fn signal_only_ack_cannot_create_stored_cancellation_authority() {
         ExecutionStatus::Running
     );
     drop(actual);
-    drop(capacity);
     drop(observer);
     drop(signal);
     fixture.retire(&after, false);
@@ -1110,7 +1108,6 @@ fn revoked_effect_gate_after_entry_does_not_veto_authorized_management_cancellat
     let after = fixture.capture();
     assert_commit(&current, &after, &expected, false);
     drop(actual);
-    drop(capacity);
     drop(observer);
     drop(signal);
     fixture.retire(&after, true);
