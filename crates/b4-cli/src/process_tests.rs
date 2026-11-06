@@ -16,6 +16,7 @@ use std::{
     collections::BTreeMap,
     ffi::OsString,
     fs::{File, OpenOptions},
+    future::Future,
     io::{Read, Write},
     net::{SocketAddr, TcpStream},
     path::{Path, PathBuf},
@@ -98,6 +99,7 @@ impl axum::serve::Listener for ObservedListener {
                 observer,
                 bytes: 0,
                 marked: false,
+                transport_hold: None,
             },
             address,
         )
@@ -111,14 +113,39 @@ pub(super) struct ObservedIo {
     observer: Option<Observer>,
     bytes: usize,
     marked: bool,
+    transport_hold: Option<std::pin::Pin<Box<tokio::time::Sleep>>>,
 }
 impl ObservedIo {
+    fn hold_transport(&mut self, cx: &mut std::task::Context<'_>) -> bool {
+        let Some(observer) = self
+            .observer
+            .as_ref()
+            .filter(|observer| observer.scenario == "transport" && self.marked)
+        else {
+            return false;
+        };
+        if observer.directory.join("transport-release").exists() {
+            self.transport_hold = None;
+            return false;
+        }
+        let timer = self
+            .transport_hold
+            .get_or_insert_with(|| Box::pin(tokio::time::sleep(Duration::from_millis(3))));
+        if timer.as_mut().poll(cx).is_ready() {
+            timer
+                .as_mut()
+                .reset(tokio::time::Instant::now() + Duration::from_millis(3));
+            let _ = timer.as_mut().poll(cx);
+        }
+        true
+    }
+
     fn observed(&mut self, result: &std::task::Poll<std::io::Result<usize>>) {
         match result {
             std::task::Poll::Ready(Ok(n)) => self.bytes += n,
             // Unread data can fit the kernel queue despite small buffer settings.
-            // Record an actual pending socket write after positive progress;
-            // every I/O result and wakeup still comes from the real TcpStream.
+            // Start the test-only hold only after a real socket write has made
+            // positive progress and then returned Pending.
             std::task::Poll::Pending if self.bytes > 0 && !self.marked => {
                 if let Some(observer) = self.observer.as_ref() {
                     observer.marker("write-pending");
@@ -144,6 +171,9 @@ impl tokio::io::AsyncWrite for ObservedIo {
         cx: &mut std::task::Context<'_>,
         buf: &[u8],
     ) -> std::task::Poll<std::io::Result<usize>> {
+        if self.hold_transport(cx) {
+            return std::task::Poll::Pending;
+        }
         let result = std::pin::Pin::new(&mut self.socket).poll_write(cx, buf);
         self.observed(&result);
         result
@@ -153,6 +183,9 @@ impl tokio::io::AsyncWrite for ObservedIo {
         cx: &mut std::task::Context<'_>,
         bufs: &[std::io::IoSlice<'_>],
     ) -> std::task::Poll<std::io::Result<usize>> {
+        if self.hold_transport(cx) {
+            return std::task::Poll::Pending;
+        }
         let result = std::pin::Pin::new(&mut self.socket).poll_write_vectored(cx, bufs);
         self.observed(&result);
         result
@@ -164,12 +197,18 @@ impl tokio::io::AsyncWrite for ObservedIo {
         mut self: std::pin::Pin<&mut Self>,
         cx: &mut std::task::Context<'_>,
     ) -> std::task::Poll<std::io::Result<()>> {
+        if self.hold_transport(cx) {
+            return std::task::Poll::Pending;
+        }
         std::pin::Pin::new(&mut self.socket).poll_flush(cx)
     }
     fn poll_shutdown(
         mut self: std::pin::Pin<&mut Self>,
         cx: &mut std::task::Context<'_>,
     ) -> std::task::Poll<std::io::Result<()>> {
+        if self.hold_transport(cx) {
+            return std::task::Poll::Pending;
+        }
         std::pin::Pin::new(&mut self.socket).poll_shutdown(cx)
     }
 }
@@ -738,6 +777,7 @@ fn quiescent_unread_sse_retains_transport_and_rate_limits_waits_until_peer_close
     );
     assert!(!directory.0.join("runner-return").exists());
     drop(peer);
+    marker(&directory.0, "transport-release");
     let _store = clean_return(&mut child, &directory, 0);
     child.finish();
 }
