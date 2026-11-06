@@ -181,6 +181,21 @@ async fn request<S: Store + 'static>(
     }
 }
 
+async fn resume_after_claim_release<S: Store + 'static>(host: &HttpHost<S>, body: &str) -> Reply {
+    let deadline = tokio::time::Instant::now() + std::time::Duration::from_secs(2);
+    loop {
+        let reply = request(host, "POST", "/resume", body).await;
+        if reply.status != 409 || reply.json()["error"]["details"]["code"] != "thread_busy" {
+            return reply;
+        }
+        assert!(
+            tokio::time::Instant::now() < deadline,
+            "owned claim did not release"
+        );
+        tokio::time::sleep(std::time::Duration::from_millis(1)).await;
+    }
+}
+
 async fn park<S: Store + 'static>(host: &HttpHost<S>) -> Vec<Value> {
     let parked = request(
         host,
@@ -334,7 +349,7 @@ async fn selected_grant_refusals_match_reference_without_consuming_any_decision(
         let before = snapshot(&host);
         for id in cases {
             let case = observation(&capture, id);
-            let refused = request(&host, "POST", "/resume", &rebind(case, &source, &native)).await;
+            let refused = resume_after_claim_release(&host, &rebind(case, &source, &native)).await;
             same_refusal(case, &refused);
             assert_eq!(snapshot(&host), before, "refusal may not change task state");
             let grants = host
@@ -348,13 +363,8 @@ async fn selected_grant_refusals_match_reference_without_consuming_any_decision(
         }
         if pair {
             let accepted = observation(&capture, "pair.resume-accepted");
-            let reply = request(
-                &host,
-                "POST",
-                "/resume",
-                &rebind(accepted, &source, &native),
-            )
-            .await;
+            let reply =
+                resume_after_claim_release(&host, &rebind(accepted, &source, &native)).await;
             one_terminal(accepted, &reply);
             let completed = snapshot(&host);
             assert_eq!(completed.status, ExecutionStatus::Completed);
@@ -368,7 +378,7 @@ async fn selected_grant_refusals_match_reference_without_consuming_any_decision(
             assert_eq!(completed.values["ledger"], json!(["pair-a", "pair-b"]));
             let replay = observation(&capture, "pair.resume-replay");
             let refused =
-                request(&host, "POST", "/resume", &rebind(replay, &source, &native)).await;
+                resume_after_claim_release(&host, &rebind(replay, &source, &native)).await;
             assert_replay(replay, &refused);
             assert_eq!(snapshot(&host), completed);
             compared += 2;
@@ -394,13 +404,7 @@ async fn selected_once_deny_and_cancelled_match_execution_counts_and_replay_stat
         let pending_id = format!("{prefix}.pending");
         let source = reference_entries(&capture, &pending_id);
         let accepted = observation(&capture, accepted_id);
-        let reply = request(
-            &host,
-            "POST",
-            "/resume",
-            &rebind(accepted, &source, &native),
-        )
-        .await;
+        let reply = resume_after_claim_release(&host, &rebind(accepted, &source, &native)).await;
         one_terminal(accepted, &reply);
         let source_calls = accepted["ledger"].as_array().unwrap().len()
             - observation(&capture, &pending_id)["ledger"]
@@ -420,7 +424,7 @@ async fn selected_once_deny_and_cancelled_match_execution_counts_and_replay_stat
             assert!(completed.values.get("ledger").is_none());
         }
         let replay = observation(&capture, &format!("{prefix}.resume-replay"));
-        let refused = request(&host, "POST", "/resume", &rebind(replay, &source, &native)).await;
+        let refused = resume_after_claim_release(&host, &rebind(replay, &source, &native)).await;
         assert_replay(replay, &refused);
         assert_eq!(snapshot(&host), completed);
         compared += 2;
@@ -525,13 +529,7 @@ async fn route_token_encoding_and_prompt_wrappers_remain_explicit_reference_diff
     let case = observation(&capture, "route.resume-supplied-route-differs");
     assert_eq!(case["response"]["status"], 200);
     let before = snapshot(&host);
-    let refused = request(
-        &host,
-        "POST",
-        "/resume",
-        &rebind(case, &route_source, &native),
-    )
-    .await;
+    let refused = resume_after_claim_release(&host, &rebind(case, &route_source, &native)).await;
     assert_eq!(refused.status, 409);
     assert_eq!(refused.json()["error"]["details"]["code"], "route_mismatch");
     assert_eq!(snapshot(&host), before);
